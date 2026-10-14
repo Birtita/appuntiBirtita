@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appunti Primo Trimestre</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#faf8f4; --surface:#ffffff; --ink:#201f1c; --ink-soft:#645f54; --border:#e6e0d3; --shadow: rgba(40,36,20,0.10);
+    --c1:#0f7a6c; --c1-tint:#e3f2ee; --c2:#5b4bab; --c2-tint:#ece7fb; --c3:#a85d1f; --c3-tint:#f7ead9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#141318; --surface:#1c1b21; --ink:#eae6dd; --ink-soft:#a9a396; --border:#343138; --shadow: rgba(0,0,0,0.4);
+      --c1:#4fd6bf; --c1-tint:#16302c; --c2:#b3a1f2; --c2-tint:#28223f; --c3:#e8a765; --c3-tint:#3a2c1a;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#141318; --surface:#1c1b21; --ink:#eae6dd; --ink-soft:#a9a396; --border:#343138; --shadow: rgba(0,0,0,0.4);
+    --c1:#4fd6bf; --c1-tint:#16302c; --c2:#b3a1f2; --c2-tint:#28223f; --c3:#e8a765; --c3-tint:#3a2c1a;
+  }
+  *{box-sizing:border-box;}
+  body{background:var(--bg); color:var(--ink); font-family:'Source Sans 3', system-ui, sans-serif; line-height:1.6;}
+  h1,h2{font-family:'Fraunces', Georgia, serif; text-wrap:balance; margin:0;}
+  .page{max-width:920px; margin-inline:auto; padding:48px 20px 70px;}
+  .eyebrow{display:inline-flex; font-family:'JetBrains Mono',monospace; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:14px;}
+  h1{font-size:clamp(2rem,5vw,2.7rem); font-weight:700;}
+  p.sub{color:var(--ink-soft); font-size:1.08rem; max-width:58ch; margin:12px 0 0;}
+  .cards{display:grid; grid-template-columns:1fr; gap:18px; margin-top:40px;}
+  a.card{display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:18px; background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:22px 24px; text-decoration:none; color:var(--ink); box-shadow:0 1px 2px var(--shadow); transition:transform .15s ease, box-shadow .15s ease;}
+  a.card:hover{transform:translateY(-2px); box-shadow:0 6px 18px var(--shadow);}
+  .swatch{width:46px; height:46px; border-radius:12px; flex-shrink:0;}
+  .card h2{font-size:1.3rem; margin-bottom:4px;}
+  .card p{margin:0; color:var(--ink-soft); font-size:.95rem;}
+  .arrow{font-size:1.4rem; color:var(--ink-soft);}
+  @media (max-width:560px){ a.card{grid-template-columns:auto 1fr; row-gap:8px;} .arrow{display:none;} }
+  footer{margin-top:48px; padding-top:20px; border-top:1px solid var(--border); color:var(--ink-soft); font-size:.86rem;}
+</style>
+</head>
+<body>
+<div class="page">
+  <span class="eyebrow">Politecnico di Milano · Ingegneria Informatica · Primo anno</span>
+  <h1>Appunti — Primo Trimestre</h1>
+  <p class="sub">Le tre materie del trimestre in un unico punto di accesso: definizioni, teoremi, formule e diagrammi pronti per ripassare prima degli esami.</p>
+
+  <div class="cards">
+    <a class="card" href="https://claude.ai/artifact/Wyy5pBJCNSCf6TEUPA53M1" target="_blank" rel="noopener">
+      <span class="swatch" style="background:var(--c1-tint); border:2px solid var(--c1);"></span>
+      <span>
+        <h2 style="color:var(--c1)">Analisi Matematica 1</h2>
+        <p>Numeri reali e complessi, funzioni, limiti, derivate, Taylor, integrali, curve, serie.</p>
+      </span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="card" href="https://claude.ai/artifact/NAk7DNkKACnRzD2XsDt8oB" target="_blank" rel="noopener">
+      <span class="swatch" style="background:var(--c2-tint); border:2px solid var(--c2);"></span>
+      <span>
+        <h2 style="color:var(--c2)">Geometria e Algebra Lineare</h2>
+        <p>Vettori, geometria analitica, matrici, sistemi lineari, autovalori, coniche e quadriche.</p>
+      </span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="card" href="https://claude.ai/artifact/MkuX4d5WASsuY3rTTKF8BP" target="_blank" rel="noopener">
+      <span class="swatch" style="background:var(--c3-tint); border:2px solid var(--c3);"></span>
+      <span>
+        <h2 style="color:var(--c3)">Fondamenti di Informatica</h2>
+        <p>Architettura del calcolatore, logica e codifica binaria, linguaggio C, ricorsione, liste, file.</p>
+      </span>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+
+  <footer>Ogni pagina è consultabile singolarmente ed è pensata per essere ripresa e aggiornata durante lo studio del trimestre.</footer>
+</div>
+</body>
+</html>
