@@ -127,8 +127,13 @@ def split_sections(frag):
     return out
 
 
+IMP_RE = re.compile(r'(<div class="tag">[^\n]*?) · (molto avanzato|essenziale|utile|avanzato)\s*</div>')
+
+
 def render_main(slug, frag):
     """Arricchisce le sezioni e costruisce l'indice della pagina."""
+    # livello di importanza del prof ("Definizione 2.1 · essenziale") -> badge
+    frag = IMP_RE.sub(lambda m: f'{m.group(1)}<span class="imp" data-imp="{m.group(2).replace(" ", "-")}">{m.group(2)}</span></div>', frag)
     toc, parts, n_ex, n_quiz = [], [], 0, 0
     for idx, (attrs, body) in enumerate(split_sections(frag), 1):
         sid = attr(attrs, "id") or f"{slug}-s{idx}"
@@ -163,7 +168,7 @@ def render_main(slug, frag):
     return "\n\n".join(parts), toc, n_ex, n_quiz
 
 
-def side_panel(slug, toc, totals):
+def side_panel(slug, toc, totals, has_adv=False):
     ch = []
     for c in ALL:
         cur = ' aria-current="page"' if c["slug"] == slug else ""
@@ -172,10 +177,15 @@ def side_panel(slug, toc, totals):
         if totals.get(c["slug"]):
             ch.append(f'<div class="chap-progress" data-progress-page="{c["slug"]}" data-total="{totals[c["slug"]]}"><i></i></div>')
         ch.append("</li>")
+    tools = ""
+    if has_adv:
+        tools = ('<div class="panel"><div class="panel-title">Studio</div>'
+                 '<button class="iconbtn" id="toggle-adv" aria-pressed="false" style="width:100%">Nascondi le parti avanzate</button></div>')
     t = "".join(f'<li><a href="#{sid}"><span class="k">{i:02d}</span>{html.escape(title)}</a></li>' for sid, title, i in toc)
     return f"""<aside class="side" id="side">
       <div class="panel"><div class="panel-title">Capitoli</div><ol>{''.join(ch)}</ol></div>
       <div class="panel"><div class="panel-title">In questa pagina</div><ol id="toc">{t}</ol></div>
+      {tools}
     </aside>"""
 
 
@@ -224,7 +234,7 @@ def write_page(c, main, toc, n_ex, n_quiz, totals):
     <div class="pillrow">{''.join(pills)}</div>
   </header>
   <div class="layout">
-    {side_panel(c["slug"], toc, totals)}
+    {side_panel(c["slug"], toc, totals, 'data-imp="avanzato"' in main or 'data-imp="molto-avanzato"' in main)}
     <main id="content">
 {main}
       {pager(c["slug"])}

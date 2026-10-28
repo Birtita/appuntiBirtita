@@ -222,3 +222,15 @@ footer.foot{padding-block:26px 50px; color:var(--ink-soft); font-size:.86rem; bo
 /* soluzione ricontrollata a mano */
 p.verifica{font-size:.84rem; color:var(--ok); font-family:'JetBrains Mono',monospace; margin-top:10px;}
 p.verifica::before{content:"✓ ";}
+
+/* formula in linea più larga del contenitore: diventa un blocco che scorre */
+mjx-container.wide{display:block; max-width:100%; overflow-x:auto; overflow-y:hidden; padding:.2em 0;}
+
+/* importanza indicata dal docente */
+.imp{display:inline-block; margin-left:8px; padding:1px 7px; border-radius:999px; font-size:.95em; letter-spacing:.05em; border:1px solid currentColor; vertical-align:1px;}
+.imp[data-imp="essenziale"]{color:var(--warn);}
+.imp[data-imp="utile"]{color:var(--method);}
+.imp[data-imp="avanzato"], .imp[data-imp="molto-avanzato"]{color:var(--ink-soft); border-style:dashed;}
+body.hide-adv .box[data-imp="avanzato"], body.hide-adv .box[data-imp="molto-avanzato"]{display:none;}
+.chap-progress:not(.has){display:none;}
+@media (max-width:640px){ mjx-container{font-size:.97em;} }

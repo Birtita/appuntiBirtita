@@ -155,8 +155,42 @@
       }
     }catch(e){}
     var fill = el.querySelector('i'); if (fill && tot) fill.style.width = Math.min(100, d / tot * 100) + '%';
+    if (d) el.classList.add('has');
     var lab = el.parentNode.querySelector('[data-progress-label]'); if (lab && tot) lab.textContent = d + '/' + tot + ' esercizi';
   });
+
+  /* ---- importanza (essenziale/utile/avanzato): nascondi le parti avanzate ---- */
+  document.querySelectorAll('.imp').forEach(function(b){
+    var box = b.closest('.box'); if (box) box.setAttribute('data-imp', b.getAttribute('data-imp'));
+  });
+  var advBtn = document.getElementById('toggle-adv');
+  function setAdv(hide){
+    document.body.classList.toggle('hide-adv', hide);
+    if (advBtn){ advBtn.setAttribute('aria-pressed', hide ? 'true' : 'false'); advBtn.textContent = hide ? 'Mostra anche le parti avanzate' : 'Nascondi le parti avanzate'; }
+  }
+  if (advBtn){
+    setAdv(store.get('gal:hide-adv') === '1');
+    advBtn.addEventListener('click', function(){
+      var hide = !document.body.classList.contains('hide-adv');
+      setAdv(hide); if (hide) store.set('gal:hide-adv', '1'); else store.del('gal:hide-adv');
+    });
+  }
+
+  /* ---- formule in linea troppo larghe (es. matrici su telefono): scorrono da sole ---- */
+  function fitWideMath(){
+    document.querySelectorAll('mjx-container:not([display="true"])').forEach(function(m){
+      m.classList.remove('wide');
+      var box = m.parentElement;
+      if (box && m.getBoundingClientRect().width > box.getBoundingClientRect().width) m.classList.add('wide');
+    });
+  }
+  (function waitMathJax(n){
+    if (window.MathJax && MathJax.startup && MathJax.startup.promise){
+      MathJax.startup.promise.then(fitWideMath);
+      var t; window.addEventListener('resize', function(){ clearTimeout(t); t = setTimeout(fitWideMath, 200); });
+    } else if (n < 100) setTimeout(function(){ waitMathJax(n + 1); }, 100);
+  })(0);
+  document.addEventListener('toggle', function(e){ if (e.target.open) fitWideMath(); }, true);
 
   /* ---- in stampa apri tutto ---- */
   window.addEventListener('beforeprint', function(){ document.querySelectorAll('details').forEach(function(d){ d.open = true; }); });

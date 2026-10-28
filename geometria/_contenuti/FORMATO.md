@@ -58,3 +58,8 @@ un file per capitolo:
 - Nessun CSS o JS inline; usate solo le classi sopra (se serve una classe nuova, scrivetela qui sotto).
 - Figure: SVG inline dentro `<figure class="fig">...<figcaption>..</figcaption></figure>`, colori con `currentColor`.
 - Indicate la fonte (capitolo/pagina, foglio, esame) in `data-fonte` o nel tag del box.
+
+## Classi aggiunte (thread analisi lezioni)
+- `<p class="verifica">Verificata con calcolo simbolico</p>` / `Verificata a mano`: ultima riga di una soluzione
+  di un esercizio senza soluzione ufficiale, per indicare che è stata ricontrollata. Se la soluzione è ufficiale:
+  `<p class="verifica">Soluzione ufficiale</p>`.

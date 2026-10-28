@@ -27,15 +27,1001 @@
     <span class="eyebrow">Cap. 1</span>
     <h1>Matrici e sistemi lineari</h1>
     <p class="sub">Prodotto di matrici, mosse di Gauss, forma a scala, rango, Rouché–Capelli, matrice inversa.</p>
-    <div class="pillrow"><span class="pill">Foglio 3</span><span class="pill">Foglio 3 bis</span><span class="pill">Quiz Capitolo 1</span></div>
+    <div class="pillrow"><span class="pill">11 sezioni</span><span class="pill">18 esercizi con soluzione</span><span class="pill">12 domande di quiz</span><span class="pill">Foglio 3</span><span class="pill">Foglio 3 bis</span><span class="pill">Quiz Capitolo 1</span></div>
   </header>
   <div class="layout">
     <aside class="side" id="side">
-      <div class="panel"><div class="panel-title">Capitoli</div><ol><li><a href="cap0.html"><span class="k">0</span>Fondamenti</a></li><li><a href="cap1.html" aria-current="page"><span class="k">1</span>Matrici e sistemi lineari</a></li><li><a href="cap2.html"><span class="k">2</span>Spazi vettoriali su K</a></li><li><a href="cap3.html"><span class="k">3</span>Calcolare in Kⁿ</a></li><li><a href="cap4.html"><span class="k">4</span>Applicazioni lineari</a></li><li><a href="cap5.html"><span class="k">5</span>Matrice associata</a></li><li><a href="esami.html"><span class="k">·</span>Preparazione all&#x27;esame</a></li><li><a href="anteprima.html"><span class="k">·</span>Argomenti non ancora fatti a lezione</a></li></ol></div>
-      <div class="panel"><div class="panel-title">In questa pagina</div><ol id="toc"></ol></div>
+      <div class="panel"><div class="panel-title">Capitoli</div><ol><li><a href="cap0.html"><span class="k">0</span>Fondamenti</a></li><li><a href="cap1.html" aria-current="page"><span class="k">1</span>Matrici e sistemi lineari</a><div class="chap-progress" data-progress-page="cap1" data-total="18"><i></i></div></li><li><a href="cap2.html"><span class="k">2</span>Spazi vettoriali su K</a><div class="chap-progress" data-progress-page="cap2" data-total="15"><i></i></div></li><li><a href="cap3.html"><span class="k">3</span>Calcolare in Kⁿ</a><div class="chap-progress" data-progress-page="cap3" data-total="10"><i></i></div></li><li><a href="cap4.html"><span class="k">4</span>Applicazioni lineari</a></li><li><a href="cap5.html"><span class="k">5</span>Matrice associata</a></li><li><a href="esami.html"><span class="k">·</span>Preparazione all&#x27;esame</a></li><li><a href="anteprima.html"><span class="k">·</span>Argomenti non ancora fatti a lezione</a></li></ol></div>
+      <div class="panel"><div class="panel-title">In questa pagina</div><ol id="toc"><li><a href="#cap1-matrici"><span class="k">01</span>Matrici: definizione e terminologia</a></li><li><a href="#cap1-calcolo"><span class="k">02</span>Calcolo con le matrici</a></li><li><a href="#cap1-quadrate"><span class="k">03</span>Matrici quadrate e gruppo lineare generale</a></li><li><a href="#cap1-sistemi"><span class="k">04</span>Sistemi di equazioni lineari</a></li><li><a href="#cap1-mosse"><span class="k">05</span>Mosse di Gauss e matrici elementari</a></li><li><a href="#cap1-gauss"><span class="k">06</span>Algoritmo di Gauss, forma a scala ridotta e rango</a></li><li><a href="#cap1-rouche"><span class="k">07</span>Rouché-Capelli e parametrizzazione delle soluzioni</a></li><li><a href="#cap1-inversa"><span class="k">08</span>Gauss-Jordan e matrici invertibili</a></li><li><a href="#cap1-esercizi"><span class="k">09</span>Esercizi</a></li><li><a href="#cap1-quiz"><span class="k">10</span>Quiz</a></li><li><a href="#cap1-riepilogo"><span class="k">11</span>Riepilogo</a></li></ol></div>
+      
     </aside>
     <main id="content">
-<div class="empty"><p><strong>Contenuti in arrivo.</strong></p><p>Questo capitolo verrà riempito con teoria, esempi ed esercizi svolti tratti dagli appunti del corso.</p></div>
+<section class="sec" id="cap1-matrici">
+  <div class="num">01</div>
+  <h2>Matrici: definizione e terminologia</h2>
+  <p class="lead">Una matrice non è "una tabella di numeri": per il prof è un'<strong>applicazione</strong> definita su un insieme di coppie di indici. La tabella è solo il modo di rappresentarla.</p>
+
+  <p>Per la maggior parte del corso le matrici hanno elementi in un campo (soprattutto \(\mathbb{R}\)). Il prof dà però la definizione con elementi in un <strong>anello commutativo</strong> \(R\), perché servirà più avanti per il polinomio caratteristico, cioè per matrici le cui entrate sono polinomi. Il loro determinante sarà un polinomio, le cui radici sono gli autovalori.</p>
+
+  <div class="box box--def"><div class="tag">Definizione 1.1 (p. 82)</div>
+    <p>Siano \(m,n\in\mathbb{N}_{>0}\) e sia \(R\) un anello. Una <strong>matrice</strong> \(m\times n\) con elementi (o coefficienti) in \(R\) è un'applicazione</p>
+    \[ A:\{1,\dots,m\}\times\{1,\dots,n\}\longrightarrow R. \]
+    <p>Si pone \(a_{ij}:=A((i,j))\) e si rappresenta \(A\) come la tabella</p>
+    \[ A=(a_{ij})_{\substack{i=1,\dots,m\\ j=1,\dots,n}}=\begin{pmatrix} a_{11} & \dots & a_{1n}\\ \vdots & & \vdots\\ a_{m1} & \dots & a_{mn}\end{pmatrix}. \]
+    <p>Il primo indice \(i\) è l'<strong>indice di riga</strong>, il secondo indice \(j\) è l'<strong>indice di colonna</strong>. L'insieme di tutte le matrici \(m\times n\) con elementi in \(R\) si indica con \(\mathrm{Mat}_{m\times n}(R)\).</p>
+  </div>
+
+  <p>Terminologia (p. 82-84):</p>
+  <ul>
+    <li>Il <strong>tipo</strong> della matrice è la coppia ordinata \((m,n)\); si dice anche che il tipo è \(m\times n\).</li>
+    <li>Una matrice è <strong>quadrata</strong> se \(m=n\).</li>
+    <li>Una <strong>sottomatrice</strong> di \(A\) è la restrizione di \(A\) a un sottoinsieme del dominio della forma \(I\times J\), con \(I\subseteq\{1,\dots,m\}\) e \(J\subseteq\{1,\dots,n\}\). Si indica con \(A|_{I\times J}\).</li>
+    <li>Una <strong>matrice riga</strong> è una matrice \(1\times n\); una <strong>matrice colonna</strong> è una matrice \(m\times 1\).</li>
+    <li>Le <strong>righe</strong> di \(A\) sono le \(m\) sottomatrici \(1\times n\): \(\mathtt{R}_i=(a_{i1}\ \dots\ a_{in})\). Le <strong>colonne</strong> di \(A\) sono le \(n\) sottomatrici \(m\times 1\): \(\mathtt{C}_j=(a_{1j}\ \dots\ a_{mj})^{\top}\). Quando serve si aggiunge l'etichetta della matrice: \({}^{A}\mathtt{R}_i\), \(\mathtt{R}_i^A\), \(\mathtt{R}_i(A)\).</li>
+    <li>Una <strong>rappresentazione a blocchi</strong> mette in evidenza alcune sottomatrici <em>connesse</em> (indici di riga e di colonna consecutivi) e <em>disgiunte</em>. Le più usate sono la suddivisione per righe e quella per colonne:
+      \[ A=\begin{pmatrix}\mathtt{R}_1\\ \hline \mathtt{R}_2\\ \hline \vdots\\ \hline \mathtt{R}_m\end{pmatrix}=\left(\begin{array}{c|c|c|c}\mathtt{C}_1 & \mathtt{C}_2 & \dots & \mathtt{C}_n\end{array}\right). \]</li>
+    <li>L'<strong>estensione</strong> di una matrice \(A\) (\(m\times n\)) mediante una colonna \(\mathbf{b}\) di altezza \(m\):
+      \[ (A\,|\,\mathbf{b}):=\left(\begin{array}{ccc|c} a_{11} & \dots & a_{1n} & b_1\\ \vdots & & \vdots & \vdots\\ a_{m1} & \dots & a_{mn} & b_m\end{array}\right). \]</li>
+    <li>La <strong>matrice nulla</strong> \(m\times n\) ha \(a_{ij}=0\) per ogni \(i,j\).</li>
+    <li>La <strong>trasposta</strong> di \(A=(a_{ij})\) (\(m\times n\)) è la matrice \(n\times m\) \(A^{\top}:=(a_{ji})\). Per esempio
+      \[ A=\begin{pmatrix}1&2&3\\4&5&6\end{pmatrix},\qquad A^{\top}=\begin{pmatrix}1&4\\2&5\\3&6\end{pmatrix}. \]</li>
+  </ul>
+
+  <div class="box box--ex"><div class="tag">Esempio: rappresentazione a blocchi (p. 83)</div>
+    \[ \left(\begin{array}{c|ccc} a & b & c & d\\ \hline e & f & g & h\\ i & j & k & l\\ m & n & o & p\end{array}\right)\ \text{con i blocchi}\ A=(a),\ B=\begin{pmatrix}b&c&d\\f&g&h\end{pmatrix},\ C=\begin{pmatrix}e\\i\\m\end{pmatrix},\ D=\begin{pmatrix}j&k&l\\n&o&p\end{pmatrix}. \]
+    <p>I blocchi non devono avere la stessa forma: basta che siano connessi e disgiunti e che ricoprano la matrice. Qui \(B\) occupa le righe 1-2 e \(D\) le righe 3-4 delle ultime tre colonne.</p>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <p>\(\mathrm{Mat}_{3\times 2}\) significa <strong>3 righe e 2 colonne</strong>: prima le righe, poi le colonne. Allo stesso modo, in \(a_{ij}\) il primo indice è sempre la riga.</p>
+  </div>
+</section>
+
+<section class="sec" id="cap1-calcolo">
+  <div class="num">02</div>
+  <h2>Calcolo con le matrici</h2>
+  <p class="lead">Somma e prodotto per scalare si fanno entrata per entrata. Il prodotto di due matrici si fa "riga per colonna" ed è definito solo quando le dimensioni sono compatibili.</p>
+
+  <h3>Somma e prodotto per scalare</h3>
+  <p>L'<strong>addizione di matrici</strong> è l'operazione \(+:\mathrm{Mat}_{m\times n}(R)\times\mathrm{Mat}_{m\times n}(R)\to\mathrm{Mat}_{m\times n}(R)\), \((a_{ij})+(b_{ij}):=(a_{ij}+b_{ij})\). Si possono sommare solo matrici dello <strong>stesso tipo</strong>.</p>
+
+  <div class="box box--thm"><div class="tag">Osservazione 1.2</div>
+    <p>\((\mathrm{Mat}_{m\times n}(R),+)\) è un gruppo abeliano.</p>
+    <p><em>Dimostrazione.</em> L'addizione in \(R\) è associativa e commutativa, quindi lo è anche quella di matrici. L'elemento neutro è la matrice nulla \(0=0_{m\times n}\). L'inverso di \(A=(a_{ij})\) è \(-A=(-a_{ij})\).</p>
+  </div>
+
+  <p>La <strong>moltiplicazione per scalare</strong> è l'operazione esterna \(\cdot:R\times\mathrm{Mat}_{m\times n}(R)\to\mathrm{Mat}_{m\times n}(R)\), \(\lambda\cdot(a_{ij}):=(\lambda a_{ij})\): ogni entrata viene moltiplicata per \(\lambda\).</p>
+
+  <h3>Prodotto riga per colonna</h3>
+  <p>Siano \(\mathtt{R}=(r_1\ \dots\ r_n)\in\mathrm{Mat}_{1\times n}(R)\) e \(\mathtt{C}=(c_1\ \dots\ c_q)^{\top}\in\mathrm{Mat}_{q\times 1}(R)\). Se \(n\neq q\) il prodotto \(\mathtt{R}\cdot\mathtt{C}\) <strong>non è definito</strong>. Se \(n=q\):</p>
+  \[ \mathtt{R}\cdot\mathtt{C}=(r_1\ \dots\ r_n)\begin{pmatrix}c_1\\ \vdots\\ c_n\end{pmatrix}=(r_1c_1+\dots+r_nc_n). \]
+  <p>Per \(A\in\mathrm{Mat}_{m\times n}(R)\) e \(B\in\mathrm{Mat}_{q\times p}(R)\):</p>
+  \[ AB\ \text{è definito}\iff n=q\iff(\text{numero di colonne di }A)=(\text{numero di righe di }B). \]
+  <p>In tal caso \(AB\) è una matrice \(m\times p\) che in posizione \((i,j)\) ha (riga \(i\) di \(A\))·(colonna \(j\) di \(B\)):</p>
+  \[ (a_{ij})(b_{ij})=(c_{ij}),\qquad c_{ij}=\sum_{k=1}^{n}a_{ik}b_{kj}. \]
+  <p>Quindi il prodotto è l'operazione \(\cdot:\mathrm{Mat}_{m\times n}(R)\times\mathrm{Mat}_{n\times p}(R)\to\mathrm{Mat}_{m\times p}(R)\).</p>
+
+  <div class="box box--ex"><div class="tag">Esempio 1.3</div>
+    \[ \begin{pmatrix}1&2&3\\4&5&6\end{pmatrix}\cdot\begin{pmatrix}10&100\\20&200\\30&300\end{pmatrix}=\begin{pmatrix}1\cdot10+2\cdot20+3\cdot30 & 1\cdot100+2\cdot200+3\cdot300\\ 4\cdot10+5\cdot20+6\cdot30 & 4\cdot100+5\cdot200+6\cdot300\end{pmatrix}=\begin{pmatrix}140&1400\\320&3200\end{pmatrix}. \]
+  </div>
+
+  <div class="box box--thm"><div class="tag">Osservazione 1.4</div>
+    <p>La moltiplicazione di matrici è <strong>associativa</strong>: se \(A\in\mathrm{Mat}_{m\times n}(R)\), \(B\in\mathrm{Mat}_{n\times p}(R)\), \(C\in\mathrm{Mat}_{p\times q}(R)\), allora</p>
+    \[ A(BC)=(AB)C=\Big(\sum_{\substack{k=1\dots n\\ l=1\dots p}}a_{ik}b_{kl}c_{lj}\Big)_{\substack{i=1\dots m\\ j=1\dots q}}. \]
+    <p>La dimostrazione è un calcolo diretto che usa associatività e distributività di \(+\) e \(\cdot\) in \(R\).</p>
+  </div>
+  <p>In generale (\(m\neq n\neq p\)) non ha senso parlare di commutatività: \(AB\) può essere definito mentre \(BA\) non lo è.</p>
+
+  <div class="box box--ex"><div class="tag">Esempio 1.5: un esempio curioso</div>
+    \[ \begin{pmatrix}3&4\\8&7\end{pmatrix}\cdot\begin{pmatrix}7&2\\4&9\end{pmatrix}=\begin{pmatrix}37&42\\84&79\end{pmatrix}. \]
+    <p>Le cifre del risultato "sembrano" ottenute affiancando le entrate. È una <strong>coincidenza</strong>, non una regola. Il prof chiede: riuscite a trovare altri esempi simili, o addirittura tutti?</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo: calcolare un prodotto \(AB\)</div>
+    <ol>
+      <li>Controlla i tipi: \(A\) è \(m\times n\), \(B\) è \(n'\times p\). Se \(n\neq n'\), il prodotto non è definito.</li>
+      <li>Il risultato è \(m\times p\): righe di \(A\), colonne di \(B\).</li>
+      <li>Per ogni posizione \((i,j)\): prendi la riga \(i\) di \(A\) e la colonna \(j\) di \(B\), moltiplica le entrate corrispondenti e somma.</li>
+      <li>Controllo veloce: la riga \(i\) di \(AB\) dipende solo dalla riga \(i\) di \(A\); la colonna \(j\) di \(AB\) dipende solo dalla colonna \(j\) di \(B\).</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="cap1-quadrate">
+  <div class="num">03</div>
+  <h2>Matrici quadrate e gruppo lineare generale</h2>
+  <p class="lead">Sulle matrici quadrate il prodotto è un'operazione interna con elemento neutro \(I_n\), ma non è commutativo. Le matrici invertibili formano il gruppo \(\mathrm{GL}_n\).</p>
+
+  <p>Per \(m=n\) si scrive \(\mathrm{Mat}_n(R):=\mathrm{Mat}_{n\times n}(R)\). Il prodotto è un'operazione interna su \(\mathrm{Mat}_n(R)\), con elemento neutro la <strong>matrice identità</strong> (o matrice unità)</p>
+  \[ I_n:=\begin{pmatrix}1&0&\dots&0\\0&1&\dots&0\\ \vdots&&\ddots&\vdots\\0&0&\dots&1\end{pmatrix}. \]
+
+  <div class="box box--ex"><div class="tag">Esempio: il prodotto non è commutativo (p. 86)</div>
+    \[ AB=\begin{pmatrix}1&1\\2&5\end{pmatrix}\begin{pmatrix}1&1\\1&1\end{pmatrix}=\begin{pmatrix}2&2\\7&7\end{pmatrix},\qquad BA=\begin{pmatrix}1&1\\1&1\end{pmatrix}\begin{pmatrix}1&1\\2&5\end{pmatrix}=\begin{pmatrix}3&6\\3&6\end{pmatrix}. \]
+    <p>Moltiplicando \(A\) a destra per la matrice con tutti gli elementi uguali a 1, ogni elemento della riga \(i\) di \(AB\) è la somma della riga \(i\) di \(A\). Moltiplicando a sinistra, ogni elemento della colonna \(j\) di \(BA\) è la somma della colonna \(j\) di \(A\).</p>
+    <p>Precisazione del prof (nota a piè di pagina): la non commutatività richiede che \(R\) non sia l'anello nullo, cioè \(0\neq 1\).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Osservazione 1.6</div>
+    <p>Per ogni \(n\in\mathbb{N}_{>0}\) e ogni anello \(R\), \((\mathrm{Mat}_n(R),+,\cdot)\) è un anello non commutativo.</p>
+    <p><em>Dimostrazione.</em> Resta da verificare solo la distributività, con un calcolo diretto:</p>
+    \[ [(a_{ij})+(b_{ij})](c_{ij})=\Big(\sum_{k=1}^n(a_{ik}+b_{ik})c_{kj}\Big)=\Big(\sum_{k=1}^n a_{ik}c_{kj}+\sum_{k=1}^n b_{ik}c_{kj}\Big)=(a_{ij})(c_{ij})+(b_{ij})(c_{ij}). \]
+    <p>Allo stesso modo si dimostra \(A(B+C)=AB+AC\).</p>
+  </div>
+
+  <div class="box box--def"><div class="tag">Definizione 1.7</div>
+    <p>Il <strong>gruppo lineare generale</strong> è il gruppo moltiplicativo \(U(\mathrm{Mat}_n(R))\) degli elementi invertibili di \(\mathrm{Mat}_n(R)\):</p>
+    \[ \mathrm{GL}_n(R):=\{A\in\mathrm{Mat}_n(R)\ :\ A\ \text{è invertibile}\}. \]
+    <p>\(A\) è invertibile se e solo se esiste \(A^{-1}\in\mathrm{Mat}_n(R)\) tale che \(A^{-1}A=AA^{-1}=I_n\).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Osservazione 1.8</div>
+    <p>Il prodotto non è commutativo, quindi non è ovvio che un inverso sinistro sia anche un inverso destro. Usando l'associatività si dimostra però che se \(A^{-1}A=I_n\), allora anche \(AA^{-1}=I_n\). Dunque</p>
+    \[ \mathrm{GL}_n(R)=\{A:\ \exists A^{-1}\ \text{con}\ A^{-1}A=I_n\}=\{A:\ \exists A^{-1}\ \text{con}\ AA^{-1}=I_n\}. \]
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <p>L'Osservazione 1.8 vale solo per matrici <strong>quadrate</strong>. Nel Foglio 3, es. 1.2 si trovano \(A\in\mathrm{Mat}_{2\times3}\) e \(B\in\mathrm{Mat}_{3\times2}\) con \(AB=I_2\) ma \(BA\neq I_3\).</p>
+    <p>Inoltre per le matrici non valgono le "regole delle potenze" dei numeri: \((A+B)^2\neq A^2+2AB+B^2\) e \(A^2-B^2\neq(A-B)(A+B)\) in generale (Foglio 3, es. 8). Da \(AB=0\) non segue \(A=0\) o \(B=0\): esistono matrici non nulle con \(A^k=0\) (Foglio 3, es. 2).</p>
+  </div>
+</section>
+
+<section class="sec" id="cap1-sistemi">
+  <div class="num">04</div>
+  <h2>Sistemi di equazioni lineari</h2>
+  <p class="lead">Risolvere un sistema significa descrivere esplicitamente il suo insieme delle soluzioni. Questo insieme è vuoto, oppure è una soluzione particolare più tutte le soluzioni del sistema omogeneo.</p>
+
+  <p>Da qui in poi, salvo indicazione contraria, le matrici hanno coefficienti in un <strong>campo</strong> \(\mathbb{K}\) (\(\mathbb{Q}\), \(\mathbb{R}\), \(\mathbb{C}\), \(\mathbb{Z}/p\mathbb{Z}\)...). Chi lo trova troppo astratto può sostituire ovunque \(\mathbb{K}\) con \(\mathbb{R}\).</p>
+
+  <div class="box box--ex"><div class="tag">Esempio introduttivo: \(ax=b\) (p. 87)</div>
+    <p>Dati \(a,b\in\mathbb{R}\), trovare \(\{x\in\mathbb{R}: ax=b\}\). La tentazione di scrivere \(x=\frac{b}{a}\) è sbagliata se \(a=0\). Bisogna distinguere i casi:</p>
+    <ul>
+      <li><strong>Caso 1:</strong> \(a\neq0\). L'insieme delle soluzioni è \(\{\frac{b}{a}\}\).</li>
+      <li><strong>Caso 2.1:</strong> \(a=0\) e \(b=0\). La condizione \(0=0\) è sempre vera, quindi l'insieme è \(\mathbb{R}\).</li>
+      <li><strong>Caso 2.2:</strong> \(a=0\) e \(b\neq0\). La condizione è sempre falsa, quindi l'insieme è \(\emptyset\).</li>
+    </ul>
+    <p>Il capitolo generalizza questo esempio ad \(A\mathbf{x}=\mathbf{b}\). Si troverà un criterio per dire se le soluzioni esistono e, in caso affermativo, quanti parametri servono per descriverle.</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio: il legame con la geometria (p. 88)</div>
+    <figure class="fig">
+      <svg viewBox="0 0 560 175" role="img" aria-label="Quattro sistemi 2x2 rappresentati come coppie di rette nel piano">
+        <g fill="none" stroke="currentColor">
+          <g transform="translate(10,5)">
+            <rect x="0" y="0" width="120" height="120" stroke-opacity="0.25"/>
+            <line x1="0" y1="60" x2="120" y2="60" stroke-opacity="0.4"/><line x1="60" y1="0" x2="60" y2="120" stroke-opacity="0.4"/>
+            <line x1="0" y1="120" x2="120" y2="0" stroke-width="2"/>
+            <line x1="60" y1="0" x2="120" y2="120" stroke-width="2" stroke-dasharray="6 4"/>
+            <circle cx="80" cy="40" r="4" fill="currentColor"/>
+          </g>
+          <g transform="translate(150,5)">
+            <rect x="0" y="0" width="120" height="120" stroke-opacity="0.25"/>
+            <line x1="0" y1="60" x2="120" y2="60" stroke-opacity="0.4"/><line x1="60" y1="0" x2="60" y2="120" stroke-opacity="0.4"/>
+            <line x1="0" y1="120" x2="120" y2="0" stroke-width="2"/>
+            <line x1="80" y1="0" x2="80" y2="120" stroke-width="2" stroke-dasharray="6 4"/>
+            <circle cx="80" cy="40" r="4" fill="currentColor"/>
+          </g>
+          <g transform="translate(290,5)">
+            <rect x="0" y="0" width="120" height="120" stroke-opacity="0.25"/>
+            <line x1="0" y1="60" x2="120" y2="60" stroke-opacity="0.4"/><line x1="60" y1="0" x2="60" y2="120" stroke-opacity="0.4"/>
+            <line x1="60" y1="0" x2="120" y2="120" stroke-width="4"/>
+          </g>
+          <g transform="translate(430,5)">
+            <rect x="0" y="0" width="120" height="120" stroke-opacity="0.25"/>
+            <line x1="0" y1="60" x2="120" y2="60" stroke-opacity="0.4"/><line x1="60" y1="0" x2="60" y2="120" stroke-opacity="0.4"/>
+            <line x1="0" y1="0" x2="120" y2="120" stroke-width="2"/>
+            <line x1="20" y1="0" x2="120" y2="100" stroke-width="2" stroke-dasharray="6 4"/>
+          </g>
+        </g>
+        <g fill="currentColor" font-size="12" text-anchor="middle">
+          <text x="70" y="145">x−y=0, 2x+y=3</text><text x="70" y="162">un punto</text>
+          <text x="210" y="145">x−y=0, 3x=3</text><text x="210" y="162">stesso punto</text>
+          <text x="350" y="145">−4x−2y=−6, ⁵⁄₃x+⁵⁄₆y=⁵⁄₂</text><text x="350" y="162">stessa retta</text>
+          <text x="490" y="145">x+y=0, x+y=1</text><text x="490" y="162">rette parallele</text>
+        </g>
+      </svg>
+      <figcaption>Quattro sistemi 2×2: una soluzione, la stessa soluzione dopo una mossa di Gauss, infinite soluzioni, nessuna soluzione.</figcaption>
+    </figure>
+    <ul>
+      <li>Il secondo sistema si ottiene dal primo sostituendo la seconda equazione con la somma delle due: \((x-y)+(2x+y)=0+3\iff 3x=3\). L'insieme delle soluzioni, \(\{(1,1)\}\), non cambia.</li>
+      <li>Nel terzo sistema le due equazioni sono multiple l'una dell'altra: \(\left(-\tfrac{5}{12}\right)\cdot(-4x-2y=-6)\iff \tfrac53x+\tfrac56y=\tfrac52\).</li>
+      <li>Nel quarto sistema, facendo la differenza delle equazioni (E2 − E1) si trova la contraddizione \(0=1\).</li>
+    </ul>
+  </div>
+
+  <h3>Equazioni e sistemi</h3>
+  <p>Un'<strong>equazione lineare</strong> nelle incognite \(x_1,\dots,x_n\) con coefficienti in \(\mathbb{K}\) è un'equazione con, a entrambi i membri, polinomi di grado \(\leqslant 1\) in \(\mathbb{K}[x_1,\dots,x_n]\). Sommando lo stesso polinomio ai due membri l'insieme delle soluzioni non cambia, quindi ogni equazione lineare si può portare nella forma \(a_1x_1+\dots+a_nx_n=b\). Una <strong>soluzione</strong> è un \((\alpha_1,\dots,\alpha_n)\in\mathbb{K}^n\) con \(a_1\alpha_1+\dots+a_n\alpha_n=b\). Si dice anche equazione \(\mathbb{K}\)-lineare.</p>
+
+  <div class="box box--def"><div class="tag">Definizione 1.9</div>
+    <p>Un <strong>sistema di equazioni lineari</strong> (SEL) con \(m\) equazioni in \(n\) incognite \(x_1,\dots,x_n\) e coefficienti in \(\mathbb{K}\) è una raccolta di \(m\) equazioni \(\mathbb{K}\)-lineari. Una <strong>soluzione</strong> del sistema è un elemento di \(\mathbb{K}^n\) che è simultaneamente soluzione di tutte le \(m\) equazioni.</p>
+    <p>Ogni SEL si porta nella forma</p>
+    \[ \begin{cases} a_{11}x_1+a_{12}x_2+\dots+a_{1n}x_n=b_1\\ \quad\vdots\\ a_{m1}x_1+a_{m2}x_2+\dots+a_{mn}x_n=b_m\end{cases}\qquad\Longleftrightarrow\qquad A\cdot\mathbf{x}=\mathbf{b} \]
+    <p>con \(A=(a_{ij})\in\mathrm{Mat}_{m\times n}(\mathbb{K})\), \(\mathbf{b}\in\mathrm{Mat}_{m\times1}(\mathbb{K})\) e \(\mathbf{x}=(x_1\dots x_n)^{T}\). \(A\) è la <strong>matrice dei coefficienti</strong> e \((A|\mathbf{b})\) è la <strong>matrice aumentata</strong> (o estesa). Il sistema è <strong>omogeneo</strong> se \(\mathbf{b}=\mathbf{0}\), <strong>non omogeneo</strong> se \(\mathbf{b}\neq\mathbf{0}\). Gli elementi di \(\mathbb{K}^n\) si identificano con le colonne \(n\times1\).</p>
+  </div>
+
+  <div class="box box--def"><div class="tag">Definizione 1.10</div>
+    <p>L'<strong>insieme delle soluzioni</strong> del SEL \(A\mathbf{x}=\mathbf{b}\) è</p>
+    \[ \mathrm{Sol}(A\mathbf{x}=\mathbf{b}):=\{\boldsymbol{\alpha}\in\mathbb{K}^n\ :\ A\boldsymbol{\alpha}=\mathbf{b}\}. \]
+    <p>Il SEL è <strong>risolubile</strong> se \(\mathrm{Sol}(A\mathbf{x}=\mathbf{b})\neq\emptyset\), altrimenti è <strong>irrisolubile</strong>.</p>
+  </div>
+
+  <div class="box box--note"><div class="tag">Esempio 1.11: dimensioni nel "mondo reale"</div>
+    <p>Ordini di grandezza indicati dal prof: ingegneria informatica da 2 a 100 incognite (anche migliaia: Kalman, robotica, grafica, elementi finiti). Ingegneria elettrica da 10 a 10 000 (reti di potenza, anche milioni). Ingegneria elettronica da 10 a 1000 (analisi nodale modificata, fino a milioni). Automazione da 2 a 20 variabili di stato in \(\dot x=Ax+Bu\), fino a 500. In pratica conta anche se la matrice è densa o sparsa, costante o variabile nel tempo, e se il sistema va risolto in tempo reale. Per questo serve un approccio <strong>algoritmico</strong>.</p>
+  </div>
+
+  <h3>Struttura dell'insieme delle soluzioni</h3>
+  <div class="box box--note"><div class="tag">Dalla lezione [4] del 25.9.'26</div>
+    <p>Prima ci si occupa della risolubilità. Poi, se il sistema è risolubile, della struttura dell'insieme delle soluzioni.</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Teorema 1.12</div>
+    <p>Siano \(A\in\mathrm{Mat}_{m\times n}(\mathbb{K})\), \(\mathbf{b}\in\mathrm{Mat}_{m\times1}(\mathbb{K})\) e sia \(\boldsymbol\alpha\in\mathrm{Sol}(A\mathbf{x}=\mathbf{b})\) una soluzione. Allora</p>
+    \[ \mathrm{Sol}(A\mathbf{x}=\mathbf{b})=\boldsymbol\alpha+\mathrm{Sol}(A\mathbf{x}=\mathbf{0})=\{\boldsymbol\alpha+\boldsymbol\gamma\ :\ \boldsymbol\gamma\in\mathrm{Sol}(A\mathbf{x}=\mathbf{0})\}. \]
+    <p>Poiché \(\boldsymbol\alpha+\boldsymbol\gamma=\boldsymbol\alpha+\boldsymbol\gamma'\iff\boldsymbol\gamma=\boldsymbol\gamma'\), c'è una corrispondenza biunivoca tra \(\mathrm{Sol}(A\mathbf{x}=\mathbf{b})\) e \(\mathrm{Sol}(A\mathbf{x}=\mathbf{0})\), <strong>quando il sistema ammette almeno una soluzione</strong> \(\boldsymbol\alpha\).</p>
+    <p><em>Schizzo della dimostrazione.</em> Si dimostrano le due inclusioni, sapendo che \(A\boldsymbol\alpha=\mathbf{b}\).<br>
+    (\(\subseteq\)) Se \(A\boldsymbol\beta=\mathbf{b}\), allora \(A(\boldsymbol\beta-\boldsymbol\alpha)=\mathbf{b}-\mathbf{b}=\mathbf{0}\). Quindi \(\boldsymbol\gamma:=\boldsymbol\beta-\boldsymbol\alpha\) risolve il sistema omogeneo e \(\boldsymbol\beta=\boldsymbol\alpha+\boldsymbol\gamma\).<br>
+    (\(\supseteq\)) Se \(A\boldsymbol\gamma=\mathbf{0}\), allora \(A(\boldsymbol\alpha+\boldsymbol\gamma)=\mathbf{b}+\mathbf{0}=\mathbf{b}\).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Teorema 1.13</div>
+    <p>Per l'insieme delle soluzioni di un sistema omogeneo \(A\mathbf{x}=\mathbf{0}\) valgono:</p>
+    <ol type="i">
+      <li>\(\mathbf{0}\in\mathrm{Sol}(A\mathbf{x}=\mathbf{0})\);</li>
+      <li>\(\boldsymbol\alpha,\boldsymbol\beta\in\mathrm{Sol}(A\mathbf{x}=\mathbf{0})\Rightarrow\boldsymbol\alpha+\boldsymbol\beta\in\mathrm{Sol}(A\mathbf{x}=\mathbf{0})\);</li>
+      <li>\(\boldsymbol\alpha\in\mathrm{Sol}(A\mathbf{x}=\mathbf{0})\) e \(\lambda\in\mathbb{K}\Rightarrow\lambda\boldsymbol\alpha\in\mathrm{Sol}(A\mathbf{x}=\mathbf{0})\).</li>
+    </ol>
+    <p>Nel capitolo successivo questo significherà che \(\mathrm{Sol}(A\mathbf{x}=\mathbf{0})\) è un <strong>sottospazio vettoriale</strong> di \(\mathbb{K}^n\).</p>
+    <p><em>Dimostrazione</em> (lasciata come esercizio negli appunti): \(A\mathbf{0}=\mathbf{0}\); \(A(\boldsymbol\alpha+\boldsymbol\beta)=A\boldsymbol\alpha+A\boldsymbol\beta=\mathbf{0}+\mathbf{0}\) per la distributività; \(A(\lambda\boldsymbol\alpha)=\lambda(A\boldsymbol\alpha)=\lambda\mathbf{0}=\mathbf{0}\).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Lemma 1.14</div>
+    <p>Siano \(U\in\mathrm{GL}_m(\mathbb{K})\) e \(A\mathbf{x}=\mathbf{b}\) un SEL con \(A\in\mathrm{Mat}_{m\times n}(\mathbb{K})\), \(\mathbf{b}\in\mathrm{Mat}_{m\times1}(\mathbb{K})\). Allora</p>
+    \[ \mathrm{Sol}(A\mathbf{x}=\mathbf{b})=\mathrm{Sol}\big((U\cdot A)\mathbf{x}=(U\cdot\mathbf{b})\big). \]
+    <p><em>Schizzo.</em> \(A\boldsymbol\alpha=\mathbf{b}\Rightarrow UA\boldsymbol\alpha=U\mathbf{b}\) (moltiplicando per \(U\)). Viceversa \(UA\boldsymbol\alpha=U\mathbf{b}\Rightarrow A\boldsymbol\alpha=\mathbf{b}\) (moltiplicando per \(U^{-1}\)).</p>
+    <p>L'intero algoritmo di Gauss non è altro che moltiplicare \((A|\mathbf{b})\) a sinistra per una matrice invertibile \(U\).</p>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <p>Il Lemma richiede \(U\) <strong>invertibile</strong>. Moltiplicando per una matrice non invertibile si possono "perdere" equazioni e ottenere un sistema con più soluzioni. Per esempio, moltiplicare tutto per la matrice nulla dà \(0=0\).</p>
+  </div>
+</section>
+
+<section class="sec" id="cap1-mosse">
+  <div class="num">05</div>
+  <h2>Mosse di Gauss e matrici elementari</h2>
+  <p class="lead">Le tre operazioni elementari sulle righe si ottengono moltiplicando a sinistra per matrici elementari invertibili. Per questo non cambiano l'insieme delle soluzioni.</p>
+
+  <p>Il <strong>delta di Kronecker</strong> è \(\delta_{ij}:=0\) se \(i\neq j\) e \(\delta_{ij}:=1\) se \(i=j\), con \(\delta_{ij}\in\mathbb{K}\).</p>
+
+  <div class="box box--def"><div class="tag">Definizione 1.15</div>
+    <p>Siano \(m\in\mathbb{N}_{>0}\) e \(k,l\in\{1,\dots,m\}\). La <strong>matrice standard</strong> \(E_{k,l}=(e_{ij})\in\mathrm{Mat}_m(\mathbb{K})\) ha \(e_{ij}=1\) se \((i,j)=(k,l)\) e \(e_{ij}=0\) altrimenti. In forma compatta \(E_{kl}=(\delta_{ik}\delta_{lj})_{1\leqslant i,j\leqslant m}\): un unico 1, in posizione \((k,l)\). Per esempio \(I_m=\sum_{i=1}^m E_{ii}\).</p>
+    <p>Si chiamano così perché formano la base standard dello spazio vettoriale \(\mathrm{Mat}_m(\mathbb{K})\).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Osservazione 1.16</div>
+    <ol>
+      <li>\(E_{ij}E_{kl}=0\) se \(j\neq k\), e \(E_{ij}E_{kl}=E_{il}\) se \(j=k\). In breve: \(E_{ij}E_{kl}=\delta_{jk}E_{il}\).</li>
+      <li>Se \(A\) ha righe \(\mathtt{R}_1,\dots,\mathtt{R}_m\), la matrice \(E_{kl}\cdot A\) ha come unica riga non nulla la riga \(k\), uguale alla riga \(l\) di \(A\). Per esempio
+      \[ E_{2,1}\begin{pmatrix}1&2\\3&4\\5&6\end{pmatrix}=\begin{pmatrix}0&0&0\\1&0&0\\0&0&0\end{pmatrix}\begin{pmatrix}1&2\\3&4\\5&6\end{pmatrix}=\begin{pmatrix}0&0\\1&2\\0&0\end{pmatrix}. \]</li>
+    </ol>
+  </div>
+
+  <div class="box box--def"><div class="tag">Definizione 1.17: operazioni elementari sulle righe (mosse di Gauß)</div>
+    <p>Sono applicazioni \(\text{œ}_\bullet:\mathrm{Mat}_{m\times n}(\mathbb{K})\to\mathrm{Mat}_{m\times n}(\mathbb{K})\) di uno dei tre tipi seguenti:</p>
+    <ul>
+      <li>\(\text{œ}_{k\leftrightarrow l}\): <strong>scambia</strong> le righe \(\mathtt{R}_k\) e \(\mathtt{R}_l\) e lascia invariato il resto.</li>
+      <li>\(\text{œ}_{k\to\lambda\cdot k}\): <strong>moltiplica</strong> la riga \(k\) per uno scalare <strong>non nullo</strong> \(\lambda\in\mathbb{K}^{\times}\).</li>
+      <li>\(\text{œ}_{k\to k+\lambda\cdot l}\): <strong>somma</strong> alla riga \(k\) la riga \(l\) moltiplicata per \(\lambda\in\mathbb{K}\). Ogni \(a_{kj}\) diventa \(a_{kj}+\lambda a_{lj}\), il resto resta invariato.</li>
+    </ul>
+    <p>Notazione degli esercizi: "\(2\to2-3\cdot1\)" significa \(\mathtt{R}_2\leftarrow\mathtt{R}_2-3\mathtt{R}_1\).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Teorema 1.18</div>
+    <p>Ogni mossa di Gauß sulle righe di \(A\) si ottiene moltiplicando \(A\) a sinistra per una delle seguenti matrici invertibili:</p>
+    \[ U_{k\leftrightarrow l}=I_n-E_{kk}-E_{ll}+E_{k,l}+E_{l,k},\qquad U_{k\to\lambda k}=I_n+(\lambda-1)E_{kk},\qquad U_{k\to k+\lambda l}=I_n+\lambda E_{kl}. \]
+    <p>In particolare, le mosse di Gauß sono applicazioni biiettive.</p>
+  </div>
+
+  <div class="box box--def"><div class="tag">Definizione 1.19</div>
+    <p>Una <strong>matrice elementare</strong> è una matrice della forma \(U_{k\leftrightarrow l}\), \(U_{k\to\lambda k}\) oppure \(U_{k\to k+\lambda l}\). Se la forma non è specificata si scrive \(U_\bullet\).</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio 1.20 (\(m=3\))</div>
+    \[ U_{2\leftrightarrow3}=\begin{pmatrix}1&0&0\\0&0&1\\0&1&0\end{pmatrix},\qquad U_{2\to\lambda2}=\begin{pmatrix}1&0&0\\0&\lambda&0\\0&0&1\end{pmatrix},\qquad U_{2\to2+\lambda1}=\begin{pmatrix}1&0&0\\\lambda&1&0\\0&0&1\end{pmatrix}. \]
+    <p>Su una generica matrice \(3\times2\):</p>
+    \[ U_{2\leftrightarrow3}\begin{pmatrix}a&b\\c&d\\e&f\end{pmatrix}=\begin{pmatrix}a&b\\e&f\\c&d\end{pmatrix},\quad U_{2\to\lambda2}\begin{pmatrix}a&b\\c&d\\e&f\end{pmatrix}=\begin{pmatrix}a&b\\\lambda c&\lambda d\\e&f\end{pmatrix},\quad U_{2\to2+\lambda1}\begin{pmatrix}a&b\\c&d\\e&f\end{pmatrix}=\begin{pmatrix}a&b\\\lambda a+c&\lambda b+d\\e&f\end{pmatrix}. \]
+    <p>Regola pratica: <strong>la matrice elementare si ottiene applicando la mossa all'identità</strong>, cioè \(U_\bullet=\text{œ}_\bullet(I_m)=U_\bullet\cdot I_m\).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Osservazione 1.21</div>
+    <p>Le matrici elementari sono invertibili, con inversa esplicita:</p>
+    \[ U_{k\leftrightarrow l}\cdot U_{k\leftrightarrow l}=I_n,\qquad U_{i\to\lambda i}\cdot U_{i\to\frac1\lambda i}=I_n,\qquad U_{i\to i+\lambda j}\cdot U_{i\to i-\lambda j}=I_n\ \ (i\neq j). \]
+    <p>Ogni mossa si annulla con una mossa dello stesso tipo.</p>
+  </div>
+
+  <div class="box box--def"><div class="tag">Definizione 1.22</div>
+    <p>Una <strong>trasformazione di riga</strong> è la composizione di un numero finito di operazioni elementari sulle righe. \(A'\) è ottenuta da \(A\) mediante una trasformazione di riga se esiste una trasformazione di riga \(\text{œ}\) con \(\text{œ}(A)=A'\). È un'applicazione biiettiva, data dalla moltiplicazione a sinistra per un prodotto finito \(U\) di matrici elementari. Nel Corollario 1.39 si vedrà che <em>tutte</em> le matrici invertibili sono prodotti di matrici elementari.</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Corollario 1.23</div>
+    <p>Siano \(A,A'\in\mathrm{Mat}_{m\times n}(\mathbb{K})\), \(\mathbf{b},\mathbf{b}'\in\mathrm{Mat}_{m\times1}(\mathbb{K})\), e sia \(C'=(A'|\mathbf{b}')\) ottenuta da \(C:=(A|\mathbf{b})\) mediante una trasformazione di riga. Allora</p>
+    \[ \mathrm{Sol}(A\mathbf{x}=\mathbf{b})=\mathrm{Sol}(A'\mathbf{x}=\mathbf{b}'). \]
+    <p><em>Schizzo.</em> Segue dal Teorema 1.18 e dal Lemma 1.14.</p>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione: mosse NON lecite</div>
+    <ul>
+      <li>Moltiplicare una riga per \(0\): non è invertibile e cancella un'equazione.</li>
+      <li>"\(4\to2+5\cdot1\)", cioè sostituire una riga con una combinazione che <em>non contiene la riga stessa</em>: non è una mossa di Gauss. La matrice corrispondente non è invertibile (Foglio 3 bis, es. 3).</li>
+      <li>Fare due mosse "in parallelo" che si usano a vicenda, come \(1\to1-2\) e \(2\to2-1\) nello stesso passo. Le mosse vanno eseguite una dopo l'altra, sulla matrice aggiornata. Mosse indipendenti (per esempio \(2\to2-1\) e \(3\to3-1\)) si possono invece scrivere insieme.</li>
+      <li>Usare mosse sulle <strong>colonne</strong> per risolvere un sistema: cambiano le incognite e quindi l'insieme delle soluzioni.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="cap1-gauss">
+  <div class="num">06</div>
+  <h2>Algoritmo di Gauss, forma a scala ridotta e rango</h2>
+  <p class="lead">L'algoritmo di Gauss porta ogni matrice in forma a scala. L'estensione di Gauss-Jordan la porta nella forma a scala ridotta \(\mathrm{SR}(A)\), che è unica. Il numero di pivot di \(\mathrm{SR}(A)\) è il rango.</p>
+
+  <p>Intuitivamente, una matrice è <strong>a scala</strong> se ogni riga non nulla inizia con più zeri della precedente. La prima entrata non nulla di una riga è il <strong>pivot</strong>. Se tutti i pivot sono 1 e sopra di loro ci sono solo zeri, la matrice è <strong>a scala ridotta</strong>.</p>
+
+  <div class="box box--def"><div class="tag">Definizione 1.24</div>
+    <p>Una matrice non nulla \(A\in\mathrm{Mat}_{m\times n}(\mathbb{K})\) è <strong>a scala</strong> se esistono \(r\in\{1,\dots,m\}\) e \(1\leqslant \mathtt{p}_1\lt\mathtt{p}_2\lt\dots\lt\mathtt{p}_r\leqslant n\) tali che:</p>
+    <ul>
+      <li>(Scala 1) \(a_{ik}=0\) per \(i=1\dots r\) e \(k=1\dots(\mathtt{p}_i-1)\): prima del pivot, solo zeri;</li>
+      <li>(Scala 2) \(a_{i\mathtt{p}_i}\neq0\) per \(i=1\dots r\): i pivot sono non nulli;</li>
+      <li>(Scala 3) \(a_{ij}=0\) per \(i\gt r\) e ogni \(j\): le righe nulle stanno in fondo.</li>
+    </ul>
+    <p>\(A\) è <strong>a scala ridotta</strong> (SR) se è a scala e inoltre:</p>
+    <ul>
+      <li>(SR 1) \(a_{i\mathtt{p}_i}=1\) per \(i=1\dots r\): i pivot valgono 1;</li>
+      <li>(SR 2) \(a_{k\mathtt{p}_i}=0\) per ogni \(i=2\dots r\) e \(k=1\dots(i-1)\): sopra ogni pivot, solo zeri.</li>
+    </ul>
+    <p>Per convenzione anche la matrice nulla è a scala ridotta, con zero pivot. Gli elementi \(a_{i\mathtt{p}_i}\) sono i <strong>pivot</strong>: una matrice a scala ha esattamente \(r\) pivot.</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempi (p. 95)</div>
+    \[ A=\begin{pmatrix}2&5&6&10\\4&10&15&26\\6&15&21&36\end{pmatrix}\ \text{non è a scala},\quad B=\begin{pmatrix}\boxed2&5&6&10\\0&0&\boxed3&6\\0&0&0&0\end{pmatrix}\ \text{è a scala},\quad C=\begin{pmatrix}\boxed1&5/2&0&-1\\0&0&\boxed1&2\\0&0&0&0\end{pmatrix}\ \text{è a scala ridotta}. \]
+    <p>\(B\) ha \(r_B=2\), \(\mathtt{p}_1=1\), \(\mathtt{p}_2=3\), ma non è a scala ridotta. \(C\) ha \(r_C=2\), \(\mathtt{p}_1=1\), \(\mathtt{p}_2=3\). Infatti:</p>
+    \[ B=U_{3\to3+(-1)\cdot2}\cdot U_{3\to3+(-3)\cdot1}\cdot U_{2\to2+(-2)\cdot1}\cdot A,\qquad C=U_{1\to1+(-3)\cdot2}\cdot U_{2\to(\frac13)\cdot2}\cdot U_{1\to(\frac12)\cdot1}\cdot B. \]
+    <p>Le matrici si leggono da destra a sinistra: la prima mossa eseguita è quella più vicina ad \(A\).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Osservazioni 1.25 e 1.26</div>
+    <p><strong>1.25.</strong> Se \(A\) è a scala (o a scala ridotta) e \(m'\leqslant m\), \(n'\leqslant n\), allora anche la sottomatrice \(A|_{\{1\dots m'\}\times\{1\dots n'\}}\) in alto a sinistra lo è.</p>
+    <p><strong>1.26.</strong> Se \(A\) e \(B\) hanno lo stesso numero \(m\) di righe e \(U\) ha \(m\) colonne, allora \(U\cdot(A\,|\,B)=(UA\,|\,UB)\). Per questo, facendo le mosse sulla matrice aumentata, si opera contemporaneamente su \(A\) e su \(\mathbf{b}\).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Teorema 1.27 (Algoritmo di Gauss)</div>
+    <p>Per ogni matrice \(A\in\mathrm{Mat}_{m\times n}(\mathbb{K})\) esiste una trasformazione di riga \(\text{œ}\) tale che \(\text{œ}(A)\) sia a scala ridotta.</p>
+    <p>L'algoritmo non è nell'enunciato ma nella dimostrazione. È riportato qui sotto.</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo: Algoritmo di Gauss (passi 1-4) ed estensione di Gauss-Jordan (passi 5-6)</div>
+    <ol>
+      <li><strong>Caso nullo.</strong> Se \(A=0\), \(A\) è già a scala e l'algoritmo termina.</li>
+      <li><strong>Scelta del pivot.</strong> Sia \(\mathtt{p}_1:=\min\{j:\exists\, i\ \text{con}\ a_{ij}\neq0\}\), la prima colonna non nulla. Si sceglie una riga \(i_1\) con \(a_{i_1\mathtt{p}_1}\neq0\) e la si scambia con la prima: \(\mathtt{R}_1\leftrightarrow\mathtt{R}_{i_1}\).</li>
+      <li><strong>Eliminazione sotto il pivot.</strong> Per ogni \(i=2,\dots,m\) si pone \(\lambda_i:=\dfrac{a_{i\mathtt{p}_1}}{a_{1\mathtt{p}_1}}\) e si esegue \(\mathtt{R}_i\leftarrow\mathtt{R}_i-\lambda_i\mathtt{R}_1\). Così tutte le entrate sotto il pivot diventano 0.</li>
+      <li><strong>Ripetizione.</strong> Si ripetono i passi sulla sottomatrice formata dalle righe sotto la prima, fino a ottenere una matrice a scala \(B=(b_{ij})\) con pivot \(w_i:=b_{i\mathtt{p}_i}\).</li>
+      <li><strong>Normalizzazione dei pivot.</strong> Per ogni \(i=1,\dots,r\): \(\mathtt{R}_i\leftarrow\frac1{w_i}\mathtt{R}_i\). Ora tutti i pivot valgono 1.</li>
+      <li><strong>Eliminazione sopra i pivot.</strong> Per \(i=2,\dots,r\) e \(k=1,\dots,i-1\): \(\mathtt{R}_k\leftarrow\mathtt{R}_k-b_{k\mathtt{p}_i}\mathtt{R}_i\). Ora sopra ogni pivot ci sono solo zeri.</li>
+    </ol>
+    <p>Dopo il passo 4 si ha una forma <em>a scala</em>. Dopo il passo 6 si ha la <em>forma a scala ridotta per righe</em>.</p>
+  </div>
+
+  <div class="box box--note"><div class="tag">Dalla lezione [5] del 30.9.'26: quando basta la scala e quando serve Gauss-Jordan</div>
+    <p><strong>Basta la forma a scala</strong> per determinare il rango, decidere se un SEL è risolubile, risolvere per sostituzione all'indietro, trovare una base contenuta in un sistema di generatori o una base dello spazio delle righe, trovare la dimensione del nucleo, calcolare il determinante.</p>
+    <p><strong>Serve Gauss-Jordan</strong> per parametrizzare direttamente le soluzioni (senza sostituzioni all'indietro), risolvere più sistemi con la stessa matrice dei coefficienti, calcolare l'inversa, trovare una base esplicita del nucleo.</p>
+    <p>Curiosità dalle note: Wilhelm Jordan (1842-1899) si pronuncia "YOR-dahn". Da non confondere con Camille Jordan della forma canonica di Jordan ("zhor-DAHN").</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Teorema 1.28</div>
+    <p>La matrice a scala ridotta ottenuta mediante l'algoritmo di Gauss-Jordan è <strong>univocamente determinata</strong>.</p>
+    <p><em>Idea della dimostrazione</em> (induzione sul numero di colonne \(n\)). Per \(n=1\) la forma ridotta è \(0\) oppure \((1\ 0\dots0)^\top\). Nel passo induttivo si scrive \(A=(A'|\mathbf{a})\) e si prendono due forme ridotte \(B=(B'|\mathbf{b})\), \(C=(C'|\mathbf{c})\). Per induzione \(B'=C'\). Inoltre \(\mathrm{Sol}(B\mathbf{x}=\mathbf{0})=\mathrm{Sol}(C\mathbf{x}=\mathbf{0})\) (Corollario 1.23). Si usa poi un'affermazione: per una matrice ridotta \(M\), "ogni soluzione di \(M\mathbf{x}=\mathbf{0}\) ha \(\alpha_n=0\)" vale se e solo se c'è un pivot nell'ultima colonna (\(\mathtt{p}_r=n\)). Se fosse \(\mathbf{b}\neq\mathbf{c}\), sottraendo le equazioni si avrebbe \((b_{in}-c_{in})x_n=0\), cioè \(\alpha_n=0\) per ogni soluzione. Allora entrambe avrebbero il pivot nell'ultima colonna e quindi \(\mathbf{b}=\mathbf{c}=(0\dots0\ 1\ 0\dots0)^\top\): contraddizione.</p>
+  </div>
+
+  <div class="box box--def"><div class="tag">Definizione 1.29</div>
+    <p>La <strong>forma a scala ridotta</strong> di \(A\in\mathrm{Mat}_{m\times n}(\mathbb{K})\) è l'unica matrice a scala ridotta data dai Teoremi 1.27 e 1.28. Si indica con \(\mathrm{SR}(A)\).</p>
+  </div>
+
+  <div class="box box--def"><div class="tag">Definizione 1.30</div>
+    <p>Il <strong>rango</strong> di \(A\in\mathrm{Mat}_{m\times n}(\mathbb{K})\) è il numero di pivot di \(\mathrm{SR}(A)\). Si indica con \(\operatorname{rank}A\).</p>
+    <p>Per contarlo basta una qualsiasi forma a scala: le mosse di Gauss-Jordan (passi 5-6) non cambiano il numero di pivot. Più avanti si vedranno altri modi naturali di descrivere questo numero.</p>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <ul>
+      <li>Una forma <em>a scala</em> <strong>non</strong> è unica: dipende dalle mosse scelte. Solo la forma <em>a scala ridotta</em> è unica.</li>
+      <li>Una matrice riga come \((1\ 2\ 3\ 4)\) è già a scala ridotta: ha un solo pivot, uguale a 1, e la condizione SR 2 è vuota. Le entrate non nulle a destra dei pivot sono ammesse.</li>
+      <li>Una colonna come \((0\ 1\ 0\ 0)^\top\) <strong>non</strong> è a scala: la riga nulla deve stare in fondo.</li>
+      <li>Dividere per un pivot è lecito solo se il pivot è \(\neq0\). Con un parametro (per esempio \(k-2\)) bisogna distinguere i casi.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="cap1-rouche">
+  <div class="num">07</div>
+  <h2>Rouché-Capelli e parametrizzazione delle soluzioni</h2>
+  <p class="lead">Un sistema è risolubile se e solo se \(\operatorname{rank}A=\operatorname{rank}(A|\mathbf{b})\). In tal caso le soluzioni dipendono da \(n-r\) parametri liberi.</p>
+
+  <div class="box box--thm"><div class="tag">Teorema 1.31</div><h4>Teorema di Rouché-Capelli</h4>
+    <p>Siano \(A\in\mathrm{Mat}_{m\times n}(\mathbb{K})\) e \(\mathbf{b}\in\mathrm{Mat}_{m\times1}(\mathbb{K})\). Allora</p>
+    \[ \mathrm{Sol}(A\mathbf{x}=\mathbf{b})\neq\emptyset\iff\operatorname{rank}A=\operatorname{rank}(A\,|\,\mathbf{b}). \]
+    <p><em>Schizzo.</em> Sia \((A'|\mathbf{b}'):=\mathrm{SR}(A|\mathbf{b})\) e \(r=\operatorname{rank}A\). Con una colonna in più ci può essere al massimo un pivot in più, quindi \(\mathbf{b}'=(b'_1,\dots,b'_r,b'_{r+1},0,\dots,0)^\top\). La riga \(r+1\) di \(A'\) è nulla, quindi la \((r+1)\)-esima equazione è \(0x_1+\dots+0x_n=b'_{r+1}\).<br>
+    Se \(b'_{r+1}\neq0\) (cioè \(\operatorname{rank}(A|\mathbf{b})\neq\operatorname{rank}A\)), l'equazione \(0=b'_{r+1}\) è sempre falsa e \(\mathrm{Sol}=\emptyset\).<br>
+    Se \(b'_{r+1}=0\), una soluzione è \(\alpha_k=b'_i\) se \(k=\mathtt{p}_i\) e \(\alpha_k=0\) altrimenti: si pongono a 0 le variabili libere.</p>
+    <p>Nomi in altri Paesi: Rouché-Fontené (Francia), Rouché-Frobenius (Spagna), Kronecker-Capelli (Germania, Russia...).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Osservazione 1.32</div>
+    <p>\(\operatorname{rank}A=\operatorname{rank}(A|\mathbf{b})\iff\mathrm{SR}(A|\mathbf{b})\) non ha pivot nell'ultima colonna.</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Teorema 1.33 (Parametrizzazione dell'insieme delle soluzioni)</div>
+    <p>Sia \(A\mathbf{x}=\mathbf{b}\) un sistema lineare in \(n\) variabili con \(\operatorname{rank}A=\operatorname{rank}(A|\mathbf{b})=r\). Allora esiste un'applicazione biiettiva</p>
+    \[ \Phi:\mathbb{K}^{n-r}\longrightarrow\mathrm{Sol}(A\mathbf{x}=\mathbf{b}). \]
+    <p><em>Idea.</em> Si può supporre \((A|\mathbf{b})\) già a scala ridotta e, rinominando le variabili, i pivot nelle prime \(r\) colonne. Ogni equazione non banale del sistema omogeneo è \(x_i+a_{i,r+1}x_{r+1}+\dots+a_{in}x_n=0\). Quindi</p>
+    \[ \varphi(t_1,\dots,t_{n-r})=\Big(-\sum_{j=r+1}^n a_{1j}t_{j-r},\ \dots,\ -\sum_{j=r+1}^n a_{rj}t_{j-r},\ t_1,\dots,t_{n-r}\Big) \]
+    <p>è una biiezione \(\mathbb{K}^{n-r}\to\mathrm{Sol}(A\mathbf{x}=\mathbf{0})\). È iniettiva perché le ultime \(n-r\) componenti sono proprio i \(t_i\). È suriettiva perché le variabili pivot sono determinate da quelle libere. Per il Teorema 1.12, \(\Phi(\mathbf{t}):=\boldsymbol\alpha+\varphi(\mathbf{t})\) è la biiezione cercata.</p>
+  </div>
+  <p>In pratica: le \(r\) variabili corrispondenti alle colonne dei pivot sono le <strong>variabili pivot</strong>. Le altre \(n-r\) sono le <strong>variabili libere</strong> (parametri).</p>
+
+  <div class="box box--thm"><div class="tag">Corollario 1.34</div>
+    <p>Se il sistema omogeneo \(A\mathbf{x}=\mathbf{0}\) ha \(m\) equazioni e \(n\) incognite con \(m\lt n\), allora ammette anche una soluzione non banale (\(\neq\mathbf{0}\)).</p>
+    <p>Infatti \(r\leqslant m\lt n\), quindi c'è almeno una variabile libera.</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Corollario 1.35</div>
+    <p>Per ogni sistema \(A\mathbf{x}=\mathbf{b}\) con \(n\) incognite:</p>
+    \[ A\mathbf{x}=\mathbf{b}\ \text{ha un'unica soluzione}\iff\operatorname{rank}(A|\mathbf{b})=\operatorname{rank}A=n. \]
+    <p>In tal caso (con \(A\) quadrata) la soluzione è \(\mathbf{x}=A^{-1}\mathbf{b}\), come per \(ax=b\).</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo: risolvere un SEL \(A\mathbf{x}=\mathbf{b}\)</div>
+    <ol>
+      <li>Scrivi la matrice aumentata \((A|\mathbf{b})\).</li>
+      <li>Portala a scala con l'algoritmo di Gauss, annotando ogni mossa (es. \(2\to2-3\cdot1\)).</li>
+      <li><strong>Rouché-Capelli:</strong> se c'è un pivot nell'ultima colonna (una riga \((0\ \dots\ 0\,|\,c)\) con \(c\neq0\)), il sistema è irrisolubile: \(\mathrm{Sol}=\emptyset\).</li>
+      <li>Altrimenti \(r=\operatorname{rank}A=\operatorname{rank}(A|\mathbf{b})\). Se \(r=n\) la soluzione è unica. Se \(r\lt n\) ci sono \(n-r\) parametri liberi.</li>
+      <li>Prosegui con Gauss-Jordan fino a \(\mathrm{SR}(A|\mathbf{b})\), oppure usa la sostituzione all'indietro.</li>
+      <li>Assegna un parametro \(t_1,t_2,\dots\) a ogni variabile libera (colonne senza pivot) e ricava ogni variabile pivot dalla sua riga.</li>
+      <li>Scrivi \(\mathrm{Sol}(A\mathbf{x}=\mathbf{b})=\{\dots: t_i\in\mathbb{K}\}\) e <strong>verifica</strong> sostituendo nelle equazioni originali.</li>
+    </ol>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <ul>
+      <li>Le variabili libere sono \(n-r\), con \(n\) = numero di <strong>incognite</strong>, non di equazioni.</li>
+      <li>Una riga tutta nulla \((0\ \dots\ 0\,|\,0)\) non dà nessuna informazione e si può ignorare. Non "fa aumentare" le soluzioni: le mosse di Gauss non cambiano mai \(\mathrm{Sol}\).</li>
+      <li>Se la matrice aumentata ridotta ha \(n+1\) colonne, le incognite sono \(n\). Non aggiungere una variabile per la colonna dei termini noti (Quiz, Q11).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="cap1-inversa">
+  <div class="num">08</div>
+  <h2>Gauss-Jordan e matrici invertibili</h2>
+  <p class="lead">Una matrice quadrata è invertibile se e solo se ha rango massimo. L'inversa si calcola riducendo \((A\,|\,I_n)\).</p>
+
+  <div class="box box--thm"><div class="tag">Teorema 1.36</div>
+    <p>Una matrice quadrata \(A\in\mathrm{Mat}_n(\mathbb{K})\) è invertibile se e solo se \(\operatorname{rank}A=n\).</p>
+    <p><em>Schizzo.</em> L'unica matrice \(n\times n\) a scala ridotta con \(n\) pivot è \(I_n\).<br>
+    (\(\Leftarrow\)) Se \(\operatorname{rank}A=n\), allora \(\mathrm{SR}(A)=I_n\). Facendo il prodotto delle matrici elementari delle mosse si ottiene \(U\) con \(UA=I_n\), quindi \(A^{-1}=U\).<br>
+    (\(\Rightarrow\)) \(U\) è invertibile. Se anche \(A\) lo è, allora lo è \(\mathrm{SR}(A)=UA\). Ma se \(\operatorname{rank}A\lt n\), l'ultima riga di \(\mathrm{SR}(A)\) è nulla e \(\mathrm{SR}(A)\) non può essere invertibile.</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Teorema 1.37</div>
+    <p>Per una matrice quadrata invertibile \(A\in\mathrm{Mat}_n(\mathbb{K})\) vale</p>
+    \[ \mathrm{SR}\big(A\,\big|\,I_n\big)=\big(I_n\,\big|\,A^{-1}\big). \]
+    <p><em>Schizzo.</em> Se \(UA=I_n\) (con \(U\) prodotto delle matrici elementari), per l'Oss. 1.26 si ha \(U(A|I_n)=(UA|UI_n)=(I_n|A^{-1})\). Il prof dà anche una dimostrazione alternativa senza matrici elementari. Si usa \((A|I_n)\begin{pmatrix}-I_n\\A\end{pmatrix}=0\): le colonne di \(\begin{pmatrix}-I_n\\A\end{pmatrix}\) risolvono il sistema omogeneo, quindi anche quello di \((I_n|X)\). Da qui \(-I_n+XA=0\), cioè \(XA=I_n\).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Corollario 1.38</div>
+    <p>Per \(A\) quadrata \(n\times n\), l'algoritmo di Gauss applicato a \((A\,|\,I_n)\) verifica se \(A\) è invertibile. Se Gauss fornisce \(n\) pivot nelle prime \(n\) colonne, \(A\) è invertibile e l'estensione di Gauss-Jordan fornisce \(A^{-1}\).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Corollario 1.39</div>
+    <p>Le matrici elementari \(n\times n\) generano il gruppo lineare generale \(\mathrm{GL}_n(\mathbb{K})\): ogni matrice invertibile è un prodotto di matrici elementari.</p>
+    <p><em>Schizzo.</em> Se \(A\in\mathrm{GL}_n\), anche \(A^{-1}\in\mathrm{GL}_n\). Esiste quindi un prodotto \(U\) di matrici elementari con \(UA^{-1}=I_n\). Allora \(A=U\).</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo: invertibilità e inversa con Gauss-Jordan</div>
+    <ol>
+      <li>Scrivi la matrice \(n\times 2n\) \((A\,|\,I_n)\).</li>
+      <li>Applica Gauss alla parte sinistra, eseguendo ogni mossa su <strong>tutta</strong> la riga.</li>
+      <li>Se a sinistra compare una riga nulla, \(\operatorname{rank}A\lt n\): \(A\) <strong>non è invertibile</strong>. Fermati.</li>
+      <li>Altrimenti normalizza i pivot ed elimina sopra i pivot, fino a ottenere \((I_n\,|\,X)\).</li>
+      <li>\(X=A^{-1}\). <strong>Verifica</strong> sempre che \(AX=I_n\): per l'Oss. 1.8 basta un solo prodotto.</li>
+    </ol>
+    <p>Per le matrici \(2\times2\) vale la formula \(\begin{pmatrix}a&b\\c&d\end{pmatrix}^{-1}=\dfrac1{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}\) se \(ad-bc\neq0\). Il determinante verrà trattato più avanti: utile per controllare i conti.</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio 1 (p. 103): \(A=\begin{pmatrix}2&3\\3&5\end{pmatrix}\)</div>
+    \[ \left(\begin{array}{cc|cc}2&3&1&0\\3&5&0&1\end{array}\right)\xrightarrow{2\to2-\frac32 1}\left(\begin{array}{cc|cc}2&3&1&0\\0&\frac12&-\frac32&1\end{array}\right)\xrightarrow{1\to\frac12 1}\left(\begin{array}{cc|cc}1&\frac32&\frac12&0\\0&\frac12&-\frac32&1\end{array}\right) \]
+    \[ \xrightarrow{2\to2\cdot2}\left(\begin{array}{cc|cc}1&\frac32&\frac12&0\\0&1&-3&2\end{array}\right)\xrightarrow{1\to1-\frac32 2}\left(\begin{array}{cc|cc}1&0&5&-3\\0&1&-3&2\end{array}\right). \]
+    <p>Verifica: \(\begin{pmatrix}2&3\\3&5\end{pmatrix}\begin{pmatrix}5&-3\\-3&2\end{pmatrix}=\begin{pmatrix}2\cdot5-3\cdot3&-2\cdot3+3\cdot2\\3\cdot5-5\cdot3&-3\cdot3+5\cdot2\end{pmatrix}=\begin{pmatrix}1&0\\0&1\end{pmatrix}\).</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio 2 (p. 103-104): \(A=\begin{pmatrix}1&-2&9\\2&0&3\\0&-1&4\end{pmatrix}\)</div>
+    \[ \left(\begin{array}{ccc|ccc}1&-2&9&1&0&0\\2&0&3&0&1&0\\0&-1&4&0&0&1\end{array}\right)\xrightarrow{2\to2-2\cdot1}\left(\begin{array}{ccc|ccc}1&-2&9&1&0&0\\0&4&-15&-2&1&0\\0&-1&4&0&0&1\end{array}\right)\xrightarrow{2\leftrightarrow3}\left(\begin{array}{ccc|ccc}1&-2&9&1&0&0\\0&-1&4&0&0&1\\0&4&-15&-2&1&0\end{array}\right) \]
+    \[ \xrightarrow{3\to3+4\cdot2}\left(\begin{array}{ccc|ccc}1&-2&9&1&0&0\\0&-1&4&0&0&1\\0&0&1&-2&1&4\end{array}\right)\xrightarrow{2\to(-1)\cdot2}\left(\begin{array}{ccc|ccc}1&-2&9&1&0&0\\0&1&-4&0&0&-1\\0&0&1&-2&1&4\end{array}\right) \]
+    \[ \xrightarrow{1\to1+2\cdot2}\left(\begin{array}{ccc|ccc}1&0&1&1&0&-2\\0&1&-4&0&0&-1\\0&0&1&-2&1&4\end{array}\right)\xrightarrow[2\to2+4\cdot3]{1\to1-3}\left(\begin{array}{ccc|ccc}1&0&0&3&-1&-6\\0&1&0&-8&4&15\\0&0&1&-2&1&4\end{array}\right). \]
+    <p>Quindi \(A^{-1}=\begin{pmatrix}3&-1&-6\\-8&4&15\\-2&1&4\end{pmatrix}\). Il prodotto \(AA^{-1}\) fatto riga per colonna dà \(I_3\). Lo scambio \(2\leftrightarrow3\) serve solo a evitare frazioni: si poteva anche dividere per 4.</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio 3 (p. 104): parametrizzazione delle soluzioni</div>
+    <p>Sistema reale \(\begin{cases}x+y+z=2\\x-y+2z=1\\x-3y+3z=0\end{cases}\) con \(A=\begin{pmatrix}1&1&1\\1&-1&2\\1&-3&3\end{pmatrix}\in\mathrm{Mat}_3(\mathbb{R})\).</p>
+    \[ \left(\begin{array}{ccc|c}1&1&1&2\\1&-1&2&1\\1&-3&3&0\end{array}\right)\xrightarrow[3\to3-1]{2\to2-1}\left(\begin{array}{ccc|c}1&1&1&2\\0&-2&1&-1\\0&-4&2&-2\end{array}\right)\xrightarrow{3\to3-2\cdot2}\left(\begin{array}{ccc|c}1&1&1&2\\0&-2&1&-1\\0&0&0&0\end{array}\right) \]
+    \[ \xrightarrow{2\to-\frac12\cdot2}\left(\begin{array}{ccc|c}1&1&1&2\\0&1&-\frac12&\frac12\\0&0&0&0\end{array}\right)\xrightarrow{1\to1-2}\left(\begin{array}{ccc|c}1&0&\frac32&\frac32\\0&1&-\frac12&\frac12\\0&0&0&0\end{array}\right). \]
+    <p>Due pivot, nelle colonne \(\mathtt{p}_1=1\) e \(\mathtt{p}_2=2\), e nessun pivot nell'ultima colonna. Quindi \(\operatorname{rank}(A|\mathbf{b})=\operatorname{rank}A=2\) e per Rouché-Capelli \(\mathrm{Sol}\neq\emptyset\). Le variabili pivot sono \(x,y\); la variabile libera è \(z=t\) (\(3-2=1\) parametro):</p>
+    \[ \mathrm{Sol}(A\mathbf{x}=\mathbf{b})=\Big\{\Big(\tfrac{3-3t}{2},\ \tfrac{1+t}{2},\ t\Big)\ :\ t\in\mathbb{R}\Big\}. \]
+    <p>Verifica: \(\frac{3-3t}2+\frac{1+t}2+t=2\), \(\frac{3-3t}2-\frac{1+t}2+2t=1\), \(\frac{3-3t}2-3\frac{1+t}2+3t=0\) per ogni \(t\).</p>
+  </div>
+</section>
+
+<section class="sec esercizi" id="cap1-esercizi">
+  <div class="num">09</div>
+  <h2>Esercizi</h2>
+  <div class="ex-bar"><button class="chip" data-filter="tutti" aria-pressed="true">Tutti</button><button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button><button class="chip" data-filter="base" aria-pressed="false">Base</button><button class="chip" data-filter="medio" aria-pressed="false">Medio</button><button class="chip" id="toggle-sol" aria-pressed="false">Mostra soluzioni</button><span class="count" id="ex-count"></span></div>
+  <p class="lead">Tutti gli esercizi del Foglio 3 (25/09/2026), del Foglio 3 bis (01/10/2026) e gli esercizi aperti del Quiz del Capitolo 1. Le soluzioni non sono ufficiali: sono state scritte e verificate per questo sito.</p>
+
+  <h3>Foglio 3: matrici</h3>
+
+  <div class="ex" data-fonte="Foglio 3, es. 1.1" data-livello="base">
+    <div class="ex-testo">
+      <p>(Matrici reali.) Date le matrici</p>
+      \[ A_1=\begin{pmatrix}1&2&3\\4&5&6\end{pmatrix},\ A_2=\begin{pmatrix}1&0&0\end{pmatrix},\ A_3=\begin{pmatrix}0\\1\\0\end{pmatrix},\ A_4=\begin{pmatrix}1&10\\10&100\\100&1000\end{pmatrix},\ A_5=\begin{pmatrix}1&1\\1&1\end{pmatrix},\ A_6=\begin{pmatrix}1&2&3\\2&2&3\\3&3&3\end{pmatrix}, \]
+      <p>quali prodotti \(A_iA_j\) sono definiti (anche con \(i=j\))? Indicare la taglia del risultato e calcolare tutti i prodotti definiti.</p>
+    </div>
+    <details class="hint"><summary>Suggerimento</summary><p>Scrivi i tipi: \(A_1:2\times3\), \(A_2:1\times3\), \(A_3:3\times1\), \(A_4:3\times2\), \(A_5:2\times2\), \(A_6:3\times3\). \(A_iA_j\) è definito se e solo se il numero di colonne di \(A_i\) è uguale al numero di righe di \(A_j\).</p></details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Le matrici con 3 colonne (\(A_1,A_2,A_6\)) si moltiplicano a destra per quelle con 3 righe (\(A_3,A_4,A_6\)). Le matrici con 2 colonne (\(A_4,A_5\)) si moltiplicano per quelle con 2 righe (\(A_1,A_5\)). \(A_3\) ha 1 colonna e si moltiplica solo per \(A_2\), l'unica con 1 riga. In tutto 13 prodotti:</p>
+      \[ A_1A_3=\begin{pmatrix}2\\5\end{pmatrix}\ (2\times1),\quad A_1A_4=\begin{pmatrix}321&3210\\654&6540\end{pmatrix}\ (2\times2),\quad A_1A_6=\begin{pmatrix}14&15&18\\32&36&45\end{pmatrix}\ (2\times3), \]
+      \[ A_2A_3=(0)\ (1\times1),\quad A_2A_4=\begin{pmatrix}1&10\end{pmatrix}\ (1\times2),\quad A_2A_6=\begin{pmatrix}1&2&3\end{pmatrix}\ (1\times3), \]
+      \[ A_3A_2=\begin{pmatrix}0&0&0\\1&0&0\\0&0&0\end{pmatrix}\ (3\times3),\quad A_4A_1=\begin{pmatrix}41&52&63\\410&520&630\\4100&5200&6300\end{pmatrix}\ (3\times3),\quad A_4A_5=\begin{pmatrix}11&11\\110&110\\1100&1100\end{pmatrix}\ (3\times2), \]
+      \[ A_5A_1=\begin{pmatrix}5&7&9\\5&7&9\end{pmatrix}\ (2\times3),\quad A_5A_5=\begin{pmatrix}2&2\\2&2\end{pmatrix}\ (2\times2), \]
+      \[ A_6A_3=\begin{pmatrix}2\\2\\3\end{pmatrix}\ (3\times1),\quad A_6A_4=\begin{pmatrix}321&3210\\322&3220\\333&3330\end{pmatrix}\ (3\times2),\quad A_6A_6=\begin{pmatrix}14&15&18\\15&17&21\\18&21&27\end{pmatrix}\ (3\times3). \]
+      <p>Osservazioni utili:</p>
+      <ul>
+        <li>\(A_2=(1\ 0\ 0)\) moltiplicata a sinistra estrae la <strong>prima riga</strong>: \(A_2A_6\) è la prima riga di \(A_6\).</li>
+        <li>\(A_3=(0\ 1\ 0)^\top\) moltiplicata a destra estrae la <strong>seconda colonna</strong>: \(A_1A_3\) e \(A_6A_3\) sono le seconde colonne.</li>
+        <li>\(A_2A_3\) è \(1\times1\) mentre \(A_3A_2\) è \(3\times3\): un altro esempio di non commutatività.</li>
+        <li>\(A_6A_6\) è simmetrica, come deve essere: \((A_6^2)^\top=(A_6^\top)^2=A_6^2\).</li>
+      </ul>
+      <p>Non sono definiti, per esempio: \(A_1A_1\), \(A_1A_5\), \(A_2A_2\), \(A_3A_3\), \(A_4A_4\), \(A_5A_4\), \(A_6A_1\), \(A_6A_5\), \(A_3A_j\) per \(j\neq2\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 3, es. 1.2" data-livello="base">
+    <div class="ex-testo">
+      <p>Si calcolino \(AB\) e \(BA\) per</p>
+      <p>1. \(A=\begin{pmatrix}1&2&3\\3&3&1\end{pmatrix}\), \(B=\begin{pmatrix}-8&-4\\9&5\\-3&-2\end{pmatrix}\);&nbsp;&nbsp; 2. \(A=\begin{pmatrix}1&4\\1&2\end{pmatrix}\), \(B=\begin{pmatrix}6&-4\\-3&2\end{pmatrix}\).</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>1.</strong> \(A\) è \(2\times3\) e \(B\) è \(3\times2\), quindi \(AB\) è \(2\times2\) e \(BA\) è \(3\times3\).</p>
+      \[ AB=\begin{pmatrix}1(-8)+2\cdot9+3(-3) & 1(-4)+2\cdot5+3(-2)\\ 3(-8)+3\cdot9+1(-3) & 3(-4)+3\cdot5+1(-2)\end{pmatrix}=\begin{pmatrix}1&0\\0&1\end{pmatrix}=I_2, \]
+      \[ BA=\begin{pmatrix}-8-12 & -16-12 & -24-4\\ 9+15 & 18+15 & 27+5\\ -3-6 & -6-6 & -9-2\end{pmatrix}=\begin{pmatrix}-20&-28&-28\\24&33&32\\-9&-12&-11\end{pmatrix}\neq I_3. \]
+      <p>Morale: per matrici <strong>non quadrate</strong> un "inverso destro" non è un inverso sinistro. L'Osservazione 1.8 vale solo in \(\mathrm{Mat}_n\).</p>
+      <p><strong>2.</strong></p>
+      \[ AB=\begin{pmatrix}6-12&-4+8\\6-6&-4+4\end{pmatrix}=\begin{pmatrix}-6&4\\0&0\end{pmatrix},\qquad BA=\begin{pmatrix}6-4&24-8\\-3+2&-12+4\end{pmatrix}=\begin{pmatrix}2&16\\-1&-8\end{pmatrix}. \]
+      <p>\(AB\neq BA\). Inoltre né \(AB\) né \(BA\) sono invertibili: \(B\) ha la seconda riga uguale a \(-\frac12\) la prima, quindi \(\operatorname{rank}B=1\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 3, es. 1.3" data-livello="base">
+    <div class="ex-testo">
+      <p>Quali delle seguenti matrici sono invertibili? In caso affermativo se ne calcoli l'inversa:</p>
+      \[ 3.\ A=\begin{pmatrix}1&2\\2&5\end{pmatrix}\qquad 4.\ A=\begin{pmatrix}1&1\\1&1\end{pmatrix}\qquad 5.\ A=\begin{pmatrix}1&0&1\\0&1&0\\1&2&1\end{pmatrix}. \]
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Si usa il metodo \((A|I_n)\) del Corollario 1.38.</p>
+      <p><strong>3.</strong></p>
+      \[ \left(\begin{array}{cc|cc}1&2&1&0\\2&5&0&1\end{array}\right)\xrightarrow{2\to2-2\cdot1}\left(\begin{array}{cc|cc}1&2&1&0\\0&1&-2&1\end{array}\right)\xrightarrow{1\to1-2\cdot2}\left(\begin{array}{cc|cc}1&0&5&-2\\0&1&-2&1\end{array}\right). \]
+      <p>Rango 2, quindi \(A\) è invertibile e \(A^{-1}=\begin{pmatrix}5&-2\\-2&1\end{pmatrix}\). Verifica: \(\begin{pmatrix}1&2\\2&5\end{pmatrix}\begin{pmatrix}5&-2\\-2&1\end{pmatrix}=\begin{pmatrix}5-4&-2+2\\10-10&-4+5\end{pmatrix}=I_2\).</p>
+      <p><strong>4.</strong> \(\left(\begin{array}{cc|cc}1&1&1&0\\1&1&0&1\end{array}\right)\xrightarrow{2\to2-1}\left(\begin{array}{cc|cc}1&1&1&0\\0&0&-1&1\end{array}\right)\). A sinistra c'è una riga nulla, quindi \(\operatorname{rank}A=1\lt2\) e \(A\) <strong>non è invertibile</strong> (Teorema 1.36).</p>
+      <p><strong>5.</strong></p>
+      \[ \left(\begin{array}{ccc|ccc}1&0&1&1&0&0\\0&1&0&0&1&0\\1&2&1&0&0&1\end{array}\right)\xrightarrow{3\to3-1}\left(\begin{array}{ccc|ccc}1&0&1&1&0&0\\0&1&0&0&1&0\\0&2&0&-1&0&1\end{array}\right)\xrightarrow{3\to3-2\cdot2}\left(\begin{array}{ccc|ccc}1&0&1&1&0&0\\0&1&0&0&1&0\\0&0&0&-1&-2&1\end{array}\right). \]
+      <p>Riga nulla a sinistra, quindi \(\operatorname{rank}A=2\lt3\) e \(A\) <strong>non è invertibile</strong>. Si vede anche direttamente: la terza riga è \(\mathtt{R}_1+2\mathtt{R}_2\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 3, es. 2" data-livello="base">
+    <div class="ex-testo">
+      <p>Per \(A\in\mathrm{Mat}_n(\mathbb{K})\) si pone \(A^0:=I_n\) e \(A^n:=A^{n-1}\cdot A\). Si calcoli \(A^{17}\) per</p>
+      \[ A=\begin{pmatrix}0&1&2&3\\0&0&4&5\\0&0&0&6\\0&0&0&0\end{pmatrix}\in\mathrm{Mat}_4(\mathbb{C}). \]
+    </div>
+    <details class="hint"><summary>Suggerimento</summary><p>Calcola \(A^2\), \(A^3\), \(A^4\): a ogni potenza la "diagonale" di entrate non nulle sale di un posto.</p></details>
+    <details class="sol"><summary>Soluzione</summary>
+      \[ A^2=\begin{pmatrix}0&0&4&17\\0&0&0&24\\0&0&0&0\\0&0&0&0\end{pmatrix},\qquad A^3=A^2A=\begin{pmatrix}0&0&0&24\\0&0&0&0\\0&0&0&0\\0&0&0&0\end{pmatrix},\qquad A^4=A^3A=0. \]
+      <p>Per esempio \((A^2)_{14}=0\cdot3+1\cdot5+2\cdot6+3\cdot0=17\) e \((A^3)_{14}=4\cdot6=24\). Poiché \(A^4=0\), si ha \(A^n=A^4A^{n-4}=0\) per ogni \(n\geqslant4\). In particolare</p>
+      \[ A^{17}=0_{4\times4}. \]
+      <p>\(A\) è una matrice <strong>nilpotente</strong>: è non nulla ma ha una potenza nulla. Questo non succede mai con numeri non nulli di un campo.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 3, es. 3" data-livello="base">
+    <div class="ex-testo">
+      <p>Sia \(n\in\mathbb{N}_{>0}\) e, per \((k,l)\in\{1,\dots,n\}^2\), sia \(E_{kl}=(e_{ij})\in\mathrm{Mat}_n(\mathbb{R})\) con \(e_{ij}=1\) se \((i,j)=(k,l)\) e \(e_{ij}=0\) altrimenti.</p>
+      <ol><li>Si calcolino per \(n=3\) i prodotti \(E_{1,2}\cdot E_{1,3}\) e \(E_{1,2}\cdot E_{2,3}\).</li><li>Si calcoli \(E_{kl}\cdot E_{rs}\) per ogni \((k,l),(r,s)\).</li></ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>1.</strong></p>
+      \[ E_{12}E_{13}=\begin{pmatrix}0&1&0\\0&0&0\\0&0&0\end{pmatrix}\begin{pmatrix}0&0&1\\0&0&0\\0&0&0\end{pmatrix}=0,\qquad E_{12}E_{23}=\begin{pmatrix}0&1&0\\0&0&0\\0&0&0\end{pmatrix}\begin{pmatrix}0&0&0\\0&0&1\\0&0&0\end{pmatrix}=\begin{pmatrix}0&0&1\\0&0&0\\0&0&0\end{pmatrix}=E_{13}. \]
+      <p>Nel primo prodotto l'unica colonna non nulla di \(E_{12}\) (la 2) incontra la riga 2 di \(E_{13}\), che è nulla.</p>
+      <p><strong>2.</strong> Si ha \((E_{kl})_{ij}=\delta_{ik}\delta_{lj}\). Quindi</p>
+      \[ (E_{kl}E_{rs})_{ij}=\sum_{h=1}^n\delta_{ik}\delta_{lh}\,\delta_{hr}\delta_{sj}=\delta_{ik}\,\delta_{lr}\,\delta_{sj}, \]
+      <p>perché nella somma sopravvive solo \(h=l\), che dà \(\delta_{lr}\). Allora</p>
+      \[ E_{kl}\cdot E_{rs}=\delta_{lr}\,E_{ks}=\begin{cases}E_{ks}&\text{se }l=r,\\ 0&\text{se }l\neq r.\end{cases} \]
+      <p>È l'Osservazione 1.16.1. Come regola mnemonica: gli indici "interni" devono coincidere, e restano quelli "esterni".</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 3, es. 4" data-livello="medio">
+    <div class="ex-testo">
+      <p>Siano \(A\in\mathrm{Mat}_{m\times n}(\mathbb{K})\), \(B\in\mathrm{Mat}_{n\times p}(\mathbb{K})\) e sia \(A^\top\) la trasposta. Si dimostri che:</p>
+      <ol>
+        <li>\((A+B)^\top=A^\top+B^\top\) (qui \(A,B\) sono dello stesso tipo);</li>
+        <li>\((\lambda A)^\top=\lambda A^\top\) per ogni \(\lambda\in\mathbb{K}\);</li>
+        <li>\((A\cdot B)^\top=B^\top\cdot A^\top\);</li>
+        <li>se \(A\) è invertibile, allora \((A^{-1})^\top=(A^\top)^{-1}\).</li>
+      </ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Si confrontano le entrate in posizione \((i,j)\), ricordando che \((M^\top)_{ij}=M_{ji}\).</p>
+      <p><strong>1.</strong> \(((A+B)^\top)_{ij}=(A+B)_{ji}=a_{ji}+b_{ji}=(A^\top)_{ij}+(B^\top)_{ij}\). Per la somma serve che \(A,B\) abbiano lo stesso tipo: le ipotesi del foglio vanno lette così per questo punto.</p>
+      <p><strong>2.</strong> \(((\lambda A)^\top)_{ij}=(\lambda A)_{ji}=\lambda a_{ji}=\lambda(A^\top)_{ij}\).</p>
+      <p><strong>3.</strong> Entrambi i membri sono \(p\times m\). Poi</p>
+      \[ ((AB)^\top)_{ij}=(AB)_{ji}=\sum_{k=1}^n a_{jk}b_{ki}=\sum_{k=1}^n b_{ki}a_{jk}=\sum_{k=1}^n (B^\top)_{ik}(A^\top)_{kj}=(B^\top A^\top)_{ij}. \]
+      <p>Si usa la commutatività del prodotto <em>in \(\mathbb{K}\)</em>, non quella delle matrici.</p>
+      <p><strong>4.</strong> Sia \(A\in\mathrm{GL}_n(\mathbb{K})\). Per il punto 3 e poiché \(I_n^\top=I_n\):</p>
+      \[ (A^{-1})^\top A^\top=(AA^{-1})^\top=I_n^\top=I_n,\qquad A^\top(A^{-1})^\top=(A^{-1}A)^\top=I_n. \]
+      <p>Quindi \(A^\top\) è invertibile con inversa \((A^{-1})^\top\). Per l'Oss. 1.8 bastava una sola delle due uguaglianze.</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 3, es. 5" data-livello="medio">
+    <div class="ex-testo">
+      <p>\(A\) è <strong>simmetrica</strong> se \(A=A^\top\) (quindi è quadrata), <strong>antisimmetrica</strong> (o emisimmetrica) se \(A=-A^\top\).</p>
+      <ol>
+        <li>Si dimostri che il prodotto di due matrici simmetriche \(n\times n\) è ancora simmetrico.</li>
+        <li>Si dimostri che, per ogni \(A\in\mathrm{Mat}_n(\mathbb{K})\): a) \(A+A^\top\) è simmetrica; b) \(A-A^\top\) è antisimmetrica.</li>
+        <li>Che cosa si può dire degli elementi diagonali di una matrice antisimmetrica?</li>
+      </ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>1. Attenzione: così com'è scritta, l'affermazione è falsa.</strong> Se \(A,B\) sono simmetriche, per l'es. 4.3</p>
+      \[ (AB)^\top=B^\top A^\top=BA. \]
+      <p>Quindi \(AB\) è simmetrica <strong>se e solo se \(AB=BA\)</strong>. Controesempio:</p>
+      \[ A=\begin{pmatrix}1&0\\0&0\end{pmatrix},\ B=\begin{pmatrix}0&1\\1&0\end{pmatrix}\ \text{simmetriche},\qquad AB=\begin{pmatrix}0&1\\0&0\end{pmatrix}\ \text{non simmetrica}. \]
+      <p>Ciò che si può dimostrare: il prodotto di due matrici simmetriche <em>che commutano</em> è simmetrico. Per esempio \(A^k\) è simmetrica se \(A\) lo è.</p>
+      <p><strong>2.</strong> a) \((A+A^\top)^\top=A^\top+(A^\top)^\top=A^\top+A\), per gli es. 4.1 e \((A^\top)^\top=A\). b) \((A-A^\top)^\top=A^\top-A=-(A-A^\top)\).</p>
+      <p>Conseguenza: se \(2\neq0\) in \(\mathbb{K}\), ogni matrice quadrata è somma di una simmetrica e di un'antisimmetrica: \(A=\frac12(A+A^\top)+\frac12(A-A^\top)\).</p>
+      <p><strong>3.</strong> Sulla diagonale \(a_{ii}=-a_{ii}\), cioè \(2a_{ii}=0\). Se \(2\neq0\) in \(\mathbb{K}\) (per esempio \(\mathbb{Q},\mathbb{R},\mathbb{C}\)), allora <strong>\(a_{ii}=0\)</strong>: la diagonale è nulla. In \(\mathbb{K}=\mathbb{Z}/2\mathbb{Z}\) invece \(-1=1\): antisimmetrica e simmetrica coincidono e la diagonale può essere qualsiasi.</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 3, es. 6" data-livello="medio">
+    <div class="ex-testo">
+      <p>Sia \(S_n\) il gruppo simmetrico delle permutazioni di \(\{1,\dots,n\}\).</p>
+      <ol>
+        <li>Si trovi una matrice \(3\times3\) \(A\) tale che \(A\begin{pmatrix}1\\2\\3\end{pmatrix}=\begin{pmatrix}3\\1\\2\end{pmatrix}\).</li>
+        <li>(*) Si trovi, per ogni \(\sigma\in S_n\), una matrice \(A\in\mathrm{Mat}_n(\mathbb{R})\) tale che \(A\,(1,2,\dots,n)^\top=(\sigma(1),\sigma(2),\dots,\sigma(n))^\top\). (Si provi prima con \(n=2\), poi con \(n=3\).)</li>
+      </ol>
+    </div>
+    <details class="hint"><summary>Suggerimento</summary><p>La riga \(i\) di \(A\) per la colonna \((1,\dots,n)^\top\) dà la componente \(i\) del risultato. Per ottenere il numero \(j\), basta una riga con un solo 1 in colonna \(j\).</p></details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>1.</strong> Per avere 3 in prima componente si prende la riga \((0\ 0\ 1)\), per 1 la riga \((1\ 0\ 0)\), per 2 la riga \((0\ 1\ 0)\):</p>
+      \[ A=\begin{pmatrix}0&0&1\\1&0&0\\0&1&0\end{pmatrix},\qquad A\begin{pmatrix}1\\2\\3\end{pmatrix}=\begin{pmatrix}3\\1\\2\end{pmatrix}. \]
+      <p>La soluzione non è unica: ogni riga deve solo soddisfare un'equazione lineare. Per esempio funziona anche \(\mathrm{diag}(3,\tfrac12,\tfrac23)\).</p>
+      <p><strong>2.</strong> Sia \(P_\sigma=(p_{ij})\) con \(p_{ij}=\delta_{\sigma(i),j}\): nella riga \(i\) c'è un solo 1, nella colonna \(\sigma(i)\). Allora</p>
+      \[ \Big(P_\sigma\,(1,\dots,n)^\top\Big)_i=\sum_{j=1}^n\delta_{\sigma(i),j}\,j=\sigma(i). \]
+      <p>Questa è la <strong>matrice di permutazione</strong> associata a \(\sigma\): si ottiene permutando le righe di \(I_n\), con la riga \(i\) uguale alla riga \(\sigma(i)\) di \(I_n\). Ha un solo 1 in ogni riga e in ogni colonna, perché \(\sigma\) è biiettiva.</p>
+      <p>Per \(n=2\): \(\sigma=\mathrm{id}\to I_2\); \(\sigma=(1\,2)\to\begin{pmatrix}0&1\\1&0\end{pmatrix}=U_{1\leftrightarrow2}\). Per \(n=3\) si ottengono le 6 matrici con un solo 1 in ogni riga e colonna. Il punto 1 è il caso \(\sigma=(1\,3\,2)\): \(\sigma(1)=3,\sigma(2)=1,\sigma(3)=2\).</p>
+      <p>Alternativa più semplice ma meno "strutturale": la matrice diagonale \(\mathrm{diag}\big(\sigma(1)/1,\ \sigma(2)/2,\ \dots,\ \sigma(n)/n\big)\).</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 3, es. 7" data-livello="medio">
+    <div class="ex-testo">
+      <p>Sia \(a\in\mathbb{R}\) e \(A=\begin{pmatrix}0&-a\\a&0\end{pmatrix}\in\mathrm{Mat}_2(\mathbb{R})\). Si determini \(A^n\) per ogni \(n\in\mathbb{N}\).</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Si calcola \(A^2=\begin{pmatrix}0&-a\\a&0\end{pmatrix}\begin{pmatrix}0&-a\\a&0\end{pmatrix}=\begin{pmatrix}-a^2&0\\0&-a^2\end{pmatrix}=-a^2I_2\). Quindi, per induzione su \(k\):</p>
+      \[ A^{2k}=(A^2)^k=(-1)^ka^{2k}\,I_2,\qquad A^{2k+1}=A^{2k}A=(-1)^ka^{2k}A=(-1)^ka^{2k+1}\begin{pmatrix}0&-1\\1&0\end{pmatrix}. \]
+      <p>Esplicitamente il ciclo ha periodo 4:</p>
+      \[ A^0=I_2,\ \ A^1=\begin{pmatrix}0&-a\\a&0\end{pmatrix},\ \ A^2=\begin{pmatrix}-a^2&0\\0&-a^2\end{pmatrix},\ \ A^3=\begin{pmatrix}0&a^3\\-a^3&0\end{pmatrix},\ \ A^4=\begin{pmatrix}a^4&0\\0&a^4\end{pmatrix},\ \dots \]
+      <p>Per \(a=0\): \(A^0=I_2\) per convenzione e \(A^n=0\) per \(n\geqslant1\), coerente con le formule.</p>
+      <p>Interpretazione: per \(a=1\), \(A\) è la rotazione di \(90^\circ\) e \(A^4=I_2\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 3, es. 8" data-livello="medio">
+    <div class="ex-testo">
+      <p>Per \(a,b\in\mathbb{R}\) vale \(a^2-b^2=(a+b)(a-b)\).</p>
+      <ol>
+        <li>Si scriva dettagliatamente la dimostrazione.</li>
+        <li>Quale passaggio non sarebbe necessariamente valido per le matrici?</li>
+        <li>Si dimostri che \(A^2-B^2=(A-B)(A+B)\) non vale per ogni \(A,B\in\mathrm{Mat}_n(\mathbb{R})\).</li>
+      </ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>1.</strong></p>
+      \[ (a+b)(a-b)\overset{\text{distr.}}{=}a(a-b)+b(a-b)\overset{\text{distr.}}{=}a^2-ab+ba-b^2\overset{\text{comm.}}{=}a^2-ab+ab-b^2=a^2-b^2. \]
+      <p>L'ultimo passaggio usa anche l'associatività della somma e l'opposto additivo.</p>
+      <p><strong>2.</strong> Il passaggio \(ba=ab\) usa la <strong>commutatività del prodotto</strong>, che in \(\mathrm{Mat}_n\) è falsa in generale. Per le matrici la distributività dà</p>
+      \[ (A-B)(A+B)=A^2+AB-BA-B^2, \]
+      <p>che coincide con \(A^2-B^2\) se e solo se \(AB=BA\).</p>
+      <p><strong>3.</strong> Basta un controesempio. Siano \(A=\begin{pmatrix}1&1\\0&1\end{pmatrix}\), \(B=\begin{pmatrix}1&0\\0&0\end{pmatrix}\). Allora</p>
+      \[ A^2-B^2=\begin{pmatrix}1&2\\0&1\end{pmatrix}-\begin{pmatrix}1&0\\0&0\end{pmatrix}=\begin{pmatrix}0&2\\0&1\end{pmatrix},\qquad (A-B)(A+B)=\begin{pmatrix}0&1\\0&1\end{pmatrix}\begin{pmatrix}2&1\\0&1\end{pmatrix}=\begin{pmatrix}0&1\\0&1\end{pmatrix}. \]
+      <p>Sono diverse. Infatti \(AB-BA=\begin{pmatrix}1&0\\0&0\end{pmatrix}-\begin{pmatrix}1&1\\0&0\end{pmatrix}=\begin{pmatrix}0&-1\\0&0\end{pmatrix}\neq0\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 3, es. 9" data-livello="base">
+    <div class="ex-testo">
+      <p>Siano \(A=\begin{pmatrix}1&1\\0&1\end{pmatrix}\) e \(X=\begin{pmatrix}u&v\\0&5\end{pmatrix}\) in \(\mathrm{Mat}_{2\times2}(\mathbb{R})\).</p>
+      <ol><li>Si determinino \(u,v\) affinché \(AX=XA\).</li><li>Si determinino tutte le \(B\in\mathrm{Mat}_{2\times2}(\mathbb{R})\) tali che \(AB=BA\).</li></ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>1.</strong> \(AX=\begin{pmatrix}u&v+5\\0&5\end{pmatrix}\) e \(XA=\begin{pmatrix}u&u+v\\0&5\end{pmatrix}\). Uguagliando l'entrata \((1,2)\): \(v+5=u+v\iff u=5\). Quindi \(AX=XA\iff u=5\), con \(v\in\mathbb{R}\) qualsiasi.</p>
+      <p><strong>2.</strong> Sia \(B=\begin{pmatrix}p&q\\r&s\end{pmatrix}\). Allora</p>
+      \[ AB=\begin{pmatrix}p+r&q+s\\r&s\end{pmatrix},\qquad BA=\begin{pmatrix}p&p+q\\r&r+s\end{pmatrix}. \]
+      <p>Uguagliando: \(p+r=p\Rightarrow r=0\); \(q+s=p+q\Rightarrow s=p\); \(r=r\); \(s=r+s\Rightarrow r=0\). Quindi</p>
+      \[ \{B: AB=BA\}=\Big\{\begin{pmatrix}p&q\\0&p\end{pmatrix}:\ p,q\in\mathbb{R}\Big\}=\{pI_2+qE_{12}\}. \]
+      <p>È un SEL omogeneo nelle incognite \(p,q,r,s\), con 2 parametri liberi. Il punto 1 è il caso particolare \(p=u=5\), \(q=v\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <h3>Foglio 3 bis: forma a scala e mosse di Gauss</h3>
+
+  <div class="ex" data-fonte="Foglio 3 bis, es. 1" data-livello="base">
+    <div class="ex-testo">
+      <p>Determinare quali delle seguenti matrici sono a scala, quali a scala ridotta e quali no. Per quelle che non sono a scala ridotta, portarle in forma a scala ridotta con le mosse di Gauss.</p>
+      \[ M_1=\begin{pmatrix}1&2\\0&3\end{pmatrix},\ M_2=\begin{pmatrix}0&3\\1&1\end{pmatrix},\ M_3=\begin{pmatrix}0&1&1\\0&1&1\end{pmatrix},\ M_4=\begin{pmatrix}1&10\\0&5\\0&0\end{pmatrix}, \]
+      \[ M_5=\begin{pmatrix}0&0&3\\0&2&3\\1&2&3\end{pmatrix},\ M_6=\begin{pmatrix}1&0&2\\0&1&-1\\0&0&0\end{pmatrix},\ M_7=\begin{pmatrix}1&2&0\\0&1&3\\2&0&1\end{pmatrix},\ M_8=\begin{pmatrix}0&1&2\\0&0&1\\0&0&0\end{pmatrix}, \]
+      \[ M_9=\begin{pmatrix}1&0&3&-1\\0&1&2&4\\0&0&1&5\\0&0&0&0\end{pmatrix},\ M_{10}=\begin{pmatrix}2&4&-1\\0&0&3\\0&0&0\end{pmatrix},\ M_{11}=\begin{pmatrix}1&2&3\\0&1&4\\0&0&1\end{pmatrix},\ M_{12}=\begin{pmatrix}1&0&0\\2&1&0\\0&0&1\end{pmatrix}, \]
+      \[ M_{13}=\begin{pmatrix}1&2&0&1\\0&0&1&3\\0&0&0&0\\0&0&0&0\end{pmatrix},\ M_{14}=\begin{pmatrix}1&0&2&0\\0&1&-1&3\\0&0&0&1\end{pmatrix},\ M_{15}=\begin{pmatrix}0&1&0&2\\1&0&3&1\\0&0&1&4\end{pmatrix},\ M_{16}=\begin{pmatrix}1&0&0&2\\0&1&0&-1\\0&0&1&3\\0&0&0&0\end{pmatrix}, \]
+      \[ M_{17}=\begin{pmatrix}0&0&0&1\end{pmatrix},\ M_{18}=\begin{pmatrix}0\\1\\0\\0\end{pmatrix},\ M_{19}=\begin{pmatrix}1\\2\\3\\0\end{pmatrix},\ M_{20}=\begin{pmatrix}1&2&3&4\end{pmatrix}. \]
+      <p>(La numerazione \(M_1,\dots,M_{20}\) segue l'ordine del foglio, per righe.)</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>Già a scala ridotta:</strong> \(M_6\), \(M_{13}\), \(M_{16}\), \(M_{17}\), \(M_{20}\). Per \(M_{20}=(1\ 2\ 3\ 4)\): un solo pivot, uguale a 1, quindi SR. Per \(M_{13}\): pivot nelle colonne 1 e 3, entrambi 1, e sopra il secondo pivot c'è 0.</p>
+      <p><strong>A scala ma non ridotte:</strong> \(M_1,M_4,M_8,M_9,M_{10},M_{11},M_{14}\).</p>
+      <p><strong>Non a scala:</strong> \(M_2,M_3,M_5,M_7,M_{12},M_{15},M_{18},M_{19}\).</p>
+      <p>Riduzioni (una possibile sequenza di mosse; il risultato \(\mathrm{SR}\) è unico per il Teorema 1.28):</p>
+      <ul>
+        <li>\(M_1\): \(2\to\frac13\cdot2\), \(1\to1-2\cdot2\) danno \(I_2\).</li>
+        <li>\(M_2\): \(1\leftrightarrow2\) dà \(\begin{pmatrix}1&1\\0&3\end{pmatrix}\); poi \(2\to\frac13\cdot2\), \(1\to1-2\) danno \(I_2\).</li>
+        <li>\(M_3\): \(2\to2-1\) dà \(\begin{pmatrix}0&1&1\\0&0&0\end{pmatrix}\) (rango 1).</li>
+        <li>\(M_4\): \(2\to\frac15\cdot2\), \(1\to1-10\cdot2\) danno \(\begin{pmatrix}1&0\\0&1\\0&0\end{pmatrix}\).</li>
+        <li>\(M_5\): \(1\leftrightarrow3\) dà \(\begin{pmatrix}1&2&3\\0&2&3\\0&0&3\end{pmatrix}\) (a scala); poi \(3\to\frac13\cdot3\), \(2\to2-3\cdot3\), \(1\to1-3\cdot3\), \(2\to\frac12\cdot2\), \(1\to1-2\cdot2\) danno \(I_3\).</li>
+        <li>\(M_7\): \(3\to3-2\cdot1\) dà la riga \((0\ -4\ 1)\); \(3\to3+4\cdot2\) dà \((0\ 0\ 13)\); \(3\to\frac1{13}\cdot3\), \(2\to2-3\cdot3\), \(1\to1-2\cdot2\) danno \(I_3\).</li>
+        <li>\(M_8\): \(1\to1-2\cdot2\) dà \(\begin{pmatrix}0&1&0\\0&0&1\\0&0&0\end{pmatrix}\).</li>
+        <li>\(M_9\): \(1\to1-3\cdot3\), \(2\to2-2\cdot3\) danno \(\begin{pmatrix}1&0&0&-16\\0&1&0&-6\\0&0&1&5\\0&0&0&0\end{pmatrix}\).</li>
+        <li>\(M_{10}\): \(1\to\frac12\cdot1\), \(2\to\frac13\cdot2\), \(1\to1+\frac12\cdot2\) danno \(\begin{pmatrix}1&2&0\\0&0&1\\0&0&0\end{pmatrix}\).</li>
+        <li>\(M_{11}\): \(2\to2-4\cdot3\), \(1\to1-3\cdot3\), \(1\to1-2\cdot2\) danno \(I_3\).</li>
+        <li>\(M_{12}\): \(2\to2-2\cdot1\) dà \(I_3\).</li>
+        <li>\(M_{14}\): è a scala con pivot nelle colonne 1, 2, 4, ma sopra il terzo pivot c'è un 3. Con \(2\to2-3\cdot3\) si ottiene \(\begin{pmatrix}1&0&2&0\\0&1&-1&0\\0&0&0&1\end{pmatrix}\).</li>
+        <li>\(M_{15}\): \(1\leftrightarrow2\) dà \(\begin{pmatrix}1&0&3&1\\0&1&0&2\\0&0&1&4\end{pmatrix}\); \(1\to1-3\cdot3\) dà \(\begin{pmatrix}1&0&0&-11\\0&1&0&2\\0&0&1&4\end{pmatrix}\).</li>
+        <li>\(M_{18}\): \(1\leftrightarrow2\) dà \((1\ 0\ 0\ 0)^\top\).</li>
+        <li>\(M_{19}\): \(2\to2-2\cdot1\), \(3\to3-3\cdot1\) danno \((1\ 0\ 0\ 0)^\top\).</li>
+      </ul>
+      <p>Errore tipico: considerare \(M_{14}\) già ridotta perché "ha gli 1 sui pivot". SR 2 chiede zeri sopra <em>ogni</em> pivot, anche quelli fuori dalla diagonale.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 3 bis, es. 2" data-livello="base">
+    <div class="ex-testo">
+      <p>Portare a scala ridotta le seguenti matrici:</p>
+      \[ P=\begin{pmatrix}1&1&2&3\\4&4&6&9\\7&7&4&6\\-1&-1&0&0\end{pmatrix},\qquad Q=\begin{pmatrix}1&1&1&1&1\\1&1&1&1&1\\1&1&1&1&1\\1&1&1&1&1\\1&1&1&1&1\end{pmatrix},\qquad S=\begin{pmatrix}1&2&3&4&5\\6&7&8&9&10\\11&12&13&14&15\\16&17&18&19&20\\21&22&23&24&25\end{pmatrix}. \]
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>\(P\).</strong> Con \(2\to2-4\cdot1\), \(3\to3-7\cdot1\), \(4\to4+1\):</p>
+      \[ \begin{pmatrix}1&1&2&3\\0&0&-2&-3\\0&0&-10&-15\\0&0&2&3\end{pmatrix}\xrightarrow[4\to4+2]{3\to3-5\cdot2}\begin{pmatrix}1&1&2&3\\0&0&-2&-3\\0&0&0&0\\0&0&0&0\end{pmatrix}\xrightarrow{2\to-\frac12\cdot2}\begin{pmatrix}1&1&2&3\\0&0&1&\frac32\\0&0&0&0\\0&0&0&0\end{pmatrix}\xrightarrow{1\to1-2\cdot2}\begin{pmatrix}1&1&0&0\\0&0&1&\frac32\\0&0&0&0\\0&0&0&0\end{pmatrix}. \]
+      <p>\(\mathrm{SR}(P)\) ha pivot nelle colonne 1 e 3, quindi \(\operatorname{rank}P=2\). La seconda colonna è uguale alla prima: non può mai contenere un pivot.</p>
+      <p><strong>\(Q\).</strong> \(i\to i-1\) per \(i=2,3,4,5\) dà</p>
+      \[ \mathrm{SR}(Q)=\begin{pmatrix}1&1&1&1&1\\0&0&0&0&0\\0&0&0&0&0\\0&0&0&0&0\\0&0&0&0&0\end{pmatrix},\qquad\operatorname{rank}Q=1. \]
+      <p><strong>\(S\).</strong> \(i\to i-(5i-4)\cdot1\) per \(i=2,\dots,5\), cioè \(2\to2-6\cdot1\), \(3\to3-11\cdot1\), \(4\to4-16\cdot1\), \(5\to5-21\cdot1\):</p>
+      \[ \begin{pmatrix}1&2&3&4&5\\0&-5&-10&-15&-20\\0&-10&-20&-30&-40\\0&-15&-30&-45&-60\\0&-20&-40&-60&-80\end{pmatrix}\xrightarrow{3\to3-2\cdot2,\ 4\to4-3\cdot2,\ 5\to5-4\cdot2}\begin{pmatrix}1&2&3&4&5\\0&-5&-10&-15&-20\\0&0&0&0&0\\0&0&0&0&0\\0&0&0&0&0\end{pmatrix} \]
+      \[ \xrightarrow{2\to-\frac15\cdot2}\begin{pmatrix}1&2&3&4&5\\0&1&2&3&4\\0&0&0&0&0\\0&0&0&0&0\\0&0&0&0&0\end{pmatrix}\xrightarrow{1\to1-2\cdot2}\begin{pmatrix}1&0&-1&-2&-3\\0&1&2&3&4\\0&0&0&0&0\\0&0&0&0&0\\0&0&0&0&0\end{pmatrix}=\mathrm{SR}(S),\quad\operatorname{rank}S=2. \]
+      <p>Intuizione: ogni riga di \(S\) è la precedente più \((5\ 5\ 5\ 5\ 5)\). Le differenze tra righe consecutive sono tutte uguali, quindi restano solo due righe "indipendenti".</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 3 bis, es. 3" data-livello="base">
+    <div class="ex-testo">
+      <p>Sia \(A\in\mathrm{Mat}_{4\times2}(\mathbb{K})\). Scrivere le matrici elementari \(U_\bullet\) tali che \(U_\bullet\cdot A\) corrisponde alle mosse di Gauss:</p>
+      \[ 2\to5\cdot2,\quad 4\to5\cdot4,\quad 2\leftrightarrow3,\quad 2\leftrightarrow4,\quad 2\to2+5\cdot3,\quad 4\to2+5\cdot1,\quad 4\to4-10\cdot1,\quad 1\to1-10\cdot4. \]
+    </div>
+    <details class="hint"><summary>Suggerimento</summary><p>\(A\) ha 4 righe, quindi \(U_\bullet\in\mathrm{Mat}_4(\mathbb{K})\), non \(2\times2\). Applica la mossa a \(I_4\).</p></details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Le matrici sono \(4\times4\) e si ottengono applicando la mossa a \(I_4\) (\(U_\bullet=\text{œ}_\bullet(I_4)\)):</p>
+      \[ U_{2\to5\cdot2}=\begin{pmatrix}1&0&0&0\\0&5&0&0\\0&0&1&0\\0&0&0&1\end{pmatrix},\quad U_{4\to5\cdot4}=\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&1&0\\0&0&0&5\end{pmatrix},\quad U_{2\leftrightarrow3}=\begin{pmatrix}1&0&0&0\\0&0&1&0\\0&1&0&0\\0&0&0&1\end{pmatrix},\quad U_{2\leftrightarrow4}=\begin{pmatrix}1&0&0&0\\0&0&0&1\\0&0&1&0\\0&1&0&0\end{pmatrix}, \]
+      \[ U_{2\to2+5\cdot3}=I_4+5E_{23}=\begin{pmatrix}1&0&0&0\\0&1&5&0\\0&0&1&0\\0&0&0&1\end{pmatrix},\quad U_{4\to4-10\cdot1}=I_4-10E_{41}=\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&1&0\\-10&0&0&1\end{pmatrix},\quad U_{1\to1-10\cdot4}=I_4-10E_{14}=\begin{pmatrix}1&0&0&-10\\0&1&0&0\\0&0&1&0\\0&0&0&1\end{pmatrix}. \]
+      <p><strong>Caso \(4\to2+5\cdot1\).</strong> Non è una mossa di Gauss: la riga 4 viene sostituita da \(\mathtt{R}_2+5\mathtt{R}_1\) e il vecchio \(\mathtt{R}_4\) sparisce. Non è della forma \(k\to k+\lambda l\). La matrice che la realizza esiste,</p>
+      \[ U=I_4-E_{44}+E_{42}+5E_{41}=\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&1&0\\5&1&0&0\end{pmatrix}, \]
+      <p>ma <strong>non è invertibile</strong>: la sua quarta riga è \(5\mathtt{R}_1+\mathtt{R}_2\), quindi il rango è 3. Non è una matrice elementare. Applicata a un sistema, può cambiarne l'insieme delle soluzioni.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 3 bis, es. 4*" data-livello="medio">
+    <div class="ex-testo">
+      <p>Trovare una successione di mosse di Gauss \(\text{œ}_1,\dots,\text{œ}_s\) tali che, se \(U_1,\dots,U_s\) sono le matrici elementari corrispondenti, valga</p>
+      \[ \begin{pmatrix}3&4\\2&3\end{pmatrix}=U_s\cdots U_1. \]
+    </div>
+    <details class="hint"><summary>Suggerimento</summary><p>\(U_s\cdots U_1=U_s\cdots U_1\cdot I_2\): cerca mosse che trasformano \(I_2\) nella matrice data. In alternativa, riduci la matrice a \(I_2\) e inverti le mosse in ordine opposto.</p></details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Poiché \(U_s\cdots U_1=U_s\cdots U_1\,I_2\), basta trasformare \(I_2\) in \(\begin{pmatrix}3&4\\2&3\end{pmatrix}\) con mosse di Gauss:</p>
+      \[ I_2=\begin{pmatrix}1&0\\0&1\end{pmatrix}\xrightarrow{\text{œ}_1:\ 1\to1+1\cdot2}\begin{pmatrix}1&1\\0&1\end{pmatrix}\xrightarrow{\text{œ}_2:\ 2\to2+2\cdot1}\begin{pmatrix}1&1\\2&3\end{pmatrix}\xrightarrow{\text{œ}_3:\ 1\to1+1\cdot2}\begin{pmatrix}3&4\\2&3\end{pmatrix}. \]
+      <p>Quindi, con \(U_1=U_3=U_{1\to1+1\cdot2}=\begin{pmatrix}1&1\\0&1\end{pmatrix}\) e \(U_2=U_{2\to2+2\cdot1}=\begin{pmatrix}1&0\\2&1\end{pmatrix}\):</p>
+      \[ U_3U_2U_1=\begin{pmatrix}1&1\\0&1\end{pmatrix}\begin{pmatrix}1&0\\2&1\end{pmatrix}\begin{pmatrix}1&1\\0&1\end{pmatrix}=\begin{pmatrix}3&1\\2&1\end{pmatrix}\begin{pmatrix}1&1\\0&1\end{pmatrix}=\begin{pmatrix}3&4\\2&3\end{pmatrix}.\ \checkmark \]
+      <p><strong>Metodo alternativo</strong> (sempre applicabile, è la dimostrazione del Cor. 1.39). Si riduce \(A\) a \(I_2\) con mosse \(V_1,\dots,V_s\): \(V_s\cdots V_1A=I_2\). Allora \(A=V_1^{-1}\cdots V_s^{-1}\), e le inverse sono ancora elementari (Oss. 1.21). La soluzione non è unica.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <h3>Quiz Capitolo 1: esercizi aperti</h3>
+
+  <div class="ex" data-fonte="Quiz Capitolo 1, E1" data-livello="base">
+    <div class="ex-testo">
+      <p>Risolva con il metodo di Gauss il sistema \(\begin{cases}x+y+z=2\\x-y+2z=1\\x-3y+3z=0\end{cases}\). Descriva l'insieme delle soluzioni in forma parametrica, indicando le variabili pivot e le variabili libere.</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>È l'Esempio 3 degli appunti (p. 104). Riduzione della matrice aumentata:</p>
+      \[ \left(\begin{array}{ccc|c}1&1&1&2\\1&-1&2&1\\1&-3&3&0\end{array}\right)\xrightarrow[3\to3-1]{2\to2-1}\left(\begin{array}{ccc|c}1&1&1&2\\0&-2&1&-1\\0&-4&2&-2\end{array}\right)\xrightarrow{3\to3-2\cdot2}\left(\begin{array}{ccc|c}1&1&1&2\\0&-2&1&-1\\0&0&0&0\end{array}\right)\xrightarrow[1\to1-2]{2\to-\frac12 2}\left(\begin{array}{ccc|c}1&0&\frac32&\frac32\\0&1&-\frac12&\frac12\\0&0&0&0\end{array}\right). \]
+      <p>Non c'è pivot nell'ultima colonna, quindi \(\operatorname{rank}A=\operatorname{rank}(A|\mathbf{b})=2\): il sistema è risolubile (Rouché-Capelli). I pivot sono nelle colonne 1 e 2, quindi le <strong>variabili pivot</strong> sono \(x,y\) e la <strong>variabile libera</strong> è \(z=t\) (\(3-2=1\) parametro). Dalle righe: \(x=\frac32-\frac32t\), \(y=\frac12+\frac12t\).</p>
+      \[ \mathrm{Sol}=\Big\{\Big(\tfrac{3-3t}{2},\tfrac{1+t}{2},t\Big):t\in\mathbb{R}\Big\}=\Big(\tfrac32,\tfrac12,0\Big)+\Big\{t\Big(-\tfrac32,\tfrac12,1\Big):t\in\mathbb{R}\Big\}. \]
+      <p>La seconda scrittura mostra il Teorema 1.12: una soluzione particolare più le soluzioni dell'omogeneo. Geometricamente è una retta in \(\mathbb{R}^3\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Quiz Capitolo 1, E2" data-livello="base">
+    <div class="ex-testo">
+      <p>Usi il metodo di Gauss-Jordan per determinare l'inversa di \(A=\begin{pmatrix}2&3\\3&5\end{pmatrix}\). Spieghi le operazioni elementari eseguite e verifichi il risultato con un prodotto matriciale.</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>È l'Esempio 1 di p. 103. Si riduce \((A|I_2)\):</p>
+      <ol>
+        <li>\(2\to2-\frac32\cdot1\) (elimina sotto il pivot 2): \(\left(\begin{array}{cc|cc}2&3&1&0\\0&\frac12&-\frac32&1\end{array}\right)\). Due pivot, quindi \(A\) è invertibile.</li>
+        <li>\(1\to\frac12\cdot1\) e \(2\to2\cdot2\) (normalizza i pivot): \(\left(\begin{array}{cc|cc}1&\frac32&\frac12&0\\0&1&-3&2\end{array}\right)\).</li>
+        <li>\(1\to1-\frac32\cdot2\) (elimina sopra il pivot): \(\left(\begin{array}{cc|cc}1&0&5&-3\\0&1&-3&2\end{array}\right)\).</li>
+      </ol>
+      <p>Quindi \(A^{-1}=\begin{pmatrix}5&-3\\-3&2\end{pmatrix}\). Verifica: \(AA^{-1}=\begin{pmatrix}10-9&-6+6\\15-15&-9+10\end{pmatrix}=I_2\). Controllo con la formula \(2\times2\): \(ad-bc=10-9=1\), quindi \(A^{-1}=\begin{pmatrix}5&-3\\-3&2\end{pmatrix}\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Quiz Capitolo 1, E3" data-livello="base">
+    <div class="ex-testo">
+      <p>Spieghi perché il sistema \(\begin{cases}x+2y=1\\2x+4y=3\end{cases}\) è incompatibile. Usi un'operazione elementare sulle righe per mettere in evidenza la contraddizione.</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      \[ \left(\begin{array}{cc|c}1&2&1\\2&4&3\end{array}\right)\xrightarrow{2\to2-2\cdot1}\left(\begin{array}{cc|c}1&2&1\\0&0&1\end{array}\right). \]
+      <p>La seconda equazione è diventata \(0x+0y=1\), cioè \(0=1\): impossibile. In termini di rango: \(\operatorname{rank}A=1\) ma \(\operatorname{rank}(A|\mathbf{b})=2\) (pivot nell'ultima colonna). Per Rouché-Capelli \(\mathrm{Sol}=\emptyset\). Le mosse di Gauss non cambiano l'insieme delle soluzioni (Cor. 1.23), quindi anche il sistema originale è irrisolubile. Geometricamente sono due rette parallele distinte: \(x+2y=1\) e \(x+2y=\frac32\).</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+</section>
+
+<section class="sec quizzes" id="cap1-quiz">
+  <div class="num">10</div>
+  <h2>Quiz</h2>
+  <div class="ex-bar"><span class="quiz-score" id="quiz-score"></span><button class="chip" id="quiz-reset" style="margin-left:auto">Ricomincia</button></div>
+  <p class="lead">Quiz del Capitolo 1 (5 ottobre 2026): una sola risposta corretta. Il PDF non riporta le soluzioni; quelle qui sotto sono state ricavate e verificate.</p>
+
+  <div class="quiz" data-risposta="B">
+    <p>Q1. Una matrice in \(\mathrm{Mat}_{3\times2}(\mathbb{R})\) ha:</p>
+    <ol class="opzioni"><li>2 righe e 3 colonne.</li><li>3 righe e 2 colonne.</li><li>6 righe e 6 colonne.</li><li>sempre 5 elementi diversi da zero.</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>In \(\mathrm{Mat}_{m\times n}\) il primo numero indica le righe, il secondo le colonne: 3 righe e 2 colonne (6 entrate, di valore qualsiasi).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p>Q2. Siano \(A=\begin{pmatrix}1&2\\-1&0\end{pmatrix}\) e \(B=\begin{pmatrix}3&-1\\4&5\end{pmatrix}\). Quanto vale \(A+B\)?</p>
+    <ol class="opzioni"><li>\(\begin{pmatrix}3&-2\\-4&0\end{pmatrix}\)</li><li>\(\begin{pmatrix}4&1\\3&5\end{pmatrix}\)</li><li>\(\begin{pmatrix}1&2&3&-1\\-1&0&3&5\end{pmatrix}\)</li><li>\(\begin{pmatrix}1&2&0&0\\-1&0&0&0\\0&0&3&-1\\0&0&4&5\end{pmatrix}\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>La somma si fa entrata per entrata: \(\begin{pmatrix}1+3&2-1\\-1+4&0+5\end{pmatrix}=\begin{pmatrix}4&1\\3&5\end{pmatrix}\). A è il prodotto entrata per entrata, che non è un'operazione del corso. C è l'affiancamento \((A|B)\), D la matrice a blocchi diagonale.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="C">
+    <p>Q3. Sia \(A\) una matrice \(2\times3\) e \(B\) una matrice \(3\times4\). Qual è la taglia di \(AB\)?</p>
+    <ol class="opzioni"><li>\(4\times2\)</li><li>\(3\times3\)</li><li>\(2\times4\)</li><li>Il prodotto non è definito.</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>Colonne di \(A\) = 3 = righe di \(B\), quindi il prodotto è definito. Il risultato ha le righe di \(A\) e le colonne di \(B\): \(2\times4\).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p>Q4. Siano \(A=\begin{pmatrix}1&2\\0&1\end{pmatrix}\) e \(B=\begin{pmatrix}2&1\\3&0\end{pmatrix}\). Quanto vale \(AB\)?</p>
+    <ol class="opzioni"><li>\(\begin{pmatrix}5&1\\3&0\end{pmatrix}\)</li><li>\(\begin{pmatrix}8&1\\3&0\end{pmatrix}\)</li><li>\(\begin{pmatrix}8&2\\3&1\end{pmatrix}\)</li><li>\(\begin{pmatrix}2&5\\3&6\end{pmatrix}\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>\(AB=\begin{pmatrix}1\cdot2+2\cdot3&1\cdot1+2\cdot0\\0\cdot2+1\cdot3&0\cdot1+1\cdot0\end{pmatrix}=\begin{pmatrix}8&1\\3&0\end{pmatrix}\). Si noti che \(AB=U_{1\to1+2\cdot2}B\): la prima riga diventa \(\mathtt{R}_1+2\mathtt{R}_2\).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p>Q5. Quale delle seguenti operazioni <strong>non</strong> è un'operazione elementare sulle righe?</p>
+    <ol class="opzioni"><li>Scambiare due righe.</li><li>Modificare la prima entrata non nulla di una riga.</li><li>Moltiplicare una riga per uno scalare non nullo.</li><li>Sottrarre a una riga un multiplo di un'altra riga.</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>Le tre mosse di Gauss (Def. 1.17) sono lo scambio, la moltiplicazione per \(\lambda\neq0\) e \(k\to k+\lambda l\). Modificare una singola entrata non è una di queste e in generale cambia l'insieme delle soluzioni.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="A">
+    <p>Q6. Siano \(\mathtt{R}_1=(1,-2)\) e \(\mathtt{R}_2=(4,3)\) le prime due righe di una matrice. Dopo l'operazione \(2\to2-3\cdot1\) vale:</p>
+    <ol class="opzioni"><li>La nuova seconda riga sarà \((1,-9)\)</li><li>La nuova seconda riga sarà \((-3,6)\)</li><li>La nuova prima riga sarà \((-3,6)\)</li><li>La nuova prima riga sarà \((-11,-11)\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Cambia solo la riga 2 (C e D sono sbagliate). Il calcolo dà \(\mathtt{R}_2-3\mathtt{R}_1=(4-3,\ 3-3\cdot(-2))=(4-3,\ 3+6)=(1,\,9)\).</p>
+      <p><strong>Attenzione:</strong> il valore corretto è \((1,9)\), non \((1,-9)\). L'opzione A del testo contiene molto probabilmente un errore di segno; resta comunque l'unica compatibile (prima componente 1, riga 2). B è \(-3\mathtt{R}_1\): si è dimenticato di sommare \(\mathtt{R}_2\).</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C">
+    <p>Q7. Quanti pivot ha la matrice a scala \(\begin{pmatrix}1&2&0\\0&0&3\\0&0&0\end{pmatrix}\)?</p>
+    <ol class="opzioni"><li>0</li><li>1</li><li>2</li><li>3</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>Pivot = prima entrata non nulla di ogni riga non nulla: \(a_{11}=1\) e \(a_{23}=3\). Quindi 2 pivot e rango 2. Il 2 in posizione \((1,2)\) non è un pivot.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p>Q8. Applicando operazioni elementari sulle righe alla matrice aumentata di un sistema lineare:</p>
+    <ol class="opzioni"><li>l'insieme delle soluzioni può cambiare.</li><li>l'insieme delle soluzioni non cambia.</li><li>l'insieme delle soluzioni non cambia solo se la matrice è quadrata.</li><li>l'insieme delle soluzioni può aumentare se compaiono delle righe nulle, perché una riga nulla corrisponde a un'equazione che viene eliminata.</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>Corollario 1.23: le mosse corrispondono a moltiplicare per matrici invertibili (Teor. 1.18 e Lemma 1.14). Una riga nulla che compare era un'equazione combinazione delle altre, quindi ridondante: le soluzioni non aumentano.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p>Q9. Quale affermazione è sempre vera per un sistema omogeneo \(A\mathbf{x}=\mathbf{0}\)?</p>
+    <ol class="opzioni"><li>Non ha soluzioni.</li><li>Ammette almeno la soluzione nulla.</li><li>Ammette esattamente una soluzione.</li><li>Ammette infinite soluzioni.</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>Teorema 1.13 (i): \(A\mathbf{0}=\mathbf{0}\). C vale solo se \(\operatorname{rank}A=n\); D solo se \(\operatorname{rank}A\lt n\) e il campo è infinito.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="D">
+    <p>Q10. Per il criterio di Rouché-Capelli, il sistema \(A\mathbf{x}=\mathbf{b}\) è compatibile se e solo se:</p>
+    <ol class="opzioni"><li>\(A\) è quadrata.</li><li>\(A\) è invertibile.</li><li>\(\mathbf{b}=\mathbf{0}\).</li><li>\(\operatorname{Rango}(A)=\operatorname{Rango}(A|\mathbf{b})\).</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>Teorema 1.31. B e C sono condizioni sufficienti ma non necessarie.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p>Q11. La matrice aumentata ridotta \(\left(\begin{array}{cc|c}1&0&2\\0&1&-1\\0&0&0\end{array}\right)\) descrive un sistema con:</p>
+    <ol class="opzioni"><li>l'unica soluzione \((1,1)\).</li><li>l'unica soluzione \((2,-1)\).</li><li>insieme delle soluzioni \(\{(2,-1,t_3)\mid t_3\in\mathbb{R}\}\).</li><li>insieme delle soluzioni vuoto.</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>Le incognite sono 2 (la terza colonna è quella dei termini noti). Le equazioni sono \(x_1=2\) e \(x_2=-1\); la terza riga \(0=0\) non dà informazioni. \(\operatorname{rank}=2=n\), quindi la soluzione è unica: \((2,-1)\). C confonde la colonna dei termini noti con una terza incognita.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="C">
+    <p>Q12. Un sistema compatibile ha 101 variabili e la matrice dei coefficienti ha rango 42. Quante variabili libere ha?</p>
+    <ol class="opzioni"><li>0</li><li>42</li><li>59</li><li>101</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>Teorema 1.33: le soluzioni sono in biiezione con \(\mathbb{K}^{n-r}\), quindi \(n-r=101-42=59\) parametri liberi.</p></details>
+  </div>
+</section>
+
+<section class="sec" id="cap1-riepilogo">
+  <div class="num">11</div>
+  <h2>Riepilogo</h2>
+  <p class="lead">I punti chiave del Capitolo 1 da sapere per l'esame.</p>
+  <ol>
+    <li>Una matrice \(m\times n\) è un'applicazione \(\{1..m\}\times\{1..n\}\to R\). In \(\mathrm{Mat}_{m\times n}\) si scrivono prima le righe, poi le colonne.</li>
+    <li>\(AB\) è definito se e solo se le colonne di \(A\) sono tante quante le righe di \(B\); \((AB)_{ij}=\sum_k a_{ik}b_{kj}\) e il risultato è \(m\times p\).</li>
+    <li>Il prodotto è associativo e distributivo ma <strong>non commutativo</strong>: \((A+B)^2\), \(A^2-B^2\) ecc. non si sviluppano come con i numeri. Esistono matrici nilpotenti \(\neq0\). Vale \((AB)^\top=B^\top A^\top\).</li>
+    <li>\(\mathrm{GL}_n(\mathbb{K})\) è il gruppo delle matrici invertibili. Per matrici quadrate un inverso da un lato lo è anche dall'altro (Oss. 1.8); per matrici rettangolari no.</li>
+    <li>\(\mathrm{Sol}(A\mathbf{x}=\mathbf{b})=\boldsymbol\alpha+\mathrm{Sol}(A\mathbf{x}=\mathbf{0})\) se esiste una soluzione \(\boldsymbol\alpha\) (Teor. 1.12). \(\mathrm{Sol}(A\mathbf{x}=\mathbf{0})\) contiene \(\mathbf{0}\) ed è chiuso per somma e multipli (Teor. 1.13).</li>
+    <li>Le tre mosse di Gauss sono \(k\leftrightarrow l\), \(k\to\lambda k\) con \(\lambda\neq0\), \(k\to k+\lambda l\) con \(l\neq k\). Corrispondono a moltiplicare a sinistra per le matrici elementari \(U_\bullet=\text{œ}_\bullet(I_m)\), che sono invertibili.</li>
+    <li>Moltiplicare a sinistra per \(U\) invertibile non cambia le soluzioni (Lemma 1.14, Cor. 1.23): le mosse di Gauss sulla matrice aumentata non cambiano \(\mathrm{Sol}\).</li>
+    <li>A scala: righe nulle in fondo, pivot che si spostano a destra. A scala ridotta: in più pivot uguali a 1 e zeri sopra ogni pivot. La forma a scala non è unica; \(\mathrm{SR}(A)\) sì (Teor. 1.28).</li>
+    <li>Algoritmo: Gauss (pivot, eliminazione sotto, ripetizione) più Gauss-Jordan (normalizzazione, eliminazione sopra).</li>
+    <li>\(\operatorname{rank}A\) = numero di pivot di \(\mathrm{SR}(A)\), cioè di una qualsiasi forma a scala.</li>
+    <li><strong>Rouché-Capelli:</strong> \(A\mathbf{x}=\mathbf{b}\) è risolubile se e solo se \(\operatorname{rank}A=\operatorname{rank}(A|\mathbf{b})\), cioè se non c'è pivot nell'ultima colonna (niente riga \(0=c\neq0\)).</li>
+    <li>Se è risolubile, le soluzioni dipendono da \(n-r\) parametri liberi (Teor. 1.33): la soluzione è unica se e solo se \(r=n\). Un sistema omogeneo con meno equazioni che incognite ha soluzioni non nulle.</li>
+    <li>\(A\in\mathrm{Mat}_n\) è invertibile se e solo se \(\operatorname{rank}A=n\), cioè se e solo se \(\mathrm{SR}(A)=I_n\) (Teor. 1.36).</li>
+    <li>Inversa: \(\mathrm{SR}(A|I_n)=(I_n|A^{-1})\). Se a sinistra compare una riga nulla, \(A\) non è invertibile. Verificare sempre con \(AA^{-1}=I_n\).</li>
+    <li>Ogni matrice invertibile è prodotto di matrici elementari (Cor. 1.39): \(\mathrm{GL}_n\) è generato dalle matrici elementari.</li>
+  </ol>
+</section>
       <nav class="pager" aria-label="Capitoli"><a class="prev" href="cap0.html"><small>← Precedente</small><span>Fondamenti</span></a><a class="next" href="cap2.html"><small>Successivo →</small><span>Spazi vettoriali su K</span></a></nav>
     </main>
   </div>
