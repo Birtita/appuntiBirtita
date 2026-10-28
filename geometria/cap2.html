@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cap. 2 · Spazi vettoriali su K — Geometria e Algebra Lineare</title>
+<meta name="description" content="Sottospazi, Span e generatori, indipendenza lineare, basi, Steinitz, dimensione, somma diretta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../assets/gal.css">
+<script>try{var t=localStorage.getItem('gal:theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body data-page="cap2">
+<header class="topbar">
+  <div class="in">
+    <button class="iconbtn menu-btn" id="menu-btn" aria-label="Apri l'indice" aria-expanded="false" aria-controls="side"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <nav class="crumbs" aria-label="Percorso">
+      <a href="../" class="hide-sm">Appunti</a><span class="sep hide-sm">/</span>
+      <a href="./">Geometria</a><span class="sep">/</span><span class="here">Cap. 2</span>
+    </nav>
+    <button class="iconbtn" id="theme-btn" aria-label="Cambia tema chiaro/scuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  </div>
+  <div class="readbar"></div>
+</header>
+<div class="page">
+  <header class="hero">
+    <span class="eyebrow">Cap. 2</span>
+    <h1>Spazi vettoriali su K</h1>
+    <p class="sub">Sottospazi, Span e generatori, indipendenza lineare, basi, Steinitz, dimensione, somma diretta.</p>
+    <div class="pillrow"><span class="pill">14 sezioni</span><span class="pill">15 esercizi con soluzione</span><span class="pill">15 domande di quiz</span><span class="pill">Foglio 4</span><span class="pill">Foglio 5</span><span class="pill">Quiz 2 spazi vettoriali</span></div>
+  </header>
+  <div class="layout">
+    <aside class="side" id="side">
+      <div class="panel"><div class="panel-title">Capitoli</div><ol><li><a href="cap0.html"><span class="k">0</span>Fondamenti</a><div class="chap-progress" data-progress-page="cap0" data-total="21"><i></i></div></li><li><a href="cap1.html"><span class="k">1</span>Matrici e sistemi lineari</a><div class="chap-progress" data-progress-page="cap1" data-total="18"><i></i></div></li><li><a href="cap2.html" aria-current="page"><span class="k">2</span>Spazi vettoriali su K</a><div class="chap-progress" data-progress-page="cap2" data-total="15"><i></i></div></li><li><a href="cap3.html"><span class="k">3</span>Calcolare in Kⁿ</a><div class="chap-progress" data-progress-page="cap3" data-total="10"><i></i></div></li><li><a href="cap4.html"><span class="k">4</span>Applicazioni lineari</a><div class="chap-progress" data-progress-page="cap4" data-total="11"><i></i></div></li><li><a href="cap5.html"><span class="k">5</span>Matrice associata</a><div class="chap-progress" data-progress-page="cap5" data-total="11"><i></i></div></li><li><a href="esami.html"><span class="k">·</span>Preparazione all&#x27;esame</a><div class="chap-progress" data-progress-page="esami" data-total="16"><i></i></div></li><li><a href="anteprima.html"><span class="k">·</span>Argomenti non ancora fatti a lezione</a></li></ol></div>
+      <div class="panel"><div class="panel-title">In questa pagina</div><ol id="toc"><li><a href="#cap2-vettori-geometrici"><span class="k">01</span>Vettori geometrici: l&#x27;intuizione</a></li><li><a href="#cap2-spazi-vettoriali"><span class="k">02</span>Spazi vettoriali astratti</a></li><li><a href="#cap2-sottospazi"><span class="k">03</span>Sottospazi vettoriali</a></li><li><a href="#cap2-generatori"><span class="k">04</span>Combinazioni lineari e Span</a></li><li><a href="#cap2-intersezione"><span class="k">05</span>Intersezione di sottospazi e Span come minimo</a></li><li><a href="#cap2-indipendenza"><span class="k">06</span>Indipendenza lineare</a></li><li><a href="#cap2-basi"><span class="k">07</span>Basi e coordinate</a></li><li><a href="#cap2-esistenza-basi"><span class="k">08</span>Esistenza delle basi</a></li><li><a href="#cap2-steinitz"><span class="k">09</span>Completamento e teorema di Steinitz</a></li><li><a href="#cap2-dimensione"><span class="k">10</span>Dimensione</a></li><li><a href="#cap2-somma"><span class="k">11</span>Somma di sottospazi, somma diretta e Grassmann</a></li><li><a href="#cap2-esercizi"><span class="k">12</span>Esercizi</a></li><li><a href="#cap2-quiz"><span class="k">13</span>Quiz</a></li><li><a href="#cap2-riepilogo"><span class="k">14</span>Riepilogo</a></li></ol></div>
+      <div class="panel"><div class="panel-title">Studio</div><button class="iconbtn" id="toggle-adv" aria-pressed="false" style="width:100%">Nascondi le parti avanzate</button></div>
+    </aside>
+    <main id="content">
+<section class="sec" id="cap2-vettori-geometrici">
+  <div class="num">01</div>
+  <h2>Vettori geometrici: l'intuizione</h2>
+  <p class="lead">Prima di astrarre, il prof parte dalle frecce del piano e dello spazio: le proprietà “naturali” della somma e della moltiplicazione per scalari diventeranno gli assiomi di spazio vettoriale.</p>
+
+  <p>Un <strong>vettore geometrico</strong> è una freccia (segmento orientato) con una coda e una punta; la lunghezza è la distanza tra i due punti. Due approcci:</p>
+  <ul>
+    <li><strong>vettori liberi</strong> (modulo traslazioni): classi di equivalenza di frecce che si ottengono l'una dall'altra per traslazione; la somma è intuitiva (si concatenano le frecce);</li>
+    <li><strong>frecce con la coda fissata</strong> in un punto: si sceglie un rappresentante per classe; alcune verifiche (es. associatività) diventano più complicate.</li>
+  </ul>
+  <p>La somma (regola del parallelogramma) rende le frecce un gruppo abeliano, con vettore nullo \(\vec 0\) (freccia di lunghezza zero, “tutte le direzioni”) e opposto \(-\mathbf v\). La moltiplicazione per \(\lambda\in\mathbb R\): se \(\lambda\geqslant 0\) mantiene direzione e verso e moltiplica la lunghezza per \(\lambda\); se \(\lambda&lt;0\) inverte il verso e moltiplica la lunghezza per \(|\lambda|\).</p>
+  <p>Proprietà che diventeranno assiomi: \(1\cdot\mathbf v=\mathbf v\); \((-1)\mathbf v\) ha verso opposto; \(0\cdot\mathbf v=\vec 0\); \(\lambda(\mu\mathbf v)=(\lambda\mu)\mathbf v\); \(\lambda(\mathbf u+\mathbf v)=\lambda\mathbf u+\lambda\mathbf v\); \(\lambda\mathbf v+\mu\mathbf v=(\lambda+\mu)\mathbf v\).</p>
+
+  <div class="box box--warn"><div class="tag">Avvertenza (p. 114)</div>
+    <p>La lunghezza di un vettore <em>non</em> è determinata dalla somma e dalla moltiplicazione per scalari: è una struttura aggiuntiva (norma / prodotto scalare, capitolo sugli spazi euclidei). Il verso usa l'ordinamento di \(\mathbb R\): su \(\mathbb C\) (non ordinato) o su campi finiti l'immagine “freccia” non ha senso. Usate quindi con cautela l'intuizione geometrica: d'ora in poi <strong>un vettore è semplicemente un elemento di uno spazio vettoriale</strong>.</p>
+  </div>
+</section>
+
+<section class="sec" id="cap2-spazi-vettoriali">
+  <div class="num">02</div>
+  <h2>Spazi vettoriali astratti</h2>
+  <p class="lead">\(\mathbb K\) è un campo arbitrario (\(\mathbb Q,\mathbb R,\mathbb C,\mathbb Z/p\mathbb Z,\dots\)); i suoi elementi si chiamano <strong>scalari</strong>. Tutta la teoria usa solo le proprietà di campo.</p>
+
+  <div class="box box--def"><div class="tag">Definizione 2.1<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Un <strong>\(\mathbb K\)-spazio vettoriale</strong> è una terna \((V,+,\cdot)\) dove \(V\) è un insieme, \(+:V\times V\to V\) è un'operazione interna (<strong>addizione vettoriale</strong>) e \(\cdot:\mathbb K\times V\to V\) è un'operazione esterna (<strong>moltiplicazione per scalari</strong>), tali che:</p>
+    <ul>
+      <li><strong>SpV.1</strong> \((V,+)\) è un gruppo abeliano;</li>
+      <li><strong>SpV.2</strong> per ogni \(\lambda,\mu\in\mathbb K\) e \(\mathbf v,\mathbf w\in V\):
+        <ul>
+          <li>SpV.2.1 \((\lambda+\mu)\cdot\mathbf v=\lambda\cdot\mathbf v+\mu\cdot\mathbf v\);</li>
+          <li>SpV.2.2 \(\lambda\cdot(\mathbf v+\mathbf w)=\lambda\cdot\mathbf v+\lambda\cdot\mathbf w\);</li>
+          <li>SpV.2.3 \((\lambda\mu)\cdot\mathbf v=\lambda\cdot(\mu\cdot\mathbf v)\);</li>
+          <li>SpV.2.4 \(1\cdot\mathbf v=\mathbf v\).</li>
+        </ul>
+      </li>
+    </ul>
+    <p>Gli elementi di \(V\) si chiamano <strong>vettori</strong>.</p>
+  </div>
+
+  <div class="box box--note"><div class="tag">Notazione</div>
+    <p>Il neutro di \((V,+)\) si indica con \(\mathbf 0\) o \(\mathbf 0_V\) (vettore nullo); lo scalare zero, se serve distinguerlo, con \(0_{\mathbb K}\). L'opposto di \(\mathbf v\) è \(-\mathbf v\). La terna si identifica con l'insieme \(V\), ma <em>le operazioni fanno parte della struttura</em>: sullo stesso insieme si possono definire strutture diverse (vedi Foglio 4, es. 6). I vettori di \(\mathbb K^n\) si scrivono come <strong>colonne</strong>.</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Lemma 2.2<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>In ogni \(\mathbb K\)-spazio vettoriale \(V\), per ogni \(\lambda\in\mathbb K\) e \(\mathbf v\in V\):</p>
+    <ol type="i">
+      <li>\(\lambda\cdot\mathbf 0_V=\mathbf 0_V\);</li>
+      <li>\(0_{\mathbb K}\cdot\mathbf v=\mathbf 0_V\);</li>
+      <li>\((-\lambda)\cdot\mathbf v=\lambda\cdot(-\mathbf v)=-(\lambda\cdot\mathbf v)\);</li>
+      <li>\(\lambda\cdot\mathbf v=\mathbf 0_V\ \Rightarrow\ (\lambda=0_{\mathbb K}\ \text{oppure}\ \mathbf v=\mathbf 0_V)\).</li>
+    </ol>
+    <p><em>Idea della dimostrazione.</em> (i) \(\lambda\mathbf 0=\lambda(\mathbf 0+\mathbf 0)=\lambda\mathbf 0+\lambda\mathbf 0\) e si cancella nel gruppo \((V,+)\) [\(g=g+g\Rightarrow g=0\)]. (ii) Uguale con \(0_{\mathbb K}=0_{\mathbb K}+0_{\mathbb K}\) e SpV.2.1. (iii) \(\lambda\mathbf v+(-\lambda)\mathbf v=(\lambda-\lambda)\mathbf v=0\cdot\mathbf v=\mathbf 0\), e l'opposto è unico. (iv) Se \(\lambda\neq 0\) esiste \(\frac1\lambda\in\mathbb K\) e
+    \[\mathbf 0_V=\tfrac1\lambda\cdot\mathbf 0_V=\tfrac1\lambda(\lambda\mathbf v)=(\tfrac1\lambda\lambda)\mathbf v=1\cdot\mathbf v=\mathbf v.\]
+    Il punto (iv) usa che \(\mathbb K\) è un <strong>campo</strong>.</p>
+  </div>
+
+  <div class="box box--def"><div class="tag">Osservazione 2.3</div>
+    <p>Le leggi distributive valgono per famiglie finite:
+    \[\lambda\cdot\sum_{i=1}^n\mathbf v_i=\sum_{i=1}^n\lambda\mathbf v_i,\qquad \Big(\sum_{i=1}^n\lambda_i\Big)\mathbf v=\sum_{i=1}^n\lambda_i\mathbf v,\qquad \sum_{i=1}^n\lambda_i\mathbf v_i+\sum_{i=1}^n\mu_i\mathbf v_i=\sum_{i=1}^n(\lambda_i+\mu_i)\mathbf v_i.\]</p>
+  </div>
+
+  <h3>Esempi di spazi vettoriali</h3>
+  <div class="box box--ex"><div class="tag">Esempi (pp. 117-120)</div>
+    <ol>
+      <li><strong>Spazio nullo</strong> \(V=\{\mathbf 0\}=\mathbf 0\): il più piccolo spazio vettoriale.</li>
+      <li><strong>Spazio standard</strong> \(\mathbb K^n\), con somma e prodotto per scalari componente per componente:
+        \[\begin{pmatrix}v_1\\ \vdots\\ v_n\end{pmatrix}+\begin{pmatrix}w_1\\ \vdots\\ w_n\end{pmatrix}=\begin{pmatrix}v_1+w_1\\ \vdots\\ v_n+w_n\end{pmatrix},\qquad \lambda\begin{pmatrix}v_1\\ \vdots\\ v_n\end{pmatrix}=\begin{pmatrix}\lambda v_1\\ \vdots\\ \lambda v_n\end{pmatrix}.\]</li>
+      <li><strong>Polinomi</strong>: \(\mathbb K[x]\); i sottoinsiemi \(\mathbb K[x]_{\leqslant d}=\{f:\deg f\leqslant d\}\) (es. \(\mathbb R[x]_{\leqslant 2}=\{a_0+a_1x+a_2x^2\}\)), ben definiti perché \(\deg(f+g)\leqslant\max\{\deg f,\deg g\}\); polinomi in \(n\) variabili \(\mathbb K[\mathbf x]=\mathbb K[x_1,\dots,x_n]\) (somme finite di monomi \(\mathbf x^{\mathbf a}=x_1^{a_1}\cdots x_n^{a_n}\), \(\deg\mathbf x^{\mathbf a}=a_1+\dots+a_n\)); polinomi di grado \(\leqslant d\); <strong>polinomi omogenei</strong> di grado \(d\), \(\mathbb K[\mathbf x]_d\) (somme di monomi dello stesso grado, es. \(x^2-xy+xz+z^2\)). Il polinomio nullo ha grado arbitrario: serve perché \(0\in\mathbb K[\mathbf x]_d\).</li>
+      <li><strong>Matrici</strong> \(\mathrm{Mat}_{m\times n}(\mathbb K)\) con somma e prodotto per scalare.</li>
+      <li><strong>Funzioni</strong> \(\mathrm{Funct}(X,\mathbb K)\) (tutte le applicazioni \(X\to\mathbb K\)) con \((f+g)(x)=f(x)+g(x)\), \((\lambda f)(x)=\lambda f(x)\); lo zero è la funzione nulla, l'opposto è \(x\mapsto -f(x)\) (non l'inversa per composizione!).</li>
+      <li><strong>Prodotto cartesiano</strong> \(V_1\times V_2\), operazioni componente per componente; es. \(\mathbb R\times\mathbb R=\mathbb R^2\).</li>
+      <li><strong>Prodotto diretto</strong> \(\prod_{i\in I}V_i\) di una famiglia qualsiasi, operazioni componente per componente.</li>
+      <li>Se \(\mathbb K\subseteq\mathbb L\) è un sottocampo, \(\mathbb L\) è un \(\mathbb K\)-spazio vettoriale: \(\mathbb Q[\sqrt2]\), \(\mathbb R\), \(\mathbb C\) su \(\mathbb Q\); \(\mathbb C\) su \(\mathbb R\); \(\mathbb F_4\) su \(\mathbb Z/2\mathbb Z\).</li>
+    </ol>
+  </div>
+  <div class="box box--ex"><div class="tag">Non-esempi (p. 120)</div>
+    <ul>
+      <li>\((\mathbb R^n,+)\) con \(\lambda\cdot\mathbf v:=\mathrm{Re}(\lambda)\mathbf v\) non è un \(\mathbb C\)-spazio: \((i^2)\mathbf v=-\mathbf v\) ma \(i(i\mathbf v)=\mathbf 0\) (fallisce SpV.2.3).</li>
+      <li>\((\mathbb R^n,+)\) con \(\lambda\cdot\mathbf v:=|\lambda|\mathbf v\) non è un \(\mathbb C\)-spazio: fallisce SpV.2.1.</li>
+      <li>\((\mathbb Z,+)\) non è spazio vettoriale su <em>nessun</em> campo: se \(\mathrm{char}\,\mathbb K=p&gt;0\) si avrebbe \(p=1_{\mathbb K}\cdot 1+\dots+1_{\mathbb K}\cdot 1=0\); se \(\mathrm{char}\,\mathbb K=0\) servirebbe \(z=\frac12\cdot 1\) con \(z+z=1\) in \(\mathbb Z\).</li>
+      <li>\(\mathrm{GL}_n(\mathbb K)\) non è spazio vettoriale (esercizio facile: non contiene la matrice nulla, \(0\cdot I_n\notin\mathrm{GL}_n\)).</li>
+      <li>\(\mathbb Q\) non è uno spazio vettoriale su \(\mathbb R\) (esercizio non facile).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="cap2-sottospazi">
+  <div class="num">03</div>
+  <h2>Sottospazi vettoriali</h2>
+  <p class="lead">I sottospazi sono i sottoinsiemi che, con le operazioni ristrette, sono ancora spazi vettoriali: devono essere chiusi rispetto a somma e prodotto per scalari.</p>
+
+  <div class="box box--def"><div class="tag">Definizione 2.4<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Sia \(V\) un \(\mathbb K\)-spazio vettoriale. Un <strong>\(\mathbb K\)-sottospazio vettoriale</strong> è un sottoinsieme \(U\subseteq V\) tale che:</p>
+    <ul>
+      <li><strong>Ssv.1</strong> \(U\neq\emptyset\);</li>
+      <li><strong>Ssv.2</strong> \(\mathbf u_1,\mathbf u_2\in U\Rightarrow\mathbf u_1+\mathbf u_2\in U\);</li>
+      <li><strong>Ssv.3</strong> \(\lambda\in\mathbb K,\ \mathbf u\in U\Rightarrow\lambda\cdot\mathbf u\in U\).</li>
+    </ul>
+    <p>Si scrive \(U\subseteq_{\mathbb K}V\).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Osservazione 2.5<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Per \(U\subseteq V\) non vuoto:
+    \[U\subseteq_{\mathbb K}V\iff\big(\lambda_1\mathbf u_1+\lambda_2\mathbf u_2\in U\quad\forall\,\mathbf u_1,\mathbf u_2\in U,\ \forall\,\lambda_1,\lambda_2\in\mathbb K\big).\]
+    (\(\Leftarrow\): \(\lambda_1=\lambda_2=1\) dà Ssv.2; \(\lambda_1=\lambda,\lambda_2=0\) dà Ssv.3.)</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Osservazione 2.6<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Se \(U\subseteq_{\mathbb K}V\), allora (i) \(\mathbf 0\in U\); (ii) \(\mathbf u\in U\Rightarrow-\mathbf u\in U\).<br>
+    (Si prende \(\mathbf u\in U\) e \(\lambda=0\), rispettivamente \(\lambda=-1\), in Ssv.3.) È lo strumento principale per mostrare che un insieme <strong>non</strong> è un sottospazio.</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo · verificare se \(U\) è un sottospazio</div>
+    <ol>
+      <li>Controlla subito se \(\mathbf 0\in U\). Se no, <strong>non</strong> è un sottospazio (Oss. 2.6) e hai finito.</li>
+      <li>Se \(\mathbf 0\in U\): prendi \(\mathbf u_1,\mathbf u_2\in U\) e \(\lambda_1,\lambda_2\in\mathbb K\) <em>arbitrari</em> (usa solo la condizione che li definisce) e verifica che \(\lambda_1\mathbf u_1+\lambda_2\mathbf u_2\) soddisfa la stessa condizione (Oss. 2.5).</li>
+      <li>Se sospetti che non lo sia, cerca un <strong>controesempio concreto</strong>: due vettori di \(U\) la cui somma esce da \(U\), oppure un vettore e uno scalare (spesso \(-1\), \(2\), \(\frac12\) o \(\sqrt2\)) il cui prodotto esce da \(U\).</li>
+      <li>Scorciatoie utili: le soluzioni di un sistema lineare <em>omogeneo</em> formano sempre un sottospazio; un insieme descritto come \(\{t_1\mathbf u_1+\dots+t_r\mathbf u_r: t_i\in\mathbb K\}\) è sempre un sottospazio (Lemma 2.11). Condizioni con termini noti \(\neq0\), disuguaglianze, prodotti/quadrati delle coordinate o restrizioni del tipo “\(\in\mathbb Z\)”, “\(\in\mathbb Q\)”, “\(\geqslant 0\)” di solito rompono la struttura.</li>
+    </ol>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempi (pp. 121-125)</div>
+    <ol>
+      <li>Sottospazi <strong>impropri</strong>: \(\mathbf 0=\{\mathbf 0_V\}\) (sottospazio nullo/banale) e \(V\) (sottospazio totale). \(U\) con \(\mathbf 0\neq U\neq V\) si dice <strong>proprio</strong>.</li>
+      <li>In \(\mathbb R^2\): \(U=\{x=y\}\) è un sottospazio (se \(x_1=y_1\), \(x_2=y_2\) allora \(x_1+x_2=y_1+y_2\) e \(\lambda x=\lambda y\)); \(\{y=1\}\) non lo è (\(\mathbf 0\notin\)); \(\{y=x^2\}\) non lo è: \(\binom11\in\) ma \(-\binom11=\binom{-1}{-1}\notin\).</li>
+      <li>Per \(\mathbf u\neq\mathbf 0\) in \(\mathbb R^2\), \(R_{\mathbf u}=\{\lambda\mathbf u:\lambda\in\mathbb R\}\) è la retta per l'origine che contiene \(\mathbf u\): \(\lambda_1(\lambda\mathbf u)+\lambda_2(\mu\mathbf u)=(\lambda_1\lambda+\lambda_2\mu)\mathbf u\in R_{\mathbf u}\). Ogni sottospazio che contiene \(\mathbf u\neq\mathbf 0\) contiene tutta \(R_{\mathbf u}\).</li>
+      <li>I sottospazi propri di \(\mathbb R^3\) sono esattamente le <strong>rette</strong> e i <strong>piani per l'origine</strong> (si dimostra con la dimensione).</li>
+      <li>\(\mathrm{Sol}(A\mathbf x=\mathbf 0)\subseteq_{\mathbb K}\mathbb K^n\) per ogni \(A\in\mathrm{Mat}_{m\times n}(\mathbb K)\): \(A(\lambda\boldsymbol\alpha+\mu\boldsymbol\beta)=\lambda A\boldsymbol\alpha+\mu A\boldsymbol\beta=\mathbf 0\). Invece \(\mathrm{Sol}(A\mathbf x=\mathbf b)\subseteq_{\mathbb K}\mathbb K^n\iff\mathbf b=\mathbf 0\) (se \(\mathbf b\neq\mathbf 0\), \(\mathbf 0\notin\mathrm{Sol}\)); questi sono <em>sottospazi affini</em>.</li>
+      <li>\(C^0=\{f:\mathbb R\to\mathbb R\text{ continua}\}\subseteq_{\mathbb R}\mathrm{Funct}(\mathbb R,\mathbb R)\); analogamente \(C^n(\mathbb R)\).</li>
+      <li>\(\{f:f(0)=0\}\) è un sottospazio di \(\mathrm{Funct}(\mathbb R,\mathbb R)\) (così come \(\{f:f(a)=0\}\)); \(\{f:f(0)=a\}\) con \(a\neq0\) non lo è.</li>
+      <li>Matrici simmetriche e antisimmetriche:
+        \[\mathrm{Mat}^{\mathrm{sym}}_n(\mathbb R)=\{A:A^\top=A\},\qquad \mathrm{Mat}^{\text{a-sym}}_n(\mathbb R)=\{A:A^\top=-A\}.\]
+        Per \(n=2\): \(\left\{\begin{pmatrix}a&amp;b\\b&amp;c\end{pmatrix}\right\}\) e \(\left\{\begin{pmatrix}0&amp;a\\-a&amp;0\end{pmatrix}\right\}\). Le antisimmetriche reali hanno diagonale nulla (\(a_{ii}=-a_{ii}\); falso se \(1+1=0\) in \(\mathbb K\)). Ogni matrice si decompone (in modo unico) come
+        \[A=\tfrac12(A+A^\top)+\tfrac12(A-A^\top),\qquad\text{es. }\begin{pmatrix}1&amp;2\\3&amp;4\end{pmatrix}=\begin{pmatrix}1&amp;\frac52\\ \frac52&amp;4\end{pmatrix}+\begin{pmatrix}0&amp;-\frac12\\ \frac12&amp;0\end{pmatrix}.\]
+        (Serve \(2\neq0\) in \(\mathbb K\): non vale su \(\mathbb F_2\).)</li>
+      <li><em>(avanzato)</em> La <strong>somma diretta</strong> di una famiglia \(\bigoplus_{i\in I}V_i=\{(a_i)_{i\in I}: a_i\neq0\text{ solo per un numero finito di indici}\}\) è un sottospazio del prodotto diretto; \(\mathbb R[x]=\bigoplus_{i\in\mathbb N}\mathbb R\).</li>
+      <li>\(\mathbb Q[\sqrt2]=\{a+b\sqrt2:a,b\in\mathbb Q\}\subseteq_{\mathbb Q}\mathbb R\).</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 480 140" width="480" height="140" role="img" aria-label="Tre sottoinsiemi di R^2: la retta x=y, la retta y=1, la parabola y=x^2">
+      <g fill="none" stroke="currentColor" stroke-width="1">
+        <line x1="20" y1="80" x2="140" y2="80"/><line x1="80" y1="130" x2="80" y2="15"/>
+        <line x1="180" y1="80" x2="300" y2="80"/><line x1="240" y1="130" x2="240" y2="15"/>
+        <line x1="340" y1="80" x2="460" y2="80"/><line x1="400" y1="130" x2="400" y2="15"/>
+      </g>
+      <g fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="35" y1="125" x2="130" y2="30"/>
+        <line x1="185" y1="50" x2="295" y2="50" stroke-dasharray="6 4"/>
+        <path d="M 362 22 Q 400 138 438 22" stroke-dasharray="6 4"/>
+      </g>
+      <g fill="currentColor" font-size="12">
+        <text x="105" y="30">x = y</text><text x="255" y="44">y = 1</text><text x="425" y="40">y = x²</text>
+        <text x="40" y="12">sottospazio</text><text x="190" y="12">non sottospazio</text><text x="350" y="12">non sottospazio</text>
+      </g>
+    </svg>
+    <figcaption>Figura 2.5 degli appunti: solo la retta per l'origine \(x=y\) è un sottospazio di \(\mathbb R^2\) (tratteggiate quelle che non lo sono).</figcaption>
+  </figure>
+
+  <div class="box box--thm"><div class="tag">Teorema 2.7 (Descrizioni parametrica e cartesiana)<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Sia \(U\subseteq_{\mathbb K}\mathbb K^n\). Allora esistono \(\mathbf u_1,\dots,\mathbf u_r\in\mathbb K^n\) tali che
+    \[U=\{t_1\mathbf u_1+\dots+t_r\mathbf u_r:\ t_1,\dots,t_r\in\mathbb K\}\qquad\text{(descrizione parametrica)},\]
+    ed esiste \(A\in\mathrm{Mat}_{m\times n}(\mathbb K)\) tale che
+    \[U=\{\mathbf v\in\mathbb K^n:\ A\mathbf v=\mathbf 0\}\qquad\text{(descrizione cartesiana)}.\]
+    La dimostrazione è nel Capitolo 3.</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio (p. 124)</div>
+    \[U=\left\{\begin{pmatrix}x\\y\end{pmatrix}:x+y=0\right\}=\left\{t\begin{pmatrix}1\\-1\end{pmatrix}:t\in\mathbb R\right\},\qquad
+    W=\left\{\begin{pmatrix}x\\y\\z\end{pmatrix}:x+y+z=0\right\}=\left\{t\begin{pmatrix}1\\0\\-1\end{pmatrix}+s\begin{pmatrix}0\\1\\-1\end{pmatrix}:t,s\in\mathbb R\right\}.\]
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <ul>
+      <li>\(\mathbf 0\in U\) è <strong>necessario</strong> ma <strong>non sufficiente</strong>: \(\{xy=0\}\) e \(\{x^2=y^2\}\) contengono \(\mathbf 0\) ma non sono sottospazi.</li>
+      <li>Chiusura rispetto alla somma non basta: \(\{x+y\in\mathbb Q\}\) e \(\mathbb Q^2\) sono chiusi per somma, ma non per prodotto con \(\sqrt2\).</li>
+      <li>Nelle verifiche generali, i vettori vanno presi <em>arbitrari</em>: un esempio numerico che “funziona” non dimostra nulla; uno che fallisce invece basta per dire di no.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="cap2-generatori">
+  <div class="num">04</div>
+  <h2>Combinazioni lineari e Span</h2>
+  <p class="lead">La combinazione lineare è il concetto centrale dell'algebra lineare; lo \(\mathrm{Span}\) raccoglie tutti i suoi risultati.</p>
+
+  <div class="box box--def"><div class="tag">Definizione 2.8<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Una <strong>combinazione lineare</strong> di vettori di \(V\) è un'espressione
+    \[\lambda_1\mathbf v_1+\dots+\lambda_r\mathbf v_r,\qquad r\in\mathbb N,\ \lambda_i\in\mathbb K,\ \mathbf v_i\in V.\]
+    È <strong>non banale</strong> se \((\lambda_1,\dots,\lambda_r)\neq(0,\dots,0)\). Il <strong>risultato</strong> è il vettore \(\mathbf v=\lambda_1\mathbf v_1+\dots+\lambda_r\mathbf v_r\). Per \(r=0\) la combinazione è <em>vuota</em> e il risultato è \(\mathbf 0_V\). I \(\mathbf v_i\) non devono essere distinti.</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio 2.9</div>
+    <p>In \(\mathbb R^2\), con \(\mathbf v_1=\binom10,\mathbf v_2=\binom11,\mathbf v_3=\binom12,\mathbf v_4=\binom{-1}{1}\), le combinazioni con scalari \((1,1,1,1)\) e \((0,3,0,1)\) sono <em>diverse</em> ma hanno lo <em>stesso risultato</em> \(\binom24\). Bisogna distinguere la combinazione dal suo risultato.</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Osservazione 2.10</div>
+    <p>Per \(U\neq\emptyset\): \(U\subseteq_{\mathbb K}V\iff\) il risultato di ogni combinazione lineare di vettori di \(U\) è ancora in \(U\), cioè \(\forall r,\ \lambda_i\in\mathbb K,\ \mathbf u_i\in U:\ \sum_{i=1}^r\lambda_i\mathbf u_i\in U\).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Lemma 2.11<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Per \(\mathbf v_1,\dots,\mathbf v_r\in V\), l'insieme dei risultati di tutte le loro combinazioni lineari è un sottospazio:
+    \[U=\{\lambda_1\mathbf v_1+\dots+\lambda_r\mathbf v_r:\lambda_i\in\mathbb K\}\subseteq_{\mathbb K}V.\]
+    <em>Idea.</em> \(r=0\): \(U=\{\mathbf 0\}\). Altrimenti: tutti \(\lambda_i=0\) dà \(\mathbf 0\in U\); \(\sum\lambda_i\mathbf v_i+\sum\mu_i\mathbf v_i=\sum(\lambda_i+\mu_i)\mathbf v_i\); \(\lambda\sum\lambda_i\mathbf v_i=\sum(\lambda\lambda_i)\mathbf v_i\).</p>
+  </div>
+
+  <div class="box box--def"><div class="tag">Definizione 2.12<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Il <strong>sottospazio generato</strong> da \(S=\{\mathbf v_1,\dots,\mathbf v_r\}\) è
+    \[\mathrm{Span}_{\mathbb K}\{\mathbf v_1,\dots,\mathbf v_r\}=\{\lambda_1\mathbf v_1+\dots+\lambda_r\mathbf v_r:\lambda_i\in\mathbb K\}.\]</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio 2.13</div>
+    <p>In \(\mathbb R^3\): \(\mathrm{Span}\{\mathbf e_1,\mathbf e_2\}=\left\{\begin{pmatrix}\lambda_1\\\lambda_2\\0\end{pmatrix}\right\}=\{z=0\}\), il piano “\(xy\)”. Nell'Esempio 2.9, \(\mathrm{Span}_{\mathbb R}\{\mathbf v_1,\dots,\mathbf v_4\}=\mathbb R^2\).</p>
+  </div>
+
+  <div class="box box--def"><div class="tag">Definizione 2.14<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Per \(S\subseteq V\) qualsiasi (anche infinito):
+    \[\mathrm{Span}_{\mathbb K}S=\{\lambda_1\mathbf v_1+\dots+\lambda_r\mathbf v_r\ |\ r\in\mathbb N,\ \lambda_i\in\mathbb K,\ \mathbf v_i\in S\}.\]
+    Le combinazioni lineari sono sempre <strong>finite</strong> (in algebra non ci sono somme infinite). In particolare \(\mathrm{Span}_{\mathbb K}\emptyset=\{\mathbf 0\}\).</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio 2.15<span class="imp" data-imp="utile">utile</span></div>
+    <p>In \(\mathbb K[x]\), \(S=\{1,x,x^2,\dots\}\) genera: \((x+1)^4=1+4x+6x^2+4x^3+x^4\) e in generale \((x+1)^n=\sum_k\binom nk x^k\). Al crescere di \(n\) serve un \(r\) sempre più grande, ma ogni polinomio è combinazione lineare <em>finita</em> di potenze di \(x\).</p>
+  </div>
+
+  <div class="box box--def"><div class="tag">Definizione 2.16<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Sia \(U\subseteq_{\mathbb K}V\). Un <strong>sistema di generatori</strong> di \(U\) è un \(S\subseteq V\) con \(\mathrm{Span}_{\mathbb K}S=U\) (“\(S\) genera \(U\)”). \(U\) è <strong>finitamente generato</strong> se esiste \(S\) finito con \(\mathrm{Span}_{\mathbb K}S=U\). (Il prof non usa la notazione \(\langle S\rangle\), riservata al prodotto scalare.)</p>
+  </div>
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <p><strong>Non confondere sistema di generatori e base!</strong> Un sistema di generatori può essere ridondante; una base no. Inoltre \(\mathbb R^2\) è finitamente generato su \(\mathbb R\) ma non su \(\mathbb Q\): il campo conta.</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Osservazione 2.17</div>
+    <p>\(\mathbf v\in\mathrm{Span}_{\mathbb K}S\iff\exists\,\mathbf v_1,\dots,\mathbf v_n\in S,\ \lambda_1,\dots,\lambda_n\in\mathbb K\) con \(\mathbf v=\sum\lambda_i\mathbf v_i\). Per \(S\subseteq U\subseteq_{\mathbb K}V\): \(\mathrm{Span}_{\mathbb K}S=U\iff\) ogni \(\mathbf u\in U\) è combinazione lineare di vettori di \(S\). <strong>È essenziale che \(S\subseteq U\)</strong>: altrimenti vale solo “\(\Rightarrow\)”.</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio 2 di p. 130 · generatori di un piano</div>
+    <p>\(U=\{x-y+z=0\}\subseteq\mathbb R^3=\left\{\begin{pmatrix}t-s\\t\\s\end{pmatrix}:s,t\in\mathbb R\right\}\). Si considerano:</p>
+    <ul>
+      <li>\(S_1=\{\mathbf e_1,\mathbf e_2,\mathbf e_3\}\): ogni \(\mathbf u\in U\) è combinazione di \(S_1\), ma \(S_1\not\subseteq U\), quindi <strong>non</strong> è un sistema di generatori di \(U\) (genera \(\mathbb R^3\supsetneq U\)).</li>
+      <li>\(S_2=\{(10,11,1)^\top\}\subseteq U\) non genera \(U\): \((0,1,1)^\top\in U\) non è multiplo di \((10,11,1)^\top\). <em>(Negli appunti compare \((10,-11,1)^\top\) nel confronto: è un refuso, il vettore di \(S_2\) è \((10,11,1)^\top\).)</em></li>
+      <li>\(S_3=\{(a,a+b,b)^\top:a,b\in\mathbb N\}\) è un sistema (infinito) di generatori: contiene \((1,1,0)^\top\) e \((0,1,1)^\top\), che già generano \(U\).</li>
+      <li>\(S_4=\{(1,1,0)^\top,(0,1,1)^\top\}\): \((t-s,t,s)^\top=(t-s)(1,1,0)^\top+s(0,1,1)^\top\). È un sistema di generatori <em>minimale</em>.</li>
+    </ul>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Altri esempi (pp. 130-132)</div>
+    <ul>
+      <li>\(\mathrm{Span}_{\mathbb K}U=U\) per ogni sottospazio \(U\): un sistema di generatori esiste sempre.</li>
+      <li><strong>Base canonica</strong> \(\mathbf e_1,\dots,\mathbf e_n\) di \(\mathbb K^n\) (\(\mathbf e_i\) ha 1 al posto \(i\), 0 altrove): \(\mathbf v=v_1\mathbf e_1+\dots+v_n\mathbf e_n\). L'altezza \(n\) va capita dal contesto.</li>
+      <li>Matrici standard \(E_{ij}=(\delta_{ki}\delta_{\ell j})_{k,\ell}\) generano \(\mathrm{Mat}_{m\times n}(\mathbb K)\).</li>
+      <li><strong>\(\mathbb K[x]\) non è finitamente generato</strong>: se \(\{f_1,\dots,f_m\}\) generasse, con \(d=\max\deg f_i\) si avrebbe \(x^{d+1}\notin\mathrm{Span}_{\mathbb K}\{f_1,\dots,f_m\}\).</li>
+      <li>Gauss-Jordan dà generatori di \(\mathrm{Sol}(A\mathbf x=\mathbf 0)\): da \(\left(\begin{smallmatrix}1&amp;0&amp;-2&amp;-3\\0&amp;1&amp;-5&amp;-7\end{smallmatrix}\,\middle|\,\begin{smallmatrix}0\\0\end{smallmatrix}\right)\) si ottiene \(\mathrm{Sol}=\mathrm{Span}_{\mathbb K}\{(2,5,1,0)^\top,(3,7,0,1)^\top\}\) (solo per sistemi <em>omogenei</em>).</li>
+      <li>Con \(A=(\mathbf v_1|\dots|\mathbf v_n)\): \(\mathrm{Sol}(A\mathbf x=\mathbf b)\neq\emptyset\iff\mathbf b\in\mathrm{Span}_{\mathbb K}\{\mathbf v_1,\dots,\mathbf v_n\}\).</li>
+    </ul>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo · \(\mathbf b\in\mathrm{Span}\{\mathbf v_1,\dots,\mathbf v_n\}\) in \(\mathbb K^m\)?</div>
+    <ol>
+      <li>Scrivi la matrice \(A=(\mathbf v_1|\dots|\mathbf v_n)\) con i vettori in colonna.</li>
+      <li>Riduci a scala la matrice completa \((A|\mathbf b)\).</li>
+      <li>Se il sistema è compatibile, \(\mathbf b\in\mathrm{Span}\) e ogni soluzione \((\lambda_1,\dots,\lambda_n)\) dà i coefficienti \(\mathbf b=\sum\lambda_i\mathbf v_i\); se compare una riga \((0\cdots0|c)\) con \(c\neq0\), \(\mathbf b\notin\mathrm{Span}\).</li>
+    </ol>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Osservazione 2.18</div>
+    <p>\(S\subseteq T\subseteq V\ \Rightarrow\ \mathrm{Span}_{\mathbb K}S\subseteq\mathrm{Span}_{\mathbb K}T\).</p>
+  </div>
+</section>
+
+<section class="sec" id="cap2-intersezione">
+  <div class="num">05</div>
+  <h2>Intersezione di sottospazi e Span come minimo</h2>
+  <p class="lead">L'intersezione di sottospazi è un sottospazio; lo \(\mathrm{Span}\) è il più piccolo sottospazio che contiene un insieme.</p>
+
+  <div class="box box--thm"><div class="tag">Lemma 2.19 · essenziale (i), avanzato (ii)</div>
+    <ol type="i">
+      <li>\(U_1,U_2\subseteq_{\mathbb K}V\ \Rightarrow\ U_1\cap U_2\subseteq_{\mathbb K}V\).</li>
+      <li>Per ogni famiglia non vuota \((U_i)_{i\in I}\) di sottospazi: \(\bigcap_{i\in I}U_i\subseteq_{\mathbb K}V\).</li>
+    </ol>
+    <p><em>Idea.</em> \(\mathbf 0\in U_1\cap U_2\); se \(\mathbf u,\mathbf w\in U_1\cap U_2\) allora \(\lambda\mathbf u+\mu\mathbf w\in U_i\) per ogni \(i\), quindi sta nell'intersezione (Oss. 2.5).</p>
+  </div>
+  <div class="box box--method"><div class="tag">Metodo · intersezione in forma cartesiana</div>
+    <p>Se \(U_1,U_2\subseteq\mathbb K^n\) sono dati da equazioni, \(U_1\cap U_2\) è descritto <strong>mettendo insieme le equazioni</strong>. Es.: \(U_{x,y}=\{z=0\}\), \(U_{x,z}=\{y=0\}\) in \(\mathbb R^3\) danno \(U_{x,y}\cap U_{x,z}=\{y=z=0\}=\mathrm{Span}_{\mathbb R}\{\mathbf e_1\}\), l'asse \(x\).</p>
+  </div>
+
+  <div class="box box--def"><div class="tag">Osservazione 2.20<span class="imp" data-imp="avanzato">avanzato</span></div>
+    <p>\(\mathrm{Span}_{\mathbb K}S=\min_{\subseteq}\{U:S\subseteq U\subseteq_{\mathbb K}V\}\). Cioè \(W=\mathrm{Span}_{\mathbb K}S\) se e solo se: (1) \(W\subseteq_{\mathbb K}V\); (2) \(S\subseteq W\); (3) \(S\subseteq U\subseteq_{\mathbb K}V\Rightarrow W\subseteq U\).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Teorema 2.21<span class="imp" data-imp="avanzato">avanzato</span></div>
+    <p>Per ogni \(S\subseteq V\):
+    \[\mathrm{Span}_{\mathbb K}S=\bigcap_{S\subseteq U\subseteq_{\mathbb K}V}U.\]
+    <em>Idea.</em> La famiglia è non vuota (contiene \(V\)). “\(\subseteq\)”: ogni sottospazio che contiene \(S\) contiene tutte le combinazioni lineari di \(S\). “\(\supseteq\)”: \(\mathrm{Span}_{\mathbb K}S\) è uno dei sottospazi intersecati.</p>
+  </div>
+</section>
+
+<section class="sec" id="cap2-indipendenza">
+  <div class="num">06</div>
+  <h2>Indipendenza lineare</h2>
+  <p class="lead">Vettori linearmente indipendenti: combinazioni lineari diverse danno risultati diversi, cioè la mappa \((\lambda_1,\dots,\lambda_r)\mapsto\lambda_1\mathbf v_1+\dots+\lambda_r\mathbf v_r\) è iniettiva.</p>
+
+  <div class="box box--def"><div class="tag">Definizione 2.22<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>\(\mathbf v_1,\dots,\mathbf v_r\in V\) sono <strong>linearmente indipendenti</strong> (su \(\mathbb K\)) se per ogni \(\lambda_1,\dots,\lambda_r\in\mathbb K\)
+    \[\big[\lambda_1\mathbf v_1+\dots+\lambda_r\mathbf v_r=\mathbf 0\big]\ \Rightarrow\ \big[\lambda_1=\dots=\lambda_r=0\big].\]
+    Un elenco infinito è linearmente indipendente se ogni suo sotto-elenco finito lo è. La negazione è <strong>linearmente dipendente</strong>. L'insieme vuoto è linearmente indipendente.</p>
+    <p>Si parla di <em>elenco</em>/<em>sistema</em> di vettori (ammettendo ripetizioni): una matrice con due righe uguali ha righe linearmente dipendenti.</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Osservazione 2.23</div>
+    <p>\(\mathbf v_1,\dots,\mathbf v_r\) sono linearmente dipendenti \(\iff\) esistono \((\lambda_1,\dots,\lambda_r)\neq(0,\dots,0)\) con \(\lambda_1\mathbf v_1+\dots+\lambda_r\mathbf v_r=\mathbf 0\) (esiste una combinazione lineare <em>non banale</em> con risultato nullo).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Osservazione 2.24</div>
+    <p>Se \(\mathbf v_1,\dots,\mathbf v_r\) sono linearmente indipendenti: (i) \(\mathbf v_i\neq\mathbf 0\) per ogni \(i\); (ii) \(\mathbf v_i\neq\mathbf v_j\) per \(i\neq j\); (iii) ogni sottosistema è linearmente indipendente.</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempi (pp. 135-136)</div>
+    <ol>
+      <li>\(\binom11,\binom1{-1}\) sono indipendenti: \(\lambda_1+\lambda_2=0,\ \lambda_1-\lambda_2=0\Rightarrow\lambda_1=\lambda_2=0\).</li>
+      <li>\((1,1,0)^\top,(0,1,1)^\top\) sono indipendenti; aggiungendo \((1,0,-1)^\top\) diventano dipendenti: \(1\cdot(1,1,0)^\top-(0,1,1)^\top-(1,0,-1)^\top=\mathbf 0\).</li>
+      <li>\(\mathbf e_1,\dots,\mathbf e_n\); le matrici \(E_{ij}\); le potenze di \(x\) in \(\mathbb K[x]\) sono linearmente indipendenti.</li>
+      <li>\((1,2,3)^\top,(4,5,6)^\top,(7,8,9)^\top\) sono dipendenti: \(1\cdot(1,2,3)^\top-2\cdot(4,5,6)^\top+1\cdot(7,8,9)^\top=\mathbf 0\).</li>
+    </ol>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Teorema 2.25<span class="imp" data-imp="utile">utile</span></div>
+    <p>Sia \(S\) un sistema di vettori di \(V\). Allora
+    \[S\text{ è linearmente indipendente}\iff\forall\,\mathbf v\in S:\ \mathbf v\notin\mathrm{Span}_{\mathbb K}(S\setminus\mathbf v).\]
+    Cioè: \(S\) è indipendente se e solo se togliendo un qualsiasi vettore lo Span si riduce; equivalentemente, nessun vettore è combinazione lineare degli altri.</p>
+    <p><em>Idea.</em> \(\Rightarrow\): se \(\mathbf v=\sum\lambda_i\mathbf v_i\) con \(\mathbf v_i\in S\setminus\mathbf v\), allora \(-1\cdot\mathbf v+\sum\lambda_i\mathbf v_i=\mathbf 0\) è non banale. \(\Leftarrow\): se \(\sum\lambda_i\mathbf v_i=\mathbf 0\) con \(\lambda_1\neq0\), dividendo per \(\lambda_1\) (campo!) \(\mathbf v_1=-\sum_{i\geqslant2}\frac{\lambda_i}{\lambda_1}\mathbf v_i\in\mathrm{Span}(S\setminus\{\mathbf v_1\})\).</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo · decidere l'indipendenza di \(\mathbf v_1,\dots,\mathbf v_r\)</div>
+    <ol>
+      <li>Imposta \(\lambda_1\mathbf v_1+\dots+\lambda_r\mathbf v_r=\mathbf 0\) con incognite \(\lambda_i\).</li>
+      <li>In \(\mathbb K^n\) è il sistema omogeneo \((\mathbf v_1|\dots|\mathbf v_r)\boldsymbol\lambda=\mathbf 0\): riduci a scala.</li>
+      <li>Indipendenti \(\iff\) unica soluzione \(\boldsymbol\lambda=\mathbf 0\) \(\iff\) ogni colonna ha un pivot (rango \(=r\)). Se c'è una variabile libera, una sua soluzione non nulla è la relazione di dipendenza.</li>
+      <li>In spazi astratti (polinomi, matrici): confronta i coefficienti (di \(1,x,x^2,\dots\) o delle entrate) e ottieni comunque un sistema lineare negli \(\lambda_i\).</li>
+      <li>Scorciatoie: se un vettore è \(\mathbf 0\), o due sono uguali/proporzionali, sono dipendenti; in \(\mathbb K^n\) più di \(n\) vettori sono sempre dipendenti (Steinitz).</li>
+    </ol>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <ul>
+      <li>Indipendenti <em>a due a due</em> non significa indipendenti: \(\mathbf e_1,\mathbf e_2,\mathbf e_1+\mathbf e_2\) in \(\mathbb R^2\) (vedi Foglio 5, es. 6).</li>
+      <li>L'indipendenza dipende dal campo: \(\{1,i\}\) è indipendente su \(\mathbb R\) ma non su \(\mathbb C\) (\(i\cdot1+(-1)\cdot i=0\)).</li>
+      <li>Per dimostrare la <em>dipendenza</em> basta esibire una combinazione non banale nulla; per l'<em>indipendenza</em> bisogna dimostrare che <em>tutte</em> le soluzioni sono nulle.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="cap2-basi">
+  <div class="num">07</div>
+  <h2>Basi e coordinate</h2>
+  <p class="lead">Una base descrive lo spazio in modo <em>completo</em> (ogni vettore è combinazione lineare) e <em>ottimale</em> (la scrittura è unica).</p>
+
+  <div class="box box--def"><div class="tag">Definizione 2.26<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>\(\mathcal B\subseteq V\) è una <strong>base</strong> di \(V\) se:
+    <strong>B.1</strong> \(\mathcal B\) è linearmente indipendente; <strong>B.2</strong> \(\mathcal B\) è un sistema di generatori di \(V\).</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempi (pp. 137-138)</div>
+    <ol>
+      <li>Base canonica \(\mathbf e_1,\dots,\mathbf e_n\) di \(\mathbb K^n\).</li>
+      <li>\(\{E_{ij}:i=1..m,\ j=1..n\}\) base di \(\mathrm{Mat}_{m\times n}(\mathbb K)\).</li>
+      <li>\(\{x^i:i\in\mathbb N\}\) base (infinita) di \(\mathbb K[x]\); \(\{1,x,\dots,x^d\}\) base di \(\mathbb K[x]_{\leqslant d}\).</li>
+      <li>Base non standard \(\mathcal B:\binom11,\binom23\) di \(\mathbb R^2\): \(A=\begin{pmatrix}1&amp;2\\1&amp;3\end{pmatrix}\) ha rango 2, quindi è invertibile: \(A\mathbf x=\mathbf 0\) ha solo la soluzione nulla (B.1) e \(A\mathbf x=\mathbf v\) è risolubile per ogni \(\mathbf v\) (B.2). Con \(A^{-1}=\begin{pmatrix}3&amp;-2\\-1&amp;1\end{pmatrix}\):
+        \[\left[\begin{pmatrix}v_1\\v_2\end{pmatrix}\right]_{\mathcal B}=\begin{pmatrix}3v_1-2v_2\\-v_1+v_2\end{pmatrix},\quad\text{infatti }(3v_1-2v_2)\binom11+(-v_1+v_2)\binom23=\binom{v_1}{v_2}.\]</li>
+      <li>Lo spazio nullo ha come base \(\emptyset\) (\(\mathrm{Span}\,\emptyset=\mathbf 0\)).</li>
+      <li>\(\{1,i\}\) è una \(\mathbb R\)-base di \(\mathbb C\), ma non una \(\mathbb C\)-base.</li>
+    </ol>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Osservazione 2.27<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Se \(\mathbf v_1,\dots,\mathbf v_n\) è una base di \(V\), allora
+    \[\forall\,\mathbf v\in V\ \exists!\ \lambda_1,\dots,\lambda_n\in\mathbb K:\ \mathbf v=\lambda_1\mathbf v_1+\dots+\lambda_n\mathbf v_n.\]
+    <em>Esistenza</em>: dai generatori. <em>Unicità</em>: se \(\sum\lambda_i\mathbf v_i=\sum\mu_i\mathbf v_i\) allora \(\sum(\lambda_i-\mu_i)\mathbf v_i=\mathbf 0\) e per l'indipendenza \(\lambda_i=\mu_i\).</p>
+  </div>
+
+  <div class="box box--def"><div class="tag">Definizione 2.28<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Sia \(\mathcal B=\mathbf v_1,\dots,\mathbf v_n\) una base <strong>ordinata</strong>. Gli unici scalari con \(\mathbf v=\lambda_1\mathbf v_1+\dots+\lambda_n\mathbf v_n\) sono le <strong>coordinate</strong> di \(\mathbf v\) rispetto a \(\mathcal B\); il <strong>vettore delle coordinate</strong> è
+    \[[\mathbf v]_{\mathcal B}:=\begin{pmatrix}\lambda_1\\\vdots\\\lambda_n\end{pmatrix}\in\mathbb K^n.\]
+    L'ordine degli elementi conta solo quando si parla di coordinate.</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo · coordinate rispetto a una base</div>
+    <ol>
+      <li>Scrivi l'incognita \(\mathbf v=\lambda_1\mathbf v_1+\dots+\lambda_n\mathbf v_n\).</li>
+      <li>In \(\mathbb K^n\): risolvi \((\mathbf v_1|\dots|\mathbf v_n)\boldsymbol\lambda=\mathbf v\) (ha soluzione unica perché la matrice è invertibile); se devi farlo per molti \(\mathbf v\), calcola una volta \(A^{-1}\) e usa \([\mathbf v]_{\mathcal B}=A^{-1}\mathbf v\).</li>
+      <li>In polinomi/matrici: uguaglia i coefficienti di \(1,x,x^2,\dots\) (o le entrate) e risolvi il sistema.</li>
+      <li>Verifica: ricalcola \(\sum\lambda_i\mathbf v_i\) e confronta con \(\mathbf v\).</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="cap2-esistenza-basi">
+  <div class="num">08</div>
+  <h2>Esistenza delle basi</h2>
+  <p class="lead">Strategia: partire da un sistema di generatori e trovarvi un sottoinsieme linearmente indipendente massimale; questo è anche un sistema minimale di generatori, quindi una base.</p>
+
+  <div class="box box--ex"><div class="tag">Esempio 2.29<span class="imp" data-imp="utile">utile</span></div>
+    <p>\(\mathbf v_1=\binom10,\mathbf v_2=\binom01,\mathbf v_3=\binom11\) in \(\mathbb R^2\), \(S=\mathbf v_1,\mathbf v_2,\mathbf v_3\). Si ha \(\binom xy=(x-1)\mathbf v_1+(y-1)\mathbf v_2+1\cdot\mathbf v_3\), quindi \(S\) genera \(\mathbb R^2\). L'unico sottoinsieme dipendente è \(S\) stesso (\(\mathbf v_1+\mathbf v_2-\mathbf v_3=\mathbf 0\)). I sottoinsiemi indipendenti massimali \(\{\mathbf v_1,\mathbf v_2\},\{\mathbf v_1,\mathbf v_3\},\{\mathbf v_2,\mathbf v_3\}\) sono tutte basi.</p>
+  </div>
+  <figure class="fig">
+    <svg viewBox="0 0 360 170" width="360" height="170" role="img" aria-label="Diagramma di Hasse dei sottoinsiemi linearmente indipendenti di {v1,v2,v3}">
+      <g stroke="currentColor" stroke-width="1.2">
+        <line x1="60" y1="38" x2="60" y2="78"/><line x1="60" y1="38" x2="180" y2="78"/>
+        <line x1="180" y1="38" x2="60" y2="78"/><line x1="180" y1="38" x2="300" y2="78"/>
+        <line x1="300" y1="38" x2="180" y2="78"/><line x1="300" y1="38" x2="300" y2="78"/>
+        <line x1="60" y1="98" x2="180" y2="140"/><line x1="180" y1="98" x2="180" y2="140"/><line x1="300" y1="98" x2="180" y2="140"/>
+      </g>
+      <g fill="currentColor" font-size="13" text-anchor="middle">
+        <text x="60" y="30">{v₁, v₂}</text><text x="180" y="30">{v₁, v₃}</text><text x="300" y="30">{v₂, v₃}</text>
+        <text x="60" y="93">{v₁}</text><text x="180" y="93">{v₂}</text><text x="300" y="93">{v₃}</text>
+        <text x="180" y="158">∅</text>
+      </g>
+    </svg>
+    <figcaption>Diagramma di Hasse dei sottoinsiemi linearmente indipendenti di \(\{\mathbf v_1,\mathbf v_2,\mathbf v_3\}\) (Esempio 2.29): in alto i massimali, che sono le basi.</figcaption>
+  </figure>
+
+  <div class="box box--def"><div class="tag">Definizione 2.30<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <ol>
+      <li>\(S\) è un <strong>sistema minimale di generatori</strong> di \(V\) se (i) \(\mathrm{Span}_{\mathbb K}S=V\) e (ii) \(\mathrm{Span}_{\mathbb K}(S\setminus\mathbf v)\neq V\) per ogni \(\mathbf v\in S\): non si può togliere nessun vettore.</li>
+      <li>\(S\) è un <strong>sistema linearmente indipendente massimale</strong> se (i) \(S\) è linearmente indipendente e (ii) \(S\cup\{\mathbf v\}\) non è linearmente indipendente per ogni \(\mathbf v\in V\setminus S\): non si può aggiungere nessun vettore.</li>
+    </ol>
+    <p>Minimale/massimale si riferiscono all'<strong>inclusione</strong> (nel caso finito coincide con la cardinalità).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Osservazione 2.31<span class="imp" data-imp="utile">utile</span></div>
+    <p>(i) Il sistema di generatori \(S\) è minimale \(\iff\mathrm{Span}_{\mathbb K}T\neq\mathrm{Span}_{\mathbb K}S\) per ogni \(T\subsetneq S\). (ii) Il sistema indipendente \(S\) è massimale \(\iff\) ogni \(T\subseteq V\) con \(S\subsetneq T\) è linearmente dipendente.</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Corollario 2.32<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Per un sistema \(S=\mathbf v_1,\dots,\mathbf v_n\) di \(V\) sono equivalenti:</p>
+    <ol type="i">
+      <li>\(S\) è un sistema linearmente indipendente massimale in \(V\);</li>
+      <li>\(S\) è un sistema minimale di generatori di \(V\);</li>
+      <li>\(S\) è una base di \(V\).</li>
+    </ol>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Lemma 2.33<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Siano \(T\subseteq S\subseteq V\). Allora
+    \[\mathrm{Span}_{\mathbb K}T=\mathrm{Span}_{\mathbb K}S\iff\mathbf v\in\mathrm{Span}_{\mathbb K}T\quad\forall\,\mathbf v\in S.\]
+    In particolare, se \(S\) è finito basta un numero finito di verifiche. (\(\Leftarrow\): ogni combinazione di vettori di \(S\) è combinazione di vettori di \(\mathrm{Span}\,T\), che è un sottospazio.)</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Teorema 2.34<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Ogni sistema minimale di generatori di \(V\) è una base di \(V\).<br><em>Idea.</em> Se \(\mathbf v\in\mathrm{Span}(S\setminus\mathbf v)\), per il Lemma 2.33 \(\mathrm{Span}(S\setminus\mathbf v)=\mathrm{Span}\,S=V\), contro la minimalità; si conclude col Teorema 2.25.</p>
+  </div>
+
+  <h3>Il caso finitamente generato</h3>
+  <div class="box box--thm"><div class="tag">Osservazione 2.35<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Se \(\lambda_1\mathbf v_1+\dots+\lambda_n\mathbf v_n=\mathbf 0\) con \(\lambda_j\neq0\), allora \(\mathbf v_j\in\mathrm{Span}_{\mathbb K}(\mathbf v_1,\dots,\widehat{\mathbf v_j},\dots,\mathbf v_n)\) e
+    \[\mathrm{Span}_{\mathbb K}(\mathbf v_1,\dots,\widehat{\mathbf v_j},\dots,\mathbf v_n)=\mathrm{Span}_{\mathbb K}(\mathbf v_1,\dots,\mathbf v_n)\]
+    (\(\widehat{\ \cdot\ }\) = elemento tolto). Infatti \(\mathbf v_j=-\frac{\lambda_1}{\lambda_j}\mathbf v_1-\dots-\frac{\lambda_n}{\lambda_j}\mathbf v_n\) (senza il termine \(j\)).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Teorema 2.36<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Se \(S=\mathbf v_1,\dots,\mathbf v_n\) è un sistema finito di generatori di \(V\), allora \(S\) contiene una base.<br>
+    <em>Idea.</em> Finché \(S\) è dipendente, c'è una relazione con un \(\lambda_j\neq0\): per l'Oss. 2.35 si può togliere \(\mathbf v_j\) senza cambiare lo Span. Dopo al più \(n\) passi resta una base (eventualmente \(\emptyset\), base di \(\mathbf 0\)).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Corollario 2.37<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Ogni spazio vettoriale finitamente generato possiede una base.</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo · estrarre una base da un sistema di generatori</div>
+    <ol>
+      <li>Cerca una relazione di dipendenza \(\sum\lambda_i\mathbf v_i=\mathbf 0\) non banale (sistema omogeneo negli \(\lambda_i\)).</li>
+      <li>Scegli un \(j\) con \(\lambda_j\neq0\) e togli \(\mathbf v_j\): lo Span non cambia (Oss. 2.35).</li>
+      <li>Ripeti finché i vettori rimasti sono indipendenti: hai una base.</li>
+      <li>In \(\mathbb K^n\) in un colpo solo: metti i vettori in colonna, riduci a scala; le colonne <strong>originali</strong> corrispondenti ai pivot formano una base (Cap. 3).</li>
+    </ol>
+  </div>
+
+  <h3>Il caso generale</h3>
+  <div class="box box--thm"><div class="tag">Teorema 2.38<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Sia \(S\) un sistema di generatori di \(V\). Se \(T\subseteq S\) è un sottoinsieme linearmente indipendente massimale (in \(S\)), allora \(T\) è una base di \(V\). In particolare, ogni insieme linearmente indipendente massimale è una base.<br>
+    <em>Idea.</em> Basta \(\mathbf v\in\mathrm{Span}\,T\) per \(\mathbf v\in S\setminus T\) (Lemma 2.33). \(T\cup\{\mathbf v\}\) è dipendente: \(\lambda_{\mathbf v}\mathbf v+\sum\lambda_i\mathbf v_i=\mathbf 0\) con \(\lambda_{\mathbf v}\neq0\) (altrimenti \(T\) sarebbe dipendente), quindi si divide per \(\lambda_{\mathbf v}\).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Teorema 2.39 · enunciato essenziale, dimostrazione molto avanzata</div>
+    <p><strong>Ogni spazio vettoriale possiede una base.</strong><br>
+    <em>Idea (Lemma di Zorn).</em> Sull'insieme \(\mathcal M\) dei sottoinsiemi linearmente indipendenti, ordinato per inclusione, ogni catena \(\mathcal N\) ha come maggiorante \(O=\bigcup_{T\in\mathcal N}T\) (ogni sottoinsieme finito di \(O\) sta in un unico \(T_n\) della catena, quindi è indipendente). Zorn dà un elemento massimale, che è una base per il Teorema 2.38.</p>
+  </div>
+  <div class="box box--note"><div class="tag">Dagli appunti (p. 143)</div>
+    <p>Il Lemma di Zorn equivale all'Assioma della Scelta. Per \(\mathbb Q[x]\) la base \(\{1,x,x^2,\dots\}\) è esplicita; per \(\mathbb R\) come \(\mathbb Q\)-spazio sappiamo solo che una base esiste (esistono modelli della teoria degli insiemi senza scelta in cui non esiste). Nel corso si assume sempre l'assioma della scelta.</p>
+  </div>
+</section>
+
+<section class="sec" id="cap2-steinitz">
+  <div class="num">09</div>
+  <h2>Completamento e teorema di Steinitz</h2>
+  <p class="lead">Ogni sistema di generatori contiene una base; dualmente, ogni sistema indipendente si completa a una base. Il motore è il teorema dello scambio di Steinitz.</p>
+
+  <div class="box box--thm"><div class="tag">Corollario 2.40<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Ogni sistema di generatori di uno spazio vettoriale su \(\mathbb K\) contiene una base.</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Teorema 2.41<span class="imp" data-imp="essenziale">essenziale</span></div><h4>Teorema dello scambio / del completamento di Steinitz</h4>
+    <p>Sia \(V\) un \(\mathbb K\)-spazio vettoriale e siano
+    \[L=\mathbf v_1,\dots,\mathbf v_m\ \text{linearmente indipendente},\qquad S=\mathbf w_1,\dots,\mathbf w_n\ \text{sistema di generatori di }V.\]
+    Allora: (i) \(m\leqslant n\); (ii) dopo un eventuale riordinamento dei vettori di \(S\),
+    \[\mathrm{Span}_{\mathbb K}\{\mathbf v_1,\dots,\mathbf v_m,\mathbf w_{m+1},\dots,\mathbf w_n\}=V.\]</p>
+    <p><em>Idea (induzione su \(m\)).</em> Si scrive \(\mathbf v_1=\lambda_1\mathbf w_1+\dots+\lambda_n\mathbf w_n\); poiché \(\mathbf v_1\neq\mathbf 0\) qualche \(\lambda_i\neq0\), diciamo \(\lambda_1\): allora \(\mathbf w_1\in\mathrm{Span}\{\mathbf v_1,\mathbf w_2,\dots,\mathbf w_n\}\) e si <strong>scambia</strong> \(\mathbf w_1\) con \(\mathbf v_1\). Al passo \(m\): \(\mathbf v_m=\mu_1\mathbf v_1+\dots+\mu_{m-1}\mathbf v_{m-1}+\mu_m\mathbf w_m+\dots+\mu_n\mathbf w_n\); se tutti i \(\mu_j\) dei \(\mathbf w\) fossero nulli (o non ci fossero più \(\mathbf w\)) \(L\) sarebbe dipendente. Quindi \(m-1&lt;n\) e si scambia un \(\mathbf w_j\) con \(\mu_j\neq0\) con \(\mathbf v_m\).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Lemma 2.42<span class="imp" data-imp="molto-avanzato">molto avanzato</span></div>
+    <p>Se esiste \(n_0\in\mathbb N\) con \(|A'|\leqslant n_0\) per ogni sottoinsieme finito \(A'\subseteq A\), allora \(A\) è finito.</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Corollario 2.43<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Sia \(V\) finitamente generato. Ogni insieme linearmente indipendente in \(V\) può essere completato a una base finita.<br>
+    <em>Idea.</em> Per Steinitz (i) e il Lemma 2.42, \(L\) è finito; per Steinitz (ii), \(L\cup\{\mathbf w_{m+1},\dots,\mathbf w_n\}\) genera; si tolgono i \(\mathbf w\) superflui (una relazione non banale deve coinvolgere qualche \(\mathbf w\), perché \(L\) è indipendente).</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo · completare un sistema indipendente \(L\) a una base</div>
+    <ol>
+      <li>Scegli un sistema di generatori noto \(S=\mathbf w_1,\dots,\mathbf w_n\) (di solito la base canonica).</li>
+      <li>Aggiungi a \(L\) i vettori di \(S\) uno alla volta: tieni \(\mathbf w_j\) solo se <strong>non</strong> è nello Span dei vettori già scelti (così il sistema resta indipendente, Teorema 2.25).</li>
+      <li>Ti fermi quando hai \(\dim V\) vettori: è una base (vedi Corollario 2.46 e conseguenze).</li>
+      <li>In \(\mathbb K^n\): matrice \((L\,|\,\mathbf e_1\cdots\mathbf e_n)\) a colonne, riduci a scala; le colonne pivot danno la base (le prime \(|L|\) sono pivot perché \(L\) è indipendente).</li>
+    </ol>
+  </div>
+
+  <div class="box box--note"><div class="tag">Perché serve un campo (p. 146)<span class="imp" data-imp="molto-avanzato">molto avanzato</span></div>
+    <p>Su un anello come \(\mathbb Z\) (si parla di \(\mathbb Z\)-moduli) i teoremi falliscono: \(\{2,3\}\) genera \(\mathbb Z\) (\(z=(2z)\cdot2+(-z)\cdot3\)) ma è dipendente (\(3\cdot2+(-2)\cdot3=0\)) e non contiene una base; \(\{2\}\) è indipendente ma non si completa a una base; \(\mathbb Z/n\mathbb Z\) non ha basi. Apprezzate l'esistenza dell'inverso di ogni scalare non nullo!</p>
+  </div>
+</section>
+
+<section class="sec" id="cap2-dimensione">
+  <div class="num">10</div>
+  <h2>Dimensione</h2>
+  <p class="lead">Tutte le basi di uno spazio finitamente generato hanno lo stesso numero di elementi: è la dimensione.</p>
+
+  <div class="box box--thm"><div class="tag">Corollario 2.44<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Sia \(V\) finitamente generato su \(\mathbb K\). (i) Esiste una base finita di \(V\). (ii) Se \(\mathcal B_1,\mathcal B_2\) sono basi di \(V\), sono entrambe finite e \(|\mathcal B_1|=|\mathcal B_2|\).<br>
+    <em>Idea.</em> Steinitz (i) due volte: con \(L=\mathcal B_1,S=\mathcal B_2\) e viceversa, quindi \(|\mathcal B_1|\leqslant|\mathcal B_2|\leqslant|\mathcal B_1|\). Se una base fosse infinita, ogni suo sottoinsieme finito avrebbe al più \(|\mathcal B_1|\) elementi e il Lemma 2.42 la renderebbe finita.</p>
+  </div>
+
+  <div class="box box--def"><div class="tag">Definizione 2.45<span class="imp" data-imp="essenziale">essenziale</span></div>
+    \[\dim_{\mathbb K}V:=\begin{cases}n,&amp;\text{se }V\text{ possiede una base finita con }n\text{ elementi},\\ \infty,&amp;\text{se }V\text{ non possiede una base finita.}\end{cases}\]
+    <p>\(V\) è <strong>di dimensione finita</strong> se \(\dim_{\mathbb K}V\in\mathbb N\), <strong>di dimensione infinita</strong> se \(\dim_{\mathbb K}V=\infty\).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Corollario 2.46<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Sia \(\dim_{\mathbb K}V&lt;\infty\) e \(W\subseteq_{\mathbb K}V\). Allora:</p>
+    <ol type="i">
+      <li>anche \(W\) ha dimensione finita e \(\dim_{\mathbb K}W\leqslant\dim_{\mathbb K}V\);</li>
+      <li>se \(\dim_{\mathbb K}W=\dim_{\mathbb K}V\), allora \(W=V\).</li>
+    </ol>
+    <p><em>Idea di (ii).</em> Se \(W\neq V\), preso \(\mathbf v\in V\setminus W\) e una base \(\mathcal B'\) di \(W\), si ha \(\mathbf v\notin\mathrm{Span}\,\mathcal B'\), quindi \(\mathcal B'\cup\{\mathbf v\}\) è indipendente (Teorema 2.25) e \(\dim V&gt;|\mathcal B'|=\dim W\).</p>
+  </div>
+
+  <div class="box box--note"><div class="tag">Conseguenze pratiche (da Steinitz + Corollario 2.46)</div>
+    <p>Se \(\dim_{\mathbb K}V=n&lt;\infty\):</p>
+    <ul>
+      <li>più di \(n\) vettori sono sempre linearmente dipendenti; meno di \(n\) vettori non generano mai \(V\);</li>
+      <li><strong>\(n\) vettori linearmente indipendenti sono una base</strong> (il loro Span ha dimensione \(n\), quindi è \(V\));</li>
+      <li><strong>\(n\) vettori che generano \(V\) sono una base</strong> (contengono una base, che ha \(n\) elementi).</li>
+    </ul>
+    <p>Quindi, conoscendo la dimensione, per verificare una base basta controllare <em>una sola</em> delle due condizioni B.1, B.2 (come nell'esempio 3 qui sotto).</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempi (pp. 148-149)</div>
+    <ol>
+      <li>\(\dim_{\mathbb K}\mathbb K^n=n\) (base canonica).</li>
+      <li>Se \(\mathbf v_1,\dots,\mathbf v_r\) sono indipendenti, \(\dim_{\mathbb K}\mathrm{Span}_{\mathbb K}\{\mathbf v_1,\dots,\mathbf v_r\}=r\).</li>
+      <li>\(\binom ac,\binom bd\) è una base di \(\mathbb R^2\) \(\iff\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}\) è invertibile.</li>
+      <li><strong>I sottospazi propri di \(\mathbb R^2\) sono le rette per l'origine</strong>: \(\dim U\leqslant2\); dimensione 0 e 2 danno \(\mathbf 0\) e \(\mathbb R^2\); dimensione 1 significa \(U=\mathrm{Span}_{\mathbb R}\mathbf u\) con \(\mathbf u\neq\mathbf 0\), cioè \(R_{\mathbf u}\).</li>
+      <li>\(\dim_{\mathbb K}\mathrm{Mat}_{m\times n}(\mathbb K)=mn\).</li>
+      <li>\(\dim_{\mathbb K}\mathbb K[x]=\infty\), \(\dim_{\mathbb K}\mathbb K[x]_{\leqslant d}=d+1\). Esercizio: \(1-x,\ 1+x,\ x+x^2,\dots,x^{d-1}+x^d\) è un'altra base di \(\mathbb K[x]_{\leqslant d}\) (serve \(2\neq0\) in \(\mathbb K\): \(1=\frac12[(1-x)+(1+x)]\)).</li>
+      <li><em>(avanzato)</em> \(\dim\mathbb K[x_1,\dots,x_n]_{\leqslant d}=\binom{n+d}{n}\), \(\dim\mathbb K[x_1,\dots,x_n]_d=\binom{n+d-1}{n-1}\); es. \(\dim\mathbb K[x,y]_{\leqslant3}=\binom52=10\) (base \(1,x,y,x^2,xy,y^2,x^3,x^2y,xy^2,y^3\)) e \(\dim\mathbb K[x,y]_3=\binom41=4\) (base \(x^3,x^2y,xy^2,y^3\)).</li>
+      <li><em>(avanzato)</em> \(\{\binom{x+i}{i}:i\in\mathbb N\}\) è una base di \(\mathbb Q[x]\).</li>
+      <li>\(\dim_{\mathbb R}\mathbb C=2\): basi \(\{1,i\}\) e \(\{1+i,1-i\}\).</li>
+      <li>\(\{1,\sqrt2\}\) è una base di \(\mathbb Q[\sqrt2]\) su \(\mathbb Q\): se \(a+b\sqrt2=0\) con \((a,b)\neq(0,0)\), allora \(b\neq0\) e \(\sqrt2=-\frac ab\in\mathbb Q\), assurdo.</li>
+      <li>Esercizio: \(\{1,\sqrt[3]2,\sqrt[3]4\}\) è una base di \(\mathbb Q[\sqrt[3]2]\) su \(\mathbb Q\) (suggerimento: \(x^3-2\) è irriducibile in \(\mathbb Q[x]\)).</li>
+    </ol>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Teorema 2.47<span class="imp" data-imp="utile">utile</span></div>
+    <p>Siano \(V,W\) di dimensione finita con basi \(\mathcal B_V=\mathbf v_1,\dots,\mathbf v_n\) e \(\mathcal B_W=\mathbf w_1,\dots,\mathbf w_m\). Allora
+    \[\mathcal B:=(\mathbf v_1,\mathbf 0_W),\dots,(\mathbf v_n,\mathbf 0_W),(\mathbf 0_V,\mathbf w_1),\dots,(\mathbf 0_V,\mathbf w_m)\]
+    è una base di \(V\times W\); in particolare \(\dim_{\mathbb K}(V\times W)=\dim_{\mathbb K}V+\dim_{\mathbb K}W\).<br>
+    <em>Idea.</em> Una combinazione nulla dà separatamente \(\sum\lambda_i\mathbf v_i=\mathbf 0_V\) e \(\sum\mu_j\mathbf w_j=\mathbf 0_W\); e \((\mathbf v,\mathbf w)=\sum\lambda_i(\mathbf v_i,\mathbf 0)+\sum\mu_j(\mathbf 0,\mathbf w_j)\).</p>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <ul>
+      <li>La dimensione dipende dal campo: \(\dim_{\mathbb C}\mathbb C=1\), \(\dim_{\mathbb R}\mathbb C=2\), \(\dim_{\mathbb Q}\mathbb R=\infty\).</li>
+      <li>\(\dim\mathbb R[x]_{\leqslant d}=d+1\), non \(d\): non dimenticare la costante \(1\).</li>
+      <li>\(\dim\mathbf 0=0\) (base vuota), e “\(n\) vettori in uno spazio di dimensione \(n\)” non sono automaticamente una base: devono essere indipendenti (o generare).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="cap2-somma">
+  <div class="num">11</div>
+  <h2>Somma di sottospazi, somma diretta e Grassmann</h2>
+  <p class="lead">L'unione di due sottospazi in generale non è un sottospazio; il più piccolo sottospazio che li contiene entrambi è la loro somma.</p>
+
+  <div class="box box--ex"><div class="tag">Esempio 2.48</div>
+    <p>In \(\mathbb R^2\), \(U_x=\{\binom x0\}\) e \(U_y=\{\binom0y\}\). L'unione \(A=\{x=0\text{ oppure }y=0\}\) non è un sottospazio: \(\binom10,\binom01\in A\) ma \(\binom10+\binom01=\binom11\notin A\).</p>
+  </div>
+
+  <div class="box box--def"><div class="tag">Definizione 2.49<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Siano \(U_1,U_2\) sottospazi di \(V\). La <strong>somma</strong> di \(U_1\) e \(U_2\) è il \(\mathbb K\)-sottospazio
+    \[U_1+U_2:=\mathrm{Span}_{\mathbb K}(U_1\cup U_2).\]
+    È il più piccolo sottospazio che contiene sia \(U_1\) sia \(U_2\).</p>
+  </div>
+
+  <div class="box box--note"><div class="tag">Da qui in poi: oltre la “parte 1” degli appunti</div>
+    <p>Il PDF “Capitolo 2 - parte 1” si interrompe subito dopo la Definizione 2.49 (p. 150). I risultati seguenti sono quelli che il prof usa nei Capitoli 3 e 4 (dove li cita come “Teorema 2.49” per la descrizione della somma; la numerazione nella versione definitiva potrà cambiare) e che servono per il Quiz 2 (domande Q11, Q12, E2). Gli enunciati sono standard; la formula di Grassmann è il Corollario 4.24 del Capitolo 4.</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Teorema (descrizione della somma)</div>
+    <p>\[U_1+U_2=\{\mathbf u_1+\mathbf u_2:\ \mathbf u_1\in U_1,\ \mathbf u_2\in U_2\}.\]
+    In particolare, se \(U_1=\mathrm{Span}_{\mathbb K}S_1\) e \(U_2=\mathrm{Span}_{\mathbb K}S_2\), allora \(U_1+U_2=\mathrm{Span}_{\mathbb K}(S_1\cup S_2)\): <strong>per la somma si uniscono i generatori</strong>.<br>
+    <em>Idea.</em> L'insieme a destra contiene \(U_1\) e \(U_2\) ed è un sottospazio (\(\lambda(\mathbf u_1+\mathbf u_2)+\mu(\mathbf u_1'+\mathbf u_2')=(\lambda\mathbf u_1+\mu\mathbf u_1')+(\lambda\mathbf u_2+\mu\mathbf u_2')\)); viceversa ogni suo elemento è combinazione lineare di vettori di \(U_1\cup U_2\).</p>
+  </div>
+
+  <div class="box box--def"><div class="tag">Definizione (somma diretta)</div>
+    <p>La somma \(U_1+U_2\) si dice <strong>diretta</strong>, e si scrive \(U_1\oplus U_2\), se \(U_1\cap U_2=\{\mathbf 0\}\). Equivalentemente: ogni vettore di \(U_1+U_2\) si scrive in modo <strong>unico</strong> come \(\mathbf u_1+\mathbf u_2\) con \(\mathbf u_i\in U_i\).<br>
+    <em>Perché equivale.</em> Se \(\mathbf u_1+\mathbf u_2=\mathbf u_1'+\mathbf u_2'\) allora \(\mathbf u_1-\mathbf u_1'=\mathbf u_2'-\mathbf u_2\in U_1\cap U_2\); se l'intersezione è nulla le due scritture coincidono. Viceversa, se \(\mathbf 0\neq\mathbf w\in U_1\cap U_2\), allora \(\mathbf w=\mathbf w+\mathbf 0=\mathbf 0+\mathbf w\) sono due scritture diverse.</p>
+    <p>Esempio dagli appunti: \(\mathrm{Mat}_n(\mathbb R)=\mathrm{Mat}^{\mathrm{sym}}_n(\mathbb R)\oplus\mathrm{Mat}^{\text{a-sym}}_n(\mathbb R)\) (decomposizione \(A=\frac12(A+A^\top)+\frac12(A-A^\top)\), unica perché l'unica matrice simmetrica e antisimmetrica è la nulla).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Formula di Grassmann (Cap. 4, Corollario 4.24)</div>
+    <p>Se \(U_1,U_2\) sono sottospazi di uno spazio \(V\) di dimensione finita:
+    \[\dim_{\mathbb K}(U_1+U_2)=\dim_{\mathbb K}U_1+\dim_{\mathbb K}U_2-\dim_{\mathbb K}(U_1\cap U_2).\]
+    In particolare la somma è diretta \(\iff\dim(U_1+U_2)=\dim U_1+\dim U_2\). (Il prof la dimostra nel Cap. 4 con l'applicazione lineare \(U_1\times U_2\to V\), \((\mathbf v_1,\mathbf v_2)\mapsto\mathbf v_1-\mathbf v_2\), usando il Teorema 2.47 e il teorema della dimensione.)</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo · somma e intersezione in \(\mathbb K^n\)</div>
+    <ol>
+      <li><strong>Somma</strong>: porta entrambi i sottospazi in forma <em>parametrica</em> (generatori), unisci i generatori ed estrai una base (riduzione a scala). \(\dim(U_1+U_2)=\) rango della matrice dei generatori.</li>
+      <li><strong>Intersezione</strong>: porta entrambi in forma <em>cartesiana</em> e metti insieme le equazioni; oppure, se \(U_2=\mathrm{Span}\{\mathbf c_1,\dots,\mathbf c_s\}\) e \(U_1=\mathrm{Ker}\,A\), imponi \(A(\mu_1\mathbf c_1+\dots+\mu_s\mathbf c_s)=\mathbf 0\), cioè risolvi \((AC)\boldsymbol\mu=\mathbf 0\).</li>
+      <li><strong>Controllo</strong> con Grassmann: \(\dim(U_1+U_2)+\dim(U_1\cap U_2)=\dim U_1+\dim U_2\).</li>
+      <li>Somma diretta \(\iff U_1\cap U_2=\mathbf 0\iff\dim(U_1+U_2)=\dim U_1+\dim U_2\).</li>
+    </ol>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <ul>
+      <li>\(U_1+U_2\neq U_1\cup U_2\): la somma contiene anche i vettori “misti” \(\mathbf u_1+\mathbf u_2\).</li>
+      <li>Dimensioni minime dell'intersezione: in \(V\) di dimensione \(n\), \(\dim(U_1\cap U_2)\geqslant\dim U_1+\dim U_2-n\) (perché \(\dim(U_1+U_2)\leqslant n\)). Es.: due piani di \(\mathbb R^3\) si intersecano almeno in una retta.</li>
+      <li>Per tre o più sottospazi “a due a due intersezione nulla” <em>non</em> basta per la somma diretta (es. tre rette distinte in \(\mathbb R^2\)).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec esercizi" id="cap2-esercizi">
+  <div class="num">12</div>
+  <h2>Esercizi</h2>
+  <div class="ex-bar"><button class="chip" data-filter="tutti" aria-pressed="true">Tutti</button><button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button><button class="chip" data-filter="base" aria-pressed="false">Base</button><button class="chip" data-filter="medio" aria-pressed="false">Medio</button><button class="chip" data-filter="esame" aria-pressed="false">Esame</button><button class="chip toggle-sol" aria-pressed="false">Mostra soluzioni</button><span class="count ex-count"></span></div>
+  <p class="lead">Foglio 4 (7 ottobre 2026, sottospazi), Foglio 5 (15 ottobre 2026, generatori, indipendenza, basi) ed esercizi aperti del Quiz 2. Nessuna soluzione ufficiale: le soluzioni sono state scritte e verificate.</p>
+
+  <h3>Foglio 4 — Sottospazi</h3>
+
+  <div class="ex" data-fonte="Foglio 4, es. 1" data-livello="base">
+    <div class="ex-testo">
+      <p>Sia \(V=\mathbb R^2\). Stabilire quali dei seguenti sottoinsiemi sono sottospazi vettoriali di \(V\), giustificando ogni risposta (tutti del tipo \(\{\binom xy\in\mathbb R^2:\ \dots\}\)):</p>
+      <p>\(U_1: x+y=0\); \(U_2: x+y=1\); \(U_3: x\geq0\); \(U_4: y=2x\); \(U_5: xy=0\); \(U_6: x=y^2\); \(U_7: x-y\in\mathbb Z\); \(U_8: x,y\in\mathbb Q\); \(U_9: x^2+y^2=0\); \(U_{10}: x^2+y^2\leq1\); \(U_{11}: x+y\in\mathbb Q\); \(U_{12}: x^2-y^2=0\); \(U_{13}: y=2x+3\); \(U_{14}: 8x^3-36x^2y+54xy^2-27y^3=0\).</p>
+    </div>
+    <details class="hint"><summary>Suggerimento</summary><p>Prima controlla se \(\mathbf 0\in U_i\). Poi prova con \(-1\), \(\frac12\), \(\sqrt2\) o con la somma di due vettori “semplici”. Per \(U_{14}\) fattorizza il polinomio.</p></details>
+    <details class="sol"><summary>Soluzione</summary>
+      <ul>
+        <li><strong>\(U_1\): sì.</strong> È \(\mathrm{Sol}(x+y=0)\), sistema omogeneo: se \(x_1+y_1=0=x_2+y_2\), allora \((\lambda_1x_1+\lambda_2x_2)+(\lambda_1y_1+\lambda_2y_2)=\lambda_1\cdot0+\lambda_2\cdot0=0\). \(U_1=\mathrm{Span}\{\binom1{-1}\}\).</li>
+        <li><strong>\(U_2\): no.</strong> \(0+0\neq1\), quindi \(\mathbf 0\notin U_2\).</li>
+        <li><strong>\(U_3\): no.</strong> \(\binom10\in U_3\) ma \((-1)\binom10=\binom{-1}0\notin U_3\).</li>
+        <li><strong>\(U_4\): sì.</strong> Sistema omogeneo \(2x-y=0\); \(U_4=\mathrm{Span}\{\binom12\}\).</li>
+        <li><strong>\(U_5\): no.</strong> \(\binom10,\binom01\in U_5\) ma la somma \(\binom11\) ha \(xy=1\neq0\). (È l'unione dei due assi, Esempio 2.48.)</li>
+        <li><strong>\(U_6\): no.</strong> \(\binom11\in U_6\) (\(1=1^2\)) ma \(2\binom11=\binom22\): \(2\neq4\).</li>
+        <li><strong>\(U_7\): no.</strong> \(\binom10\in U_7\) ma \(\frac12\binom10=\binom{1/2}0\) ha \(x-y=\frac12\notin\mathbb Z\). (È chiuso per somma, non per scalari.)</li>
+        <li><strong>\(U_8\): no.</strong> \(\binom10\in U_8\) ma \(\sqrt2\binom10\notin U_8\). (\(\mathbb Q^2\) è un \(\mathbb Q\)-sottospazio, non un \(\mathbb R\)-sottospazio.)</li>
+        <li><strong>\(U_9\): sì.</strong> Su \(\mathbb R\), \(x^2+y^2=0\iff x=y=0\), quindi \(U_9=\{\mathbf 0\}\), il sottospazio nullo.</li>
+        <li><strong>\(U_{10}\): no.</strong> \(\binom10\in U_{10}\) ma \(2\binom10\) ha \(x^2+y^2=4&gt;1\).</li>
+        <li><strong>\(U_{11}\): no.</strong> \(\binom10\in U_{11}\) ma \(\sqrt2\binom10\) ha \(x+y=\sqrt2\notin\mathbb Q\).</li>
+        <li><strong>\(U_{12}\): no.</strong> \(x^2-y^2=(x-y)(x+y)=0\) è l'unione delle rette \(y=x\) e \(y=-x\): \(\binom11+\binom1{-1}=\binom20\) e \(4-0\neq0\).</li>
+        <li><strong>\(U_{13}\): no.</strong> \(\mathbf 0\notin U_{13}\) (\(0\neq3\)).</li>
+        <li><strong>\(U_{14}\): sì.</strong> \(8x^3-36x^2y+54xy^2-27y^3=(2x-3y)^3\), e su \(\mathbb R\) \((2x-3y)^3=0\iff2x-3y=0\). Quindi \(U_{14}=\{2x=3y\}=\mathrm{Span}\{\binom32\}\), una retta per l'origine.</li>
+      </ul>
+      <p>Sottospazi: \(U_1,U_4,U_9,U_{14}\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 4, es. 2" data-livello="base">
+    <div class="ex-testo">
+      <p>Per ciascuno dei seguenti insiemi stabilire se è un sottospazio vettoriale, giustificando la risposta.</p>
+      <p>In \(\mathbb R^2\): \(U_1=\{\binom t{2t}:t\in\mathbb R\}\); \(U_2=\{\binom t1:t\in\mathbb R\}\); \(U_3=\{t\binom10+t^2\binom01:t\in\mathbb R\}\); \(U_4=\{\binom pq:p,q\in\mathbb Q\}\); \(U_5=\{\binom t0:t\geq0\}\).</p>
+      <p>In \(\mathbb R^3\): \(U_6=\{(s,t,s+t)^\top:s,t\in\mathbb R\}\); \(U_7=\{(1,s,t)^\top:s,t\in\mathbb R\}\); \(U_8=\{(n,2n,-n)^\top:n\in\mathbb Z\}\); \(U_9=\{(s,t,s^2+t^2)^\top:s,t\in\mathbb R\}\); \(U_{10}=\{(s,t,0)^\top:s,t\in\mathbb R\}\).</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <ul>
+        <li><strong>\(U_1\): sì.</strong> \(U_1=\{t\binom12\}=\mathrm{Span}_{\mathbb R}\{\binom12\}\) (Lemma 2.11).</li>
+        <li><strong>\(U_2\): no.</strong> Ogni vettore ha seconda coordinata \(1\), quindi \(\mathbf 0\notin U_2\).</li>
+        <li><strong>\(U_3\): no.</strong> \(U_3=\{\binom t{t^2}\}\) (la parabola \(y=x^2\)). \(\binom11\in U_3\) ma \(2\binom11=\binom22\notin U_3\) (servirebbe \(t=2\), che dà \(\binom24\)). Il parametro compare <em>non linearmente</em>.</li>
+        <li><strong>\(U_4\): no.</strong> \(\binom10\in U_4\), \(\sqrt2\binom10\notin U_4\).</li>
+        <li><strong>\(U_5\): no.</strong> \(\binom10\in U_5\), \(-\binom10\notin U_5\) (Oss. 2.6 (ii)).</li>
+        <li><strong>\(U_6\): sì.</strong> \((s,t,s+t)^\top=s(1,0,1)^\top+t(0,1,1)^\top\), quindi \(U_6=\mathrm{Span}\{(1,0,1)^\top,(0,1,1)^\top\}\) (in forma cartesiana: \(z=x+y\)).</li>
+        <li><strong>\(U_7\): no.</strong> Prima coordinata sempre \(1\): \(\mathbf 0\notin U_7\).</li>
+        <li><strong>\(U_8\): no.</strong> \((1,2,-1)^\top\in U_8\) ma \(\frac12(1,2,-1)^\top\notin U_8\) (\(n=\frac12\notin\mathbb Z\)). È chiuso per somma e contiene \(\mathbf 0\), ma non è chiuso per scalari reali.</li>
+        <li><strong>\(U_9\): no.</strong> \((1,0,1)^\top\in U_9\) ma \(2(1,0,1)^\top=(2,0,2)^\top\) richiederebbe \(2=2^2+0^2=4\).</li>
+        <li><strong>\(U_{10}\): sì.</strong> \(U_{10}=\mathrm{Span}\{\mathbf e_1,\mathbf e_2\}=\{z=0\}\) (Esempio 2.13).</li>
+      </ul>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 4, es. 3" data-livello="base">
+    <div class="ex-testo">
+      <p>Sia \(V=\mathbb R[x]\). (1) Dimostrare che \(\{f\in\mathbb R[x]:f(1)=0\}\) è un sottospazio vettoriale di \(V\). (2) Dimostrare che \(\{f\in\mathbb R[x]:f(0)=1\}\) non è un sottospazio vettoriale di \(V\).</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>(1) Sia \(U=\{f:f(1)=0\}\). Il polinomio nullo soddisfa \(0(1)=0\), quindi \(U\neq\emptyset\). Per \(f,g\in U\) e \(\lambda,\mu\in\mathbb R\), la valutazione in \(1\) rispetta somme e multipli:
+      \[(\lambda f+\mu g)(1)=\lambda f(1)+\mu g(1)=\lambda\cdot0+\mu\cdot0=0,\]
+      quindi \(\lambda f+\mu g\in U\) e \(U\subseteq_{\mathbb R}V\) (Oss. 2.5). (Ad esempio \(x-1,\ x^2-1\in U\).)</p>
+      <p>(2) Il polinomio nullo ha valore \(0\neq1\) in \(0\), quindi non appartiene all'insieme: per l'Oss. 2.6 non è un sottospazio. (Anche: \(f=g=1\) stanno nell'insieme, ma \((f+g)(0)=2\neq1\).)</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 4, es. 4" data-livello="base">
+    <div class="ex-testo">
+      <p>Sia \(V=\mathrm{Mat}_{n\times n}(\mathbb R)\) e \(\mathrm{Tr}(A)=\sum_{i=1}^na_{ii}\) la traccia. (1) Dimostrare che \(\{A\in\mathrm{Mat}_n(\mathbb R):\mathrm{Tr}(A)=0\}\) è un sottospazio vettoriale di \(V\). (2) Dimostrare che \(\{A:\mathrm{Tr}(A)=1\}\) non lo è.</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>(1) La traccia è lineare: per \(A=(a_{ij}),B=(b_{ij})\) e \(\lambda,\mu\in\mathbb R\),
+      \[\mathrm{Tr}(\lambda A+\mu B)=\sum_{i=1}^n(\lambda a_{ii}+\mu b_{ii})=\lambda\,\mathrm{Tr}(A)+\mu\,\mathrm{Tr}(B).\]
+      La matrice nulla ha traccia \(0\), quindi l'insieme è non vuoto; se \(\mathrm{Tr}A=\mathrm{Tr}B=0\) allora \(\mathrm{Tr}(\lambda A+\mu B)=0\). Per l'Oss. 2.5 è un sottospazio. (È l'insieme delle soluzioni dell'equazione lineare omogenea \(a_{11}+\dots+a_{nn}=0\) nelle \(n^2\) entrate.)</p>
+      <p>(2) \(\mathrm{Tr}(0)=0\neq1\): la matrice nulla non appartiene all'insieme, che quindi non è un sottospazio (Oss. 2.6).</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 4, es. 5*" data-livello="medio">
+    <div class="ex-testo">
+      <p>Vediamo \(\mathbb R\) come \(\mathbb Q\)-spazio vettoriale: l'addizione vettoriale è la somma di numeri reali e la moltiplicazione per scalari \(\mathbb Q\times\mathbb R\to\mathbb R\) è il prodotto usuale (usando \(\mathbb Q\subseteq\mathbb R\)).</p>
+      <ol>
+        <li>Verificare che \(\mathbb R\) è uno spazio vettoriale su \(\mathbb Q\).</li>
+        <li>Dimostrare che \(\mathbb Q\subseteq_{\mathbb Q}\mathbb R\).</li>
+        <li>Trovare altri \(\mathbb Q\)-sottospazi di \(\mathbb R\).</li>
+      </ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>1. SpV.1: \((\mathbb R,+)\) è un gruppo abeliano (proprietà di campo di \(\mathbb R\)). SpV.2: per \(\lambda,\mu\in\mathbb Q\subseteq\mathbb R\) e \(v,w\in\mathbb R\) le uguaglianze \((\lambda+\mu)v=\lambda v+\mu v\), \(\lambda(v+w)=\lambda v+\lambda w\), \((\lambda\mu)v=\lambda(\mu v)\), \(1\cdot v=v\) sono la distributività, l'associatività del prodotto e l'elemento neutro <em>nel campo \(\mathbb R\)</em>, valide in particolare quando \(\lambda,\mu\) sono razionali. (È il caso generale “\(\mathbb K\) sottocampo di \(\mathbb L\)”, esempio 8.)</p>
+      <p>2. \(0\in\mathbb Q\), quindi \(\mathbb Q\neq\emptyset\); per \(q_1,q_2\in\mathbb Q\) e \(\lambda_1,\lambda_2\in\mathbb Q\), \(\lambda_1q_1+\lambda_2q_2\in\mathbb Q\) perché \(\mathbb Q\) è chiuso per somma e prodotto. Per l'Oss. 2.5, \(\mathbb Q\subseteq_{\mathbb Q}\mathbb R\).</p>
+      <p>3. Esempi di \(\mathbb Q\)-sottospazi:</p>
+      <ul>
+        <li>i sottospazi impropri \(\{0\}\) e \(\mathbb R\);</li>
+        <li>per ogni \(\alpha\in\mathbb R\), la “retta” \(\mathbb Q\alpha=\mathrm{Span}_{\mathbb Q}\{\alpha\}=\{q\alpha:q\in\mathbb Q\}\) (es. \(\mathbb Q\sqrt2\), \(\mathbb Q\pi\));</li>
+        <li>\(\mathbb Q[\sqrt2]=\{a+b\sqrt2:a,b\in\mathbb Q\}=\mathrm{Span}_{\mathbb Q}\{1,\sqrt2\}\) (esempio 10 degli appunti), di dimensione 2; analogamente \(\mathrm{Span}_{\mathbb Q}\{1,\sqrt2,\sqrt3\}\), \(\mathrm{Span}_{\mathbb Q}\{1,\pi,\pi^2,\dots\}\);</li>
+        <li>in generale \(\mathrm{Span}_{\mathbb Q}S\) per ogni \(S\subseteq\mathbb R\) (Lemma 2.11 / Def. 2.14).</li>
+      </ul>
+      <p>Nota: \(\mathbb Q\) è un \(\mathbb Q\)-sottospazio di \(\mathbb R\) ma <em>non</em> un \(\mathbb R\)-sottospazio di \(\mathbb R\) (i soli \(\mathbb R\)-sottospazi di \(\mathbb R\) sono \(0\) e \(\mathbb R\)).</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 4, es. 6*" data-livello="medio">
+    <div class="ex-testo">
+      <p>Su \(\mathbb R^2\) consideriamo le operazioni
+      \[(x,y)\oplus(x',y')=\left(\sqrt[3]{x^3+(x')^3},\ y+y'\right),\qquad\lambda\odot(x,y)=\left(\sqrt[3]{\lambda x^3},\ \lambda y\right),\quad\lambda\in\mathbb R.\]
+      Dimostrare che, rispetto a queste operazioni, \(\mathbb R^2\) è uno spazio vettoriale su \(\mathbb R\).</p>
+    </div>
+    <details class="hint"><summary>Suggerimento</summary><p>Considera la biiezione \(\varphi(x,y)=(x^3,y)\) di \(\mathbb R^2\) in sé (la radice cubica reale è definita per ogni numero reale) e calcola \(\varphi(\mathbf u\oplus\mathbf v)\) e \(\varphi(\lambda\odot\mathbf u)\).</p></details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Sia \(\varphi:\mathbb R^2\to\mathbb R^2\), \(\varphi(x,y)=(x^3,y)\). È biiettiva, con inversa \(\varphi^{-1}(a,b)=(\sqrt[3]a,b)\) (su \(\mathbb R\) la radice cubica esiste ed è unica, e \(\sqrt[3]{a^3}=a\)). Le operazioni date sono esattamente
+      \[\mathbf u\oplus\mathbf v=\varphi^{-1}\big(\varphi(\mathbf u)+\varphi(\mathbf v)\big),\qquad\lambda\odot\mathbf u=\varphi^{-1}\big(\lambda\varphi(\mathbf u)\big),\]
+      cioè \(\varphi(\mathbf u\oplus\mathbf v)=\varphi(\mathbf u)+\varphi(\mathbf v)\) e \(\varphi(\lambda\odot\mathbf u)=\lambda\varphi(\mathbf u)\): infatti \(\big(\sqrt[3]{x^3+x'^3}\big)^3=x^3+x'^3\) e \(\big(\sqrt[3]{\lambda x^3}\big)^3=\lambda x^3\).</p>
+      <p>Ogni assioma si “trasporta” da quelli dello spazio standard \((\mathbb R^2,+,\cdot)\) applicando \(\varphi\) e usando l'iniettività. Esplicitamente:</p>
+      <ul>
+        <li><strong>Associatività e commutatività</strong> di \(\oplus\): \(\varphi((\mathbf u\oplus\mathbf v)\oplus\mathbf w)=(\varphi\mathbf u+\varphi\mathbf v)+\varphi\mathbf w=\varphi\mathbf u+(\varphi\mathbf v+\varphi\mathbf w)=\varphi(\mathbf u\oplus(\mathbf v\oplus\mathbf w))\); analogamente per la commutatività. Concretamente: prima coordinata \(\sqrt[3]{x^3+x'^3+x''^3}\) in entrambi i casi.</li>
+        <li><strong>Neutro</strong>: \((0,0)\), poiché \((x,y)\oplus(0,0)=(\sqrt[3]{x^3},y)=(x,y)\).</li>
+        <li><strong>Opposto</strong>: \((-x,-y)\), poiché \(\sqrt[3]{x^3+(-x)^3}=0\).</li>
+        <li><strong>SpV.2.1</strong>: \((\lambda+\mu)\odot(x,y)=(\sqrt[3]{(\lambda+\mu)x^3},(\lambda+\mu)y)\) e \(\lambda\odot(x,y)\oplus\mu\odot(x,y)=(\sqrt[3]{\lambda x^3+\mu x^3},\lambda y+\mu y)\): uguali.</li>
+        <li><strong>SpV.2.2</strong>: \(\lambda\odot((x,y)\oplus(x',y'))=(\sqrt[3]{\lambda(x^3+x'^3)},\lambda(y+y'))=\lambda\odot(x,y)\oplus\lambda\odot(x',y')\).</li>
+        <li><strong>SpV.2.3</strong>: \(\lambda\odot(\mu\odot(x,y))=(\sqrt[3]{\lambda\mu x^3},\lambda\mu y)=(\lambda\mu)\odot(x,y)\).</li>
+        <li><strong>SpV.2.4</strong>: \(1\odot(x,y)=(\sqrt[3]{x^3},y)=(x,y)\).</li>
+      </ul>
+      <p>Quindi \((\mathbb R^2,\oplus,\odot)\) è un \(\mathbb R\)-spazio vettoriale (e \(\varphi\) è un isomorfismo con lo spazio standard, come si vedrà nel Cap. 4). È l'esempio citato negli appunti per dire che sullo stesso insieme si possono definire strutture di spazio vettoriale diverse.</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <h3>Foglio 5 — Generatori, indipendenza lineare, basi</h3>
+
+  <div class="ex" data-fonte="Foglio 5, es. 1" data-livello="base">
+    <div class="ex-testo">
+      <p>Sia \(V=\mathrm{Mat}^{\mathrm{sym}}_2(\mathbb R)\).</p>
+      <ol>
+        <li>Calcolare la dimensione di \(V\).</li>
+        <li>Trovare una base di \(V\) che contenga le matrici \(\begin{pmatrix}1&amp;1\\1&amp;0\end{pmatrix},\begin{pmatrix}0&amp;1\\1&amp;1\end{pmatrix}\).</li>
+        <li>Trovare il vettore delle coordinate di \(\begin{pmatrix}1&amp;0\\0&amp;-1\end{pmatrix}\) rispetto alla base del punto precedente.</li>
+        <li>Trovare una base di \(V\) che contiene solo matrici senza elementi zero.</li>
+      </ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>1. Ogni matrice simmetrica si scrive in modo unico come
+      \[\begin{pmatrix}a&amp;b\\b&amp;c\end{pmatrix}=a\underbrace{\begin{pmatrix}1&amp;0\\0&amp;0\end{pmatrix}}_{E_{11}}+b\underbrace{\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}}_{E_{12}+E_{21}}+c\underbrace{\begin{pmatrix}0&amp;0\\0&amp;1\end{pmatrix}}_{E_{22}}.\]
+      Le tre matrici generano \(V\) e sono indipendenti (una combinazione nulla dà \(a=b=c=0\)): \(\dim_{\mathbb R}V=3\). Identifichiamo \(\begin{pmatrix}a&amp;b\\b&amp;c\end{pmatrix}\) con \((a,b,c)\).</p>
+      <p>2. \(A=\begin{pmatrix}1&amp;1\\1&amp;0\end{pmatrix}\leftrightarrow(1,1,0)\), \(B=\begin{pmatrix}0&amp;1\\1&amp;1\end{pmatrix}\leftrightarrow(0,1,1)\) non sono proporzionali, quindi indipendenti. Con Steinitz scambiamo dentro la base \(E_{11},E_{12}+E_{21},E_{22}\): proviamo ad aggiungere \(E_{11}\leftrightarrow(1,0,0)\). Da
+      \[\alpha(1,1,0)+\beta(0,1,1)+\gamma(1,0,0)=(0,0,0)\Rightarrow\beta=0\ (\text{3ª coord.}),\ \alpha=0\ (\text{2ª}),\ \gamma=0\ (\text{1ª})\]
+      i tre vettori sono indipendenti; essendo \(3=\dim V\) sono una base: \(\mathcal B=\left(A,\ B,\ E_{11}\right)\).</p>
+      <p>3. Cerchiamo \(\alpha A+\beta B+\gamma E_{11}=\begin{pmatrix}1&amp;0\\0&amp;-1\end{pmatrix}\), cioè \((\alpha+\gamma,\ \alpha+\beta,\ \beta)=(1,0,-1)\): \(\beta=-1\), \(\alpha=1\), \(\gamma=0\). Infatti \(A-B=\begin{pmatrix}1&amp;0\\0&amp;-1\end{pmatrix}\). Quindi
+      \[\left[\begin{pmatrix}1&amp;0\\0&amp;-1\end{pmatrix}\right]_{\mathcal B}=\begin{pmatrix}1\\-1\\0\end{pmatrix}.\]
+      (Le prime due coordinate non dipendono dalla scelta del terzo vettore, perché la matrice sta già in \(\mathrm{Span}\{A,B\}\).)</p>
+      <p>4. Ad esempio \(\begin{pmatrix}1&amp;1\\1&amp;1\end{pmatrix},\begin{pmatrix}2&amp;1\\1&amp;1\end{pmatrix},\begin{pmatrix}1&amp;1\\1&amp;2\end{pmatrix}\), cioè \((1,1,1),(2,1,1),(1,1,2)\). Indipendenza: la matrice con queste righe ha determinante
+      \[\det\begin{pmatrix}1&amp;1&amp;1\\2&amp;1&amp;1\\1&amp;1&amp;2\end{pmatrix}=1(2-1)-1(4-1)+1(2-1)=-1\neq0,\]
+      oppure senza determinanti: \(\alpha(1,1,1)+\beta(2,1,1)+\gamma(1,1,2)=0\) dà (1ª−2ª coord.) \(\beta=0\), (3ª−2ª) \(\gamma=0\), quindi \(\alpha=0\). Tre vettori indipendenti in uno spazio di dimensione 3: base.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 5, es. 2" data-livello="base">
+    <div class="ex-testo">
+      <p>Sia \(V=\mathbb R[x]_{\leqslant3}\).</p>
+      <ol>
+        <li>Calcolare la dimensione di \(V\).</li>
+        <li>Trovare una base di \(V\) che contiene solo polinomi di grado 3.</li>
+        <li>Trovare una base \(\mathcal B\) di \(V\) tale che il vettore delle coordinate di \(\mathbf v=1+x+x^2+x^3\) sia \([\mathbf v]_{\mathcal B}=(0,1,1,0)^\top\).</li>
+      </ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>1. \(\{1,x,x^2,x^3\}\) è una base, quindi \(\dim_{\mathbb R}V=4\).</p>
+      <p>2. Ad esempio \(x^3,\ x^3+1,\ x^3+x,\ x^3+x^2\) (tutti di grado 3). Generano: \(1=(x^3+1)-x^3\), \(x=(x^3+x)-x^3\), \(x^2=(x^3+x^2)-x^3\), \(x^3\): contengono nello Span la base canonica (Lemma 2.33). Quattro generatori in uno spazio di dimensione 4 formano una base. (Indipendenza diretta: \(a x^3+b(x^3+1)+c(x^3+x)+d(x^3+x^2)=0\) dà \(b=c=d=0\) dai coefficienti di \(1,x,x^2\), poi \(a=0\).)</p>
+      <p>3. Serve \(\mathbf v=\mathbf b_2+\mathbf b_3\). Scegliamo \(\mathbf b_1=1\), \(\mathbf b_2=x\), \(\mathbf b_3=1+x^2+x^3\), \(\mathbf b_4=x^2\). Allora \(\mathbf b_2+\mathbf b_3=1+x+x^2+x^3=\mathbf v\), cioè \([\mathbf v]_{\mathcal B}=(0,1,1,0)^\top\). È una base: \(x^3=\mathbf b_3-\mathbf b_1-\mathbf b_4\), quindi \(1,x,x^2,x^3\in\mathrm{Span}\,\mathcal B\) e 4 generatori in dimensione 4 sono una base. (Coordinate uniche per l'Oss. 2.27.)</p>
+      <p>Idea generale: si sceglie \(\mathbf b_2\) a piacere (indipendente), si pone \(\mathbf b_3=\mathbf v-\mathbf b_2\), e si completa a base con Steinitz.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 5, es. 3" data-livello="base">
+    <div class="ex-testo">
+      <p>Trovare una base dell'insieme delle soluzioni del SEL omogeneo \(A\mathbf x=\mathbf 0\) che contenga il vettore \((-1,-1,1,1)^\top\), dove
+      \[A=\begin{pmatrix}1&amp;-1&amp;1&amp;-1\\1&amp;1&amp;1&amp;1\\1&amp;0&amp;1&amp;0\\0&amp;1&amp;0&amp;1\end{pmatrix}\in\mathrm{Mat}_4(\mathbb R).\]</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>Passo 1: Gauss.</strong> \(R_2\to R_2-R_1\), \(R_3\to R_3-R_1\):
+      \[\begin{pmatrix}1&amp;-1&amp;1&amp;-1\\0&amp;2&amp;0&amp;2\\0&amp;1&amp;0&amp;1\\0&amp;1&amp;0&amp;1\end{pmatrix}\ \leadsto\ \begin{pmatrix}1&amp;0&amp;1&amp;0\\0&amp;1&amp;0&amp;1\\0&amp;0&amp;0&amp;0\\0&amp;0&amp;0&amp;0\end{pmatrix}\]
+      (forma a scala ridotta). Il sistema equivale a \(x_1+x_3=0,\ x_2+x_4=0\), con variabili libere \(x_3=t,\ x_4=s\):
+      \[\mathrm{Sol}(A\mathbf x=\mathbf 0)=\left\{\begin{pmatrix}-t\\-s\\t\\s\end{pmatrix}\right\}=\mathrm{Span}_{\mathbb R}\left\{\mathbf u_1=\begin{pmatrix}-1\\0\\1\\0\end{pmatrix},\ \mathbf u_2=\begin{pmatrix}0\\-1\\0\\1\end{pmatrix}\right\},\]
+      e \(\mathbf u_1,\mathbf u_2\) sono indipendenti (entrate 3 e 4), quindi \(\dim\mathrm{Sol}=2\).</p>
+      <p><strong>Passo 2: il vettore dato.</strong> \(\mathbf w=(-1,-1,1,1)^\top\): \(-1+1=0\), \(-1+1=0\), quindi \(\mathbf w\in\mathrm{Sol}\); infatti \(\mathbf w=\mathbf u_1+\mathbf u_2\).</p>
+      <p><strong>Passo 3: scambio di Steinitz.</strong> Nella relazione \(\mathbf w=1\cdot\mathbf u_1+1\cdot\mathbf u_2\) il coefficiente di \(\mathbf u_1\) è \(\neq0\), quindi si scambia \(\mathbf u_1\) con \(\mathbf w\): una base cercata è
+      \[\left\{\begin{pmatrix}-1\\-1\\1\\1\end{pmatrix},\ \begin{pmatrix}0\\-1\\0\\1\end{pmatrix}\right\}.\]
+      (Due vettori non proporzionali in uno spazio di dimensione 2.)</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 5, es. 4" data-livello="base">
+    <div class="ex-testo">
+      <p>Siano \(\mathbf v_1,\mathbf v_2,\mathbf v_3\) vettori di un \(\mathbb K\)-spazio vettoriale \(V\). Dimostrare che se \(\mathbf v_1+\mathbf v_2+\mathbf v_3=\mathbf 0\), allora \(\mathrm{Span}_{\mathbb K}\{\mathbf v_1,\mathbf v_2\}=\mathrm{Span}_{\mathbb K}\{\mathbf v_2,\mathbf v_3\}\).</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Da \(\mathbf v_1+\mathbf v_2+\mathbf v_3=\mathbf 0\): \(\mathbf v_3=-\mathbf v_1-\mathbf v_2\) e \(\mathbf v_1=-\mathbf v_2-\mathbf v_3\).</p>
+      <p>\(\subseteq\): \(\mathbf v_1=-\mathbf v_2-\mathbf v_3\in\mathrm{Span}\{\mathbf v_2,\mathbf v_3\}\) e \(\mathbf v_2\in\mathrm{Span}\{\mathbf v_2,\mathbf v_3\}\); poiché \(\mathrm{Span}\{\mathbf v_2,\mathbf v_3\}\) è un sottospazio, contiene ogni combinazione lineare di \(\mathbf v_1,\mathbf v_2\): \(\lambda\mathbf v_1+\mu\mathbf v_2=-\lambda\mathbf v_3+(\mu-\lambda)\mathbf v_2\).</p>
+      <p>\(\supseteq\): simmetricamente \(\mathbf v_3=-\mathbf v_1-\mathbf v_2\in\mathrm{Span}\{\mathbf v_1,\mathbf v_2\}\), quindi \(\lambda\mathbf v_2+\mu\mathbf v_3=-\mu\mathbf v_1+(\lambda-\mu)\mathbf v_2\in\mathrm{Span}\{\mathbf v_1,\mathbf v_2\}\).</p>
+      <p>In alternativa, con il Lemma 2.33: entrambi gli Span sono uguali a \(\mathrm{Span}\{\mathbf v_1,\mathbf v_2,\mathbf v_3\}\), perché il vettore aggiunto è già nello Span degli altri due (Oss. 2.35 con la relazione \(1\cdot\mathbf v_1+1\cdot\mathbf v_2+1\cdot\mathbf v_3=\mathbf 0\), coefficienti tutti \(\neq0\)).</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 5, es. 5" data-livello="medio">
+    <div class="ex-testo">
+      <p>Sia \(V\) un \(\mathbb K\)-spazio vettoriale e \(\mathbf v_1,\mathbf v_2,\mathbf v_3\in V\) linearmente indipendenti.</p>
+      <ol>
+        <li>Dimostrare che anche \(\mathbf v_1+\mathbf v_2,\ \mathbf v_2+\mathbf v_3,\ \mathbf v_3+\mathbf v_1\) è linearmente indipendente.</li>
+        <li>È linearmente indipendente anche \(\mathbf v_1-\mathbf v_2,\ \mathbf v_2-\mathbf v_3,\ \mathbf v_3-\mathbf v_1\)?</li>
+      </ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>1. Sia \(a(\mathbf v_1+\mathbf v_2)+b(\mathbf v_2+\mathbf v_3)+c(\mathbf v_3+\mathbf v_1)=\mathbf 0\). Raccogliendo:
+      \[(a+c)\mathbf v_1+(a+b)\mathbf v_2+(b+c)\mathbf v_3=\mathbf 0.\]
+      Per l'indipendenza di \(\mathbf v_1,\mathbf v_2,\mathbf v_3\): \(a+c=0,\ a+b=0,\ b+c=0\). Sommando le tre equazioni \(2(a+b+c)=0\). Se \(2\neq0\) in \(\mathbb K\) (ad es. \(\mathbb K=\mathbb Q,\mathbb R,\mathbb C\)) allora \(a+b+c=0\) e quindi \(b=(a+b+c)-(a+c)=0\), \(c=0\), \(a=0\): il sistema è indipendente.</p>
+      <div class="box box--warn"><div class="tag">Attenzione: il campo conta</div>
+        <p>Se \(1+1=0\) in \(\mathbb K\) (es. \(\mathbb K=\mathbb F_2\)) l'affermazione è <strong>falsa</strong>: \((\mathbf v_1+\mathbf v_2)+(\mathbf v_2+\mathbf v_3)+(\mathbf v_3+\mathbf v_1)=2(\mathbf v_1+\mathbf v_2+\mathbf v_3)=\mathbf 0\) è una combinazione non banale nulla. Quindi per \(\mathbb K\) arbitrario serve l'ipotesi \(\mathrm{char}\,\mathbb K\neq2\).</p>
+      </div>
+      <p>2. <strong>No</strong>, mai (su qualsiasi campo):
+      \[1\cdot(\mathbf v_1-\mathbf v_2)+1\cdot(\mathbf v_2-\mathbf v_3)+1\cdot(\mathbf v_3-\mathbf v_1)=\mathbf 0\]
+      è una combinazione lineare non banale con risultato nullo (Oss. 2.23).</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 5, es. 6*" data-livello="medio">
+    <div class="ex-testo">
+      <p>Sia \(V\) un \(\mathbb K\)-spazio vettoriale e \(S\subseteq V\). Dimostrare o confutare:
+      \[S\text{ è linearmente indipendente}\iff\forall\,\mathbf v,\mathbf w\in S\text{ vale }\big[\lambda\mathbf v+\mu\mathbf w=\mathbf 0\Rightarrow\lambda=\mu=0\big].\]
+      Se non vale l'equivalenza, vale almeno una delle implicazioni?</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Leggiamo la condizione a destra, come è naturale, per \(\mathbf v\neq\mathbf w\) distinti: “ogni coppia di vettori distinti di \(S\) è linearmente indipendente”.</p>
+      <p><strong>\(\Rightarrow\) vale.</strong> Se \(S\) è indipendente, ogni suo sottosistema lo è (Oss. 2.24 (iii)), in particolare ogni coppia \(\{\mathbf v,\mathbf w\}\).</p>
+      <p><strong>\(\Leftarrow\) è falsa.</strong> Controesempio in \(V=\mathbb R^2\): \(S=\{\mathbf e_1,\mathbf e_2,\mathbf e_1+\mathbf e_2\}\). Due qualsiasi di questi vettori non sono proporzionali, quindi ogni coppia è indipendente; ma \(\mathbf e_1+\mathbf e_2-(\mathbf e_1+\mathbf e_2)=\mathbf 0\) è una combinazione non banale nulla, quindi \(S\) è dipendente (è l'Esempio 2.29). Più in generale: tre vettori a due a due non proporzionali in un piano.</p>
+      <p>Quindi l'equivalenza non vale; vale solo l'implicazione \(\Rightarrow\).</p>
+      <div class="box box--note"><div class="tag">Sottigliezza</div>
+        <p>Se si legge la condizione letteralmente, permettendo \(\mathbf v=\mathbf w\), allora per ogni \(S\neq\emptyset\) si può prendere \(\mathbf v=\mathbf w\), \(\lambda=1,\mu=-1\): \(\mathbf v-\mathbf v=\mathbf 0\) con \((\lambda,\mu)\neq(0,0)\). La condizione a destra sarebbe falsa per ogni \(S\) non vuoto: in quel caso “\(\Leftarrow\)” vale banalmente (solo \(S=\emptyset\) la soddisfa, ed è indipendente) e “\(\Rightarrow\)” è falsa (es. \(S=\{\mathbf e_1\}\)). È il motivo per cui il prof parla di <em>sistemi/elenchi</em> e fa attenzione alle ripetizioni.</p>
+      </div>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <h3>Quiz 2 — Esercizi aperti</h3>
+
+  <div class="ex" data-fonte="Quiz 2, E1" data-livello="esame">
+    <div class="ex-testo">
+      <p>Siano \(\mathbf v_1=(1,1,0,1)^\top,\ \mathbf v_2=(2,2,1,3)^\top,\ \mathbf v_3=(1,1,1,2)^\top,\ \mathbf v_4=(0,0,1,1)^\top\) e \(U=\mathrm{Span}_{\mathbb R}\{\mathbf v_1,\mathbf v_2,\mathbf v_3,\mathbf v_4\}\subseteq\mathbb R^4\).</p>
+      <ol type="a">
+        <li>Calcolare \(\dim U\) e una base di \(U\) formata da vettori tra i \(\mathbf v_i\).</li>
+        <li>Trovare una forma cartesiana di \(U\).</li>
+        <li>Completare la base trovata in (a) a una base di \(\mathbb R^4\) usando vettori della base standard.</li>
+      </ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>(a)</strong> Matrice con i \(\mathbf v_i\) in colonna e riduzione a scala:
+      \[\begin{pmatrix}1&amp;2&amp;1&amp;0\\1&amp;2&amp;1&amp;0\\0&amp;1&amp;1&amp;1\\1&amp;3&amp;2&amp;1\end{pmatrix}\ \xrightarrow{R_2-R_1,\ R_4-R_1}\ \begin{pmatrix}1&amp;2&amp;1&amp;0\\0&amp;0&amp;0&amp;0\\0&amp;1&amp;1&amp;1\\0&amp;1&amp;1&amp;1\end{pmatrix}\ \leadsto\ \begin{pmatrix}1&amp;0&amp;-1&amp;-2\\0&amp;1&amp;1&amp;1\\0&amp;0&amp;0&amp;0\\0&amp;0&amp;0&amp;0\end{pmatrix}.\]
+      Pivot nelle colonne 1 e 2: \(\dim U=2\) e \(\{\mathbf v_1,\mathbf v_2\}\) è una base. Dalla forma ridotta si leggono le relazioni \(\mathbf v_3=-\mathbf v_1+\mathbf v_2\) e \(\mathbf v_4=-2\mathbf v_1+\mathbf v_2\) (verifica: \(-(1,1,0,1)+(2,2,1,3)=(1,1,1,2)\), \(-2(1,1,0,1)+(2,2,1,3)=(0,0,1,1)\)).</p>
+      <p><strong>(b)</strong> \(\mathbf x\in U\iff\mathbf x=a\mathbf v_1+b\mathbf v_2=(a+2b,\ a+2b,\ b,\ a+3b)^\top\). Eliminando i parametri: \(x_1=x_2\) e \(x_4=x_1+x_3\) (infatti \(a+3b=(a+2b)+b\)). Quindi
+      \[U=\{\mathbf x\in\mathbb R^4:\ x_1-x_2=0,\ x_1+x_3-x_4=0\}.\]
+      Due equazioni indipendenti in \(\mathbb R^4\) danno dimensione \(4-2=2\): coincide con \(\dim U\), e \(\mathbf v_1,\mathbf v_2\) soddisfano entrambe, quindi l'uguaglianza vale.</p>
+      <p><strong>(c)</strong> Riduciamo \((\mathbf v_1\,\mathbf v_2\,|\,\mathbf e_1\,\mathbf e_2\,\mathbf e_3\,\mathbf e_4)\): i pivot cadono nelle colonne \(\mathbf v_1,\mathbf v_2,\mathbf e_1,\mathbf e_2\). Una base di \(\mathbb R^4\) è \(\{\mathbf v_1,\mathbf v_2,\mathbf e_1,\mathbf e_2\}\). Controllo diretto: un vettore \(\alpha\mathbf v_1+\beta\mathbf v_2+\gamma\mathbf e_1+\delta\mathbf e_2=\mathbf 0\) dà (3ª coord.) \(\beta=0\), (4ª) \(\alpha=0\), poi \(\gamma=\delta=0\).</p>
+      <p><em>Attenzione:</em> non tutti i completamenti funzionano: \(\{\mathbf v_1,\mathbf v_2,\mathbf e_3,\mathbf e_4\}\) <strong>non</strong> è una base (le prime due coordinate di ogni loro combinazione sono uguali, quindi \(\mathbf e_1\) non è generato). Anche \(\{\mathbf v_1,\mathbf v_2,\mathbf e_1,\mathbf e_3\}\) va bene.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Quiz 2, E2" data-livello="esame">
+    <div class="ex-testo">
+      <p>In \(\mathbb R^4\) siano \(U_1=\mathrm{Ker}\begin{pmatrix}1&amp;1&amp;0&amp;0\\0&amp;0&amp;1&amp;1\end{pmatrix}\) e \(U_2=\mathrm{Span}_{\mathbb R}\{(1,-1,1,-1)^\top,(1,0,0,0)^\top\}\).</p>
+      <ol type="a">
+        <li>Calcolare una base di \(U_1\).</li>
+        <li>Calcolare una base di \(U_1\cap U_2\).</li>
+        <li>Calcolare \(\dim(U_1+U_2)\). La somma \(U_1+U_2\) è diretta?</li>
+      </ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>(a)</strong> \(U_1=\{x_1+x_2=0,\ x_3+x_4=0\}\). La matrice è già a scala (pivot in \(x_1,x_3\)); variabili libere \(x_2=s,\ x_4=t\): \(\mathbf x=(-s,s,-t,t)^\top\). Base:
+      \[\left\{(-1,1,0,0)^\top,\ (0,0,-1,1)^\top\right\},\qquad\dim U_1=2.\]</p>
+      <p><strong>(b)</strong> Un vettore di \(U_2\) è \(\mathbf x=\mu_1(1,-1,1,-1)^\top+\mu_2(1,0,0,0)^\top=(\mu_1+\mu_2,\ -\mu_1,\ \mu_1,\ -\mu_1)^\top\). Imponiamo le equazioni di \(U_1\):
+      \[x_1+x_2=\mu_2=0,\qquad x_3+x_4=\mu_1-\mu_1=0.\]
+      Quindi \(\mu_2=0\), \(\mu_1\) libero: \(U_1\cap U_2=\mathrm{Span}\{(1,-1,1,-1)^\top\}\), di dimensione 1, con base \(\{(1,-1,1,-1)^\top\}\).</p>
+      <p><strong>(c)</strong> \(\dim U_2=2\) (i due generatori non sono proporzionali). Per Grassmann:
+      \[\dim(U_1+U_2)=2+2-1=3.\]
+      Controllo: \(U_1+U_2=\mathrm{Span}\{(-1,1,0,0)^\top,(0,0,-1,1)^\top,(1,-1,1,-1)^\top,(1,0,0,0)^\top\}\) e questa matrice ha rango 3 (il terzo vettore è \(-\)(primo) \(-\)(secondo)). La somma <strong>non è diretta</strong>, perché \(U_1\cap U_2\neq\{\mathbf 0\}\) (equivalentemente \(3\neq2+2\)).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Quiz 2, E3" data-livello="esame">
+    <div class="ex-testo">
+      <p>Sia \(\mathrm{Mat}^{\mathrm{sym}}_2(\mathbb R)=\{A\in\mathrm{Mat}_{2\times2}(\mathbb R):A^\top=A\}\).</p>
+      <ol type="a">
+        <li>Dimostrare che \(\mathrm{Mat}^{\mathrm{sym}}_2(\mathbb R)\) è un sottospazio vettoriale di \(\mathrm{Mat}_{2\times2}(\mathbb R)\).</li>
+        <li>Calcolarne la dimensione.</li>
+        <li>Trovarne una base formata da matrici con tutte le entrate diverse da zero.</li>
+      </ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>(a)</strong> \(0^\top=0\), quindi l'insieme è non vuoto. Se \(A^\top=A\), \(B^\top=B\) e \(\lambda,\mu\in\mathbb R\), per le proprietà della trasposta (\((A+B)^\top=A^\top+B^\top\), \((\lambda A)^\top=\lambda A^\top\)):
+      \[(\lambda A+\mu B)^\top=\lambda A^\top+\mu B^\top=\lambda A+\mu B.\]
+      Per l'Oss. 2.5 è un sottospazio.</p>
+      <p><strong>(b)</strong> \(\begin{pmatrix}a&amp;b\\b&amp;c\end{pmatrix}=aE_{11}+b(E_{12}+E_{21})+cE_{22}\), scrittura unica: \(\dim=3\) (vedi Foglio 5, es. 1).</p>
+      <p><strong>(c)</strong> Ad esempio \(\begin{pmatrix}1&amp;1\\1&amp;1\end{pmatrix},\begin{pmatrix}2&amp;1\\1&amp;1\end{pmatrix},\begin{pmatrix}1&amp;1\\1&amp;2\end{pmatrix}\): sono simmetriche, senza zeri, e indipendenti (coordinate \((1,1,1),(2,1,1),(1,1,2)\), determinante \(-1\neq0\)); tre vettori indipendenti in dimensione 3 formano una base.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+</section>
+
+<section class="sec quizzes" id="cap2-quiz">
+  <div class="num">13</div>
+  <h2>Quiz</h2>
+  <div class="ex-bar"><span class="quiz-score"></span><button class="chip quiz-reset">Ricomincia</button></div>
+  <p class="lead">Quiz Capitolo 2 (23 ottobre 2026): una sola risposta è corretta. Domande mediamente più facili di quelle d'esame.</p>
+
+  <div class="quiz" data-risposta="D">
+    <p><strong>Q1.</strong> Quale dei seguenti è un sottospazio vettoriale di \(\mathbb R^2\)?</p>
+    <ol class="opzioni"><li>\(\{(x,y):x+y=1\}\)</li><li>\(\{(x,y):xy=0\}\)</li><li>\(\{(x,y):x\geqslant0\}\)</li><li>\(\{(x,y):x=2y\}\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>D: è \(\mathrm{Sol}(x-2y=0)\), equazione omogenea, cioè la retta \(\mathrm{Span}\{(2,1)\}\). A non contiene \(\mathbf 0\); B è l'unione degli assi (\((1,0)+(0,1)\notin\)); C non è chiusa per \(\lambda=-1\).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="C">
+    <p><strong>Q2.</strong> Quale dei seguenti sottoinsiemi di \(\mathbb R^3\) <strong>non</strong> è un sottospazio vettoriale?</p>
+    <ol class="opzioni"><li>\(\{\mathbf x:x_1=x_2\}\)</li><li>\(\{\mathbf x:x_1+x_2+x_3=0\}\)</li><li>\(\{\mathbf x:x_3=1\}\)</li><li>\(\{\mathbf x:x_1=x_2=0\}\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>C: \(\mathbf 0\) ha \(x_3=0\neq1\) (Oss. 2.6). Gli altri sono insiemi di soluzioni di sistemi omogenei.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="C">
+    <p><strong>Q3.</strong> Sia \(V\) un \(\mathbb K\)-spazio vettoriale, \(\lambda\in\mathbb K\), \(\mathbf v\in V\). Se \(\lambda\mathbf v=\mathbf 0\) allora:</p>
+    <ol class="opzioni"><li>\(\lambda=0\)</li><li>\(\mathbf v=\mathbf 0\)</li><li>\(\lambda=0\) oppure \(\mathbf v=\mathbf 0\)</li><li>\(\lambda=0\) e \(\mathbf v=\mathbf 0\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>C: è il Lemma 2.2 (iv). A e B da soli sono falsi (basta \(\mathbf v=\mathbf 0,\lambda=1\) o \(\lambda=0,\mathbf v\neq\mathbf 0\)); D richiede troppo.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p><strong>Q4.</strong> Il sottospazio \(\mathrm{Span}_{\mathbb R}\{\binom12,\binom24\}\subseteq\mathbb R^2\) è:</p>
+    <ol class="opzioni"><li>\(\mathbb R^2\)</li><li>\(\mathrm{Span}_{\mathbb R}\{\binom36\}\)</li><li>\(\{\mathbf 0\}\)</li><li>l'unione di due rette distinte</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>B: \(\binom24=2\binom12\), quindi lo Span è la retta \(\mathrm{Span}\{\binom12\}\), che coincide con \(\mathrm{Span}\{\binom36\}\) perché \(\binom36=3\binom12\). D è impossibile: uno Span è sempre un sottospazio, mai l'unione di due rette distinte.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="D">
+    <p><strong>Q5.</strong> I vettori \(\mathbf v_1=(1,0,1)^\top,\ \mathbf v_2=(0,1,1)^\top,\ \mathbf v_3=(1,1,2)^\top\) di \(\mathbb R^3\):</p>
+    <ol class="opzioni"><li>sono linearmente indipendenti.</li><li>generano \(\mathbb R^3\).</li><li>formano una base di \(\mathbb R^3\).</li><li>sono linearmente dipendenti.</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>D: \(\mathbf v_3=\mathbf v_1+\mathbf v_2\), quindi \(\mathbf v_1+\mathbf v_2-\mathbf v_3=\mathbf 0\). Generano solo un piano (dimensione 2), quindi B e C sono false.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="C">
+    <p><strong>Q6.</strong> Quale dei seguenti sistemi di vettori è una base di \(\mathbb R^3\)?</p>
+    <ol class="opzioni">
+      <li>\((1,0,0)^\top,(0,1,0)^\top\)</li>
+      <li>\((1,0,0)^\top,(0,1,0)^\top,(0,0,1)^\top,(1,1,1)^\top\)</li>
+      <li>\((1,1,0)^\top,(0,1,1)^\top,(1,0,1)^\top\)</li>
+      <li>\((1,2,3)^\top,(2,4,4)^\top,(0,0,1)^\top\)</li>
+    </ol>
+    <details class="sol"><summary>Spiegazione</summary><p>C: tre vettori in dimensione 3; indipendenti perché \(\det\begin{pmatrix}1&amp;0&amp;1\\1&amp;1&amp;0\\0&amp;1&amp;1\end{pmatrix}=2\neq0\) (su un campo con \(2=0\) non lo sarebbero!). A ha troppo pochi vettori, B troppi. D: \((2,4,4)=2(1,2,3)-2(0,0,1)\), dipendenti (determinante 0).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p><strong>Q7.</strong> Quanto vale la dimensione di \(\mathrm{Span}_{\mathbb R}\{(1,1,1,0)^\top,(0,1,1,1)^\top,(1,3,3,2)^\top\}\subseteq\mathbb R^4\)?</p>
+    <ol class="opzioni"><li>1</li><li>2</li><li>3</li><li>4</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>B: \((1,3,3,2)=(1,1,1,0)+2(0,1,1,1)\), e i primi due non sono proporzionali. Base \(\{(1,1,1,0),(0,1,1,1)\}\), dimensione 2.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="A">
+    <p><strong>Q8.</strong> Sia \(V\) uno spazio vettoriale di dimensione 5. Quale affermazione è vera?</p>
+    <ol class="opzioni"><li>Ogni sistema di 6 vettori di \(V\) è linearmente dipendente.</li><li>Ogni sistema di 4 vettori di \(V\) è linearmente indipendente.</li><li>Esiste un sistema di 4 vettori che genera \(V\).</li><li>Ogni sistema di 5 vettori di \(V\) è una base.</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>A: per Steinitz (i), un sistema indipendente ha al più \(\dim V=5\) elementi. C è falsa per lo stesso teorema (ogni sistema di generatori ha almeno 5 elementi); B e D sono false (es. 4 o 5 copie dello stesso vettore).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="C">
+    <p><strong>Q9.</strong> Sia \(A\in\mathrm{Mat}_{3\times5}(\mathbb R)\) con \(\mathrm{Rango}(A)=2\). Quanto vale \(\dim_{\mathbb R}\mathrm{Ker}(A)\)?</p>
+    <ol class="opzioni"><li>1</li><li>2</li><li>3</li><li>5</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>C: \(\mathrm{Ker}(A)=\mathrm{Sol}(A\mathbf x=\mathbf 0)\subseteq\mathbb R^5\); con rango 2 ci sono \(5-2=3\) variabili libere, e i vettori ottenuti con Gauss-Jordan (uno per variabile libera) formano una base. (È il teorema \(n=\dim\mathrm{Ker}A+\mathrm{Rango}\,A\), Cap. 3-4.)</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="D">
+    <p><strong>Q10.</strong> Quale delle seguenti è una base di \(\mathrm{Ker}\begin{pmatrix}1&amp;1&amp;-1\end{pmatrix}\subseteq\mathbb R^3\)?</p>
+    <ol class="opzioni">
+      <li>\((1,1,0)^\top,(0,0,1)^\top\)</li>
+      <li>\((1,1,-1)^\top\)</li>
+      <li>\((1,0,1)^\top,(2,0,2)^\top\)</li>
+      <li>\((1,0,1)^\top,(0,1,1)^\top\)</li>
+    </ol>
+    <details class="sol"><summary>Spiegazione</summary><p>D: il nucleo è il piano \(x+y-z=0\), di dimensione 2. \((1,0,1)\) e \((0,1,1)\) soddisfano \(x+y-z=0\) e non sono proporzionali. A: \((1,1,0)\) non sta nel nucleo (\(1+1-0=2\)); B: un solo vettore, e nemmeno nel nucleo (\(1+1+1=3\)); C: vettori proporzionali.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p><strong>Q11.</strong> Siano \(U,W\) sottospazi di \(\mathbb R^6\) con \(\dim U=3\) e \(\dim W=4\). Il minimo valore possibile di \(\dim(U\cap W)\) è:</p>
+    <ol class="opzioni"><li>0</li><li>1</li><li>3</li><li>4</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>B: per Grassmann \(\dim(U\cap W)=3+4-\dim(U+W)\geqslant7-6=1\). Il valore 1 si raggiunge: \(U=\mathrm{Span}\{\mathbf e_1,\mathbf e_2,\mathbf e_3\}\), \(W=\mathrm{Span}\{\mathbf e_3,\mathbf e_4,\mathbf e_5,\mathbf e_6\}\).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p><strong>Q12.</strong> In \(\mathbb R^3\) siano \(U=\mathrm{Span}\{(1,0,0)^\top\}\) e \(W=\mathrm{Span}\{(0,1,1)^\top,(1,1,1)^\top\}\). Allora:</p>
+    <ol class="opzioni"><li>\(U\oplus W=\mathbb R^3\).</li><li>\(U+W=W\).</li><li>\(U\cap W=\{\mathbf 0\}\).</li><li>\(\dim(U+W)=3\).</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>B: \((1,0,0)=(1,1,1)-(0,1,1)\in W\), quindi \(U\subseteq W\) e \(U+W=W\) (dimensione 2). Di conseguenza \(U\cap W=U\neq\mathbf 0\): A, C, D sono false.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="A">
+    <p><strong>Q13.</strong> Sia \(A\in\mathrm{Mat}_{m\times n}(\mathbb K)\). Quale affermazione è sempre vera?</p>
+    <ol class="opzioni"><li>\(\dim\mathrm{Row}(A)=\dim\mathrm{Col}(A)\).</li><li>\(\dim\mathrm{Row}(A)=\dim\mathrm{Ker}(A)\).</li><li>\(\dim\mathrm{Ker}(A)=\dim\mathrm{Col}(A)\).</li><li>\(\mathrm{Ker}(A)\subseteq\mathbb K^m\).</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>A: entrambe valgono \(\mathrm{Rango}(A)\) (rango righe = rango colonne, Cap. 3). D è falsa: \(\mathrm{Ker}(A)\subseteq\mathbb K^n\) (i vettori \(\mathbf x\) con \(A\mathbf x=\mathbf 0\) hanno \(n\) componenti). B e C falliscono ad es. per \(A=I_n\).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p><strong>Q14.</strong> Applicando operazioni elementari sulle righe a una matrice \(A\), quali dei seguenti spazi non cambiano?</p>
+    <ol class="opzioni"><li>tutti cambiano</li><li>\(\mathrm{Row}(A)\) e \(\mathrm{Ker}(A)\)</li><li>\(\mathrm{Col}(A)\) e \(\mathrm{Ker}(A)\)</li><li>\(\mathrm{Col}(A)\) e \(\mathrm{Row}(A)\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>B: le nuove righe sono combinazioni lineari delle vecchie e viceversa (mosse invertibili), quindi lo Span delle righe non cambia; Gauss non cambia le soluzioni di \(A\mathbf x=\mathbf 0\). Lo spazio delle colonne invece può cambiare: \(\begin{pmatrix}1\\1\end{pmatrix}\to\begin{pmatrix}1\\0\end{pmatrix}\) con \(R_2-R_1\).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="D">
+    <p><strong>Q15.</strong> Quanti elementi ha una base di \(\mathrm{Mat}_{4\times2}(\mathbb R)\)?</p>
+    <ol class="opzioni"><li>2</li><li>4</li><li>6</li><li>8</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>D: \(\dim\mathrm{Mat}_{m\times n}=mn=4\cdot2=8\) (base delle matrici standard \(E_{ij}\)).</p></details>
+  </div>
+</section>
+
+<section class="sec" id="cap2-riepilogo">
+  <div class="num">14</div>
+  <h2>Riepilogo</h2>
+  <p class="lead">I punti da sapere per l'esame sul Capitolo 2.</p>
+  <ol>
+    <li><strong>Assiomi</strong> di \(\mathbb K\)-spazio vettoriale (SpV.1: \((V,+)\) gruppo abeliano; SpV.2.1-2.4) e il Lemma 2.2, in particolare \(\lambda\mathbf v=\mathbf 0\Rightarrow\lambda=0\) o \(\mathbf v=\mathbf 0\).</li>
+    <li>Esempi fondamentali: \(\mathbb K^n\), \(\mathrm{Mat}_{m\times n}(\mathbb K)\), \(\mathbb K[x]\), \(\mathbb K[x]_{\leqslant d}\), \(\mathrm{Funct}(X,\mathbb K)\), \(V\times W\).</li>
+    <li><strong>Sottospazio</strong>: non vuoto e chiuso per combinazioni lineari (Oss. 2.5). Test rapido: se \(\mathbf 0\notin U\), non è un sottospazio (Oss. 2.6). Le soluzioni di un sistema omogeneo sono un sottospazio; quelle di uno non omogeneo no.</li>
+    <li>I sottospazi propri di \(\mathbb R^2\) sono le rette per l'origine; quelli di \(\mathbb R^3\) le rette e i piani per l'origine.</li>
+    <li>Ogni sottospazio di \(\mathbb K^n\) ha una forma <strong>parametrica</strong> (\(\mathrm{Span}\)) e una <strong>cartesiana</strong> (\(\mathrm{Ker}\,A\)) (Teorema 2.7).</li>
+    <li>\(\mathrm{Span}_{\mathbb K}S\) = insieme delle combinazioni lineari <em>finite</em> di elementi di \(S\) = il più piccolo sottospazio che contiene \(S\) (Teorema 2.21). L'intersezione di sottospazi è un sottospazio, l'unione in generale no.</li>
+    <li><strong>Indipendenza lineare</strong>: \(\sum\lambda_i\mathbf v_i=\mathbf 0\Rightarrow\) tutti \(\lambda_i=0\); equivalentemente nessun vettore è combinazione degli altri (Teorema 2.25). In \(\mathbb K^n\) si decide con Gauss: un pivot per colonna.</li>
+    <li><strong>Base</strong> = indipendente + generatori = sistema indipendente massimale = sistema di generatori minimale (Corollario 2.32). Ogni vettore ha coordinate <strong>uniche</strong> \([\mathbf v]_{\mathcal B}\) rispetto a una base ordinata.</li>
+    <li>Ogni sistema di generatori contiene una base (si tolgono i vettori ridondanti, Oss. 2.35); ogni spazio vettoriale ha una base (Teorema 2.39).</li>
+    <li><strong>Steinitz</strong>: se \(L\) è indipendente e \(S\) genera, \(|L|\leqslant|S|\) e \(L\) si completa a un sistema di generatori con vettori di \(S\). Quindi ogni sistema indipendente si completa a una base.</li>
+    <li>Tutte le basi hanno la stessa cardinalità: la <strong>dimensione</strong>. \(\dim\mathbb K^n=n\), \(\dim\mathrm{Mat}_{m\times n}=mn\), \(\dim\mathbb K[x]_{\leqslant d}=d+1\), \(\dim\mathbb K[x]=\infty\), \(\dim(V\times W)=\dim V+\dim W\).</li>
+    <li>In dimensione \(n\): più di \(n\) vettori sono dipendenti, meno di \(n\) non generano, \(n\) vettori indipendenti (oppure generatori) sono una base. \(W\subseteq V\Rightarrow\dim W\leqslant\dim V\), con uguaglianza solo se \(W=V\).</li>
+    <li><strong>Somma</strong> \(U_1+U_2=\mathrm{Span}(U_1\cup U_2)=\{\mathbf u_1+\mathbf u_2\}\): si uniscono i generatori. <strong>Somma diretta</strong> \(U_1\oplus U_2\iff U_1\cap U_2=\mathbf 0\iff\) scrittura unica.</li>
+    <li><strong>Grassmann</strong>: \(\dim(U_1+U_2)=\dim U_1+\dim U_2-\dim(U_1\cap U_2)\); utile per controlli e per stimare \(\dim(U_1\cap U_2)\geqslant\dim U_1+\dim U_2-\dim V\).</li>
+    <li>Il campo conta sempre: \(\{1,i\}\) è base di \(\mathbb C\) su \(\mathbb R\) ma non su \(\mathbb C\); molti risultati usano l'esistenza di \(\lambda^{-1}\); attenzione ai campi con \(1+1=0\) (Foglio 5, es. 5).</li>
+  </ol>
+</section>
+      <nav class="pager" aria-label="Capitoli"><a class="prev" href="cap1.html"><small>← Precedente</small><span>Matrici e sistemi lineari</span></a><a class="next" href="cap3.html"><small>Successivo →</small><span>Calcolare in Kⁿ</span></a></nav>
+    </main>
+  </div>
+  <footer class="foot">Appunti personali basati sul materiale del corso di Geometria e Algebra Lineare (Politecnico di Milano, 2026/27). Possono contenere errori: nel dubbio fa fede il materiale del docente.</footer>
+</div>
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], tags: 'none' },
+    svg: { fontCache: 'global' },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js" async></script>
+<script src="../assets/gal.js"></script>
+</body>
+</html>

@@ -1,0 +1,802 @@
+<!-- fonti:
+  - Appunti del prof. A. Constantinescu, "GAL Capitolo 3.pdf" (Capitolo 3 "Calcolare nello spazio vettoriale standard", pp. 157-178 della numerazione degli appunti = pp. 1-22 del PDF):
+    introduzione e Problemi 1-8 (p. 157); 3.1 Sottospazi codificati da matrici (pp. 158-161: Def. 3.1, Es. 3.2, Oss. 3.3, Prop. 3.4, Oss. 3.5, Prop. 3.6, Es. 3.7, Teor. 3.8, Cor. 3.9);
+    3.2 Metodi di calcolo (pp. 161-166); 3.3 Esempi svolti (pp. 166-173); 3.4 Perché funzionano i metodi (pp. 174-175); 3.5 Un esempio per concludere (pp. 175-178).
+  - Esercizi: "GAL Esercizi - Foglio 5 bis.pdf" (20 ottobre 2026, "Calcoli in R^n - molto rilevanti per l'esame"), es. 1 e 2 (senza soluzioni ufficiali: risolti e verificati con sympy).
+  - Esami degli anni passati: GAL-2324-01 (quesito 11, p. 9), GAL-2324-02 (quesito 4, p. 6), GAL-2324-07 (quesito 11, p. 8), GAL-2324-09 (Esercizio 1, p. 9),
+    GAL-2425-07 (Esercizio 1 a-b, p. 9), GAL-2526-01 (Q1.4, p. 1), GAL-2526-02 (E1 a, c, p. 3), GAL-2526-09 (E1 a, b, d, p. 3).
+    Le soluzioni ufficiali (quando presenti negli esami 23/24 e 24/25) sono state confrontate; gli esami 25/26 non hanno soluzioni: risolti e verificati con sympy.
+-->
+
+<section class="sec" id="cap3-intro">
+  <h2>Lo schema generale: Gauss risolve tutto</h2>
+  <p class="lead">In questo capitolo non ci sono concetti nuovi: si applica la teoria degli spazi vettoriali allo spazio standard \(\mathbb{K}^n\), con l'obiettivo di <strong>calcolare</strong>. Ogni calcolo si riduce all'algoritmo di Gauss; cambia solo come si costruisce la matrice e come si legge il risultato.</p>
+
+  <div class="box box--method"><div class="tag">Metodo (Cap. 3, p. 157)</div>
+    <h4>Lo schema in tre passi</h4>
+    <ol>
+      <li>Costruire dall'<em>input</em> una matrice \(M\) a cui applicare l'algoritmo.</li>
+      <li>Applicare Gauss(-Jordan) per ottenere una matrice a scala (ridotta) \(M'\).</li>
+      <li>Leggere l'<em>output</em> da \(M'\).</li>
+    </ol>
+  </div>
+
+  <p>Lo schema si applica agli otto problemi seguenti, relativi a sottospazi vettoriali \(U \subseteq_{\mathbb{K}} \mathbb{K}^n\):</p>
+  <ol>
+    <li><strong>Problema 1</strong>: trovare la dimensione di \(U\).</li>
+    <li><strong>Problema 2</strong>: trovare una base di \(U\).</li>
+    <li><strong>Problema 3</strong>: trovare una base di \(U\) contenuta in un sistema di generatori \(S\) dato.</li>
+    <li><strong>Problema 4</strong>: trovare una base di \(U\) che contenga un sistema linearmente indipendente \(L\) dato.</li>
+    <li><strong>Problema 5</strong>: trovare una presentazione parametrica di \(U\).</li>
+    <li><strong>Problema 6</strong>: trovare una presentazione cartesiana di \(U\).</li>
+    <li><strong>Problema 7</strong>: trovare l'intersezione di due sottospazi \(U_1 \cap U_2\).</li>
+    <li><strong>Problema 8</strong>: trovare la somma di due sottospazi \(U_1 + U_2\).</li>
+  </ol>
+
+  <div class="box box--def"><div class="tag">Le due presentazioni di un sottospazio (p. 157)</div>
+    <p>Ogni sottospazio \(U \subseteq \mathbb{K}^n\) può essere presentato in due forme (la parametrica può avere ridondanze):</p>
+    <ol>
+      <li><strong>Parametrica</strong>: \(U = \mathrm{Span}_{\mathbb{K}}\{\mathbf{v}_1, \dots, \mathbf{v}_s\}\);</li>
+      <li><strong>Cartesiana</strong>: \(U = \{\mathbf{x} \in \mathbb{K}^n \;:\; A\mathbf{x} = \mathbf{0}\}\), dove \(A \in \mathrm{Mat}_{m\times n}(\mathbb{K})\).</li>
+    </ol>
+    <p>A priori, per ogni presentazione possibile dell'input il numero di casi si moltiplica per due; in pratica alcuni casi sono banali (es. Problemi 5 e 6) o si riducono per simmetria.</p>
+  </div>
+
+  <div class="box box--note"><div class="tag">Notazione fissata (p. 161)</div>
+    <p><strong>Forma parametrica.</strong> Se \(U = \mathrm{Span}_{\mathbb{K}}\{\mathbf{v}_1,\dots,\mathbf{v}_s\}\) possiamo usare vettori riga o colonna:</p>
+    \[ U = \mathrm{Row}(\mathtt{R}) \ \text{ con } \ \mathtt{R}_i(\mathtt{R}) = \mathbf{v}_i^{\top}, \qquad \text{oppure} \qquad U = \mathrm{Col}(\mathtt{C}) \ \text{ con } \ \mathtt{C}_i(\mathtt{C}) = \mathbf{v}_i. \]
+    <p>Quindi \(\mathtt{R}\) ha come righe i vettori \(\mathbf{v}_1^{\top},\dots,\mathbf{v}_s^{\top}\) e \(\mathtt{C} = \mathtt{R}^{\top}\) li ha come colonne.</p>
+    <p><strong>Forma cartesiana.</strong> \(A \in \mathrm{Mat}_{m\times n}(\mathbb{K})\) è la matrice dei coefficienti delle equazioni cartesiane: \(U = \mathrm{Ker}(A) = \mathrm{Sol}(A\mathbf{x} = \mathbf{0})\).</p>
+  </div>
+</section>
+
+<section class="sec" id="cap3-sottospazi-matrice">
+  <h2>Sottospazi di \(\mathbb{K}^n\) codificati da matrici</h2>
+  <p class="lead">A ogni matrice associamo tre sottospazi dello spazio standard: spazio delle righe, spazio delle colonne e nucleo. Capire come cambiano sotto le mosse di Gauss è la chiave di tutti i metodi.</p>
+
+  <div class="box box--def"><div class="tag">Definizione 3.1</div>
+    <p>Sia \(A = (a_{ij}) \in \mathrm{Mat}_{m\times n}(\mathbb{K})\). Per \(i = 1,\dots,m\) e \(j = 1,\dots,n\) poniamo</p>
+    \[ \mathtt{R}_i := (a_{i1}, \dots, a_{in}) \in \mathbb{K}^n, \qquad \mathtt{C}_j := \begin{pmatrix} a_{1j} \\ \vdots \\ a_{mj} \end{pmatrix} \in \mathbb{K}^m. \]
+    <ul>
+      <li>Lo <strong>spazio delle righe</strong> di \(A\): \(\mathrm{Row}(A) := \mathrm{Span}_{\mathbb{K}}\{\mathtt{R}_1,\dots,\mathtt{R}_m\} \subseteq_{\mathbb{K}} \mathbb{K}^n\).</li>
+      <li>Lo <strong>spazio delle colonne</strong> di \(A\): \(\mathrm{Col}(A) := \mathrm{Span}_{\mathbb{K}}\{\mathtt{C}_1,\dots,\mathtt{C}_n\} \subseteq_{\mathbb{K}} \mathbb{K}^m\).</li>
+      <li>Il <strong>nucleo</strong> (kernel) di \(A\): \(\mathrm{Ker}(A) := \mathrm{Sol}(A\mathbf{x} = \mathbf{0}) \subseteq_{\mathbb{K}} \mathbb{K}^n\).</li>
+    </ul>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio 3.2</div>
+    <p>Per \(A = \begin{pmatrix} 1 & 2 & 0 \\ 0 & 1 & 1 \end{pmatrix} \in \mathrm{Mat}_{2\times 3}(\mathbb{R})\):</p>
+    \[ \begin{aligned}
+      \mathrm{Row}(A) &= \mathrm{Span}_{\mathbb{R}}\{(1,2,0),(0,1,1)\} \subseteq \mathbb{R}^3,\\
+      \mathrm{Col}(A) &= \mathrm{Span}_{\mathbb{R}}\left\{ \begin{pmatrix}1\\0\end{pmatrix}, \begin{pmatrix}2\\1\end{pmatrix}, \begin{pmatrix}0\\1\end{pmatrix} \right\} \subseteq \mathbb{R}^2,\\
+      \mathrm{Ker}(A) &= \left\{ \begin{pmatrix}x\\y\\z\end{pmatrix} \in \mathbb{R}^3 : x + 2y = 0 \ \wedge\ y + z = 0 \right\} = \mathrm{Span}_{\mathbb{R}}\left\{ \begin{pmatrix}2\\-1\\1\end{pmatrix} \right\} \subseteq \mathbb{R}^3.
+    \end{aligned} \]
+  </div>
+
+  <div class="box box--note"><div class="tag">Osservazione 3.3</div>
+    <p>La trasposizione scambia i ruoli di righe e colonne. Identificando una riga con una colonna trasposta:</p>
+    \[ \mathrm{Row}(A) = \mathrm{Col}(A^{\top}), \qquad \text{e quindi anche} \qquad \mathrm{Col}(A) = \mathrm{Row}(A^{\top}). \]
+  </div>
+
+  <h3>Le operazioni elementari sulle righe</h3>
+
+  <div class="box box--thm"><div class="tag">Proposizione 3.4</div>
+    <p>Siano \(A, A' \in \mathrm{Mat}_{m\times n}(\mathbb{K})\) e supponiamo che \(A'\) si ottenga da \(A\) mediante un numero finito di operazioni elementari sulle righe. Allora</p>
+    \[ \mathrm{Row}(A') = \mathrm{Row}(A) \qquad \text{e} \qquad \mathrm{Ker}(A) = \mathrm{Ker}(A'). \]
+    <p><em>Idea della dimostrazione.</em> In ogni operazione elementare ogni nuova riga è combinazione lineare delle righe precedenti, quindi \(\mathrm{Row}(A') \subseteq \mathrm{Row}(A)\). Ogni operazione elementare è invertibile e la sua inversa è ancora elementare: applicando le inverse si ottiene l'inclusione opposta. L'invarianza delle soluzioni è il Corollario 1.23 del Capitolo 1.</p>
+  </div>
+
+  <p>Ricordiamo (Teorema 1.18; negli appunti del Cap. 3 compare come 1.19) che applicare Gauss ad \(A\) significa moltiplicare a sinistra per una matrice invertibile \(P \in \mathrm{GL}_m(\mathbb{K})\): \(A \xmapsto{\text{Gauss}} P\cdot A =: A'\).</p>
+
+  <div class="box box--warn"><div class="tag">Osservazione 3.5 — Attenzione</div>
+    <p>Lo spazio delle colonne, a differenza di quello delle righe e del nucleo, <strong>non</strong> è in generale invariato dalle operazioni sulle righe. Scambiando le due righe di \(A = \begin{pmatrix} 1 & 0 \\ 0 & 0\end{pmatrix}\) si ottiene \(A' = \begin{pmatrix} 0 & 0 \\ 1 & 0\end{pmatrix}\): \(\mathrm{Col}(A)\) è l'asse \(x\) di \(\mathbb{R}^2\), mentre \(\mathrm{Col}(A')\) è l'asse \(y\).</p>
+    <p>Conseguenza pratica: quando cerchi una base di \(\mathrm{Col}(\mathtt{C})\) "scelta tra i vettori dati", devi prendere le colonne della matrice <strong>originale</strong> nelle posizioni pivot, non le colonne della forma a scala.</p>
+  </div>
+
+  <p>Per \(\boldsymbol{\lambda} = (\lambda_1 \ \dots\ \lambda_n)^{\top} \in \mathbb{K}^n\), la definizione di prodotto matriciale dà \(A\boldsymbol{\lambda} = \lambda_1 \mathtt{C}_1(A) + \dots + \lambda_n \mathtt{C}_n(A)\).</p>
+
+  <div class="box box--thm"><div class="tag">Proposizione 3.6</div>
+    <p>Siano \(A\) e \(A'\) come sopra. Per ogni sottoinsieme \(\{i_1,\dots,i_k\} \subseteq \{1,\dots,n\}\) degli indici di colonna vale:</p>
+    \[ \lambda_1 \mathtt{C}_{i_1}(A) + \dots + \lambda_k \mathtt{C}_{i_k}(A) = \mathbf{0} \iff \lambda_1 \mathtt{C}_{i_1}(A') + \dots + \lambda_k \mathtt{C}_{i_k}(A') = \mathbf{0}. \]
+    <p>In particolare \(\mathtt{C}_{i_1}(A),\dots,\mathtt{C}_{i_k}(A)\) sono linearmente indipendenti se e solo se lo sono \(\mathtt{C}_{i_1}(A'),\dots,\mathtt{C}_{i_k}(A')\); quindi</p>
+    \[ \dim_{\mathbb{K}} \mathrm{Col}(A) = \dim_{\mathbb{K}} \mathrm{Col}(A'). \]
+    <p><em>Idea della dimostrazione.</em> Basta il caso \(\{i_1,\dots,i_k\} = \{1,\dots,n\}\) (per un sottoinsieme si prende la sottomatrice di quelle colonne). Una relazione \(\sum \lambda_j \mathtt{C}_j(A) = \mathbf{0}\) è una soluzione \(\boldsymbol{\lambda}\) di \(A\mathbf{x} = \mathbf{0}\), e le soluzioni sono invariate dalle mosse di Gauss (Corollario 1.23). La dimensione di \(\mathrm{Col}\) è il massimo numero di colonne linearmente indipendenti, uguale per \(A\) e \(A'\) con gli stessi indici.</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Riassunto (3.1)</div>
+    <p>Se \(A \xmapsto{\text{Gauss}} A'\), allora:</p>
+    \[ \mathrm{Row}(A) = \mathrm{Row}(A'), \qquad \mathrm{Ker}(A) = \mathrm{Ker}(A'), \qquad \underbrace{\mathrm{Col}(A) \neq \mathrm{Col}(A')}_{\text{in generale}}, \qquad \dim_{\mathbb{K}}\mathrm{Col}(A) = \dim_{\mathbb{K}}\mathrm{Col}(A'). \]
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio 3.7</div>
+    <p>Lo spazio delle colonne di una matrice \(5\times 5\) e della sua forma a scala ridotta \(A' = \mathrm{SR}(A)\):</p>
+    \[ A = \begin{pmatrix} 1&1&1&1&1\\ 2&2&3&4&5\\ 3&3&4&5&6\\ 4&4&5&6&7\\ 5&5&6&7&8 \end{pmatrix} \xmapsto{\text{Gauss}} A' = \begin{pmatrix} \boxed{1}&1&0&-1&-2\\ 0&0&\boxed{1}&2&3\\ 0&0&0&0&0\\ 0&0&0&0&0\\ 0&0&0&0&0 \end{pmatrix}. \]
+    <p>Si vede subito che \(\mathrm{Col}(A) \neq \mathrm{Col}(A')\) (le colonne di \(A'\) hanno le ultime tre entrate nulle, quelle di \(A\) no). Ciò che hanno in comune sono i <strong>coefficienti delle combinazioni lineari nulle</strong>, per esempio</p>
+    \[ \begin{aligned}
+      (-1)\mathtt{C}_1(A) + 2\,\mathtt{C}_3(A) + (-1)\mathtt{C}_4(A) &= (-1)\mathtt{C}_1(A') + 2\,\mathtt{C}_3(A') + (-1)\mathtt{C}_4(A') = \mathbf{0},\\
+      (-2)\mathtt{C}_1(A) + 3\,\mathtt{C}_3(A) + (-1)\mathtt{C}_5(A) &= (-2)\mathtt{C}_1(A') + 3\,\mathtt{C}_3(A') + (-1)\mathtt{C}_5(A') = \mathbf{0}.
+    \end{aligned} \]
+    <p>Quindi le stesse scelte di indici danno la stessa risposta sull'indipendenza: \(\{\mathtt{C}_1,\mathtt{C}_2\}\) dipendenti, \(\{\mathtt{C}_1,\mathtt{C}_3\}\) indipendenti, \(\{\mathtt{C}_2,\mathtt{C}_4\}\) indipendenti (sia per \(A\) che per \(A'\)); ogni tre colonne di \(A\) o di \(A'\) sono dipendenti.</p>
+  </div>
+</section>
+
+<section class="sec" id="cap3-rango">
+  <h2>Rango e dimensioni degli spazi associati</h2>
+  <p class="lead">Il teorema centrale del capitolo: il numero di pivot misura contemporaneamente lo spazio delle righe, quello delle colonne e (per differenza) il nucleo.</p>
+
+  <div class="box box--thm"><div class="tag">Teorema 3.8</div>
+    <p>Sia \(A \in \mathrm{Mat}_{m\times n}(\mathbb{K})\). Allora</p>
+    \[ \mathrm{Rango}(A) = \dim_{\mathbb{K}} \mathrm{Row}(A) = \dim_{\mathbb{K}} \mathrm{Col}(A) = n - \dim_{\mathbb{K}} \mathrm{Ker}(A). \]
+    <p><em>Idea della dimostrazione.</em> Sia \(r := \mathrm{Rango}\,A\) il numero di pivot di \(A' = \mathrm{SR}(A)\), con colonne pivot \(\mathtt{p}_1,\dots,\mathtt{p}_r\).</p>
+    <ul>
+      <li>Le \(r\) righe non nulle di \(A'\) sono indipendenti: in \(\lambda_1\mathtt{R}_1(A') + \dots + \lambda_r\mathtt{R}_r(A')\) nella posizione \(\mathtt{p}_i\) compare proprio \(\lambda_i\); se la combinazione è nulla, tutti i \(\lambda_i = 0\). Quindi \(r = \dim\mathrm{Row}(A') = \dim\mathrm{Row}(A)\) (Prop. 3.4).</li>
+      <li>Ogni colonna di \(A'\) ha le ultime \(m-r\) entrate nulle, quindi \(\dim\mathrm{Col}(A') \le r\); le colonne pivot sono indipendenti, quindi \(r = \dim\mathrm{Col}(A') = \dim\mathrm{Col}(A)\) (Prop. 3.6).</li>
+      <li>La parametrizzazione delle soluzioni (Teorema 1.33; negli appunti del Cap. 3 compare come 1.49) ha \(n - r\) parametri liberi, quindi \(\dim\mathrm{Ker}(A) = n - r\).</li>
+    </ul>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Corollario 3.9</div><h4>Nullità + Rango</h4>
+    <p>Per ogni matrice \(A \in \mathrm{Mat}_{m\times n}(\mathbb{K})\) vale</p>
+    \[ n = \dim_{\mathbb{K}} \mathrm{Ker}(A) + \mathrm{Rango}(A). \]
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <p>Nel teorema \(n\) è il numero di <strong>colonne</strong> (= numero di incognite), non di righe. Se \(U = \mathrm{Ker}(A)\) con \(A\) di taglia \(m\times n\), allora \(\dim U = n - \mathrm{Rango}(A)\), che in generale è <strong>diverso</strong> da \(n - m\): le \(m\) equazioni possono essere ridondanti (vedi la forma cartesiana "non minimale" dell'esempio della sezione 3.3, con 2 equazioni ma \(\dim U = 3 - 1 = 2\)).</p>
+  </div>
+</section>
+
+<section class="sec" id="cap3-dimensione-base">
+  <h2>Dimensione e basi (Problemi 1–4)</h2>
+  <p class="lead">Metodi generali (sezione 3.2) seguiti dagli esempi svolti (sezione 3.3) sul sottospazio di riferimento \(U = \mathrm{Col}\begin{pmatrix}1&2&3\\4&5&6\\7&8&9\end{pmatrix} \subseteq \mathbb{R}^3\).</p>
+
+  <div class="box box--ex"><div class="tag">Esempio di riferimento (sez. 3.3, p. 166)</div>
+    <p>Per tutta la sezione 3.3 si usa</p>
+    \[ U = \mathrm{Col}\begin{pmatrix}1&2&3\\4&5&6\\7&8&9\end{pmatrix}, \qquad \mathtt{C} = \begin{pmatrix}1&2&3\\4&5&6\\7&8&9\end{pmatrix}, \qquad \mathtt{R} = \mathtt{C}^{\top} = \begin{pmatrix}1&4&7\\2&5&8\\3&6&9\end{pmatrix}. \]
+    <p>Una forma cartesiana (data in modo <em>non minimale</em>) è</p>
+    \[ U = \left\{ \begin{pmatrix}x\\y\\z\end{pmatrix} \in \mathbb{R}^3 : (3x - 6y + 3z = 0) \wedge (-2x + 4y - 2z = 0) \right\}, \qquad \text{cioè } U = \mathrm{Ker}(A),\ A = \begin{pmatrix} 3 & -6 & 3 \\ -2 & 4 & -2 \end{pmatrix}. \]
+  </div>
+
+  <h3>Problema 1: trovare la dimensione di \(U\)</h3>
+  <div class="box box--method"><div class="tag">Metodo — Problema 1</div>
+    <p><strong>Se \(U\) è dato in forma parametrica</strong> (\(U = \mathrm{Row}(\mathtt{R})\) oppure \(U = \mathrm{Col}(\mathtt{C})\)):</p>
+    <ol>
+      <li>Calcola \(r = \mathrm{Rango}(\mathtt{R})\) oppure \(r = \mathrm{Rango}(\mathtt{C})\) con l'algoritmo di Gauss.</li>
+      <li>Restituisci \(\dim_{\mathbb{K}} U = r\).</li>
+    </ol>
+    <p><strong>Se \(U\) è dato in forma cartesiana</strong> (\(U = \mathrm{Ker}\,A\)):</p>
+    <ol>
+      <li>Calcola \(r = \mathrm{Rango}(A)\) con l'algoritmo di Gauss.</li>
+      <li>Restituisci \(\dim_{\mathbb{K}} U = n - r\).</li>
+    </ol>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio 3.3.1</div>
+    <p><strong>Dalla forma parametrica.</strong></p>
+    \[ \mathtt{C} = \begin{pmatrix}1&2&3\\4&5&6\\7&8&9\end{pmatrix} \xmapsto{\text{Gauss}} \begin{pmatrix}\boxed{1}&2&3\\0&\boxed{-3}&-6\\0&0&0\end{pmatrix}, \qquad \mathtt{R} = \begin{pmatrix}1&4&7\\2&5&8\\3&6&9\end{pmatrix} \xmapsto{\text{Gauss}} \begin{pmatrix}\boxed{1}&4&7\\0&\boxed{-3}&-6\\0&0&0\end{pmatrix}. \]
+    <p>In entrambi i casi due pivot: \(\dim_{\mathbb{R}} U = 2\).</p>
+    <p><strong>Dalla forma cartesiana.</strong></p>
+    \[ \begin{pmatrix} 3 & -6 & 3 \\ -2 & 4 & -2 \end{pmatrix} \xmapsto{\text{Gauss–Jordan}} \begin{pmatrix} \boxed{1} & -2 & 1 \\ 0 & 0 & 0 \end{pmatrix}, \qquad \dim_{\mathbb{R}} U = n - \mathrm{Rango}(A) = 3 - 1 = 2. \]
+  </div>
+
+  <h3>Problema 2: trovare una base di \(U\)</h3>
+  <div class="box box--method"><div class="tag">Metodo — Problema 2, forma parametrica</div>
+    <p>Si sceglie la presentazione a righe \(U = \mathrm{Row}(\mathtt{R})\).</p>
+    <ol>
+      <li>Calcola \(\mathtt{T} = \mathrm{SR}(\mathtt{R})\) con Gauss–Jordan (in realtà basta una qualsiasi forma a scala; la ridotta dà una base con più zeri).</li>
+      <li>Restituisci \(\mathcal{B} = \mathtt{R}_1(\mathtt{T}),\dots,\mathtt{R}_r(\mathtt{T})\), dove \(r = \mathrm{Rango}(\mathtt{R})\): le righe non nulle.</li>
+    </ol>
+  </div>
+  <div class="box box--method"><div class="tag">Metodo — Problema 2, forma cartesiana</div>
+    <p><strong>Metodo 1 (risolvere il sistema).</strong></p>
+    <ol>
+      <li>Risolvi \(A\mathbf{x} = \mathbf{0}\) col Teorema 1.33 (negli appunti del Cap. 3 compare come 1.49): trova \(\mathrm{SR}(A) = (s_{ij})\) e, assumendo i pivot nelle prime \(r\) colonne (altrimenti si permutano le variabili),
+      \[ \mathrm{Ker}(A) = \left\{ \begin{pmatrix} -s_{1,(r+1)}t_{r+1} - \dots - s_{1,n}t_n \\ \vdots \\ -s_{r,(r+1)}t_{r+1} - \dots - s_{r,n}t_n \\ t_{r+1} \\ \vdots \\ t_n \end{pmatrix} : t_{r+1},\dots,t_n \in \mathbb{K} \right\}. \]</li>
+      <li>Restituisci i vettori che moltiplicano ciascun parametro (parametro \(t_j = 1\), gli altri \(=0\)):
+      \[ \mathcal{B} = \begin{pmatrix} -s_{1,(r+1)} \\ \vdots \\ -s_{r,(r+1)} \\ 1 \\ 0 \\ \vdots \\ 0\end{pmatrix}, \ \dots, \ \begin{pmatrix} -s_{1,n} \\ \vdots \\ -s_{r,n} \\ 0 \\ 0 \\ \vdots \\ 1\end{pmatrix}. \]</li>
+    </ol>
+    <p><strong>Metodo 2 (matrice estesa con l'identità).</strong></p>
+    <ol>
+      <li>Definisci \(E = \left(A^{\top} \mid I_n\right) \in \mathrm{Mat}_{n\times(m+n)}(\mathbb{K})\).</li>
+      <li>Porta \(E\) a scala: \(E \xmapsto{\text{Gauss}} B\cdot E = \left(\mathrm{SR}(A^{\top}) \mid B\right)\), con \(B \in \mathrm{GL}_n(\mathbb{K})\) e \(r = \mathrm{Rango}(A)\). Le ultime \(n - r\) righe del blocco sinistro sono nulle.</li>
+      <li>Restituisci come base le <strong>trasposte delle righe del blocco in basso a destra</strong>, cioè le ultime \(n-r\) righe di \(B\): \(\mathcal{B} = (b_{r+1,1},\dots,b_{r+1,n})^{\top}, \dots, (b_{n,1},\dots,b_{n,n})^{\top}\).</li>
+    </ol>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio 3.3.2</div>
+    <p><strong>Forma parametrica</strong> (\(U = \mathrm{Row}(\mathtt{R})\)):</p>
+    \[ \begin{pmatrix}1&4&7\\2&5&8\\3&6&9\end{pmatrix} \xmapsto{\text{Gauss}} \begin{pmatrix}\boxed{1}&4&7\\0&\boxed{-3}&-6\\0&0&0\end{pmatrix} \xmapsto{\text{Gauss–Jordan}} \begin{pmatrix}\boxed{1}&0&-1\\0&\boxed{1}&2\\0&0&0\end{pmatrix}. \]
+    <p>Dalla prima forma a scala: \(\mathcal{B}_U = (1,4,7),(0,-3,-6)\); dalla ridotta: \(\mathcal{B}'_U = (1,0,-1),(0,1,2)\) (Gauss–Jordan produce una base più "bella").</p>
+    <p><strong>Forma cartesiana, Metodo 1.</strong> Risolvendo \(3x - 6y + 3z = 0,\ -2x + 4y - 2z = 0\) (la ridotta è \(x - 2y + z = 0\)) si trovano due parametri \(t_2, t_3\):</p>
+    \[ U = \left\{ \begin{pmatrix} 2t_2 - t_3 \\ t_2 \\ t_3 \end{pmatrix} : t_2, t_3 \in \mathbb{R} \right\} = \left\{ t_2\begin{pmatrix}2\\1\\0\end{pmatrix} + t_3\begin{pmatrix}-1\\0\\1\end{pmatrix} \right\}, \qquad \mathcal{B} = \begin{pmatrix}2\\1\\0\end{pmatrix}, \begin{pmatrix}-1\\0\\1\end{pmatrix}. \]
+    <p>Due generatori per uno spazio di dimensione 2: sono una base.</p>
+    <p><strong>Forma cartesiana, Metodo 2.</strong></p>
+    \[ E = \left(A^{\top} \mid I_3\right) = \left(\begin{array}{rr|rrr} 3 & -2 & 1 & 0 & 0 \\ -6 & 4 & 0 & 1 & 0 \\ 3 & -2 & 0 & 0 & 1 \end{array}\right) \xmapsto{\text{Gauss}} \left(\begin{array}{rr|rrr} 3 & -2 & 1 & 0 & 0 \\ 0 & 0 & 2 & 1 & 0 \\ 0 & 0 & 0 & \tfrac12 & 1 \end{array}\right). \]
+    <p>Le ultime due righe hanno blocco sinistro nullo: \(\mathcal{B} = (2,1,0)^{\top}, (0,\tfrac12,1)^{\top}\).</p>
+  </div>
+
+  <h3>Problema 3: una base di \(U\) contenuta in un \(S\) dato</h3>
+  <div class="box box--method"><div class="tag">Metodo — Problema 3</div>
+    <p><strong>Forma parametrica.</strong> Dato \(S = \mathbf{v}_1,\dots,\mathbf{v}_s\), poni \(\mathtt{C} = (\mathbf{v}_1 \mid \dots \mid \mathbf{v}_s)\), quindi \(U = \mathrm{Col}(\mathtt{C})\).</p>
+    <ol>
+      <li>Calcola una forma a scala di \(\mathtt{C}\), individuando le colonne pivot \(\mathtt{p}_1,\dots,\mathtt{p}_r\).</li>
+      <li>Restituisci \(\mathcal{B} = \mathbf{v}_{\mathtt{p}_1},\dots,\mathbf{v}_{\mathtt{p}_r}\) (i vettori <em>originali</em> in quelle posizioni).</li>
+    </ol>
+    <p><strong>Forma cartesiana.</strong> Il problema non è posto: \(S\) deve essere dato.</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio 3.3.3</div>
+    <p>\(S = (1,4,7)^{\top}, (2,5,8)^{\top}, (3,6,9)^{\top}\), \(U = \mathrm{Span}_{\mathbb{R}} S\). La forma a scala di \(\mathtt{C}\) è \(\begin{pmatrix}\boxed{1}&2&3\\0&\boxed{-3}&-6\\0&0&0\end{pmatrix}\): colonne pivot \(\mathtt{p}_1 = 1,\ \mathtt{p}_2 = 2\). Quindi \(\mathcal{B} = (1,4,7)^{\top}, (2,5,8)^{\top}\).</p>
+  </div>
+
+  <h3>Problema 4: una base di \(U\) che contenga un \(L\) dato</h3>
+  <div class="box box--method"><div class="tag">Metodo — Problema 4 (completamento a base)</div>
+    <p>Siano \(L = \mathbf{v}_1,\dots,\mathbf{v}_\ell \in U\) linearmente indipendenti. <strong>Forma parametrica:</strong></p>
+    <ol>
+      <li>Costruisci la matrice \(\mathtt{L} = (\mathbf{v}_1 \mid \dots \mid \mathbf{v}_\ell)\).</li>
+      <li>Scegli un sistema di generatori \(\mathbf{v}_{\ell+1},\dots,\mathbf{v}_s\) di \(U\) e mettilo in una matrice colonna: \(U = \mathrm{Col}(\mathtt{C})\).</li>
+      <li>Costruisci \(\mathtt{T} = (\mathtt{L} \mid \mathtt{C})\) — <strong>prima i vettori di \(L\)</strong>.</li>
+      <li>Porta \(\mathtt{T}\) a scala, individuando le colonne pivot \(\mathtt{p}_1,\dots,\mathtt{p}_r\), dove \(r = \dim_{\mathbb{K}} U \ge \ell\).</li>
+      <li>Restituisci \(\mathcal{B} = \mathbf{v}_1,\dots,\mathbf{v}_\ell, \mathbf{v}_{\mathtt{p}_{\ell+1}},\dots,\mathbf{v}_{\mathtt{p}_r}\).</li>
+    </ol>
+    <p><strong>Forma cartesiana:</strong> trova una base di \(U\) come nel Problema 2 e usala nel passo 2.</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio 3.3.4</div>
+    <p>Sia \(L = (2,8,14)^{\top} \in U\). Con i generatori \((1,4,7)^{\top},(2,5,8)^{\top},(3,6,9)^{\top}\):</p>
+    \[ \mathtt{T} = (\mathtt{L} \mid \mathtt{C}) = \begin{pmatrix} 2&1&2&3\\8&4&5&6\\14&7&8&9 \end{pmatrix} \xmapsto{\text{Gauss}} \begin{pmatrix} \boxed{2}&1&2&3\\0&0&\boxed{-3}&-6\\0&0&0&0 \end{pmatrix}. \]
+    <p>Colonne pivot \(\mathtt{p}_1 = 1,\ \mathtt{p}_2 = 3\), con \(2 = \dim U \ge 1 = |L|\). Quindi \(\mathcal{B} = (2,8,14)^{\top}, (2,5,8)^{\top}\).</p>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <ul>
+      <li>Nel Problema 2 con <strong>righe</strong> si restituiscono le righe della forma a scala (lo spazio delle righe non cambia). Nei Problemi 3–4 con <strong>colonne</strong> si restituiscono le colonne della matrice <strong>di partenza</strong> nelle posizioni pivot (lo spazio delle colonne cambia!).</li>
+      <li>Nel Problema 4 i vettori di \(L\) vanno messi <strong>per primi</strong>: essendo indipendenti, saranno automaticamente colonne pivot.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="cap3-parametrica-cartesiana">
+  <h2>Da parametrica a cartesiana e viceversa (Problemi 5–6)</h2>
+  <p class="lead">Il cuore pratico del capitolo: passare da generatori a equazioni e da equazioni a generatori. Lo stesso algoritmo (\(E = (\,\cdot \mid I_n)\)) serve in entrambe le direzioni.</p>
+
+  <div class="box box--method"><div class="tag">Metodo — Problema 5 (presentazione parametrica)</div>
+    <ul>
+      <li><strong>\(U\) in forma parametrica:</strong> il problema è risolto.</li>
+      <li><strong>\(U\) in forma cartesiana:</strong> applica il secondo caso del Problema 2 (Metodo 1 o Metodo 2): la base trovata dà \(U = \mathrm{Span}_{\mathbb{K}}\mathcal{B}\).</li>
+    </ul>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo — Problema 6 (presentazione cartesiana)</div>
+    <p><strong>\(U\) in forma parametrica</strong>, con \(s\) vettori colonna: \(U = \mathrm{Col}(\mathtt{C})\).</p>
+    <ol>
+      <li>Definisci \(E = (\mathtt{C} \mid I_n) \in \mathrm{Mat}_{n\times(s+n)}(\mathbb{K})\).</li>
+      <li>Porta \(E\) a scala: \(E \xmapsto{\text{Gauss}} B\cdot E = (\text{forma a scala di } \mathtt{C} \mid B)\), con \(B \in \mathrm{GL}_n(\mathbb{K})\) e \(r = \mathrm{Rango}(\mathtt{C}) = \dim_{\mathbb{K}} U\). Le ultime \(n - r\) righe hanno blocco sinistro nullo.</li>
+      <li>Restituisci \(U = \mathrm{Ker}(A)\), dove \(A = \begin{pmatrix} b_{r+1,1} & \dots & b_{r+1,n} \\ \vdots & & \vdots \\ b_{n,1} & \dots & b_{n,n}\end{pmatrix}\) è il blocco in basso a destra.</li>
+    </ol>
+    <p><strong>Variante equivalente (più intuitiva):</strong> invece di \(I_n\) si aggiunge una sola colonna \(\mathbf{x} = (x_1 \ \dots\ x_n)^{\top}\) a \(\mathtt{C}\). Facendo le stesse mosse di Gauss, il vettore diventa \(B\mathbf{x}\); le ultime \(n-r\) entrate di \(B\mathbf{x}\), uguagliate a zero, sono equazioni cartesiane di \(U\).</p>
+    <p><strong>\(U\) in forma cartesiana:</strong> il problema è risolto.</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio 3.3.6</div>
+    <p>Con \(U = \mathrm{Col}(\mathtt{C})\):</p>
+    \[ E = (\mathtt{C} \mid I_3) = \left(\begin{array}{rrr|rrr} 1&2&3&1&0&0\\4&5&6&0&1&0\\7&8&9&0&0&1 \end{array}\right) \xmapsto{\text{Gauss}} \left(\begin{array}{rrr|rrr} 1&2&3&1&0&0\\0&-3&-6&-4&1&0\\0&0&0&1&-2&1 \end{array}\right). \]
+    <p>Il blocco in basso a destra è \(A = (1\ \ -2\ \ 1)\), quindi</p>
+    \[ U = \left\{ \begin{pmatrix}x\\y\\z\end{pmatrix} \in \mathbb{R}^3 : x - 2y + z = 0 \right\}. \]
+    <p>Con la colonna \(\mathbf{x}\) al posto di \(I_3\):</p>
+    \[ \left(\begin{array}{rrr|c} 1&2&3&x\\4&5&6&y\\7&8&9&z \end{array}\right) \xmapsto{\text{Gauss}} \left(\begin{array}{rrr|c} 1&2&3&x\\0&-3&-6&y-4x\\0&0&0&z-2y+x \end{array}\right). \]
+    <p>Questa variante è forse più intuitiva, ma ha due svantaggi: dà l'impressione di servire solo per passare da parametrica a cartesiana (invece lo stesso algoritmo fa anche il viceversa, mostrando la <strong>dualità</strong> tra le due presentazioni) e i simboli rallentano l'implementazione dell'algoritmo.</p>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <ul>
+      <li>Il numero di equazioni cartesiane <strong>indipendenti</strong> è \(n - \dim U\): in \(\mathbb{R}^4\) un piano (\(\dim 2\)) richiede 2 equazioni, un iperpiano (\(\dim 3\)) una sola.</li>
+      <li>Verifica sempre: ogni generatore di \(U\) deve soddisfare tutte le equazioni trovate. È un controllo velocissimo che intercetta quasi tutti gli errori di calcolo.</li>
+      <li>La forma cartesiana non è unica: sistemi diversi ma equivalenti (stesse soluzioni) descrivono lo stesso \(U\).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="cap3-intersezione">
+  <h2>Intersezione di sottospazi (Problema 7)</h2>
+  <p class="lead">Per l'intersezione la forma comoda è quella cartesiana: basta mettere insieme le equazioni. Gli altri due casi hanno metodi diretti.</p>
+
+  <div class="box box--method"><div class="tag">Metodo — Problema 7</div>
+    <p>Ogni \(U_i\) è \(\mathrm{Col}(\mathtt{C}_i)\) oppure \(\mathrm{Ker}(A_i)\); per simmetria tre casi.</p>
+    <p><strong>Entrambi in forma cartesiana (il caso più facile).</strong></p>
+    <ol>
+      <li>Restituisci \(U_1 \cap U_2 = \mathrm{Ker}\begin{pmatrix} A_1 \\ A_2 \end{pmatrix}\): si uniscono le equazioni.</li>
+    </ol>
+    <p><strong>Entrambi in forma parametrica</strong>, \(\mathtt{C}_1\) di taglia \(n\times d_1\), \(\mathtt{C}_2\) di taglia \(n\times d_2\).</p>
+    <ol>
+      <li>Costruisci \((\mathtt{C}_1 \mid -\mathtt{C}_2) \in \mathrm{Mat}_{n\times(d_1+d_2)}(\mathbb{K})\).</li>
+      <li>Trova una base di \(\mathrm{Ker}(\mathtt{C}_1 \mid -\mathtt{C}_2)\): \(\begin{pmatrix}\boldsymbol{\alpha}_1\\\boldsymbol{\beta}_1\end{pmatrix},\dots,\begin{pmatrix}\boldsymbol{\alpha}_m\\\boldsymbol{\beta}_m\end{pmatrix} \in \mathbb{K}^{d_1+d_2}\).</li>
+      <li>Restituisci \(\mathtt{C}_1\boldsymbol{\alpha}_1,\dots,\mathtt{C}_1\boldsymbol{\alpha}_m\), un sistema di generatori di \(U_1\cap U_2\) (lo stesso si ottiene con \(\mathtt{C}_2\boldsymbol{\beta}_1,\dots,\mathtt{C}_2\boldsymbol{\beta}_m\)).</li>
+    </ol>
+    <p><strong>\(U_1 = \mathrm{Col}(\mathtt{C}_1)\) parametrico e \(U_2 = \mathrm{Ker}\,A_2\) cartesiano</strong> (\(\mathtt{C}_1\) è \(n\times k\), \(A_2\) è \(m\times n\)).</p>
+    <ol>
+      <li>Costruisci \(M = A_2\mathtt{C}_1\).</li>
+      <li>Trova una base \(\boldsymbol{\alpha}_1,\dots,\boldsymbol{\alpha}_t\) di \(\mathrm{Ker}\,M\) (Problema 2).</li>
+      <li>Restituisci \(\mathtt{C}_1\boldsymbol{\alpha}_1,\dots,\mathtt{C}_1\boldsymbol{\alpha}_t\), un sistema di generatori (<strong>non necessariamente una base!</strong>).</li>
+    </ol>
+  </div>
+
+  <div class="box box--note"><div class="tag">Perché funzionano (sez. 3.4)</div>
+    <p>Con \(U = \mathrm{Span}\{\mathbf{u}_1,\dots,\mathbf{u}_t\}\) e \(W = \mathrm{Span}\{\mathbf{w}_1,\dots,\mathbf{w}_s\}\):</p>
+    \[ \mathbf{v} \in U\cap W \iff \exists\, \lambda_i, \mu_j \in \mathbb{K} : \mathbf{v} = \lambda_1\mathbf{u}_1 + \dots + \lambda_t\mathbf{u}_t = \mu_1\mathbf{w}_1 + \dots + \mu_s\mathbf{w}_s, \]
+    <p>quindi bisogna trovare tutte le soluzioni di \(\lambda_1\mathbf{u}_1 + \dots + \lambda_t\mathbf{u}_t - \mu_1\mathbf{w}_1 - \dots - \mu_s\mathbf{w}_s = \mathbf{0}\). Nel caso misto, con \(U = \mathrm{Col}\,\mathtt{C}\) e \(W = \mathrm{Ker}\,A\): \(\mathbf{v} \in U\cap W \iff \exists\,\boldsymbol{\lambda}: \mathbf{v} = \mathtt{C}\boldsymbol{\lambda}\ \text{e}\ A\mathbf{v} = \mathbf{0}\), cioè si risolve \(A(\mathtt{C}\boldsymbol{\lambda}) = (A\mathtt{C})\boldsymbol{\lambda} = \mathbf{0}\).</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio 3.3.7</div>
+    <p>Siano</p>
+    \[ U_1 = \mathrm{Span}_{\mathbb{R}}\left\{ \begin{pmatrix}1\\0\\-1\end{pmatrix}, \begin{pmatrix}0\\1\\2\end{pmatrix} \right\} = \{x - 2y + z = 0\}, \qquad U_2 = \mathrm{Span}_{\mathbb{R}}\left\{ \begin{pmatrix}1\\3\\3\end{pmatrix}, \begin{pmatrix}0\\0\\1\end{pmatrix} \right\} = \{3x - y = 0\}. \]
+    <p><strong>Entrambi cartesiani:</strong> \(U_1 \cap U_2 = \{(x,y,z)^{\top} \in \mathbb{R}^3 : (x - 2y + z = 0) \wedge (3x - y = 0)\}\).</p>
+    <p><strong>Entrambi parametrici:</strong></p>
+    \[ (\mathtt{C}_1 \mid -\mathtt{C}_2) = \left(\begin{array}{rr|rr} 1&0&-1&0\\0&1&-3&0\\-1&2&-3&-1 \end{array}\right), \qquad \mathrm{Ker}(\mathtt{C}_1 \mid -\mathtt{C}_2) = \mathrm{Span}_{\mathbb{R}}\begin{pmatrix}1\\3\\1\\2\end{pmatrix}, \]
+    <p>quindi \(\boldsymbol{\alpha}_1 = (1,3)^{\top}\), \(\boldsymbol{\beta}_1 = (1,2)^{\top}\) e</p>
+    \[ U_1\cap U_2 = \mathrm{Col}(\mathtt{C}_1\boldsymbol{\alpha}_1) = \mathrm{Col}\left(\begin{pmatrix}1&0\\0&1\\-1&2\end{pmatrix}\begin{pmatrix}1\\3\end{pmatrix}\right) = \mathrm{Col}\begin{pmatrix}1\\3\\5\end{pmatrix} = \mathrm{Col}\left(\begin{pmatrix}1&0\\3&0\\3&1\end{pmatrix}\begin{pmatrix}1\\2\end{pmatrix}\right). \]
+    <p><strong>Caso misto:</strong> \(U_1 = \mathrm{Col}\begin{pmatrix}1&2&3\\4&5&6\\7&8&9\end{pmatrix}\) e \(U_2 = \mathrm{Ker}(3\ \ -1\ \ 0)\).</p>
+    \[ M = A_2\mathtt{C}_1 = (3\ \ -1\ \ 0)\begin{pmatrix}1&2&3\\4&5&6\\7&8&9\end{pmatrix} = (-1\ \ 1\ \ 3), \qquad \mathrm{Ker}(M) = \mathrm{Span}_{\mathbb{R}}\left\{ \begin{pmatrix}1\\1\\0\end{pmatrix}, \begin{pmatrix}3\\0\\1\end{pmatrix} \right\}. \]
+    \[ \mathtt{C}_1\boldsymbol{\alpha}_1 = \begin{pmatrix}3\\9\\15\end{pmatrix}, \qquad \mathtt{C}_1\boldsymbol{\alpha}_2 = \begin{pmatrix}6\\18\\30\end{pmatrix}. \]
+    <p>Questi due vettori sono un sistema di generatori ma <strong>non una base</strong>: sono linearmente dipendenti, e ognuno dei due da solo è una base di \(U_1\cap U_2\) (le colonne di \(\mathtt{C}_1\) sono dipendenti, quindi \(\mathrm{Ker}\,M\) "conta due volte" lo stesso vettore).</p>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <ul>
+      <li>Nel caso parametrico il nucleo si calcola in \(\mathbb{K}^{d_1+d_2}\) (coefficienti), ma la risposta è in \(\mathbb{K}^n\): non restituire \(\boldsymbol{\alpha}\) o \(\begin{pmatrix}\boldsymbol\alpha\\\boldsymbol\beta\end{pmatrix}\), ma \(\mathtt{C}_1\boldsymbol{\alpha}\)!</li>
+      <li>Se i generatori di partenza sono dipendenti, i vettori \(\mathtt{C}_1\boldsymbol{\alpha}_i\) possono essere dipendenti: per una base serve un ulteriore Gauss (o controllare la dimensione con Grassmann).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="cap3-somma">
+  <h2>Somma di sottospazi (Problema 8)</h2>
+  <p class="lead">Per la somma la forma comoda è quella parametrica: basta unire i generatori. È il "duale" dell'intersezione.</p>
+
+  <div class="box box--method"><div class="tag">Metodo — Problema 8</div>
+    <p><strong>Entrambi in forma parametrica (il caso più facile).</strong></p>
+    <ol>
+      <li>Restituisci \(\mathrm{Col}(\mathtt{C}_1 \mid \mathtt{C}_2)\), un sistema di generatori (<strong>non necessariamente minimale!</strong>) di \(U_1 + U_2\).</li>
+    </ol>
+    <p><strong>Entrambi in forma cartesiana</strong>, \(A_1\) di taglia \(m_1\times n\), \(A_2\) di taglia \(m_2\times n\).</p>
+    <ol>
+      <li>Costruisci \(\left(A_1^{\top} \mid -A_2^{\top}\right) \in \mathrm{Mat}_{n\times(m_1+m_2)}(\mathbb{K})\).</li>
+      <li>Trova una base di \(\mathrm{Ker}\left(A_1^{\top} \mid -A_2^{\top}\right) \subseteq \mathbb{K}^{m_1+m_2}\): \(\begin{pmatrix}\boldsymbol{\lambda}_1\\\boldsymbol{\mu}_1\end{pmatrix},\dots,\begin{pmatrix}\boldsymbol{\lambda}_k\\\boldsymbol{\mu}_k\end{pmatrix}\), con \(\boldsymbol{\lambda}_i \in \mathbb{K}^{m_1}\), \(\boldsymbol{\mu}_i \in \mathbb{K}^{m_2}\).</li>
+      <li>Restituisci la forma cartesiana \(U_1 + U_2 = \mathrm{Ker}\begin{pmatrix}\boldsymbol{\lambda}_1^{\top}A_1\\ \vdots \\ \boldsymbol{\lambda}_k^{\top}A_1\end{pmatrix}\). Se \(k = 0\) (nucleo nullo), allora \(U_1 + U_2 = \mathbb{K}^n\). (Si può usare anche \(\boldsymbol{\mu}_i^{\top}A_2\), perché \(\boldsymbol{\lambda}_i^{\top}A_1 = \boldsymbol{\mu}_i^{\top}A_2\).)</li>
+    </ol>
+    <p><strong>\(U_1 = \mathrm{Col}(\mathtt{C}_1)\) parametrico e \(U_2 = \mathrm{Ker}\,A_2\) cartesiano.</strong></p>
+    <ol>
+      <li>Costruisci \(M = A_2\mathtt{C}_1 \in \mathrm{Mat}_{m\times k}(\mathbb{K})\).</li>
+      <li>Trova una base \(\boldsymbol{\mu}_1,\dots,\boldsymbol{\mu}_s\) del nucleo della <strong>trasposta</strong> \(\mathrm{Ker}\,M^{\top} \subseteq \mathbb{K}^m\).</li>
+      <li>Restituisci \(U_1 + U_2 = \mathrm{Ker}\begin{pmatrix}\boldsymbol{\mu}_1^{\top}A_2\\ \vdots \\ \boldsymbol{\mu}_s^{\top}A_2\end{pmatrix}\). Se \(s = 0\), allora \(U_1 + U_2 = \mathbb{K}^n\).</li>
+    </ol>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio 3.3.8</div>
+    <p>Due sottospazi di \(\mathbb{R}^4\):</p>
+    \[ U_1 = \mathrm{Col}\begin{pmatrix}1&0\\1&1\\0&1\\0&0\end{pmatrix} = \mathrm{Ker}\begin{pmatrix}1&-1&1&0\\0&0&0&1\end{pmatrix}, \qquad U_2 = \mathrm{Col}\begin{pmatrix}1&1\\0&1\\0&-1\\1&-1\end{pmatrix} = \mathrm{Ker}\begin{pmatrix}1&0&2&-1\\0&1&1&0\end{pmatrix}. \]
+    <p><strong>Entrambi parametrici.</strong></p>
+    \[ U_1 + U_2 = \mathrm{Col}(\mathtt{C}_1 \mid \mathtt{C}_2) = \mathrm{Col}\begin{pmatrix}1&0&1&1\\1&1&0&1\\0&1&0&-1\\0&0&1&-1\end{pmatrix}. \]
+    <p>La matrice ha rango 3, quindi \(\dim_{\mathbb{R}}(U_1+U_2) = 3\). Portando a scala la trasposta (Problema 2) si trova \(U_1 + U_2 = \mathrm{Row}\begin{pmatrix}1&1&0&0\\0&1&1&0\\0&0&1&1\end{pmatrix}\).</p>
+    <p><strong>Entrambi cartesiani.</strong></p>
+    \[ \left(A_1^{\top} \mid -A_2^{\top}\right) = \left(\begin{array}{rr|rr} 1&0&-1&0\\-1&0&0&-1\\1&0&-2&-1\\0&1&1&0 \end{array}\right), \qquad \mathrm{Ker} = \mathrm{Span}\begin{pmatrix}\lambda_1\\\lambda_2\\\mu_1\\\mu_2\end{pmatrix} = \mathrm{Span}\begin{pmatrix}1\\-1\\1\\-1\end{pmatrix},\ k = 1. \]
+    \[ \boldsymbol{\lambda}_1^{\top}A_1 = (1\ \ -1)\begin{pmatrix}1&-1&1&0\\0&0&0&1\end{pmatrix} = (1\ \ -1\ \ 1\ \ -1), \qquad U_1 + U_2 = \{\mathbf{x} \in \mathbb{R}^4 : x_1 - x_2 + x_3 - x_4 = 0\}. \]
+    <p><strong>Caso misto.</strong> Con \(\mathtt{C}_1\) e \(A_2\) come sopra:</p>
+    \[ M = A_2\mathtt{C}_1 = \begin{pmatrix}1&0&2&-1\\0&1&1&0\end{pmatrix}\begin{pmatrix}1&0\\1&1\\0&1\\0&0\end{pmatrix} = \begin{pmatrix}1&2\\1&2\end{pmatrix}, \qquad \mathrm{Ker}(M^{\top}) = \mathrm{Ker}\begin{pmatrix}1&1\\2&2\end{pmatrix} = \mathrm{Span}_{\mathbb{R}}\begin{pmatrix}1\\-1\end{pmatrix},\ s = 1, \]
+    \[ U_1 + U_2 = \mathrm{Ker}\left((1\ \ -1)\begin{pmatrix}1&0&2&-1\\0&1&1&0\end{pmatrix}\right) = \mathrm{Ker}(1\ \ -1\ \ 1\ \ -1). \]
+  </div>
+
+  <div class="box box--thm"><div class="tag">Formula di Grassmann (p. 173)</div>
+    \[ \dim_{\mathbb{K}}(U_1 + U_2) = \dim_{\mathbb{K}} U_1 + \dim_{\mathbb{K}} U_2 - \dim_{\mathbb{K}}(U_1 \cap U_2). \]
+    <p>Aiuta molto in casi speciali (ad es. quando \(U_1 + U_2 = \mathbb{K}^n\)) o per fare la prova.</p>
+  </div>
+
+  <div class="box box--note"><div class="tag">Il consiglio del prof (p. 173)</div>
+    <p><strong>Non bisogna memorizzare tutti questi metodi</strong> per \(U_1\cap U_2\) e \(U_1+U_2\): sono presentati per mostrare come, combinando la teoria, si ottengono algoritmi veloci che applicano Gauss–Jordan a una sola matrice.</p>
+    <p>Per la parte pratica del corso basta saper passare dalla forma parametrica a quella cartesiana e viceversa, e poi ridursi al caso più semplice:</p>
+    <ul>
+      <li><strong>intersezione</strong> \(\Rightarrow\) entrambi in forma <strong>cartesiana</strong> (unisci le equazioni);</li>
+      <li><strong>somma</strong> \(\Rightarrow\) entrambi in forma <strong>parametrica</strong> (unisci i generatori).</li>
+    </ul>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo — la ricetta da esame</div>
+    <ol>
+      <li>Calcola \(\dim U_1\) e \(\dim U_2\) (Problema 1).</li>
+      <li>Per \(U_1 + U_2\): metti insieme tutti i generatori in una matrice, Gauss, colonne pivot \(\Rightarrow\) base e dimensione.</li>
+      <li>Per \(U_1 \cap U_2\): scrivi entrambi in forma cartesiana (Problema 6), unisci le equazioni e risolvi il sistema (Problema 2) \(\Rightarrow\) base.</li>
+      <li>Prova con Grassmann: \(\dim(U_1+U_2) + \dim(U_1\cap U_2) = \dim U_1 + \dim U_2\).</li>
+      <li>Scorciatoia: se Grassmann dà \(\dim(U_1+U_2) = n\), allora \(U_1 + U_2 = \mathbb{K}^n\) (base canonica, nessuna equazione cartesiana).</li>
+    </ol>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <ul>
+      <li>\(U_1 \cup U_2\) <strong>non</strong> è un sottospazio in generale: la somma \(U_1 + U_2\) è il più piccolo sottospazio che contiene entrambi.</li>
+      <li>"Unire le equazioni" dà l'<strong>intersezione</strong>, "unire i generatori" dà la <strong>somma</strong>: non scambiarle!</li>
+      <li>I generatori uniti di \(U_1 + U_2\) sono di solito ridondanti: per una base serve Gauss.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="cap3-perche">
+  <h2>Perché funzionano questi metodi</h2>
+  <p class="lead">Ogni metodo è giustificato da un risultato della sezione 3.1 (sezione 3.4 degli appunti).</p>
+  <ul>
+    <li><strong>Problema 1:</strong> per il Teorema 3.8.</li>
+    <li><strong>Problema 2:</strong> per la Proposizione 3.4 (lo spazio delle righe non cambia con Gauss).</li>
+    <li><strong>Problema 3:</strong> per la Proposizione 3.6 (le relazioni tra colonne non cambiano).</li>
+    <li><strong>Problema 4:</strong> per la Proposizione 3.6, combinata col fatto che \(L\) è linearmente indipendente: le prime \(|L|\) colonne saranno colonne pivot.</li>
+    <li><strong>Problema 5:</strong> il primo metodo è quello del Capitolo 1 sui sistemi lineari (Teorema 1.33); il secondo si basa sul passaggio da parametrica a cartesiana e sulla dualità tra le due presentazioni.</li>
+    <li><strong>Problema 7 e 8:</strong> il caso facile segue dalle definizioni (di intersezione e forma cartesiana; di somma, vedi Definizione 2.49; negli appunti del Cap. 3 compare come "Teorema 2.49"); gli altri casi si risolvono coi passaggi da una forma all'altra, e i metodi diretti per la somma seguono per dualità da quelli dell'intersezione.</li>
+  </ul>
+  <div class="box box--thm"><div class="tag">Giustificazione del Problema 6</div>
+    <p>È una generalizzazione del metodo per l'inversa (Teorema 1.37 e Corollario 1.38, citati negli appunti del Cap. 3 come 1.53: Gauss–Jordan sulla matrice estesa con \(I_n\)).</p>
+    <ul>
+      <li>Portare \(\mathtt{C}\) a scala con mosse di Gauss equivale a moltiplicare a sinistra per una \(B \in \mathrm{GL}_n(\mathbb{K})\); facendo le stesse mosse su \(I_n\) si ottiene proprio \(B\) nel blocco destro.</li>
+      <li>Se \(r \lt n\), \(B\cdot\mathtt{C}\) ha \(n - r\) righe nulle, ottenute moltiplicando le ultime \(n-r\) righe di \(B\) per le colonne di \(\mathtt{C}\): ogni colonna di \(\mathtt{C}\), quindi ogni vettore di \(\mathrm{Col}(\mathtt{C})\), soddisfa quelle equazioni.</li>
+      <li>Le ultime \(n-r\) righe di \(B\) sono indipendenti (\(B\) invertibile), quindi definiscono un sottospazio di dimensione \(n - (n-r) = r\) che contiene \(\mathrm{Col}(\mathtt{C})\), anch'esso di dimensione \(r\): coincidono.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="cap3-esempio-finale">
+  <h2>Un esempio per concludere (sez. 3.5)</h2>
+  <p class="lead">Tutti i metodi applicati a un unico sottospazio di \(\mathbb{R}^5\).</p>
+
+  <div class="box box--ex"><div class="tag">Esempio 3.5</div>
+    \[ \mathbf{v}_1 = \begin{pmatrix}1\\2\\3\\4\\5\end{pmatrix},\quad \mathbf{v}_2 = \begin{pmatrix}2\\4\\6\\8\\10\end{pmatrix},\quad \mathbf{v}_3 = \begin{pmatrix}2\\4\\5\\6\\8\end{pmatrix},\quad \mathbf{v}_4 = \begin{pmatrix}1\\2\\2\\0\\1\end{pmatrix}, \qquad U = \mathrm{Span}_{\mathbb{R}}\{\mathbf{v}_1,\mathbf{v}_2,\mathbf{v}_3,\mathbf{v}_4\} \subseteq \mathbb{R}^5. \]
+
+    <h3>1. Dimensione di \(U\)</h3>
+    \[ \mathtt{R} = \begin{pmatrix}1&2&3&4&5\\2&4&6&8&10\\2&4&5&6&8\\1&2&2&0&1\end{pmatrix} \xmapsto{\text{Gauss}} \begin{pmatrix}\boxed{1}&2&3&4&5\\0&0&\boxed{-1}&-2&-2\\0&0&0&\boxed{-2}&-2\\0&0&0&0&0\end{pmatrix}. \]
+    <p>Tre pivot: \(\dim_{\mathbb{R}} U = \mathrm{Rango}\,\mathtt{R} = 3\).</p>
+
+    <h3>2. Una base dalle righe</h3>
+    \[ \mathrm{SR}(\mathtt{R}) = \begin{pmatrix}1&2&0&0&1\\0&0&1&0&0\\0&0&0&1&1\\0&0&0&0&0\end{pmatrix} \quad\Rightarrow\quad (1,2,0,0,1),\ (0,0,1,0,0),\ (0,0,0,1,1). \]
+
+    <h3>3. Una base scelta tra i vettori dati</h3>
+    \[ \mathtt{C} = \begin{pmatrix}1&2&2&1\\2&4&4&2\\3&6&5&2\\4&8&6&0\\5&10&8&1\end{pmatrix} \xmapsto{\text{Gauss}} \begin{pmatrix}\boxed{1}&2&2&1\\0&0&\boxed{-1}&-1\\0&0&0&\boxed{-2}\\0&0&0&0\\0&0&0&0\end{pmatrix}. \]
+    <p>Colonne pivot: prima, terza e quarta. Base: \(\mathbf{v}_1, \mathbf{v}_3, \mathbf{v}_4\).</p>
+
+    <h3>4. Forma cartesiana</h3>
+    \[ \mathrm{SR}(\mathtt{C} \mid I_5) = \left(\begin{array}{rrrr|rrrrr} \boxed{1}&2&0&0&0&0&3&\tfrac{11}{2}&-6\\ 0&0&\boxed{1}&0&0&0&-2&-\tfrac{7}{2}&4\\ 0&0&0&\boxed{1}&0&0&1&\tfrac12&-1\\ 0&0&0&0&\boxed{1}&0&0&1&-1\\ 0&0&0&0&0&\boxed{1}&0&2&-2 \end{array}\right). \]
+    <p>Le ultime due righe del blocco destro danno le equazioni:</p>
+    \[ U = \left\{ \mathbf{x} \in \mathbb{R}^5 \;\middle|\; \begin{array}{l} x_1 + x_4 - x_5 = 0,\\ x_2 + 2x_4 - 2x_5 = 0 \end{array} \right\}. \]
+
+    <h3>5. Forma parametrica dalle equazioni</h3>
+    <p><strong>Metodo 1 (variabili libere).</strong> Scelte \(x_3 = t_3,\ x_4 = t_4,\ x_5 = t_5\): \(x_1 = -t_4 + t_5\), \(x_2 = -2t_4 + 2t_5\), quindi</p>
+    \[ U = \left\{ t_3\begin{pmatrix}0\\0\\1\\0\\0\end{pmatrix} + t_4\begin{pmatrix}-1\\-2\\0\\1\\0\end{pmatrix} + t_5\begin{pmatrix}1\\2\\0\\0\\1\end{pmatrix} : t_3,t_4,t_5 \in \mathbb{R} \right\}. \]
+    <p><strong>Metodo 2 (trasposta dei coefficienti).</strong> Coefficienti come colonne: \(N = \begin{pmatrix}1&0\\0&1\\0&0\\1&2\\-1&-2\end{pmatrix}\), e</p>
+    \[ (N \mid I_5) \xmapsto{\text{Gauss–Jordan}} \left(\begin{array}{rr|rrrrr} \boxed{1}&0&0&-2&0&0&-1\\ 0&\boxed{1}&0&1&0&0&0\\ 0&0&\boxed{1}&2&0&0&1\\ 0&0&0&0&\boxed{1}&0&0\\ 0&0&0&0&0&\boxed{1}&1 \end{array}\right). \]
+    <p>Le ultime tre righe hanno zeri nelle prime due colonne; troncando e trasponendo:</p>
+    \[ (1,2,0,0,1)^{\top},\quad (0,0,1,0,0)^{\top},\quad (0,0,0,1,1)^{\top}, \]
+    <p>indipendenti e in numero \(\dim U = 5 - 2 = 3\): una base di \(U\).</p>
+  </div>
+
+  <div class="box box--note"><div class="tag">Il messaggio finale (p. 178)</div>
+    <p>La ragione immediata per cui questi metodi funzionano è l'invertibilità delle operazioni elementari sulle righe. La ragione più profonda è la <strong>dualità tra generatori ed equazioni</strong>, e quindi tra forma parametrica e forma cartesiana (lo spazio vettoriale duale, che il corso non tratta esplicitamente, è la struttura nascosta dietro molte di queste costruzioni).</p>
+  </div>
+</section>
+
+<section class="sec" id="cap3-esercizi">
+  <h2>Esercizi</h2>
+  <p class="lead">Il Foglio 5 bis ("Calcoli in \(\mathbb{R}^n\) — molto rilevanti per l'esame!") e una selezione di esercizi d'esame degli anni passati sui calcoli con sottospazi di \(\mathbb{R}^n\).</p>
+
+  <h3>Foglio 5 bis</h3>
+
+  <div class="ex" data-fonte="Foglio 5 bis, es. 1" data-livello="base">
+    <div class="ex-testo">
+      <p>Siano i sottospazi di \(\mathbb{R}^3\):</p>
+      \[ U = \mathrm{Span}_{\mathbb{R}}\left\{ \begin{pmatrix}1\\2\\0\end{pmatrix}, \begin{pmatrix}2\\0\\1\end{pmatrix} \right\}, \qquad W = \mathrm{Ker}\begin{pmatrix}1 & 1 & -2\end{pmatrix}. \]
+      <ol>
+        <li>Calcolare \(\dim_{\mathbb{R}} U\) e \(\dim_{\mathbb{R}} W\).</li>
+        <li>Trovare una base di \(W\).</li>
+        <li>Trovare una forma cartesiana di \(U\).</li>
+        <li>Trovare una base di \(U \cap W\).</li>
+        <li>Trovare una forma cartesiana di \(U + W\).</li>
+      </ol>
+    </div>
+    <details class="hint"><summary>Suggerimento</summary>
+      <p>Per la forma cartesiana di \(U\) usa \(E = (\mathtt{C} \mid I_3)\). Per l'intersezione metti insieme le due equazioni; per la somma usa Grassmann.</p>
+    </details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>1.</strong> \(\mathtt{C} = \begin{pmatrix}1&2\\2&0\\0&1\end{pmatrix} \xmapsto{R_2 - 2R_1} \begin{pmatrix}1&2\\0&-4\\0&1\end{pmatrix} \xmapsto{4R_3 + R_2} \begin{pmatrix}\boxed{1}&2\\0&\boxed{-4}\\0&0\end{pmatrix}\): rango 2, quindi \(\dim U = 2\). La matrice \((1\ 1\ -2)\) ha rango 1, quindi \(\dim W = 3 - 1 = 2\) (Teorema 3.8).</p>
+      <p><strong>2.</strong> L'equazione \(x + y - 2z = 0\) ha pivot in \(x\); variabili libere \(y = t\), \(z = s\): \(x = -t + 2s\).</p>
+      \[ W = \left\{ t\begin{pmatrix}-1\\1\\0\end{pmatrix} + s\begin{pmatrix}2\\0\\1\end{pmatrix} \right\}, \qquad \mathcal{B}_W = \begin{pmatrix}-1\\1\\0\end{pmatrix}, \begin{pmatrix}2\\0\\1\end{pmatrix}. \]
+      <p><strong>3.</strong> Problema 6 con \(E = (\mathtt{C} \mid I_3)\), facendo le stesse mosse del punto 1:</p>
+      \[ \left(\begin{array}{rr|rrr} 1&2&1&0&0\\2&0&0&1&0\\0&1&0&0&1 \end{array}\right) \xmapsto{R_2 - 2R_1} \left(\begin{array}{rr|rrr} 1&2&1&0&0\\0&-4&-2&1&0\\0&1&0&0&1 \end{array}\right) \xmapsto{4R_3 + R_2} \left(\begin{array}{rr|rrr} 1&2&1&0&0\\0&-4&-2&1&0\\0&0&-2&1&4 \end{array}\right). \]
+      <p>L'ultima riga dà \(-2x + y + 4z = 0\), cioè</p>
+      \[ U = \{(x,y,z)^{\top} \in \mathbb{R}^3 : 2x - y - 4z = 0\}. \]
+      <p>Prova: \((1,2,0)\colon 2 - 2 - 0 = 0\) ✓; \((2,0,1)\colon 4 - 0 - 4 = 0\) ✓.</p>
+      <p><strong>4.</strong> Entrambi in forma cartesiana: \(U \cap W = \mathrm{Ker}\begin{pmatrix}2&-1&-4\\1&1&-2\end{pmatrix}\). Sommando le due equazioni: \(3x - 6z = 0\), cioè \(x = 2z\); dalla seconda \(y = -x + 2z = 0\). Quindi</p>
+      \[ U \cap W = \mathrm{Span}_{\mathbb{R}}\left\{ \begin{pmatrix}2\\0\\1\end{pmatrix} \right\}, \qquad \dim(U\cap W) = 1. \]
+      <p>(Infatti \((2,0,1)^{\top}\) è il secondo generatore di \(U\) e soddisfa \(2 + 0 - 2 = 0\).)</p>
+      <p><strong>5.</strong> Grassmann: \(\dim(U+W) = 2 + 2 - 1 = 3\), quindi \(U + W = \mathbb{R}^3\). La forma cartesiana è il sistema vuoto (nessuna equazione), oppure \(U + W = \mathrm{Ker}(0\ \ 0\ \ 0)\).</p>
+      <p>Con il metodo diretto per due forme cartesiane: \(\left(A_1^{\top} \mid -A_2^{\top}\right) = \begin{pmatrix}2&-1\\-1&-1\\-4&2\end{pmatrix}\) ha rango 2, quindi nucleo nullo (\(k = 0\)) e \(U + W = \mathbb{R}^3\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 5 bis, es. 2" data-livello="esame">
+    <div class="ex-testo">
+      <p>Si considerino i seguenti vettori e sottospazi in \(\mathbb{R}^4\):</p>
+      \[ \mathbf{v}_1 = \begin{pmatrix}1\\1\\1\\0\end{pmatrix}, \mathbf{v}_2 = \begin{pmatrix}0\\1\\1\\1\end{pmatrix}, \mathbf{v}_3 = \begin{pmatrix}1\\0\\0\\-1\end{pmatrix}, \mathbf{v}_4 = \begin{pmatrix}1\\0\\-1\\0\end{pmatrix}, \mathbf{v}_5 = \begin{pmatrix}1\\-1\\0\\1\end{pmatrix}, \mathbf{v}_6 = \begin{pmatrix}0\\1\\-1\\0\end{pmatrix}, \mathbf{v}_7 = \begin{pmatrix}0\\1\\0\\-1\end{pmatrix}, \mathbf{v}_8 = \begin{pmatrix}0\\0\\1\\-1\end{pmatrix}. \]
+      \[ U_1 = \mathrm{Span}_{\mathbb{R}}\{\mathbf{v}_1,\mathbf{v}_2\}, \qquad U_2 = \mathrm{Span}_{\mathbb{R}}\{\mathbf{v}_3,\mathbf{v}_4\}, \qquad W = \mathrm{Ker}\begin{pmatrix}0&1&-1&0\\1&0&0&-1\end{pmatrix}. \]
+      <ol>
+        <li>Dimostrare che \(\mathbf{v}_1, \mathbf{v}_2\) sono linearmente indipendenti.</li>
+        <li>Dimostrare che \(\mathbf{v}_3, \mathbf{v}_4, \mathbf{v}_5, \mathbf{v}_6, \mathbf{v}_7, \mathbf{v}_8\) è un sistema di generatori di \(\mathbb{R}^4\).</li>
+        <li>Completare \(\mathbf{v}_1, \mathbf{v}_2\) a una base di \(\mathbb{R}^4\) usando vettori \(\mathbf{v}_3, \dots, \mathbf{v}_8\).</li>
+        <li>Calcolare forme cartesiane per \(U_1\) e per \(U_2\).</li>
+        <li>Dare una presentazione cartesiana e una presentazione parametrica di \(U_1 \cap U_2\).</li>
+        <li>Dare una presentazione cartesiana e una presentazione parametrica di \(U_1 + U_2\).</li>
+        <li>Calcolare basi di \(U_1 \cap U_2\) e di \(U_1 + U_2\).</li>
+        <li>Trovare \(\dim_{\mathbb{R}}(W)\).</li>
+        <li>Per \(i = 1, 2\) calcolare le dimensioni di \(U_i \cap W\) e di \(U_i + W\).</li>
+      </ol>
+    </div>
+    <details class="hint"><summary>Suggerimento</summary>
+      <p>Punto 3: Problema 4 con \(\mathtt{T} = (\mathbf{v}_1\ \mathbf{v}_2 \mid \mathbf{v}_3 \cdots \mathbf{v}_8)\). Punto 9: caso misto del Problema 7, \(M = A_W\mathtt{C}_i\).</p>
+    </details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>1.</strong> \(\mathbf{v}_1\) e \(\mathbf{v}_2\) non sono proporzionali (la prima coordinata di \(\mathbf{v}_2\) è 0, quella di \(\mathbf{v}_1\) no, e \(\mathbf{v}_2 \neq \mathbf{0}\)): due vettori non proporzionali sono linearmente indipendenti.</p>
+      <p><strong>2.</strong> Basta mostrare che \(\mathrm{Rango}(\mathbf{v}_3 \mid \dots \mid \mathbf{v}_8) = 4\):</p>
+      \[ \begin{pmatrix} 1&1&1&0&0&0\\0&0&-1&1&1&0\\0&-1&0&-1&0&1\\-1&0&1&0&-1&-1 \end{pmatrix} \xmapsto{R_4 + R_1,\ R_2 \leftrightarrow R_3} \begin{pmatrix} 1&1&1&0&0&0\\0&-1&0&-1&0&1\\0&0&-1&1&1&0\\0&1&2&0&-1&-1 \end{pmatrix} \xmapsto{R_4 + R_2} \begin{pmatrix} 1&1&1&0&0&0\\0&-1&0&-1&0&1\\0&0&-1&1&1&0\\0&0&2&-1&-1&0 \end{pmatrix} \xmapsto{R_4 + 2R_3} \begin{pmatrix} \boxed{1}&1&1&0&0&0\\0&\boxed{-1}&0&-1&0&1\\0&0&\boxed{-1}&1&1&0\\0&0&0&\boxed{1}&1&0 \end{pmatrix}. \]
+      <p>Quattro pivot: le colonne generano uno spazio di dimensione 4, cioè \(\mathbb{R}^4\). (In particolare \(\mathbf{v}_3,\mathbf{v}_4,\mathbf{v}_5,\mathbf{v}_6\) sono già una base.)</p>
+      <p><strong>3.</strong> Problema 4: \(\mathtt{T} = (\mathbf{v}_1 \mid \mathbf{v}_2 \mid \mathbf{v}_3 \mid \dots \mid \mathbf{v}_8)\).</p>
+      \[ \begin{pmatrix} 1&0&1&1&1&0&0&0\\1&1&0&0&-1&1&1&0\\1&1&0&-1&0&-1&0&1\\0&1&-1&0&1&0&-1&-1 \end{pmatrix} \xmapsto{\substack{R_2 - R_1\\R_3 - R_1}} \begin{pmatrix} 1&0&1&1&1&0&0&0\\0&1&-1&-1&-2&1&1&0\\0&1&-1&-2&-1&-1&0&1\\0&1&-1&0&1&0&-1&-1 \end{pmatrix} \xmapsto{\substack{R_3 - R_2\\R_4 - R_2}} \begin{pmatrix} 1&0&1&1&1&0&0&0\\0&1&-1&-1&-2&1&1&0\\0&0&0&-1&1&-2&-1&1\\0&0&0&1&3&-1&-2&-1 \end{pmatrix} \]
+      \[ \xmapsto{R_4 + R_3} \begin{pmatrix} \boxed{1}&0&1&1&1&0&0&0\\0&\boxed{1}&-1&-1&-2&1&1&0\\0&0&0&\boxed{-1}&1&-2&-1&1\\0&0&0&0&\boxed{4}&-3&-3&0 \end{pmatrix}. \]
+      <p>Colonne pivot: 1, 2, 4, 5. Base di \(\mathbb{R}^4\): \(\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_4, \mathbf{v}_5\). (La colonna 3 non è pivot: infatti \(\mathbf{v}_3 = \mathbf{v}_1 - \mathbf{v}_2\).)</p>
+      <p><strong>4.</strong> Problema 6 con la colonna \(\mathbf{x}\). Per \(U_1\):</p>
+      \[ \left(\begin{array}{rr|c} 1&0&x_1\\1&1&x_2\\1&1&x_3\\0&1&x_4 \end{array}\right) \xmapsto{\substack{R_2 - R_1\\R_3 - R_1}} \left(\begin{array}{rr|c} 1&0&x_1\\0&1&x_2 - x_1\\0&1&x_3 - x_1\\0&1&x_4 \end{array}\right) \xmapsto{\substack{R_3 - R_2\\R_4 - R_2}} \left(\begin{array}{rr|c} 1&0&x_1\\0&1&x_2 - x_1\\0&0&x_3 - x_2\\0&0&x_1 - x_2 + x_4 \end{array}\right). \]
+      \[ U_1 = \{\mathbf{x} \in \mathbb{R}^4 : -x_2 + x_3 = 0,\ x_1 - x_2 + x_4 = 0\}. \]
+      <p>Per \(U_2\):</p>
+      \[ \left(\begin{array}{rr|c} 1&1&x_1\\0&0&x_2\\0&-1&x_3\\-1&0&x_4 \end{array}\right) \xmapsto{R_4 + R_1} \left(\begin{array}{rr|c} 1&1&x_1\\0&0&x_2\\0&-1&x_3\\0&1&x_1 + x_4 \end{array}\right) \xmapsto{R_2 \leftrightarrow R_3,\ R_4 + R_2} \left(\begin{array}{rr|c} 1&1&x_1\\0&-1&x_3\\0&0&x_2\\0&0&x_1 + x_3 + x_4 \end{array}\right). \]
+      \[ U_2 = \{\mathbf{x} \in \mathbb{R}^4 : x_2 = 0,\ x_1 + x_3 + x_4 = 0\}. \]
+      <p>Prova: \(\mathbf{v}_3\colon 0 = 0,\ 1 + 0 - 1 = 0\) ✓; \(\mathbf{v}_4\colon 0 = 0,\ 1 - 1 + 0 = 0\) ✓ (analogamente per \(\mathbf{v}_1, \mathbf{v}_2\) in \(U_1\)).</p>
+      <p><strong>5.</strong> Cartesiana: uniamo le quattro equazioni.</p>
+      \[ \begin{cases} -x_2 + x_3 = 0\\ x_1 - x_2 + x_4 = 0\\ x_2 = 0\\ x_1 + x_3 + x_4 = 0 \end{cases} \iff \begin{cases} x_2 = 0\\ x_3 = 0\\ x_1 + x_4 = 0 \end{cases} \]
+      <p>(la quarta equazione diventa uguale alla seconda). Parametrica: \(x_4 = t\), \(x_1 = -t\): \(U_1 \cap U_2 = \mathrm{Span}_{\mathbb{R}}\{(1,0,0,-1)^{\top}\} = \mathrm{Span}_{\mathbb{R}}\{\mathbf{v}_3\}\).</p>
+      <p>Controllo col metodo parametrico: \(\mathrm{Ker}(\mathbf{v}_1\ \mathbf{v}_2 \mid -\mathbf{v}_3\ -\mathbf{v}_4) = \mathrm{Span}(1,-1,1,0)^{\top}\), cioè \(\mathbf{v}_1 - \mathbf{v}_2 = \mathbf{v}_3\) ✓.</p>
+      <p><strong>6.</strong> Parametrica: \(U_1 + U_2 = \mathrm{Span}_{\mathbb{R}}\{\mathbf{v}_1,\mathbf{v}_2,\mathbf{v}_3,\mathbf{v}_4\} = \mathrm{Span}_{\mathbb{R}}\{\mathbf{v}_1,\mathbf{v}_2,\mathbf{v}_4\}\) (perché \(\mathbf{v}_3 = \mathbf{v}_1 - \mathbf{v}_2\)). Cartesiana, con la colonna \(\mathbf{x}\):</p>
+      \[ \left(\begin{array}{rrr|c} 1&0&1&x_1\\1&1&0&x_2\\1&1&-1&x_3\\0&1&0&x_4 \end{array}\right) \xmapsto{\substack{R_2 - R_1\\R_3 - R_1}} \left(\begin{array}{rrr|c} 1&0&1&x_1\\0&1&-1&x_2 - x_1\\0&1&-2&x_3 - x_1\\0&1&0&x_4 \end{array}\right) \xmapsto{\substack{R_3 - R_2\\R_4 - R_2}} \left(\begin{array}{rrr|c} 1&0&1&x_1\\0&1&-1&x_2 - x_1\\0&0&-1&x_3 - x_2\\0&0&1&x_4 - x_2 + x_1 \end{array}\right) \xmapsto{R_4 + R_3} \left(\begin{array}{rrr|c} 1&0&1&x_1\\0&1&-1&\ast\\0&0&-1&\ast\\0&0&0&x_1 - 2x_2 + x_3 + x_4 \end{array}\right). \]
+      \[ U_1 + U_2 = \{\mathbf{x} \in \mathbb{R}^4 : x_1 - 2x_2 + x_3 + x_4 = 0\}. \]
+      <p>Prova sui quattro generatori: \(1-2+1+0\), \(0-2+1+1\), \(1-0+0-1\), \(1-0-1+0\): tutti \(0\) ✓.</p>
+      <p><strong>7.</strong> Base di \(U_1 \cap U_2\): \(\mathbf{v}_3 = (1,0,0,-1)^{\top}\). Base di \(U_1 + U_2\): \(\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_4\) (colonne pivot di \((\mathbf{v}_1\,\mathbf{v}_2\,\mathbf{v}_3\,\mathbf{v}_4)\) sono la 1, 2, 4). Prova con Grassmann: \(3 = 2 + 2 - 1\) ✓.</p>
+      <p><strong>8.</strong> Le due righe di \(\begin{pmatrix}0&1&-1&0\\1&0&0&-1\end{pmatrix}\) non sono proporzionali: rango 2, \(\dim W = 4 - 2 = 2\). (Una base: \((0,1,1,0)^{\top}, (1,0,0,1)^{\top}\).)</p>
+      <p><strong>9.</strong> Caso misto del Problema 7, \(M = A_W\mathtt{C}_i\):</p>
+      \[ A_W(\mathbf{v}_1 \mid \mathbf{v}_2) = \begin{pmatrix}0&0\\1&-1\end{pmatrix}, \qquad \mathrm{Ker} = \mathrm{Span}\begin{pmatrix}1\\1\end{pmatrix} \ \Rightarrow\ U_1 \cap W = \mathrm{Span}\{\mathbf{v}_1 + \mathbf{v}_2\} = \mathrm{Span}\{(1,2,2,1)^{\top}\}. \]
+      <p>Quindi \(\dim(U_1 \cap W) = 1\) e, per Grassmann, \(\dim(U_1 + W) = 2 + 2 - 1 = 3\).</p>
+      \[ A_W(\mathbf{v}_3 \mid \mathbf{v}_4) = \begin{pmatrix}0&1\\2&1\end{pmatrix}, \quad \text{rango } 2 \ \Rightarrow\ \mathrm{Ker} = \{\mathbf{0}\}. \]
+      <p>Quindi \(\dim(U_2 \cap W) = 0\) e \(\dim(U_2 + W) = 2 + 2 - 0 = 4\), cioè \(U_2 + W = \mathbb{R}^4\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <h3>Dagli esami degli anni passati</h3>
+
+  <div class="ex" data-fonte="Esame GAL-2324-09, es. 1" data-livello="esame">
+    <div class="ex-testo">
+      <p>Considerare i seguenti sottospazi vettoriali di \(\mathbb{R}^3\):</p>
+      \[ V = \left\{ \begin{pmatrix}x\\y\\z\end{pmatrix} \in \mathbb{R}^3 : x + 3y = 0 \right\} \qquad \text{e} \qquad W = \left\{ \begin{pmatrix}x\\y\\z\end{pmatrix} \in \mathbb{R}^3 : 2x + y + z = 0 \right\}. \]
+      <ol type="a">
+        <li>Determinare una base e la dimensione di \(V\) e \(W\).</li>
+        <li>Determinare una base e la dimensione di \(V + W\) e \(V \cap W\).</li>
+        <li>Determinare a quale dei sottospazi precedenti appartiene il vettore \((3, 1, -1)^{\top}\).</li>
+      </ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>a)</strong> \(V\): \(x = -3y\), con \(y, z\) liberi: \(\mathcal{B}_V = (-3,1,0)^{\top}, (0,0,1)^{\top}\), \(\dim V = 2\). \(W\): \(x = -\tfrac12 y - \tfrac12 z\): \(\mathcal{B}_W = (-1,2,0)^{\top}, (-1,0,2)^{\top}\) (moltiplicati per 2 per togliere le frazioni), \(\dim W = 2\).</p>
+      <p><strong>b)</strong> \((0,0,1)^{\top} \in V\) ma \(2\cdot 0 + 0 + 1 = 1 \neq 0\), quindi \(V \not\subseteq W\). Allora \(W \subsetneq V + W \subseteq \mathbb{R}^3\), quindi \(\dim(V+W) = 3\): \(V + W = \mathbb{R}^3\), con base canonica \(\mathbf{e}_1,\mathbf{e}_2,\mathbf{e}_3\).</p>
+      <p>Per \(V\cap W\) uniamo le equazioni (entrambi cartesiani):</p>
+      \[ \begin{cases} x + 3y = 0\\ 2x + y + z = 0 \end{cases} \xmapsto{R_2 - 2R_1} \begin{cases} x + 3y = 0\\ -5y + z = 0 \end{cases} \iff \begin{cases} x = -3y\\ z = 5y \end{cases} \]
+      <p>Base di \(V\cap W\): \((-3,1,5)^{\top}\), \(\dim(V\cap W) = 1\). Prova: \(2 + 2 - 1 = 3\) ✓.</p>
+      <p><strong>c)</strong> Per \((3,1,-1)^{\top}\): \(x + 3y = 6 \neq 0\) e \(2x + y + z = 6 \neq 0\). Non appartiene né a \(V\) né a \(W\) (né quindi a \(V \cap W\)); appartiene ovviamente a \(V + W = \mathbb{R}^3\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2425-07, es. 1 (a, b)" data-livello="esame">
+    <div class="ex-testo">
+      <p>Si considerino i vettori di \(\mathbb{R}^4\) \(\ \mathbf{v}_1 = (1, 2, 0, -1)^{\top}\), \(\mathbf{v}_2 = (0, -1, 1, 2)^{\top}\) e i sottospazi</p>
+      \[ U = \mathrm{Span}(\mathbf{v}_1, \mathbf{v}_2), \qquad W = \left\{ (x,y,z,w)^{\top} \in \mathbb{R}^4 \mid x - y + w = 2x + z = y - z - w = 0 \right\}. \]
+      <ol type="a">
+        <li>Determinare dimensioni e basi di \(U\) e \(W\).</li>
+        <li>Calcolare le dimensioni di \(U + W\) e \(U \cap W\).</li>
+      </ol>
+      <p>(I punti c, d dell'esame riguardano \(W^{\perp}\) e la proiezione ortogonale: vedi il capitolo sugli spazi euclidei.)</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>a)</strong> \(\mathbf{v}_1, \mathbf{v}_2\) non sono proporzionali, quindi sono indipendenti: \(\dim U = 2\) e \(\mathbf{v}_1, \mathbf{v}_2\) è una base. Per \(W\):</p>
+      \[ \begin{cases} x - y + w = 0\\ 2x + z = 0\\ y - z - w = 0 \end{cases} \xmapsto{R_2 - 2R_1} \begin{cases} x - y + w = 0\\ 2y + z - 2w = 0\\ y - z - w = 0 \end{cases} \xmapsto{R_2 - 2R_3} \begin{cases} x - y + w = 0\\ 3z = 0\\ y - z - w = 0 \end{cases} \iff \begin{cases} z = 0\\ y = w\\ x = 0 \end{cases} \]
+      <p>Base di \(W\): \(\mathbf{v}_3 = (0,1,0,1)^{\top}\), \(\dim W = 1\) (rango 3 della matrice dei coefficienti, \(4 - 3 = 1\)).</p>
+      <p><strong>b)</strong> \(U + W = \mathrm{Col}(\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3)\), e</p>
+      \[ \mathrm{Rango}\begin{pmatrix}1&0&0\\2&-1&1\\0&1&0\\-1&2&1\end{pmatrix} = 3, \]
+      <p>perché le righe 1, 3, 4 formano una matrice triangolare con diagonale non nulla. Quindi \(\dim(U + W) = 3\) e, per Grassmann, \(\dim(U \cap W) = 2 + 1 - 3 = 0\).</p>
+      <p>Controllo col caso misto: \(A_W(\mathbf{v}_1\mid\mathbf{v}_2) = \begin{pmatrix}-2&3\\2&1\\3&-4\end{pmatrix}\) ha rango 2, nucleo nullo, \(U \cap W = \{\mathbf{0}\}\) ✓.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2526-02, es. E1 (a, c)" data-livello="esame">
+    <div class="ex-testo">
+      <p>Si considerino i seguenti sottospazi di \(\mathbb{R}^4\):</p>
+      \[ U = \mathrm{Span}_{\mathbb{R}}\{(1,0,0,-2), (0,1,1,0), (1,-1,0,0)\}, \qquad W = \{(x_1,x_2,x_3,x_4) \in \mathbb{R}^4 : x_1 + x_2 + x_3 + x_4 = 0\}. \]
+      <ol type="a">
+        <li>Scrivere una forma cartesiana di \(U\).</li>
+        <li value="3">Calcolare una base di \(U \cap W\) e una base di \(U + W\).</li>
+      </ol>
+      <p>(Il punto (b), forma parametrica di \(U^{\perp}\), riguarda gli spazi euclidei.)</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>(a)</strong> Problema 6 con \(E = (\mathtt{C} \mid I_4)\), \(\mathtt{C} = (\mathbf{u}_1\mid\mathbf{u}_2\mid\mathbf{u}_3)\):</p>
+      \[ \left(\begin{array}{rrr|rrrr} 1&0&1&1&0&0&0\\0&1&-1&0&1&0&0\\0&1&0&0&0&1&0\\-2&0&0&0&0&0&1 \end{array}\right) \xmapsto{R_4 + 2R_1} \left(\begin{array}{rrr|rrrr} 1&0&1&1&0&0&0\\0&1&-1&0&1&0&0\\0&1&0&0&0&1&0\\0&0&2&2&0&0&1 \end{array}\right) \xmapsto{R_3 - R_2} \left(\begin{array}{rrr|rrrr} 1&0&1&1&0&0&0\\0&1&-1&0&1&0&0\\0&0&1&0&-1&1&0\\0&0&2&2&0&0&1 \end{array}\right) \]
+      \[ \xmapsto{R_4 - 2R_3} \left(\begin{array}{rrr|rrrr} \boxed{1}&0&1&1&0&0&0\\0&\boxed{1}&-1&0&1&0&0\\0&0&\boxed{1}&0&-1&1&0\\0&0&0&2&2&-2&1 \end{array}\right). \]
+      <p>\(\dim U = 3\) e una sola equazione:</p>
+      \[ U = \{\mathbf{x} \in \mathbb{R}^4 : 2x_1 + 2x_2 - 2x_3 + x_4 = 0\}. \]
+      <p>Prova: \(2 - 2 = 0\), \(2 - 2 = 0\), \(2 - 2 = 0\) ✓.</p>
+      <p><strong>(c)</strong> Entrambi cartesiani: \(U \cap W\) è dato da</p>
+      \[ \begin{cases} 2x_1 + 2x_2 - 2x_3 + x_4 = 0\\ x_1 + x_2 + x_3 + x_4 = 0 \end{cases} \xmapsto{2R_2 - R_1} \begin{cases} 2x_1 + 2x_2 - 2x_3 + x_4 = 0\\ 4x_3 + x_4 = 0 \end{cases} \]
+      <p>Quindi \(x_4 = -4x_3\) e \(x_1 = -x_2 - x_3 - x_4 = -x_2 + 3x_3\). Con \(x_2 = s\), \(x_3 = t\):</p>
+      \[ U \cap W = \left\{ s\begin{pmatrix}-1\\1\\0\\0\end{pmatrix} + t\begin{pmatrix}3\\0\\1\\-4\end{pmatrix} \right\}, \qquad \text{base: } (-1,1,0,0),\ (3,0,1,-4), \quad \dim(U\cap W) = 2. \]
+      <p>Per la somma: \(\dim U = \dim W = 3\) e \(U \neq W\) (ad es. \((1,0,0,-2) \in U\) ma \(1 + 0 + 0 - 2 = -1 \neq 0\)), quindi \(\dim(U + W) = 3 + 3 - 2 = 4\): \(U + W = \mathbb{R}^4\), con base \(\mathbf{e}_1,\mathbf{e}_2,\mathbf{e}_3,\mathbf{e}_4\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2526-09, es. E1 (a, b, d)" data-livello="esame">
+    <div class="ex-testo">
+      <p>Si considerino in \(\mathbb{R}^4\) i vettori \(\mathbf{u}_1 = (1,1,1,0)^{\top}\), \(\mathbf{u}_2 = (0,2,1,-1)^{\top}\), \(\mathbf{u}_3 = (1,-1,0,1)^{\top}\) e i sottospazi vettoriali</p>
+      \[ U = \mathrm{Span}_{\mathbb{R}}\{\mathbf{u}_1,\mathbf{u}_2,\mathbf{u}_3\}, \qquad W = \{(x_1,x_2,x_3,x_4)^{\top} \in \mathbb{R}^4 : x_1 + x_4 = 0,\ x_2 - x_3 + x_4 = 0\}. \]
+      <ol type="a">
+        <li>Determinare la dimensione di \(U\) e scriverlo in forma cartesiana.</li>
+        <li>Trovare una base di \(W\) e determinarne la dimensione.</li>
+        <li value="4">Determinare \(U \cap W\).</li>
+      </ol>
+      <p>(I punti (c) e la seconda parte di (d), sul sottospazio affine \(A = P + W\), riguardano i sottospazi affini.)</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>(a)</strong> Problema 6 con la colonna \(\mathbf{x}\):</p>
+      \[ \left(\begin{array}{rrr|c} 1&0&1&x_1\\1&2&-1&x_2\\1&1&0&x_3\\0&-1&1&x_4 \end{array}\right) \xmapsto{\substack{R_2 - R_1\\R_3 - R_1}} \left(\begin{array}{rrr|c} 1&0&1&x_1\\0&2&-2&x_2 - x_1\\0&1&-1&x_3 - x_1\\0&-1&1&x_4 \end{array}\right) \xmapsto{\substack{2R_3 - R_2\\2R_4 + R_2}} \left(\begin{array}{rrr|c} \boxed{1}&0&1&x_1\\0&\boxed{2}&-2&x_2 - x_1\\0&0&0&-x_1 - x_2 + 2x_3\\0&0&0&-x_1 + x_2 + 2x_4 \end{array}\right). \]
+      <p>Due pivot: \(\dim U = 2\) (infatti \(\mathbf{u}_3 = \mathbf{u}_1 - \mathbf{u}_2\)). Forma cartesiana:</p>
+      \[ U = \{\mathbf{x} : x_1 + x_2 - 2x_3 = 0,\ x_1 - x_2 - 2x_4 = 0\} = \{\mathbf{x} : x_1 + x_2 - 2x_3 = 0,\ x_2 - x_3 + x_4 = 0\}, \]
+      <p>dove il secondo sistema si ottiene sostituendo la seconda equazione con (prima − seconda)/2: è equivalente, e mostra che \(U\) e \(W\) hanno un'equazione in comune. Prova su \(\mathbf{u}_1, \mathbf{u}_2\): \(1+1-2 = 0,\ 1-1+0 = 0\); \(0+2-2 = 0,\ 2-1-1 = 0\) ✓.</p>
+      <p><strong>(b)</strong> Pivot in \(x_1, x_2\); liberi \(x_3 = s\), \(x_4 = t\): \(x_1 = -t\), \(x_2 = s - t\).</p>
+      \[ W = \left\{ s\begin{pmatrix}0\\1\\1\\0\end{pmatrix} + t\begin{pmatrix}-1\\-1\\0\\1\end{pmatrix} \right\}, \qquad \mathcal{B}_W = (0,1,1,0)^{\top}, (-1,-1,0,1)^{\top}, \quad \dim W = 2. \]
+      <p><strong>(d)</strong> Uniamo le equazioni: \(x_1 + x_2 - 2x_3 = 0,\ x_2 - x_3 + x_4 = 0,\ x_1 + x_4 = 0\). Dalla terza \(x_1 = -x_4\); dalla seconda \(x_2 = x_3 - x_4\); sostituendo nella prima: \(-x_4 + x_3 - x_4 - 2x_3 = 0\), cioè \(x_3 = -2x_4\). Allora \(x_2 = -3x_4\), \(x_1 = -x_4\):</p>
+      \[ U \cap W = \mathrm{Span}_{\mathbb{R}}\{(1, 3, 2, -1)^{\top}\}, \qquad \dim(U\cap W) = 1. \]
+      <p>Controllo col caso misto: \(A_W\mathtt{C} = \begin{pmatrix}1&-1&2\\0&0&0\end{pmatrix}\), \(\mathrm{Ker} = \mathrm{Span}\{(1,1,0)^{\top}, (-2,0,1)^{\top}\}\), e \(\mathbf{u}_1 + \mathbf{u}_2 = (1,3,2,-1)^{\top}\), \(-2\mathbf{u}_1 + \mathbf{u}_3 = -(1,3,2,-1)^{\top}\): due generatori dipendenti dello stesso spazio (come nell'Esempio 3.3.7) ✓.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2324-01, quesito 11" data-livello="esame">
+    <div class="ex-testo">
+      <p>In \(\mathbb{R}^4\) si considerino i sottospazi</p>
+      \[ U = \mathrm{Span}\left((1,0,0,0)^{\top}, (1,1,0,0)^{\top}\right), \qquad W = \mathrm{Span}\left((0,1,0,0)^{\top}, (0,1,1,0)^{\top}, (0,1,1,1)^{\top}\right). \]
+      <p>(A) \(\dim(U\cap W) = 0\) &nbsp; (B) \(\dim(U\cap W) = 1\) &nbsp; (C) \(\dim(U\cap W) = 2\) &nbsp; (D) \(U + W = \mathbb{R}^4\) e \(U \cap W = \{\mathbf{0}\}\)</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>Risposta (B).</strong></p>
+      \[ \dim U = \mathrm{rk}\begin{pmatrix}1&1\\0&1\\0&0\\0&0\end{pmatrix} = 2, \qquad \dim W = \mathrm{rk}\begin{pmatrix}0&0&0\\1&1&1\\0&1&1\\0&0&1\end{pmatrix} = 3, \qquad \dim(U+W) = \mathrm{rk}\begin{pmatrix}1&1&0&0&0\\0&1&1&1&1\\0&0&0&1&1\\0&0&0&0&1\end{pmatrix} = 4. \]
+      <p>Per Grassmann \(\dim(U\cap W) = 2 + 3 - 4 = 1\). Esplicitamente: \((1,1,0,0) - (1,0,0,0) = (0,1,0,0)\), quindi \(U \cap W = \mathrm{Span}(\mathbf{e}_2)\). (D) è falsa perché \(U\cap W \neq \{\mathbf{0}\}\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2324-02, quesito 4" data-livello="esame">
+    <div class="ex-testo">
+      <p>Dati i seguenti sottospazi \(H, K \subseteq \mathbb{R}^4\), determinare la dimensione di \(H \cap K\).</p>
+      \[ H = \mathrm{Span}\left( \begin{pmatrix}1\\2\\-1\\-2\end{pmatrix}, \begin{pmatrix}3\\0\\5\\0\end{pmatrix} \right), \qquad K = \mathrm{Span}\left( \begin{pmatrix}-2\\-1\\-2\\1\end{pmatrix}, \begin{pmatrix}1\\-1\\3\\1\end{pmatrix} \right). \]
+      <p>(A) \(\dim H\cap K = 0\) &nbsp; (B) \(\dim H\cap K = 1\) &nbsp; (C) \(\dim H\cap K = 2\) &nbsp; (D) \(\dim H\cap K = 3\)</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>Risposta (C).</strong> \(H\) e \(K\) sono generati da due vettori non proporzionali: \(\dim H = \dim K = 2\). Calcoliamo \(\dim(H+K)\) = rango della matrice con tutti e quattro i generatori in colonna:</p>
+      \[ \begin{pmatrix}1&3&-2&1\\2&0&-1&-1\\-1&5&-2&3\\-2&0&1&1\end{pmatrix} \xmapsto{\substack{R_2 - 2R_1\\R_3 + R_1\\R_4 + R_2}} \begin{pmatrix}1&3&-2&1\\0&-6&3&-3\\0&8&-4&4\\0&0&0&0\end{pmatrix} \xmapsto{3R_3 + 4R_2} \begin{pmatrix}\boxed{1}&3&-2&1\\0&\boxed{-6}&3&-3\\0&0&0&0\\0&0&0&0\end{pmatrix}. \]
+      <p>Rango 2: \(\dim(H+K) = 2\). Poiché \(H \subseteq H + K\) con la stessa dimensione, \(H = H + K = K\), e \(\dim(H \cap K) = 2 + 2 - 2 = 2\).</p>
+      <p>Controllo alternativo: una forma cartesiana di \(H\) è \(\{-5x_1 + 4x_2 + 3x_3 = 0,\ x_2 + x_4 = 0\}\), e i generatori di \(K\) la soddisfano: \(10 - 4 - 6 = 0,\ -1 + 1 = 0\); \(-5 - 4 + 9 = 0,\ -1 + 1 = 0\) ✓.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2526-01, Q1.4" data-livello="esame">
+    <div class="ex-testo">
+      <p>Tra i seguenti sottospazi di \(\mathbb{R}^4\), trovare quello uguale a \(\mathrm{Span}_{\mathbb{R}}\{\mathbf{v}_1,\mathbf{v}_2,\mathbf{v}_3\}\), dove \(\mathbf{v}_1 = (1,0,1,2)\), \(\mathbf{v}_2 = (0,1,2,3)\), \(\mathbf{v}_3 = (1,1,3,5)\).</p>
+      <p>(A) \(\{\mathbf{x} \in \mathbb{R}^4 : -2x_1 - 3x_2 + x_4 = 0\}\)<br>
+         (B) \(\{\mathbf{x} \in \mathbb{R}^4 : -x_1 - 2x_2 + x_3 = 0\}\)<br>
+         (C) \(\{\mathbf{x} \in \mathbb{R}^4 : -x_1 - 2x_2 + x_3 = 2x_1 + 4x_2 - 2x_3 = 0\}\)<br>
+         (D) \(\{\mathbf{x} \in \mathbb{R}^4 : -x_1 - 2x_2 + x_3 = -2x_1 - 3x_2 + x_4 = 0\}\)</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>Risposta (D).</strong> \(\mathbf{v}_3 = \mathbf{v}_1 + \mathbf{v}_2\) e \(\mathbf{v}_1, \mathbf{v}_2\) non sono proporzionali: \(\dim \mathrm{Span}\{\mathbf{v}_1,\mathbf{v}_2,\mathbf{v}_3\} = 2\). Servono quindi \(4 - 2 = 2\) equazioni <strong>indipendenti</strong>.</p>
+      <ul>
+        <li>(A) e (B): una sola equazione, dimensione 3. Scartate.</li>
+        <li>(C): la seconda equazione è \(-2\) volte la prima, quindi il sistema ha rango 1 e dimensione 3. Scartata.</li>
+        <li>(D): due equazioni indipendenti (dimensione 2); verifichiamo che i generatori le soddisfino: \(\mathbf{v}_1\colon -1 - 0 + 1 = 0,\ -2 - 0 + 2 = 0\); \(\mathbf{v}_2\colon 0 - 2 + 2 = 0,\ 0 - 3 + 3 = 0\) ✓. Uno spazio di dimensione 2 contenuto in uno di dimensione 2: coincidono.</li>
+      </ul>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2324-07, quesito 11" data-livello="esame">
+    <div class="ex-testo">
+      <p>Siano \(U = \{(x,y,z) \in \mathbb{R}^3 \mid x + z = 0\}\) e \(V = \mathrm{Span}(\mathbf{e}_1 - \mathbf{e}_2, \mathbf{e}_1 - \mathbf{e}_3, \mathbf{e}_2 - \mathbf{e}_3) \subseteq \mathbb{R}^3\).</p>
+      <p>(A) \(\dim(U\cap V) = 0\) &nbsp; (B) \(\dim(U\cap V) = 1\) &nbsp; (C) \(\dim(U\cap V) = 2\) &nbsp; (D) \(\dim(U\cap V) = 3\)</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>Risposta (B).</strong> I tre generatori di \(V\) sono dipendenti (\(\mathbf{e}_1 - \mathbf{e}_3 = (\mathbf{e}_1 - \mathbf{e}_2) + (\mathbf{e}_2 - \mathbf{e}_3)\)), quindi \(\dim V = 2\); tutti hanno somma delle coordinate nulla, quindi la forma cartesiana di \(V\) è \(\{x + y + z = 0\}\).</p>
+      \[ U \cap V = \mathrm{Ker}\begin{pmatrix}1&0&1\\1&1&1\end{pmatrix}, \]
+      <p>matrice di rango 2: per nullità + rango \(\dim(U\cap V) = 3 - 2 = 1\). Esplicitamente \(U\cap V = \mathrm{Span}\{(1,0,-1)^{\top}\}\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+</section>
+
+<section class="sec" id="cap3-quiz">
+  <h2>Quiz</h2>
+  <p class="lead">Domande vero/falso di autoverifica sui risultati del capitolo (non da un foglio ufficiale).</p>
+
+  <div class="quiz" data-risposta="F">
+    <p>Se \(A'\) si ottiene da \(A\) con mosse di Gauss sulle righe, allora \(\mathrm{Col}(A) = \mathrm{Col}(A')\).</p>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Falso (Osservazione 3.5): scambiando le righe di \(\begin{pmatrix}1&0\\0&0\end{pmatrix}\) lo spazio delle colonne passa dall'asse \(x\) all'asse \(y\). Restano invariati \(\mathrm{Row}\), \(\mathrm{Ker}\) e \(\dim\mathrm{Col}\).</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="V">
+    <p>Per ogni matrice \(A\) vale \(\dim\mathrm{Row}(A) = \dim\mathrm{Col}(A)\).</p>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Vero: entrambe sono uguali al rango (Teorema 3.8), anche se \(\mathrm{Row}(A) \subseteq \mathbb{K}^n\) e \(\mathrm{Col}(A) \subseteq \mathbb{K}^m\) vivono in spazi diversi.</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="V">
+    <p>Se \(A \in \mathrm{Mat}_{3\times 5}(\mathbb{R})\), allora \(\dim\mathrm{Ker}(A) \ge 2\).</p>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Vero: \(\mathrm{Rango}(A) \le 3\) (al più un pivot per riga) e per nullità + rango \(\dim\mathrm{Ker}(A) = 5 - \mathrm{Rango}(A) \ge 2\).</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="F">
+    <p>Un sottospazio \(U \subseteq \mathbb{R}^5\) descritto da 2 equazioni cartesiane ha sempre dimensione 3.</p>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Falso: \(\dim U = 5 - \mathrm{Rango}(A)\), e se le equazioni sono proporzionali il rango è 1 e \(\dim U = 4\) (vedi la forma cartesiana non minimale dell'esempio della sezione 3.3, o l'opzione (C) di GAL-2526-01 Q1.4).</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="F">
+    <p>Se \(U_1 = \mathrm{Col}(\mathtt{C}_1)\) e \(U_2 = \mathrm{Col}(\mathtt{C}_2)\), le colonne di \((\mathtt{C}_1 \mid \mathtt{C}_2)\) formano una base di \(U_1 + U_2\).</p>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Falso: sono un sistema di generatori, <strong>non necessariamente minimale</strong>. Per una base si prendono le colonne pivot (Problema 3).</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="F">
+    <p>Nel metodo per \(U_1 \cap U_2\) con \(U_1 = \mathrm{Col}(\mathtt{C}_1)\) e \(U_2 = \mathrm{Ker}(A_2)\), i vettori \(\mathtt{C}_1\boldsymbol{\alpha}_i\) (con \(\boldsymbol{\alpha}_i\) base di \(\mathrm{Ker}(A_2\mathtt{C}_1)\)) sono sempre una base dell'intersezione.</p>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Falso: nell'Esempio 3.3.7 si ottengono \((3,9,15)^{\top}\) e \((6,18,30)^{\top}\), dipendenti. Sono una base se le colonne di \(\mathtt{C}_1\) sono indipendenti.</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="V">
+    <p>Se \(U, W \subseteq \mathbb{R}^4\) hanno \(\dim U = \dim W = 3\) e \(U \neq W\), allora \(\dim(U \cap W) = 2\).</p>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Vero: \(U \subsetneq U + W\), quindi \(\dim(U+W) = 4\) e per Grassmann \(\dim(U\cap W) = 3 + 3 - 4 = 2\) (è la situazione di GAL-2526-02, E1).</p>
+    </details>
+  </div>
+</section>
+
+<section class="sec" id="cap3-riepilogo">
+  <h2>Riepilogo</h2>
+  <p class="lead">I punti chiave da sapere per l'esame.</p>
+  <ol>
+    <li>Ogni calcolo in \(\mathbb{K}^n\) segue lo schema: costruisci una matrice, riducila con Gauss(-Jordan), leggi il risultato.</li>
+    <li>Un sottospazio ha due presentazioni: <strong>parametrica</strong> \(U = \mathrm{Span}\{\mathbf{v}_i\} = \mathrm{Col}(\mathtt{C}) = \mathrm{Row}(\mathtt{R})\) e <strong>cartesiana</strong> \(U = \mathrm{Ker}(A)\).</li>
+    <li>Le mosse di Gauss sulle righe conservano \(\mathrm{Row}(A)\), \(\mathrm{Ker}(A)\) e le relazioni lineari tra le colonne, ma <strong>non</strong> \(\mathrm{Col}(A)\) (Prop. 3.4, 3.6, Oss. 3.5).</li>
+    <li>\(\mathrm{Rango}(A) = \dim\mathrm{Row}(A) = \dim\mathrm{Col}(A) = n - \dim\mathrm{Ker}(A)\) (Teorema 3.8); nullità + rango: \(n = \dim\mathrm{Ker}(A) + \mathrm{Rango}(A)\).</li>
+    <li>Dimensione: dalla parametrica è il rango della matrice dei generatori; dalla cartesiana è \(n - \mathrm{Rango}(A)\) (non \(n -\) numero di equazioni!).</li>
+    <li>Base da generatori in riga: righe non nulle della forma a scala. Base <em>scelta tra i vettori dati</em>: vettori originali nelle colonne pivot.</li>
+    <li>Completamento a base: metti i vettori di \(L\) per primi, poi dei generatori (o la base canonica), e prendi le colonne pivot.</li>
+    <li>Da cartesiana a parametrica: risolvi il sistema (variabili libere = parametri); ogni parametro dà un vettore di base.</li>
+    <li>Da parametrica a cartesiana: Gauss su \((\mathtt{C} \mid I_n)\) o su \((\mathtt{C} \mid \mathbf{x})\); le righe con blocco sinistro nullo danno le equazioni. Servono \(n - \dim U\) equazioni indipendenti.</li>
+    <li>Intersezione: scrivi entrambi in forma cartesiana e <strong>unisci le equazioni</strong>.</li>
+    <li>Somma: scrivi entrambi in forma parametrica e <strong>unisci i generatori</strong> (poi Gauss per una base).</li>
+    <li>Formula di Grassmann: \(\dim(U_1 + U_2) = \dim U_1 + \dim U_2 - \dim(U_1\cap U_2)\): per la prova o per concludere subito \(U_1 + U_2 = \mathbb{K}^n\).</li>
+    <li>Caso misto (\(U_1 = \mathrm{Col}\,\mathtt{C}_1\), \(U_2 = \mathrm{Ker}\,A_2\)): \(U_1\cap U_2\) è generato dai \(\mathtt{C}_1\boldsymbol{\alpha}\) con \(\boldsymbol{\alpha} \in \mathrm{Ker}(A_2\mathtt{C}_1)\) — generatori, non sempre una base.</li>
+    <li>Fai sempre la prova: i generatori devono soddisfare le equazioni trovate, e le dimensioni devono tornare con Grassmann.</li>
+  </ol>
+</section>
