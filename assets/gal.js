@@ -85,41 +85,45 @@
     ex.insertBefore(head, ex.firstChild);
   });
 
-  var countEl = document.getElementById('ex-count');
+  /* ogni sezione di esercizi ha la sua barra: filtri, contatore, mostra soluzioni */
   function updateCount(){
-    if (!countEl) return;
-    var d = exs.filter(function(e){ return e.classList.contains('done'); }).length;
-    countEl.textContent = d + '/' + exs.length + ' fatti';
+    document.querySelectorAll('section.esercizi').forEach(function(sec){
+      var el = sec.querySelector('.ex-count'); if (!el) return;
+      var list = sec.querySelectorAll('.ex'), d = sec.querySelectorAll('.ex.done').length;
+      el.textContent = d + '/' + list.length + ' fatti';
+    });
   }
   updateCount();
-
-  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip[data-filter]'));
-  chips.forEach(function(c){
-    c.addEventListener('click', function(){
-      chips.forEach(function(o){ o.setAttribute('aria-pressed', o === c ? 'true' : 'false'); });
-      var f = c.getAttribute('data-filter');
-      exs.forEach(function(ex){
-        var show = f === 'tutti' || (f === 'da-fare' ? !ex.classList.contains('done') : ex.getAttribute('data-livello') === f);
-        ex.hidden = !show;
+  document.querySelectorAll('section.esercizi').forEach(function(sec){
+    var chips = Array.prototype.slice.call(sec.querySelectorAll('.chip[data-filter]'));
+    var list = Array.prototype.slice.call(sec.querySelectorAll('.ex'));
+    chips.forEach(function(c){
+      c.addEventListener('click', function(){
+        chips.forEach(function(o){ o.setAttribute('aria-pressed', o === c ? 'true' : 'false'); });
+        var f = c.getAttribute('data-filter');
+        list.forEach(function(ex){
+          ex.hidden = !(f === 'tutti' || (f === 'da-fare' ? !ex.classList.contains('done') : ex.getAttribute('data-livello') === f));
+        });
       });
     });
-  });
-  var allSol = document.getElementById('toggle-sol');
-  if (allSol){
-    allSol.addEventListener('click', function(){
+    var allSol = sec.querySelector('.toggle-sol');
+    if (allSol) allSol.addEventListener('click', function(){
       var open = allSol.getAttribute('aria-pressed') !== 'true';
       allSol.setAttribute('aria-pressed', open ? 'true' : 'false');
       allSol.textContent = open ? 'Nascondi soluzioni' : 'Mostra soluzioni';
-      document.querySelectorAll('.ex details.sol').forEach(function(d){ d.open = open; });
+      list.forEach(function(ex){ ex.querySelectorAll('details.sol').forEach(function(d){ d.open = open; }); });
     });
-  }
+  });
 
-  /* ---- quiz: rispondi e ricevi subito il feedback ---- */
-  var quizzes = Array.prototype.slice.call(document.querySelectorAll('.quiz[data-risposta]'));
-  var scoreEl = document.getElementById('quiz-score');
-  var answered = 0, right = 0;
-  function updateScore(){ if (scoreEl) scoreEl.textContent = right + ' corrette su ' + answered + ' risposte (' + quizzes.length + ' domande)'; }
-  quizzes.forEach(function(q){
+  /* ---- quiz: rispondi e ricevi subito il feedback; punteggio per sezione ---- */
+  function updateScore(sec){
+    var el = sec && sec.querySelector('.quiz-score'); if (!el) return;
+    var qs = sec.querySelectorAll('.quiz[data-risposta]');
+    var ans = sec.querySelectorAll('.quiz[data-answered]').length, ok = sec.querySelectorAll('.quiz[data-answered="ok"]').length;
+    el.textContent = ok + ' corrette su ' + ans + ' risposte (' + qs.length + ' domande)';
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.quiz[data-risposta]'), function(q){
+    var sec = q.closest('section');
     var correct = q.getAttribute('data-risposta').trim().toUpperCase();
     var opts = q.querySelectorAll('ol.opzioni > li');
     var labels = opts.length ? Array.prototype.map.call(opts, function(_, i){ return String.fromCharCode(65 + i); }) : ['V', 'F'];
@@ -128,13 +132,11 @@
     labels.forEach(function(lb){
       var b = document.createElement('button'); b.type = 'button'; b.textContent = lb === 'V' ? 'Vero' : lb === 'F' ? 'Falso' : lb;
       b.addEventListener('click', function(){
-        var buttons = row.querySelectorAll('button');
-        buttons.forEach(function(x, i){ x.disabled = true; if (labels[i] === correct) x.classList.add('right'); });
-        answered++;
-        if (lb === correct){ right++; fb.textContent = 'Giusto!'; fb.style.color = 'var(--ok)'; }
-        else { b.classList.add('wrong'); fb.textContent = 'Sbagliato'; fb.style.color = 'var(--ko)'; }
+        row.querySelectorAll('button').forEach(function(x, i){ x.disabled = true; if (labels[i] === correct) x.classList.add('right'); });
+        if (lb === correct){ q.setAttribute('data-answered', 'ok'); fb.textContent = 'Giusto!'; fb.style.color = 'var(--ok)'; }
+        else { q.setAttribute('data-answered', 'ko'); b.classList.add('wrong'); fb.textContent = 'Sbagliato'; fb.style.color = 'var(--ko)'; }
         var sol = q.querySelector('details.sol'); if (sol) sol.open = true;
-        updateScore();
+        updateScore(sec);
       });
       row.appendChild(b);
     });
@@ -142,9 +144,19 @@
     var sol = q.querySelector('details.sol');
     q.insertBefore(row, sol || null);
   });
-  updateScore();
-  var resetQuiz = document.getElementById('quiz-reset');
-  if (resetQuiz) resetQuiz.addEventListener('click', function(){ location.hash = 'quiz'; location.reload(); });
+  document.querySelectorAll('section.quizzes').forEach(function(sec){
+    updateScore(sec);
+    var reset = sec.querySelector('.quiz-reset');
+    if (reset) reset.addEventListener('click', function(){
+      sec.querySelectorAll('.quiz[data-risposta]').forEach(function(q){
+        q.removeAttribute('data-answered');
+        q.querySelectorAll('.quiz-answers button').forEach(function(b){ b.disabled = false; b.classList.remove('right', 'wrong'); });
+        var fb = q.querySelector('.quiz-feedback'); if (fb) fb.textContent = '';
+        var sol = q.querySelector('details.sol'); if (sol) sol.open = false;
+      });
+      updateScore(sec);
+    });
+  });
 
   /* ---- hub: avanzamento per capitolo ---- */
   document.querySelectorAll('[data-progress-page]').forEach(function(el){

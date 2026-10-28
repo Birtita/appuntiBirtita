@@ -63,3 +63,4 @@ un file per capitolo:
 - `<p class="verifica">Verificata con calcolo simbolico</p>` / `Verificata a mano`: ultima riga di una soluzione
   di un esercizio senza soluzione ufficiale, per indicare che è stata ricontrollata. Se la soluzione è ufficiale:
   `<p class="verifica">Soluzione ufficiale</p>`.
+- `<table>` semplice (con `<thead>`/`<tbody>`) usata in `esami.html` (struttura dell'esame, argomenti ricorrenti): va stilizzata.

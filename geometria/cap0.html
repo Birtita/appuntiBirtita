@@ -27,16 +27,1529 @@
     <span class="eyebrow">Cap. 0</span>
     <h1>Fondamenti</h1>
     <p class="sub">Logica, insiemi e applicazioni, relazioni di equivalenza, divisibilità, aritmetica modulare, gruppi, anelli e campi.</p>
-    <div class="pillrow"><span class="pill">Foglio 1</span><span class="pill">Foglio 2 (integrativi)</span></div>
+    <div class="pillrow"><span class="pill">14 sezioni</span><span class="pill">21 esercizi con soluzione</span><span class="pill">14 domande di quiz</span><span class="pill">Foglio 1</span><span class="pill">Foglio 2 (integrativi)</span></div>
   </header>
   <div class="layout">
     <aside class="side" id="side">
-      <div class="panel"><div class="panel-title">Capitoli</div><ol><li><a href="cap0.html" aria-current="page"><span class="k">0</span>Fondamenti</a></li><li><a href="cap1.html"><span class="k">1</span>Matrici e sistemi lineari</a><div class="chap-progress" data-progress-page="cap1" data-total="18"><i></i></div></li><li><a href="cap2.html"><span class="k">2</span>Spazi vettoriali su K</a><div class="chap-progress" data-progress-page="cap2" data-total="15"><i></i></div></li><li><a href="cap3.html"><span class="k">3</span>Calcolare in Kⁿ</a><div class="chap-progress" data-progress-page="cap3" data-total="10"><i></i></div></li><li><a href="cap4.html"><span class="k">4</span>Applicazioni lineari</a></li><li><a href="cap5.html"><span class="k">5</span>Matrice associata</a></li><li><a href="esami.html"><span class="k">·</span>Preparazione all&#x27;esame</a></li><li><a href="anteprima.html"><span class="k">·</span>Argomenti non ancora fatti a lezione</a></li></ol></div>
-      <div class="panel"><div class="panel-title">In questa pagina</div><ol id="toc"></ol></div>
-      
+      <div class="panel"><div class="panel-title">Capitoli</div><ol><li><a href="cap0.html" aria-current="page"><span class="k">0</span>Fondamenti</a><div class="chap-progress" data-progress-page="cap0" data-total="21"><i></i></div></li><li><a href="cap1.html"><span class="k">1</span>Matrici e sistemi lineari</a><div class="chap-progress" data-progress-page="cap1" data-total="18"><i></i></div></li><li><a href="cap2.html"><span class="k">2</span>Spazi vettoriali su K</a><div class="chap-progress" data-progress-page="cap2" data-total="15"><i></i></div></li><li><a href="cap3.html"><span class="k">3</span>Calcolare in Kⁿ</a><div class="chap-progress" data-progress-page="cap3" data-total="10"><i></i></div></li><li><a href="cap4.html"><span class="k">4</span>Applicazioni lineari</a><div class="chap-progress" data-progress-page="cap4" data-total="11"><i></i></div></li><li><a href="cap5.html"><span class="k">5</span>Matrice associata</a><div class="chap-progress" data-progress-page="cap5" data-total="11"><i></i></div></li><li><a href="esami.html"><span class="k">·</span>Preparazione all&#x27;esame</a><div class="chap-progress" data-progress-page="esami" data-total="16"><i></i></div></li><li><a href="anteprima.html"><span class="k">·</span>Argomenti non ancora fatti a lezione</a></li></ol></div>
+      <div class="panel"><div class="panel-title">In questa pagina</div><ol id="toc"><li><a href="#cap0-intro"><span class="k">01</span>Come usare questo capitolo</a></li><li><a href="#cap0-logica"><span class="k">02</span>1.1 Enunciati matematici e logica</a></li><li><a href="#cap0-insiemi"><span class="k">03</span>1.2.1–1.2.4 Insiemi, prodotto cartesiano, operazioni</a></li><li><a href="#cap0-applicazioni"><span class="k">04</span>1.2.5–1.2.7 Applicazioni</a></li><li><a href="#cap0-famiglie-cardinalita"><span class="k">05</span>1.2.8–1.2.11 Famiglie di insiemi, cardinalità, assioma della scelta</a></li><li><a href="#cap0-relazioni"><span class="k">06</span>1.3 Relazioni e relazioni di equivalenza</a></li><li><a href="#cap0-divisibilita"><span class="k">07</span>1.4 Divisibilità nei numeri interi</a></li><li><a href="#cap0-modulare"><span class="k">08</span>1.5 Aritmetica modulare</a></li><li><a href="#cap0-gruppi"><span class="k">09</span>1.6.1–1.6.4 Operazioni interne e gruppi</a></li><li><a href="#cap0-simmetrico"><span class="k">10</span>1.6.5 Il gruppo simmetrico \(S_n\)</a></li><li><a href="#cap0-anelli-campi"><span class="k">11</span>1.6.6–1.6.8 Anelli, campi e numeri complessi</a></li><li><a href="#cap0-esercizi"><span class="k">12</span>Esercizi</a></li><li><a href="#cap0-quiz"><span class="k">13</span>Quiz di autoverifica</a></li><li><a href="#cap0-riepilogo"><span class="k">14</span>Riepilogo</a></li></ol></div>
+      <div class="panel"><div class="panel-title">Studio</div><button class="iconbtn" id="toggle-adv" aria-pressed="false" style="width:100%">Nascondi le parti avanzate</button></div>
     </aside>
     <main id="content">
-<div class="empty"><p><strong>Contenuti in arrivo.</strong></p><p>Questo capitolo verrà riempito con teoria, esempi ed esercizi svolti tratti dagli appunti del corso.</p></div>
+<section class="sec" id="cap0-intro">
+  <div class="num">01</div>
+  <h2>Come usare questo capitolo</h2>
+  <p class="lead">Il Capitolo 0 ("Fondamenti") fissa il linguaggio di tutto il corso: logica, insiemi, applicazioni, relazioni, aritmetica dei numeri interi e le strutture algebriche (gruppi, anelli, campi) che servono per definire gli spazi vettoriali su un campo \(\mathbb{K}\).</p>
+
+  <div class="box box--note"><div class="tag">Dalla lezione · le strisce colorate del prof (p. 6)</div>
+    <p>Negli appunti il prof segna a margine con una striscia colorata l'importanza di ogni parte. In questa pagina il livello è riportato nell'etichetta dei box:</p>
+    <ul>
+      <li><strong>essenziale</strong> (verde): essenziale per il corso e per l'esame;</li>
+      <li><strong>utile</strong> (giallo): utile per il corso, ma non centrale;</li>
+      <li><strong>avanzato</strong> (arancione): più avanzato, ma ancora legato al materiale essenziale;</li>
+      <li><strong>molto avanzato</strong> (rosso): molto avanzato e astratto; grigio+rosso (p. 45) = "very hard core";</li>
+      <li><strong>facile, non necessario</strong> (verde chiaro, nota a mano di p. 51): "non necessario per il corso, ma facile" (gran parte della divisibilità).</li>
+    </ul>
+    <p>L'idea del prof: le prime due categorie si devono poter capire senza ricorrere alle ultime due. Le date a margine indicano dove si è fermata ogni lezione: [0] 16.9.'26 (p. 6), [1] 16.9.'26 (p. 19), [2] 18.9.'26 (p. 31).</p>
+  </div>
+
+  <div class="box box--note"><div class="tag">Esami</div>
+    <p>Il Foglio 2 avverte esplicitamente che aritmetica modulare e strutture algebriche "non sono argomenti d'esame". Negli esami degli anni passati non ci sono domande dirette sul Capitolo 0, ma iniettività, suriettività, biiettività, immagine e controimmagine tornano continuamente per le <em>applicazioni lineari</em> (es. "L è iniettiva ma non suriettiva"). La logica (negazioni, contrapposta) serve per i quesiti vero/falso.</p>
+  </div>
+
+  <h3>Gli insiemi numerici (p. 7)</h3>
+  <p>Si assumono noti (con definizioni "ingenue"):</p>
+  \[
+  \mathbb{N}=\{0,1,2,\dots\},\quad \mathbb{Z}=\{\dots,-2,-1,0,1,2,\dots\},\quad \mathbb{Q}=\left\{\tfrac{a}{b} : a,b\in\mathbb{Z},\ b\neq 0\right\},
+  \]
+  \[
+  \mathbb{R}=\{\mathbf{x},\mathbf{y} : \mathbf{x}=\text{successione finita di cifre},\ \mathbf{y}=\text{successione anche infinita di cifre}\},\qquad \mathbb{C}=\{a+i\cdot b : a,b\in\mathbb{R},\ i^2=-1\}.
+  \]
+  <div class="box box--warn"><div class="tag">Attenzione · convenzione del corso</div>
+    <p>\(0\in\mathbb{N}\): i naturali iniziano da zero. \(\mathbb{N}_{&gt;0}=\{1,2,3,\dots\}\) indica i naturali positivi. Alcuni testi usano \(\mathbb{N}=\{1,2,\dots\}\): non qui.</p>
+    <p>La scrittura decimale dei reali non è univoca: \(0{,}99999\ldots = 1{,}00000\ldots\).</p>
+  </div>
+
+  <h3>Simboli usati frequentemente (Tabella 1, p. 5)</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Simbolo</th><th>Significato</th><th>Simbolo</th><th>Significato</th></tr></thead>
+    <tbody>
+      <tr><td>\(\neg A\), non\((A)\)</td><td>negazione</td><td>\(\Rightarrow\), \(\Leftrightarrow\)</td><td>implica, equivalente</td></tr>
+      <tr><td>\(\forall\)</td><td>per ogni</td><td>\(\exists\), \(\exists!\)</td><td>esiste, esiste ed è unico</td></tr>
+      <tr><td>\(\in\)</td><td>appartiene a</td><td>\(\emptyset\)</td><td>insieme vuoto</td></tr>
+      <tr><td>\(\subseteq\)</td><td>sottoinsieme (può essere uguale)</td><td>\(\subsetneq\)</td><td>sottoinsieme proprio</td></tr>
+      <tr><td>\(\cap,\ \cup,\ \setminus\)</td><td>intersezione, unione, differenza</td><td>\(:\) oppure \(\mid\)</td><td>tale che</td></tr>
+      <tr><td>\((a,b)\)</td><td>coppia ordinata oppure intervallo aperto</td><td>\(\#A\), \(|A|\)</td><td>cardinalità di \(A\)</td></tr>
+      <tr><td>\(A\hookrightarrow B\)</td><td>applicazione iniettiva</td><td>\(A\twoheadrightarrow B\)</td><td>applicazione suriettiva</td></tr>
+      <tr><td>\(\mapsto\)</td><td>manda in</td><td>\(f^{-1}\)</td><td>inversa oppure controimmagine</td></tr>
+      <tr><td>\(\bar z\), \(|z|\)</td><td>coniugato e valore assoluto di \(z\in\mathbb{C}\)</td><td>\(a\mid b\)</td><td>\(a\) divide \(b\)</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="sec" id="cap0-logica">
+  <div class="num">02</div>
+  <h2>1.1 Enunciati matematici e logica</h2>
+  <p class="lead">Ogni teoria matematica è fatta di relazioni logiche tra enunciati formulati con chiarezza. Qui servono: tabelle di verità, connettivi, quantificatori e soprattutto le implicazioni con le loro negazioni.</p>
+
+  <div class="box box--def"><div class="tag">Definizione 1.1<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Un <strong>enunciato matematico</strong> è una frase che è <em>vera</em> oppure <em>falsa</em> – <strong>ma non entrambe le cose</strong>.</p>
+    <p>Il valore di verità non deve dipendere dalle circostanze, dal momento o dalla persona che lo pronuncia.</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempi (p. 8)</div>
+    <p>"Oggi è lunedì." (dipende dal giorno: <em>non</em> è un enunciato) · "\(2+2=4\)" (vero) · "Tutti i gatti sono grigi." · "Nessun gatto è grigio." · "Esistono gatti che non sono grigi." · "\(0=1\)" (enunciato falso) · "\(x\) è un numero dispari." (dipende da \(x\): è una <em>forma</em> \(A(x)\)) · "La radice di un numero naturale è razionale." (falso) · "Questo enunciato è falso." (paradosso: non è un enunciato).</p>
+  </div>
+  <div class="box box--note"><div class="tag">Osservazione 1.2<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Il prof preferisce il linguaggio naturale alla scrittura formale dei predicati, ma senza perdere precisione. È un ottimo esercizio tradurre gli enunciati in predicati: "I numeri naturali non sono mai negativi" diventa \(\forall\, n\in\mathbb{N},\ n\geqslant 0\). Gli enunciati si indicano con \(A, B, C,\dots\); se dipendono da una variabile \(x\), con \(A(x), B(x),\dots\)</p>
+  </div>
+
+  <h3>Tabelle di verità e negazione (1.1.2)</h3>
+  <div class="box box--def"><div class="tag">Definizione 1.3<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>La <strong>negazione</strong> dell'enunciato \(A\) si indica con non\((A)\) oppure \(\neg A\) ed è l'opposto contraddittorio di \(A\): se \(A\) è vero, non\((A)\) è falso, e se \(A\) è falso, non\((A)\) è vero.</p>
+    <div class="tablewrap"><table><thead><tr><th>\(A\)</th><th>non\((A)\)</th></tr></thead><tbody><tr><td>vero</td><td>falso</td></tr><tr><td>falso</td><td>vero</td></tr></tbody></table></div>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio 1.4</div>
+    <p>\(A\): "il numero naturale \(n\) è pari". non\((A)\): "il numero naturale \(n\) non è pari", cioè "\(n\) è dispari".</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Osservazione 1.5<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>La negazione della negazione è <strong>logicamente equivalente</strong> all'enunciato originale: non(non\((A)\)) ha la stessa colonna di \(A\) nella tabella di verità.</p>
+  </div>
+
+  <h3>Connettivi logici (1.1.3)</h3>
+  <p><strong>Congiunzione</strong> "e" (\(\wedge\)): "\(A\) e \(B\)" è vero solo quando \(A\) e \(B\) sono entrambi veri. <strong>Disgiunzione</strong> "o" (\(\vee\), dal latino <em>vel</em>): per noi "o" è sempre <strong>inclusivo</strong>, "\(A\) o \(B\)" è vero se almeno uno dei due è vero, ed è falso esattamente quando sono entrambi falsi.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>\(A\)</th><th>\(B\)</th><th>\(A\) e \(B\)</th><th>\(A\) o \(B\)</th></tr></thead>
+    <tbody><tr><td>v</td><td>v</td><td>v</td><td>v</td></tr><tr><td>v</td><td>f</td><td>f</td><td>v</td></tr><tr><td>f</td><td>v</td><td>f</td><td>v</td></tr><tr><td>f</td><td>f</td><td>f</td><td>f</td></tr></tbody>
+  </table></div>
+  <p>L'"o" esclusivo (latino <em>aut-aut</em>) si dice "o \(A\) o \(B\)" e vale: o \(A\) o \(B\) \(\Leftrightarrow\) non\((A\Leftrightarrow B)\). Esempio del prof: "Metti in ordine la tua stanza, oppure non avrai il gelato!" è (giustamente) un o esclusivo.</p>
+
+  <div class="box box--thm"><div class="tag">Osservazione 1.6<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Per tutti gli enunciati \(A,B,C\):</p>
+    <ul>
+      <li><strong>commutatività</strong>: \((A \text{ e } B)\Leftrightarrow(B\text{ e }A)\), \((A\text{ o }B)\Leftrightarrow(B\text{ o }A)\);</li>
+      <li><strong>associatività</strong>: \(A\text{ e }(B\text{ e }C)\Leftrightarrow(A\text{ e }B)\text{ e }C\), e lo stesso per "o";</li>
+      <li><strong>distributività</strong>: \(A\text{ e }(B\text{ o }C)\Leftrightarrow(A\text{ e }B)\text{ o }(A\text{ e }C)\) e \(A\text{ o }(B\text{ e }C)\Leftrightarrow(A\text{ o }B)\text{ e }(A\text{ o }C)\);</li>
+      <li><strong>Leggi di De Morgan</strong>:
+      \[\neg(A\text{ e }B)\Leftrightarrow \neg A\text{ o }\neg B,\qquad \neg(A\text{ o }B)\Leftrightarrow \neg A\text{ e }\neg B.\]</li>
+    </ul>
+    <p><em>Dimostrazione:</em> esercizio (si confrontano le tabelle di verità).</p>
+  </div>
+
+  <h3>Quantificatori (1.1.4)</h3>
+  <div class="box box--def"><div class="tag">Quantificatori<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>"Per ogni" è il <strong>quantificatore universale</strong> \(\forall\); "esiste" è il <strong>quantificatore esistenziale</strong> \(\exists\); \(\exists!\) significa "esiste ed è unico":</p>
+    \[\exists!\,x \text{ tale che } A(x)\quad\text{significa}\quad \exists\, x \text{ tale che } A(x)\ \text{ e }\ \big((A(x)\text{ e }A(y))\Rightarrow x=y\big).\]
+    <p>Per dimostrare "\(\forall x\ldots\)" bisogna lavorare con un \(x\) <em>arbitrario</em>, dato e non scelto da noi; per dimostrare "\(\exists x\ldots\)" dobbiamo <em>scegliere o costruire</em> noi l'elemento.</p>
+  </div>
+  <div class="box box--warn"><div class="tag">Attenzione · i quantificatori non commutano</div>
+    <p>\(\forall a\in\mathbb{N}\ \exists b\in\mathbb{N}\) tale che \(b&gt;a\): "non esiste un più grande naturale" (vero).<br>
+    \(\exists b\in\mathbb{N}\) tale che \(\forall a\in\mathbb{N}\): \(b&gt;a\): "esiste un naturale più grande di tutti" (falso).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Negazione dei quantificatori<span class="imp" data-imp="essenziale">essenziale</span></div>
+    \[\text{non}\big(\forall x \text{ vale } A(x)\big)\Leftrightarrow \exists x \text{ tale che non}(A(x)),\qquad \text{non}\big(\exists x \text{ tale che } A(x)\big)\Leftrightarrow \forall x \text{ vale non}(A(x)).\]
+    <p>La negazione di "tutti i gatti sono grigi" <strong>non</strong> è "tutti i gatti non sono grigi", ma "esiste un gatto che non è grigio".</p>
+    <p>Esempi: non\((\forall a: 2a+3=5)\Leftrightarrow \exists a\) tale che \(2a+3\neq 5\); non\((\exists a\in\mathbb{R}\) tale che \(a^2&lt;0)\Leftrightarrow \forall a\in\mathbb{R}: a^2\geqslant 0\).</p>
+  </div>
+  <div class="box box--warn"><div class="tag">Attenzione · refuso negli appunti (p. 11)</div>
+    <p>Negli appunti compare "\(\exists\, a\) tale che \(2a+5\neq 5\)": la negazione corretta di \(\forall a: 2a+3=5\) è \(\exists\, a\) tale che \(2a+3\neq 5\).</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esercizio degli appunti (p. 11)<span class="imp" data-imp="utile">utile</span></div>
+    <p>La negazione di "\(\exists!\,x\) tale che \(A(x)\)" è equivalente a</p>
+    \[\big(\forall x : \text{non}(A(x))\big)\ \vee\ \big(\exists\, a,b : A(a)\wedge A(b)\wedge a\neq b\big).\]
+    <p><em>Idea:</em> \(\exists!\) è la congiunzione di "esistenza" e "unicità"; per De Morgan la negazione è "non esiste" <em>oppure</em> "non è unico" (ne esistono due diversi).</p>
+  </div>
+
+  <h3>Implicazioni (1.1.5)</h3>
+  <div class="box box--def"><div class="tag">Implicazione<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Un'<strong>implicazione</strong> è un enunciato della forma "<strong>Se</strong> l'enunciato \(A\) è vero, <strong>allora</strong> l'enunciato \(B\) è vero" e si scrive \(A\Rightarrow B\). \(A\) è l'<strong>ipotesi</strong>, \(B\) la <strong>conclusione</strong>. Equivale a "\(A\) è vero <strong>solo se</strong> \(B\) è vero".</p>
+    <div class="tablewrap"><table><thead><tr><th>\(A\)</th><th>\(B\)</th><th>\(A\Rightarrow B\)</th></tr></thead>
+    <tbody><tr><td>v</td><td>v</td><td>v</td></tr><tr><td>v</td><td>f</td><td>f</td></tr><tr><td>f</td><td>v</td><td>v</td></tr><tr><td>f</td><td>f</td><td>v</td></tr></tbody></table></div>
+    <p><strong>Un'ipotesi falsa produce sempre un'implicazione vera.</strong> La verità di \(A\Rightarrow B\) da sola non dice nulla né su \(A\) né su \(B\): solo se \(A\) e \(A\Rightarrow B\) sono veri segue \(B\) vero; se \(B\) è falso e \(A\Rightarrow B\) è vero, allora \(A\) è falso.</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio (p. 12)</div>
+    <p>"La somma di due numeri pari è pari" è un'implicazione nascosta: con \(A\): "\(a\) è pari", \(B\): "\(b\) è pari", \(C\): "\(a+b\) è pari", si scrive \((A\text{ e }B)\Rightarrow C\).</p>
+  </div>
+  <div class="box box--note"><div class="tag">Osservazioni 1.7 e 1.8<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>1.7: "Per ogni \(x\in\mathbb{R}\): \(x&gt;3\Rightarrow x^2&gt;3\)" è vero per <em>ogni</em> \(x\), anche quando \(x&lt;3\) (in quel caso l'ipotesi è falsa e \(x^2&gt;3\) può essere vero o falso). È questa convenzione che permette di formulare i teoremi come implicazioni.</p>
+    <p>1.8: Un'implicazione vera non deve avere un senso di "conseguenza": "Se la Spagna ha vinto i mondiali di calcio, allora 32003 è un numero primo" è vera, ma non c'è alcun legame tra le due frasi.</p>
+  </div>
+  <div class="box box--thm"><div class="tag">La negazione di \(A\Rightarrow B\)<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>La negazione di \(A\Rightarrow B\) <strong>non è un'altra implicazione</strong>, bensì
+    \[\neg(A\Rightarrow B)\ \Leftrightarrow\ A \text{ e } \neg(B).\]</p>
+    <p>Esempio: a chi afferma "Se \(p\) è primo, allora \(p\) è dispari" si risponde "No: 2 è primo e 2 non è dispari". Allo stesso modo "Se 9 è primo, allora 10 è primo" è <em>vera</em>, perché la sua negazione "9 è primo e 10 non è primo" è falsa.</p>
+  </div>
+  <div class="box box--def"><div class="tag">Inversa, equivalenza, inversione, contrapposta · essenziale/utile</div>
+    <ul>
+      <li>L'<strong>inversa</strong> (o converso) di \(A\Rightarrow B\) è \(B\Rightarrow A\).</li>
+      <li>\(A\) e \(B\) sono <strong>logicamente equivalenti</strong>, \(A\Leftrightarrow B\), quando \((A\Rightarrow B)\) e \((B\Rightarrow A)\) sono entrambe vere; equivalentemente \(A\) e \(B\) hanno lo stesso valore di verità.</li>
+      <li>L'<strong>inversione</strong> (da non confondere con l'inversa!) di \(A\Rightarrow B\) è non\((A)\Rightarrow\) non\((B)\). <em>Non</em> è equivalente all'implicazione: "Se \(a\geqslant 20\) allora \(a\geqslant 10\)" è vera, la sua inversione "Se \(a&lt;20\) allora \(a&lt;10\)" è falsa.</li>
+      <li>La <strong>contrapposta</strong> di \(A\Rightarrow B\) è non\((B)\Rightarrow\) non\((A)\).</li>
+    </ul>
+    <div class="tablewrap"><table><thead><tr><th>\(A\)</th><th>\(B\)</th><th>\(A\Rightarrow B\)</th><th>\(B\Rightarrow A\)</th><th>\(A\Leftrightarrow B\)</th></tr></thead>
+    <tbody><tr><td>v</td><td>v</td><td>v</td><td>v</td><td>v</td></tr><tr><td>v</td><td>f</td><td>f</td><td>v</td><td>f</td></tr><tr><td>f</td><td>v</td><td>v</td><td>f</td><td>f</td></tr><tr><td>f</td><td>f</td><td>v</td><td>v</td><td>v</td></tr></tbody></table></div>
+  </div>
+  <div class="box box--thm"><div class="tag">Osservazione 1.9<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Un'implicazione è logicamente equivalente alla sua contrapposta: \((A\Rightarrow B)\Leftrightarrow(\neg B\Rightarrow\neg A)\).</p>
+    <div class="tablewrap"><table><thead><tr><th>\(A\)</th><th>\(B\)</th><th>\(\neg A\)</th><th>\(\neg B\)</th><th>\(A\Rightarrow B\)</th><th>\(\neg B\Rightarrow\neg A\)</th></tr></thead>
+    <tbody><tr><td>v</td><td>v</td><td>f</td><td>f</td><td>v</td><td>v</td></tr><tr><td>v</td><td>f</td><td>f</td><td>v</td><td>f</td><td>f</td></tr><tr><td>f</td><td>v</td><td>v</td><td>f</td><td>v</td><td>v</td></tr><tr><td>f</td><td>f</td><td>v</td><td>v</td><td>v</td><td>v</td></tr></tbody></table></div>
+    <p>È una strategia di dimostrazione usatissima: invece di \(A\Rightarrow B\) si dimostra \(\neg B\Rightarrow\neg A\) (per esempio per l'iniettività, Oss. 1.27).</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio 1.10<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <div class="tablewrap"><table><tbody>
+      <tr><th>Implicazione</th><td><strong>Se</strong> sono andato in bici, <strong>allora</strong> sono stanco.</td></tr>
+      <tr><th>Contrapposizione</th><td><strong>Se non</strong> sono stanco, <strong>allora non</strong> sono andato in bici.</td></tr>
+      <tr><th>Negazione</th><td>Sono andato in bici <strong>e non</strong> sono stanco.</td></tr>
+      <tr><th>Inversione</th><td><strong>Se non</strong> sono andato in bici, <strong>allora non</strong> sono stanco.</td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="box box--warn"><div class="tag">Attenzione · errori tipici con le implicazioni</div>
+    <ul>
+      <li>Negare \(A\Rightarrow B\) scrivendo \(A\Rightarrow\neg B\) oppure \(\neg A\Rightarrow\neg B\): <strong>sbagliato</strong>. La negazione è "\(A\) e non \(B\)".</li>
+      <li>Credere che \(A\Rightarrow B\) implichi l'inversa \(B\Rightarrow A\) o l'inversione \(\neg A\Rightarrow\neg B\). Solo la <em>contrapposta</em> è equivalente. (Inversa e inversione sono contrapposte l'una dell'altra, quindi sono equivalenti tra loro.)</li>
+      <li>La "catena" \(A\Rightarrow B\Rightarrow C\) significa \((A\Rightarrow B)\wedge(B\Rightarrow C)\), <em>non</em> \(A\Rightarrow(B\Rightarrow C)\) né \((A\Rightarrow B)\Rightarrow C\): "\(\Rightarrow\)" non è associativa (Foglio 1, es. 2).</li>
+    </ul>
+  </div>
+
+  <h3>Necessario e sufficiente (1.1.6) · utile</h3>
+  \[\big(A \text{ è necessario per } B\big)\iff\big(B\Rightarrow A\big),\qquad \big(A \text{ è sufficiente per } B\big)\iff\big(A\Rightarrow B\big).\]
+  <p>Esempi: per \(a,b\in\mathbb{N}_{&gt;0}\), \(a\leqslant b\) è <em>necessario</em> affinché \(a\mid b\) (\(a\mid b\Rightarrow a\leqslant b\)); per \(a,b,c\in\mathbb{R}\), "\(a,b,c\) sono le lunghezze dei lati di un triangolo" è <em>sufficiente</em> per "\(a+b\geqslant c\)".</p>
+
+  <h3>Forme proposizionali, tautologie, contraddizioni (1.1.7) · avanzato</h3>
+  <p>Come in algebra si passa dai numeri alle variabili \(x\), in logica si introducono le <strong>variabili proposizionali</strong>. Le <strong>forme proposizionali</strong> (o espressioni logiche) sono: le variabili proposizionali; non\((X)\) se \(X\) lo è; \(X\) e \(Y\), \(X\) o \(Y\), \(X\Rightarrow Y\), \(X\Leftrightarrow Y\) se \(X,Y\) lo sono (con un numero <em>finito</em> di operazioni).</p>
+  <div class="box box--def"><div class="tag">Definizioni (p. 16)<span class="imp" data-imp="avanzato">avanzato</span></div>
+    <p>Una forma proposizionale è <strong>valida universalmente</strong> se dà un enunciato vero per ogni sostituzione delle variabili. Una <strong>tautologia</strong> è un enunciato ottenuto sostituendo enunciati concreti in una forma universalmente valida (es. \(A\) o non\((A)\), \(A\Rightarrow A\); quindi "\(a&gt;0\) o \(a\leqslant 0\)" è una tautologia). Una <strong>contraddizione</strong> si ottiene sostituendo enunciati nella negazione di una forma universalmente valida: è falsa per ragioni puramente logiche, es. "\(A\) e non\((A)\)" oppure "\((A\Rightarrow B)\) e \((A\Rightarrow\) non\((B))\) e \(A\)" (le contraddizioni delle dimostrazioni per assurdo).</p>
+    <p>Tautologie meno evidenti: \(\big(A\text{ e }(A\Rightarrow B)\text{ e }(B\Rightarrow C)\big)\Rightarrow C\) e \((A\text{ e }B)\Rightarrow(\text{non}(A)\Rightarrow B)\).</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo · negare un enunciato</div>
+    <ol>
+      <li>Scrivi l'enunciato in forma simbolica, rendendo espliciti quantificatori e implicazioni nascoste ("tutti i... sono..." = \(\forall x\,(A(x)\Rightarrow B(x))\)).</li>
+      <li>Scambia ogni \(\forall\) con \(\exists\) e viceversa, <em>mantenendo gli stessi insiemi</em> di variabilità (\(\forall a\in\mathbb{N}\) diventa \(\exists a\in\mathbb{N}\)).</li>
+      <li>Nega la parte finale: \(\neg(P\wedge Q)=\neg P\vee\neg Q\), \(\neg(P\vee Q)=\neg P\wedge\neg Q\), \(\neg(P\Rightarrow Q)=P\wedge\neg Q\), \(\neg(x&lt;y)=x\geqslant y\).</li>
+      <li>Rileggi in italiano e controlla: esattamente uno tra enunciato e negazione deve essere vero.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="cap0-insiemi">
+  <div class="num">03</div>
+  <h2>1.2.1–1.2.4 Insiemi, prodotto cartesiano, operazioni</h2>
+  <p class="lead">Schema ricorrente del corso: prima si introducono gli oggetti, poi le "corrispondenze ammesse" tra essi: insiemi – applicazioni, gruppi – omomorfismi, spazi vettoriali – applicazioni lineari, spazi euclidei – isometrie, spazi affini – applicazioni affini (strutture di questo tipo si chiamano <em>categorie</em>).</p>
+
+  <div class="box box--def"><div class="tag">Definizione 1.11 (Cantor 1895)<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Per un "<strong>insieme</strong>" intendiamo ogni raggruppamento ben definito di oggetti determinati e distinti della nostra intuizione o del nostro pensiero (chiamati "<strong>elementi</strong>" di \(M\)) in un tutto: \(M=\{m\}\).</p>
+    <p>\(x\in M\): "\(x\) è un elemento di \(M\)" / "\(x\) appartiene a \(M\)"; \(x\notin M\) altrimenti. Esiste un unico insieme privo di elementi, l'<strong>insieme vuoto</strong> \(\emptyset\).</p>
+  </div>
+  <div class="box box--note"><div class="tag">Osservazione 1.12</div>
+    <p>Tutti i problemi sono nascosti in "ben definito": la definizione non impedisce che un insieme contenga se stesso, e questo porta al paradosso di Russell. La teoria assiomatica non ricava gli insiemi dalla realtà fisica ma da assiomi di esistenza, per esempio \(\exists\,\emptyset\ \forall y:\ y\notin\emptyset\) (l'insieme vuoto esiste).</p>
+  </div>
+
+  <h3>Tre modi per definire un insieme (p. 18)</h3>
+  <ol>
+    <li><strong>Elencando gli elementi</strong>: \(\{1,2,3,4,5\}\), \(\mathbb{N}=\{0,1,2,3,\dots\}\), \(\mathbb{Z}=\{\dots,-2,-1,0,1,2,\dots\}\).</li>
+    <li><strong>Con una proprietà</strong>: \(\{x\in M \mid x \text{ ha la proprietà } E\}\) ("\(\mid\)" e "\(:\)" si leggono "tali che"). Es.: \(\emptyset=\{x\mid x\neq x\}=\{x\in\mathbb{R}: x^2+x+1=0\}\); \(\{x\in\mathbb{R}: x^2-x-1=0\}=\left\{\tfrac{1+\sqrt5}{2},\tfrac{1-\sqrt5}{2}\right\}\); \(\{(x,y)\in\mathbb{R}^2: x-y=0\}\) è la diagonale; \(\{(x,y,z)\in\mathbb{R}^3: z=1\}\) è il piano parallelo al piano \(xy\) ad altezza 1; \(2\mathbb{Z}=\{x\in\mathbb{Z}\mid x \text{ è divisibile per } 2\}\).</li>
+    <li><strong>Con una formula</strong> applicata agli elementi di un insieme dato: \(\{F(x)\mid x\in M\}\). Es.: \(2\mathbb{Z}=\{2x\mid x\in\mathbb{Z}\}\); \(\mathbb{Q}=\{\tfrac pq \mid p,q\in\mathbb{Z},\ q\neq 0\}\); \(\{(t,t): t\in\mathbb{R}\}\) (diagonale); \(\{(x,y,1): x,y\in\mathbb{R}\}\); \(\{(t,t^2): t\in\mathbb{R}\}\) (parabola); \(\mathbb{C}=\{a+ib\mid a,b\in\mathbb{R},\ i^2=-1\}\).</li>
+  </ol>
+  <div class="box box--warn"><div class="tag">Attenzione · specificare sempre l'insieme ambiente</div>
+    <p>\(\{x\mid 0\leqslant x\leqslant 1\}\) non è determinato: \(\{x\in\mathbb{Z}\mid 0\leqslant x\leqslant 1\}=\{0,1\}\), mentre \(\{x\in\mathbb{R}\mid 0\leqslant x\leqslant 1\}\) e \(\{x\in\mathbb{Q}\mid 0\leqslant x\leqslant 1\}\) sono infiniti e diversi tra loro.</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempi di appartenenza (p. 19)</div>
+    <ul>
+      <li>\((2,2)\in\{(x,y)\in\mathbb{R}^2: x-y=0\}\) perché \(2-2=0\); \((0,2)\notin\) perché \(0-2\neq 0\).</li>
+      <li>\((10,100)\in\{(t,t^2): t\in\mathbb{R}\}\) (scegli \(t=10\)); \((-1,-1)\notin\): servirebbe \(t=-1\) e \(t^2=-1\), contraddizione.</li>
+      <li>\(\tfrac12\in\{x\in\mathbb{Q}: 0\leqslant x\leqslant 1\}\) ma \(\tfrac12\notin\{x\in\mathbb{Z}: 0\leqslant x\leqslant 1\}\).</li>
+      <li>\(123456^{101}\in 2\mathbb{Z}\) perché \(123456^{101}=2\cdot(61728\cdot 123456^{100})\); \(\sqrt2\notin\mathbb{Q}\) (richiede dimostrazione).</li>
+      <li>\(2\in\{2\}\) ma \(2\notin\{\{2\}\}\): l'unico elemento di \(\{\{2\}\}\) è l'insieme \(\{2\}\).</li>
+    </ul>
+  </div>
+
+  <div class="box box--def"><div class="tag">Definizione 1.13<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Due insiemi sono <strong>uguali</strong> quando contengono gli stessi elementi. Quindi gli elementi di un insieme <em>non sono ordinati e non hanno molteplicità</em>: \(\{2,6,13\}=\{6,13,2\}=\{2,2,6,6,6,13,2,13\}\).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Osservazione 1.14<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Per dimostrare \(M=N\) si dimostra \(x\in M\Leftrightarrow x\in N\), di solito separando le due direzioni: \((x\in M\Rightarrow x\in N)\) e \((x\in N\Rightarrow x\in M)\). Conviene leggere \(x\in M\Rightarrow x\in N\) come "\(\forall x\) tale che \(x\in M\) vale \(x\in N\)", che suggerisce come iniziare: <em>Sia \(x\in M\) arbitrario.</em></p>
+  </div>
+  <div class="box box--def"><div class="tag">Definizione 1.15<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>\(N\) è <strong>sottoinsieme</strong> di \(M\), \(N\subseteq M\), se ogni elemento di \(N\) appartiene a \(M\). Se \(N\subseteq M\) e \(N\neq M\), \(N\) è un <strong>sottoinsieme proprio</strong>: \(N\subsetneq M\).</p>
+    \[N\subseteq M\iff (x\in N\Rightarrow x\in M),\qquad N\subsetneq M\iff (x\in N\Rightarrow x\in M)\ \text{e}\ \exists\, x\in M \text{ tale che } x\notin N.\]
+    <p>Negazione: \(N\not\subseteq M\iff \exists\, x\in N\) tale che \(x\notin M\). Il prof evita il simbolo "\(\subset\)" perché in letteratura è ambiguo.</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempi (p. 20–21)</div>
+    <ul>
+      <li>\(\{1,2\}\subsetneq\{1,2,3\}\): "\(\subseteq\)" perché \(1,2\in\{1,2,3\}\); "\(\neq\)" perché \(3\in\{1,2,3\}\), \(3\notin\{1,2\}\).</li>
+      <li>\(\{2,3\}\neq\{\{2\},3\}\) e nessuna inclusione vale: \(2\notin\{\{2\},3\}\) e \(\{2\}\notin\{2,3\}\).</li>
+      <li>\(\{2\}=\{z\in\mathbb{Z}\mid 1&lt;z&lt;3\}\); \(\{2z\mid z\in\mathbb{Z}\}\subseteq\mathbb{Z}\) ma \(\not\subseteq\mathbb{N}\); \(\{1,2,3\}\not\subseteq\{2,3,4\}\).</li>
+      <li>\(\{x\in\mathbb{R}\mid 0\leqslant x\leqslant 1\}\supsetneq\{x\in\mathbb{Q}\mid 0\leqslant x\leqslant 1\}\): \(\tfrac{\sqrt2}{2}\) sta a sinistra ma non a destra.</li>
+      <li>Inclusioni sempre vere: \(M\subseteq M\), \(\emptyset\subseteq M\), \(\emptyset\subsetneq M\) se \(M\neq\emptyset\); e \(\mathbb{N}\subsetneq\mathbb{Z}\subsetneq\mathbb{Q}\subsetneq\mathbb{R}\subsetneq\mathbb{C}\) (a rigore tramite identificazioni come \(z=\tfrac z1\)).</li>
+    </ul>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio svolto (p. 21) · presentazione cartesiana = parametrica</div>
+    <p>Dimostriamo \(\{(x,y)\in\mathbb{R}^2 : x-y=0\}=\{(t,t): t\in\mathbb{R}\}\). (La prima è una <em>presentazione cartesiana</em>, la seconda una <em>presentazione parametrica</em>: in algebra lineare le incontreremo spesso.)</p>
+    <p>\(\subseteq\): Sia \((x_0,y_0)\) con \(x_0-y_0=0\), cioè \(x_0=y_0\). Scegliendo \(t=x_0\) si ha \((x_0,y_0)=(x_0,x_0)\in\{(t,t): t\in\mathbb{R}\}\).</p>
+    <p>\(\supseteq\): Sia \((t_0,t_0)\) arbitrario. Allora \(t_0-t_0=0\), quindi \((t_0,t_0)\) soddisfa \(x-y=0\).</p>
+  </div>
+  <div class="box box--method"><div class="tag">Metodo · dimostrare un'uguaglianza tra insiemi (doppia inclusione)</div>
+    <ol>
+      <li>Dividi in due inclusioni: "\(\subseteq\)" e "\(\supseteq\)".</li>
+      <li>Per ciascuna: prendi un elemento <em>arbitrario</em> dell'insieme a sinistra ("Sia \(x\in M\) arbitrario"), scrivi cosa significa (proprietà o formula), e mostra che soddisfa la proprietà/formula dell'altro insieme.</li>
+      <li>Se un insieme è dato con una formula (parametrica), per mostrare l'appartenenza devi <em>scegliere</em> il valore del parametro (es. \(t=x_0\)).</li>
+      <li>Per una non-inclusione basta <em>un</em> controesempio: un elemento che sta in uno e non nell'altro.</li>
+    </ol>
+  </div>
+
+  <div class="box box--def"><div class="tag">Definizione 1.16<span class="imp" data-imp="avanzato">avanzato</span></div>
+    <p>L'<strong>insieme delle parti</strong> di \(M\) è l'insieme di tutti i sottoinsiemi di \(M\): \(\mathcal{P}(M)=2^M=\{N : N\subseteq M\}\). In particolare \(\emptyset\in 2^M\) per ogni \(M\) e \(2^\emptyset=\{\emptyset\}\). Se \(|M|=m\) allora \(|2^M|=2^m\).</p>
+    <p>\(2^{\{1,2\}}=\{\emptyset,\{1\},\{2\},\{1,2\}\}\); \(2^{\{1,2,3\}}=\{\emptyset,\{1\},\{2\},\{3\},\{1,2\},\{1,3\},\{2,3\},\{1,2,3\}\}\); \(2^{\{1,\dots,10\}}\) ha \(2^{10}=1024\) elementi.</p>
+  </div>
+
+  <h3>Due paradossi (1.2.2) · molto avanzato</h3>
+  <p><strong>Russell (1903).</strong> Se la collezione \(S\) di tutti gli insiemi fosse un insieme, potremmo definire \(T=\{M\in S : M\notin M\}\). Allora \(T\in T\Rightarrow T\notin T\) e \(T\notin T\Rightarrow T\in T\), cioè \(T\in T\Leftrightarrow T\notin T\): contraddizione. <strong>Berry</strong> (paradosso semantico): "il più piccolo numero naturale che non si può descrivere con meno di sedici parole" è appena stato descritto con quindici parole. Conclusione: la collezione di tutti gli insiemi non è un insieme ma una <strong>classe</strong>; per noi "insiemi ben definiti" sono quelli definiti col linguaggio della logica che non contengono se stessi.</p>
+
+  <h3>Il prodotto cartesiano (1.2.3)</h3>
+  <div class="box box--def"><div class="tag">Definizione 1.17<span class="imp" data-imp="avanzato">avanzato</span></div>
+    <p>(a) [Kuratowski 1921] \((m,n):=\{\{m\},\{m,n\}\}\). (b) [Hausdorff 1914] con due oggetti distinti 1, 2 (es. \(\emptyset\) e \(\{\emptyset\}\)): \((m_1,m_2):=\{\{1,m_1\},\{2,m_2\}\}\).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Osservazione 1.18<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>In una <strong>coppia ordinata</strong> l'ordine conta: \((m_1,m_2)=(n_1,n_2)\iff (m_1=n_1\text{ e }m_2=n_2)\). Se \(m_1\neq m_2\) allora \((m_1,m_2)\neq(m_2,m_1)\).</p>
+  </div>
+  <div class="box box--def"><div class="tag">Definizione 1.19<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Il <strong>prodotto cartesiano</strong> di \(M\) e \(N\) è \(M\times N:=\{(m,n)\mid m\in M\text{ e }n\in N\}\); \(M^2=M\times M\).</p>
+    <p>Per \(n\geqslant 3\) le \(n\)-uple si definiscono per induzione \((a_1,\dots,a_n):=((a_1,\dots,a_{n-1}),a_n)\) e sono caratterizzate da
+    \[(a_1,\dots,a_n)=(b_1,\dots,b_n)\iff a_i=b_i\ \ \forall i=1,\dots,n,\]
+    quindi \(M_1\times\dots\times M_n=\{(m_1,\dots,m_n): m_i\in M_i\ \forall i\}\).</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempi (p. 23–24)</div>
+    <ul>
+      <li>\(\{0,1\}\times\{a,b,c\}=\{(0,a),(0,b),(0,c),(1,a),(1,b),(1,c)\}\).</li>
+      <li>\(\mathbb{R}^2=\{(x,y): x,y\in\mathbb{R}\}\) (il piano); \(\mathbb{Z}^2\) è un sottoinsieme discreto di \(\mathbb{R}^2\), \(\mathbb{Q}^2\) è denso.</li>
+      <li>\(A=\{0,1\}\Rightarrow A^3\) ha \(2^3=8\) elementi; \(\mathbb{R}^3\), \(\mathbb{R}^n=\{(x_1,\dots,x_n): x_i\in\mathbb{R}\}\) (spazio \(n\)-dimensionale reale).</li>
+    </ul>
+  </div>
+
+  <h3>Operazioni con gli insiemi (1.2.4)</h3>
+  <div class="box box--def"><div class="tag">Definizione 1.20<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Siano \(M_1,M_2\subseteq M\).</p>
+    \[M_1\cup M_2:=\{x\in M\mid x\in M_1\text{ oppure }x\in M_2\},\qquad M_1\cap M_2:=\{x\in M\mid x\in M_1\text{ e }x\in M_2\},\]
+    \[M_1\setminus M_2:=\{x\in M\mid x\in M_1\text{ e }x\notin M_2\}.\]
+    <p>Se \(M_2\subseteq M_1\), \(M_1\setminus M_2\) è il <strong>complemento</strong> di \(M_2\) in \(M_1\), \(\complement_{M_1}M_2\). \(M_1,M_2\) sono <strong>disgiunti</strong> se \(M_1\cap M_2=\emptyset\). Unione e intersezione sono la traduzione insiemistica di "o" e "e".</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempi (p. 25)</div>
+    <p>\(M=\{1,2,3,4\}\), \(N=\{2,4,6,8\}\): \(M\cup N=\{1,2,3,4,6,8\}\), \(M\cap N=\{2,4\}\), \(M\setminus N=\{1,3\}\). Per ogni \(M\): \(M\cup M=M\cap M=M\), \(M\setminus M=\emptyset\).</p>
+    <p>Curiosità del prof: un foglio di \(0{,}1\) mm piegato 51 volte sarebbe spesso \(2^{51}\cdot 10^{-7}\,\text{km}\approx 225{,}2\) milioni di km, più della distanza Terra–Sole (circa 149,6 milioni di km).</p>
+  </div>
+</section>
+
+<section class="sec" id="cap0-applicazioni">
+  <div class="num">04</div>
+  <h2>1.2.5–1.2.7 Applicazioni</h2>
+  <p class="lead">Un'applicazione associa a <em>ogni</em> elemento del dominio <em>un unico</em> elemento del codominio. Iniettività, suriettività e biiettività sono le proprietà che ritroveremo identiche per le applicazioni lineari.</p>
+
+  <p>Definizione intuitiva: un'applicazione \(f\) da \(A\) in \(B\) è una regola che associa in modo univoco a ogni \(x\in A\) un elemento \(f(x)\in B\): \(\forall x\in A,\ \exists!\, f(x)\in B\). La "regola" non va confusa con una formula: se \(A\) è finito basta assegnare un valore a ogni elemento.</p>
+  <div class="box box--ex"><div class="tag">Esempio 1.21</div>
+    <p>\(A=\{a,b,c,d\}\), \(B=\) l'insieme dei colori: \(f(a)=\) verde, \(f(b)=\) verde, \(f(c)=\) blu, \(f(d)=\) verde è un'applicazione che sarebbe difficile dare con una formula.</p>
+  </div>
+  <div class="box box--def"><div class="tag">Definizione 1.22<span class="imp" data-imp="utile">utile</span></div>
+    <p>Un'<strong>applicazione</strong> \(f\) da \(A\) in \(B\) è una terna \(f=(A,B,\Gamma_f)\), dove il <strong>grafico</strong> \(\Gamma_f\subseteq A\times B\) soddisfa
+    \[\forall x\in A,\ \exists!\, y\in B \text{ tale che } (x,y)\in\Gamma_f.\]
+    Si scrive \(f:A\longrightarrow B\), \(x\longmapsto f(x)\), dove \(f(x)\) (l'<strong>immagine di \(x\)</strong> sotto \(f\)) è l'unico \(y\) con \((x,y)\in\Gamma_f\).</p>
+  </div>
+  <div class="box box--def"><div class="tag">Terminologia (p. 26)<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Data \(f:A\to B\):</p>
+    <ul>
+      <li>\(A\) è il <strong>dominio</strong>, \(B\) il <strong>codominio</strong>;</li>
+      <li>\(\mathrm{Im}(f)=\{f(x): x\in A\}\) è l'<strong>immagine</strong> di \(f\);</li>
+      <li>per \(A'\subseteq A\): \(f(A'):=\{f(x)\mid x\in A'\}\) è l'immagine di \(A'\) tramite \(f\) (utile); \(f(A)=\mathrm{Im}(f)\);</li>
+      <li>per \(B'\subseteq B\): \(f^{-1}(B'):=\{x\in A\mid f(x)\in B'\}\) è la <strong>controimmagine</strong> di \(B'\);</li>
+      <li>per \(y\in B\): \(f^{-1}(y):=\{x\in A: f(x)=y\}\) è la <strong>fibra</strong> di \(f\) sopra \(y\) (la controimmagine di \(\{y\}\)).</li>
+    </ul>
+  </div>
+  <div class="box box--warn"><div class="tag">Attenzione · \(f^{-1}\) ha due significati</div>
+    <p>\(f^{-1}(B')\) (controimmagine) esiste <strong>sempre</strong>, anche se \(f\) non è invertibile: è un sottoinsieme di \(A\), eventualmente vuoto. L'applicazione inversa \(f^{-1}:B\to A\) esiste solo se \(f\) è biiettiva.</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Osservazione 1.23<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Due applicazioni sono uguali se e solo se le terne sono uguali:
+    \[f=g\iff A=C,\ B=D\ \text{ e }\ f(x)=g(x)\ \ \forall x\in A.\]
+    Quindi dominio e codominio fanno parte dell'applicazione.</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempi (p. 27) · la formula non basta</div>
+    <ol>
+      <li>\(f,g:\{0,1\}\to\{0,1\}\), \(f(x)=x\), \(g(x)=x^2\): sono <em>uguali</em> (\(0=0^2\), \(1=1^2\)). Con la stessa formula su \(\mathbb{R}\) sono diverse: \(f(-1)=-1\neq 1=g(-1)\).</li>
+      <li>\(f:\mathbb{Z}\to\mathbb{Z}\) e \(g:\mathbb{N}\to\mathbb{N}\), entrambe \(x\mapsto x\), non sono formalmente uguali.</li>
+      <li>\(x\mapsto x-1\) definisce un'applicazione \(\mathbb{Z}\to\mathbb{Z}\) ma non \(\mathbb{N}\to\mathbb{N}\) (\(0\mapsto -1\notin\mathbb{N}\)).</li>
+    </ol>
+  </div>
+  <p><strong>Restrizione</strong> (utile): per \(A'\subseteq A\), \(f|_{A'}:A'\to B\), \(f|_{A'}(a):=f(a)\). Se \(A'\subsetneq A\) la restrizione è un'applicazione diversa. Si può restringere o estendere il codominio solo a insiemi \(B'\) con \(\mathrm{Im}(f)\subseteq B'\). Tra due insiemi esistono quasi sempre applicazioni: l'unica eccezione è dominio non vuoto e codominio vuoto.</p>
+  <div class="box box--ex"><div class="tag">Esempi (p. 27–28)</div>
+    <ul>
+      <li>\(A=B=\{1,2,3\}\): \(\Gamma_{f_1}=\{(1,3),(2,3),(3,3)\}\) e \(\Gamma_{f_3}=\{(1,1),(2,2),(3,3)\}\) sono grafici di applicazioni; \(\Gamma_{f_2}=\{(1,1),(1,2),(1,3)\}\) <strong>no</strong> (a 1 sono assegnati tre valori, a 2 e 3 nessuno).</li>
+      <li>L'<strong>applicazione identica</strong> \(\mathrm{id}_M:M\to M\), \(x\mapsto x\): sarà l'elemento neutro della composizione.</li>
+      <li>\(\{(x,y)\in\mathbb{R}^2\mid y^2=x\}\) non è il grafico di un'applicazione \(\mathbb{R}\to\mathbb{R}\); \(f:\mathbb{R}\to\mathbb{R}\), \(f(x)=\tfrac1x\) <em>non</em> è un'applicazione, \(f:\mathbb{R}\setminus\{0\}\to\mathbb{R}\), \(f(x)=\tfrac1x\) sì.</li>
+      <li>Se il dominio è fatto di \(n\)-uple si scrive \(f(x,y,z)=x+y+z\) invece di \(f((x,y,z))\).</li>
+      <li><strong>Proiezioni canoniche</strong> \(p_i:A_1\times A_2\to A_i\), \((a_1,a_2)\mapsto a_i\); <strong>inclusione canonica</strong> \(i:A'\to A\), \(a'\mapsto a'\) per \(A'\subseteq A\) (es. \(\mathbb{N}\to\mathbb{Z}\), \(\mathbb{Z}\hookrightarrow\mathbb{Q}\), \(z\mapsto\tfrac z1\)).</li>
+    </ul>
+  </div>
+
+  <h3>Composizione (1.2.6)</h3>
+  <div class="box box--def"><div class="tag">Definizione 1.24<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>\(f:A\to B\) e \(g:C\to D\) sono <strong>componibili</strong> se \(B=C\). In tal caso la <strong>composizione</strong> di \(g\) con \(f\) è
+    \[g\circ f:A\longrightarrow D,\qquad x\longmapsto g(f(x)).\]
+    (Basterebbe \(\mathrm{Im}(f)\subseteq C\); per sicurezza il prof richiede \(B=C\), restringendo eventualmente.)</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Osservazione 1.25<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>(a) La composizione è <strong>associativa</strong>: \(h\circ(g\circ f)=(h\circ g)\circ f=:h\circ g\circ f\).<br>
+    (b) L'identità è l'elemento neutro: per \(f:A\to B\) vale \(f\circ\mathrm{id}_A=f\) e \(\mathrm{id}_B\circ f=f\) (attenzione a quale identità va a destra e quale a sinistra).</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempi (p. 30)</div>
+    <ol>
+      <li>\(f:\mathbb{R}^3\to\mathbb{R}^2\), \(f(x,y,z)=(x+y,y+z)\): \(\mathrm{id}_{\mathbb{R}^2}\circ f=f\) e \(f\circ\mathrm{id}_{\mathbb{R}^3}=f\); "\(\mathrm{id}_{\mathbb{R}^3}(f(x,y,z))\)" non ha senso.</li>
+      <li>\(f:\mathbb{R}\to\mathbb{R}^2\), \(f(x)=(\sin x,\cos x)\); \(g:\mathbb{R}^2\to\mathbb{R}^3\), \(g(x,y)=(2xy,(y-x)(y+x),x^2+y^2)\). Allora \((g\circ f)(x)=(\sin 2x,\cos 2x,1)\).</li>
+      <li>\(f(x)=x^2\), \(g(x)=2x\) su \(\mathbb{R}\): \((f\circ g)(x)=4x^2\), \((g\circ f)(x)=2x^2\); \((f\circ g)(1)=4\neq 2=(g\circ f)(1)\): la composizione <strong>non è commutativa</strong>.</li>
+      <li>Con anche \(h(x)=x-1\): \(f\circ g\circ h:\ x\mapsto 4x^2-8x+4\), \(h\circ g\circ f:\ x\mapsto 2x^2-1\). Le altre quattro (esercizio degli appunti): \(f\circ h\circ g: x\mapsto(2x-1)^2=4x^2-4x+1\); \(g\circ f\circ h: x\mapsto 2(x-1)^2=2x^2-4x+2\); \(g\circ h\circ f: x\mapsto 2(x^2-1)=2x^2-2\); \(h\circ f\circ g: x\mapsto 4x^2-1\).</li>
+    </ol>
+  </div>
+
+  <h3>Le proprietà fondamentali (1.2.7)</h3>
+  <div class="box box--def"><div class="tag">Definizione 1.26<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Un'applicazione \(f:A\to B\) si dice</p>
+    \[\begin{array}{rcl}
+    \textbf{iniettiva} &amp; \iff &amp; \forall x,y\in A \text{ con } x\neq y\Rightarrow f(x)\neq f(y);\\
+    \textbf{suriettiva} &amp; \iff &amp; \forall b\in B,\ \exists x\in A \text{ tale che } f(x)=b;\\
+    \textbf{biiettiva} &amp; \iff &amp; \forall b\in B,\ \exists!\, x\in A \text{ tale che } f(x)=b;\\
+    \textbf{invertibile} &amp; \iff &amp; \exists f^{-1}:B\to A \text{ tale che } f\circ f^{-1}=\mathrm{id}_B \text{ e } f^{-1}\circ f=\mathrm{id}_A.
+    \end{array}\]
+  </div>
+  <div class="box box--thm"><div class="tag">Osservazione 1.27<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>È più comodo lavorare con uguaglianze: si usa la <strong>contrapposta</strong>. \(f\) è iniettiva se e solo se
+    \[\forall x,y\in A:\quad f(x)=f(y)\Rightarrow x=y.\]</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Osservazione 1.28 · essenziale / utile</div>
+    <ul>
+      <li>\(f\) iniettiva \(\iff\) a entrate diverse vengono assegnati valori diversi \(\iff\) ogni controimmagine \(f^{-1}(b)\) contiene <strong>al massimo</strong> un elemento;</li>
+      <li>\(f\) suriettiva \(\iff\) \(\mathrm{Im}(f)=B\) \(\iff\) ogni \(f^{-1}(b)\) contiene <strong>almeno</strong> un elemento;</li>
+      <li>\(f\) biiettiva \(\iff\) \(f\) iniettiva e suriettiva \(\iff\) ogni \(f^{-1}(b)\) contiene <strong>esattamente</strong> un elemento;</li>
+      <li>\(f\) invertibile \(\iff\) \(f\) ammette un'applicazione inversa.</li>
+    </ul>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 640 190" width="100%" role="img" aria-label="Tre diagrammi a frecce: f iniettiva non suriettiva, g suriettiva non iniettiva, h biiettiva">
+      <defs><marker id="cap0-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+      <g fill="none" stroke="currentColor" stroke-width="1.5">
+        <ellipse cx="40" cy="85" rx="24" ry="62"/><ellipse cx="150" cy="85" rx="24" ry="62"/>
+        <ellipse cx="260" cy="85" rx="24" ry="62"/><ellipse cx="370" cy="85" rx="24" ry="62"/>
+        <ellipse cx="480" cy="85" rx="24" ry="62"/><ellipse cx="590" cy="85" rx="24" ry="62"/>
+      </g>
+      <g fill="currentColor" font-size="13" text-anchor="middle">
+        <text x="40" y="54">1</text><text x="40" y="89">2</text><text x="40" y="124">3</text>
+        <text x="150" y="44">1</text><text x="150" y="74">2</text><text x="150" y="104">3</text><text x="150" y="134">4</text>
+        <text x="260" y="44">1</text><text x="260" y="74">2</text><text x="260" y="104">3</text><text x="260" y="134">4</text>
+        <text x="370" y="54">1</text><text x="370" y="89">2</text><text x="370" y="124">3</text>
+        <text x="480" y="54">1</text><text x="480" y="89">2</text><text x="480" y="124">3</text>
+        <text x="590" y="54">1</text><text x="590" y="89">2</text><text x="590" y="124">3</text>
+        <text x="95" y="20" font-style="italic">f</text><text x="315" y="20" font-style="italic">g</text><text x="535" y="20" font-style="italic">h</text>
+        <text x="95" y="178">iniettiva sì · suriettiva no</text>
+        <text x="315" y="178">iniettiva no · suriettiva sì</text>
+        <text x="535" y="178">biiettiva</text>
+      </g>
+      <g stroke="currentColor" stroke-width="1.3" marker-end="url(#cap0-arrow)">
+        <line x1="50" y1="50" x2="140" y2="70"/><line x1="50" y1="85" x2="140" y2="100"/><line x1="50" y1="120" x2="140" y2="130"/>
+        <line x1="270" y1="40" x2="360" y2="50"/><line x1="270" y1="70" x2="360" y2="52"/><line x1="270" y1="100" x2="360" y2="85"/><line x1="270" y1="130" x2="360" y2="120"/>
+        <line x1="490" y1="50" x2="580" y2="85"/><line x1="490" y1="85" x2="580" y2="120"/><line x1="490" y1="120" x2="580" y2="52"/>
+      </g>
+    </svg>
+    <figcaption>Esempio 1 di p. 32: \(f:\{1,2,3\}\to\{1,2,3,4\}\), \(f(1)=2, f(2)=3, f(3)=4\) è iniettiva ma non suriettiva (1 non è colpito); \(g\) manda due elementi nello stesso valore; \(h\) è biiettiva.</figcaption>
+  </figure>
+
+  <div class="box box--ex"><div class="tag">Esempio svolto (p. 32) · iniettiva ma non suriettiva</div>
+    <p>\(f:\mathbb{R}\to\mathbb{R}^2\), \(f(x)=(x+1,x^2+1)\).</p>
+    <p><em>Iniettività</em> (con Oss. 1.27): \(f(x)=f(y)\Rightarrow(x+1,x^2+1)=(y+1,y^2+1)\Rightarrow x+1=y+1\Rightarrow x=y\).</p>
+    <p><em>Non suriettività</em>: basta un \(b\in\mathbb{R}^2\) non in \(\mathrm{Im}(f)\), es. \(b=(1,0)\). Se \(f(x)=(1,0)\) allora \(x+1=1\) e \(x^2+1=0\), cioè \(x=0\) e \(x^2=-1\Rightarrow 0=-1\): contraddizione.</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio svolto (p. 32–33) · suriettiva ma non iniettiva</div>
+    <p>\(p:\mathbb{R}^2\to\mathbb{R}\), \(p(x_1,x_2)=x_1+x_2\). Non iniettiva: \((1,0)\neq(0,1)\) ma \(p(1,0)=1=p(0,1)\). Suriettiva: dato \(b\in\mathbb{R}\) arbitrario, \(a=(b,0)\) dà \(p(a)=b\).</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio (p. 33) · entrambe le composizioni!</div>
+    <p>\(f:\mathbb{R}\to\mathbb{R}\), \(x\mapsto 3x\) è biiettiva con inversa \(f^{-1}(x)=\tfrac13x\): \((f\circ f^{-1})(x)=3\cdot\tfrac13x=x\) e \((f^{-1}\circ f)(x)=\tfrac13(3x)=x\).</p>
+    <p>\(g:\mathbb{Z}\to\mathbb{Z}\), \(x\mapsto 3x\) non è suriettiva né invertibile. Con \(g^{-1}(x)=\tfrac x3\) se \(3\mid x\), \(0\) altrimenti, vale \(g^{-1}\circ g=\mathrm{id}_{\mathbb{Z}}\) ma \((g\circ g^{-1})(4)=g(0)=0\neq 4\). <strong>Bisogna verificare entrambe le composizioni.</strong></p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Proposizione 1.29<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Se \(f:A\to B\) è invertibile, l'applicazione \(f^{-1}\) della Definizione 1.26 è univocamente determinata: si chiama l'<strong>inversa</strong> di \(f\).</p>
+    <p><em>Dimostrazione</em> (enunciato più forte): se \(\bar f\circ f=\mathrm{id}_A\) e \(f\circ\tilde f=\mathrm{id}_B\), allora
+    \[\bar f=\bar f\circ\mathrm{id}_B=\bar f\circ(f\circ\tilde f)=(\bar f\circ f)\circ\tilde f=\mathrm{id}_A\circ\tilde f=\tilde f.\]</p>
+  </div>
+  <div class="box box--def"><div class="tag">Definizione 1.30<span class="imp" data-imp="avanzato">avanzato</span></div>
+    <p>\(\bar f:B\to A\) con \(\bar f\circ f=\mathrm{id}_A\) è un'<strong>inversa sinistra</strong> o <strong>retrazione</strong> di \(f\); \(\tilde f:B\to A\) con \(f\circ\tilde f=\mathrm{id}_B\) è un'<strong>inversa destra</strong> o <strong>sezione</strong>.</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Teorema 1.31 · (iii) essenziale, (i)-(ii) avanzato</div>
+    <p>Sia \(f:A\to B\) tra insiemi non vuoti. Allora</p>
+    <ol type="i">
+      <li>\(f\) è iniettiva \(\iff\) \(f\) ha una retrazione;</li>
+      <li>\(f\) è suriettiva \(\iff\) \(f\) ha una sezione;</li>
+      <li>\(f\) è <strong>biiettiva \(\iff\) invertibile</strong>.</li>
+    </ol>
+    <p><em>Idea:</em> (i) "\(\Rightarrow\)": ogni \(y\in\mathrm{Im}(f)\) ha un'unica controimmagine \(x_y\); si pone \(\bar f(y)=x_y\) su \(\mathrm{Im}(f)\) e \(\bar f(y)=a\) (fisso) altrove. "\(\Leftarrow\)": \(f(x)=f(y)\Rightarrow x=\bar f(f(x))=\bar f(f(y))=y\). (ii) "\(\Rightarrow\)": per ogni \(y\) si sceglie una controimmagine (serve l'assioma della scelta); "\(\Leftarrow\)": \(y=f(\tilde f(y))\in\mathrm{Im}(f)\). (iii) segue da (i), (ii) e dalla Prop. 1.29.</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Osservazioni 1.32, 1.33 e Corollario 1.34<span class="imp" data-imp="utile">utile</span></div>
+    <p>Siano \(A\xrightarrow{f}B\xrightarrow{g}C\).</p>
+    <ul>
+      <li>Se \(f\) e \(g\) sono iniettive (risp. suriettive), anche \(g\circ f\) lo è: \(\bar f\circ\bar g\) è una retrazione di \(g\circ f\).</li>
+      <li>Se \(f,g\) sono invertibili, \(g\circ f\) è invertibile con inversa \((g\circ f)^{-1}=f^{-1}\circ g^{-1}\) (ordine scambiato!).</li>
+      <li>(i) \(f,g\) biiettive \(\Rightarrow\) \(g\circ f\) biiettiva; (ii) \(g\circ f\) iniettiva \(\Rightarrow\) \(f\) iniettiva; (iii) \(g\circ f\) suriettiva \(\Rightarrow\) \(g\) suriettiva.</li>
+    </ul>
+  </div>
+  <div class="box box--ex"><div class="tag">Esercizio degli appunti (p. 35–36) · esempi</div>
+    <p>Con \(f:\{1\}\to\{1,2\}\), \(f(1)=1\) e \(g:\{1,2\}\to\{1\}\) costante: \(g\circ f=\mathrm{id}_{\{1\}}\) è invertibile, ma \(g\) non è iniettiva, \(f\) non è suriettiva, e né \(f\) né \(g\) sono invertibili. Per "\(g\circ f\) suriettiva ma \(f\) non iniettiva": \(f:\{1,2\}\to\{1\}\) costante e \(g=\mathrm{id}_{\{1\}}\).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Teoremi 1.35 e 1.36<span class="imp" data-imp="molto-avanzato">molto avanzato</span></div>
+    <p>\(f:A\to B\) è iniettiva \(\iff\) per ogni insieme \(A'\) e ogni \(g,g':A'\to A\): \(f\circ g=f\circ g'\Rightarrow g=g'\) (monomorfismo).<br>
+    \(f\) è suriettiva \(\iff\) per ogni insieme \(B'\) e ogni \(g,g':B\to B'\): \(g\circ f=g'\circ f\Rightarrow g=g'\) (epimorfismo). Non verranno applicati esplicitamente nel corso.</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo · studiare un'applicazione \(f:A\to B\)</div>
+    <ol>
+      <li><strong>È un'applicazione?</strong> Ogni \(x\in A\) deve avere un valore e uno solo, e il valore deve stare in \(B\) (attenzione a divisioni per 0, radici di negativi, \(\mathbb{N}\) vs \(\mathbb{Z}\)).</li>
+      <li><strong>Iniettività:</strong> parti da \(f(x)=f(y)\) e deduci \(x=y\). Per <em>negarla</em> basta esibire \(x\neq y\) con \(f(x)=f(y)\) (simmetrie, funzioni pari, periodicità).</li>
+      <li><strong>Suriettività:</strong> fissa \(b\in B\) arbitrario e <em>risolvi</em> \(f(x)=b\) trovando un \(x\in A\) (controlla che stia davvero in \(A\)). Per negarla basta un \(b\) per cui \(f(x)=b\) porta a una contraddizione.</li>
+      <li><strong>Inversa:</strong> se è biiettiva, risolvendo \(f(x)=y\) in funzione di \(y\) si ottiene \(f^{-1}(y)\); verifica <em>entrambe</em> \(f\circ f^{-1}=\mathrm{id}_B\) e \(f^{-1}\circ f=\mathrm{id}_A\).</li>
+    </ol>
+  </div>
+  <div class="box box--warn"><div class="tag">Attenzione · errori tipici</div>
+    <ul>
+      <li>Iniettività e suriettività dipendono da dominio e codominio: \(x\mapsto 3x\) è biiettiva su \(\mathbb{R}\) ma non suriettiva su \(\mathbb{Z}\); \(x\mapsto x^2\) non è iniettiva su \(\mathbb{R}\) ma lo è su \(\mathbb{R}_{\geqslant 0}\).</li>
+      <li>Verificare solo \(f^{-1}\circ f=\mathrm{id}\) non basta (esempio di \(g:\mathbb{Z}\to\mathbb{Z}\), \(x\mapsto 3x\)).</li>
+      <li>\((g\circ f)(x)=g(f(x))\): si applica <em>prima</em> \(f\), che sta a destra.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="cap0-famiglie-cardinalita">
+  <div class="num">05</div>
+  <h2>1.2.8–1.2.11 Famiglie di insiemi, cardinalità, assioma della scelta</h2>
+  <p class="lead">Parte in gran parte avanzata: per l'esame basta l'idea di cardinalità di un insieme finito e il confronto tramite applicazioni iniettive/suriettive/biiettive.</p>
+
+  <h3>Famiglie di insiemi (1.2.8) · avanzato</h3>
+  <p>Una <strong>famiglia</strong> di insiemi indicizzata da \(I\) è un'applicazione \(\mathcal F:I\to\mathcal M\), \(i\mapsto M_i\), dove \(\mathcal M\) è un insieme non vuoto di insiemi; si scrive \(\mathcal F=(M_i)_{i\in I}\).</p>
+  <div class="box box--def"><div class="tag">Definizione 1.37</div>
+    \[\bigcup_{i\in I}M_i:=\{x:\exists\, i\in I \text{ tale che } x\in M_i\},\qquad \bigcap_{i\in I}M_i:=\{x:\forall\, i\in I \text{ vale } x\in M_i\}.\]
+    <p>Per famiglie arbitrarie unione e intersezione corrispondono ai quantificatori \(\exists\) e \(\forall\). Per \(I=\{1,\dots,n\}\): \(M_1\cup\dots\cup M_n=\bigcup_{i=1}^n M_i\).</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempi (p. 38)</div>
+    <p>\(\mathbb{R}\setminus\mathbb{Z}=\bigcup_{a\in\mathbb{Z}}(a,a+1)\) (intervalli aperti); \(\bigcap_{i=1}^{\infty}\left(-\tfrac1i,\tfrac1i\right)=\{0\}\); \(\bigcup_{i=1}^{\infty}(-i,i)=\mathbb{R}\). La famiglia vuota ha unione \(\emptyset\) e prodotto cartesiano \(\{\emptyset\}\) (molto avanzato).</p>
+  </div>
+  <div class="box box--def"><div class="tag">Definizioni 1.38 e 1.39</div>
+    <p>\(\prod_{i\in I}M_i:=\{f:I\to\bigcup_{i\in I}M_i \;:\; f(i)\in M_i\ \forall i\in I\}\); i suoi elementi si chiamano <strong>tuple</strong>; per \(I=\{1,\dots,n\}\) sono le \(n\)-tuple \((x_1,\dots,x_n)\) con \(x_i:=f(i)\in M_i\), e \((x_1,\dots,x_n)=(y_1,\dots,y_n)\iff x_i=y_i\ \forall i\). Se \(M_i=M\): \(M^n:=\prod_{i=1}^nM\).</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio 1.40<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>\(\{0,1\}^3=\{(0,0,0),(0,0,1),(0,1,0),(0,1,1),(1,0,0),(1,0,1),(1,1,0),(1,1,1)\}\).</p>
+  </div>
+
+  <h3>Cardinalità (1.2.9) · utile / avanzato</h3>
+  <p>Intuizione: un'applicazione iniettiva \(A\to B\) dice che \(A\) ha "meno" elementi di \(B\); una suriettiva che ne ha "di più"; una biiettiva che ne hanno "tanti quanti".</p>
+  <div class="box box--def"><div class="tag">Definizione 1.41 (ingenua)<span class="imp" data-imp="utile">utile</span></div>
+    <p>Un insieme vuoto o con un numero finito di elementi è <strong>finito</strong>; il numero dei suoi elementi è la <strong>cardinalità</strong> (o potenza), \(|M|\) o \(\#M\). Altrimenti \(M\) è <strong>infinito</strong> e \(\#M=\infty\). Es.: \(|\{1,2,3,4\}|=4\), \(\#\{1,2,\{3,4\}\}=3\), \(\#\mathbb{N}=\infty\).</p>
+  </div>
+  <div class="box box--def"><div class="tag">Definizioni 1.42, 1.43, 1.45<span class="imp" data-imp="avanzato">avanzato</span></div>
+    <p>\(A\) e \(B\) sono <strong>equipotenti</strong> se esiste una biiezione \(A\to B\). (Dedekind) \(M\) è <strong>infinito</strong> se esiste un sottoinsieme proprio \(M'\subsetneq M\) equipotente a \(M\); <strong>finito</strong> se non è infinito. \(M\) è <strong>numerabile</strong> se è equipotente a \(\mathbb{N}\).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Risultati (p. 40–42)<span class="imp" data-imp="molto-avanzato">molto avanzato</span></div>
+    <ul>
+      <li>Oss. 1.44: \(M\) è infinito \(\iff\) esiste \(f:M\to M\) iniettiva non suriettiva (es. \(n\mapsto n+1\) su \(\mathbb{N}\)).</li>
+      <li>Teor. 1.46: un insieme che contiene un insieme infinito è infinito. Cor. 1.47: ogni sottoinsieme di un insieme finito è finito.</li>
+      <li>Teor. 1.48 (Cantor): non esiste alcuna biiezione \(M\to 2^M\). <em>Idea:</em> se \(f\) fosse biiettiva, \(B:=\{m\in M: m\notin f(m)\}=f(b)\) per qualche \(b\), e \(b\notin B\iff b\notin f(b)\iff b\in B\).</li>
+      <li>Oss. 1.49: i numerabili sono i più piccoli insiemi infiniti. Teor. 1.50: \(\mathbb{R}\) non è numerabile.</li>
+      <li>Teor. 1.51: \(\mathbb{N}_{&lt;n}:=\{a\in\mathbb{N}: a&lt;n\}\) è finito. Teor. 1.52: per ogni insieme finito \(M\) esiste un unico \(n\in\mathbb{N}\) con \(M\) equipotente a \(\mathbb{N}_{&lt;n}\).</li>
+    </ul>
+  </div>
+  <div class="box box--def"><div class="tag">Definizione 1.53<span class="imp" data-imp="molto-avanzato">molto avanzato</span></div>
+    <p>La <strong>potenza</strong> (o cardinalità) di un insieme finito \(M\) è l'unico \(n\in\mathbb{N}\) tale che \(M\) sia equipotente a \(\mathbb{N}_{&lt;n}\); per gli insiemi infiniti si pone \(\infty\).</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempi (p. 42)<span class="imp" data-imp="utile">utile</span></div>
+    <ul>
+      <li>\(|\{\text{cane},1,M\}|=3\), mentre \(|\{\{\text{cane},1\},M\}|=2\); \(|\emptyset|=0\), \(|\{\emptyset\}|=1\), \(|\{\emptyset,\{\emptyset\}\}|=2\).</li>
+      <li>\(\#\{z\in\mathbb{Z}\mid z^2-5\leqslant 0\}=5\) (cioè \(\{-2,-1,0,1,2\}\)); \(\#\{z\in\mathbb{Q}\mid z^2-5\leqslant 0\}=\infty\); \(\{z\in\mathbb{R}\mid z^2+5\leqslant 0\}=\emptyset\).</li>
+      <li>(avanzato) \(\#2^M=2^{\#M}\) e \(\#\{f:M\to N\}=\#N^{\#M}\) per \(M,N\) finiti.</li>
+    </ul>
+  </div>
+
+  <h3>L'assioma della scelta (1.2.10) · avanzato</h3>
+  <div class="box box--def"><div class="tag">Assioma della scelta</div>
+    <p>Per ogni insieme \(\mathcal P\) di insiemi non vuoti esiste una funzione \(f\) che associa a ogni \(X\in\mathcal P\) un elemento \(f(X)\in X\).</p>
+    <p>Oss. 1.54: è equivalente, tra l'altro, al lemma di Zorn, al teorema del buon ordinamento, all'<strong>esistenza di una base per ogni spazio vettoriale</strong>, al completamento di un insieme linearmente indipendente a base, all'esistenza di sezioni per le suriezioni e di sistemi di rappresentanti per le relazioni di equivalenza. Servirà per dimostrare che ogni spazio vettoriale ha una base.</p>
+  </div>
+
+  <h3>Proprietà universale del prodotto cartesiano (1.2.11) · "very hard core"</h3>
+  <div class="box box--thm"><div class="tag">Teorema 1.55 · molto avanzato (facoltativo)</div>
+    <p>Sia \(P=\prod_{i\in I}M_i\) con le proiezioni \(p_j:P\to M_j\). Per ogni insieme \(N\) e ogni famiglia \((u_i:N\to M_i)_{i\in I}\) esiste un'unica \(u:N\to P\) con \(p_i\circ u=u_i\) per ogni \(i\) (cioè \(u(n)=(u_i(n))_{i\in I}\)). Oss. 1.56: questa proprietà determina il prodotto a meno di un'unica biiezione compatibile. Il prof dice esplicitamente che si può saltare.</p>
+  </div>
+</section>
+
+<section class="sec" id="cap0-relazioni">
+  <div class="num">06</div>
+  <h2>1.3 Relazioni e relazioni di equivalenza</h2>
+  <p class="lead">Una relazione di equivalenza "identifica" oggetti diversi; l'insieme quoziente è l'insieme delle classi. È la costruzione che dà \(\mathbb{Z}/n\mathbb{Z}\).</p>
+
+  <div class="box box--def"><div class="tag">Definizione 1.58<span class="imp" data-imp="avanzato">avanzato</span></div>
+    <p>Una <strong>relazione</strong> (binaria) su un insieme \(M\) è un sottoinsieme \(R\subseteq M\times M\). Se \((x,y)\in R\) si scrive \(x\sim_R y\) o \(x\sim y\).</p>
+  </div>
+  <div class="box box--def"><div class="tag">Definizione 1.59<span class="imp" data-imp="avanzato">avanzato</span></div>
+    <p>Una relazione si dice</p>
+    <ol>
+      <li><strong>riflessiva</strong> \(\iff\) \(x\sim x\ \ \forall x\in M\);</li>
+      <li><strong>simmetrica</strong> \(\iff\) \(x\sim y\Rightarrow y\sim x\);</li>
+      <li><strong>antisimmetrica</strong> \(\iff\) \(x\sim y\wedge y\sim x\Rightarrow x=y\);</li>
+      <li><strong>transitiva</strong> \(\iff\) \(x\sim y\wedge y\sim z\Rightarrow x\sim z\).</li>
+    </ol>
+    <p>L'unica relazione con 1., 2. e 3. è l'uguaglianza. 1.+2.+4.: <em>relazioni di equivalenza</em>; 1.+3.+4.: <em>relazioni d'ordine</em>.</p>
+  </div>
+  <div class="box box--def"><div class="tag">Definizioni 1.60 e 1.61<span class="imp" data-imp="avanzato">avanzato</span></div>
+    <p>Una <strong>relazione di equivalenza</strong> è una relazione riflessiva, simmetrica e transitiva. La <strong>classe di equivalenza</strong> di \(x\in M\) è
+    \[[x]_\sim=\{m\in M: m\sim x\}\]
+    (indicata anche \(\hat x\), \(\tilde x\)).</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio 1.62 · congruenza modulo 3</div>
+    <p>\(a\equiv b \bmod 3 \iff 3\mid a-b\). Riflessiva: \(3\mid 0=a-a\). Le classi sono
+    \[[0]=\{3k:k\in\mathbb{Z}\}=\{\dots,-3,0,3,6,\dots\},\ [1]=\{3k+1\}=\{\dots,-2,1,4,7,\dots\},\ [2]=\{3k+2\}=\{\dots,-1,2,5,8,\dots\}\]
+    e nessun'altra: \([0]=[3]=[99]=[123\,456\,789]\).</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempi (p. 47–48)</div>
+    <ul>
+      <li>L'uguaglianza \(R_==\{(x,x)\mid x\in M\}\) (la diagonale \(\Delta\)), contenuta in ogni relazione di equivalenza.</li>
+      <li><strong>Congruenza modulo \(m\)</strong> su \(\mathbb{Z}\) (essenziale): \(x\equiv y\bmod m\iff x-y\) divisibile per \(m\).</li>
+      <li>Carte con lo stesso seme: 4 classi \(\clubsuit,\spadesuit,\diamondsuit,\heartsuit\). Congruenza e similitudine di triangoli.</li>
+      <li>Costruzioni dei numeri (utile): su \(\mathbb{N}^2\), \((a,b)\sim(c,d)\iff a+d=b+c\) dà \(\mathbb{Z}\); su \(\mathbb{Z}\times(\mathbb{Z}\setminus\{0\})\), \((a,b)\sim(c,d)\iff ad=bc\) dà \(\mathbb{Q}\); successioni di Cauchy razionali con \(\lim(x_n-y_n)=0\) danno \(\mathbb{R}\); su \(\mathbb{R}[x]\), \(f\sim g\iff(x^2+1)\mid(f-g)\) dà \(\mathbb{C}\).</li>
+      <li>Ogni applicazione \(f:A\to B\) definisce \(a\sim_f b\iff f(a)=f(b)\). L'equipotenza su \(2^M\) è di equivalenza.</li>
+      <li>Non sono di equivalenza: \(\subseteq\) su \(2^M\) (non simmetrica); \(A\sim B\iff A\cap B=\emptyset\) (né riflessiva né transitiva); "stesso datore di lavoro" (non riflessiva); "stessa cittadinanza" (non transitiva: doppia cittadinanza).</li>
+    </ul>
+  </div>
+  <div class="box box--thm"><div class="tag">Teorema 1.63<span class="imp" data-imp="molto-avanzato">molto avanzato</span></div>
+    <p>\(C\subseteq M\) è una classe di equivalenza per \(\sim\) se e solo se: (CE1) \(C\neq\emptyset\); (CE2) \(a,b\in C\Rightarrow a\sim b\); (CE3) per ogni \(m\in M\), se \(\exists\, y\in C\) con \(y\sim m\), allora \(m\in C\).</p>
+  </div>
+  <div class="box box--def"><div class="tag">Definizione 1.64<span class="imp" data-imp="utile">utile</span></div>
+    <p>Un <strong>rappresentante</strong> della classe \(C\) è un elemento \(x\in C\). Un <strong>sistema di rappresentanti</strong> è un \(M'\subseteq M\) con \(|M'\cap C|=1\) per ogni classe \(C\). Per la congruenza mod 3: \(\{0,1,2\}\), \(\{-1,0,1\}\), \(\{102,-17,23\}\) sono sistemi di rappresentanti.</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Teorema 1.65<span class="imp" data-imp="avanzato">avanzato</span></div>
+    <p>(i) Due classi di equivalenza sono disgiunte oppure coincidono: \(C_1\cap C_2=\emptyset\) oppure \(C_1=C_2\). (ii) \(M\) è l'unione di tutte le classi (perché \(m\in[m]\) per riflessività).</p>
+    <p>Una <strong>partizione</strong> di \(M\) è un \(\mathcal P\subseteq 2^M\) con \(A\cap B=\emptyset\) per \(A\neq B\in\mathcal P\) e \(\bigcup_{A\in\mathcal P}A=M\). Oss. 1.66: le classi di equivalenza formano una partizione (ogni elemento sta in esattamente una classe). Oss. 1.67: viceversa ogni partizione definisce la relazione di equivalenza \(x\sim_{\mathcal P}y\iff\exists A\in\mathcal P\) con \(x,y\in A\).</p>
+  </div>
+  <div class="box box--def"><div class="tag">Definizione 1.68 · molto avanzato (ma da capire bene)</div>
+    <p>L'<strong>insieme quoziente</strong> di \(M\) modulo \(\sim\) è \(M/_\sim:=\{C: C \text{ classe di equivalenza}\}=\{[x]: x\in M\}\): i suoi elementi sono <em>insiemi</em>. La <strong>proiezione quoziente</strong> è \(p:M\to M/_\sim\), \(x\mapsto[x]\).</p>
+    <p>Oss. 1.69: \([x]=[y]\iff x\sim y\). Oss. 1.70: ogni suriezione \(q:M\to N\) è, a meno di biiezione, una proiezione quoziente (per \(\sim_q\)).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Teorema 1.71<span class="imp" data-imp="molto-avanzato">molto avanzato</span></div>
+    <p>Sia \(f:M\to A\). (i) \([m]\mapsto f(m)\) definisce un'applicazione \(\hat f:M/_\sim\to A\) (cioè è <strong>ben definita</strong>) se e solo se \(a\sim b\Rightarrow f(a)=f(b)\). (ii) In tal caso \(\mathrm{Im}\,f=\mathrm{Im}\,\hat f\) e \(\hat f\) è iniettiva \(\iff\) \((a\sim b\Leftrightarrow f(a)=f(b))\).</p>
+    <p><em>Senso:</em> una formula su classi deve dare lo stesso risultato qualunque rappresentante si scelga. È esattamente ciò che si verifica per somma e prodotto in \(\mathbb{Z}/n\mathbb{Z}\).</p>
+  </div>
+  <div class="box box--method"><div class="tag">Metodo · verificare una relazione di equivalenza</div>
+    <ol>
+      <li>Riflessività: prendi \(x\) arbitrario e verifica \(x\sim x\).</li>
+      <li>Simmetria: supponi \(x\sim y\), deduci \(y\sim x\).</li>
+      <li>Transitività: supponi \(x\sim y\) e \(y\sim z\), deduci \(x\sim z\) (spesso sommando le relazioni: \(a-b=nq_1\), \(b-c=nq_2\Rightarrow a-c=n(q_1+q_2)\)).</li>
+      <li>Per mostrare che <em>non</em> lo è, basta un controesempio a una sola proprietà.</li>
+      <li>Descrivi le classi scegliendo un sistema di rappresentanti comodo.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="cap0-divisibilita">
+  <div class="num">07</div>
+  <h2>1.4 Divisibilità nei numeri interi</h2>
+  <p class="lead">Ripasso veloce ("non necessario per il corso, ma facile", nota a mano p. 51): serve per l'aritmetica modulare e quindi per i campi finiti \(\mathbb{Z}/p\mathbb{Z}\), un'alternativa a \(\mathbb{R}\) come scalari.</p>
+
+  <p><strong>Buon ordinamento di \(\mathbb{N}\):</strong> \(\forall M\subseteq\mathbb{N}\) con \(M\neq\emptyset\ \exists\min M\): ogni insieme non vuoto di naturali ha un minimo.</p>
+  <div class="box box--def"><div class="tag">Definizione 1.72</div>
+    <p>Per \(a,b\in\mathbb{Z}\): \(a\) <strong>divide</strong> \(b\), \(a\mid b\) (o \(b\) è divisibile per \(a\)), se \(\exists\, c\in\mathbb{Z}\) tale che \(b=ac\). Allora \(a\) è un <strong>divisore</strong> di \(b\) e \(b\) un <strong>multiplo</strong> di \(a\).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Osservazioni 1.73–1.75<span class="imp" data-imp="avanzato">avanzato</span></div>
+    <p>La divisibilità è una relazione d'ordine parziale su \(\mathbb{N}\) (riflessiva, antisimmetrica, transitiva: \(b=ak\), \(c=bl\Rightarrow c=a(kl)\)). Per \(a,b\neq 0\): \(a\mid b\Rightarrow a\leqslant b\); ma \(a\mid 0\) per ogni \(a\), quindi nell'ordine della divisibilità il massimo di \(\mathbb{N}\) è \(0\) e il minimo è \(1\). Su \(\mathbb{Z}\) non è un ordine: \(7\mid-7\) e \(-7\mid 7\) ma \(7\neq-7\).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Teorema 1.76 (Divisione con resto)<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Se \(a,b\in\mathbb{Z}\) con \(b&gt;0\), esistono <strong>unici</strong> \(q,r\in\mathbb{Z}\) tali che
+    \[a=qb+r\quad\text{e}\quad 0\leqslant r&lt;b.\]</p>
+    <p><em>Idea:</em> \(r\) è il minimo di \(S=\{a-sb: s\in\mathbb{Z},\ a-sb\geqslant 0\}\neq\emptyset\) (buon ordinamento); se fosse \(r\geqslant b\), \(r-b\in S\) sarebbe più piccolo. Unicità: \((q'-q)b=r-r'\) con \(|r-r'|&lt;b\) forza \(q=q'\). (Oss. 1.77: vale anche per \(b\neq 0\) con \(0\leqslant r&lt;|b|\).)</p>
+  </div>
+  <div class="box box--def"><div class="tag">Definizione 1.78<span class="imp" data-imp="avanzato">avanzato</span></div>
+    <p>Siano \(a,b\in\mathbb{Z}\). Un <strong>massimo comune divisore</strong> è un \(d\in\mathbb{N}\) con (MCD1) \(d\mid a\wedge d\mid b\); (MCD2) \(d'\mid a\wedge d'\mid b\Rightarrow d'\mid d\). Un <strong>minimo comune multiplo</strong> è un \(m\in\mathbb{N}\) con (mcm1) \(a\mid m\wedge b\mid m\); (mcm2) \(a\mid m'\wedge b\mid m'\Rightarrow m\mid m'\).</p>
+    <p>Oss. 1.79: sono unici; \(\mathrm{MCD}(0,a)=|a|\), \(\mathrm{mcm}(0,a)=0\); se \(a\mid b\): \(\mathrm{MCD}(a,b)=|a|\), \(\mathrm{mcm}(a,b)=|b|\). (Negli appunti è scritto \(\mathrm{MCD}(0,a)=a\): vale per \(a\in\mathbb{N}\).)</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Lemma 1.80 (Bézout) e Corollario 1.81 · facile</div>
+    <p>Se \(d=\mathrm{MCD}(a,b)\), allora \(\exists\, s,t\in\mathbb{Z}\) tali che \(d=as+bt\). In particolare
+    \[\mathrm{MCD}(a,b)=1\iff\exists\, s,t\in\mathbb{Z}:\ as+bt=1.\]
+    <em>Idea:</em> \(d\) è il minimo dell'insieme \(\{sa+tb&gt;0\}\); il resto della divisione di \(a\) per \(d\) starebbe nell'insieme ed è più piccolo, quindi è 0.</p>
+  </div>
+  <div class="box box--method"><div class="tag">Metodo · algoritmo euclideo (p. 54)</div>
+    <ol>
+      <li>Se \(a=0\) l'output è \(|b|\); se \(b=0\) è \(|a|\).</li>
+      <li>Poni \(r_{-1}:=a\), \(r_0:=b\).</li>
+      <li>Dividi con resto: \(r_{i-1}=q\,r_i+r\), \(0\leqslant r&lt;r_i\).</li>
+      <li>Se \(r\neq 0\) poni \(r_{i+1}:=r\) e ripeti; altrimenti l'output è \(r_i\) = <strong>l'ultimo resto non nullo</strong> = MCD.</li>
+      <li>(Esteso) Per trovare \(s,t\) di Bézout, risali le uguaglianze esprimendo ogni resto come combinazione di \(a\) e \(b\).</li>
+    </ol>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio 1.82 (+ algoritmo esteso)</div>
+    \[161=5\cdot 28+21,\qquad 28=1\cdot 21+\boxed{7},\qquad 21=3\cdot 7+0\quad\Rightarrow\quad\mathrm{MCD}(161,28)=7.\]
+    <p>Risalendo (aggiunta, non negli appunti): \(7=28-21=28-(161-5\cdot 28)=6\cdot 28-1\cdot 161\), quindi \(s=-1\), \(t=6\): infatti \(-161+168=7\).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Teorema 1.83, Lemmi 1.84–1.86 · facile / avanzato</div>
+    <ul>
+      <li>1.83: l'algoritmo euclideo termina (\(b=r_0&gt;r_1&gt;\dots\geqslant 0\)) e restituisce \(\mathrm{MCD}(a,b)\).</li>
+      <li>1.84: se \(a=qb+r\), allora \(\mathrm{MCD}(a,b)=\mathrm{MCD}(b,r)\) (stessi divisori comuni).</li>
+      <li>1.85: \(|ab|=\mathrm{MCD}(a,b)\cdot\mathrm{mcm}(a,b)\).</li>
+      <li>1.86 (Lemma di Euclide): se \(d\mid ab\) e \(\mathrm{MCD}(a,d)=1\), allora \(d\mid b\). (Da \(ka+ld=1\): \(b=kab+lbd\).)</li>
+    </ul>
+  </div>
+  <div class="box box--def"><div class="tag">Definizione 1.87 e Teorema 1.88</div>
+    <p>Un <strong>numero primo</strong> è un naturale \(p&gt;1\) divisibile solo per 1 e per \(p\). \(p\) è primo \(\iff\) per ogni \(a,b\in\mathbb{N}\): \(p\mid ab\Rightarrow p\mid a\) oppure \(p\mid b\).</p>
+  </div>
+</section>
+
+<section class="sec" id="cap0-modulare">
+  <div class="num">08</div>
+  <h2>1.5 Aritmetica modulare</h2>
+  <p class="lead">\(\mathbb{Z}/n\mathbb{Z}\) è l'insieme quoziente della congruenza modulo \(n\): un insieme con \(n\) elementi in cui si sa sommare e moltiplicare. Per \(n=p\) primo è un campo.</p>
+
+  <div class="box box--def"><div class="tag">Definizione 1.89<span class="imp" data-imp="utile">utile</span></div>
+    <p>Sia \(n\in\mathbb{N}_{&gt;0}\). La <strong>congruenza modulo \(n\)</strong> su \(\mathbb{Z}\) è
+    \[a\equiv b\bmod n\iff n\mid(a-b).\]</p>
+    <p>Oss. 1.90: è una relazione di equivalenza (\(q=0\); \(-q\); \(a-c=n(q_1+q_2)\)). L'insieme quoziente si indica \(\mathbb{Z}/n\mathbb{Z}\) e la classe di \(a\) con \([a]_n\), \([a]\) o \(\hat a\). Sistema di rappresentanti canonico: \(\{0,1,\dots,n-1\}\) (i resti della divisione per \(n\)), quindi
+    \[\mathbb{Z}/n\mathbb{Z}=\{[0],[1],\dots,[n-1]\}.\]</p>
+    <p><strong>Addizione e moltiplicazione modulo \(n\):</strong> \([a]_n+[b]_n:=[a+b]_n\), \([a]_n\cdot[b]_n:=[a\cdot b]_n\).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Teorema 1.91 (Operazioni modulari)<span class="imp" data-imp="utile">utile</span></div>
+    <p>Somma e prodotto modulo \(n\) sono <strong>ben definiti</strong> (non dipendono dai rappresentanti): se \(a\equiv b\) e \(c\equiv d \bmod n\), allora \(a+c\equiv b+d\) e \(ac\equiv bd\bmod n\). Inoltre sono associativi e commutativi, \([0]\) è neutro per \(+\), \([1]\) è neutro per \(\cdot\), e \([a]+[-a]=[0]\).</p>
+    <p><em>Verifica del "ben definito"</em> (esercizio degli appunti): \(a=b+nk\), \(c=d+nl\Rightarrow a+c=b+d+n(k+l)\) e \(ac=bd+n(bl+dk+nkl)\).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Teorema 1.92<span class="imp" data-imp="utile">utile</span></div>
+    <p>Sia \([a]\in\mathbb{Z}/n\mathbb{Z}\), \([a]\neq[0]\). Esiste \([a']\) con \([a]\cdot[a']=[a']\cdot[a]=[1]\) <strong>se e solo se \(\mathrm{MCD}(a,n)=1\)</strong> (negli appunti: "ggT", dal tedesco).</p>
+    <p><em>Dimostrazione:</em> \(\mathrm{MCD}(a,n)=1\iff\exists s,t: as+nt=1\iff[a][s]+[n][t]=[1]\iff[a][s]=[1]\) (perché \([n]=[0]\)), cioè \([a]^{-1}=[s]\).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Teorema 1.93 (Piccolo teorema di Fermat)<span class="imp" data-imp="avanzato">avanzato</span></div>
+    <p>Se \(p\) è primo, \(a^p\equiv a\bmod p\) per ogni \(a\in\mathbb{Z}\) (non dimostrato: corollario del teorema di Lagrange). Es.: \(2^7=128=18\cdot 7+2\equiv 2\bmod 7\).</p>
+  </div>
+  <div class="box box--method"><div class="tag">Metodo · calcolare l'inverso di \([a]_n\)</div>
+    <ol>
+      <li>Calcola \(\mathrm{MCD}(a,n)\) con l'algoritmo euclideo. Se \(\neq 1\), \([a]_n\) <strong>non</strong> è invertibile.</li>
+      <li>Se \(=1\), con l'algoritmo esteso trova \(s,t\) con \(as+nt=1\).</li>
+      <li>Allora \([a]_n^{-1}=[s]_n\) (riduci \(s\) tra \(0\) e \(n-1\)). Per \(n\) piccolo basta cercare nella riga di \([a]\) della tavola moltiplicativa la colonna con \([1]\).</li>
+    </ol>
+    <p><em>Esempio:</em> \([7]_{20}\): \(20=2\cdot 7+6\), \(7=1\cdot 6+1\), quindi \(1=7-6=7-(20-2\cdot 7)=3\cdot 7-20\) e \([7]_{20}^{-1}=[3]_{20}\) (\(21\equiv 1\)).</p>
+  </div>
+  <div class="box box--method"><div class="tag">Metodo · risolvere un sistema lineare in \(\mathbb{Z}/n\mathbb{Z}\) (Foglio 2, es. 2)</div>
+    <ol>
+      <li>Riduci tutti i coefficienti modulo \(n\) (es. \([17]_{12}=[5]_{12}\), \([-10]_{12}=[2]_{12}\)).</li>
+      <li>Cerca un'equazione in cui un'incognita ha coefficiente <strong>invertibile</strong> (coprimo con \(n\)): moltiplica per l'inverso e ricava quell'incognita.</li>
+      <li>Sostituisci nelle altre equazioni.</li>
+      <li>Un'equazione \([c][y]=[d]\) con \([c]\) <em>non</em> invertibile può avere nessuna o più soluzioni: elencale con la riga di \([c]\) nella tavola moltiplicativa.</li>
+      <li>Se \(n=p\) è primo ogni coefficiente non nullo è invertibile e si lavora come in \(\mathbb{R}\).</li>
+    </ol>
+  </div>
+  <div class="box box--warn"><div class="tag">Attenzione · in \(\mathbb{Z}/n\mathbb{Z}\) non si semplifica sempre</div>
+    <ul>
+      <li>Se \(n\) non è primo ci sono <strong>divisori dello zero</strong>: in \(\mathbb{Z}/6\mathbb{Z}\), \([2]\cdot[3]=[0]\) con \([2],[3]\neq[0]\).</li>
+      <li>Da \([a][x]=[a][y]\) si può dedurre \([x]=[y]\) solo se \([a]\) è invertibile: in \(\mathbb{Z}/12\mathbb{Z}\), \([3][1]=[3][5]=[3]\) ma \([1]\neq[5]\).</li>
+      <li>Non si "divide": si moltiplica per l'inverso, che va calcolato.</li>
+    </ul>
+  </div>
+  <div class="box box--note"><div class="tag">Dalla lezione · nota a mano (p. 79)</div>
+    <p>"Manca: \(\mathbb{Z}/n\mathbb{Z}\) è un anello commutativo. \(\mathbb{Z}/p\mathbb{Z}\) è un campo \(\iff\) \(p\) è primo. Si scrive \(\mathbb{F}_p:=\mathbb{Z}/p\mathbb{Z}\) e si chiamano <strong>campi primi</strong>."</p>
+  </div>
+</section>
+
+<section class="sec" id="cap0-gruppi">
+  <div class="num">09</div>
+  <h2>1.6.1–1.6.4 Operazioni interne e gruppi</h2>
+  <p class="lead">Somme e prodotti di numeri, vettori, matrici, funzioni, permutazioni hanno proprietà comuni: associatività, commutatività, elemento neutro, inversi. Il gruppo è la struttura che le astrae. Il prof consiglia di rileggere questa parte alla fine del corso.</p>
+
+  <div class="box box--def"><div class="tag">Definizione 1.94<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Un'<strong>operazione interna</strong> su \(M\) è un'applicazione \(*:M\times M\to M\); si scrive \(a*b:=*(a,b)\).</p>
+    <ol>
+      <li>\(*\) è <strong>associativa</strong> se \(a*(b*c)=(a*b)*c\ \ \forall a,b,c\in M\);</li>
+      <li>\(*\) è <strong>commutativa</strong> se \(a*b=b*a\ \ \forall a,b\in M\);</li>
+      <li>un <strong>elemento neutro</strong> è un \(e\in M\) con \(e*m=m*e=m\ \ \forall m\in M\).</li>
+    </ol>
+  </div>
+  <div class="box box--thm"><div class="tag">Osservazione 1.95<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>L'elemento neutro, se esiste, è unico: se \(e,e'\) sono neutri, \(e'=e*e'=e\).</p>
+  </div>
+  <div class="box box--def"><div class="tag">Definizione 1.96 · utile / essenziale</div>
+    <p>Sia \(e\) neutro. \(m'\) è un <strong>inverso a sinistra</strong> di \(m\) se \(m'*m=e\); \(m''\) è un <strong>inverso a destra</strong> se \(m*m''=e\). Un elemento che è entrambi è l'<strong>elemento inverso</strong> di \(m\).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Osservazione 1.97<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Se \(*\) è associativa con neutro \(e\) e \(m\) ha un inverso sinistro \(m'\) e uno destro \(m''\), allora coincidono; in particolare l'inverso, se esiste, è unico:
+    \[m'=m'*e=m'*(m*m'')=(m'*m)*m''=e*m''=m''.\]
+    Notazione: \(m^{-1}\); se l'operazione è \(+\), si scrive \(-m\).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Osservazione 1.98<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Con \(*\) associativa e neutro \(e\): (i) se \(m\) è invertibile, \((m^{-1})^{-1}=m\); (ii) se \(m,n\) sono invertibili, \(m*n\) lo è e
+    \[(m*n)^{-1}=n^{-1}*m^{-1}.\]</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempi (p. 59–60)</div>
+    <ol>
+      <li>Somma e prodotto su \(\mathbb{N},\mathbb{Z},\mathbb{Q},\mathbb{R},\mathbb{C}\): associative, commutative, neutri 0 e 1. Inversi additivi sempre (tranne in \(\mathbb{N}\)); moltiplicativi in \(\mathbb{Q},\mathbb{R},\mathbb{C}\) per \(m\neq 0\), in \(\mathbb{Z}\) solo per \(\pm1\), in \(\mathbb{N}\) solo per 1.</li>
+      <li>Con \(X^\times:=X\setminus\{0\}\): il prodotto è interno su \(X^\times\), la somma no (\(1+(-1)\notin\mathbb{Z}^\times\)); su \(\mathbb{N}_{&gt;0}\) la somma è interna.</li>
+      <li>Su \([-2,2]\subset\mathbb{R}\) né \(+\) né \(\cdot\) sono interne (\(2+2=4\), \(2\cdot 2=4\)).</li>
+      <li>Le operazioni modulari su \(\mathbb{Z}/n\mathbb{Z}\) sono interne.</li>
+      <li>(avanzato) \(a\frown b:=a^b\) su \(\mathbb{N}\) non è associativa: \(2^{(3^4)}=2^{81}\approx 2{,}42\cdot 10^{24}\neq 4096=(2^3)^4\); ha neutro a destra (1) ma non a sinistra.</li>
+      <li>(avanzato) Su \(M=\{e,a,b\}\) con tavola \(e*x=x*e=x\), \(x*y=e\) per \(x,y\in\{a,b\}\): \(a\) ha due inversi (\(a\) e \(b\)), quindi \(*\) non può essere associativa. Per esempio \((a*a)*b=e*b=b\neq a=a*e=a*(a*b)\).</li>
+      <li>\(\circ\) su \(\mathrm{Iso}(M)=\{f:M\to M \text{ biiettiva}\}\): associativa, neutro \(\mathrm{id}_M\), inverso \(f^{-1}\).</li>
+      <li>(avanzato) Notazione a frecce di Knuth e numero di Graham: \(3\uparrow\uparrow\uparrow 3\) è una torre di potenze di 3 alta \(3^{3^3}=7\,625\,597\,484\,987\).</li>
+    </ol>
+  </div>
+
+  <div class="box box--def"><div class="tag">Definizione 1.99<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Un <strong>gruppo</strong> è una coppia ordinata \((G,*)\), con \(G\) insieme e \(*\) operazione interna su \(G\), che soddisfa:</p>
+    <ul>
+      <li><strong>Gr 1.</strong> \(*\) è associativa;</li>
+      <li><strong>Gr 2.</strong> esiste un elemento neutro \(e\in G\);</li>
+      <li><strong>Gr 3.</strong> ogni \(g\in G\) ha un elemento inverso \(g^{-1}\in G\).</li>
+    </ul>
+    <p>\((G,*)\) è <strong>abeliano</strong> (o commutativo) se \(*\) è commutativa. Neutro e inversi sono unici (Oss. 1.95, 1.97) e \(G\neq\emptyset\). "Il gruppo \(\mathbb{Z}\)" significa \((\mathbb{Z},+)\).</p>
+  </div>
+  <div class="box box--def"><div class="tag">Definizione 1.100<span class="imp" data-imp="utile">utile</span></div>
+    <p>Un <strong>sottogruppo</strong> di \((G,*)\) è un \(H\subseteq G\) con: <strong>SG 1.</strong> \(h_1*h_2\in H\) per ogni \(h_1,h_2\in H\) (chiusura); <strong>SG 2.</strong> \(e\in H\); <strong>SG 3.</strong> \(h^{-1}\in H\) per ogni \(h\in H\). Si scrive \(H\leqslant G\). Con SG 1 l'operazione indotta \(*|_{H\times H}\) è associativa, e SG 2 + SG 3 equivalgono a "\((H,*|_{H\times H})\) è un gruppo".</p>
+  </div>
+  <div class="box box--def"><div class="tag">Definizioni 1.101 e 1.102<span class="imp" data-imp="utile">utile</span></div>
+    <p>Un <strong>omomorfismo di gruppi</strong> \((G_1,*)\to(G_2,\star)\) è un'applicazione \(\varphi\) con
+    \[\varphi(g*g')=\varphi(g)\star\varphi(g')\quad\forall g,g'\in G_1.\]
+    È un <strong>isomorfismo</strong> se esiste un omomorfismo \(\varphi^{-1}:G_2\to G_1\) con \(\varphi\circ\varphi^{-1}=\mathrm{id}_{G_2}\) e \(\varphi^{-1}\circ\varphi=\mathrm{id}_{G_1}\); allora \(G_1\simeq G_2\) (isomorfi). (Per i gruppi un omomorfismo biiettivo è automaticamente un isomorfismo, Lemma 1.108; per altre strutture, es. spazi topologici, no.)</p>
+  </div>
+
+  <h3>Esempi importanti di gruppi (1.6.3)</h3>
+  <div class="box box--ex"><div class="tag">Esempi · essenziale (1–5), utile (6–8), avanzato (9)</div>
+    <ol>
+      <li>\((\mathbb{N},+)\) <strong>non è un gruppo</strong>: se \(n&gt;0\), \(\nexists\,a\in\mathbb{N}\) con \(n+a=0\). La sottrazione non è un'operazione algebrica "buona" (non associativa): \(a-b:=a+(-b)\).</li>
+      <li>\((\mathbb{Z},+)\), \((\mathbb{Q},+)\), \((\mathbb{R},+)\), \((\mathbb{C},+)\) sono gruppi abeliani (neutro 0, inverso \(-a\)).</li>
+      <li>\((\mathbb{Z},\cdot)\), \((\mathbb{Q},\cdot)\), \((\mathbb{R},\cdot)\), \((\mathbb{C},\cdot)\) <strong>non sono gruppi</strong>: 0 non è invertibile.</li>
+      <li>\((\mathbb{Q}^\times,\cdot)\), \((\mathbb{R}^\times,\cdot)\), \((\mathbb{C}^\times,\cdot)\) sono gruppi (si toglie lo zero).</li>
+      <li>\((\mathbb{Z}\setminus\{0\},\cdot)\) <strong>non è un gruppo</strong>: gli unici invertibili sono \(\pm1\) (2 non è invertibile <em>in \(\mathbb{Z}\)</em>).</li>
+      <li>\((\mathbb{Z}/n\mathbb{Z},+)\) è un gruppo per ogni \(n\). Gli invertibili per il prodotto formano il gruppo \(U(\mathbb{Z}/n\mathbb{Z})=\{[a]_n:\mathrm{MCD}(a,n)=1\}\); per \(p\) primo \((\mathbb{Z}/p\mathbb{Z}\setminus\{[0]_p\},\cdot)\) è un gruppo.</li>
+      <li>\(\mathrm{Sym}(M)=\{f:M\to M \text{ biiettiva}\}\) con la composizione (associativa, neutro \(\mathrm{id}_M\), composizione e inverse di biiezioni sono biiezioni). Per \(M=\{1,\dots,n\}\) si ottiene il gruppo simmetrico (Definizione 1.103, sotto).</li>
+      <li>\(\mathcal F_{\mathbb{R}}(M)=\{f:M\to\mathbb{R}\}\) con \((f+g)(m):=f(m)+g(m)\): neutro la funzione nulla, inverso \((-f)(m)=-f(m)\). (Anticipa gli spazi vettoriali di funzioni.)</li>
+      <li>Il gruppo dei quaternioni \(\mathcal Q=\{\pm1,\pm i,\pm j,\pm k\}\) con \(i^2=j^2=k^2=-1\), \(ijk=-1\): non commutativo (\(ij=-ji\)); si ricava \(ij=k\).</li>
+    </ol>
+    <p>Esempi geometrici (\(\mathrm{GL}_n\), \(\mathrm{SL}_n\), \(O(n)\), \(SO(n)\), \(\mathrm{AGL}_n\)) arriveranno più avanti nel corso.</p>
+  </div>
+  <div class="box box--def"><div class="tag">Definizione 1.103<span class="imp" data-imp="utile">utile</span></div>
+    <p>Il <strong>gruppo simmetrico</strong> \(S_n\) è \(\mathrm{Sym}(\{1,\dots,n\})\), l'insieme di tutte le biiezioni \(\sigma:\{1,\dots,n\}\to\{1,\dots,n\}\) con la composizione. Un elemento \(\sigma\in S_n\) si chiama <strong>permutazione</strong> e si scrive
+    \[\sigma=\begin{pmatrix}1&amp;2&amp;\dots&amp;n\\ \sigma(1)&amp;\sigma(2)&amp;\dots&amp;\sigma(n)\end{pmatrix}.\]</p>
+  </div>
+
+  <h3>Proprietà iniziali dei gruppi (1.6.4)</h3>
+  <p>La <strong>tavola dell'operazione</strong> di un gruppo finito ha \(g*h\) nella riga \(g\) e colonna \(h\). Esempio \(\mathbb{Z}/4\mathbb{Z}\) con \(+\):</p>
+  <div class="tablewrap"><table><thead><tr><th>+</th><th>0</th><th>1</th><th>2</th><th>3</th></tr></thead>
+  <tbody><tr><th>0</th><td>0</td><td>1</td><td>2</td><td>3</td></tr><tr><th>1</th><td>1</td><td>2</td><td>3</td><td>0</td></tr><tr><th>2</th><td>2</td><td>3</td><td>0</td><td>1</td></tr><tr><th>3</th><td>3</td><td>0</td><td>1</td><td>2</td></tr></tbody></table></div>
+  <p>"Regola del Sudoku": ogni elemento compare esattamente una volta in ogni riga e colonna; l'inverso di \(g\) è la colonna dove compare \(e\) nella riga \(g\); commutativo \(\iff\) tavola simmetrica rispetto alla diagonale; l'associatività non si legge dalla tavola.</p>
+  <div class="box box--thm"><div class="tag">Lemma 1.104 (regole di cancellazione)<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>In un gruppo \((G,*)\): \(g_1*g_2=g_1*g_3\Rightarrow g_2=g_3\) e \(g_1*g_3=g_2*g_3\Rightarrow g_1=g_2\). (Si moltiplica a sinistra per \(g_1^{-1}\), o a destra per \(g_3^{-1}\), e si usa l'associatività.)</p>
+  </div>
+  <div class="box box--note"><div class="tag">Notazione (p. 65)<span class="imp" data-imp="utile">utile</span></div>
+    <p>Notazione moltiplicativa: \(gh:=g\cdot h\), neutro \(1_G\), inverso \(g^{-1}\), \(g^n=g\cdots g\), \(g^{-n}=g^{-1}\cdots g^{-1}\), \(g^0=1_G\); non necessariamente \(gh=hg\). Notazione additiva \(+\): <em>per convenzione commutativa</em>, neutro \(0_G\), inverso \(-g\), \(ng=g+\dots+g\). Solo somme e prodotti <em>finiti</em> sono definiti. Oss. 1.105: \(g^a g^b=g^{a+b}\) per \(a,b\in\mathbb{Z}\), quindi \((g^n)^{-1}=g^{-n}\).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Teorema 1.107 (criterio per sottogruppi)<span class="imp" data-imp="utile">utile</span></div>
+    <p>\(H\subseteq G\) è un sottogruppo se e solo se \(H\neq\emptyset\) e
+    \[\forall a,b\in H\ \Rightarrow\ ab^{-1}\in H.\]
+    <em>Idea:</em> con \(a=b=h\) si ottiene \(e\in H\); con \(a=e\), \(b=h\) si ottiene \(h^{-1}\in H\); con \(b=h_2^{-1}\) si ottiene \(h_1h_2\in H\).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Lemma 1.108<span class="imp" data-imp="utile">utile</span></div>
+    <p>Sia \(\varphi:G_1\to G_2\) un omomorfismo di gruppi. (i) \(\varphi(e_1)=e_2\); (ii) \(\varphi(g^{-1})=\varphi(g)^{-1}\); (iii) se \(\varphi\) è biiettivo, \(\varphi^{-1}\) è un omomorfismo.</p>
+    <p><em>Idea di (i):</em> \(\varphi(g)\star\varphi(e_1)=\varphi(g*e_1)=\varphi(g)=\varphi(g)\star e_2\) e si cancella.</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Teoremi 1.109 e 1.110<span class="imp" data-imp="avanzato">avanzato</span></div>
+    <p>Ogni sottogruppo di \((\mathbb{Z},+)\) è della forma \(n\mathbb{Z}=\{nz:z\in\mathbb{Z}\}\) per un \(n\in\mathbb{N}\) (con \(n\) = minimo elemento positivo, via divisione con resto). Ogni omomorfismo \(\varphi:\mathbb{Z}\to\mathbb{Z}\) è \(\varphi(z)=a\cdot z\) con \(a=\varphi(1)\).</p>
+  </div>
+  <div class="box box--method"><div class="tag">Metodo · verificare che un insieme con un'operazione è un gruppo (Foglio 2, es. 6)</div>
+    <ol>
+      <li><strong>Chiusura:</strong> l'operazione di due elementi dell'insieme sta ancora nell'insieme.</li>
+      <li><strong>Associatività:</strong> se l'insieme è contenuto in una struttura già associativa (matrici, numeri) è ereditata e non va dimostrata.</li>
+      <li><strong>Neutro:</strong> l'elemento neutro (es. \(I_2\), 0, 1) appartiene all'insieme.</li>
+      <li><strong>Inversi:</strong> ogni elemento è invertibile e l'inverso <em>sta nell'insieme</em>.</li>
+      <li>Se richiesto abeliano: verifica \(ab=ba\) per ogni coppia. In alternativa ai punti 1, 3, 4 usa il criterio \(H\neq\emptyset\), \(ab^{-1}\in H\) (Teor. 1.107).</li>
+    </ol>
+  </div>
+  <div class="box box--warn"><div class="tag">Attenzione · errori tipici sui gruppi</div>
+    <ul>
+      <li>Dimenticare di togliere lo 0 quando si parla di gruppi moltiplicativi; ma togliere lo 0 non basta sempre (\(\mathbb{Z}\setminus\{0\}\), \(\mathbb{Z}/n\mathbb{Z}\setminus\{[0]\}\) con \(n\) non primo).</li>
+      <li>L'invertibilità si intende <em>nell'insieme dato</em>: \(2\) è invertibile in \(\mathbb{Q}\) ma non in \(\mathbb{Z}\).</li>
+      <li>\((ab)^{-1}=b^{-1}a^{-1}\), non \(a^{-1}b^{-1}\) (conta in gruppi non abeliani, es. matrici e permutazioni).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="cap0-simmetrico">
+  <div class="num">10</div>
+  <h2>1.6.5 Il gruppo simmetrico \(S_n\)</h2>
+  <p class="lead">Le permutazioni torneranno con il determinante (formula con il segno). Essenziali: \(\#S_n=n!\), il segno \(\mathrm{sgn}\) e le inversioni; la teoria dei cicli è avanzata.</p>
+
+  <div class="box box--thm"><div class="tag">Cardinalità<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>\(\#S_n=n!=1\cdot 2\cdots n\). \(S_1\) e \(S_2\) sono abeliani; \(S_3\) ha \(3!=6\) elementi e non è commutativo.</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio 1.106 · il gruppo \(S_3\)</div>
+    <p>\(e=\begin{pmatrix}1&amp;2&amp;3\\1&amp;2&amp;3\end{pmatrix}\), \(\sigma_1=\begin{pmatrix}1&amp;2&amp;3\\2&amp;1&amp;3\end{pmatrix}\), \(\sigma_2=\begin{pmatrix}1&amp;2&amp;3\\3&amp;2&amp;1\end{pmatrix}\), \(\sigma_3=\begin{pmatrix}1&amp;2&amp;3\\1&amp;3&amp;2\end{pmatrix}\), \(\sigma_4=\begin{pmatrix}1&amp;2&amp;3\\2&amp;3&amp;1\end{pmatrix}\), \(\sigma_5=\begin{pmatrix}1&amp;2&amp;3\\3&amp;1&amp;2\end{pmatrix}\).</p>
+    <p>\(\sigma_1^2=\sigma_2^2=\sigma_3^2=\sigma_4\sigma_5=e\); non commutativo perché \(\sigma_1\sigma_2=\sigma_5\neq\sigma_4=\sigma_2\sigma_1\). Tavola (\(\sigma\tau=\sigma\circ\tau\): si applica prima \(\tau\); riga \(\cdot\) colonna, ricontrollata):</p>
+    <div class="tablewrap"><table><thead><tr><th>\(\circ\)</th><th>\(e\)</th><th>\(\sigma_1\)</th><th>\(\sigma_2\)</th><th>\(\sigma_3\)</th><th>\(\sigma_4\)</th><th>\(\sigma_5\)</th></tr></thead>
+    <tbody>
+      <tr><th>\(e\)</th><td>\(e\)</td><td>\(\sigma_1\)</td><td>\(\sigma_2\)</td><td>\(\sigma_3\)</td><td>\(\sigma_4\)</td><td>\(\sigma_5\)</td></tr>
+      <tr><th>\(\sigma_1\)</th><td>\(\sigma_1\)</td><td>\(e\)</td><td>\(\sigma_5\)</td><td>\(\sigma_4\)</td><td>\(\sigma_3\)</td><td>\(\sigma_2\)</td></tr>
+      <tr><th>\(\sigma_2\)</th><td>\(\sigma_2\)</td><td>\(\sigma_4\)</td><td>\(e\)</td><td>\(\sigma_5\)</td><td>\(\sigma_1\)</td><td>\(\sigma_3\)</td></tr>
+      <tr><th>\(\sigma_3\)</th><td>\(\sigma_3\)</td><td>\(\sigma_5\)</td><td>\(\sigma_4\)</td><td>\(e\)</td><td>\(\sigma_2\)</td><td>\(\sigma_1\)</td></tr>
+      <tr><th>\(\sigma_4\)</th><td>\(\sigma_4\)</td><td>\(\sigma_2\)</td><td>\(\sigma_3\)</td><td>\(\sigma_1\)</td><td>\(\sigma_5\)</td><td>\(e\)</td></tr>
+      <tr><th>\(\sigma_5\)</th><td>\(\sigma_5\)</td><td>\(\sigma_3\)</td><td>\(\sigma_1\)</td><td>\(\sigma_2\)</td><td>\(e\)</td><td>\(\sigma_4\)</td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="box box--thm"><div class="tag">Osservazione 1.111<span class="imp" data-imp="molto-avanzato">molto avanzato</span></div>
+    <p>\(S_n\) è commutativo se e solo se \(n\leqslant 2\). (Negli appunti è stampato "\(n\geqslant 2\)": è un refuso, dato che \(S_3\) non è commutativo e \(S_3\) "si immerge" in ogni \(S_n\), \(n\geqslant 4\).)</p>
+  </div>
+
+  <h3>Cicli e orbite · molto avanzato</h3>
+  <div class="box box--def"><div class="tag">\(k\)-cicli, cicli disgiunti, orbite (p. 69–70)</div>
+    <p>Per \(k\in\mathbb{N}_{&gt;1}\), un <strong>\(k\)-ciclo</strong> è una \(\sigma\in S_n\) per cui esistono \(i_1,\dots,i_k\) distinti con \(\sigma(i_j)=i_{j+1}\) (indici modulo \(k\)) e \(\sigma(\ell)=\ell\) per gli altri \(\ell\); si scrive \(\sigma=(i_1\,i_2\,\dots\,i_k)\). I 2-cicli sono le <strong>trasposizioni</strong>. In \(S_3\): \((12),(13),(23)\) e \((123),(132)\). La notazione non è univoca: \((123)=(231)=(312)\), e non dice in quale \(S_n\) si sta. Due cicli sono <strong>disgiunti</strong> se gli insiemi dei loro elementi sono disgiunti. L'<strong>orbita</strong> di \(i\) è \(\mathrm{Orb}_\sigma(i)=\{\sigma^k(i):k\in\mathbb{N}\}\).</p>
+    <p>Oss. 1.112: due orbite coincidono o sono disgiunte (le orbite sono le classi di una relazione di equivalenza). Oss. 1.113: cicli disgiunti commutano.</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Teorema 1.114<span class="imp" data-imp="molto-avanzato">molto avanzato</span></div>
+    <p>Ogni \(\sigma\in S_n\) si scrive in modo unico come prodotto di cicli disgiunti \(\sigma=\gamma_1\cdots\gamma_r\) (un ciclo per ogni orbita con più di un elemento).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Lemma 1.115, Lemma 1.116, Corollario 1.117<span class="imp" data-imp="molto-avanzato">molto avanzato</span></div>
+    <p>1.115: \((i_1\,\dots\,i_k)=(i_1\,i_2)(i_2\,i_3)\cdots(i_{k-1}\,i_k)\) (con \(\sigma\tau=\sigma\circ\tau\)). Es.: \((1\,2\,3)=(1\,2)(2\,3)=(1\,3)(1\,2)\).</p>
+    <p>1.117: ogni permutazione è prodotto di trasposizioni \((1\,2),\dots,(n-1\;n)\), e anche di trasposizioni \((1\,2),\dots,(1\,n)\). Le scritture non sono uniche: \((1\,2\,3)=(1\,2)(2\,3)=(2\,3)(1\,2)(2\,3)(1\,2)=(1\,3)(1\,2)=(1\,2)(1\,3)(1\,2)(1\,3)\) (tutte verificate).</p>
+  </div>
+  <div class="box box--warn"><div class="tag">Attenzione · formula del Lemma 1.116 negli appunti</div>
+    <p>Gli appunti scrivono \((i\,j)=(i\;i{+}1)\cdots(j{-}1\;j)\) e \((i\,j)=(1\,j)(1\;j{-}1)\cdots(1\,i)\). Con la convenzione \(\sigma\tau=\sigma\circ\tau\) questi prodotti danno <em>cicli</em> e non la trasposizione (es. in \(S_5\): \((2\,3)(3\,4)(4\,5)=(2\,3\,4\,5)\neq(2\,5)\), verificato al calcolatore). Formule corrette (verificate), che dimostrano lo stesso Corollario 1.117:</p>
+    \[(i\,j)=(i\;i{+}1)(i{+}1\;i{+}2)\cdots(j{-}2\;j{-}1)\,(j{-}1\;j)\,(j{-}2\;j{-}1)\cdots(i\;i{+}1),\qquad (i\,j)=(1\,i)(1\,j)(1\,i)\ \ (i\neq 1).\]
+  </div>
+
+  <h3>Il segno di una permutazione · essenziale</h3>
+  <p>Una permutazione è <strong>pari</strong> se si scrive come prodotto di un numero pari di trasposizioni, <strong>dispari</strong> altrimenti. Che la parità non dipenda dalla scrittura si dimostra col segno.</p>
+  <div class="box box--def"><div class="tag">Definizione 1.118<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Il <strong>segno</strong> (signum, segnatura, parità) di \(\sigma\in S_n\) è
+    \[\mathrm{sgn}(\sigma)=\prod_{1\leqslant i&lt;j\leqslant n}\frac{\sigma(j)-\sigma(i)}{j-i}.\]</p>
+  </div>
+  <div class="box box--def"><div class="tag">Definizione 1.119<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Un'<strong>inversione</strong> di \(\sigma\) è una coppia \((i,j)\) con \(i&lt;j\) e \(\sigma(i)&gt;\sigma(j)\); \(\mathrm{inv}(\sigma)=\{(i,j)\mid 1\leqslant i&lt;j\leqslant n,\ \sigma(i)&gt;\sigma(j)\}\). Vale
+    \[\mathrm{sgn}(\sigma)=(-1)^{|\mathrm{inv}(\sigma)|}.\]</p>
+  </div>
+  <div class="box box--note"><div class="tag">Dalla lezione · nota a mano (p. 73)</div>
+    <p>Accanto all'esercizio "dimostrare che \(\mathrm{sgn}(\sigma)=(-1)^{|\mathrm{inv}(\sigma)|}\)" il prof ha scritto: "<strong>Prendere come noto.</strong>" (Una dimostrazione elegante è in [Fis09, p. 288].)</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Oss. 1.120, Teorema 1.121, Corollario 1.122, Oss. 1.123 · essenziale (enunciati)</div>
+    <ul>
+      <li>\(\mathrm{sgn}(\mathrm{id})=1\).</li>
+      <li>\(\mathrm{sgn}:S_n\to\{-1,1\}\) è un omomorfismo di gruppi: \(\mathrm{sgn}(\sigma\pi)=\mathrm{sgn}(\sigma)\,\mathrm{sgn}(\pi)\) (dimostrazione: si moltiplica e divide per \(\pi(j)-\pi(i)\)).</li>
+      <li>\(\mathrm{sgn}(\sigma)=\mathrm{sgn}(\sigma^{-1})\).</li>
+      <li>Ogni trasposizione ha segno \(-1\) (\((1\,2)\) ha una sola inversione; poi \((i\,j)=(1\,i)(2\,j)(1\,2)(2\,j)(1\,i)\)).</li>
+    </ul>
+  </div>
+  <div class="box box--thm"><div class="tag">Corollario 1.124<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>(a) Se \(\sigma\) è prodotto di \(r\) trasposizioni, \(\mathrm{sgn}(\sigma)=(-1)^r\). (b) Se \(\sigma=\tau_1\cdots\tau_r=\tau'_1\cdots\tau'_s\) (trasposizioni), allora \(r\equiv s\bmod 2\). (c) \(A_n=\{\sigma\in S_n\mid\mathrm{sgn}(\sigma)=1\}=\ker\mathrm{sgn}\) è un sottogruppo, il <strong>sottogruppo alterno</strong>.</p>
+    <p>Oss. 1.125 (avanzato): \(S_n=A_n\sqcup\tau A_n\) per ogni trasposizione \(\tau\); \([S_n:A_n]=2\).</p>
+  </div>
+  <div class="box box--method"><div class="tag">Metodo · cicli e segno di una permutazione</div>
+    <ol>
+      <li><strong>Cicli:</strong> parti dal più piccolo \(i\) non ancora usato e segui \(i\mapsto\sigma(i)\mapsto\sigma^2(i)\mapsto\dots\) finché torni a \(i\): è un ciclo. Ripeti con il prossimo elemento non usato. I punti fissi si omettono.</li>
+      <li><strong>Segno con i cicli:</strong> un \(k\)-ciclo è prodotto di \(k-1\) trasposizioni, quindi ha segno \((-1)^{k-1}\); il segno di \(\sigma\) è il prodotto dei segni dei cicli.</li>
+      <li><strong>Segno con le inversioni:</strong> conta le coppie \(i&lt;j\) con \(\sigma(i)&gt;\sigma(j)\) (per ogni posizione, quanti valori più piccoli stanno a destra) e calcola \((-1)^{|\mathrm{inv}|}\).</li>
+    </ol>
+    <p><em>Esempio (aggiunto, verificato):</em> \(\sigma=\begin{pmatrix}1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7\\3&amp;5&amp;1&amp;2&amp;4&amp;7&amp;6\end{pmatrix}=(1\,3)(2\,5\,4)(6\,7)\). Segno: \((-1)^1(-1)^2(-1)^1=+1\). Inversioni: \(2+3+0+0+0+1=6\), \((-1)^6=+1\). \(\sigma\) è pari.</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Teorema 1.126 (Cayley)<span class="imp" data-imp="molto-avanzato">molto avanzato</span></div>
+    <p>Ogni gruppo finito \(G\) è isomorfo a un sottogruppo di \(S_n\) per qualche \(n\) (\(g\mapsto m_g\), \(m_g(x)=g\cdot x\)). Esempio 1.127: \(\mathbb{Z}/3\mathbb{Z}\) corrisponde a \(\{\mathrm{id},\gamma,\gamma^2\}\subseteq S_3\), \(\gamma=(1\,2\,3)\).</p>
+  </div>
+</section>
+
+<section class="sec" id="cap0-anelli-campi">
+  <div class="num">11</div>
+  <h2>1.6.6–1.6.8 Anelli, campi e numeri complessi</h2>
+  <p class="lead">I campi sono gli "scalari" ammessi per gli spazi vettoriali: tutto ciò che si fa prima degli spazi euclidei vale su un campo \(\mathbb{K}\) arbitrario (\(\mathbb{Q}\), \(\mathbb{R}\), \(\mathbb{C}\), \(\mathbb{F}_p\)), non solo su \(\mathbb{R}\).</p>
+
+  <div class="box box--def"><div class="tag">Definizione 1.128<span class="imp" data-imp="utile">utile</span></div>
+    <p>Un <strong>anello</strong> è una terna \((R,+,\cdot)\) con due operazioni interne (addizione e moltiplicazione) tali che:</p>
+    <ul>
+      <li><strong>(R1)</strong> \((R,+)\) è un gruppo abeliano;</li>
+      <li><strong>(R2)</strong> la moltiplicazione è associativa e ha un elemento neutro;</li>
+      <li><strong>(R3)</strong> leggi distributive: \((a+b)\cdot c=a\cdot c+b\cdot c\) e \(a\cdot(b+c)=a\cdot b+a\cdot c\) per ogni \(a,b,c\).</li>
+    </ul>
+    <p>Un <strong>anello commutativo</strong> ha moltiplicazione commutativa. Notazione: \(0_R\) (o 0) neutro additivo, \(1_R\) (o 1) neutro moltiplicativo. <strong>Per noi un anello è sempre commutativo</strong> salvo diversa indicazione ("unitario" = con 1).</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Osservazione 1.129<span class="imp" data-imp="utile">utile</span></div>
+    <p>In ogni anello: \(0\cdot a=0\); \(-a=(-1)\cdot a\); \((-a)\cdot b=-(a\cdot b)\). Per la prima: \(0\cdot a=(0+0)\cdot a=0\cdot a+0\cdot a\) e si cancella in \((R,+)\).</p>
+  </div>
+  <div class="box box--def"><div class="tag">Definizione 1.130<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Un <strong>campo</strong> è una terna \((\mathbb{K},+,\cdot)\) con due operazioni interne tali che:</p>
+    <ul>
+      <li><strong>(K1)</strong> \((\mathbb{K},+)\) è un gruppo abeliano, con elemento neutro 0;</li>
+      <li><strong>(K2)</strong> \((\mathbb{K}\setminus\{0\},\cdot)\) è un gruppo abeliano;</li>
+      <li><strong>(K3)</strong> leggi distributive: \((a+b)c=ac+bc\) e \(a(b+c)=ab+ac\).</li>
+    </ul>
+    <p>(Molto avanzato) Senza la commutatività del prodotto si parla di <strong>corpo non commutativo</strong>; alcuni autori chiamano "corpo" ciò che qui è un campo.</p>
+  </div>
+  <div class="box box--thm"><div class="tag">Osservazione 1.131<span class="imp" data-imp="essenziale">essenziale</span></div>
+    <p>Un campo è un anello commutativo in cui ogni elemento <strong>non nullo</strong> (\(a\neq 0\)) è invertibile rispetto alla moltiplicazione.</p>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempi 1.6.8 · essenziale (1–4, 7, 8), utile (5, 6)</div>
+    <ol>
+      <li><strong>Anello nullo</strong> \(R=\{0\}\): qui \(0=1\), ed è l'unico caso (se \(0=1\), \(a=1\cdot a=0\cdot a=0\)).</li>
+      <li>L'anello nullo <strong>non è un campo</strong>: \(\mathbb{K}\setminus\{0\}=\emptyset\) non può essere un gruppo (un gruppo contiene il neutro).</li>
+      <li>\(\mathbb{Z}\) è un anello (non un campo); \(\mathbb{Q}\) e \(\mathbb{R}\) sono campi.</li>
+      <li>\(\mathbb{C}=\{a+ib:a,b\in\mathbb{R}\}\) con \(i^2=-1\):
+      \[(a+ib)+(c+id)=(a+c)+i(b+d),\qquad (a+ib)(c+id)=(ac-bd)+i(ad+bc).\]</li>
+      <li>\(\mathbb{Z}[i]=\{a+ib:a,b\in\mathbb{Z}\}\) (interi di Gauss) è un anello: somma e prodotto sono chiusi, \(0,1\in\mathbb{Z}[i]\), \(-z\in\mathbb{Z}[i]\).</li>
+      <li>\(\mathbb{Q}[\sqrt2]=\{a+b\sqrt2: a,b\in\mathbb{Q}\}\) è un campo: per \(a+b\sqrt2\neq 0\)
+      \[\frac{1}{a+b\sqrt2}=\frac{a-b\sqrt2}{a^2-2b^2}=\frac{a}{a^2-2b^2}+\frac{-b}{a^2-2b^2}\sqrt2,\]
+      e \(a^2-2b^2\neq 0\) (altrimenti, se \(b\neq 0\), \(2=a^2/b^2\) darebbe \(\sqrt2\in\mathbb{Q}\); se \(b=0\), \(a=0\)).</li>
+      <li><strong>Polinomi</strong> \(R[x]\): \(f=\sum_{i\in\mathbb{N}}a_ix^i\) con \(a_i=0\) per \(i\) grande (\(\mathbb{N}\)-uple quasi tutte nulle). \(f=g\iff a_i=b_i\ \forall i\). <strong>Grado</strong>: \(\deg f:=\max\{k: a_k\neq 0\}\), \(a_{\deg f}\) è il <strong>coefficiente direttore</strong>; per convenzione il polinomio nullo ha "qualunque grado". Somma \(\sum(a_i+b_i)x^i\); prodotto \(fg=\sum_k p_kx^k\) con \(p_k=\sum_{i+j=k}a_ib_j\). <em>Teorema 1.132:</em> \(R[x]\) è un anello e \(R\) ne è un sottoanello (polinomi di grado 0).</li>
+      <li><strong>Matrici \(2\times 2\)</strong>: \(\mathrm{Mat}_{2\times 2}(\mathbb{R})\) con
+      \[\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}+\begin{pmatrix}p&amp;q\\r&amp;s\end{pmatrix}=\begin{pmatrix}a+p&amp;b+q\\c+r&amp;d+s\end{pmatrix},\quad \begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}\begin{pmatrix}p&amp;q\\r&amp;s\end{pmatrix}=\begin{pmatrix}ap+br&amp;aq+bs\\cp+dr&amp;cq+ds\end{pmatrix}.\]
+      <em>Teorema 1.133:</em> \((\mathrm{Mat}_{2\times2}(\mathbb{R}),+,\cdot)\) è un anello <strong>non commutativo</strong> con \(0=\begin{pmatrix}0&amp;0\\0&amp;0\end{pmatrix}\), \(-A=\begin{pmatrix}-a&amp;-b\\-c&amp;-d\end{pmatrix}\), \(1=\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}\).</li>
+    </ol>
+  </div>
+  <div class="box box--note"><div class="tag">Dalla lezione · nota a mano (p. 79)</div>
+    <p>\(\mathbb{Z}/n\mathbb{Z}\) è un anello commutativo; \(\mathbb{Z}/n\mathbb{Z}\) è un campo \(\iff\) \(n\) è primo. Si scrive \(\mathbb{F}_p:=\mathbb{Z}/p\mathbb{Z}\) (<strong>campi primi</strong>). <em>Perché:</em> se \(n=p\) primo ogni \([a]\neq[0]\) ha \(\mathrm{MCD}(a,p)=1\) ed è invertibile (Teor. 1.92); se \(n=ab\) con \(1&lt;a,b&lt;n\), \([a][b]=[0]\) e \([a]\) non può essere invertibile.</p>
+  </div>
+
+  <h3>Calcolare con i numeri complessi</h3>
+  <div class="box box--method"><div class="tag">Metodo · forma \(a+ib\) (integrazione per il Foglio 2, es. 4)</div>
+    <ol>
+      <li>Somma e prodotto: si svolgono i conti come per i polinomi in \(i\) e si sostituisce \(i^2=-1\).</li>
+      <li>Coniugato e modulo (simboli della Tabella 1): per \(z=a+ib\), \(\bar z=a-ib\), \(z\bar z=a^2+b^2=|z|^2\).</li>
+      <li>Quoziente: si moltiplica numeratore e denominatore per il coniugato del denominatore:
+      \[\frac{1}{a+ib}=\frac{a-ib}{a^2+b^2}\quad(a+ib\neq 0).\]
+      (Stesso trucco di \(\mathbb{Q}[\sqrt2]\).)</li>
+      <li>Radici quadrate: si pone \(z=a+ib\), si sviluppa \(z^2\) e si eguagliano parte reale e immaginaria.</li>
+    </ol>
+  </div>
+  <div class="box box--warn"><div class="tag">Attenzione · anello o campo?</div>
+    <ul>
+      <li>Per un campo serve che <em>ogni</em> elemento non nullo sia invertibile <em>nell'insieme stesso</em>: \(\mathbb{Z}\), \(\mathbb{Z}[i]\), \(\mathbb{R}[x]\), \(\mathbb{Z}/6\mathbb{Z}\) sono anelli ma non campi.</li>
+      <li>\(\mathrm{Mat}_{2\times2}(\mathbb{R})\) non è nemmeno commutativo, e ha elementi non nulli non invertibili (es. la matrice con tutti 1, Foglio 2, es. 5b).</li>
+      <li>In un campo \(0\neq 1\) sempre.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec esercizi" id="cap0-esercizi">
+  <div class="num">12</div>
+  <h2>Esercizi</h2>
+  <div class="ex-bar"><button class="chip" data-filter="tutti" aria-pressed="true">Tutti</button><button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button><button class="chip" data-filter="base" aria-pressed="false">Base</button><button class="chip" data-filter="medio" aria-pressed="false">Medio</button><button class="chip toggle-sol" aria-pressed="false">Mostra soluzioni</button><span class="count ex-count"></span></div>
+  <p class="lead">Foglio 1 (settimana 1, 18.9.2026: logica, insiemi, applicazioni; senza soluzioni ufficiali: soluzioni scritte qui e verificate) e Foglio 2 (esercizi integrativi, 25.9.2026: aritmetica modulare e strutture algebriche; <em>con</em> soluzioni ufficiali, riportate e ricontrollate). Il Foglio 2 avverte: "Non sono argomenti d'esame, quindi niente panico se trova i problemi troppo difficili."</p>
+
+  <h3>Foglio 1 · Logica</h3>
+
+  <div class="ex" data-fonte="Foglio 1, es. 1" data-livello="base">
+    <div class="ex-testo"><p>Se 1,5 galline in 1,5 giorni depongono 1,5 uova, quante uova depongono 7 galline in 9 giorni?</p></div>
+    <details class="hint"><summary>Suggerimento</summary><p>Calcola quante uova depone <em>una</em> gallina in <em>un</em> giorno: la produzione è proporzionale sia al numero di galline sia al numero di giorni.</p></details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>1,5 galline in 1,5 giorni: 1,5 uova. Quindi 1,5 galline in 1 giorno depongono \(1{,}5/1{,}5=1\) uovo, e 1 gallina in 1 giorno depone \(1/1{,}5=\tfrac23\) di uovo.</p>
+      <p>7 galline in 9 giorni: \(7\cdot 9\cdot\tfrac23=42\) uova.</p>
+      <p>(La risposta "istintiva" sbagliata è ragionare con una sola proporzione: il numero di uova è proporzionale al <em>prodotto</em> galline \(\times\) giorni.)</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 1, es. 2" data-livello="base">
+    <div class="ex-testo"><p>Siano \(A,B,C\) tre enunciati. Determinare le tabelle di verità, la negazione e la contrapposta di</p>
+      <p>\(\mathcal A\): \(A\Rightarrow(B\Rightarrow C)\); \(\quad\mathcal B\): \((A\Rightarrow B)\Rightarrow C\).</p>
+      <p>Si noterà che le due non sono equivalenti, quindi \(\big[A\Rightarrow(B\Rightarrow C)\big]\not\Leftrightarrow\big[(A\Rightarrow B)\Rightarrow C\big]\): l'operazione "\(\Rightarrow\)" non è associativa e non si dovrebbe scrivere \(A\Rightarrow B\Rightarrow C\). In pratica con questa catena si intende \((A\Rightarrow B)\wedge(B\Rightarrow C)\): è la transitività dell'implicazione, perché \(\big[(A\Rightarrow B)\wedge(B\Rightarrow C)\big]\Rightarrow(A\Rightarrow C)\) è una tautologia.</p></div>
+    <details class="hint"><summary>Suggerimento</summary><p>Calcola prima la colonna di \(B\Rightarrow C\) (risp. \(A\Rightarrow B\)); ricorda che \(X\Rightarrow Y\) è falsa solo quando \(X\) è vera e \(Y\) falsa.</p></details>
+    <details class="sol"><summary>Soluzione</summary>
+      <div class="tablewrap"><table><thead><tr><th>\(A\)</th><th>\(B\)</th><th>\(C\)</th><th>\(B\Rightarrow C\)</th><th>\(\mathcal A\): \(A\Rightarrow(B\Rightarrow C)\)</th><th>\(A\Rightarrow B\)</th><th>\(\mathcal B\): \((A\Rightarrow B)\Rightarrow C\)</th></tr></thead>
+      <tbody>
+        <tr><td>v</td><td>v</td><td>v</td><td>v</td><td>v</td><td>v</td><td>v</td></tr>
+        <tr><td>v</td><td>v</td><td>f</td><td>f</td><td>f</td><td>v</td><td>f</td></tr>
+        <tr><td>v</td><td>f</td><td>v</td><td>v</td><td>v</td><td>f</td><td>v</td></tr>
+        <tr><td>v</td><td>f</td><td>f</td><td>v</td><td>v</td><td>f</td><td>v</td></tr>
+        <tr><td>f</td><td>v</td><td>v</td><td>v</td><td>v</td><td>v</td><td>v</td></tr>
+        <tr><td>f</td><td>v</td><td>f</td><td>f</td><td>v</td><td>v</td><td>f</td></tr>
+        <tr><td>f</td><td>f</td><td>v</td><td>v</td><td>v</td><td>v</td><td>v</td></tr>
+        <tr><td>f</td><td>f</td><td>f</td><td>v</td><td>v</td><td>v</td><td>f</td></tr>
+      </tbody></table></div>
+      <p>Le colonne di \(\mathcal A\) e \(\mathcal B\) differiscono nelle righe \((f,v,f)\) e \((f,f,f)\): ad esempio con \(A,C\) falsi, \(\mathcal A\) è vero (ipotesi falsa) mentre \(\mathcal B\) è falso (\(A\Rightarrow B\) è vero e \(C\) è falso). Quindi <strong>non sono equivalenti</strong>.</p>
+      <p><strong>\(\mathcal A\)</strong> è falso solo nella riga \((v,v,f)\).</p>
+      <ul>
+        <li>Negazione: \(\neg\mathcal A\Leftrightarrow A\wedge\neg(B\Rightarrow C)\Leftrightarrow A\wedge B\wedge\neg C\).</li>
+        <li>Contrapposta: \(\neg(B\Rightarrow C)\Rightarrow\neg A\), cioè \((B\wedge\neg C)\Rightarrow\neg A\).</li>
+      </ul>
+      <p><strong>\(\mathcal B\)</strong> è falso nelle righe \((v,v,f)\), \((f,v,f)\), \((f,f,f)\).</p>
+      <ul>
+        <li>Negazione: \(\neg\mathcal B\Leftrightarrow(A\Rightarrow B)\wedge\neg C\) (equivalentemente \((\neg A\vee B)\wedge\neg C\)).</li>
+        <li>Contrapposta: \(\neg C\Rightarrow\neg(A\Rightarrow B)\), cioè \(\neg C\Rightarrow(A\wedge\neg B)\).</li>
+      </ul>
+      <p><strong>Transitività:</strong> \(\big[(A\Rightarrow B)\wedge(B\Rightarrow C)\big]\Rightarrow(A\Rightarrow C)\) potrebbe essere falsa solo se \(A\Rightarrow C\) fosse falsa, cioè \(A\) vero e \(C\) falso; ma allora o \(B\) è falso (e \(A\Rightarrow B\) è falsa) o \(B\) è vero (e \(B\Rightarrow C\) è falsa): l'ipotesi è falsa e l'implicazione vera. In tutte le 8 righe risulta vera: è una tautologia.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 1, es. 3" data-livello="base">
+    <div class="ex-testo"><p>Determinare la negazione delle seguenti proposizioni.</p>
+      <ul><li>A: <em>Se splende il sole, allora non piove.</em></li>
+      <li>B: <em>\(P\) è falsa e (\(Q\) oppure \(R\) sono vere).</em></li>
+      <li>C: <em>Per ogni numero naturale \(a\) esiste un numero intero \(b\) tale che, per ogni numero naturale positivo \(c\), vale (\(a&lt;b\) oppure \(a&gt;b+c\)).</em></li></ul></div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>A.</strong> È un'implicazione \(S\Rightarrow\neg P\) (\(S\): splende il sole; \(P\): piove). Negazione: \(S\wedge\neg\neg P=S\wedge P\): "<em>Splende il sole e piove.</em>" (Non "se splende il sole allora piove"!)</p>
+      <p><strong>B.</strong> Simbolicamente \(\neg P\wedge(Q\vee R)\). Per De Morgan:
+      \[\neg\big(\neg P\wedge(Q\vee R)\big)\Leftrightarrow P\vee\neg(Q\vee R)\Leftrightarrow P\vee(\neg Q\wedge\neg R).\]
+      "<em>\(P\) è vera oppure (\(Q\) e \(R\) sono entrambe false).</em>"</p>
+      <p><strong>C.</strong> \(\forall a\in\mathbb{N}\ \exists b\in\mathbb{Z}\ \forall c\in\mathbb{N}_{&gt;0}:\ (a&lt;b\vee a&gt;b+c)\). Si scambiano i quantificatori (stessi insiemi) e si nega la parte finale: \(\neg(a&lt;b\vee a&gt;b+c)\Leftrightarrow a\geqslant b\wedge a\leqslant b+c\).
+      \[\exists a\in\mathbb{N}\ \forall b\in\mathbb{Z}\ \exists c\in\mathbb{N}_{&gt;0}:\ b\leqslant a\leqslant b+c.\]
+      "<em>Esiste un naturale \(a\) tale che per ogni intero \(b\) esiste un naturale positivo \(c\) con \(b\leqslant a\leqslant b+c\).</em>"</p>
+      <p>Osservazione: l'enunciato C è vero (dato \(a\), basta \(b=a+1\): allora \(a&lt;b\) per ogni \(c\)), quindi la sua negazione è falsa (con \(b=a+1\) non vale \(b\leqslant a\)).</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 1, es. 4" data-livello="base">
+    <div class="ex-testo"><p>Si consideri la proposizione vera \(P\): <em>Tutte le potenze del numero naturale 2 sono numeri pari.</em> Si descriva il rapporto tra le seguenti proposizioni false e la proposizione \(P\):</p>
+      <ol><li>6 è un numero pari, quindi 6 è una potenza di 2.</li>
+      <li>6 non è una potenza di 2, quindi 6 non è un numero pari.</li>
+      <li>6 è un numero pari e 6 non è una potenza di 2, quindi \(P\) è falsa.</li></ol></div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>\(P\) è l'implicazione universale \(\forall x\in\mathbb{N}:\ \underbrace{x \text{ è potenza di 2}}_{A(x)}\Rightarrow\underbrace{x \text{ è pari}}_{B(x)}\) (qui "potenze" \(2^n\) con \(n\geqslant 1\)).</p>
+      <ol>
+        <li>"\(x\) pari \(\Rightarrow\) \(x\) potenza di 2" è l'<strong>inversa</strong> (converso) \(B\Rightarrow A\) di \(P\), applicata a \(x=6\). L'inversa non segue da \(P\): infatti per \(x=6\) è falsa.</li>
+        <li>"\(x\) non potenza di 2 \(\Rightarrow\) \(x\) non pari" è l'<strong>inversione</strong> \(\neg A\Rightarrow\neg B\) di \(P\). Anch'essa non segue da \(P\) (è la contrapposta dell'inversa, quindi equivalente all'inversa) e per \(x=6\) è falsa.</li>
+        <li>Qui si usa 6 come "controesempio", ma 6 è un controesempio all'<em>inversa</em>, non a \(P\). La negazione di \(P\) è \(\exists x\): \(x\) potenza di 2 <strong>e</strong> \(x\) non pari; un controesempio a \(P\) dovrebbe essere una potenza di 2 dispari. "6 pari e non potenza di 2" è \(B(6)\wedge\neg A(6)\), compatibile con \(P\) (rende vera l'implicazione \(A(6)\Rightarrow B(6)\), perché l'ipotesi è falsa).</li>
+      </ol>
+      <p>Solo la <strong>contrapposta</strong> "se \(x\) è dispari allora \(x\) non è potenza di 2" è equivalente a \(P\).</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 1, es. 5" data-livello="base">
+    <div class="ex-testo"><p>Se 1,5 galline in 1,5 giorni depongono 1,5 uova, quante uova depongono 7 galline in 9 giorni?</p></div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Il testo è identico all'esercizio 1 (ripetuto nel foglio): \(\tfrac23\) di uovo per gallina al giorno, quindi \(7\cdot 9\cdot\tfrac23=42\) uova.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 1, es. 6" data-livello="medio">
+    <div class="ex-testo"><p>Siano \(A\) e \(B\) due proposizioni e siano \(M\) e \(N\) due insiemi.</p>
+      <ol><li>Si dimostri che "\((A\Rightarrow B)\) o \((B\Rightarrow A)\)" è una tautologia.</li>
+      <li>Si fornisca un esempio tale che \(M\not\subseteq N\) e \(N\not\subseteq M\).</li>
+      <li>Perché dalla verità per ogni \(x\) della proposizione \(\big((x\in M)\Rightarrow(x\in N)\big)\) o \(\big((x\in N)\Rightarrow(x\in M)\big)\) non si può dedurre che, per due insiemi arbitrari, debba valere \(M\subseteq N\) oppure \(N\subseteq M\)?</li>
+      <li>Per \(A\): "\(p\) è un numero primo" e \(B\): "\(p\geqslant 5\)" nessuna delle due implicazioni vale. Perché questo non contraddice il punto 1?</li></ol></div>
+    <details class="sol"><summary>Soluzione</summary>
+      <ol>
+        <li>Se \(B\) è vero, \(A\Rightarrow B\) è vero (conclusione vera). Se \(B\) è falso, \(B\Rightarrow A\) è vero (ipotesi falsa). In ogni caso la disgiunzione è vera. Con la tabella: \(A\Rightarrow B\) è falsa solo per \((v,f)\), e lì \(B\Rightarrow A\) è vera.</li>
+        <li>\(M=\{1\}\), \(N=\{2\}\): \(1\in M\setminus N\) e \(2\in N\setminus M\).</li>
+        <li>Per il punto 1 (con \(A=\)"\(x\in M\)", \(B=\)"\(x\in N\)") vale \(\forall x:\ \big[(x\in M\Rightarrow x\in N)\vee(x\in N\Rightarrow x\in M)\big]\). Invece "\(M\subseteq N\) oppure \(N\subseteq M\)" è \(\big[\forall x:(x\in M\Rightarrow x\in N)\big]\vee\big[\forall x:(x\in N\Rightarrow x\in M)\big]\). Il quantificatore \(\forall\) <strong>non si distribuisce</strong> sulla disgiunzione: per ogni \(x\) vale una delle due implicazioni, ma quale delle due può dipendere da \(x\). Nell'esempio del punto 2, per \(x=1\) vale la seconda (ipotesi \(1\in N\) falsa) ma non la prima; per \(x=2\) vale la prima ma non la seconda.</li>
+        <li>Per ogni <em>singolo</em> \(p\) una delle due implicazioni è vera (es. \(p=2\): \(B\) falsa, quindi \(B\Rightarrow A\) vera; \(p=6\): \(A\) falsa, quindi \(A\Rightarrow B\) vera). "Nessuna delle due vale" significa che sono false le affermazioni <em>universali</em> \(\forall p\,(A\Rightarrow B)\) (controesempio \(p=2\)) e \(\forall p\,(B\Rightarrow A)\) (controesempio \(p=6\)). È la stessa situazione del punto 3.</li>
+      </ol>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <h3>Foglio 1 · Insiemi</h3>
+
+  <div class="ex" data-fonte="Foglio 1, es. 7" data-livello="base">
+    <div class="ex-testo"><p>Determinare i seguenti insiemi.</p>
+      <ol><li>\(\{x\in\mathbb{Z}: x^2-5x+6=0\}\).</li>
+      <li>\(\{x\in\mathbb{Z}: x&gt;0 \text{ e } 2x^2-x-3=0\}\).</li>
+      <li>\(\{x\in\mathbb{Q}: x^2-(1+\sqrt2)x+\sqrt2=0\}\).</li>
+      <li>\(\{x\in\mathbb{Q}: |x-1|+|x-2|=3\}\).</li>
+      <li>\(\{x\in\mathbb{R}: x^3-2x^2-5x+6=0\}\).</li>
+      <li>\(\{x\in\mathbb{R}: 3x^3+x^3+3x+1=0\}\).</li></ol></div>
+    <details class="hint"><summary>Suggerimento</summary><p>Trova prima tutte le soluzioni reali, poi tieni solo quelle che stanno nell'insieme ambiente indicato (\(\mathbb{Z}\), \(\mathbb{Q}\), \(\mathbb{R}\)) e che soddisfano le altre condizioni.</p></details>
+    <details class="sol"><summary>Soluzione</summary>
+      <ol>
+        <li>\(x^2-5x+6=(x-2)(x-3)\): soluzioni \(2,3\in\mathbb{Z}\). Insieme \(\{2,3\}\).</li>
+        <li>\(2x^2-x-3=(2x-3)(x+1)\): soluzioni \(\tfrac32\) e \(-1\). \(\tfrac32\notin\mathbb{Z}\) e \(-1\not&gt;0\): l'insieme è \(\emptyset\).</li>
+        <li>\(x^2-(1+\sqrt2)x+\sqrt2=(x-1)(x-\sqrt2)\) (somma delle radici \(1+\sqrt2\), prodotto \(\sqrt2\)). \(\sqrt2\notin\mathbb{Q}\): l'insieme è \(\{1\}\).</li>
+        <li>Casi: se \(x\geqslant 2\): \((x-1)+(x-2)=2x-3=3\Rightarrow x=3\) ✓. Se \(1\leqslant x&lt;2\): \((x-1)+(2-x)=1\neq 3\), nessuna soluzione. Se \(x&lt;1\): \((1-x)+(2-x)=3-2x=3\Rightarrow x=0\) ✓. Insieme \(\{0,3\}\).</li>
+        <li>\(x=1\) è radice (\(1-2-5+6=0\)); con Ruffini \(x^3-2x^2-5x+6=(x-1)(x^2-x-6)=(x-1)(x+2)(x-3)\). Insieme \(\{-2,1,3\}\).</li>
+        <li><em>Come scritto</em>, l'equazione è \(4x^3+3x+1=0\). Il polinomio \(p(x)=4x^3+3x+1\) ha \(p'(x)=12x^2+3&gt;0\), quindi è strettamente crescente e ha <strong>un'unica</strong> radice reale. Non ci sono radici razionali (candidati \(\pm1,\pm\tfrac12,\pm\tfrac14\): \(p(-\tfrac12)=-1\), \(p(-\tfrac14)=\tfrac3{16}\), …); la radice sta in \((-\tfrac12,-\tfrac14)\) e con la formula di Cardano (per \(x^3+\tfrac34x+\tfrac14=0\)) vale
+        \[x=\frac{\sqrt[3]{\sqrt2-1}-\sqrt[3]{\sqrt2+1}}{2}\approx-0{,}298.\]
+        Insieme \(\left\{\tfrac{\sqrt[3]{\sqrt2-1}-\sqrt[3]{\sqrt2+1}}{2}\right\}\).<br>
+        <em>Probabile refuso:</em> se il testo fosse \(3x^3+x^2+3x+1=0\) si avrebbe \(x^2(3x+1)+(3x+1)=(3x+1)(x^2+1)\), e poiché \(x^2+1&gt;0\) l'insieme sarebbe \(\{-\tfrac13\}\).</li>
+      </ol>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 1, es. 8" data-livello="base">
+    <div class="ex-testo"><p>Determinare due insiemi \(X\) e \(Y\) tali che le seguenti quattro condizioni siano soddisfatte simultaneamente.</p>
+      <p>(a) \(X\cup Y=\{1,2,3,4,5,6,7,8,9\}\), (b) \(X\cap Y=\{4,6,9\}\), (c) \(X\cup\{3,4,5\}=\{1,3,4,5,6,8,9\}\), (d) \(Y\cup\{2,4,8\}=\{2,4,5,6,7,8,9\}\).</p></div>
+    <details class="hint"><summary>Suggerimento</summary><p>Da (c): \(X\subseteq\{1,3,4,5,6,8,9\}\) e \(X\supseteq\{1,6,8,9\}\). Da (d): analogo per \(Y\). Poi decidi elemento per elemento.</p></details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Da (c): \(X\subseteq\{1,3,4,5,6,8,9\}\) e \(\{1,6,8,9\}\subseteq X\) (gli elementi del risultato che non stanno in \(\{3,4,5\}\)). Da (d): \(Y\subseteq\{2,4,5,6,7,8,9\}\) e \(\{5,6,7,9\}\subseteq Y\). Da (b): \(4,6,9\in X\cap Y\). Ora elemento per elemento, usando (a) e (b):</p>
+      <ul>
+        <li>1: \(1\in X\); \(1\notin Y\) (non sta nel limite superiore di \(Y\)).</li>
+        <li>2: \(2\notin X\) (limite di \(X\)), ma per (a) \(2\in X\cup Y\), quindi \(2\in Y\).</li>
+        <li>3: \(3\notin Y\), quindi per (a) \(3\in X\).</li>
+        <li>5: \(5\in Y\); se fosse \(5\in X\) starebbe in \(X\cap Y\), contro (b). Quindi \(5\notin X\).</li>
+        <li>7: \(7\in Y\), \(7\notin X\).</li>
+        <li>8: \(8\in X\); se \(8\in Y\) violerebbe (b). Quindi \(8\notin Y\).</li>
+      </ul>
+      \[X=\{1,3,4,6,8,9\},\qquad Y=\{2,4,5,6,7,9\}.\]
+      <p>Verifica: \(X\cup Y=\{1,\dots,9\}\), \(X\cap Y=\{4,6,9\}\), \(X\cup\{3,4,5\}=\{1,3,4,5,6,8,9\}\), \(Y\cup\{2,4,8\}=\{2,4,5,6,7,8,9\}\). La soluzione è <strong>unica</strong> (ogni scelta era forzata; confermato anche provando tutte le coppie di sottoinsiemi).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 1, es. 9*" data-livello="medio">
+    <div class="ex-testo"><p>Determinare gli insiemi \(A\) e \(B\), e i coefficienti reali \(p,q\in\mathbb{R}\), tali che</p>
+      \[A=\{x\in\mathbb{R}\mid x^2+x+p=0\},\quad B=\{x\in\mathbb{R}\mid x^2+qx-3=0\},\quad A\cup B=\{-2,-1,1,3\}.\]</div>
+    <details class="hint"><summary>Suggerimento</summary><p>Usa le relazioni tra radici e coefficienti: in \(x^2+x+p\) le radici hanno somma \(-1\); in \(x^2+qx-3\) prodotto \(-3\).</p></details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>\(B\).</strong> Il discriminante di \(x^2+qx-3\) è \(q^2+12&gt;0\): \(B\) ha sempre due elementi distinti, con prodotto \(-3\) e somma \(-q\). Entrambi devono stare in \(\{-2,-1,1,3\}\); le uniche coppie con prodotto \(-3\) sono \(\{-1,3\}\) (\(\{1,-3\}\) no, \(-3\) non c'è). Quindi \(B=\{-1,3\}\) e \(q=-(-1+3)=-2\).</p>
+      <p><strong>\(A\).</strong> Poiché \(-2,1\notin B\), devono stare in \(A\). Un polinomio di grado 2 ha al più due radici, quindi \(A=\{-2,1\}\): somma \(-1\) ✓, prodotto \(p=-2\). Infatti \(x^2+x-2=(x+2)(x-1)\).</p>
+      \[A=\{-2,1\},\quad B=\{-1,3\},\quad p=-2,\quad q=-2.\]
+      <p>Verifica: \(x^2-2x-3=(x-3)(x+1)\) e \(A\cup B=\{-2,-1,1,3\}\). (Unicità: \(B\) è forzato, e allora anche \(A\).)</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <h3>Foglio 1 · Applicazioni</h3>
+
+  <div class="ex" data-fonte="Foglio 1, es. 10" data-livello="base">
+    <div class="ex-testo"><p>Si trovi un'applicazione \(f:\mathbb{Z}\to\mathbb{Z}\) che sia</p>
+      <ol><li>iniettiva, ma non suriettiva;</li><li>suriettiva, ma non biiettiva;</li><li>biiettiva, ma diversa dall'identità.</li></ol>
+      <p>Si motivino tutte le risposte.</p></div>
+    <details class="sol"><summary>Soluzione</summary>
+      <ol>
+        <li>\(f(z)=2z\). Iniettiva: \(2z=2w\Rightarrow z=w\). Non suriettiva: \(1\notin\mathrm{Im}(f)\), perché \(2z=1\) non ha soluzioni intere (l'immagine sono i pari).</li>
+        <li>\(f(z)=\begin{cases}z/2 &amp; z \text{ pari}\\ (z-1)/2 &amp; z \text{ dispari}\end{cases}\) (la parte intera di \(z/2\)). Suriettiva: dato \(w\in\mathbb{Z}\), \(f(2w)=w\). Non iniettiva: \(f(0)=0=f(1)\). Quindi non biiettiva.</li>
+        <li>\(f(z)=z+1\) (oppure \(f(z)=-z\)). Biiettiva con inversa \(f^{-1}(z)=z-1\): \(f(f^{-1}(z))=z\) e \(f^{-1}(f(z))=z\). Diversa dall'identità: \(f(0)=1\neq 0\).</li>
+      </ol>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 1, es. 11" data-livello="base">
+    <div class="ex-testo"><p>Quali dei seguenti sottoinsiemi di \(\mathbb{R}^2\) sono i grafici di un'applicazione \(f:\mathbb{R}\to\mathbb{R}\)? Si motivi la risposta.</p>
+      <ol><li>\(\Gamma_1=\{(x,y)\in\mathbb{R}^2\mid x=1\}\)</li><li>\(\Gamma_2=\{(x,y)\in\mathbb{R}^2\mid y=1\}\)</li><li>\(\Gamma_3=\{(x,y)\in\mathbb{R}^2\mid x^2=y\}\)</li><li>\(\Gamma_4=\{(x,y)\in\mathbb{R}^2\mid x=y^2\}\)</li><li>\(\Gamma_5=\{(x,y)\in\mathbb{R}^2\mid xy=1\}\)</li><li>\(\Gamma_6=\Gamma_5\cup\{(0,0)\}\)</li></ol></div>
+    <details class="hint"><summary>Suggerimento</summary><p>Definizione 1.22: per <em>ogni</em> \(x\in\mathbb{R}\) deve esistere <em>uno e un solo</em> \(y\) con \((x,y)\in\Gamma\). Geometricamente: ogni retta verticale incontra \(\Gamma\) in esattamente un punto.</p></details>
+    <details class="sol"><summary>Soluzione</summary>
+      <ol>
+        <li><strong>No.</strong> Per \(x=0\) non esiste alcun \(y\) con \((0,y)\in\Gamma_1\); per \(x=1\) ne esistono infiniti (retta verticale).</li>
+        <li><strong>Sì.</strong> Per ogni \(x\) l'unico \(y\) è \(1\): è il grafico della funzione costante \(f(x)=1\).</li>
+        <li><strong>Sì.</strong> Per ogni \(x\) l'unico \(y\) è \(x^2\): \(f(x)=x^2\).</li>
+        <li><strong>No.</strong> Per \(x=-1\) nessun \(y\) (\(y^2=-1\)); per \(x=1\) due valori \(y=\pm1\).</li>
+        <li><strong>No.</strong> Per \(x=0\) l'equazione \(0\cdot y=1\) non ha soluzioni. (Per \(x\neq 0\) c'è l'unico \(y=1/x\): è il grafico di \(\mathbb{R}\setminus\{0\}\to\mathbb{R}\), non di un'applicazione definita su \(\mathbb{R}\).)</li>
+        <li><strong>Sì.</strong> Per \(x\neq 0\) l'unico \(y\) è \(1/x\), per \(x=0\) l'unico \(y\) è \(0\) (nessun punto di \(\Gamma_5\) ha \(x=0\)). È il grafico di \(f(x)=\begin{cases}1/x &amp; x\neq 0\\ 0 &amp; x=0.\end{cases}\)</li>
+      </ol>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 1, es. 12" data-livello="medio">
+    <div class="ex-testo"><p>Si dimostri che le applicazioni \(f:\mathbb{N}\times\mathbb{N}\to\mathbb{N}\) e \(g:\mathbb{Z}\to\mathbb{N}\) definite da
+      \[f(x,y)=\frac{(x+y)(x+y+1)}{2}+x,\qquad g(z)=\begin{cases}2z &amp; \text{se } z\geqslant 0\\ -2z-1 &amp; \text{se } z&lt;0\end{cases}\]
+      sono biiettive.</p></div>
+    <details class="hint"><summary>Suggerimento</summary><p>Per \(f\): poni \(s=x+y\) e \(T(s)=\tfrac{s(s+1)}{2}\). Per \(s\) fissato, quali valori assume \(f\)? Per \(g\): dove vanno i \(z\geqslant 0\) e dove i \(z&lt;0\)?</p></details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>\(g\).</strong> \(f\) è ben definita: \(2z\geqslant 0\) per \(z\geqslant 0\) e \(-2z-1\geqslant 1\) per \(z\leqslant -1\). I \(z\geqslant 0\) vanno nei naturali <em>pari</em>, i \(z&lt;0\) nei naturali <em>dispari</em> (\(-1\mapsto 1\), \(-2\mapsto 3\), …).</p>
+      <ul><li>Iniettiva: se \(g(z)=g(w)\), i due valori hanno la stessa parità, quindi \(z,w\) sono entrambi \(\geqslant 0\) (e \(2z=2w\Rightarrow z=w\)) o entrambi \(&lt;0\) (e \(-2z-1=-2w-1\Rightarrow z=w\)).</li>
+      <li>Suriettiva: sia \(n\in\mathbb{N}\). Se \(n\) è pari, \(z=n/2\geqslant 0\) dà \(g(z)=n\); se \(n\) è dispari, \(z=-\tfrac{n+1}{2}\leqslant -1\) dà \(g(z)=(n+1)-1=n\).</li></ul>
+      <p>L'inversa è \(g^{-1}(n)=n/2\) per \(n\) pari, \(-(n+1)/2\) per \(n\) dispari.</p>
+      <p><strong>\(f\)</strong> (funzione di accoppiamento di Cantor). \(T(s)=\tfrac{s(s+1)}2=0+1+\dots+s\in\mathbb{N}\), quindi \(f\) è ben definita. Le coppie con \(x+y=s\) sono \((0,s),(1,s-1),\dots,(s,0)\) e vengono mandate in
+      \[T(s),\ T(s)+1,\ \dots,\ T(s)+s=T(s+1)-1,\]
+      cioè, in modo iniettivo (\(x\) diverso dà valore diverso), esattamente nel "blocco" \(I_s=\{T(s),\dots,T(s+1)-1\}\). I blocchi \(I_0=\{0\}, I_1=\{1,2\}, I_2=\{3,4,5\},\dots\) sono disgiunti e ricoprono \(\mathbb{N}\), perché \(T(0)=0\) e \(T(s)\) cresce fino a \(+\infty\) con \(T(s+1)=T(s)+(s+1)\).</p>
+      <ul><li>Iniettiva: se \(f(x,y)=f(x',y')=n\), \(n\) sta in un unico blocco \(I_s\), quindi \(x+y=x'+y'=s\); allora \(x=n-T(s)=x'\) e \(y=s-x=y'\).</li>
+      <li>Suriettiva: dato \(n\in\mathbb{N}\), sia \(s\) il massimo con \(T(s)\leqslant n\); allora \(0\leqslant x:=n-T(s)\leqslant s\) (perché \(n&lt;T(s+1)=T(s)+s+1\)), e \(y:=s-x\geqslant 0\) dà \(f(x,y)=T(s)+x=n\).</li></ul>
+      <p>(Controllo numerico: i valori di \(f\) sulle coppie con \(x+y&lt;60\) sono esattamente \(0,1,\dots,1829\), ciascuno una volta.)</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 1, es. 13" data-livello="base">
+    <div class="ex-testo"><p>Siano \(f:A\to B\) e \(g:B\to C\) due applicazioni.</p>
+      <ol><li>Si dimostri che, se \(f\) e \(g\) sono iniettive, allora anche \(g\circ f\) è iniettiva.</li>
+      <li>Si dimostri che, se \(f\) e \(g\) sono suriettive, allora anche \(g\circ f\) è suriettiva.</li>
+      <li>Si dia un esempio di applicazioni \(f\) e \(g\) tali che: a) \(g\circ f\) sia iniettiva, ma \(g\) non sia iniettiva; b) \(g\circ f\) sia suriettiva, ma \(f\) non sia suriettiva.</li></ol></div>
+    <details class="sol"><summary>Soluzione</summary>
+      <ol>
+        <li>Siano \(x,y\in A\) con \((g\circ f)(x)=(g\circ f)(y)\), cioè \(g(f(x))=g(f(y))\). Poiché \(g\) è iniettiva, \(f(x)=f(y)\); poiché \(f\) è iniettiva, \(x=y\).</li>
+        <li>Sia \(c\in C\) arbitrario. \(g\) suriettiva: \(\exists b\in B\) con \(g(b)=c\). \(f\) suriettiva: \(\exists a\in A\) con \(f(a)=b\). Allora \((g\circ f)(a)=g(b)=c\).</li>
+        <li>Prendiamo \(A=\{1\}\), \(B=\{1,2\}\), \(C=\{1\}\), \(f(1)=1\), \(g(1)=g(2)=1\). Allora \(g\circ f:\{1\}\to\{1\}\) è l'identità, quindi iniettiva <em>e</em> suriettiva; ma
+          <br>a) \(g\) non è iniettiva (\(g(1)=g(2)\), \(1\neq 2\));
+          <br>b) \(f\) non è suriettiva (\(2\notin\mathrm{Im}(f)\)).
+          <br>Esempio "continuo": \(f:\mathbb{R}\to\mathbb{R}\), \(f(x)=e^x\) e \(g:\mathbb{R}\to\mathbb{R}\), \(g(x)=x^2\): \(g\circ f(x)=e^{2x}\) è iniettiva ma \(g\) non lo è.</li>
+      </ol>
+      <p>Coerente con il Corollario 1.34: \(g\circ f\) iniettiva \(\Rightarrow\) <em>\(f\)</em> iniettiva; \(g\circ f\) suriettiva \(\Rightarrow\) <em>\(g\)</em> suriettiva (nient'altro).</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 1, es. 14*" data-livello="medio">
+    <div class="ex-testo"><p>Si determinino tutte le applicazioni \(f:\mathbb{R}\to\mathbb{R}\) con la proprietà
+      \[2f(x)+3f(1-x)=3x+1\qquad\forall x\in\mathbb{R}.\]</p></div>
+    <details class="hint"><summary>Suggerimento</summary><p>L'identità vale per <em>ogni</em> \(x\): scrivila anche con \(1-x\) al posto di \(x\) e risolvi il sistema nelle "incognite" \(f(x)\) e \(f(1-x)\).</p></details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>Necessità.</strong> Sia \(f\) una tale applicazione e fissiamo \(x\). Applicando l'ipotesi anche al punto \(1-x\) (e \(1-(1-x)=x\)):</p>
+      \[\begin{cases}2f(x)+3f(1-x)=3x+1\\ 3f(x)+2f(1-x)=3(1-x)+1=4-3x.\end{cases}\]
+      <p>Moltiplicando la prima per 2 e la seconda per 3 e sottraendo: \(9f(x)-4f(x)=3(4-3x)-2(3x+1)=10-15x\), quindi \(5f(x)=10-15x\), cioè
+      \[f(x)=2-3x.\]</p>
+      <p><strong>Sufficienza.</strong> \(2(2-3x)+3\big(2-3(1-x)\big)=4-6x+3(-1+3x)=4-6x-3+9x=3x+1\) ✓.</p>
+      <p>Quindi esiste <strong>un'unica</strong> applicazione: \(f(x)=2-3x\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 1, es. 15*" data-livello="medio">
+    <div class="ex-testo"><p>Si dimostri che l'applicazione \(f:\mathbb{R}\to\mathbb{R}\) definita da \(f(x)=x^{2026}-4x^{2024}+2025\) non è iniettiva.</p></div>
+    <details class="hint"><summary>Suggerimento</summary><p>Per negare l'iniettività basta trovare due punti diversi con la stessa immagine. Guarda gli esponenti.</p></details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Tutti gli esponenti sono pari, quindi \(f(-x)=f(x)\) per ogni \(x\). In particolare \(1\neq-1\) ma \(f(1)=1-4+2025=2022=f(-1)\): \(f\) non è iniettiva.</p>
+      <p>(Altro modo: \(f(x)-2025=x^{2024}(x^2-4)\), quindi \(f(0)=f(2)=2025\), dato che \(2^{2026}-4\cdot 2^{2024}=2^{2026}-2^{2026}=0\).)</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <h3>Foglio 2 (integrativi) · Aritmetica modulare e strutture algebriche</h3>
+
+  <div class="ex" data-fonte="Foglio 2, es. 1" data-livello="medio">
+    <div class="ex-testo"><ol><li>Scrivere la tabella dell'addizione e della moltiplicazione in \(\mathbb{Z}/4\mathbb{Z}\), \(\mathbb{Z}/5\mathbb{Z}\) e \(\mathbb{Z}/6\mathbb{Z}\).</li>
+      <li>Trovare gli elementi invertibili in \(\mathbb{Z}/4\mathbb{Z}\), \(\mathbb{Z}/7\mathbb{Z}\) e in \(\mathbb{Z}/12\mathbb{Z}\).</li>
+      <li>Dimostrare che \([a]_n\) è invertibile in \(\mathbb{Z}/n\mathbb{Z}\) se e solo se \(\mathrm{MCD}(a,n)=1\).</li></ol></div>
+    <details class="sol"><summary>Soluzione (ufficiale)</summary>
+      <p><strong>1.</strong> (si scrive \(a\) per \([a]\))</p>
+      <p>\(\mathbb{Z}/4\mathbb{Z}\):</p>
+      <div class="tablewrap"><table><thead><tr><th>+</th><th>0</th><th>1</th><th>2</th><th>3</th><th>·</th><th>0</th><th>1</th><th>2</th><th>3</th></tr></thead>
+      <tbody><tr><th>0</th><td>0</td><td>1</td><td>2</td><td>3</td><th>0</th><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      <tr><th>1</th><td>1</td><td>2</td><td>3</td><td>0</td><th>1</th><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+      <tr><th>2</th><td>2</td><td>3</td><td>0</td><td>1</td><th>2</th><td>0</td><td>2</td><td>0</td><td>2</td></tr>
+      <tr><th>3</th><td>3</td><td>0</td><td>1</td><td>2</td><th>3</th><td>0</td><td>3</td><td>2</td><td>1</td></tr></tbody></table></div>
+      <p>\(\mathbb{Z}/5\mathbb{Z}\):</p>
+      <div class="tablewrap"><table><thead><tr><th>+</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>·</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr></thead>
+      <tbody><tr><th>0</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><th>0</th><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      <tr><th>1</th><td>1</td><td>2</td><td>3</td><td>4</td><td>0</td><th>1</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+      <tr><th>2</th><td>2</td><td>3</td><td>4</td><td>0</td><td>1</td><th>2</th><td>0</td><td>2</td><td>4</td><td>1</td><td>3</td></tr>
+      <tr><th>3</th><td>3</td><td>4</td><td>0</td><td>1</td><td>2</td><th>3</th><td>0</td><td>3</td><td>1</td><td>4</td><td>2</td></tr>
+      <tr><th>4</th><td>4</td><td>0</td><td>1</td><td>2</td><td>3</td><th>4</th><td>0</td><td>4</td><td>3</td><td>2</td><td>1</td></tr></tbody></table></div>
+      <p>\(\mathbb{Z}/6\mathbb{Z}\):</p>
+      <div class="tablewrap"><table><thead><tr><th>+</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>·</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr></thead>
+      <tbody><tr><th>0</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><th>0</th><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      <tr><th>1</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>0</td><th>1</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+      <tr><th>2</th><td>2</td><td>3</td><td>4</td><td>5</td><td>0</td><td>1</td><th>2</th><td>0</td><td>2</td><td>4</td><td>0</td><td>2</td><td>4</td></tr>
+      <tr><th>3</th><td>3</td><td>4</td><td>5</td><td>0</td><td>1</td><td>2</td><th>3</th><td>0</td><td>3</td><td>0</td><td>3</td><td>0</td><td>3</td></tr>
+      <tr><th>4</th><td>4</td><td>5</td><td>0</td><td>1</td><td>2</td><td>3</td><th>4</th><td>0</td><td>4</td><td>2</td><td>0</td><td>4</td><td>2</td></tr>
+      <tr><th>5</th><td>5</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><th>5</th><td>0</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td></tr></tbody></table></div>
+      <p>Si notano i divisori dello zero in \(\mathbb{Z}/4\mathbb{Z}\) (\([2][2]=[0]\)) e in \(\mathbb{Z}/6\mathbb{Z}\) (\([2][3]=[3][4]=[0]\)), mentre in \(\mathbb{Z}/5\mathbb{Z}\) ogni riga non nulla del prodotto contiene \([1]\).</p>
+      <p><strong>2.</strong> \([a]_n\) è invertibile se esiste \([b]_n\) con \([a]_n[b]_n=[1]_n\).</p>
+      <ul>
+        <li>\(\mathbb{Z}/4\mathbb{Z}\): invertibili \([1]_4,[3]_4\) (\([3]_4[3]_4=[9]_4=[1]_4\)); \([0]_4,[2]_4\) no, perché nella loro riga della tabella del prodotto non compare \([1]_4\).</li>
+        <li>\(\mathbb{Z}/7\mathbb{Z}\): tutti gli elementi non nulli \([1],\dots,[6]\): \([2][4]=[8]=[1]\), \([3][5]=[15]=[1]\), \([6][6]=[36]=[1]\); quindi \([2]^{-1}=[4]\), \([4]^{-1}=[2]\), \([3]^{-1}=[5]\), \([5]^{-1}=[3]\), \([6]^{-1}=[6]\).</li>
+        <li>\(\mathbb{Z}/12\mathbb{Z}\): quelli coprimi con 12: \([1],[5],[7],[11]\). \([1]\) e \([-1]=[n-1]\) sono sempre invertibili; inoltre \([5][5]=[25]=[1]\), \([7][7]=[49]=[1]\) (ognuno è inverso di sé).</li>
+      </ul>
+      <p><strong>3.</strong> "\(\Rightarrow\)": se \([a]_n[b]_n=[1]_n\), allora \(ab\equiv 1\pmod n\), cioè \(ab-1=kn\) per qualche \(k\in\mathbb{Z}\), e \(ab+(-k)n=1\). Un divisore comune di \(a\) e \(n\) divide quindi 1: \(\mathrm{MCD}(a,n)=1\) (Cor. 1.81). "\(\Leftarrow\)": se \(\mathrm{MCD}(a,n)=1\), per Bézout esistono \(r,s\in\mathbb{Z}\) con \(ra+sn=1\); riducendo modulo \(n\), \(ra\equiv 1\), cioè \([a]_n[r]_n=[1]_n\): \([r]_n\) è l'inverso.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 2, es. 2" data-livello="medio">
+    <div class="ex-testo"><ol><li>Si determinino tutte le coppie \(([x],[y])\in(\mathbb{Z}/12\mathbb{Z})^2\) che soddisfano entrambe le equazioni
+      \[\begin{cases}[6][x]+[3][y]=[9]\\ [5][x]+[10][y]=[17].\end{cases}\]</li>
+      <li>Si risolva il seguente sistema lineare in \(\mathbb{Z}/n\mathbb{Z}\) prima per \(n=4\) poi per \(n=5\):
+      \[\begin{cases}[x]_n+[y]_n=[2]_n\\ [2x]_n-[3y]_n=[3]_n.\end{cases}\]</li></ol></div>
+    <details class="sol"><summary>Soluzione (ufficiale)</summary>
+      <p><strong>1.</strong> In \(\mathbb{Z}/12\mathbb{Z}\), \([3],[6],[9]\) non sono invertibili (non coprimi con 12): nella prima equazione non si può semplificare né ricavare un'incognita. Nella seconda \([5]\) è invertibile (\(\mathrm{MCD}(5,12)=1\)) con \([5]^{-1}=[5]\) (\([25]=[1]\)). Usando \([-10]=[2]\) e \([17]=[5]\):
+      \[[5][x]=[-10][y]+[17]\iff[5][x]=[2][y]+[5]\iff[x]=[-2][y]+[1]\]
+      (moltiplicando per \([5]=[5]^{-1}\); \([5][2]=[10]=[-2]\), \([5][5]=[1]\)). Sostituendo nella prima:
+      \[[6]([-2][y]+[1])+[3][y]=[9]\iff[0][y]+[6]+[3][y]=[9]\iff[3][y]=[3]\iff[3]([y]-[1])=[0].\]
+      Riga di \([3]\) nella moltiplicazione: \([3][k]=[0]\iff[k]\in\{[-4],[0],[4]\}\). Quindi \([y]\in\{[-3],[1],[5]\}\) e \([x]=[-2][y]+[1]\) dà</p>
+      \[\{([-5],[-3]),\ ([-1],[1]),\ ([3],[5])\}=\{([7],[9]),\ ([11],[1]),\ ([3],[5])\}.\]
+      <p>Verifica di \(([3],[5])\): \(18+15=33\equiv 9\) e \(15+50=65\equiv 5\equiv 17\pmod{12}\) ✓.</p>
+      <p><strong>2, \(n=4\).</strong> \(x+y\equiv 2\), \(2x-3y\equiv 3\pmod 4\). Dalla prima \(x\equiv 2-y\); sostituendo: \(4-2y-3y\equiv 3\Rightarrow -5y\equiv-1\Rightarrow 3y\equiv 3\pmod 4\) (perché \(-5\equiv 3\), \(-1\equiv 3\)). L'inverso di 3 modulo 4 è 3 (\(9\equiv 1\)), quindi \(y\equiv 1\) e \(x\equiv 1\): unica soluzione \(([1]_4,[1]_4)\).</p>
+      <p><strong>2, \(n=5\).</strong> Stessi passaggi: \(-5y\equiv -1\pmod 5\). Ma \(-5y\equiv 0\pmod 5\), quindi \(0\equiv-1\pmod 5\): impossibile. <strong>Nessuna soluzione</strong> in \(\mathbb{Z}/5\mathbb{Z}\).</p>
+      <p>Morale: la risolubilità di "lo stesso" sistema dipende da \(n\) (in \(\mathbb{Z}/5\mathbb{Z}\), che è un campo, il sistema è incompatibile come un sistema lineare reale con righe proporzionali e termini noti non proporzionali).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 2, es. 3" data-livello="medio">
+    <div class="ex-testo"><p>Si dimostri che \(1+2^2+3^{3^3}\) non è il quadrato di un naturale. Qui \(3^{3^3}\) si interpreta come \(3^{(3^3)}=3^{27}\). <em>(Prima fase dell'Olimpiade di matematica, quinta elementare, Bucarest 1998.)</em></p></div>
+    <details class="hint"><summary>Suggerimento</summary><p>Lavora in \(\mathbb{Z}/3\mathbb{Z}\).</p></details>
+    <details class="sol"><summary>Soluzione (ufficiale)</summary>
+      <p>In \(\mathbb{Z}/3\mathbb{Z}\) i quadrati sono \(0^2=0\), \(1^2=1\), \(2^2=4\equiv 1\): per ogni \(n\in\mathbb{N}\), \(n^2\equiv 0\) oppure \(1\bmod 3\). Invece
+      \[1+2^2+3^{27}\equiv 1+1+0=2\pmod 3.\]
+      Quindi il numero non può essere un quadrato.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 2, es. 4" data-livello="medio">
+    <div class="ex-testo"><ol><li>Si calcolino i numeri complessi \(\frac{1-i}{1+i}\), \(\sqrt i\) e \(\frac{1}{\sqrt i}\) (cioè si scrivano nella forma \(a+ib\) con \(a,b\in\mathbb{R}\); per \(\sqrt i\) si cerchino tutti gli \(z\in\mathbb{C}\) con \(z^2=i\)).</li>
+      <li>Si descrivano gli insiemi delle soluzioni di \(x^2+y^2=0\) rispettivamente su \(\mathbb{R}\) e su \(\mathbb{C}\).</li>
+      <li>Si determinino gli insiemi delle soluzioni di \(x^2+y^2=0\) rispettivamente in \(\mathbb{Z}/3\mathbb{Z}\) e in \(\mathbb{Z}/5\mathbb{Z}\). Quali analogie vi sono con il punto 2?</li></ol></div>
+    <details class="sol"><summary>Soluzione (ufficiale, con i passaggi esplicitati)</summary>
+      <p><strong>1.</strong> \(\dfrac{1-i}{1+i}=\dfrac{(1-i)(1-i)}{(1+i)(1-i)}=\dfrac{(1-i)^2}{2}=\dfrac{1-2i+i^2}{2}=\dfrac{-2i}{2}=-i.\)</p>
+      <p>\(\sqrt i\): se \(z=a+bi\) con \(z^2=i\), allora \(a^2-b^2+2abi=i\), cioè \(a^2-b^2=0\) e \(2ab=1\). Quindi \(a^2=b^2\) e \(a,b\) hanno lo stesso segno: \(a=b\), \(2a^2=1\), \(a^2=b^2=\tfrac12\). Pertanto
+      \[\sqrt i=\pm\frac{1+i}{\sqrt2}.\]
+      Inoltre \(\dfrac{1}{\sqrt i}=\dfrac{\sqrt i}{i}=-i\sqrt i=\pm\dfrac{-i(1+i)}{\sqrt2}=\pm\dfrac{1-i}{\sqrt2}\) (controllo: \(\tfrac{1+i}{\sqrt2}\cdot\tfrac{1-i}{\sqrt2}=\tfrac{2}{2}=1\)).</p>
+      <p><strong>2.</strong> In \(\mathbb{R}^2\): \(x^2,y^2\geqslant 0\), quindi \(x^2+y^2=0\iff x=y=0\): l'unica soluzione è \((0,0)\). In \(\mathbb{C}^2\): \(x^2+y^2=(x+iy)(x-iy)=0\iff x=-iy\) oppure \(x=iy\), cioè (posto \(y=z\) e riscrivendo) l'insieme è
+      \[\{(z,iz):z\in\mathbb{C}\}\cup\{(z,-iz):z\in\mathbb{C}\}\]
+      (unione di due "rette" complesse).</p>
+      <p><strong>3.</strong> In \(\mathbb{Z}/3\mathbb{Z}\) i quadrati sono solo \(0\) e \(1\); \(x^2+y^2\in\{0,1,2\}\) vale 0 solo per \(x^2=y^2=0\): unica soluzione \((0,0)\). In \(\mathbb{Z}/5\mathbb{Z}\) i quadrati sono \(0,1,4\) e \(2^2=(-2)^2=4=-1\): oltre a \((0,0)\) si hanno le soluzioni con \(\{x^2,y^2\}=\{1,4\}\):
+      \[\{(0,0),(\pm1,\pm2),(\pm2,\pm1)\}\quad(9 \text{ soluzioni}).\]
+      <em>Analogia:</em> come in \(\mathbb{R}\) vs \(\mathbb{C}\), l'esistenza di soluzioni non banali dipende dal fatto che \(-1\) sia o no un quadrato (in \(\mathbb{Z}/5\mathbb{Z}\) "\(i=2\)", in \(\mathbb{Z}/3\mathbb{Z}\) no).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 2, es. 5" data-livello="medio">
+    <div class="ex-testo"><p>Sia \(X=\begin{pmatrix}x&amp;y\\z&amp;w\end{pmatrix}\in\mathrm{Mat}_{2\times2}(\mathbb{R})\).</p>
+      <p>a. Si trovino tutte le \(X\) tali che \(X\cdot\begin{pmatrix}1&amp;2\\3&amp;4\end{pmatrix}=\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}=\begin{pmatrix}1&amp;2\\3&amp;4\end{pmatrix}\cdot X\).</p>
+      <p>b. Si trovino tutte le \(X\) tali che \(\begin{pmatrix}x&amp;y\\z&amp;w\end{pmatrix}\cdot\begin{pmatrix}1&amp;1\\1&amp;1\end{pmatrix}=\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}\).</p>
+      <p>c. Si trovino tutte le \(X\) tali che \(\begin{pmatrix}x&amp;y\\z&amp;w\end{pmatrix}\cdot\begin{pmatrix}1&amp;1\\1&amp;1\end{pmatrix}=\begin{pmatrix}1&amp;1\\1&amp;1\end{pmatrix}\cdot\begin{pmatrix}x&amp;y\\z&amp;w\end{pmatrix}\).</p></div>
+    <details class="sol"><summary>Soluzione (ufficiale)</summary>
+      <p><strong>a.</strong> \(\begin{pmatrix}1&amp;2\\3&amp;4\end{pmatrix}\begin{pmatrix}x&amp;y\\z&amp;w\end{pmatrix}=\begin{pmatrix}x+2z&amp;y+2w\\3x+4z&amp;3y+4w\end{pmatrix}\). Uguagliando all'identità:
+      \[\begin{cases}x+2z=1\\3x+4z=0\\y+2w=0\\3y+4w=1\end{cases}\iff\begin{cases}3x+6z=3\\3x+4z=0\\2y+4w=0\\3y+4w=1\end{cases}\iff\begin{cases}2z=3\\3x+4z=0\\2y+4w=0\\y=1\end{cases}\iff\begin{cases}z=\tfrac32\\x=-2\\w=-\tfrac12\\y=1.\end{cases}\]
+      Soluzione unica \(X=\begin{pmatrix}-2&amp;1\\ \tfrac32&amp;-\tfrac12\end{pmatrix}\). Prova con l'altro prodotto: \(\begin{pmatrix}-2&amp;1\\ \tfrac32&amp;-\tfrac12\end{pmatrix}\begin{pmatrix}1&amp;2\\3&amp;4\end{pmatrix}=\begin{pmatrix}-2+3&amp;-4+4\\ \tfrac32-\tfrac32&amp;3-2\end{pmatrix}=\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}\) ✓. (È l'inversa della matrice.)</p>
+      <p><strong>b.</strong> \(X\begin{pmatrix}1&amp;1\\1&amp;1\end{pmatrix}=\begin{pmatrix}x+y&amp;x+y\\z+w&amp;z+w\end{pmatrix}\): le due colonne sono uguali. Uguagliando all'identità servirebbe \(x+y=1\) e \(x+y=0\): impossibile. <strong>Nessuna</strong> soluzione: la matrice con tutti 1 non è invertibile (un elemento non nullo e non invertibile dell'anello \(\mathrm{Mat}_{2\times2}(\mathbb{R})\)).</p>
+      <p><strong>c.</strong> Con \(J=\begin{pmatrix}1&amp;1\\1&amp;1\end{pmatrix}\): \(XJ=\begin{pmatrix}x+y&amp;x+y\\z+w&amp;z+w\end{pmatrix}\), \(JX=\begin{pmatrix}x+z&amp;y+w\\x+z&amp;y+w\end{pmatrix}\). L'uguaglianza dà \(x+y=x+z\), \(x+y=y+w\), \(z+w=x+z\), \(z+w=y+w\), cioè \(y=z\) e \(x=w\).</p>
+      <p><em>Nota di verifica:</em> la soluzione ufficiale scrive solo "\(y=z\)", con soluzioni \(\begin{pmatrix}x&amp;y\\y&amp;w\end{pmatrix}\), \(x,y,w\in\mathbb{R}\); ma confrontando la posizione \((1,2)\) si ha \(x+y=y+w\), quindi serve anche \(x=w\). Le matrici che commutano con \(J\) sono esattamente
+      \[X=\begin{pmatrix}x&amp;y\\y&amp;x\end{pmatrix},\quad x,y\in\mathbb{R}.\]
+      (Controesempio alla versione ufficiale: \(X=\begin{pmatrix}1&amp;0\\0&amp;0\end{pmatrix}\) ha \(XJ=\begin{pmatrix}1&amp;1\\0&amp;0\end{pmatrix}\neq\begin{pmatrix}1&amp;0\\1&amp;0\end{pmatrix}=JX\).)</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Foglio 2, es. 6" data-livello="medio">
+    <div class="ex-testo"><p>Si mostri che i seguenti sottoinsiemi di \(\mathrm{Mat}_{2\times2}(\mathbb{R})\), con la moltiplicazione tra matrici, sono gruppi abeliani (chiusura, identità nell'insieme, inverse nell'insieme, commutatività; l'associatività è ereditata dal prodotto di matrici).</p>
+      <ol><li>\(A=\begin{pmatrix}-\tfrac12&amp;-\tfrac{\sqrt3}{2}\\ \tfrac{\sqrt3}{2}&amp;-\tfrac12\end{pmatrix}\), \(\mathcal R_{120}=\{I_2,A,A^2\}\) con \(I_2=\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}\). Si scriva anche la tabella della moltiplicazione.</li>
+      <li>\(\mathcal{ROT}=\left\{\begin{pmatrix}\cos\alpha&amp;-\sin\alpha\\ \sin\alpha&amp;\cos\alpha\end{pmatrix}:\alpha\in[0,2\pi)\right\}\).</li>
+      <li>\(G=\left\{\begin{pmatrix}1&amp;t\\0&amp;1\end{pmatrix}:t\in\mathbb{Z}\right\}\).</li></ol></div>
+    <details class="sol"><summary>Soluzione (ufficiale)</summary>
+      <p><strong>1.</strong> Un calcolo diretto dà
+      \[A^2=\begin{pmatrix}-\tfrac12&amp;\tfrac{\sqrt3}{2}\\ -\tfrac{\sqrt3}{2}&amp;-\tfrac12\end{pmatrix},\qquad A^3=I_2,\]
+      (es. elemento \((1,1)\) di \(A^2\): \(\tfrac14-\tfrac34=-\tfrac12\)), quindi \(A^{-1}=A^2\). Il prodotto di due elementi è \(A^iA^j=A^{i+j}\) con esponenti modulo 3: l'insieme è chiuso. \(I_2=A^0\) appartiene all'insieme; inversi: \(I_2^{-1}=I_2\), \(A^{-1}=A^2\), \((A^2)^{-1}=A\). Potenze della stessa matrice commutano: \(A^iA^j=A^{i+j}=A^jA^i\).</p>
+      <div class="tablewrap"><table><thead><tr><th>·</th><th>\(I_2\)</th><th>\(A\)</th><th>\(A^2\)</th></tr></thead>
+      <tbody><tr><th>\(I_2\)</th><td>\(I_2\)</td><td>\(A\)</td><td>\(A^2\)</td></tr>
+      <tr><th>\(A\)</th><td>\(A\)</td><td>\(A^2\)</td><td>\(I_2\)</td></tr>
+      <tr><th>\(A^2\)</th><td>\(A^2\)</td><td>\(I_2\)</td><td>\(A\)</td></tr></tbody></table></div>
+      <p>(È la stessa tavola di \(\mathbb{Z}/3\mathbb{Z}\): \(\mathcal R_{120}\simeq\mathbb{Z}/3\mathbb{Z}\), le rotazioni di \(0^\circ,120^\circ,240^\circ\).)</p>
+      <p><strong>2.</strong> Sia \(R_\alpha=\begin{pmatrix}\cos\alpha&amp;-\sin\alpha\\ \sin\alpha&amp;\cos\alpha\end{pmatrix}\). Con le formule di addizione
+      \[R_\alpha R_\beta=\begin{pmatrix}\cos\alpha\cos\beta-\sin\alpha\sin\beta&amp;-(\sin\alpha\cos\beta+\cos\alpha\sin\beta)\\ \sin\alpha\cos\beta+\cos\alpha\sin\beta&amp;\cos\alpha\cos\beta-\sin\alpha\sin\beta\end{pmatrix}=R_{\alpha+\beta},\]
+      e gli angoli si considerano modulo \(2\pi\): l'insieme è chiuso. \(R_0=I_2\). \(R_\alpha^{-1}=R_{-\alpha}=\begin{pmatrix}\cos\alpha&amp;\sin\alpha\\ -\sin\alpha&amp;\cos\alpha\end{pmatrix}\) (con \(-\alpha\) riportato in \([0,2\pi)\)). \(R_\alpha R_\beta=R_{\alpha+\beta}=R_{\beta+\alpha}=R_\beta R_\alpha\). Gruppo abeliano.</p>
+      <p><strong>3.</strong> Sia \(U_t=\begin{pmatrix}1&amp;t\\0&amp;1\end{pmatrix}\). Allora \(U_tU_s=\begin{pmatrix}1&amp;t+s\\0&amp;1\end{pmatrix}=U_{t+s}\) con \(t+s\in\mathbb{Z}\): chiuso. \(U_0=I_2\). \(U_t^{-1}=U_{-t}\) con \(-t\in\mathbb{Z}\). \(U_tU_s=U_{t+s}=U_{s+t}=U_sU_t\). Gruppo abeliano (isomorfo a \((\mathbb{Z},+)\) tramite \(t\mapsto U_t\)).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+</section>
+
+<section class="sec quizzes" id="cap0-quiz">
+  <div class="num">13</div>
+  <h2>Quiz di autoverifica</h2>
+  <div class="ex-bar"><span class="quiz-score"></span><button class="chip quiz-reset">Ricomincia</button></div>
+  <div class="box box--note"><div class="tag">Nota</div>
+    <p>Per il Capitolo 0 (Fondamenti) non esistono quiz ufficiali: il "Quiz Capitolo 1" del corso riguarda le matrici. Le domande seguenti sono di autoverifica, costruite sugli enunciati degli appunti; non sono domande d'esame.</p>
+  </div>
+
+  <div class="quiz" data-risposta="F">
+    <p>La negazione di "\(\forall x\in A,\ P(x)\)" è "\(\forall x\in A,\ \lnot P(x)\)".</p>
+    <details class="sol"><summary>Spiegazione</summary><p>Falso. Si scambiano i quantificatori e si nega il predicato: \(\lnot(\forall x\in A,\ P(x))\iff \exists x\in A:\ \lnot P(x)\). Basta un controesempio.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="V">
+    <p>L'implicazione \(A\Rightarrow B\) è logicamente equivalente alla sua contrapposta \(\lnot B\Rightarrow\lnot A\).</p>
+    <details class="sol"><summary>Spiegazione</summary><p>Vero. Entrambe sono false solo quando \(A\) è vera e \(B\) è falsa. Non è invece equivalente all'inversa \(B\Rightarrow A\).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="F">
+    <p>Se \(A\) è falsa, l'implicazione \(A\Rightarrow B\) è falsa.</p>
+    <details class="sol"><summary>Spiegazione</summary><p>Falso. Da una premessa falsa l'implicazione è sempre vera ("ex falso quodlibet"): \(A\Rightarrow B\) è falsa solo nel caso \(A\) vera, \(B\) falsa.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p>Sia \(f:\mathbb{R}\to\mathbb{R}\), \(f(x)=x^2\). Quale affermazione è corretta?</p>
+    <ol class="opzioni">
+      <li>\(f\) è iniettiva ma non suriettiva.</li>
+      <li>\(f\) non è né iniettiva né suriettiva.</li>
+      <li>\(f\) è suriettiva ma non iniettiva.</li>
+      <li>\(f\) è biettiva.</li>
+    </ol>
+    <details class="sol"><summary>Spiegazione</summary><p>Non è iniettiva perché \(f(1)=f(-1)\); non è suriettiva perché \(-1\) non ha controimmagini. Restringendo dominio e codominio a \([0,+\infty)\) diventa biettiva: iniettività e suriettività dipendono da dominio e codominio, non solo dalla "formula".</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="V">
+    <p>Se \(g\circ f\) è iniettiva, allora \(f\) è iniettiva.</p>
+    <details class="sol"><summary>Spiegazione</summary><p>Vero. Se \(f(x)=f(y)\), allora \(g(f(x))=g(f(y))\) e quindi \(x=y\). Analogamente, se \(g\circ f\) è suriettiva allora \(g\) è suriettiva. Non si può concludere che \(g\) sia iniettiva.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="V">
+    <p>Un'applicazione \(f:X\to Y\) è invertibile (esiste \(g\) con \(g\circ f=\mathrm{id}_X\) e \(f\circ g=\mathrm{id}_Y\)) se e solo se è biettiva.</p>
+    <details class="sol"><summary>Spiegazione</summary><p>Vero: è il teorema sull'invertibilità degli appunti. L'inversa, se esiste, è unica.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="F">
+    <p>La relazione \(x\,R\,y \iff |x-y|\le 1\) su \(\mathbb{R}\) è una relazione di equivalenza.</p>
+    <details class="sol"><summary>Spiegazione</summary><p>Falso. È riflessiva e simmetrica, ma non transitiva: \(0\,R\,1\) e \(1\,R\,2\), ma non \(0\,R\,2\).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="V">
+    <p>Le classi di equivalenza di una relazione di equivalenza su \(X\) formano una partizione di \(X\).</p>
+    <details class="sol"><summary>Spiegazione</summary><p>Vero: le classi sono non vuote, a due a due disgiunte o coincidenti, e la loro unione è \(X\). Viceversa ogni partizione definisce una relazione di equivalenza.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="C">
+    <p>Quanto vale l'inverso di \([7]\) in \(\mathbb{Z}/20\mathbb{Z}\)?</p>
+    <ol class="opzioni">
+      <li>\([7]\)</li>
+      <li>\([13]\)</li>
+      <li>\([3]\)</li>
+      <li>Non esiste.</li>
+    </ol>
+    <details class="sol"><summary>Spiegazione</summary><p>\(\mathrm{MCD}(7,20)=1\), quindi l'inverso esiste; \(7\cdot3=21\equiv1\pmod{20}\). Con Euclide esteso: \(20=2\cdot7+6\), \(7=1\cdot6+1\), da cui \(1=7-6=7-(20-2\cdot7)=3\cdot7-20\).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="F">
+    <p>\(\mathbb{Z}/6\mathbb{Z}\) è un campo.</p>
+    <details class="sol"><summary>Spiegazione</summary><p>Falso. \(\mathbb{Z}/n\mathbb{Z}\) è un campo se e solo se \(n\) è primo. In \(\mathbb{Z}/6\mathbb{Z}\) si ha \([2]\cdot[3]=[0]\) (divisori dello zero) e \([2]\) non è invertibile.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="V">
+    <p>Il gruppo simmetrico \(S_3\) non è abeliano.</p>
+    <details class="sol"><summary>Spiegazione</summary><p>Vero. Per esempio \((1\,2)(2\,3)=(1\,2\,3)\) mentre \((2\,3)(1\,2)=(1\,3\,2)\) (composizione da destra a sinistra). \(S_n\) è abeliano solo per \(n\le2\).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="A">
+    <p>Qual è il segno della permutazione \(\sigma=(1\,2\,3\,4)\in S_4\)?</p>
+    <ol class="opzioni">
+      <li>\(-1\)</li>
+      <li>\(+1\)</li>
+      <li>Dipende da come si scrive il ciclo.</li>
+      <li>Il segno è definito solo per le trasposizioni.</li>
+    </ol>
+    <details class="sol"><summary>Spiegazione</summary><p>Un \(k\)-ciclo è prodotto di \(k-1\) trasposizioni: \((1\,2\,3\,4)=(1\,4)(1\,3)(1\,2)\), quindi \(\mathrm{sgn}=(-1)^3=-1\). Il segno è ben definito (non dipende dalla decomposizione).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="V">
+    <p>In un gruppo l'elemento neutro è unico e ogni elemento ha un unico inverso.</p>
+    <details class="sol"><summary>Spiegazione</summary><p>Vero. Se \(e,e'\) sono neutri, \(e=e\,e'=e'\). Se \(b,c\) sono inversi di \(a\): \(b=b(ac)=(ba)c=c\), usando l'associatività.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="D">
+    <p>Quanto vale \(\dfrac{1}{1+i}\) in \(\mathbb{C}\)?</p>
+    <ol class="opzioni">
+      <li>\(1-i\)</li>
+      <li>\(\tfrac12+\tfrac12 i\)</li>
+      <li>\(-1+i\)</li>
+      <li>\(\tfrac12-\tfrac12 i\)</li>
+    </ol>
+    <details class="sol"><summary>Spiegazione</summary><p>\(\dfrac{1}{1+i}=\dfrac{1-i}{(1+i)(1-i)}=\dfrac{1-i}{2}\). In generale \(z^{-1}=\bar z/|z|^2\).</p></details>
+  </div>
+</section>
+
+<section class="sec" id="cap0-riepilogo">
+  <div class="num">14</div>
+  <h2>Riepilogo</h2>
+  <ol>
+    <li>\(A\Rightarrow B\) è falsa solo se \(A\) è vera e \(B\) falsa; equivale alla contrapposta \(\lnot B\Rightarrow\lnot A\), non all'inversa \(B\Rightarrow A\).</li>
+    <li>Negare: \(\lnot\forall\) diventa \(\exists\lnot\), \(\lnot\exists\) diventa \(\forall\lnot\); \(\lnot(A\wedge B)=\lnot A\vee\lnot B\), \(\lnot(A\Rightarrow B)=A\wedge\lnot B\).</li>
+    <li>Due insiemi sono uguali se e solo se ciascuno è contenuto nell'altro (doppia inclusione).</li>
+    <li>Un'applicazione è data da dominio, codominio e legge: cambiando dominio o codominio cambiano iniettività e suriettività.</li>
+    <li>Iniettiva: \(f(x)=f(y)\Rightarrow x=y\). Suriettiva: \(f(X)=Y\). Biettiva \(\iff\) invertibile, e l'inversa è unica.</li>
+    <li>La composizione è associativa ma in generale non commutativa; composizione di iniettive (suriettive) è iniettiva (suriettiva).</li>
+    <li>Una relazione di equivalenza è riflessiva, simmetrica e transitiva; le sue classi formano una partizione e definiscono l'insieme quoziente.</li>
+    <li>Divisione euclidea: \(a=qb+r\), \(0\le r&lt;|b|\). L'algoritmo di Euclide calcola \(\mathrm{MCD}(a,b)\) e, a ritroso, i coefficienti di Bézout \(\mathrm{MCD}(a,b)=ax+by\).</li>
+    <li>\([a]\) è invertibile in \(\mathbb{Z}/n\mathbb{Z}\) se e solo se \(\mathrm{MCD}(a,n)=1\); l'inverso si trova con Bézout.</li>
+    <li>Gruppo: operazione associativa, neutro, inversi. Neutro e inversi sono unici; \((ab)^{-1}=b^{-1}a^{-1}\).</li>
+    <li>\(S_n\) ha \(n!\) elementi, non è abeliano per \(n\ge3\); ogni permutazione è prodotto di cicli disgiunti e di trasposizioni.</li>
+    <li>Il segno è \(\mathrm{sgn}(\sigma)=(-1)^{\#\text{inversioni}}\), è moltiplicativo; un \(k\)-ciclo ha segno \((-1)^{k-1}\).</li>
+    <li>Anello: \((A,+)\) gruppo abeliano, prodotto associativo e distributivo. Campo: anello commutativo con \(1\ne0\) in cui ogni elemento non nullo è invertibile.</li>
+    <li>\(\mathbb{Z}/n\mathbb{Z}\) è un campo se e solo se \(n\) è primo (campi \(\mathbb{F}_p\)); \(\mathbb{Q},\mathbb{R},\mathbb{C}\) sono campi, \(\mathbb{Z}\) no.</li>
+    <li>In \(\mathbb{C}\): \(i^2=-1\), \(z\bar z=|z|^2\), \(z^{-1}=\bar z/|z|^2\) per \(z\ne0\).</li>
+  </ol>
+</section>
       <nav class="pager" aria-label="Capitoli"><a class="next" href="cap1.html"><small>Successivo →</small><span>Matrici e sistemi lineari</span></a></nav>
     </main>
   </div>

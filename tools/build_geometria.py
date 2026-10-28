@@ -134,6 +134,7 @@ def render_main(slug, frag):
     """Arricchisce le sezioni e costruisce l'indice della pagina."""
     # livello di importanza del prof ("Definizione 2.1 · essenziale") -> badge
     frag = IMP_RE.sub(lambda m: f'{m.group(1)}<span class="imp" data-imp="{m.group(2).replace(" ", "-")}">{m.group(2)}</span></div>', frag)
+    frag = re.sub(r'(?<!<div class="tablewrap">)(<table\b.*?</table>)', r'<div class="tablewrap">\1</div>', frag, flags=re.S)
     toc, parts, n_ex, n_quiz = [], [], 0, 0
     for idx, (attrs, body) in enumerate(split_sections(frag), 1):
         sid = attr(attrs, "id") or f"{slug}-s{idx}"
@@ -152,13 +153,13 @@ def render_main(slug, frag):
                      '<button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button>']
             chips += [f'<button class="chip" data-filter="{l}" aria-pressed="false">{l.capitalize()}</button>' for l in levels]
             extra = ('<div class="ex-bar">' + "".join(chips) +
-                     '<button class="chip" id="toggle-sol" aria-pressed="false">Mostra soluzioni</button>'
-                     '<span class="count" id="ex-count"></span></div>')
+                     '<button class="chip toggle-sol" aria-pressed="false">Mostra soluzioni</button>'
+                     '<span class="count ex-count"></span></div>')
         elif has_quiz:
             classes.append("quizzes")
             n_quiz += body.count('class="quiz"')
-            extra = ('<div class="ex-bar"><span class="quiz-score" id="quiz-score"></span>'
-                     '<button class="chip" id="quiz-reset" style="margin-left:auto">Ricomincia</button></div>')
+            extra = ('<div class="ex-bar"><span class="quiz-score"></span>'
+                     '<button class="chip quiz-reset">Ricomincia</button></div>')
         if h2 and extra:
             body = body[:h2.end()] + "\n  " + extra + body[h2.end():]
         num = f'<div class="num">{idx:02d}</div>'

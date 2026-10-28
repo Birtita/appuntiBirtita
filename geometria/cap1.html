@@ -31,7 +31,7 @@
   </header>
   <div class="layout">
     <aside class="side" id="side">
-      <div class="panel"><div class="panel-title">Capitoli</div><ol><li><a href="cap0.html"><span class="k">0</span>Fondamenti</a></li><li><a href="cap1.html" aria-current="page"><span class="k">1</span>Matrici e sistemi lineari</a><div class="chap-progress" data-progress-page="cap1" data-total="18"><i></i></div></li><li><a href="cap2.html"><span class="k">2</span>Spazi vettoriali su K</a><div class="chap-progress" data-progress-page="cap2" data-total="15"><i></i></div></li><li><a href="cap3.html"><span class="k">3</span>Calcolare in Kⁿ</a><div class="chap-progress" data-progress-page="cap3" data-total="10"><i></i></div></li><li><a href="cap4.html"><span class="k">4</span>Applicazioni lineari</a></li><li><a href="cap5.html"><span class="k">5</span>Matrice associata</a></li><li><a href="esami.html"><span class="k">·</span>Preparazione all&#x27;esame</a></li><li><a href="anteprima.html"><span class="k">·</span>Argomenti non ancora fatti a lezione</a></li></ol></div>
+      <div class="panel"><div class="panel-title">Capitoli</div><ol><li><a href="cap0.html"><span class="k">0</span>Fondamenti</a><div class="chap-progress" data-progress-page="cap0" data-total="21"><i></i></div></li><li><a href="cap1.html" aria-current="page"><span class="k">1</span>Matrici e sistemi lineari</a><div class="chap-progress" data-progress-page="cap1" data-total="18"><i></i></div></li><li><a href="cap2.html"><span class="k">2</span>Spazi vettoriali su K</a><div class="chap-progress" data-progress-page="cap2" data-total="15"><i></i></div></li><li><a href="cap3.html"><span class="k">3</span>Calcolare in Kⁿ</a><div class="chap-progress" data-progress-page="cap3" data-total="10"><i></i></div></li><li><a href="cap4.html"><span class="k">4</span>Applicazioni lineari</a><div class="chap-progress" data-progress-page="cap4" data-total="11"><i></i></div></li><li><a href="cap5.html"><span class="k">5</span>Matrice associata</a><div class="chap-progress" data-progress-page="cap5" data-total="11"><i></i></div></li><li><a href="esami.html"><span class="k">·</span>Preparazione all&#x27;esame</a><div class="chap-progress" data-progress-page="esami" data-total="16"><i></i></div></li><li><a href="anteprima.html"><span class="k">·</span>Argomenti non ancora fatti a lezione</a></li></ol></div>
       <div class="panel"><div class="panel-title">In questa pagina</div><ol id="toc"><li><a href="#cap1-matrici"><span class="k">01</span>Matrici: definizione e terminologia</a></li><li><a href="#cap1-calcolo"><span class="k">02</span>Calcolo con le matrici</a></li><li><a href="#cap1-quadrate"><span class="k">03</span>Matrici quadrate e gruppo lineare generale</a></li><li><a href="#cap1-sistemi"><span class="k">04</span>Sistemi di equazioni lineari</a></li><li><a href="#cap1-mosse"><span class="k">05</span>Mosse di Gauss e matrici elementari</a></li><li><a href="#cap1-gauss"><span class="k">06</span>Algoritmo di Gauss, forma a scala ridotta e rango</a></li><li><a href="#cap1-rouche"><span class="k">07</span>Rouché-Capelli e parametrizzazione delle soluzioni</a></li><li><a href="#cap1-inversa"><span class="k">08</span>Gauss-Jordan e matrici invertibili</a></li><li><a href="#cap1-esercizi"><span class="k">09</span>Esercizi</a></li><li><a href="#cap1-quiz"><span class="k">10</span>Quiz</a></li><li><a href="#cap1-riepilogo"><span class="k">11</span>Riepilogo</a></li></ol></div>
       
     </aside>
@@ -562,7 +562,7 @@
 <section class="sec esercizi" id="cap1-esercizi">
   <div class="num">09</div>
   <h2>Esercizi</h2>
-  <div class="ex-bar"><button class="chip" data-filter="tutti" aria-pressed="true">Tutti</button><button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button><button class="chip" data-filter="base" aria-pressed="false">Base</button><button class="chip" data-filter="medio" aria-pressed="false">Medio</button><button class="chip" id="toggle-sol" aria-pressed="false">Mostra soluzioni</button><span class="count" id="ex-count"></span></div>
+  <div class="ex-bar"><button class="chip" data-filter="tutti" aria-pressed="true">Tutti</button><button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button><button class="chip" data-filter="base" aria-pressed="false">Base</button><button class="chip" data-filter="medio" aria-pressed="false">Medio</button><button class="chip toggle-sol" aria-pressed="false">Mostra soluzioni</button><span class="count ex-count"></span></div>
   <p class="lead">Tutti gli esercizi del Foglio 3 (25/09/2026), del Foglio 3 bis (01/10/2026) e gli esercizi aperti del Quiz del Capitolo 1. Le soluzioni non sono ufficiali: sono state scritte e verificate per questo sito.</p>
 
   <h3>Foglio 3: matrici</h3>
@@ -575,7 +575,7 @@
     </div>
     <details class="hint"><summary>Suggerimento</summary><p>Scrivi i tipi: \(A_1:2\times3\), \(A_2:1\times3\), \(A_3:3\times1\), \(A_4:3\times2\), \(A_5:2\times2\), \(A_6:3\times3\). \(A_iA_j\) è definito se e solo se il numero di colonne di \(A_i\) è uguale al numero di righe di \(A_j\).</p></details>
     <details class="sol"><summary>Soluzione</summary>
-      <p>Le matrici con 3 colonne (\(A_1,A_2,A_6\)) si moltiplicano a destra per quelle con 3 righe (\(A_3,A_4,A_6\)). Le matrici con 2 colonne (\(A_4,A_5\)) si moltiplicano per quelle con 2 righe (\(A_1,A_5\)). \(A_3\) ha 1 colonna e si moltiplica solo per \(A_2\), l'unica con 1 riga. In tutto 13 prodotti:</p>
+      <p>Le matrici con 3 colonne (\(A_1,A_2,A_6\)) si moltiplicano a destra per quelle con 3 righe (\(A_3,A_4,A_6\)). Le matrici con 2 colonne (\(A_4,A_5\)) si moltiplicano per quelle con 2 righe (\(A_1,A_5\)). \(A_3\) ha 1 colonna e si moltiplica solo per \(A_2\), l'unica con 1 riga. In tutto 14 prodotti:</p>
       \[ A_1A_3=\begin{pmatrix}2\\5\end{pmatrix}\ (2\times1),\quad A_1A_4=\begin{pmatrix}321&3210\\654&6540\end{pmatrix}\ (2\times2),\quad A_1A_6=\begin{pmatrix}14&15&18\\32&36&45\end{pmatrix}\ (2\times3), \]
       \[ A_2A_3=(0)\ (1\times1),\quad A_2A_4=\begin{pmatrix}1&10\end{pmatrix}\ (1\times2),\quad A_2A_6=\begin{pmatrix}1&2&3\end{pmatrix}\ (1\times3), \]
       \[ A_3A_2=\begin{pmatrix}0&0&0\\1&0&0\\0&0&0\end{pmatrix}\ (3\times3),\quad A_4A_1=\begin{pmatrix}41&52&63\\410&520&630\\4100&5200&6300\end{pmatrix}\ (3\times3),\quad A_4A_5=\begin{pmatrix}11&11\\110&110\\1100&1100\end{pmatrix}\ (3\times2), \]
@@ -921,7 +921,7 @@
 <section class="sec quizzes" id="cap1-quiz">
   <div class="num">10</div>
   <h2>Quiz</h2>
-  <div class="ex-bar"><span class="quiz-score" id="quiz-score"></span><button class="chip" id="quiz-reset" style="margin-left:auto">Ricomincia</button></div>
+  <div class="ex-bar"><span class="quiz-score"></span><button class="chip quiz-reset">Ricomincia</button></div>
   <p class="lead">Quiz del Capitolo 1 (5 ottobre 2026): una sola risposta corretta. Il PDF non riporta le soluzioni; quelle qui sotto sono state ricavate e verificate.</p>
 
   <div class="quiz" data-risposta="B">

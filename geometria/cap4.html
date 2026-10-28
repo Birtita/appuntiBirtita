@@ -27,16 +27,771 @@
     <span class="eyebrow">Cap. 4</span>
     <h1>Applicazioni lineari</h1>
     <p class="sub">Definizione, isomorfismi, nucleo e immagine, teorema della dimensione, Grassmann.</p>
-    <div class="pillrow"><span class="pill">Lezione 11 (online)</span><span class="pill">Quiz 3 applicazioni lineari</span></div>
+    <div class="pillrow"><span class="pill">9 sezioni</span><span class="pill">11 esercizi con soluzione</span><span class="pill">10 domande di quiz</span><span class="pill">Lezione 11 (online)</span><span class="pill">Quiz 3 applicazioni lineari</span></div>
   </header>
   <div class="layout">
     <aside class="side" id="side">
-      <div class="panel"><div class="panel-title">Capitoli</div><ol><li><a href="cap0.html"><span class="k">0</span>Fondamenti</a></li><li><a href="cap1.html"><span class="k">1</span>Matrici e sistemi lineari</a><div class="chap-progress" data-progress-page="cap1" data-total="18"><i></i></div></li><li><a href="cap2.html"><span class="k">2</span>Spazi vettoriali su K</a><div class="chap-progress" data-progress-page="cap2" data-total="15"><i></i></div></li><li><a href="cap3.html"><span class="k">3</span>Calcolare in Kⁿ</a><div class="chap-progress" data-progress-page="cap3" data-total="10"><i></i></div></li><li><a href="cap4.html" aria-current="page"><span class="k">4</span>Applicazioni lineari</a></li><li><a href="cap5.html"><span class="k">5</span>Matrice associata</a></li><li><a href="esami.html"><span class="k">·</span>Preparazione all&#x27;esame</a></li><li><a href="anteprima.html"><span class="k">·</span>Argomenti non ancora fatti a lezione</a></li></ol></div>
-      <div class="panel"><div class="panel-title">In questa pagina</div><ol id="toc"></ol></div>
+      <div class="panel"><div class="panel-title">Capitoli</div><ol><li><a href="cap0.html"><span class="k">0</span>Fondamenti</a><div class="chap-progress" data-progress-page="cap0" data-total="21"><i></i></div></li><li><a href="cap1.html"><span class="k">1</span>Matrici e sistemi lineari</a><div class="chap-progress" data-progress-page="cap1" data-total="18"><i></i></div></li><li><a href="cap2.html"><span class="k">2</span>Spazi vettoriali su K</a><div class="chap-progress" data-progress-page="cap2" data-total="15"><i></i></div></li><li><a href="cap3.html"><span class="k">3</span>Calcolare in Kⁿ</a><div class="chap-progress" data-progress-page="cap3" data-total="10"><i></i></div></li><li><a href="cap4.html" aria-current="page"><span class="k">4</span>Applicazioni lineari</a><div class="chap-progress" data-progress-page="cap4" data-total="11"><i></i></div></li><li><a href="cap5.html"><span class="k">5</span>Matrice associata</a><div class="chap-progress" data-progress-page="cap5" data-total="11"><i></i></div></li><li><a href="esami.html"><span class="k">·</span>Preparazione all&#x27;esame</a><div class="chap-progress" data-progress-page="esami" data-total="16"><i></i></div></li><li><a href="anteprima.html"><span class="k">·</span>Argomenti non ancora fatti a lezione</a></li></ol></div>
+      <div class="panel"><div class="panel-title">In questa pagina</div><ol id="toc"><li><a href="#cap4-intro"><span class="k">01</span>Che cos&#x27;è un&#x27;applicazione lineare</a></li><li><a href="#cap4-definizioni"><span class="k">02</span>Definizione ed esempi</a></li><li><a href="#cap4-nucleo-immagine"><span class="k">03</span>Nucleo e immagine</a></li><li><a href="#cap4-basi"><span class="k">04</span>Applicazioni lineari, indipendenza e generatori</a></li><li><a href="#cap4-isomorfismi"><span class="k">05</span>Isomorfismi e spazi isomorfi</a></li><li><a href="#cap4-dimensione"><span class="k">06</span>Il Teorema della Dimensione</a></li><li><a href="#cap4-esercizi"><span class="k">07</span>Esercizi</a></li><li><a href="#cap4-quiz"><span class="k">08</span>Quiz</a></li><li><a href="#cap4-riepilogo"><span class="k">09</span>Riepilogo</a></li></ol></div>
       
     </aside>
     <main id="content">
-<div class="empty"><p><strong>Contenuti in arrivo.</strong></p><p>Questo capitolo verrà riempito con teoria, esempi ed esercizi svolti tratti dagli appunti del corso.</p></div>
+<section class="sec" id="cap4-intro">
+  <div class="num">01</div>
+  <h2>Che cos'è un'applicazione lineare</h2>
+  <p class="lead">Le applicazioni lineari sono le applicazioni tra spazi vettoriali compatibili con le due operazioni (somma e moltiplicazione per scalare): sono il "linguaggio" con cui si confrontano spazi vettoriali diversi.</p>
+
+  <p>Le abbiamo già usate senza dirlo: quando abbiamo parametrizzato le soluzioni di un sistema lineare omogeneo, e quando abbiamo definito un'applicazione \(U_1 \times U_2 \to U_1 + U_2\). Prima della definizione, un esempio e un non-esempio.</p>
+
+  <div class="box box--ex"><div class="tag">Esempio 4.1</div>
+    <p><strong>Il prezzo della spesa è un'applicazione lineare.</strong> Se i prezzi al kg di albicocche, banane e cetrioli sono</p>
+    \[ a = 2{,}20\ \text{€/kg},\qquad b = 1{,}40\ \text{€/kg},\qquad c = 2{,}00\ \text{€/kg} \]
+    <p>e compriamo \(x = 2\) kg di albicocche, \(y = 40\) kg di banane e \(z = 0{,}10\) kg di cetrioli, paghiamo</p>
+    \[ \text{Prezzo} = a\cdot x + b\cdot y + c\cdot z = 2{,}20\cdot 2 + 1{,}40\cdot 40 + 2{,}00\cdot 0{,}10 = 60{,}60\ \text{€}. \]
+    <p>Il prezzo è una funzione lineare delle quantità, con i prezzi come coefficienti. In particolare, se non compriamo niente, non paghiamo niente. (L'esempio ha dei limiti: non possiamo comprare \(10^{20}\) kg di banane, né \(-\sqrt{11}\) kg di cetrioli.)</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio 4.2 (non-esempio)</div>
+    <p><strong>Il prezzo di una corsa in taxi non è lineare</strong>, ma <em>affine</em>. Con \(a = 1{,}80\) €/km, costo dell'attesa \(b = 34{,}48\) €/h e "scatto iniziale" \(c = 4{,}10\) €, una corsa di \(d\) km con attesa \(t\) costa</p>
+    \[ \text{Prezzo della corsa} = a\cdot d + b\cdot t + c. \]
+    <p>Le variabili compaiono con grado uno, ma c'è un termine costante: se non andiamo da nessuna parte il prezzo non è zero, è \(4{,}10\) €.</p>
+  </div>
+
+  <div class="box box--note"><div class="tag">Dalla lezione 11 (21/10/2026)</div>
+    <p>Primo consiglio della lezione (slide p. 1): i <strong>calcoli in \(\mathbb{K}^n\)</strong> (Capitolo 3) è importante farli da soli; domani esercitazioni proprio su questi metodi.</p>
+    <p>Il prof ha aperto la lezione ricordando i due esempi di applicazioni lineari già incontrati:</p>
+    <ul>
+      <li>la parametrizzazione delle soluzioni di un sistema omogeneo con \(r = \mathrm{Rango}(A)\) e parametri liberi \(t_{r+1},\dots,t_n\):
+        \[ \mathbb{K}^{n-r} \longrightarrow \mathrm{Sol}(A\mathbf{x} = \mathbf{0}),\qquad (t_{r+1},\dots,t_n) \longmapsto t_{r+1}\begin{pmatrix}\vdots\end{pmatrix} + t_{r+2}\begin{pmatrix}\vdots\end{pmatrix} + \dots + t_n\begin{pmatrix}\vdots\end{pmatrix}; \]</li>
+      <li>la somma di sottospazi: \(U_1 \oplus U_2 \longrightarrow U_1 + U_2\), \((\mathbf{u}_1,\mathbf{u}_2) \longmapsto \mathbf{u}_1 + \mathbf{u}_2\) (sulla slide la coppia è scritta con \(\oplus\); negli appunti lo stesso spazio è \(U_1\times U_2\)).</li>
+    </ul>
+    <p>Poi una versione "dal fruttivendolo" dell'Esempio 4.1: compriamo 30 kg di pomodori a 3 €/kg e 15 banane a 0,50 € al pezzo:</p>
+    \[ 30\cdot 3 + 15\cdot 0{,}50 = 97{,}50\ \text{€}. \]
+    <p>Con i prezzi di tutti i prodotti (pomodori 3, banane 0,50, peperoni 2, cetrioli 1) e le quantità acquistate \(x_1,\dots,x_4\) (qui 30, 15, 0, 0):</p>
+    \[ 3\cdot 30 + 0{,}50\cdot 15 + 2\cdot 0 + 1\cdot 0 = a_1x_1 + a_2x_2 + a_3x_3 + a_4x_4, \]
+    <p>cioè un'applicazione \(\mathbb{R}^4 \to \mathbb{R}\), \((x_1,x_2,x_3,x_4)\mapsto \text{Prezzo}\). Il prof ha sottolineato che è solo un'approssimazione della realtà: non si possono comprare \(\pi^{\sqrt2}\) banane, e comprare \(-100\) milioni di kg di pomodori non vi rende ricchi.</p>
+  </div>
+</section>
+
+<section class="sec" id="cap4-definizioni">
+  <div class="num">02</div>
+  <h2>Definizione ed esempi</h2>
+  <p class="lead">§4.1 degli appunti: definizione di applicazione \(\mathbb{K}\)-lineare, primi esempi, composizione e isomorfismi.</p>
+
+  <div class="box box--def"><div class="tag">Definizione 4.3</div>
+    <p>Siano \(V, W\) due \(\mathbb{K}\)-spazi vettoriali. Un'applicazione \(f : V \to W\) si dice <strong>\(\mathbb{K}\)-lineare</strong> (oppure <strong>omomorfismo di \(\mathbb{K}\)-spazi vettoriali</strong>) se per ogni \(\lambda\in\mathbb{K}\) e per ogni \(\mathbf{v},\mathbf{v}_1,\mathbf{v}_2\in V\) valgono:</p>
+    <ul>
+      <li><strong>Hom 1</strong> \(\;f(\mathbf{v}_1+\mathbf{v}_2) = f(\mathbf{v}_1) + f(\mathbf{v}_2)\);</li>
+      <li><strong>Hom 2</strong> \(\;f(\lambda\mathbf{v}) = \lambda f(\mathbf{v})\).</li>
+    </ul>
+    <p>L'insieme di tutte le applicazioni \(\mathbb{K}\)-lineari da \(V\) a \(W\) si indica con \(\mathrm{Hom}_{\mathbb{K}}(V,W)\).</p>
+  </div>
+
+  <div class="box box--note"><div class="tag">Dalla lezione 11 — Def. 5.1 delle slide = Def. 4.3 degli appunti</div>
+    <ul>
+      <li>Ricordiamo che "applicazione" significa: per ogni \(\mathbf{v}\in V\) esiste un unico \(\mathbf{w}\in W\) con \(f(\mathbf{v}) = \mathbf{w}\).</li>
+      <li>\(V\) e \(W\) devono essere spazi vettoriali <strong>sullo stesso campo</strong> \(\mathbb{K}\): in Hom 2, \(\lambda\mathbf{v}\) si calcola in \(V\) e \(\lambda f(\mathbf{v})\) in \(W\), con lo stesso scalare. Tra uno spazio reale e uno su un campo finito si possono definire applicazioni tra insiemi, ma non ha senso parlare di linearità.</li>
+      <li>I nomi Hom 1 e Hom 2 vengono da "omomorfismo"; da qui anche la notazione \(\mathrm{Hom}_{\mathbb{K}}(V,W) = \{f : V\to W \mid f \text{ è } \mathbb{K}\text{-lineare}\}\).</li>
+    </ul>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Osservazione 4.4</div>
+    <p>Per ogni applicazione lineare \(f : V\to W\) valgono:</p>
+    <ol>
+      <li>\(f(\mathbf{0}_V) = \mathbf{0}_W\);</li>
+      <li>\(f(-\mathbf{v}) = -f(\mathbf{v})\) per ogni \(\mathbf{v}\in V\).</li>
+    </ol>
+    <p><em>Verifica.</em> (i) Legge di cancellazione in \(W\) applicata a \(f(\mathbf{0}_V) = f(\mathbf{0}_V+\mathbf{0}_V) = f(\mathbf{0}_V) + f(\mathbf{0}_V)\). (ii) Unicità dell'opposto: \(f(\mathbf{v}) + f(-\mathbf{v}) = f(\mathbf{v}-\mathbf{v}) = f(\mathbf{0}_V) = \mathbf{0}_W\).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Osservazione 4.5</div>
+    <p>Un'applicazione \(f : V\to W\) è lineare se e solo se</p>
+    \[ f(\lambda_1\mathbf{v}_1 + \lambda_2\mathbf{v}_2) = \lambda_1 f(\mathbf{v}_1) + \lambda_2 f(\mathbf{v}_2)\qquad \forall\,\lambda_i\in\mathbb{K},\ \forall\,\mathbf{v}_i\in V. \]
+    <p>In altre parole, \(f\) è lineare se e solo se è compatibile con le combinazioni lineari. Per induzione vale poi per combinazioni di lunghezza arbitraria: \(f(\lambda_1\mathbf{v}_1+\dots+\lambda_r\mathbf{v}_r) = \lambda_1 f(\mathbf{v}_1)+\dots+\lambda_r f(\mathbf{v}_r)\).</p>
+  </div>
+
+  <div class="box box--note"><div class="tag">Dalla lezione 11</div>
+    <p>Il prof insiste: \(f(\mathbf{0}_V) = \mathbf{0}_W\) è <strong>la prima cosa da controllare</strong> quando si vuole capire se un'applicazione è lineare (come per i sottospazi vettoriali, dove si controlla che lo zero ci sia). Se \(f(\mathbf{0})\neq\mathbf{0}\), \(f\) non è lineare; se invece \(f(\mathbf{0})=\mathbf{0}\) non si può ancora concludere niente.</p>
+    <p>Il motivo è ragionevole: al supermercato, se non compro niente voglio pagare zero. Esistono mappe che alcuni chiamano "lineari" ma che noi chiamiamo <strong>affini</strong>, con un prezzo di partenza (il taxi, o Uber: anche solo salendo si pagano 2-4 euro, poi un prezzo al km): sono molto legate a quelle lineari ma <em>non</em> sono omomorfismi di spazi vettoriali.</p>
+    <p>Sulla slide (p. 8) la formula per combinazioni di lunghezza \(r\) è indicata come "Teorema", mentre Hom 1 + Hom 2 sono la "Def": sono equivalenti. Il prof l'ha presentato come un "gioco" tipico della matematica: ciò che desideriamo davvero è la compatibilità con <em>tutte</em> le combinazioni lineari, ma come definizione si sceglie la condizione minima, più facile da verificare. Le due direzioni dell'Oss. 4.5: applicando Hom 1 e poi Hom 2 si ottiene la formula; viceversa, con \(\lambda_1 = \lambda_2 = 1\) si ritrova Hom 1 e con \(\lambda_2 = 0\), \(\lambda_1 = \lambda\) si ritrova Hom 2.</p>
+  </div>
+
+  <h3>Esempi</h3>
+  <div class="box box--ex"><div class="tag">Esempi (appunti, pp. 179-181)</div>
+    <ol>
+      <li>(Vettori riga per comodità.) Applicazioni \(f:\mathbb{R}^2\to\mathbb{R}\):
+        <ol type="i">
+          <li>\(f(x,y) = x+y\) è lineare: per ogni \((x_1,y_1),(x_2,y_2),(x,y)\in\mathbb{R}^2\), \(\lambda\in\mathbb{R}\),
+            \[ f((x_1,y_1)+(x_2,y_2)) = (x_1+x_2)+(y_1+y_2) = (x_1+y_1)+(x_2+y_2) = f(x_1,y_1)+f(x_2,y_2), \]
+            \[ f(\lambda(x,y)) = \lambda x+\lambda y = \lambda(x+y) = \lambda f(x,y). \]</li>
+          <li>\(f(x,y) = ax+by\), con \(a,b\in\mathbb{R}\): lineare, in modo analogo.</li>
+          <li>\(f(x,y) = x+y+1\) <strong>non</strong> è lineare, perché \(f(\mathbf{0}) = 1\neq 0\).</li>
+          <li>\(f(x,y) = x^2+y^2\) <strong>non</strong> è lineare, perché \(f(-(1,1)) = f(-1,-1) = 2 \neq -2 = -f(1,1)\), in contraddizione con l'Osservazione 4.4.</li>
+        </ol></li>
+      <li>\(V = \mathrm{Mat}_{2\times2}(\mathbb{R})\), \(W = \mathbb{R}^2\), \(f\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix} = \begin{pmatrix}a+d\\b-c\end{pmatrix}\) è lineare: per \(A = \begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}\), \(B = \begin{pmatrix}r&amp;s\\t&amp;u\end{pmatrix}\),
+        \[ f(A+B) = \begin{pmatrix}(a+r)+(d+u)\\ (b+s)-(c+t)\end{pmatrix} = \begin{pmatrix}a+d\\b-c\end{pmatrix}+\begin{pmatrix}r+u\\s-t\end{pmatrix} = f(A)+f(B),\qquad f(\lambda A) = \begin{pmatrix}\lambda a+\lambda d\\ \lambda b-\lambda c\end{pmatrix} = \lambda f(A). \]</li>
+      <li>Per ogni \(n\in\mathbb{N}_{&gt;0}\) la trasposta \((\ )^{\top} : \mathrm{Mat}_{n\times n}(\mathbb{K})\to\mathrm{Mat}_{n\times n}(\mathbb{K})\), \(A\mapsto A^{\top}\), è lineare, perché \((A+B)^{\top} = A^{\top}+B^{\top}\) e \((\lambda A)^{\top} = \lambda A^{\top}\).</li>
+      <li>\(V = \mathbb{R}[x]_{\leqslant 2}\), \(W = \mathbb{R}^2\), \(f(p(x)) = \begin{pmatrix}p(0)\\p(1)\end{pmatrix}\). Per esempio \(f(x^2+1) = \begin{pmatrix}1\\2\end{pmatrix}\) e \(f((x+1)^2) = \begin{pmatrix}1\\4\end{pmatrix}\). È lineare perché per ogni \(a\in\mathbb{R}\) e \(p,q\in\mathbb{R}[x]\) vale \((p+q)(a) = p(a)+q(a)\) e \((\lambda p)(a) = \lambda\cdot p(a)\).</li>
+      <li>(Dimensione infinita.) \(V = \mathbb{R}[x]\), \(f : V\to V\), \(f(p(x)) = x\cdot p(x)\). Per esempio \(f(x^2+1) = x^3+x\), \(f((x+1)^3) = x^4+3x^3+3x^2+x\). È lineare: \(x(p+q) = xp+xq\), \(x(\lambda p) = \lambda(xp)\).
+        <br><strong>Attenzione!</strong> Con \(V = \mathbb{R}[x]_{\leqslant d}\), \(f\) non sarebbe più un'applicazione da \(V\) in \(V\): un polinomio di grado \(d\) verrebbe mandato fuori da \(V\).</li>
+      <li><strong>L'esempio più importante.</strong> Per ogni \(A\in\mathrm{Mat}_{m\times n}(\mathbb{K})\) l'<strong>applicazione lineare associata ad \(A\)</strong> è
+        \[ f_A : \mathbb{K}^n \xrightarrow{\ A\ } \mathbb{K}^m,\qquad \mathbf{x}\longmapsto A\cdot\mathbf{x}. \]
+        È lineare per le proprietà del prodotto: \(f_A(\mathbf{x}+\mathbf{y}) = A\mathbf{x}+A\mathbf{y}\), \(f_A(\lambda\mathbf{x}) = \lambda A\mathbf{x}\). Dopo aver scelto delle basi, <em>ogni</em> applicazione lineare tra spazi di dimensione finita si rappresenta così (Capitolo 5).
+        <br>Esempio concreto: \(A = \begin{pmatrix}1&amp;1&amp;1\\0&amp;1&amp;-1\end{pmatrix}\in\mathrm{Mat}_{2\times3}(\mathbb{R})\) definisce \(f_A:\mathbb{R}^3\to\mathbb{R}^2\),
+        \[ f_A\begin{pmatrix}x\\y\\z\end{pmatrix} = \begin{pmatrix}1&amp;1&amp;1\\0&amp;1&amp;-1\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix} = \begin{pmatrix}x+y+z\\y-z\end{pmatrix},\qquad f_A(\mathbf{e}_1) = \mathsf{C}_1(A) = \begin{pmatrix}1\\0\end{pmatrix},\ f_A(\mathbf{e}_2) = \mathsf{C}_2(A) = \begin{pmatrix}1\\1\end{pmatrix},\ f_A(\mathbf{e}_3) = \mathsf{C}_3(A) = \begin{pmatrix}1\\-1\end{pmatrix}. \]
+        In generale \(f_A(\mathbf{e}_i) = \mathsf{C}_i(A)\), la colonna \(i\)-esima di \(A\).</li>
+      <li>L'identità \(\mathrm{id}_V : V\to V\) è \(\mathbb{K}\)-lineare.</li>
+      <li>L'inclusione \(i_W : W\hookrightarrow V\) di un sottospazio \(W\subseteq V\) è \(\mathbb{K}\)-lineare.</li>
+      <li>L'applicazione nulla \(\mathbf{0} : V\to W\), \(\mathbf{0}(\mathbf{v}) := \mathbf{0}_W\), è lineare.</li>
+      <li>Per \(\lambda\in\mathbb{K}^{\times}\) l'<strong>omotetia</strong> \(h_\lambda : V\to V\), \(h_\lambda(\mathbf{v}) := \lambda\mathbf{v}\) (indicata anche \(\cdot\lambda : V\to V\)) è lineare.</li>
+      <li>La rotazione \(D_\theta:\mathbb{R}^2\to\mathbb{R}^2\) di angolo \(\theta\) intorno all'origine è lineare. Da \(D_\theta(\mathbf{e}_1) = (\cos\theta,\sin\theta)\), \(D_\theta(\mathbf{e}_2) = (-\sin\theta,\cos\theta)\) e \(\mathbf{v} = x\mathbf{e}_1+y\mathbf{e}_2\):
+        \[ D_\theta(x,y) = (x\cos\theta - y\sin\theta,\ x\sin\theta+y\cos\theta),\qquad\text{cioè la moltiplicazione per }\begin{pmatrix}\cos\theta&amp;-\sin\theta\\ \sin\theta&amp;\cos\theta\end{pmatrix}. \]</li>
+    </ol>
+  </div>
+
+  <div class="box box--note"><div class="tag">Dalla lezione 11 — gli esempi svolti alla lavagna (slide pp. 2-4)</div>
+    <ul>
+      <li><strong>(ii) è il caso generale:</strong> le \(f(x,y) = ax+by\) sono <em>tutte</em> le applicazioni \(\mathbb{R}\)-lineari da \(\mathbb{R}^2\) in \(\mathbb{R}\). Hom 2 per (ii): \(f(\lambda(x,y)) = f(\lambda x,\lambda y) = a(\lambda x)+b(\lambda y) = \lambda(ax+by) = \lambda f(x,y)\).</li>
+      <li><strong>(iii), un secondo argomento:</strong> se \(f(x,y) = x+y+1\) fosse lineare, avremmo
+        \[ f(x,y) = f(x,0)+f(0,y) = (x+0+1)+(0+y+1) = x+y+2 \neq x+y+1.\ \ \text{Contraddizione.} \]</li>
+      <li><strong>(iv), attenzione:</strong> qui \(f(0,0) = 0^2+0^2 = 0\), quindi il test dello zero <em>non</em> basta. Si usa Hom 2:
+        \[ f(2\cdot(1,1)) \overset{?}{=} 2\cdot f(1,1) = 2(1^2+1^2) = 4,\qquad\text{ma}\qquad f(2,2) = 2^2+2^2 = 8\neq 4. \]
+        Oppure: \(f(-x,-y) = x^2+y^2 \neq -x^2-y^2 = -f(x,y)\) se \((x,y)\neq(0,0)\).</li>
+      <li><strong>Esempio 5 "rovinato":</strong> \(f:\mathbb{R}[x]_{\leqslant2}\to\mathbb{R}[x]_{\leqslant2}\), \(p(x)\mapsto x\cdot p(x)\) <strong>non è un'applicazione</strong> (anche se la "dimostrazione" di Hom 1 e Hom 2 sembra funzionare): \(x^2+1\mapsto x^3+x\notin\mathbb{R}[x]_{\leqslant 2}\).</li>
+      <li><strong>Esempio 6:</strong> con \(\mathbf{x},\mathbf{y}\in\mathbb{K}^n\), \(\lambda,\mu\in\mathbb{K}\): \(f_A(\lambda\mathbf{x}+\mu\mathbf{y}) = A(\lambda\mathbf{x}+\mu\mathbf{y}) = \lambda A\mathbf{x}+\mu A\mathbf{y} = \lambda f_A(\mathbf{x})+\mu f_A(\mathbf{y})\) e soprattutto
+        \[ \boxed{\,f_A(\mathbf{e}_i) = A\cdot\mathbf{e}_i = \mathrm{Colonna}_i(A)\,} \]
+        Osservate le dimensioni: \(A\in\mathrm{Mat}_{m\times n}\) va da \(\mathbb{K}^n\) (numero di colonne) a \(\mathbb{K}^m\) (numero di righe): \(A\in\mathrm{Mat}_{2\times3}(\mathbb{R})\) dà \(\mathbb{R}^3\to\mathbb{R}^2\).</li>
+      <li><strong>Applicazione nulla</strong>, per esempio \(\mathbf{0}:\mathbb{R}^n\to\mathbb{R}^2\), \((x_1,\dots,x_n)\mapsto(0,0)\); identità: \(\mathrm{id}_V(\mathbf{v}) = \mathbf{v}\) per ogni \(\mathbf{v}\in V\).</li>
+    </ul>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo — stabilire se \(f\) è lineare</div>
+    <ol>
+      <li>Controlla che \(f\) sia davvero un'applicazione \(V\to W\) (l'immagine deve stare in \(W\): vedi \(x\cdot p(x)\) su \(\mathbb{R}[x]_{\leqslant 2}\)).</li>
+      <li>Calcola \(f(\mathbf{0}_V)\): se \(\neq\mathbf{0}_W\), \(f\) <strong>non</strong> è lineare (termini costanti, es. \(+1\)).</li>
+      <li>Cerca termini non lineari: quadrati, prodotti di coordinate (\(xy\)), valori assoluti, \(\det\), norme... In tal caso trova un controesempio esplicito a Hom 1 o Hom 2 (es. \(f(2\mathbf{v})\neq 2f(\mathbf{v})\), oppure \(f(-\mathbf{v})\neq -f(\mathbf{v})\)).</li>
+      <li>Se ogni componente è combinazione lineare (a coefficienti costanti) delle coordinate, oppure \(f\) è costruita con operazioni lineari (prodotto per una matrice fissa, trasposta, valutazione \(p\mapsto p(a)\), derivata, traccia...), verifica Hom 1 e Hom 2, oppure in un colpo solo \(f(\lambda_1\mathbf{v}_1+\lambda_2\mathbf{v}_2) = \lambda_1 f(\mathbf{v}_1)+\lambda_2 f(\mathbf{v}_2)\) (Oss. 4.5).</li>
+    </ol>
+  </div>
+
+  <div class="box box--note"><div class="tag">Dalla lezione 11 — consigli del prof</div>
+    <ul>
+      <li>Per dimostrare la linearità il prof preferisce verificare Hom 1 e Hom 2 <strong>separatamente</strong> ("devo gestire meno cose alla volta"), ma va benissimo anche verificare in un colpo solo \(f(\lambda_1\mathbf{v}_1+\lambda_2\mathbf{v}_2)\): entrambe le strade sono giuste.</li>
+      <li>Negli esempi lineari le componenti sono espressioni <strong>omogenee di grado 1</strong> nelle entrate del vettore (es. \(a+d\), \(b-c\) per una matrice \(2\times2\)).</li>
+      <li>Per dire che una mappa <strong>non</strong> è lineare basta <strong>un solo controesempio</strong> esplicito (è la negazione di un "per ogni"); non serve, anzi non basta, osservare che "le formule sono diverse": formule diverse possono dare lo stesso risultato.</li>
+      <li>La linearità della trasposta "è stata anche un problema d'esame": all'esame basta scrivere \((A+B)^{\top} = A^{\top}+B^{\top}\) e \((\lambda A)^{\top} = \lambda A^{\top}\), senza la traduzione "\(f(\mathbf{v}+\mathbf{w})\)" fatta a lezione per collegarsi agli assiomi.</li>
+      <li>Gli esempi con i <strong>polinomi</strong> sono "l'ultima classe di esempi che ci piace usare per gli esami".</li>
+      <li>"Non dimenticatevi che un'applicazione lineare deve essere prima di tutto un'<strong>applicazione</strong>": controllate sempre che le immagini stiano nel codominio dichiarato.</li>
+      <li>Le applicazioni lineari esistono e sono interessanti anche tra spazi di dimensione infinita (es. \(p\mapsto x\cdot p\) su \(\mathbb{R}[x]\)), dove non si possono associare matrici finite.</li>
+    </ul>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <ul>
+      <li>\(f(\mathbf{0}) = \mathbf{0}\) è <strong>necessaria ma non sufficiente</strong>: \(f(x,y) = x^2+y^2\) manda \(\mathbf{0}\) in \(0\) ma non è lineare.</li>
+      <li>"Lineare" in algebra lineare non è "affine": \(ax+by+c\) con \(c\neq 0\) non è lineare (Esempio 4.2).</li>
+      <li>\(\det : \mathrm{Mat}_{n\times n}(\mathbb{R})\to\mathbb{R}\) non è lineare per \(n\geqslant 2\): \(\det(\lambda A) = \lambda^n\det A\) e in generale \(\det(A+B)\neq\det A+\det B\).</li>
+    </ul>
+  </div>
+
+  <h3>Composizione</h3>
+  <div class="box box--thm"><div class="tag">Osservazione 4.6</div>
+    <p>Se \(V\xrightarrow{\ f\ }W\xrightarrow{\ g\ }Z\) sono \(\mathbb{K}\)-lineari, anche la composizione \(g\circ f : V\to Z\) è \(\mathbb{K}\)-lineare. Infatti</p>
+    \[ (g\circ f)(\mathbf{v}+\mathbf{w}) = g(f(\mathbf{v})+f(\mathbf{w})) = g(f(\mathbf{v}))+g(f(\mathbf{w})),\qquad (g\circ f)(\lambda\mathbf{v}) = g(\lambda f(\mathbf{v})) = \lambda\, g(f(\mathbf{v})). \]
+    <p>(Nella prima uguaglianza si usa la linearità di \(f\), nella seconda quella di \(g\).)</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio 4.7</div>
+    <p>\(f:\mathbb{R}\to\mathbb{R}^2\), \(f(x) = \begin{pmatrix}x\\2x\end{pmatrix}\), e \(g:\mathbb{R}^2\to\mathbb{R}^3\), \(g\begin{pmatrix}x\\y\end{pmatrix} = \begin{pmatrix}x-y\\x+y\\0\end{pmatrix}\). Allora \(g\circ f:\mathbb{R}\to\mathbb{R}^3\) è</p>
+    \[ (g\circ f)(x) = g\begin{pmatrix}x\\2x\end{pmatrix} = \begin{pmatrix}x-2x\\x+2x\\0\end{pmatrix} = \begin{pmatrix}-x\\3x\\0\end{pmatrix}. \]
+    <p>(È lo stesso esempio svolto a lezione come Oss. 5.4 delle slide.)</p>
+  </div>
+
+  <h3>Isomorfismi</h3>
+  <div class="box box--def"><div class="tag">Definizione 4.8</div>
+    <p>Un'applicazione \(\mathbb{K}\)-lineare \(f:V\to W\) è un <strong>isomorfismo</strong> (\(\mathbb{K}\)-lineare) se esiste un'applicazione \(\mathbb{K}\)-lineare inversa \(f^{-1}:W\to V\) tale che</p>
+    \[ f\circ f^{-1} = \mathrm{id}_W\qquad\text{e}\qquad f^{-1}\circ f = \mathrm{id}_V. \]
+  </div>
+
+  <p>Un'applicazione tra insiemi è invertibile se e solo se è biiettiva (Teorema 0.32): la biiettività garantisce l'esistenza dell'inversa, ma non la sua linearità. Questa va dimostrata.</p>
+
+  <div class="box box--thm"><div class="tag">Proposizione 4.9</div>
+    <p>Un'applicazione \(\mathbb{K}\)-lineare \(f:V\to W\) è un isomorfismo se e solo se è biiettiva.</p>
+    <p><em>Schizzo.</em> (\(\Rightarrow\)) Dal Teorema 0.32: l'esistenza di \(f^{-1}\) implica la biiettività. (\(\Leftarrow\)) Esiste l'inversa insiemistica \(f^{-1}\); per ogni \(\mathbf{w}\in W\) c'è un unico \(\mathbf{v}\) con \(f(\mathbf{v}) = \mathbf{w}\), cioè \(f^{-1}(\mathbf{w}) = \mathbf{v}\). Se \(f(\mathbf{v}_i) = \mathbf{w}_i\):</p>
+    \[ f^{-1}(\mathbf{w}_1+\mathbf{w}_2) = f^{-1}(f(\mathbf{v}_1)+f(\mathbf{v}_2)) = f^{-1}(f(\mathbf{v}_1+\mathbf{v}_2)) = \mathbf{v}_1+\mathbf{v}_2 = f^{-1}(\mathbf{w}_1)+f^{-1}(\mathbf{w}_2), \]
+    \[ f^{-1}(\lambda\mathbf{w}) = f^{-1}(\lambda f(\mathbf{v})) = f^{-1}(f(\lambda\mathbf{v})) = \lambda\mathbf{v} = \lambda f^{-1}(\mathbf{w}). \]
+    <p>(Il passaggio chiave è "\(f\) è lineare", poi \(f^{-1}\circ f = \mathrm{id}_V\).)</p>
+  </div>
+
+  <div class="box box--note"><div class="tag">Dalla lezione 11 — corrispondenza delle numerazioni</div>
+    <p>Le slide della lezione 11 sono intitolate "Capitolo 5 – Lezione 11: Applicazioni lineari" e numerano i risultati come 5.x; negli appunti ufficiali lo stesso materiale è il <strong>Capitolo 4</strong>. Corrispondenza:</p>
+    <ul>
+      <li>Def. 5.1 = Def. 4.3; Oss. 5.2 = Oss. 4.4; Oss. 5.3 = Oss. 4.5; Esempi 1-8 = Esempi 1-9 di pp. 179-181 (le slide non hanno l'inclusione);</li>
+      <li>Oss. 5.4 = Oss. 4.6 (con l'Esempio 4.7); Def. 5.5 = Def. 4.8; Esempio 5.6 = Esempio 1 dopo l'Oss. 4.20; Prop. 5.7 = Prop. 4.9;</li>
+      <li>§5.2 = §4.2: Def. 5.8 = Def. 4.10; Prop. 5.9 = Prop. 4.12; Prop. 5.10 = Prop. 4.13.</li>
+    </ul>
+    <p>Il prof ha insistito sulla definizione: un isomorfismo è un omomorfismo che ha un'inversa che è <em>anche lei</em> un omomorfismo. Questa è la definizione "giusta" in tutta la matematica (per qualsiasi struttura: spazi vettoriali, gruppi, varietà differenziabili...): si può invertire e si conserva la compatibilità con la struttura. In algebra lineare l'inversa di una biiezione lineare è automaticamente lineare (Prop. 4.9), ma <strong>non</strong> è un fatto ovvio: in topologia gli omomorfismi sono le funzioni continue, ed esistono funzioni continue biiettive con inversa non continua. Nella dimostrazione della Prop. 4.9 il passaggio da non dimenticare è quello in cui si usa che \(f\) è lineare: "non ogni applicazione biiettiva sarebbe lineare".</p>
+    <p>A lezione, nella Def. 5.5 il prof ha evidenziato che sia \(f\) sia \(f^{-1}\) devono essere <em>omomorfismi</em> (lineari). Esempio 5.6: \(f:\mathbb{R}[x]_{\leqslant2}\to\mathbb{R}^3\), \(f(a+bx+cx^2) = \begin{pmatrix}a\\b\\c\end{pmatrix}\), con inversa \(f^{-1}:\mathbb{R}^3\to\mathbb{R}[x]_{\leqslant2}\), \(f^{-1}\begin{pmatrix}a\\b\\c\end{pmatrix} = a+bx+cx^2\). Consiglio: se la variabile dei polinomi si chiama \(x\), non chiamate \(x,y,z\) le coordinate del vettore di \(\mathbb{R}^3\).</p>
+  </div>
+
+  <div class="box box--def"><div class="tag">Notazione — endomorfismi e automorfismi</div>
+    <ol>
+      <li>Un'applicazione \(\mathbb{K}\)-lineare da \(V\) a \(V\) si chiama <strong>endomorfismo</strong> di \(V\).</li>
+      <li>Un endomorfismo che è anche un isomorfismo si chiama <strong>automorfismo</strong> di \(V\).</li>
+    </ol>
+    \[ \mathrm{End}_{\mathbb{K}}(V) = \{f:V\to V : f \text{ è } \mathbb{K}\text{-lineare}\},\qquad \mathrm{Aut}_{\mathbb{K}}(V) = \{f:V\to V : f \text{ è } \mathbb{K}\text{-lineare e invertibile}\}. \]
+    <p>Scelta una base, gli automorfismi di uno spazio di dimensione \(n\) corrispondono alle matrici invertibili \(n\times n\); i cambi di coordinate sono esempi di automorfismi.</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempi (lezione 11)</div>
+    <ul>
+      <li>\(f:\mathbb{R}^2\to\mathbb{R}^2\), \(f\begin{pmatrix}x\\y\end{pmatrix} = \begin{pmatrix}x\\x\end{pmatrix}\): \(f\in\mathrm{End}_{\mathbb{R}}(\mathbb{R}^2)\setminus\mathrm{Aut}_{\mathbb{R}}(\mathbb{R}^2)\), perché non è iniettiva (\(f(0,1) = f(0,0)\)).</li>
+      <li>\(\sigma:\mathbb{R}^2\to\mathbb{R}^2\), \(\sigma\begin{pmatrix}x\\y\end{pmatrix} = \begin{pmatrix}y\\x\end{pmatrix}\): \(\sigma\in\mathrm{Aut}_{\mathbb{R}}(\mathbb{R}^2)\) e \(\sigma^{-1} = \sigma\), perché \(\sigma\left(\sigma\begin{pmatrix}x\\y\end{pmatrix}\right) = \sigma\begin{pmatrix}y\\x\end{pmatrix} = \begin{pmatrix}x\\y\end{pmatrix}\).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="cap4-nucleo-immagine">
+  <div class="num">03</div>
+  <h2>Nucleo e immagine</h2>
+  <p class="lead">§4.2: l'immagine c'era già per le applicazioni tra insiemi; la novità è il nucleo, che esiste solo perché c'è un elemento neutro (lo zero).</p>
+
+  <div class="box box--def"><div class="tag">Definizione 4.10</div>
+    <p>Sia \(f:V\to W\) un'applicazione \(\mathbb{K}\)-lineare.</p>
+    <ol>
+      <li>Il <strong>nucleo</strong> di \(f\) è l'insieme dei vettori di \(V\) mandati nello zero di \(W\):
+        \[ \mathrm{Ker}(f) := \{\mathbf{v}\in V : f(\mathbf{v}) = \mathbf{0}_W\}\subseteq V. \]</li>
+      <li>L'<strong>immagine</strong> di \(f\) è l'insieme dei vettori di \(W\) raggiunti tramite \(f\):
+        \[ \mathrm{Im}(f) := \{\mathbf{w}\in W \mid \exists\,\mathbf{v}\in V : f(\mathbf{v}) = \mathbf{w}\} = f(V)\subseteq W. \]</li>
+    </ol>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio 4.11</div>
+    <p>\(f:\mathbb{R}^2\to\mathbb{R}^3\), \(f\begin{pmatrix}x\\y\end{pmatrix} = \begin{pmatrix}x\\x\\0\end{pmatrix}\). Il nucleo:</p>
+    \[ \mathrm{Ker}(f) = \left\{\begin{pmatrix}x\\y\end{pmatrix}\in\mathbb{R}^2 : \begin{pmatrix}x\\x\\0\end{pmatrix} = \begin{pmatrix}0\\0\\0\end{pmatrix}\right\} = \left\{\begin{pmatrix}x\\y\end{pmatrix}\in\mathbb{R}^2 : x = 0\right\} = \mathrm{Span}_{\mathbb{R}}\left\{\begin{pmatrix}0\\1\end{pmatrix}\right\}\subseteq\mathbb{R}^2. \]
+    <p>L'immagine:</p>
+    \[ \mathrm{Im}(f) = \left\{\begin{pmatrix}x\\y\\z\end{pmatrix}\in\mathbb{R}^3 \mid \exists\,a,b\in\mathbb{R} : \begin{pmatrix}a\\a\\0\end{pmatrix} = \begin{pmatrix}x\\y\\z\end{pmatrix}\right\} = \left\{\begin{pmatrix}a\\a\\0\end{pmatrix} : a\in\mathbb{R}\right\} = \mathrm{Span}_{\mathbb{R}}\left\{\begin{pmatrix}1\\1\\0\end{pmatrix}\right\}\subseteq\mathbb{R}^3. \]
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio della lezione 11 (slide p. 6) — esempio con figura</div>
+    <p>\(f:\mathbb{R}^2\to\mathbb{R}^2\), \(f(x,y) = (x,x)\).</p>
+    \[ \mathrm{Ker} f = \{(x,y)\in\mathbb{R}^2 : (x,x) = (0,0)\} = \{(x,y)\in\mathbb{R}^2 : x = 0\} = \mathrm{Span}_{\mathbb{R}}\{(0,1)\}, \]
+    \[ \mathrm{Im} f = \{(a,b)\in\mathbb{R}^2 : \exists\,(x,y)\in\mathbb{R}^2 \text{ con } f(x,y) = (a,b)\} = f(\mathbb{R}^2) = \{(x,x) : (x,y)\in\mathbb{R}^2\} = \mathrm{Span}_{\mathbb{R}}\{(1,1)\}. \]
+    <p>Geometricamente \(f\) sposta ogni punto \((x,y)\) <em>in verticale</em> fino alla bisettrice \(y = x\): il nucleo è l'asse \(y\) (tutti i suoi punti finiscono nell'origine), l'immagine è la bisettrice. Per esempio \((2,0)\mapsto(2,2)\). Come ha detto il prof: "si prendono i vettori del piano e si mandano su questa diagonale in modo parallelo all'asse \(y\); per questo tutto l'asse \(y\) viene mandato in zero". Qui si può disegnare tutto su un solo grafico perché \(f\) è un endomorfismo; in generale nucleo e immagine vivono in spazi diversi. (Non è l'unico modo per definire una "proiezione" sulla diagonale.)</p>
+    <figure class="fig">
+      <svg viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="Nucleo e immagine di f(x,y)=(x,x)">
+        <line x1="10" y1="120" x2="230" y2="120" stroke="currentColor" stroke-width="1"/>
+        <line x1="120" y1="230" x2="120" y2="10" stroke="currentColor" stroke-width="3"/>
+        <line x1="20" y1="220" x2="220" y2="20" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4"/>
+        <polygon points="230,120 222,116 222,124" fill="currentColor"/>
+        <polygon points="120,10 116,18 124,18" fill="currentColor"/>
+        <circle cx="120" cy="120" r="4" fill="currentColor"/>
+        <circle cx="170" cy="120" r="4" fill="currentColor"/>
+        <circle cx="170" cy="70" r="4" fill="currentColor"/>
+        <line x1="170" y1="116" x2="170" y2="78" stroke="currentColor" stroke-width="1.2"/>
+        <polygon points="170,74 166,82 174,82" fill="currentColor"/>
+        <circle cx="75" cy="50" r="4" fill="currentColor"/>
+        <circle cx="75" cy="165" r="4" fill="currentColor"/>
+        <line x1="75" y1="54" x2="75" y2="157" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <polygon points="75,161 71,153 79,153" fill="currentColor"/>
+        <text x="176" y="136" font-size="12" fill="currentColor">(2,0)</text>
+        <text x="178" y="68" font-size="12" fill="currentColor">(2,2)</text>
+        <text x="82" y="48" font-size="12" fill="currentColor">v</text>
+        <text x="82" y="180" font-size="12" fill="currentColor">f(v)</text>
+        <text x="126" y="22" font-size="12" fill="currentColor">Ker f</text>
+        <text x="190" y="44" font-size="12" fill="currentColor">Im f</text>
+      </svg>
+      <figcaption>\(f(x,y) = (x,x)\): ogni vettore si muove in verticale fino alla retta \(y = x\) (= \(\mathrm{Im} f\)); l'asse verticale (linea spessa) è \(\mathrm{Ker} f\).</figcaption>
+    </figure>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Proposizione 4.12</div>
+    <p>Sia \(f:V\to W\) un'applicazione \(\mathbb{K}\)-lineare. Allora nucleo e immagine sono sottospazi vettoriali:</p>
+    \[ \mathrm{Ker}(f)\subseteq_{\mathbb{K}} V\qquad\text{e}\qquad \mathrm{Im}(f)\subseteq_{\mathbb{K}} W. \]
+    <p><em>Schizzo.</em> \(\mathrm{Ker}(f)\neq\emptyset\) perché \(f(\mathbf{0}_V) = \mathbf{0}_W\); se \(\mathbf{v}_1,\mathbf{v}_2\in\mathrm{Ker}(f)\), allora \(f(\lambda_1\mathbf{v}_1+\lambda_2\mathbf{v}_2) = \lambda_1\mathbf{0}_W+\lambda_2\mathbf{0}_W = \mathbf{0}_W\). \(\mathrm{Im}(f)\neq\emptyset\) perché \(\mathbf{0}_W = f(\mathbf{0}_V)\); se \(\mathbf{w}_i = f(\mathbf{v}_i)\), allora \(\lambda_1\mathbf{w}_1+\lambda_2\mathbf{w}_2 = f(\lambda_1\mathbf{v}_1+\lambda_2\mathbf{v}_2)\in\mathrm{Im}(f)\).</p>
+  </div>
+
+  <div class="box box--note"><div class="tag">Dalla lezione 11 — nucleo di una matrice</div>
+    <p>Come terminologia, il "nucleo originale" è quello di un omomorfismo. Per le matrici lo si definisce tramite \(f_A\):</p>
+    \[ f_A:\mathbb{R}^n\to\mathbb{R}^m,\ \mathbf{x}\mapsto A\mathbf{x}:\qquad \mathrm{Ker} f_A = \{\mathbf{x}\in\mathbb{R}^n : f_A(\mathbf{x}) = \mathbf{0}\} = \{\mathbf{x}\in\mathbb{R}^n : A\mathbf{x} = \mathbf{0}\} = \mathrm{Sol}(A\mathbf{x} = \mathbf{0}) =: \mathrm{Ker}\, A\subseteq_{\mathbb{R}}\mathbb{R}^n. \]
+    <p>Al prof non piace molto dire "nucleo della matrice", perché fa pensare che una matrice sia solo associata a un'applicazione lineare (le usiamo anche per descrivere basi e molto altro); ma la terminologia è ormai diffusa. Quando l'applicazione è data da una matrice, il suo nucleo coincide con il nucleo della matrice. Quindi la Prop. 4.12 ridimostra che le soluzioni di un sistema omogeneo formano un sottospazio.</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Proposizione 4.13</div>
+    <p>Sia \(f:V\to W\) lineare. Allora</p>
+    <ol>
+      <li>\(f\) è iniettiva \(\iff \mathrm{Ker}(f) = \{\mathbf{0}_V\}\);</li>
+      <li>\(f\) è suriettiva \(\iff \mathrm{Im}(f) = W\).</li>
+    </ol>
+    <p><em>Schizzo.</em> 1. (\(\Rightarrow\)) \(\mathbf{0}_V\in\mathrm{Ker}(f)\); se \(\mathbf{v}\in\mathrm{Ker}(f)\), \(f(\mathbf{v}) = \mathbf{0}_W = f(\mathbf{0}_V)\) e per iniettività \(\mathbf{v} = \mathbf{0}_V\). (\(\Leftarrow\)) Se \(f(\mathbf{v}_1) = f(\mathbf{v}_2)\), per linearità \(f(\mathbf{v}_1-\mathbf{v}_2) = \mathbf{0}_W\), quindi \(\mathbf{v}_1-\mathbf{v}_2\in\mathrm{Ker}(f) = \{\mathbf{0}_V\}\), cioè \(\mathbf{v}_1 = \mathbf{v}_2\). 2. Segue dalle definizioni (Osservazione 0.29).</p>
+  </div>
+
+  <div class="box box--note"><div class="tag">Dalla lezione 11</div>
+    <p>Il prof ha detto che la dimostrazione della Prop. 4.13 (1) gli piace molto come <strong>tema d'esame orale</strong>. Struttura da ricordare: (\(\Rightarrow\)) è la parte facile e <em>non</em> usa la linearità oltre a \(f(\mathbf{0}) = \mathbf{0}\); (\(\Leftarrow\)) richiede di usare la linearità per "arrivare al nucleo": \(f(\mathbf{v}_1) = f(\mathbf{v}_2)\Rightarrow f(\mathbf{v}_1)-f(\mathbf{v}_2) = \mathbf{0}_W\Rightarrow f(\mathbf{v}_1-\mathbf{v}_2) = \mathbf{0}_W\Rightarrow\mathbf{v}_1-\mathbf{v}_2\in\mathrm{Ker} f = \{\mathbf{0}_V\}\). La suriettività invece è "niente di che": è la definizione di suriettività e di immagine messe insieme. Per mostrare che nucleo e immagine non sono vuoti basta ricordare che contengono sempre lo zero.</p>
+  </div>
+
+  <p>In particolare, per \(f:V\to W\) lineare:</p>
+  \[ f \text{ è un isomorfismo} \iff \mathrm{Ker}(f) = \{\mathbf{0}_V\}\ \text{ e }\ \mathrm{Im}(f) = W. \]
+
+  <div class="box box--note"><div class="tag">Dalla lezione 11 — immagine di \(f_A\)</div>
+    <p>\(f\) iso \(\iff\) \(f\) biiettiva \(\overset{\text{Def}}{\iff}\) \(f\) iniettiva e \(f\) suriettiva \(\iff\) \(\mathrm{Ker} f = \{\mathbf{0}_V\}\) e \(\mathrm{Im} f = W\). Per le matrici:</p>
+    \[ \boxed{\ \mathrm{Im}\, f_A = \mathrm{Col}\, A\ } \]
+    <p>Esempio: \(A = \begin{pmatrix}1&amp;0\\1&amp;1\\1&amp;-1\end{pmatrix}\), \(f_A:\mathbb{R}^2\to\mathbb{R}^3\), \(\begin{pmatrix}x\\y\end{pmatrix}\mapsto\begin{pmatrix}x\\x+y\\x-y\end{pmatrix}\):</p>
+    \[ \mathrm{Im} f_A = \left\{\begin{pmatrix}x\\x+y\\x-y\end{pmatrix} : \begin{pmatrix}x\\y\end{pmatrix}\in\mathbb{R}^2\right\} = \left\{x\begin{pmatrix}1\\1\\1\end{pmatrix}+y\begin{pmatrix}0\\1\\-1\end{pmatrix} : x,y\in\mathbb{R}\right\} = \mathrm{Span}\left\{\begin{pmatrix}1\\1\\1\end{pmatrix},\begin{pmatrix}0\\1\\-1\end{pmatrix}\right\} = \mathrm{Col}(A). \]
+    <p>In chiusura il prof ha anticipato il "cambio base" \(A\mapsto U^{-1}AU\) (Capitolo 5) e ha avvertito, in rosso: <strong>Gauss cambia \(\mathrm{Col}(A)\)!</strong></p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo — calcolare \(\mathrm{Ker}\) e \(\mathrm{Im}\) di \(f_A\) (o di \(f\) tramite una matrice)</div>
+    <ol>
+      <li>Scrivi la matrice \(A\) di \(f\) (per \(f:\mathbb{K}^n\to\mathbb{K}^m\): le colonne sono \(f(\mathbf{e}_1),\dots,f(\mathbf{e}_n)\)).</li>
+      <li>Riduci \(A\) a scala con Gauss: ottieni il rango \(r\) e le colonne pivot.</li>
+      <li><strong>Nucleo</strong>: risolvi \(A\mathbf{x} = \mathbf{0}\) dalla forma a scala; i \(n-r\) vettori che moltiplicano i parametri liberi sono una base di \(\mathrm{Ker}(f)\).</li>
+      <li><strong>Immagine</strong>: una base di \(\mathrm{Im}(f) = \mathrm{Col}(A)\) sono le colonne <em>della matrice originale</em> \(A\) nelle posizioni dei pivot.</li>
+      <li>Controllo: \(\dim\mathrm{Ker} + \dim\mathrm{Im} = n\) (Teorema della dimensione).</li>
+      <li>Conclusioni: iniettiva \(\iff\) \(r = n\); suriettiva \(\iff\) \(r = m\).</li>
+    </ol>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <ul>
+      <li>Le operazioni di riga di Gauss <strong>non</strong> cambiano il nucleo né il rango, ma <strong>cambiano lo spazio delle colonne</strong>: la base di \(\mathrm{Im}(f)\) va presa dalle colonne di \(A\), non da quelle della matrice ridotta.</li>
+      <li>\(\mathrm{Ker}(f)\subseteq V\) (dominio), \(\mathrm{Im}(f)\subseteq W\) (codominio): i vettori del nucleo hanno tante componenti quante il dominio.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="cap4-basi">
+  <div class="num">04</div>
+  <h2>Applicazioni lineari, indipendenza e generatori</h2>
+  <p class="lead">§4.3: come \(f\) trasforma Span, dipendenza e indipendenza lineare; una base determina \(f\) e i suoi valori sulla base si possono scegliere liberamente.</p>
+
+  <p>Per \(S = \{\mathbf{v}_1,\dots,\mathbf{v}_s\}\subseteq V\) scriviamo \(f(S) = \{f(\mathbf{v}_1),\dots,f(\mathbf{v}_s)\}\subseteq W\); per \(U\subseteq V\) qualsiasi, \(f(U) = \{f(\mathbf{u}) : \mathbf{u}\in U\}\).</p>
+
+  <div class="box box--thm"><div class="tag">Teorema 4.14</div>
+    <p>Sia \(f:V\to W\) un'applicazione \(\mathbb{K}\)-lineare.</p>
+    <ol type="i">
+      <li>Se \(U\subseteq_{\mathbb{K}} V\) è un sottospazio, anche \(f(U)\subseteq_{\mathbb{K}} W\) è un sottospazio.</li>
+      <li>Per ogni \(S\subseteq V\) vale \(f(\mathrm{Span}_{\mathbb{K}} S) = \mathrm{Span}_{\mathbb{K}} f(S)\).</li>
+      <li>Se \(D\subseteq V\) è linearmente dipendente, anche \(f(D)\subseteq W\) è linearmente dipendente.</li>
+      <li>Se \(f\) è iniettiva e \(L\subseteq V\) è linearmente indipendente, allora \(f(L)\) è linearmente indipendente.</li>
+    </ol>
+    <p><em>Idea.</em> (ii): \(\mathbf{w}\in f(\mathrm{Span} S)\iff\mathbf{w} = f(\lambda_1\mathbf{v}_1+\dots+\lambda_s\mathbf{v}_s) = \lambda_1 f(\mathbf{v}_1)+\dots+\lambda_s f(\mathbf{v}_s)\iff\mathbf{w}\in\mathrm{Span} f(S)\). (iii): una relazione \(\sum\lambda_i\mathbf{v}_i = \mathbf{0}\) non banale diventa \(\sum\lambda_i f(\mathbf{v}_i) = \mathbf{0}\). (iv): da \(\sum\lambda_i f(\mathbf{v}_i) = \mathbf{0}_W\) segue \(f(\sum\lambda_i\mathbf{v}_i) = f(\mathbf{0}_V)\), per iniettività \(\sum\lambda_i\mathbf{v}_i = \mathbf{0}_V\) e per indipendenza \(\lambda_i = 0\).</p>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <p>Senza iniettività l'indipendenza <strong>non</strong> si conserva: l'applicazione nulla manda qualsiasi insieme in \(\{\mathbf{0}\}\). Invece la dipendenza si conserva sempre (iii). E i generatori di \(V\) vanno in generatori di \(\mathrm{Im}(f)\), non necessariamente di \(W\).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Corollario 4.15</div>
+    <p>Sia \(f:V\to W\) lineare e sia \(\mathcal{B}\) una base di \(V\).</p>
+    <ol type="i">
+      <li>L'immagine della base è sempre un sistema di generatori dell'immagine: \(\mathrm{Im}(f) = \mathrm{Span}_{\mathbb{K}} f(\mathcal{B})\).</li>
+      <li>\(f\) è <strong>iniettiva</strong> se e solo se \(f(\mathcal{B})\) è una base di \(\mathrm{Im}(f)\).</li>
+      <li>\(f\) è <strong>suriettiva</strong> se e solo se \(f(\mathcal{B})\) è un sistema di generatori di \(W\).</li>
+      <li>\(f\) è un <strong>isomorfismo</strong> se e solo se \(f(\mathcal{B})\) è una base di \(W\).</li>
+    </ol>
+    <p><em>Idea.</em> (i) da 4.14 (ii): \(\mathrm{Im}(f) = f(V) = f(\mathrm{Span}\,\mathcal{B})\). (ii) \(\Rightarrow\) da 4.14 (iv); \(\Leftarrow\): se \(f(\mathbf{v}) = f(\mathbf{v}')\) con \(\mathbf{v} = \sum\lambda_i\mathbf{v}_i\), \(\mathbf{v}' = \sum\lambda'_i\mathbf{v}_i\), allora \(\sum(\lambda_i-\lambda'_i)f(\mathbf{v}_i) = \mathbf{0}_W\) e l'indipendenza dei \(f(\mathbf{v}_i)\) dà \(\lambda_i = \lambda'_i\). (iii) da (i). (iv) da (ii)+(iii) e Prop. 4.9.</p>
+  </div>
+
+  <div class="box box--note"><div class="tag">Nota sul testo degli appunti</div>
+    <p>Negli appunti il punto (i) è stampato come "\(\mathrm{Im}(f) = \mathrm{Span}_{\mathbb{K}}(\mathcal{B})\)": è un refuso per \(\mathrm{Span}_{\mathbb{K}} f(\mathcal{B})\), come mostra la dimostrazione. Allo stesso modo, nelle dimostrazioni del Cap. 4 i rimandi "Proposizione 6.3" e "Teorema 6.6" vanno letti come Proposizione 4.9 e Teorema 4.22 (della Dimensione), e "(6.1)" come (4.1).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Corollario 4.16</div>
+    <p>Se \(f:V\to W\) è un isomorfismo, allora \(\dim_{\mathbb{K}} V = \dim_{\mathbb{K}} W\).</p>
+    <p><em>Idea.</em> \(f(\mathcal{B})\) è una base di \(W\) e, per iniettività, \(|\mathcal{B}| = |f(\mathcal{B})|\).</p>
+  </div>
+
+  <p>Quindi, data \(f\) e una base \(\mathcal{B}\) di \(V\): \(f(\mathcal{B})\) <strong>determina</strong> \(f\) (\(\mathbf{v} = \lambda_1\mathbf{v}_1+\dots+\lambda_n\mathbf{v}_n\Rightarrow f(\mathbf{v}) = \lambda_1 f(\mathbf{v}_1)+\dots+\lambda_n f(\mathbf{v}_n)\)) e <strong>controlla</strong> le proprietà fondamentali di \(f\). Inoltre qualsiasi scelta delle immagini dei vettori di base determina un'unica applicazione lineare, ma <strong>solo se \(\mathcal{B}\) è una base</strong>:</p>
+
+  <div class="box box--ex"><div class="tag">Esempio 4.17</div>
+    <p>\(V = \mathbb{R}^2\), \(W = \mathbb{R}^3\). <strong>Insieme indipendente ma non generatore:</strong> imponendo solo \(f\begin{pmatrix}1\\0\end{pmatrix} = \begin{pmatrix}1\\1\\1\end{pmatrix}\) non determiniamo un'unica \(f\); ne esistono infinite, per esempio</p>
+    \[ f\begin{pmatrix}x\\y\end{pmatrix} = \begin{pmatrix}x\\x\\x\end{pmatrix}\qquad\text{oppure}\qquad f\begin{pmatrix}x\\y\end{pmatrix} = \begin{pmatrix}x\\x+y\\x-y\end{pmatrix}. \]
+    <p><strong>Generatori non indipendenti:</strong> con \(S = \left\{\begin{pmatrix}1\\1\end{pmatrix},\begin{pmatrix}1\\-1\end{pmatrix},\begin{pmatrix}2\\0\end{pmatrix}\right\}\) le immagini non si possono scegliere a caso. L'associazione</p>
+    \[ \begin{pmatrix}1\\1\end{pmatrix}\mapsto\begin{pmatrix}1\\0\\0\end{pmatrix},\qquad \begin{pmatrix}1\\-1\end{pmatrix}\mapsto\begin{pmatrix}0\\1\\0\end{pmatrix},\qquad \begin{pmatrix}2\\0\end{pmatrix}\mapsto\begin{pmatrix}0\\0\\1\end{pmatrix} \]
+    <p>non può venire da un'applicazione lineare, perché altrimenti</p>
+    \[ \begin{pmatrix}0\\0\\1\end{pmatrix} = f\begin{pmatrix}2\\0\end{pmatrix} = f\left(\begin{pmatrix}1\\1\end{pmatrix}+\begin{pmatrix}1\\-1\end{pmatrix}\right) = f\begin{pmatrix}1\\1\end{pmatrix}+f\begin{pmatrix}1\\-1\end{pmatrix} = \begin{pmatrix}1\\1\\0\end{pmatrix}.\ \ \text{Contraddizione.} \]
+  </div>
+
+  <div class="box box--thm"><div class="tag">Teorema 4.18</div>
+    <p>Sia \(\mathcal{B} = \mathbf{v}_1,\dots,\mathbf{v}_n\) una base di \(V\). Per qualsiasi spazio vettoriale \(W\) e qualsiasi elenco \(\mathbf{w}: \mathbf{w}_1,\dots,\mathbf{w}_n\) di vettori di \(W\) (non necessariamente distinti) esiste un'<strong>unica</strong> applicazione lineare \(f_{\mathbf{w}}:V\to W\) tale che</p>
+    \[ f_{\mathbf{w}}(\mathbf{v}_i) = \mathbf{w}_i\qquad\forall\, i = 1,\dots,n. \]
+    <p>Inoltre scelte diverse dei \(\mathbf{w}_i\) danno applicazioni diverse.</p>
+    <p><em>Idea.</em> Ogni \(\mathbf{v}\) si scrive in modo unico \(\mathbf{v} = \lambda_1\mathbf{v}_1+\dots+\lambda_n\mathbf{v}_n\); si pone \(f_{\mathbf{w}}(\mathbf{v}) := \lambda_1\mathbf{w}_1+\dots+\lambda_n\mathbf{w}_n\). L'unicità delle coordinate rende \(f_{\mathbf{w}}\) ben definita; la linearità segue perché le coordinate di \(\mathbf{v}+\mathbf{v}'\) e \(\lambda\mathbf{v}\) sono \(\lambda_i+\lambda'_i\) e \(\lambda\lambda_i\). Unicità: una \(f\) lineare con \(f(\mathbf{v}_i) = \mathbf{w}_i\) deve valere \(\sum\lambda_i\mathbf{w}_i\) su \(\mathbf{v}\).</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo — calcolare \(f(\mathbf{v})\) conoscendo \(f\) su una base</div>
+    <ol>
+      <li>Verifica che i vettori su cui conosci \(f\) siano una base \(\mathbf{v}_1,\dots,\mathbf{v}_n\) di \(V\) (se no, \(f\) potrebbe non esistere o non essere unica: Esempio 4.17).</li>
+      <li>Scrivi \(\mathbf{v} = \lambda_1\mathbf{v}_1+\dots+\lambda_n\mathbf{v}_n\) (risolvi un sistema lineare).</li>
+      <li>Allora \(f(\mathbf{v}) = \lambda_1 f(\mathbf{v}_1)+\dots+\lambda_n f(\mathbf{v}_n)\).</li>
+    </ol>
+    <p>Esempio (Esame 2025-01, Q5): se \(f(0,1) = (1,0)\) e \(f(1,2) = (3,4)\), allora \((1,0) = (1,2)-2(0,1)\) e \(f(1,0) = (3,4)-2(1,0) = (1,4)\).</p>
+  </div>
+</section>
+
+<section class="sec" id="cap4-isomorfismi">
+  <div class="num">05</div>
+  <h2>Isomorfismi e spazi isomorfi</h2>
+  <p class="lead">§4.4: un isomorfismo manda basi in basi e conserva le coordinate; due spazi isomorfi sono "la stessa struttura" vestita in modo diverso.</p>
+
+  <p>Per il Corollario 4.15, se \(f\) è un isomorfismo allora \(\dim V = \dim W\) e le coordinate restano uguali: \([\mathbf{v}]_{\mathcal{B}} = [f(\mathbf{v})]_{f(\mathcal{B})}\).</p>
+
+  <div class="box box--def"><div class="tag">Definizione 4.19</div>
+    <p>Due \(\mathbb{K}\)-spazi vettoriali \(V\) e \(W\) sono <strong>isomorfi</strong> se e solo se esiste un isomorfismo \(f:V\to W\). Scriviamo \(V\simeq W\).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Osservazione 4.20</div>
+    <p>L'essere isomorfi è <strong>riflessivo</strong> (\(V\simeq V\) tramite \(\mathrm{id}_V\)), <strong>simmetrico</strong> (se \(V\simeq W\) allora \(W\simeq V\), perché \(f^{-1}\) è un isomorfismo) e <strong>transitivo</strong> (se \(V\simeq W\) e \(W\simeq Y\) allora \(V\simeq Y\): la composizione di biiezioni lineari è una biiezione lineare).</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempi (p. 190)</div>
+    <ol>
+      <li>\(f:\mathbb{R}[x]_{\leqslant2}\to\mathbb{R}^3\), \(f(a_0+a_1x+a_2x^2) = \begin{pmatrix}a_0\\a_1\\a_2\end{pmatrix}\) è lineare e ha inversa \(f^{-1}\begin{pmatrix}a\\b\\c\end{pmatrix} = a+bx+cx^2\). Quindi \(\mathbb{R}[x]_{\leqslant2}\simeq\mathbb{R}^3\).</li>
+      <li>\(\varphi:\mathrm{Mat}^{\mathrm{sym}}_{3\times3}(\mathbb{R})\to\mathrm{Mat}_{2\times3}(\mathbb{R})\), \(\begin{pmatrix}a&amp;b&amp;c\\b&amp;d&amp;e\\c&amp;e&amp;f\end{pmatrix}\mapsto\begin{pmatrix}a&amp;b&amp;c\\d&amp;e&amp;f\end{pmatrix}\) è lineare e invertibile.</li>
+      <li>\(\mathrm{Mat}^{\mathrm{sym}}_{3\times3}(\mathbb{R})\simeq\mathbb{R}^6\). <em>Esercizio:</em> trovare tre isomorfismi diversi (per esempio: leggere le sei entrate \(a,b,c,d,e,f\) in ordini diversi, oppure moltiplicarne una per \(2\)).</li>
+      <li>Per \(V,W\) di dimensione finita, \(\dim_{\mathbb{K}} V = n\):
+        <ul>
+          <li>\(\mathrm{Hom}_{\mathbb{K}}(\mathbb{K}^n,\mathbb{K}^m)\simeq\mathrm{Mat}_{m\times n}(\mathbb{K})\);</li>
+          <li>\(\mathrm{Hom}_{\mathbb{K}}(V,W)\simeq\mathrm{Mat}_{\dim W\times\dim V}(\mathbb{K})\);</li>
+          <li>\(\mathrm{Aut}(V)\simeq\mathrm{GL}_n(\mathbb{K})\);</li>
+          <li>\(\mathrm{Hom}_{\mathbb{K}}(V,W)\simeq\mathrm{Funct}(\{1,\dots,n\},W)\).</li>
+        </ul>
+        I primi tre sono dati dalla matrice associata rispetto a basi fissate (Capitolo 5, parte di approfondimento); il quarto è essenzialmente il Teorema 4.18.</li>
+    </ol>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Teorema 4.21</div>
+    <p>Tutti gli spazi vettoriali su \(\mathbb{K}\) di dimensione \(n\in\mathbb{N}\) sono isomorfi tra loro. In particolare</p>
+    \[ \dim_{\mathbb{K}} V = n\ \Longrightarrow\ V\simeq\mathbb{K}^n. \]
+    <p><em>Idea.</em> Si scelgono basi \(\mathcal{B} = \mathbf{v}_1,\dots,\mathbf{v}_n\) di \(V\) e \(\mathcal{C} = \mathbf{w}_1,\dots,\mathbf{w}_n\) di \(W\) (Teorema 2.39); per il Teorema 4.18 esiste \(f_{\mathbf{w}}\) lineare con \(f_{\mathbf{w}}(\mathbf{v}_i) = \mathbf{w}_i\); poiché \(f_{\mathbf{w}}(\mathcal{B}) = \mathcal{C}\) è una base, il Corollario 4.15 (iv) dice che \(f_{\mathbf{w}}\) è un isomorfismo.</p>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <p>"Stessa dimensione" garantisce che <em>esiste</em> un isomorfismo, non che una data \(f\) lo sia. Viceversa, se \(\dim V\neq\dim W\) nessuna applicazione lineare \(V\to W\) è un isomorfismo (Cor. 4.16).</p>
+  </div>
+</section>
+
+<section class="sec" id="cap4-dimensione">
+  <div class="num">06</div>
+  <h2>Il Teorema della Dimensione</h2>
+  <p class="lead">§4.5: uno dei teoremi più importanti del corso (ha moltissime conseguenze): la dimensione del dominio si spezza in nucleo + immagine.</p>
+
+  <p>Dal Teorema 4.14 con \(U = V\) segue \(\dim_{\mathbb{K}}\mathrm{Im}(f)\leqslant\dim_{\mathbb{K}} V\). Il teorema seguente dice esattamente qual è la differenza.</p>
+
+  <div class="box box--thm"><div class="tag">Teorema 4.22</div><h4>Teorema della Dimensione</h4>
+    <p>Siano \(V\) e \(W\) due \(\mathbb{K}\)-spazi vettoriali, con \(V\) di dimensione finita. Se \(f:V\to W\) è \(\mathbb{K}\)-lineare, allora</p>
+    \[ \dim_{\mathbb{K}} V = \dim_{\mathbb{K}}\mathrm{Ker}(f) + \dim_{\mathbb{K}}\mathrm{Im}(f). \]
+    <p><em>Schizzo della dimostrazione.</em> \(\mathrm{Ker}(f)\subseteq V\) è un sottospazio, quindi ha dimensione finita. Sia \(\mathbf{v}_1,\dots,\mathbf{v}_r\) una base di \(\mathrm{Ker}(f)\); la completiamo (Teorema 2.41) a una base \(\mathbf{v}_1,\dots,\mathbf{v}_r,\mathbf{v}_{r+1},\dots,\mathbf{v}_n\) di \(V\). Basta dimostrare che</p>
+    \[ f(\mathbf{v}_{r+1}),\dots,f(\mathbf{v}_n)\ \text{ è una base di }\mathrm{Im}(f). \]
+    <p><strong>Indipendenza.</strong> Se \(\lambda_{r+1}f(\mathbf{v}_{r+1})+\dots+\lambda_n f(\mathbf{v}_n) = \mathbf{0}_W\), allora \(\mathbf{v} = \lambda_{r+1}\mathbf{v}_{r+1}+\dots+\lambda_n\mathbf{v}_n\in\mathrm{Ker}(f)\), quindi \(\mathbf{v} = \mu_1\mathbf{v}_1+\dots+\mu_r\mathbf{v}_r\), cioè \(\mu_1\mathbf{v}_1+\dots+\mu_r\mathbf{v}_r-\lambda_{r+1}\mathbf{v}_{r+1}-\dots-\lambda_n\mathbf{v}_n = \mathbf{0}_V\). Per l'indipendenza della base di \(V\) tutti gli scalari sono nulli.</p>
+    <p><strong>Generatori.</strong> Se \(\mathbf{w} = f(\mathbf{v})\) con \(\mathbf{v} = \lambda_1\mathbf{v}_1+\dots+\lambda_n\mathbf{v}_n\), allora \(\mathbf{w} = \lambda_1 f(\mathbf{v}_1)+\dots+\lambda_n f(\mathbf{v}_n)\) e, poiché \(f(\mathbf{v}_i) = \mathbf{0}\) per \(i\leqslant r\), \(\mathbf{w}\in\mathrm{Span}_{\mathbb{K}}\{f(\mathbf{v}_{r+1}),\dots,f(\mathbf{v}_n)\}\).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Corollario 4.23</div><h4>Teorema "nullità + rango"</h4>
+    <p>Per ogni matrice \(A\in\mathrm{Mat}_{m\times n}(\mathbb{K})\) vale</p>
+    \[ n = \dim_{\mathbb{K}}\mathrm{Ker}(A) + \mathrm{Rango}\, A. \]
+    <p><em>Idea.</em> Si applica il Teorema 4.22 a \(f_A:\mathbb{K}^n\to\mathbb{K}^m\): \(\mathrm{Ker}(f_A) = \{\mathbf{x} : A\mathbf{x} = \mathbf{0}\} = \mathrm{Ker}(A)\) e</p>
+    \[ \mathrm{Im}(f_A) = \mathrm{Span}_{\mathbb{K}}\{f_A(\mathbf{e}_1),\dots,f_A(\mathbf{e}_n)\} = \mathrm{Span}_{\mathbb{K}}\{\mathsf{C}_1(A),\dots,\mathsf{C}_n(A)\} = \mathrm{Col}(A), \]
+    <p>con \(\dim\mathrm{Col}(A) = \mathrm{Rango}(A)\) (Teorema 3.8).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Corollario 4.24</div><h4>Formula di Grassmann</h4>
+    <p>Siano \(U_1, U_2\) due sottospazi di uno spazio vettoriale \(V\) di dimensione finita. Allora</p>
+    \[ \dim_{\mathbb{K}}(U_1+U_2) = \dim_{\mathbb{K}} U_1 + \dim_{\mathbb{K}} U_2 - \dim_{\mathbb{K}}(U_1\cap U_2). \]
+    <p><em>Idea.</em> \(f:U_1\times U_2\to V\), \(f(\mathbf{v}_1,\mathbf{v}_2) := \mathbf{v}_1-\mathbf{v}_2\) è lineare, con \(\mathrm{Im}(f) = U_1+U_2\) (Teorema 2.49) e \(\dim(U_1\times U_2) = \dim U_1+\dim U_2\) (Teorema 2.51). Il nucleo è \(\{(\mathbf{v},\mathbf{v}) : \mathbf{v}\in U_1\cap U_2\}\), isomorfo a \(U_1\cap U_2\) tramite \(\mathbf{v}\mapsto(\mathbf{v},\mathbf{v})\). Si conclude con il Teorema della Dimensione.</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Lemma 4.25</div>
+    <p>Sia \(f:V\to W\) lineare con \(\dim_{\mathbb{K}} V = \dim_{\mathbb{K}} W &lt; \infty\). Sono equivalenti:</p>
+    <ol type="i">
+      <li>\(f\) è un isomorfismo;</li>
+      <li>\(f\) è iniettiva;</li>
+      <li>\(f\) è suriettiva.</li>
+    </ol>
+    <p><em>Idea.</em> Da \(\dim V = \dim\mathrm{Ker}(f)+\dim\mathrm{Im}(f)\) (4.1): iniettiva \(\iff\dim\mathrm{Ker} = 0\iff\dim\mathrm{Im} = \dim V = \dim W\iff\mathrm{Im}(f) = W\) (Corollario 2.46: un sottospazio della stessa dimensione finita coincide con lo spazio).</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo — usare il Teorema della Dimensione</div>
+    <ol>
+      <li>Calcola la quantità più facile tra \(\dim\mathrm{Ker}(f)\) (sistema omogeneo) e \(\dim\mathrm{Im}(f)\) (rango della matrice, o rango di \(f(\mathcal{B})\)).</li>
+      <li>Ricava l'altra con \(\dim\mathrm{Im}(f) = \dim V - \dim\mathrm{Ker}(f)\).</li>
+      <li>Conseguenze immediate:
+        <ul>
+          <li>\(\dim V &gt; \dim W\) \(\Rightarrow\) \(\dim\mathrm{Ker}(f)\geqslant\dim V-\dim W &gt; 0\): \(f\) <strong>non può essere iniettiva</strong>;</li>
+          <li>\(\dim V &lt; \dim W\) \(\Rightarrow\) \(\dim\mathrm{Im}(f)\leqslant\dim V &lt; \dim W\): \(f\) <strong>non può essere suriettiva</strong>;</li>
+          <li>\(\dim V = \dim W\): basta controllare una sola tra iniettività e suriettività (Lemma 4.25).</li>
+        </ul></li>
+    </ol>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <ul>
+      <li>Nella formula compare \(\dim V\) (il <strong>dominio</strong>), non \(\dim W\). Per \(f:\mathbb{R}^5\to\mathbb{R}^3\) di rango 2: \(\dim\mathrm{Ker} = 5-2 = 3\), non \(3-2\).</li>
+      <li>Il Lemma 4.25 vale solo se \(\dim V = \dim W\) è finita: \(f(p) = x\cdot p\) su \(\mathbb{R}[x]\) è iniettiva ma non suriettiva.</li>
+      <li>Prima di contare la dimensione di un nucleo dato tramite generatori, controlla che siano indipendenti (vedi l'esercizio d'esame 2025-06 Q5 qui sotto).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec esercizi" id="cap4-esercizi">
+  <div class="num">07</div>
+  <h2>Esercizi</h2>
+  <div class="ex-bar"><button class="chip" data-filter="tutti" aria-pressed="true">Tutti</button><button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button><button class="chip" data-filter="base" aria-pressed="false">Base</button><button class="chip" data-filter="medio" aria-pressed="false">Medio</button><button class="chip" data-filter="esame" aria-pressed="false">Esame</button><button class="chip toggle-sol" aria-pressed="false">Mostra soluzioni</button><span class="count ex-count"></span></div>
+  <p class="lead">Gli esercizi aperti del Quiz 3 relativi a questo capitolo (E1, E4, E5) e una selezione di esercizi d'esame degli anni passati. Gli esercizi E2 ed E3 del Quiz 3 (matrici associate) sono nel Capitolo 5.</p>
+
+  <h3>Dal Quiz 3</h3>
+  <div class="ex" data-fonte="Quiz 3, E1" data-livello="base">
+    <div class="ex-testo">
+      <p>(a) Sia \(f:\mathbb{R}^3\to\mathbb{R}^2\) definita da \(f(x,y,z) = (x+y,\ y+z)\). Verifichi che \(f\) è lineare e scriva la sua matrice associata rispetto alle basi canoniche.</p>
+      <p>(b) Calcoli una base di \(\mathrm{Ker}(f)\) e una base di \(\mathrm{Im}(f)\).</p>
+      <p>(c) Stabilisca se \(f\) è iniettiva e se è suriettiva.</p>
+    </div>
+    <details class="hint"><summary>Suggerimento</summary><p>Scrivi \(f\) come \(f_A\) per una matrice \(A\in\mathrm{Mat}_{2\times3}(\mathbb{R})\): le colonne sono \(f(\mathbf{e}_1), f(\mathbf{e}_2), f(\mathbf{e}_3)\).</p></details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>(a)</strong> \(f(x,y,z) = \begin{pmatrix}x+y\\y+z\end{pmatrix} = \begin{pmatrix}1&amp;1&amp;0\\0&amp;1&amp;1\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix}\), quindi \(f = f_A\) con \(A = \begin{pmatrix}1&amp;1&amp;0\\0&amp;1&amp;1\end{pmatrix}\), ed è lineare (Esempio 6). Direttamente: per \(\mathbf{u} = (x,y,z)\), \(\mathbf{u}' = (x',y',z')\), \(\lambda,\mu\in\mathbb{R}\),</p>
+      \[ f(\lambda\mathbf{u}+\mu\mathbf{u}') = \big(\lambda x+\mu x'+\lambda y+\mu y',\ \lambda y+\mu y'+\lambda z+\mu z'\big) = \lambda(x+y,y+z)+\mu(x'+y',y'+z') = \lambda f(\mathbf{u})+\mu f(\mathbf{u}'). \]
+      <p>La matrice associata rispetto alle basi canoniche è \(A\): \(f(\mathbf{e}_1) = (1,0)\), \(f(\mathbf{e}_2) = (1,1)\), \(f(\mathbf{e}_3) = (0,1)\).</p>
+      <p><strong>(b)</strong> \(\mathrm{Ker}(f)\): \(x+y = 0,\ y+z = 0\) \(\Rightarrow\) \(y = -z\), \(x = z\): \(\mathrm{Ker}(f) = \mathrm{Span}_{\mathbb{R}}\{(1,-1,1)\}\), base \(\{(1,-1,1)\}\). \(A\) è già a scala con pivot nelle colonne 1 e 2, quindi \(\mathrm{Rango}\,A = 2\) e una base di \(\mathrm{Im}(f) = \mathrm{Col}(A)\) è \(\{(1,0),(1,1)\}\); dunque \(\mathrm{Im}(f) = \mathbb{R}^2\) (base canonica va benissimo). Controllo: \(3 = 1+2\).</p>
+      <p><strong>(c)</strong> \(\mathrm{Ker}(f)\neq\{\mathbf{0}\}\): non iniettiva. \(\mathrm{Im}(f) = \mathbb{R}^2\): suriettiva.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Quiz 3, E4" data-livello="base">
+    <div class="ex-testo">
+      <p>(a) Sia \(D:\mathbb{R}[x]_{\leqslant3}\to\mathbb{R}[x]_{\leqslant2}\) l'applicazione derivata, \(D(p) = p'\). Verifichi che \(D\) è lineare e determini la sua matrice rispetto alle basi ordinate \((1,x,x^2,x^3)\) e \((1,x,x^2)\).</p>
+      <p>(b) Determini una base di \(\mathrm{Ker}(D)\) e una base di \(\mathrm{Im}(D)\).</p>
+      <p>(c) Stabilisca se \(D\) è iniettiva e se è suriettiva. Verifichi la formula della dimensione per \(D\).</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>(a)</strong> Linearità: \((\lambda p+\mu q)' = \lambda p'+\mu q'\) (regole di derivazione). La derivata di un polinomio di grado \(\leqslant3\) ha grado \(\leqslant2\), quindi \(D\) è ben definita. Sulla base: \(D(1) = 0\), \(D(x) = 1\), \(D(x^2) = 2x\), \(D(x^3) = 3x^2\). Le coordinate rispetto a \((1,x,x^2)\) vanno in colonna (Capitolo 5):</p>
+      \[ \begin{pmatrix}0&amp;1&amp;0&amp;0\\0&amp;0&amp;2&amp;0\\0&amp;0&amp;0&amp;3\end{pmatrix}\in\mathrm{Mat}_{3\times4}(\mathbb{R}). \]
+      <p><strong>(b)</strong> \(D(a_0+a_1x+a_2x^2+a_3x^3) = a_1+2a_2x+3a_3x^2 = 0\iff a_1 = a_2 = a_3 = 0\): \(\mathrm{Ker}(D) = \mathrm{Span}_{\mathbb{R}}\{1\}\) (i polinomi costanti), base \(\{1\}\). \(\mathrm{Im}(D) = \mathrm{Span}\{D(1),D(x),D(x^2),D(x^3)\} = \mathrm{Span}\{0,1,2x,3x^2\} = \mathbb{R}[x]_{\leqslant2}\), base \(\{1,x,x^2\}\).</p>
+      <p><strong>(c)</strong> Non iniettiva (\(\mathrm{Ker}\neq\{0\}\)), suriettiva (\(\mathrm{Im} = \mathbb{R}[x]_{\leqslant2}\)). Formula della dimensione: \(\dim\mathbb{R}[x]_{\leqslant3} = 4 = 1+3 = \dim\mathrm{Ker}(D)+\dim\mathrm{Im}(D)\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Quiz 3, E5" data-livello="medio">
+    <div class="ex-testo">
+      <p>(a) Sia \(V = \mathrm{Mat}^{\mathrm{sym}}_{3\times3}(\mathbb{R})\), di dimensione 6. Per \(A = \begin{pmatrix}a&amp;d&amp;e\\d&amp;b&amp;f\\e&amp;f&amp;c\end{pmatrix}\) definiamo \(F(A) = (a+b,\ b+c,\ a+c)\). Verifichi che \(F:V\to\mathbb{R}^3\) è lineare.</p>
+      <p>(b) Rispetto alla base ordinata</p>
+      \[ \mathcal{B} = \left(\begin{pmatrix}1&amp;0&amp;0\\0&amp;0&amp;0\\0&amp;0&amp;0\end{pmatrix},\begin{pmatrix}0&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;0\end{pmatrix},\begin{pmatrix}0&amp;0&amp;0\\0&amp;0&amp;0\\0&amp;0&amp;1\end{pmatrix},\begin{pmatrix}0&amp;1&amp;0\\1&amp;0&amp;0\\0&amp;0&amp;0\end{pmatrix},\begin{pmatrix}0&amp;0&amp;1\\0&amp;0&amp;0\\1&amp;0&amp;0\end{pmatrix},\begin{pmatrix}0&amp;0&amp;0\\0&amp;0&amp;1\\0&amp;1&amp;0\end{pmatrix}\right) \]
+      <p>di \(V\) e alla base canonica di \(\mathbb{R}^3\), calcoli la matrice associata a \(F\).</p>
+      <p>(c) Determini una base di \(\mathrm{Ker}(F)\) e stabilisca se \(F\) è iniettiva e suriettiva.</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>(a)</strong> Se \(A\) ha entrate \(a,\dots,f\) e \(A'\) ha entrate \(a',\dots,f'\), allora \(\lambda A+\mu A'\) è simmetrica con entrate \(\lambda a+\mu a',\dots\), e</p>
+      \[ F(\lambda A+\mu A') = \big((\lambda a+\mu a')+(\lambda b+\mu b'),\ \dots\big) = \lambda(a+b,b+c,a+c)+\mu(a'+b',b'+c',a'+c') = \lambda F(A)+\mu F(A'). \]
+      <p><strong>(b)</strong> Immagini dei vettori di \(\mathcal{B}\): \(F(E_{11}) = (1,0,1)\), \(F(E_{22}) = (1,1,0)\), \(F(E_{33}) = (0,1,1)\), e le ultime tre matrici (diagonale nulla) vanno in \((0,0,0)\). Quindi</p>
+      \[ M = \begin{pmatrix}1&amp;1&amp;0&amp;0&amp;0&amp;0\\0&amp;1&amp;1&amp;0&amp;0&amp;0\\1&amp;0&amp;1&amp;0&amp;0&amp;0\end{pmatrix}. \]
+      <p><strong>(c)</strong> Il blocco \(3\times3\) iniziale ha determinante \(1\cdot(1-0)-1\cdot(0-1)+0 = 2\neq0\), quindi \(\mathrm{Rango}\,M = 3\): \(\dim\mathrm{Im}(F) = 3\), \(F\) è <strong>suriettiva</strong>. Per il Teorema della Dimensione \(\dim\mathrm{Ker}(F) = 6-3 = 3\). Il nucleo: \(a+b = b+c = a+c = 0\Rightarrow a = b = c = 0\), con \(d,e,f\) liberi:</p>
+      \[ \mathrm{Ker}(F) = \mathrm{Span}_{\mathbb{R}}\left\{\begin{pmatrix}0&amp;1&amp;0\\1&amp;0&amp;0\\0&amp;0&amp;0\end{pmatrix},\begin{pmatrix}0&amp;0&amp;1\\0&amp;0&amp;0\\1&amp;0&amp;0\end{pmatrix},\begin{pmatrix}0&amp;0&amp;0\\0&amp;0&amp;1\\0&amp;1&amp;0\end{pmatrix}\right\} \]
+      <p>(le matrici simmetriche a diagonale nulla). \(F\) <strong>non è iniettiva</strong>.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <h3>Dagli esami degli anni passati</h3>
+  <div class="ex" data-fonte="Esame GAL-2026-01, es. Q2.1" data-livello="esame">
+    <div class="ex-testo">
+      <p>Sia \(f:\mathbb{R}^5\to\mathbb{R}^3\) un'applicazione lineare. Allora (una sola risposta è corretta):</p>
+      <ol class="opzioni"><li>se \(f(\mathbf{v}) = \mathbf{0}\), allora \(\mathbf{v} = \mathbf{0}\).</li><li>per ogni \(\mathbf{v}\in\mathbb{R}^5\) si ha \(f(\mathbf{v}) = \mathbf{0}\).</li><li>esistono \(\mathbf{v},\mathbf{w}\in\mathbb{R}^5\) tali che \(f(\mathbf{v})\neq f(\mathbf{w})\).</li><li>esistono \(\mathbf{v},\mathbf{w}\in\mathbb{R}^5\) tali che \(f(\mathbf{v}) = f(\mathbf{w})\).</li></ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>Risposta D.</strong> Per il Teorema della Dimensione \(\dim\mathrm{Ker}(f) = 5-\dim\mathrm{Im}(f)\geqslant 5-3 = 2\), quindi esiste \(\mathbf{u}\neq\mathbf{0}\) nel nucleo: A è falsa. Con \(\mathbf{v} = \mathbf{u}\), \(\mathbf{w} = \mathbf{0}\) si ha \(f(\mathbf{v}) = f(\mathbf{w}) = \mathbf{0}\), quindi D è vera (anzi, vale banalmente anche con \(\mathbf{v} = \mathbf{w}\)). B è falsa (es. \(f(x_1,\dots,x_5) = (x_1,0,0)\)); C è falsa per l'applicazione nulla.</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2026-02, es. Q4" data-livello="esame">
+    <div class="ex-testo">
+      <p>Sia \(V\) uno spazio vettoriale con base \(\{\mathbf{v}_1,\mathbf{v}_2,\mathbf{v}_3\}\), e \(L:V\to V\) un'applicazione lineare tale che</p>
+      \[ L(\mathbf{v}_1) = 2\mathbf{v}_1+\mathbf{v}_2,\qquad L(\mathbf{v}_2) = \mathbf{v}_2+2\mathbf{v}_3,\qquad L(\mathbf{v}_3) = \mathbf{v}_1+\mathbf{v}_2+\mathbf{v}_3. \]
+      <p>Quale delle seguenti affermazioni è vera?</p>
+      <ol class="opzioni"><li>\(L\) è suriettiva</li><li>\(L\) è iniettiva</li><li>\(\mathrm{Ker}(L) = \mathrm{Span}_{\mathbb{R}}\{\mathbf{v}_1+\mathbf{v}_2-2\mathbf{v}_3\}\)</li><li>\(\mathrm{Im}(L) = \mathrm{Span}_{\mathbb{R}}\{\mathbf{v}_1+\mathbf{v}_2+\mathbf{v}_3\}\)</li></ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>Risposta C.</strong> Verifica diretta, per linearità:</p>
+      \[ L(\mathbf{v}_1+\mathbf{v}_2-2\mathbf{v}_3) = (2\mathbf{v}_1+\mathbf{v}_2)+(\mathbf{v}_2+2\mathbf{v}_3)-2(\mathbf{v}_1+\mathbf{v}_2+\mathbf{v}_3) = \mathbf{0}. \]
+      <p>Quindi \(L\) non è iniettiva (B falsa) e, per il Lemma 4.25 (\(\dim V = \dim V\)), nemmeno suriettiva (A falsa). Le coordinate delle immagini sono le colonne di \(\begin{pmatrix}2&amp;0&amp;1\\1&amp;1&amp;1\\0&amp;2&amp;1\end{pmatrix}\), di rango 2 (le prime due colonne sono indipendenti, il determinante è \(0\)). Quindi \(\dim\mathrm{Im}(L) = 2\) (D falsa, uno Span di un vettore ha dimensione 1) e \(\dim\mathrm{Ker}(L) = 3-2 = 1\): il nucleo è esattamente la retta generata da \(\mathbf{v}_1+\mathbf{v}_2-2\mathbf{v}_3\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2026-07, es. Q2" data-livello="esame">
+    <div class="ex-testo">
+      <p>Sia \(f:\mathbb{R}^4\to\mathbb{R}^3\) un'applicazione lineare con rango della matrice associata uguale a 2. Allora:</p>
+      <ol class="opzioni"><li>\(f\) è suriettiva</li><li>\(\dim_{\mathbb{R}}\mathrm{Ker}(f) = 1\)</li><li>\(\dim_{\mathbb{R}}\mathrm{Ker}(f) = 2\)</li><li>\(f\) è iniettiva</li></ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>Risposta C.</strong> \(\dim\mathrm{Im}(f) = \mathrm{Rango} = 2\) (Cor. 5.3), quindi \(\dim\mathrm{Ker}(f) = 4-2 = 2\). Non è suriettiva (\(2&lt;3\)) né iniettiva (nucleo non nullo).</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2026-07, es. E2 (a), (b), (d)" data-livello="esame">
+    <div class="ex-testo">
+      <p>Sia \(M = \begin{pmatrix}1&amp;1&amp;0&amp;0\\0&amp;1&amp;1&amp;0\\1&amp;2&amp;1&amp;0\end{pmatrix}\in\mathrm{Mat}_{3,4}(\mathbb{R})\) e sia \(f_M:\mathbb{R}^4\to\mathbb{R}^3\), \(f_M(\mathbf{x}) = M\cdot\mathbf{x}\). Sia \(U = \mathrm{Span}_{\mathbb{R}}\{(1,0,0,0)^{\top},(0,1,0,0)^{\top}\}\subseteq_{\mathbb{R}}\mathbb{R}^4\).</p>
+      <p>(a) Determinare il rango di \(M\). (b) Determinare una base di \(\mathrm{Ker}(f_M)\). (d) Determinare una base di \(f_M(U)\) e stabilire se la restrizione \(f_M|_U:U\to\mathbb{R}^3\) è iniettiva.</p>
+      <p>(Il punto (c) dell'esame riguarda il prodotto scalare e un piano ortogonale: è argomento di un capitolo successivo ed è omesso.)</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>(a)</strong> \(R_3\to R_3-R_1\): \((0,1,1,0)\); poi \(R_3\to R_3-R_2\): \((0,0,0,0)\). Forma a scala \(\begin{pmatrix}1&amp;1&amp;0&amp;0\\0&amp;1&amp;1&amp;0\\0&amp;0&amp;0&amp;0\end{pmatrix}\): \(\mathrm{Rango}\,M = 2\).</p>
+      <p><strong>(b)</strong> \(x_1+x_2 = 0\), \(x_2+x_3 = 0\), con \(x_3 = s\), \(x_4 = t\) liberi: \(x_2 = -s\), \(x_1 = s\). Quindi</p>
+      \[ \mathrm{Ker}(f_M) = \left\{s\begin{pmatrix}1\\-1\\1\\0\end{pmatrix}+t\begin{pmatrix}0\\0\\0\\1\end{pmatrix}\right\},\qquad\text{base }\{(1,-1,1,0)^{\top},(0,0,0,1)^{\top}\}. \]
+      <p>Controllo: \(4 = 2+2\).</p>
+      <p><strong>(d)</strong> Per il Teorema 4.14 (ii), \(f_M(U) = \mathrm{Span}\{f_M(\mathbf{e}_1),f_M(\mathbf{e}_2)\} = \mathrm{Span}\{\mathsf{C}_1(M),\mathsf{C}_2(M)\} = \mathrm{Span}\{(1,0,1)^{\top},(1,1,2)^{\top}\}\). I due vettori non sono proporzionali, quindi sono una base di \(f_M(U)\), che ha dimensione 2. La restrizione \(f_M|_U\) è lineare da uno spazio di dimensione 2 con immagine di dimensione 2: \(\dim\mathrm{Ker}(f_M|_U) = 2-2 = 0\), quindi è <strong>iniettiva</strong>. (Equivalentemente: \(U\cap\mathrm{Ker}(f_M) = \{\mathbf{0}\}\), perché un vettore \((a,b,0,0)\) del nucleo deve avere \(s = 0\), \(t = 0\).)</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2026-09, es. Q9" data-livello="esame">
+    <div class="ex-testo">
+      <p>Sia \(D:\mathbb{R}[x]_{\leqslant3}\to\mathbb{R}[x]_{\leqslant3}\) la derivazione \(D(p) = p'\). Allora:</p>
+      <ol class="opzioni"><li>\(\dim\mathrm{Ker}(D) = 1\)</li><li>\(\dim\mathrm{Im}(D) = 2\)</li><li>\(D\) suriettiva</li><li>\(D\) iniettiva</li></ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>Risposta A.</strong> \(\mathrm{Ker}(D)\) = polinomi costanti = \(\mathrm{Span}\{1\}\), dimensione 1; quindi \(D\) non è iniettiva. \(\dim\mathrm{Im}(D) = 4-1 = 3\) (infatti \(\mathrm{Im}(D) = \mathbb{R}[x]_{\leqslant2}\)), quindi B è falsa e \(D\) non è suriettiva (\(x^3\notin\mathrm{Im}\)). Coerente con il Lemma 4.25: endomorfismo non iniettivo \(\Rightarrow\) non suriettivo.</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2025-01, es. Q3" data-livello="esame">
+    <div class="ex-testo">
+      <p>Siano \(V = \mathbb{R}[t]_{\leqslant3}\) e \(W = \mathrm{Mat}(2,2)\); l'applicazione lineare \(L:V\to W\) definita da</p>
+      \[ L(a_0+a_1t+a_2t^2+a_3t^3) = \begin{pmatrix}a_0&amp;a_1\\a_2&amp;a_3\end{pmatrix} \]
+      <ol class="opzioni"><li>è un isomorfismo</li><li>è iniettiva, ma non suriettiva</li><li>è suriettiva, ma non iniettiva</li><li>nessuna delle precedenti</li></ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>Risposta A.</strong> \(L(p) = 0\iff a_0 = a_1 = a_2 = a_3 = 0\), quindi \(\mathrm{Ker}(L) = \{0\}\) e \(L\) è iniettiva. Poiché \(\dim V = 4 = \dim W\), per il Lemma 4.25 (o per il Teorema della Dimensione: \(\dim\mathrm{Im} = 4-0 = 4\)) \(L\) è anche suriettiva, quindi un isomorfismo. (Esplicitamente, l'inversa è \(\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}\mapsto a+bt+ct^2+dt^3\).)</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2025-06, es. Q5" data-livello="esame">
+    <div class="ex-testo">
+      <p>Sia \(f:\mathrm{Mat}(2,3)\to\mathrm{Mat}(3,3)\) un'applicazione lineare tale che</p>
+      \[ \mathrm{Ker}(f) = \mathrm{Span}\left(\begin{pmatrix}1&amp;1&amp;1\\1&amp;1&amp;1\end{pmatrix},\begin{pmatrix}-1&amp;0&amp;1\\1&amp;0&amp;-1\end{pmatrix},\begin{pmatrix}2&amp;1&amp;0\\0&amp;1&amp;2\end{pmatrix}\right). \]
+      <ol class="opzioni"><li>\(\dim(\mathrm{Im}(f)) = 3\)</li><li>\(\dim(\mathrm{Im}(f)) = 4\)</li><li>\(\dim(\mathrm{Im}(f)) = 6\)</li><li>\(\dim(\mathrm{Im}(f)) = 9\)</li></ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>Risposta B.</strong> Trappola: i tre generatori <strong>non</strong> sono indipendenti, perché</p>
+      \[ \begin{pmatrix}1&amp;1&amp;1\\1&amp;1&amp;1\end{pmatrix}-\begin{pmatrix}-1&amp;0&amp;1\\1&amp;0&amp;-1\end{pmatrix} = \begin{pmatrix}2&amp;1&amp;0\\0&amp;1&amp;2\end{pmatrix}, \]
+      <p>mentre i primi due non sono proporzionali. Quindi \(\dim\mathrm{Ker}(f) = 2\) e, per il Teorema della Dimensione, \(\dim\mathrm{Im}(f) = \dim\mathrm{Mat}(2,3)-2 = 6-2 = 4\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2025-01, es. Esercizio 1" data-livello="esame">
+    <div class="ex-testo">
+      <p>Siano dati il vettore \(\mathbf{v} = (1,1)^{\top}\in\mathbb{R}^2\), la funzione \(L:\mathrm{Mat}(2,2)\to\mathbb{R}^2\) definita da \(L(A) = A\mathbf{v}\), e il sottospazio \(H = \{A\in\mathrm{Mat}(2,2) : A^{\top} = A\}\subseteq\mathrm{Mat}(2,2)\).</p>
+      <p>a) Dimostrare che \(L\) è un'applicazione lineare. b) Determinare \(\mathrm{Im}(L)\) e \(\mathrm{Ker}(L)\). c) Determinare \(L(H)\). d) Determinare \(\dim(H+\mathrm{Ker}(L))\) e \(\dim(H\cap\mathrm{Ker}(L))\).</p>
+    </div>
+    <details class="hint"><summary>Suggerimento</summary><p>Per d): \(H\cap\mathrm{Ker}(L)\) è il nucleo della restrizione \(L|_H:H\to\mathbb{R}^2\); poi Grassmann.</p></details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>a)</strong> Per \(A_1,A_2\in\mathrm{Mat}(2,2)\), \(c_1,c_2\in\mathbb{R}\), per distributività e associatività del prodotto di matrici: \(L(c_1A_1+c_2A_2) = (c_1A_1+c_2A_2)\mathbf{v} = c_1(A_1\mathbf{v})+c_2(A_2\mathbf{v}) = c_1L(A_1)+c_2L(A_2)\).</p>
+      <p><strong>b)</strong> Con \(A = (a_{i,j})\): \(A\mathbf{v} = \begin{pmatrix}a_{1,1}+a_{1,2}\\a_{2,1}+a_{2,2}\end{pmatrix} = \mathbf{0}\iff a_{1,1} = -a_{1,2},\ a_{2,1} = -a_{2,2}\). Quindi</p>
+      \[ \mathrm{Ker}(L) = \mathrm{Span}\left\{\begin{pmatrix}1&amp;-1\\0&amp;0\end{pmatrix},\begin{pmatrix}0&amp;0\\1&amp;-1\end{pmatrix}\right\},\qquad\dim\mathrm{Ker}(L) = 2. \]
+      <p>Per il Teorema della Dimensione \(\dim\mathrm{Im}(L) = 4-2 = 2\), quindi \(\mathrm{Im}(L) = \mathbb{R}^2\).</p>
+      <p><strong>c)</strong> \(A^{\top} = A\iff a_{1,2} = a_{2,1}\), quindi \(H = \mathrm{Span}\left\{\begin{pmatrix}1&amp;0\\0&amp;0\end{pmatrix},\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix},\begin{pmatrix}0&amp;0\\0&amp;1\end{pmatrix}\right\}\) (dimensione 3) e per il Teorema 4.14 (ii)</p>
+      \[ L(H) = \mathrm{Span}\left\{\begin{pmatrix}1\\0\end{pmatrix},\begin{pmatrix}1\\1\end{pmatrix},\begin{pmatrix}0\\1\end{pmatrix}\right\} = \mathbb{R}^2. \]
+      <p><strong>d)</strong> \(H\cap\mathrm{Ker}(L) = \mathrm{Ker}(L|_H)\), e per il Teorema della Dimensione applicato a \(L|_H\): \(\dim(H\cap\mathrm{Ker}(L)) = \dim H-\dim L(H) = 3-2 = 1\). (Esplicitamente: \(\begin{pmatrix}1&amp;-1\\-1&amp;1\end{pmatrix}\).) Per Grassmann: \(\dim(H+\mathrm{Ker}(L)) = 3+2-1 = 4\), cioè \(H+\mathrm{Ker}(L) = \mathrm{Mat}(2,2)\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+</section>
+
+<section class="sec quizzes" id="cap4-quiz">
+  <div class="num">08</div>
+  <h2>Quiz</h2>
+  <div class="ex-bar"><span class="quiz-score"></span><button class="chip quiz-reset">Ricomincia</button></div>
+  <div class="box box--note"><div class="tag">Nota sulla fonte</div>
+    <p>Le domande vengono dal "Quiz 3 – Applicazioni lineari e matrici associate" (23/10/2026). Nel PDF il quiz è intitolato <strong>"Quiz Capitolo 3"</strong>, ma il contenuto corrisponde ai Capitoli 4 e 5 degli appunti (a lezione le slide lo chiamano Capitolo 5). Qui ci sono le domande sul Capitolo 4 (Q1-Q5, Q12-Q16); quelle sulla matrice associata (Q6-Q11) sono nel Capitolo 5. Le domande sono mediamente più facili di quelle d'esame.</p>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p><strong>Q1.</strong> Quale delle seguenti applicazioni \(f:\mathbb{R}^2\to\mathbb{R}^2\) è lineare?</p>
+    <ol class="opzioni"><li>\(f(x,y) = (x+y+1,\ y)\)</li><li>\(f(x,y) = (2x-y,\ x+3y)\)</li><li>\(f(x,y) = (x^2,\ y)\)</li><li>\(f(x,y) = (|x|,\ y)\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>B è \(f_A\) con \(A = \begin{pmatrix}2&amp;-1\\1&amp;3\end{pmatrix}\). A: \(f(0,0) = (1,0)\neq\mathbf{0}\). C: \(f(2,0) = (4,0)\neq 2f(1,0) = (2,0)\). D: \(f(-1,0) = (1,0)\neq -f(1,0) = (-1,0)\).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="C">
+    <p><strong>Q2.</strong> Sia \(f:\mathbb{R}^2\to\mathbb{R}\) definita da \(f(x,y) = 3x-2y\). Quanto vale \(f(1,-1)\)?</p>
+    <ol class="opzioni"><li>\(1\)</li><li>\(3\)</li><li>\(5\)</li><li>\(-5\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>\(3\cdot1-2\cdot(-1) = 3+2 = 5\).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="A">
+    <p><strong>Q3.</strong> Sia \(f:\mathbb{R}^2\to\mathbb{R}^3\) definita da \(f(x,y) = (x+y,\ 2x+2y,\ 0)\). Quale affermazione è corretta?</p>
+    <ol class="opzioni"><li>\(\mathrm{Ker}(f) = \mathrm{Span}_{\mathbb{R}}\{(1,-1)\}\) e \(\mathrm{Im}(f) = \mathrm{Span}_{\mathbb{R}}\{(1,2,0)\}\).</li><li>\(\mathrm{Ker}(f) = \mathrm{Span}_{\mathbb{R}}\{(1,1)\}\) e \(\mathrm{Im}(f) = \mathrm{Span}_{\mathbb{R}}\{(1,2,0)\}\).</li><li>\(\mathrm{Ker}(f) = \{(0,0)\}\) e \(\mathrm{Im}(f) = \mathbb{R}^3\).</li><li>\(\mathrm{Ker}(f) = \mathrm{Span}_{\mathbb{R}}\{(1,-1)\}\) e \(\mathrm{Im}(f) = \mathbb{R}^3\).</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>\(f(x,y) = (x+y)(1,2,0)\): nucleo \(x+y = 0\), cioè \(\mathrm{Span}\{(1,-1)\}\); immagine \(\mathrm{Span}\{(1,2,0)\}\). C e D sono impossibili anche per dimensione: \(\dim\mathrm{Im}\leqslant\dim\mathbb{R}^2 = 2 &lt; 3\).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p><strong>Q4.</strong> Un'applicazione lineare \(f:V\to W\) è iniettiva se e solo se:</p>
+    <ol class="opzioni"><li>\(\mathrm{Im}(f) = W\).</li><li>\(\mathrm{Ker}(f) = \{\mathbf{0}_V\}\).</li><li>\(\dim V = \dim W\).</li><li>\(f(\mathbf{0}_V) = \mathbf{0}_W\).</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>Proposizione 4.13 (1). A caratterizza la suriettività; D vale per ogni applicazione lineare; C non c'entra (es. l'applicazione nulla \(\mathbb{R}\to\mathbb{R}\)).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p><strong>Q5.</strong> Sia \(f:V\to W\) lineare, con \(\dim V = 5\) e \(\dim\mathrm{Ker}(f) = 2\). Quanto vale \(\dim\mathrm{Im}(f)\)?</p>
+    <ol class="opzioni"><li>\(2\)</li><li>\(3\)</li><li>\(5\)</li><li>\(7\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>Teorema della Dimensione: \(\dim\mathrm{Im}(f) = 5-2 = 3\).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p><strong>Q12.</strong> Sia \(A\in\mathrm{Mat}_{2\times3}(\mathbb{R})\) di rango 2 e sia \(f_A:\mathbb{R}^3\to\mathbb{R}^2\), \(f_A(\mathbf{x}) = A\mathbf{x}\). Quale affermazione è vera?</p>
+    <ol class="opzioni"><li>\(f_A\) è iniettiva ma non suriettiva.</li><li>\(f_A\) è suriettiva e \(\dim\mathrm{Ker}(f_A) = 1\).</li><li>\(f_A\) è iniettiva e \(\dim\mathrm{Im}(f_A) = 2\).</li><li>\(f_A\) non è né iniettiva né suriettiva.</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>\(\dim\mathrm{Im}(f_A) = \dim\mathrm{Col}(A) = 2 = \dim\mathbb{R}^2\): suriettiva. Nullità + rango: \(\dim\mathrm{Ker} = 3-2 = 1\), quindi non iniettiva.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="A">
+    <p><strong>Q13.</strong> Sia \(D:\mathbb{R}[x]_{\leqslant2}\to\mathbb{R}[x]_{\leqslant1}\) l'applicazione derivata, \(D(p) = p'\). Qual è il nucleo di \(D\)?</p>
+    <ol class="opzioni"><li>\(\mathrm{Span}_{\mathbb{R}}\{1\}\)</li><li>\(\mathrm{Span}_{\mathbb{R}}\{x\}\)</li><li>\(\mathbb{R}[x]_{\leqslant1}\)</li><li>\(\{0\}\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>\(p' = 0\iff p\) è costante. (Controllo: \(3 = 1+2\), e \(D\) è suriettiva su \(\mathbb{R}[x]_{\leqslant1}\).)</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p><strong>Q14.</strong> Sia \(\mathrm{ev}:\mathbb{R}[x]_{\leqslant3}\to\mathbb{R}^2\) definita da \(\mathrm{ev}(p) = (p(0),p(1))\). Qual è la dimensione di \(\mathrm{Ker}(\mathrm{ev})\)?</p>
+    <ol class="opzioni"><li>\(1\)</li><li>\(2\)</li><li>\(3\)</li><li>\(4\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>\(\mathrm{ev}\) è suriettiva: \(\mathrm{ev}(1) = (1,1)\) e \(\mathrm{ev}(x) = (0,1)\) sono indipendenti. Quindi \(\dim\mathrm{Ker} = 4-2 = 2\) (infatti \(\mathrm{Ker} = \mathrm{Span}\{x(x-1),\ x^2(x-1)\}\)).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="C">
+    <p><strong>Q15.</strong> Qual è la dimensione dello spazio \(\mathrm{Mat}^{\mathrm{sym}}_{3\times3}(\mathbb{R})\) delle matrici simmetriche \(3\times3\)?</p>
+    <ol class="opzioni"><li>\(3\)</li><li>\(5\)</li><li>\(6\)</li><li>\(9\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>Una simmetrica è determinata dalle entrate sopra e sulla diagonale: \(3+2+1 = 6\). Infatti \(\mathrm{Mat}^{\mathrm{sym}}_{3\times3}(\mathbb{R})\simeq\mathbb{R}^6\) (Esempi dopo l'Oss. 4.20).</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p><strong>Q16.</strong> Sia \(\mathrm{tr}:\mathrm{Mat}^{\mathrm{sym}}_{3\times3}(\mathbb{R})\to\mathbb{R}\) l'applicazione traccia, \(\mathrm{tr}(A) = a_{11}+a_{22}+a_{33}\). Quale affermazione è corretta?</p>
+    <ol class="opzioni"><li>\(\mathrm{tr}\) non è lineare.</li><li>\(\mathrm{tr}\) è suriettiva e \(\dim\mathrm{Ker}(\mathrm{tr}) = 5\).</li><li>\(\mathrm{tr}\) è iniettiva.</li><li>\(\mathrm{Im}(\mathrm{tr}) = \{0\}\).</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>La traccia è lineare e \(\mathrm{tr}(\lambda I_3) = 3\lambda\) assume ogni valore reale: suriettiva, \(\dim\mathrm{Im} = 1\). Quindi \(\dim\mathrm{Ker} = 6-1 = 5\).</p></details>
+  </div>
+</section>
+
+<section class="sec" id="cap4-riepilogo">
+  <div class="num">09</div>
+  <h2>Riepilogo</h2>
+  <ol>
+    <li>\(f:V\to W\) è lineare se rispetta somma e prodotto per scalare (Hom 1, Hom 2), equivalentemente le combinazioni lineari; \(V\) e \(W\) devono essere sullo stesso campo \(\mathbb{K}\).</li>
+    <li>Ogni applicazione lineare manda \(\mathbf{0}\) in \(\mathbf{0}\) e \(-\mathbf{v}\) in \(-f(\mathbf{v})\): primo test da fare, ma non sufficiente (\(x^2+y^2\)).</li>
+    <li>Esempio fondamentale: \(f_A(\mathbf{x}) = A\mathbf{x}\), da \(\mathbb{K}^n\) a \(\mathbb{K}^m\) se \(A\) è \(m\times n\), con \(f_A(\mathbf{e}_i) = \mathsf{C}_i(A)\).</li>
+    <li>La composizione di lineari è lineare; un isomorfismo è una lineare con inversa lineare, e lineare + biiettiva \(\Rightarrow\) isomorfismo (Prop. 4.9).</li>
+    <li>\(\mathrm{Ker}(f)\subseteq V\) e \(\mathrm{Im}(f)\subseteq W\) sono sottospazi; \(\mathrm{Ker}(f_A) = \mathrm{Ker}(A) = \mathrm{Sol}(A\mathbf{x} = \mathbf{0})\), \(\mathrm{Im}(f_A) = \mathrm{Col}(A)\).</li>
+    <li>\(f\) iniettiva \(\iff\mathrm{Ker}(f) = \{\mathbf{0}\}\); suriettiva \(\iff\mathrm{Im}(f) = W\).</li>
+    <li>\(f(\mathrm{Span}\,S) = \mathrm{Span}\,f(S)\); la dipendenza si conserva sempre, l'indipendenza solo se \(f\) è iniettiva.</li>
+    <li>Per una base \(\mathcal{B}\) di \(V\): \(\mathrm{Im}(f) = \mathrm{Span}\,f(\mathcal{B})\); iniettiva \(\iff f(\mathcal{B})\) base di \(\mathrm{Im}\); suriettiva \(\iff f(\mathcal{B})\) genera \(W\); isomorfismo \(\iff f(\mathcal{B})\) base di \(W\).</li>
+    <li>Una lineare è determinata dai valori su una base, e questi si possono scegliere liberamente (Teorema 4.18); su insiemi che non sono basi no (Esempio 4.17).</li>
+    <li>Spazi isomorfi hanno la stessa dimensione; ogni spazio di dimensione \(n\) è isomorfo a \(\mathbb{K}^n\) (Teorema 4.21).</li>
+    <li><strong>Teorema della Dimensione:</strong> \(\dim V = \dim\mathrm{Ker}(f)+\dim\mathrm{Im}(f)\); per matrici \(n = \dim\mathrm{Ker}(A)+\mathrm{Rango}(A)\).</li>
+    <li>Grassmann \(\dim(U_1+U_2) = \dim U_1+\dim U_2-\dim(U_1\cap U_2)\) è un corollario del Teorema della Dimensione.</li>
+    <li>Se \(\dim V = \dim W &lt; \infty\): iniettiva \(\iff\) suriettiva \(\iff\) isomorfismo. Se \(\dim V &gt; \dim W\) mai iniettiva; se \(\dim V &lt; \dim W\) mai suriettiva.</li>
+    <li>Per una base di \(\mathrm{Im}(f_A)\) prendi le colonne pivot della matrice <em>originale</em>: Gauss cambia \(\mathrm{Col}(A)\)!</li>
+  </ol>
+</section>
       <nav class="pager" aria-label="Capitoli"><a class="prev" href="cap3.html"><small>← Precedente</small><span>Calcolare in Kⁿ</span></a><a class="next" href="cap5.html"><small>Successivo →</small><span>Matrice associata</span></a></nav>
     </main>
   </div>

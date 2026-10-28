@@ -27,16 +27,496 @@
     <span class="eyebrow">Cap. 5</span>
     <h1>Matrice associata</h1>
     <p class="sub">Matrice di un&#x27;applicazione lineare rispetto a due basi, composizione e prodotto, cambiamento di base.</p>
-    <div class="pillrow"></div>
+    <div class="pillrow"><span class="pill">7 sezioni</span><span class="pill">11 esercizi con soluzione</span><span class="pill">6 domande di quiz</span></div>
   </header>
   <div class="layout">
     <aside class="side" id="side">
-      <div class="panel"><div class="panel-title">Capitoli</div><ol><li><a href="cap0.html"><span class="k">0</span>Fondamenti</a></li><li><a href="cap1.html"><span class="k">1</span>Matrici e sistemi lineari</a><div class="chap-progress" data-progress-page="cap1" data-total="18"><i></i></div></li><li><a href="cap2.html"><span class="k">2</span>Spazi vettoriali su K</a><div class="chap-progress" data-progress-page="cap2" data-total="15"><i></i></div></li><li><a href="cap3.html"><span class="k">3</span>Calcolare in Kⁿ</a><div class="chap-progress" data-progress-page="cap3" data-total="10"><i></i></div></li><li><a href="cap4.html"><span class="k">4</span>Applicazioni lineari</a></li><li><a href="cap5.html" aria-current="page"><span class="k">5</span>Matrice associata</a></li><li><a href="esami.html"><span class="k">·</span>Preparazione all&#x27;esame</a></li><li><a href="anteprima.html"><span class="k">·</span>Argomenti non ancora fatti a lezione</a></li></ol></div>
-      <div class="panel"><div class="panel-title">In questa pagina</div><ol id="toc"></ol></div>
+      <div class="panel"><div class="panel-title">Capitoli</div><ol><li><a href="cap0.html"><span class="k">0</span>Fondamenti</a><div class="chap-progress" data-progress-page="cap0" data-total="21"><i></i></div></li><li><a href="cap1.html"><span class="k">1</span>Matrici e sistemi lineari</a><div class="chap-progress" data-progress-page="cap1" data-total="18"><i></i></div></li><li><a href="cap2.html"><span class="k">2</span>Spazi vettoriali su K</a><div class="chap-progress" data-progress-page="cap2" data-total="15"><i></i></div></li><li><a href="cap3.html"><span class="k">3</span>Calcolare in Kⁿ</a><div class="chap-progress" data-progress-page="cap3" data-total="10"><i></i></div></li><li><a href="cap4.html"><span class="k">4</span>Applicazioni lineari</a><div class="chap-progress" data-progress-page="cap4" data-total="11"><i></i></div></li><li><a href="cap5.html" aria-current="page"><span class="k">5</span>Matrice associata</a><div class="chap-progress" data-progress-page="cap5" data-total="11"><i></i></div></li><li><a href="esami.html"><span class="k">·</span>Preparazione all&#x27;esame</a><div class="chap-progress" data-progress-page="esami" data-total="16"><i></i></div></li><li><a href="anteprima.html"><span class="k">·</span>Argomenti non ancora fatti a lezione</a></li></ol></div>
+      <div class="panel"><div class="panel-title">In questa pagina</div><ol id="toc"><li><a href="#cap5-intro"><span class="k">01</span>Dall&#x27;applicazione alla matrice</a></li><li><a href="#cap5-matrice-associata"><span class="k">02</span>La matrice associata</a></li><li><a href="#cap5-coordinate"><span class="k">03</span>Matrice associata e coordinate</a></li><li><a href="#cap5-cambio-base"><span class="k">04</span>Matrici del cambiamento di base</a></li><li><a href="#cap5-esercizi"><span class="k">05</span>Esercizi</a></li><li><a href="#cap5-quiz"><span class="k">06</span>Quiz</a></li><li><a href="#cap5-riepilogo"><span class="k">07</span>Riepilogo</a></li></ol></div>
       
     </aside>
     <main id="content">
-<div class="empty"><p><strong>Contenuti in arrivo.</strong></p><p>Questo capitolo verrà riempito con teoria, esempi ed esercizi svolti tratti dagli appunti del corso.</p></div>
+<section class="sec" id="cap5-intro">
+  <div class="num">01</div>
+  <h2>Dall'applicazione alla matrice</h2>
+  <p class="lead">Obiettivo: descrivere con matrici le applicazioni lineari tra spazi di dimensione finita. Per ogni scelta di basi si ottiene un isomorfismo tra \(\mathrm{Hom}_{\mathbb{K}}(V,W)\) e \(\mathrm{Mat}_{m\times n}(\mathbb{K})\).</p>
+
+  <p>Nella prima parte del capitolo, quella essenziale anche per l'esame, ci limitiamo alle definizioni e alle proprietà elementari. Domande guida: le operazioni sono compatibili con questa corrispondenza? Si può dedurre dalla matrice se l'applicazione è iniettiva o suriettiva?</p>
+
+  <div class="box box--note"><div class="tag">Dalla lezione 11</div>
+    <p>Già nella lezione 11 il prof aveva anticipato questo capitolo: le applicazioni \(f(x,y) = ax+by\) sono tutte e sole le applicazioni \(\mathbb{R}\)-lineari \(\mathbb{R}^2\to\mathbb{R}\), e "quando parleremo di matrice associata vedremo una generalizzazione di questo": tutte le applicazioni lineari \(\mathbb{K}^n\to\mathbb{K}^m\) sono del tipo \(f_A(\mathbf{x}) = A\mathbf{x}\), con \(f_A(\mathbf{e}_i) = \mathsf{C}_i(A)\) ("non è una coincidenza"). Questo capitolo lo estende a spazi qualsiasi di dimensione finita, scegliendo delle basi.</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio 5.1</div>
+    <p>Siano \(V = \mathbb{R}^2\), \(W = \mathbb{R}^3\) e \(f:\mathbb{R}^2\to\mathbb{R}^3\), \(f\begin{pmatrix}x\\y\end{pmatrix} = \begin{pmatrix}y\\-x\\x+y\end{pmatrix}\). Scegliamo le basi canoniche (senza la notazione \(\mathbf{e}_i\), per restare vicini al caso generale):</p>
+    \[ \mathcal{E}_2:\ \underbrace{\begin{pmatrix}1\\0\end{pmatrix}}_{\mathbf{v}_1},\underbrace{\begin{pmatrix}0\\1\end{pmatrix}}_{\mathbf{v}_2};\qquad \mathcal{E}_3:\ \begin{pmatrix}1\\0\\0\end{pmatrix},\begin{pmatrix}0\\1\\0\end{pmatrix},\begin{pmatrix}0\\0\\1\end{pmatrix}. \]
+    <p>Per linearità:</p>
+    \[ f\begin{pmatrix}x\\y\end{pmatrix} = f\left(x\begin{pmatrix}1\\0\end{pmatrix}+y\begin{pmatrix}0\\1\end{pmatrix}\right) = x\cdot f\begin{pmatrix}1\\0\end{pmatrix}+y\cdot f\begin{pmatrix}0\\1\end{pmatrix} = x\cdot\begin{pmatrix}0\\-1\\1\end{pmatrix}+y\cdot\begin{pmatrix}1\\0\\1\end{pmatrix}. \]
+    <p>Quindi basta conoscere \(f(\mathbf{v}_1)\) e \(f(\mathbf{v}_2)\), cioè le loro coordinate rispetto alla base di \(\mathbb{R}^3\):</p>
+    \[ \begin{pmatrix}0\\-1\\1\end{pmatrix} = 0\cdot\begin{pmatrix}1\\0\\0\end{pmatrix}+(-1)\cdot\begin{pmatrix}0\\1\\0\end{pmatrix}+1\cdot\begin{pmatrix}0\\0\\1\end{pmatrix},\qquad \begin{pmatrix}1\\0\\1\end{pmatrix} = 1\cdot\begin{pmatrix}1\\0\\0\end{pmatrix}+0\cdot\begin{pmatrix}0\\1\\0\end{pmatrix}+1\cdot\begin{pmatrix}0\\0\\1\end{pmatrix}. \]
+    <p>Le coordinate \(x,y\) di \(\mathbf{v}\) insieme alle coordinate di \(f(\mathbf{v}_1), f(\mathbf{v}_2)\) determinano \(f\) completamente:</p>
+    \[ f\begin{pmatrix}x\\y\end{pmatrix} = \begin{pmatrix}0&amp;1\\-1&amp;0\\1&amp;1\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix} = \begin{pmatrix}0x+1y\\ (-1)x+0y\\1x+1y\end{pmatrix} = \begin{pmatrix}y\\-x\\x+y\end{pmatrix}\qquad\forall\begin{pmatrix}x\\y\end{pmatrix}\in\mathbb{R}^2. \]
+  </div>
+</section>
+
+<section class="sec" id="cap5-matrice-associata">
+  <div class="num">02</div>
+  <h2>La matrice associata</h2>
+  <p class="lead">§5.1: nella colonna \(j\) si mettono le coordinate di \(f(\mathbf{v}_j)\) rispetto alla base del codominio.</p>
+
+  <div class="box box--def"><div class="tag">Definizione (§5.1) — matrice associata</div>
+    <p>Sia \(f:V\to W\) lineare, con \(\dim V = n\), \(\dim W = m\) finite, e fissiamo basi <strong>ordinate</strong></p>
+    \[ \mathcal{B} = \mathbf{v}_1,\dots,\mathbf{v}_n\ \text{ di } V;\qquad \mathcal{C} = \mathbf{w}_1,\dots,\mathbf{w}_m\ \text{ di } W. \]
+    <p>Ogni \(f(\mathbf{v}_j)\) si scrive in modo unico come combinazione degli elementi di \(\mathcal{C}\): esistono unici \(a_{i,j}\in\mathbb{K}\) con</p>
+    \[ \begin{aligned} f(\mathbf{v}_1) &amp;= a_{1,1}\mathbf{w}_1+a_{2,1}\mathbf{w}_2+\dots+a_{m,1}\mathbf{w}_m\\ f(\mathbf{v}_2) &amp;= a_{1,2}\mathbf{w}_1+a_{2,2}\mathbf{w}_2+\dots+a_{m,2}\mathbf{w}_m\\ &amp;\ \ \vdots\\ f(\mathbf{v}_n) &amp;= a_{1,n}\mathbf{w}_1+a_{2,n}\mathbf{w}_2+\dots+a_{m,n}\mathbf{w}_m. \end{aligned} \]
+    <p>La <strong>matrice associata</strong> (o <strong>matrice rappresentativa</strong>) di \(f\) rispetto alle basi ordinate \(\mathcal{B}\) e \(\mathcal{C}\) è</p>
+    \[ M^{\mathcal{B}}_{\mathcal{C}}(f) = \begin{pmatrix}a_{1,1}&amp;a_{1,2}&amp;\dots&amp;a_{1,n}\\a_{2,1}&amp;a_{2,2}&amp;\dots&amp;a_{2,n}\\ \vdots&amp;\vdots&amp;&amp;\vdots\\a_{m,1}&amp;a_{m,2}&amp;\dots&amp;a_{m,n}\end{pmatrix}\in\mathrm{Mat}_{m\times n}(\mathbb{K}), \]
+    <p>cioè la colonna \(j\) contiene le coordinate \([f(\mathbf{v}_j)]_{\mathcal{C}}\). È una convenzione (la più diffusa), scelta per essere compatibile con \(\mathbf{x}\mapsto A\cdot\mathbf{x}\). L'ordine delle basi è importante perché la matrice sia definita univocamente.</p>
+  </div>
+
+  <div class="box box--note"><div class="tag">Notazione \(M^{\mathcal{B}}_{\mathcal{C}}(f)\)</div>
+    <p>La matrice dipende da \(\mathcal{B}\), \(\mathcal{C}\) e \(f\): i tre simboli devono comparire. Il prof scrive \((f)\) e non \(f\) come indice perché \(M^{\mathcal{B}}_{\mathcal{C}}\) è in realtà un isomorfismo di spazi vettoriali</p>
+    \[ M^{\mathcal{B}}_{\mathcal{C}}:\mathrm{Hom}_{\mathbb{K}}(V,W)\longrightarrow\mathrm{Mat}_{\dim W\times\dim V}(\mathbb{K}), \]
+    <p>che si applica a un omomorfismo \(f\). La base del dominio va <strong>in alto</strong>, quella del codominio <strong>in basso</strong>: nella composizione (Teorema 5.4) la base che compare una volta in alto e una volta in basso "si semplifica".</p>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione — notazioni negli esami passati</div>
+    <p>Negli esami degli anni precedenti (altri docenti) si trovano \(M^{\mathcal{B},\mathcal{C}}_L\), \(M_{\mathcal{C},\mathcal{B}}(f)\), \(M_{\mathcal{B}}(f)\)... Controlla sempre quale base è del dominio e quale del codominio: la matrice ha <strong>tante colonne quanto è la dimensione del dominio</strong> e tante righe quanto quella del codominio. \(M_{\mathcal{B}}(f)\) per un endomorfismo significa \(M^{\mathcal{B}}_{\mathcal{B}}(f)\).</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempi (pp. 197-198)</div>
+    <ol>
+      <li><p>Per la \(f\) dell'Esempio 5.1, rispetto alle basi canoniche:</p>
+        \[ M^{\mathcal{E}_2}_{\mathcal{E}_3}(f) = \begin{pmatrix}0&amp;1\\-1&amp;0\\1&amp;1\end{pmatrix}. \]
+        <p>Con la base \(\mathcal{B} = \begin{pmatrix}1\\1\end{pmatrix},\begin{pmatrix}1\\-1\end{pmatrix}\) di \(\mathbb{R}^2\):</p>
+        \[ f\begin{pmatrix}1\\1\end{pmatrix} = \begin{pmatrix}1\\-1\\2\end{pmatrix} = 1\cdot\mathbf{e}_1+(-1)\cdot\mathbf{e}_2+2\cdot\mathbf{e}_3,\qquad f\begin{pmatrix}1\\-1\end{pmatrix} = \begin{pmatrix}-1\\-1\\0\end{pmatrix} = (-1)\cdot\mathbf{e}_1+(-1)\cdot\mathbf{e}_2+0\cdot\mathbf{e}_3, \]
+        \[ M^{\mathcal{B}}_{\mathcal{E}_3}(f) = \begin{pmatrix}1&amp;-1\\-1&amp;-1\\2&amp;0\end{pmatrix}. \]
+        <p>Scegliendo anche \(\mathcal{C} = \mathbf{w}_1,\mathbf{w}_2,\mathbf{w}_3 = \begin{pmatrix}0\\1\\1\end{pmatrix},\begin{pmatrix}1\\0\\1\end{pmatrix},\begin{pmatrix}1\\1\\0\end{pmatrix}\) per \(\mathbb{R}^3\):</p>
+        \[ f\begin{pmatrix}1\\1\end{pmatrix} = \begin{pmatrix}1\\-1\\2\end{pmatrix} = 0\cdot\mathbf{w}_1+2\cdot\mathbf{w}_2+(-1)\cdot\mathbf{w}_3,\qquad f\begin{pmatrix}1\\-1\end{pmatrix} = \begin{pmatrix}-1\\-1\\0\end{pmatrix} = 0\cdot\mathbf{w}_1+0\cdot\mathbf{w}_2+(-1)\cdot\mathbf{w}_3, \]
+        \[ M^{\mathcal{B}}_{\mathcal{C}}(f) = \begin{pmatrix}0&amp;0\\2&amp;0\\-1&amp;-1\end{pmatrix}. \]
+        <p>Stessa \(f\), tre matrici diverse: la matrice dipende dalle basi.</p></li>
+      <li><p>\(V = \mathrm{Mat}_{2\times2}(\mathbb{R})\), \(W = \mathbb{R}[x]_{\leqslant2}\) e</p>
+        \[ f:\mathrm{Mat}_{2\times2}(\mathbb{R})\to\mathbb{R}[x]_{\leqslant2},\qquad \begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}\longmapsto(a+c)+(2b-3d)x+(5c-7d)x^2. \]
+        <p>Con le basi canoniche \(\mathcal{B} = \begin{pmatrix}1&amp;0\\0&amp;0\end{pmatrix},\begin{pmatrix}0&amp;1\\0&amp;0\end{pmatrix},\begin{pmatrix}0&amp;0\\1&amp;0\end{pmatrix},\begin{pmatrix}0&amp;0\\0&amp;1\end{pmatrix}\) e \(\mathcal{C} = 1,x,x^2\):</p>
+        \[ \begin{aligned} f\begin{pmatrix}1&amp;0\\0&amp;0\end{pmatrix} &amp;= 1 = 1\cdot1+0\cdot x+0\cdot x^2,\\ f\begin{pmatrix}0&amp;1\\0&amp;0\end{pmatrix} &amp;= 2x = 0\cdot1+2\cdot x+0\cdot x^2,\\ f\begin{pmatrix}0&amp;0\\1&amp;0\end{pmatrix} &amp;= 1+5x^2 = 1\cdot1+0\cdot x+5\cdot x^2,\\ f\begin{pmatrix}0&amp;0\\0&amp;1\end{pmatrix} &amp;= -3x-7x^2 = 0\cdot1+(-3)\cdot x+(-7)\cdot x^2, \end{aligned}\qquad M^{\mathcal{B}}_{\mathcal{C}}(f) = \begin{pmatrix}1&amp;0&amp;1&amp;0\\0&amp;2&amp;0&amp;-3\\0&amp;0&amp;5&amp;-7\end{pmatrix}. \]</li>
+      <li><p><em>Esercizio (dagli appunti).</em> Scrivere la matrice associata della trasposta \((\ )^{\top}:\mathrm{Mat}_{2\times2}(\mathbb{R})\to\mathrm{Mat}_{2\times2}(\mathbb{R})\), \(A\mapsto A^{\top}\), rispetto alla base canonica (la stessa per dominio e codominio). Trovare una base \(\mathcal{B}\) tale che la matrice associata sia diagonale. (Soluzione negli Esercizi qui sotto.)</p></li>
+    </ol>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo — calcolare \(M^{\mathcal{B}}_{\mathcal{C}}(f)\)</div>
+    <ol>
+      <li>Calcola le immagini dei vettori della base del dominio: \(f(\mathbf{v}_1),\dots,f(\mathbf{v}_n)\).</li>
+      <li>Per ciascuna, trova le coordinate rispetto a \(\mathcal{C}\): risolvi \(f(\mathbf{v}_j) = a_{1,j}\mathbf{w}_1+\dots+a_{m,j}\mathbf{w}_m\). Se \(\mathcal{C}\) è canonica, le coordinate si leggono direttamente.
+        <br>Scorciatoia in \(\mathbb{K}^m\): se \(P\) è la matrice con colonne \(\mathbf{w}_1,\dots,\mathbf{w}_m\), si risolvono tutti i sistemi insieme riducendo \(\left(P\mid f(\mathbf{v}_1)\ \cdots\ f(\mathbf{v}_n)\right)\) fino a \(\left(I_m\mid M^{\mathcal{B}}_{\mathcal{C}}(f)\right)\).</li>
+      <li>Metti \([f(\mathbf{v}_j)]_{\mathcal{C}}\) nella <strong>colonna</strong> \(j\). Controllo dimensioni: \((\dim W)\times(\dim V)\).</li>
+    </ol>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <ul>
+      <li>Le coordinate vanno in <strong>colonna</strong>, non in riga: scriverle in riga dà la trasposta (errore classico, vedi Quiz Q6).</li>
+      <li>Se la base del codominio non è canonica, la colonna \(j\) <strong>non</strong> è \(f(\mathbf{v}_j)\) ma le sue coordinate.</li>
+      <li>Cambiare l'ordine dei vettori di una base permuta righe o colonne della matrice.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="cap5-coordinate">
+  <div class="num">03</div>
+  <h2>Matrice associata e coordinate</h2>
+  <p class="lead">§5.2: tramite le coordinate, ogni \(f\) diventa "moltiplicazione per una matrice" tra \(\mathbb{K}^n\) e \(\mathbb{K}^m\); la composizione corrisponde al prodotto di matrici.</p>
+
+  <p>Una base ordinata \(\mathcal{B}:\mathbf{v}_1,\dots,\mathbf{v}_n\) di \(V\) (\(\dim_{\mathbb{K}} V = n\)) definisce l'isomorfismo delle coordinate</p>
+  \[ [\ ]_{\mathcal{B}}:V\longrightarrow\mathbb{K}^n,\qquad\mathbf{v}\longmapsto[\mathbf{v}]_{\mathcal{B}}, \]
+  <p>e analogamente \([\ ]_{\mathcal{C}}:W\to\mathbb{K}^m\). Insieme alla matrice associata danno una descrizione di \(f\) come moltiplicazione a sinistra per una matrice: \(\mathbb{K}^n\xrightarrow{\ M^{\mathcal{B}}_{\mathcal{C}}(f)\cdot\ }\mathbb{K}^m\).</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 300 170" width="300" height="170" role="img" aria-label="Diagramma commutativo f, coordinate e matrice associata">
+      <text x="40" y="35" font-size="16" fill="currentColor">V</text>
+      <text x="240" y="35" font-size="16" fill="currentColor">W</text>
+      <text x="32" y="150" font-size="16" fill="currentColor">𝕂ⁿ</text>
+      <text x="232" y="150" font-size="16" fill="currentColor">𝕂ᵐ</text>
+      <line x1="60" y1="30" x2="228" y2="30" stroke="currentColor" stroke-width="1.5"/>
+      <polygon points="234,30 224,25 224,35" fill="currentColor"/>
+      <text x="140" y="22" font-size="14" fill="currentColor">f</text>
+      <line x1="62" y1="145" x2="222" y2="145" stroke="currentColor" stroke-width="1.5"/>
+      <polygon points="228,145 218,140 218,150" fill="currentColor"/>
+      <text x="100" y="138" font-size="13" fill="currentColor">M^B_C(f) ·</text>
+      <line x1="45" y1="42" x2="45" y2="125" stroke="currentColor" stroke-width="1.5"/>
+      <polygon points="45,131 40,121 50,121" fill="currentColor"/>
+      <text x="52" y="90" font-size="13" fill="currentColor">[ ]_B</text>
+      <line x1="245" y1="42" x2="245" y2="125" stroke="currentColor" stroke-width="1.5"/>
+      <polygon points="245,131 240,121 250,121" fill="currentColor"/>
+      <text x="252" y="90" font-size="13" fill="currentColor">[ ]_C</text>
+    </svg>
+    <figcaption>Il diagramma "commuta": passare per \(f\) e poi alle coordinate in \(\mathcal{C}\) equivale a passare alle coordinate in \(\mathcal{B}\) e moltiplicare per \(M^{\mathcal{B}}_{\mathcal{C}}(f)\) (Teorema 5.2).</figcaption>
+  </figure>
+
+  <div class="box box--thm"><div class="tag">Teorema 5.2</div>
+    <p>Sia \(f:V\to W\) lineare tra spazi di dimensione finita e siano \(\mathcal{B}\), \(\mathcal{C}\) basi di \(V\) e di \(W\). Allora per ogni \(\mathbf{v}\in V\):</p>
+    \[ [f(\mathbf{v})]_{\mathcal{C}} = M^{\mathcal{B}}_{\mathcal{C}}(f)\cdot[\mathbf{v}]_{\mathcal{B}}.\tag{5.1} \]
+    <p><em>Schizzo.</em> Se \(\mathcal{B} = \mathbf{v}_1,\dots,\mathbf{v}_n\), allora \([\mathbf{v}_i]_{\mathcal{B}} = \mathbf{e}_i\) e \(M^{\mathcal{B}}_{\mathcal{C}}(f)\cdot\mathbf{e}_i = \mathsf{C}_i\big(M^{\mathcal{B}}_{\mathcal{C}}(f)\big) = [f(\mathbf{v}_i)]_{\mathcal{C}}\): (5.1) vale sui vettori di base. Il caso generale segue dalla linearità di \(f\), \([\ ]_{\mathcal{B}}\), \([\ ]_{\mathcal{C}}\) e dalla definizione del prodotto matrice per colonna.</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Corollario 5.3</div>
+    <p>Per ogni \(f:V\to W\) lineare, con \(\dim_{\mathbb{K}} V &lt; \infty\), e per ogni basi \(\mathcal{B}\) di \(V\) e \(\mathcal{C}\) di \(W\):</p>
+    <ol type="i">
+      <li>\(\dim_{\mathbb{K}}\mathrm{Im}(f) = \mathrm{Rango}\big(M^{\mathcal{B}}_{\mathcal{C}}(f)\big)\);</li>
+      <li>\(\dim_{\mathbb{K}}\mathrm{Ker}(f) = \dim_{\mathbb{K}} V-\mathrm{Rango}\big(M^{\mathcal{B}}_{\mathcal{C}}(f)\big)\).</li>
+    </ol>
+    <p><em>Idea.</em> Gli isomorfismi delle coordinate con \(\mathbb{K}^n\) e \(\mathbb{K}^m\) trasformano \(\mathrm{Ker}(f)\) in \(\mathrm{Ker}(M)\) e \(\mathrm{Im}(f)\) in \(\mathrm{Col}(M)\), conservando le dimensioni.</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo — nucleo e immagine di \(f\) tramite \(M = M^{\mathcal{B}}_{\mathcal{C}}(f)\)</div>
+    <ol>
+      <li>Calcola \(M\) e riducila a scala: \(\mathrm{Rango}(M) = \dim\mathrm{Im}(f)\).</li>
+      <li>Risolvi \(M\mathbf{x} = \mathbf{0}\): ogni soluzione \(\mathbf{x}\) è il vettore delle <strong>coordinate</strong> in \(\mathcal{B}\) di un elemento del nucleo. Ritraduci: \(x_1\mathbf{v}_1+\dots+x_n\mathbf{v}_n\in\mathrm{Ker}(f)\).</li>
+      <li>Le colonne pivot di \(M\) sono coordinate in \(\mathcal{C}\) di una base di \(\mathrm{Im}(f)\); ritraduci: \(a_1\mathbf{w}_1+\dots+a_m\mathbf{w}_m\).</li>
+      <li>Iniettiva \(\iff\mathrm{Rango}(M) = n\); suriettiva \(\iff\mathrm{Rango}(M) = m\); isomorfismo \(\iff M\) quadrata invertibile.</li>
+    </ol>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <p>Il nucleo di \(M\) è fatto di colonne di numeri: se \(V\) non è \(\mathbb{K}^n\) (polinomi, matrici...) o la base non è canonica, devi <strong>ritradurre</strong> le coordinate in vettori di \(V\). Esempio: se \((1,0,-1)\in\mathrm{Ker}(M)\) con \(\mathcal{B} = \{1+t^2,\ t,\ 1-t^2\}\), il vettore del nucleo è \((1+t^2)-(1-t^2) = 2t^2\), non "\(1-t^2\)".</p>
+  </div>
+
+  <p>Il teorema seguente spiega perché il prodotto di matrici è definito come nel Capitolo 1.</p>
+
+  <div class="box box--thm"><div class="tag">Teorema 5.4</div>
+    <p>Siano \(V,W,Y\) tre \(\mathbb{K}\)-spazi vettoriali di dimensione finita positiva, con basi \(\mathcal{B}\), \(\mathcal{C}\), \(\mathcal{D}\), e siano \(V\xrightarrow{\ f\ }W\xrightarrow{\ g\ }Y\) lineari. Allora</p>
+    \[ M^{\mathcal{B}}_{\mathcal{D}}(g\circ f) = M^{\mathcal{C}}_{\mathcal{D}}(g)\cdot M^{\mathcal{B}}_{\mathcal{C}}(f). \]
+    <p><em>Schizzo.</em> Applicando due volte (5.1):</p>
+    \[ [g(f(\mathbf{v}))]_{\mathcal{D}} = M^{\mathcal{C}}_{\mathcal{D}}(g)\cdot[f(\mathbf{v})]_{\mathcal{C}} = M^{\mathcal{C}}_{\mathcal{D}}(g)\cdot\big(M^{\mathcal{B}}_{\mathcal{C}}(f)\cdot[\mathbf{v}]_{\mathcal{B}}\big) = \big(M^{\mathcal{C}}_{\mathcal{D}}(g)\cdot M^{\mathcal{B}}_{\mathcal{C}}(f)\big)\cdot[\mathbf{v}]_{\mathcal{B}}, \]
+    <p>e per \(\mathbf{v}\) nella base \(\mathcal{B}\) si leggono le colonne di \(M^{\mathcal{B}}_{\mathcal{D}}(g\circ f)\).</p>
+    <p>Ecco perché la notazione \({}^{\mathcal{B}}_{\mathcal{C}}\) e non \({}_{\mathcal{B},\mathcal{C}}\): in \(M^{\mathcal{C}}_{\mathcal{D}}(g)\cdot M^{\mathcal{B}}_{\mathcal{C}}(f) = M^{\mathcal{B}}_{\mathcal{D}}(g\circ f)\) la \(\mathcal{C}\) in alto e quella in basso "si semplificano".</p>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    <p>L'ordine del prodotto è quello della composizione: \(g\circ f\) ("prima \(f\), poi \(g\)") corrisponde a \(M(g)\cdot M(f)\), con la matrice di \(f\) <strong>a destra</strong> (Quiz Q11).</p>
+  </div>
+</section>
+
+<section class="sec" id="cap5-cambio-base">
+  <div class="num">04</div>
+  <h2>Matrici del cambiamento di base</h2>
+  <p class="lead">§5.3: la matrice del cambiamento di base è semplicemente la matrice associata all'identità.</p>
+
+  <div class="box box--def"><div class="tag">Definizione 5.5</div>
+    <p>Sia \(V\) un \(\mathbb{K}\)-spazio vettoriale di dimensione \(n\in\mathbb{N}_{&gt;0}\) e siano \(\mathcal{B}\) e \(\mathcal{B}'\) due basi di \(V\). La <strong>matrice del cambiamento di base</strong> da \(\mathcal{B}\) a \(\mathcal{B}'\) è la matrice quadrata \(n\times n\)</p>
+    \[ M^{\mathcal{B}}_{\mathcal{B}'} := M^{\mathcal{B}}_{\mathcal{B}'}(\mathrm{id}_V). \]
+  </div>
+
+  <div class="box box--thm"><div class="tag">Osservazione 5.6</div>
+    <p>Se \(\mathcal{B} = \mathbf{v}_1,\dots,\mathbf{v}_n\), per definizione di matrice associata</p>
+    \[ \mathsf{C}_i\big(M^{\mathcal{B}}_{\mathcal{B}'}\big) = [\mathrm{id}_V(\mathbf{v}_i)]_{\mathcal{B}'} = [\mathbf{v}_i]_{\mathcal{B}'}. \]
+    <p>Cioè le colonne sono le coordinate degli elementi della (vecchia) base \(\mathcal{B}\) rispetto alla (nuova) base \(\mathcal{B}'\). In particolare \(M^{\mathcal{B}}_{\mathcal{B}} = I_n\).</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Osservazione 5.7</div>
+    <p>Poiché \(\mathrm{id}_V\) è un isomorfismo, \(M^{\mathcal{B}}_{\mathcal{B}'}\) è invertibile e ha rango massimo: \(\mathrm{Rango}\big(M^{\mathcal{B}}_{\mathcal{B}'}\big) = n = \dim_{\mathbb{K}} V\). Dal Teorema 5.4:</p>
+    \[ M^{\mathcal{B}'}_{\mathcal{B}}\cdot M^{\mathcal{B}}_{\mathcal{B}'} = M^{\mathcal{B}'}_{\mathcal{B}}(\mathrm{id}_V)\cdot M^{\mathcal{B}}_{\mathcal{B}'}(\mathrm{id}_V) = M^{\mathcal{B}}_{\mathcal{B}}(\mathrm{id}_V\circ\mathrm{id}_V) = M^{\mathcal{B}}_{\mathcal{B}}(\mathrm{id}_V) = I_n. \]
+    <p>Quindi l'inversa della matrice di cambiamento da \(\mathcal{B}\) a \(\mathcal{B}'\) è quella da \(\mathcal{B}'\) a \(\mathcal{B}\):</p>
+    \[ \big(M^{\mathcal{B}}_{\mathcal{B}'}\big)^{-1} = M^{\mathcal{B}'}_{\mathcal{B}}. \]
+    <p>Questo fatto semplice è la chiave della coniugazione di matrici, studiata più avanti.</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Osservazione 5.8</div>
+    <p>Il cambio di base dà le nuove coordinate moltiplicando le vecchie per la matrice del cambiamento di base (Teorema 5.2): per ogni \(\mathbf{v}\in V\),</p>
+    \[ [\mathbf{v}]_{\mathcal{B}'} = [\mathrm{id}_V(\mathbf{v})]_{\mathcal{B}'} = M^{\mathcal{B}}_{\mathcal{B}'}(\mathrm{id}_V)\cdot[\mathbf{v}]_{\mathcal{B}} = M^{\mathcal{B}}_{\mathcal{B}'}\cdot[\mathbf{v}]_{\mathcal{B}}. \]
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione! (dagli appunti)</div>
+    <p>In alcune fonti bibliografiche per "matrice del cambiamento di base" si intende l'<strong>inversa</strong> della matrice usata qui. Con la convenzione del corso: in \(\mathbb{K}^n\), \(M^{\mathcal{B}}_{\mathcal{E}}\) ha per colonne i vettori di \(\mathcal{B}\) (facile da scrivere), mentre \(M^{\mathcal{E}}_{\mathcal{B}} = \big(M^{\mathcal{B}}_{\mathcal{E}}\big)^{-1}\) richiede un'inversione.</p>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Teorema 5.9</div>
+    <p>Sia \(f:V\to W\) lineare e siano \(\mathcal{B},\mathcal{B}'\) basi di \(V\) e \(\mathcal{C},\mathcal{C}'\) basi di \(W\). Allora</p>
+    \[ M^{\mathcal{B}'}_{\mathcal{C}'}(f) = M^{\mathcal{C}}_{\mathcal{C}'}\cdot M^{\mathcal{B}}_{\mathcal{C}}(f)\cdot M^{\mathcal{B}'}_{\mathcal{B}}. \]
+    <p>In particolare, se \(V = W\), \(\mathcal{C} = \mathcal{B}\), \(\mathcal{C}' = \mathcal{B}'\) e \(T = M^{\mathcal{B}}_{\mathcal{B}'}\), allora</p>
+    \[ M^{\mathcal{B}'}_{\mathcal{B}'}(f) = T\cdot M^{\mathcal{B}}_{\mathcal{B}}(f)\cdot T^{-1}. \]
+    <p><em>Idea.</em> \(f = \mathrm{id}_W\circ f\circ\mathrm{id}_V\) e Teorema 5.4 applicato a \(V_{\mathcal{B}'}\xrightarrow{\mathrm{id}}V_{\mathcal{B}}\xrightarrow{f}W_{\mathcal{C}}\xrightarrow{\mathrm{id}}W_{\mathcal{C}'}\): le basi intermedie "si semplificano".</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio — verifica del Teorema 5.9 sull'Esempio 1</div>
+    <p>Con \(f\), \(\mathcal{B}\) e \(\mathcal{C}\) dell'Esempio 1 (§5.1): \(M^{\mathcal{B}}_{\mathcal{E}_2} = \begin{pmatrix}1&amp;1\\1&amp;-1\end{pmatrix}\) (colonne = vettori di \(\mathcal{B}\)), \(M^{\mathcal{C}}_{\mathcal{E}_3} = \begin{pmatrix}0&amp;1&amp;1\\1&amp;0&amp;1\\1&amp;1&amp;0\end{pmatrix}\) e</p>
+    \[ M^{\mathcal{E}_3}_{\mathcal{C}} = \big(M^{\mathcal{C}}_{\mathcal{E}_3}\big)^{-1} = \frac12\begin{pmatrix}-1&amp;1&amp;1\\1&amp;-1&amp;1\\1&amp;1&amp;-1\end{pmatrix}. \]
+    <p>Allora</p>
+    \[ M^{\mathcal{B}}_{\mathcal{C}}(f) = M^{\mathcal{E}_3}_{\mathcal{C}}\cdot M^{\mathcal{E}_2}_{\mathcal{E}_3}(f)\cdot M^{\mathcal{B}}_{\mathcal{E}_2} = \frac12\begin{pmatrix}-1&amp;1&amp;1\\1&amp;-1&amp;1\\1&amp;1&amp;-1\end{pmatrix}\begin{pmatrix}0&amp;1\\-1&amp;0\\1&amp;1\end{pmatrix}\begin{pmatrix}1&amp;1\\1&amp;-1\end{pmatrix} = \frac12\begin{pmatrix}-1&amp;1&amp;1\\1&amp;-1&amp;1\\1&amp;1&amp;-1\end{pmatrix}\begin{pmatrix}1&amp;-1\\-1&amp;-1\\2&amp;0\end{pmatrix} = \begin{pmatrix}0&amp;0\\2&amp;0\\-1&amp;-1\end{pmatrix}, \]
+    <p>esattamente la matrice trovata direttamente negli appunti.</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo — cambiare base</div>
+    <ol>
+      <li><strong>Coordinate:</strong> \([\mathbf{v}]_{\mathcal{B}'} = M^{\mathcal{B}}_{\mathcal{B}'}[\mathbf{v}]_{\mathcal{B}}\). In \(\mathbb{K}^n\): \([\mathbf{v}]_{\mathcal{B}}\) si trova risolvendo \(M^{\mathcal{B}}_{\mathcal{E}}\,\mathbf{x} = \mathbf{v}\).</li>
+      <li><strong>Matrice di cambiamento:</strong> le colonne di \(M^{\mathcal{B}}_{\mathcal{B}'}\) sono \([\mathbf{v}_i]_{\mathcal{B}'}\). Per due basi di \(\mathbb{K}^n\): \(M^{\mathcal{B}}_{\mathcal{B}'} = \big(M^{\mathcal{B}'}_{\mathcal{E}}\big)^{-1}M^{\mathcal{B}}_{\mathcal{E}}\).</li>
+      <li><strong>Matrice di \(f\) in nuove basi:</strong> \(M^{\mathcal{B}'}_{\mathcal{C}'}(f) = M^{\mathcal{C}}_{\mathcal{C}'}\,M^{\mathcal{B}}_{\mathcal{C}}(f)\,M^{\mathcal{B}'}_{\mathcal{B}}\): leggi da destra a sinistra, controllando che le basi adiacenti coincidano (in alto/in basso).</li>
+      <li>Se le matrici da invertire sono grandi, spesso conviene calcolare direttamente \(f(\mathbf{v}'_j)\) e le loro coordinate in \(\mathcal{C}'\).</li>
+    </ol>
+  </div>
+
+  <div class="box box--note"><div class="tag">Dalla lezione 11</div>
+    <p>Alla fine della lezione 11 (21/10/2026) il prof ha anticipato il "cambio base" scrivendo \(A\longmapsto U^{-1}\cdot A\cdot U\): è la formula del Teorema 5.9 per un endomorfismo, con \(U = T^{-1} = M^{\mathcal{B}'}_{\mathcal{B}}\). Le due matrici \(A\) e \(U^{-1}AU\) rappresentano la stessa applicazione in basi diverse (si dicono <em>simili</em> o <em>coniugate</em>; verrà studiato più avanti).</p>
+  </div>
+</section>
+
+<section class="sec esercizi" id="cap5-esercizi">
+  <div class="num">05</div>
+  <h2>Esercizi</h2>
+  <div class="ex-bar"><button class="chip" data-filter="tutti" aria-pressed="true">Tutti</button><button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button><button class="chip" data-filter="base" aria-pressed="false">Base</button><button class="chip" data-filter="medio" aria-pressed="false">Medio</button><button class="chip" data-filter="esame" aria-pressed="false">Esame</button><button class="chip toggle-sol" aria-pressed="false">Mostra soluzioni</button><span class="count ex-count"></span></div>
+  <p class="lead">Esercizio degli appunti, esercizi aperti E2 ed E3 del Quiz 3 e una selezione di esercizi d'esame sulla matrice associata.</p>
+
+  <h3>Dagli appunti e dal Quiz 3</h3>
+  <div class="ex" data-fonte="Appunti Cap. 5, Esempio 3 (Esercizio)" data-livello="medio">
+    <div class="ex-testo">
+      <p>Scrivere la matrice associata dell'applicazione lineare \((\ )^{\top}:\mathrm{Mat}_{2\times2}(\mathbb{R})\to\mathrm{Mat}_{2\times2}(\mathbb{R})\), \(A\mapsto A^{\top}\), rispetto alla base canonica (la stessa per dominio e codominio). Trovare una base \(\mathcal{B}\) di \(\mathrm{Mat}_{2\times2}(\mathbb{R})\) tale che la matrice associata della trasposta sia diagonale.</p>
+    </div>
+    <details class="hint"><summary>Suggerimento</summary><p>Cerca matrici con \(A^{\top} = A\) (simmetriche) o \(A^{\top} = -A\) (antisimmetriche).</p></details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Base canonica \(\mathcal{E}: E_{11}, E_{12}, E_{21}, E_{22}\). \(E_{11}^{\top} = E_{11}\), \(E_{12}^{\top} = E_{21}\), \(E_{21}^{\top} = E_{12}\), \(E_{22}^{\top} = E_{22}\), quindi</p>
+      \[ M^{\mathcal{E}}_{\mathcal{E}}\big((\ )^{\top}\big) = \begin{pmatrix}1&amp;0&amp;0&amp;0\\0&amp;0&amp;1&amp;0\\0&amp;1&amp;0&amp;0\\0&amp;0&amp;0&amp;1\end{pmatrix}. \]
+      <p>Con \(\mathcal{B}: E_{11},\ E_{22},\ E_{12}+E_{21},\ E_{12}-E_{21}\) (una base: sono 4 matrici indipendenti) si ha \(E_{11}^{\top} = E_{11}\), \(E_{22}^{\top} = E_{22}\), \((E_{12}+E_{21})^{\top} = E_{12}+E_{21}\), \((E_{12}-E_{21})^{\top} = -(E_{12}-E_{21})\), quindi</p>
+      \[ M^{\mathcal{B}}_{\mathcal{B}}\big((\ )^{\top}\big) = \begin{pmatrix}1&amp;0&amp;0&amp;0\\0&amp;1&amp;0&amp;0\\0&amp;0&amp;1&amp;0\\0&amp;0&amp;0&amp;-1\end{pmatrix}. \]
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Quiz 3, E2" data-livello="base">
+    <div class="ex-testo">
+      <p>(a) Siano \(V = W = \mathbb{R}^2\), con basi ordinate \(\mathcal{B} = \begin{pmatrix}1\\1\end{pmatrix},\begin{pmatrix}1\\-1\end{pmatrix}\), \(\mathcal{C} = \begin{pmatrix}1\\0\end{pmatrix},\begin{pmatrix}1\\1\end{pmatrix}\), e sia \(f:V\to W\) definita da \(f\begin{pmatrix}x\\y\end{pmatrix} = \begin{pmatrix}x+y\\x-y\end{pmatrix}\). Calcoli \(M^{\mathcal{B}}_{\mathcal{C}}(f)\).</p>
+      <p>(b) Calcoli le coordinate di \(\mathbf{v} = \begin{pmatrix}2\\-1\end{pmatrix}\) rispetto a \(\mathcal{B}\) e usi la matrice associata per determinare \([f(\mathbf{v})]_{\mathcal{C}}\).</p>
+      <p>(c) Ricavi da queste coordinate il vettore \(f(\mathbf{v})\) e verifichi il risultato calcolandolo direttamente.</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>(a)</strong> \(f\begin{pmatrix}1\\1\end{pmatrix} = \begin{pmatrix}2\\0\end{pmatrix}\), \(f\begin{pmatrix}1\\-1\end{pmatrix} = \begin{pmatrix}0\\2\end{pmatrix}\). Coordinate rispetto a \(\mathcal{C}\): \(a\begin{pmatrix}1\\0\end{pmatrix}+b\begin{pmatrix}1\\1\end{pmatrix} = \begin{pmatrix}a+b\\b\end{pmatrix}\).</p>
+      <ul>
+        <li>\(\begin{pmatrix}2\\0\end{pmatrix}\): \(b = 0\), \(a = 2\) \(\Rightarrow\) \((2,0)\).</li>
+        <li>\(\begin{pmatrix}0\\2\end{pmatrix}\): \(b = 2\), \(a = -2\) \(\Rightarrow\) \((-2,2)\).</li>
+      </ul>
+      \[ M^{\mathcal{B}}_{\mathcal{C}}(f) = \begin{pmatrix}2&amp;-2\\0&amp;2\end{pmatrix}. \]
+      <p><strong>(b)</strong> \(\alpha\begin{pmatrix}1\\1\end{pmatrix}+\beta\begin{pmatrix}1\\-1\end{pmatrix} = \begin{pmatrix}2\\-1\end{pmatrix}\): \(\alpha+\beta = 2\), \(\alpha-\beta = -1\) \(\Rightarrow\) \(\alpha = \tfrac12\), \(\beta = \tfrac32\). Quindi \([\mathbf{v}]_{\mathcal{B}} = \begin{pmatrix}1/2\\3/2\end{pmatrix}\) e</p>
+      \[ [f(\mathbf{v})]_{\mathcal{C}} = \begin{pmatrix}2&amp;-2\\0&amp;2\end{pmatrix}\begin{pmatrix}1/2\\3/2\end{pmatrix} = \begin{pmatrix}1-3\\3\end{pmatrix} = \begin{pmatrix}-2\\3\end{pmatrix}. \]
+      <p><strong>(c)</strong> \(f(\mathbf{v}) = -2\begin{pmatrix}1\\0\end{pmatrix}+3\begin{pmatrix}1\\1\end{pmatrix} = \begin{pmatrix}1\\3\end{pmatrix}\). Direttamente: \(f\begin{pmatrix}2\\-1\end{pmatrix} = \begin{pmatrix}2-1\\2+1\end{pmatrix} = \begin{pmatrix}1\\3\end{pmatrix}\). ✓</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Quiz 3, E3" data-livello="base">
+    <div class="ex-testo">
+      <p>(a) Siano \(f:\mathbb{R}^2\to\mathbb{R}^2\) e \(g:\mathbb{R}^2\to\mathbb{R}^3\) definite da \(f(x,y) = (x+y,\ x-y)\), \(g(u,v) = (u+v,\ 2u-v,\ v)\). Calcoli le matrici associate a \(f\) e \(g\) rispetto alle basi canoniche.</p>
+      <p>(b) Calcoli la matrice associata a \(g\circ f\) mediante il prodotto delle matrici associate.</p>
+      <p>(c) Determini la formula esplicita di \((g\circ f)(x,y)\) e verifichi che corrisponde alla matrice trovata.</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>(a)</strong> \(M(f) = \begin{pmatrix}1&amp;1\\1&amp;-1\end{pmatrix}\), \(M(g) = \begin{pmatrix}1&amp;1\\2&amp;-1\\0&amp;1\end{pmatrix}\) (colonne = immagini dei vettori canonici).</p>
+      <p><strong>(b)</strong> Teorema 5.4: \(M(g\circ f) = M(g)\cdot M(f)\) (prima \(f\), quindi a destra):</p>
+      \[ \begin{pmatrix}1&amp;1\\2&amp;-1\\0&amp;1\end{pmatrix}\begin{pmatrix}1&amp;1\\1&amp;-1\end{pmatrix} = \begin{pmatrix}2&amp;0\\1&amp;3\\1&amp;-1\end{pmatrix}. \]
+      <p><strong>(c)</strong> \((g\circ f)(x,y) = g(x+y,\ x-y) = \big((x+y)+(x-y),\ 2(x+y)-(x-y),\ x-y\big) = (2x,\ x+3y,\ x-y)\), che è proprio \(\begin{pmatrix}2&amp;0\\1&amp;3\\1&amp;-1\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}\). ✓</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <h3>Dagli esami degli anni passati</h3>
+  <div class="ex" data-fonte="Esame GAL-2024-01, es. Q4" data-livello="esame">
+    <div class="ex-testo">
+      <p>Sia \(\mathcal{E}\) la base canonica di \(\mathbb{R}^3\) e \(\mathcal{B} = \{x^2, x, 1\}\) base di \(\mathbb{R}[x]_{\leqslant2}\). Trovare la matrice che rappresenta rispetto alle due basi (nell'esame: \(M^{\mathcal{E},\mathcal{B}}_L\), cioè \(M^{\mathcal{E}}_{\mathcal{B}}(L)\) nella notazione del corso) l'applicazione lineare</p>
+      \[ L:\mathbb{R}^3\to\mathbb{R}[x]_{\leqslant2},\qquad L(a,b,c) = (a+b)x^2+(2b+2c)x+3c. \]
+      <ol class="opzioni"><li>\(\begin{pmatrix}2&amp;2&amp;0\\2&amp;0&amp;0\\0&amp;0&amp;3\end{pmatrix}\)</li><li>\(\begin{pmatrix}1&amp;0&amp;0\\1&amp;2&amp;0\\0&amp;2&amp;3\end{pmatrix}\)</li><li>\(\begin{pmatrix}2&amp;0&amp;0\\0&amp;4&amp;0\\0&amp;0&amp;3\end{pmatrix}\)</li><li>\(\begin{pmatrix}1&amp;1&amp;0\\0&amp;2&amp;2\\0&amp;0&amp;3\end{pmatrix}\)</li></ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>Risposta D.</strong> \(L(\mathbf{e}_1) = x^2 = 1\cdot x^2+0\cdot x+0\cdot1\), \(L(\mathbf{e}_2) = x^2+2x = 1\cdot x^2+2\cdot x+0\cdot1\), \(L(\mathbf{e}_3) = 2x+3 = 0\cdot x^2+2\cdot x+3\cdot1\). Le coordinate (nell'ordine \(x^2,x,1\)!) vanno in colonna: \(\begin{pmatrix}1&amp;1&amp;0\\0&amp;2&amp;2\\0&amp;0&amp;3\end{pmatrix}\). La B è la trasposta (errore "coordinate in riga").</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2025-06, es. Q4" data-livello="esame">
+    <div class="ex-testo">
+      <p>Sia \(f:\mathbb{R}[t]_{\leqslant2}\to\mathbb{R}[t]_{\leqslant2}\) l'endomorfismo rappresentato rispetto alla base \(\{1+t^2,\ t,\ 1-t^2\}\) dalla matrice \(\begin{pmatrix}1&amp;0&amp;1\\0&amp;1&amp;0\\-1&amp;0&amp;-1\end{pmatrix}\). Allora</p>
+      <ol class="opzioni"><li>\(\mathrm{Im}(f) = \mathbb{R}[t]_{\leqslant2}\)</li><li>\(\mathrm{Ker}(f) = \mathrm{Span}(t^2)\)</li><li>\(\mathbb{R}[t]_{\leqslant2} = \mathrm{Ker}(f)+\mathrm{Im}(f)\)</li><li>\(\mathrm{Ker}(f)\cap\mathrm{Im}(f) = \{0\}\)</li></ol>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>Risposta B.</strong> La matrice \(A\) ha la terza riga uguale a meno la prima, e rango 2: \(\dim\mathrm{Im}(f) = 2\) (A falsa) e \(\dim\mathrm{Ker}(f) = 1\). \(\mathrm{Ker}(A) = \mathrm{Span}\{(1,0,-1)^{\top}\}\), che sono <em>coordinate</em>: il vettore è \(1\cdot(1+t^2)+0\cdot t-1\cdot(1-t^2) = 2t^2\). Quindi \(\mathrm{Ker}(f) = \mathrm{Span}(t^2)\).</p>
+      <p>Per C e D: le colonne di \(A\) danno \(\mathrm{Im}(f) = \mathrm{Span}\{(1+t^2)-(1-t^2),\ t\} = \mathrm{Span}\{2t^2,\ t\}\), che contiene \(\mathrm{Ker}(f)\). Allora \(\mathrm{Ker}+\mathrm{Im} = \mathrm{Im}\neq\mathbb{R}[t]_{\leqslant2}\) e \(\mathrm{Ker}\cap\mathrm{Im} = \mathrm{Span}(t^2)\neq\{0\}\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2025-06, es. Esercizio 1" data-livello="esame">
+    <div class="ex-testo">
+      <p>Considerare \(T:\mathbb{R}[x]_{\leqslant2}\to\mathrm{Mat}(2,2)\), \(T(p(x)) = \begin{pmatrix}p(0)&amp;p(1)\\p'(0)&amp;p'(1)\end{pmatrix}\).</p>
+      <p>(1) Dimostrare che \(T\) è lineare. (2) Determinare dimensione e una base per il nucleo e l'immagine di \(T\). (3) Determinare la matrice che rappresenta \(T\) rispetto alle basi \(\mathcal{B} = \{1,x,x^2\}\) e \(\mathcal{C} = \left\{\begin{pmatrix}1&amp;0\\0&amp;0\end{pmatrix},\begin{pmatrix}1&amp;1\\0&amp;0\end{pmatrix},\begin{pmatrix}0&amp;0\\1&amp;1\end{pmatrix},\begin{pmatrix}0&amp;0\\0&amp;1\end{pmatrix}\right\}\). (4) Determinare la controimmagine \(T^{-1}(A) = \{p : T(p) = A\}\) di \(A = \begin{pmatrix}1&amp;2\\3&amp;4\end{pmatrix}\).</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>(1)</strong> Valutazione e derivata sono lineari: \((cp+dq)(a) = cp(a)+dq(a)\), \((cp+dq)'(a) = cp'(a)+dq'(a)\). Quindi \(T(cp+dq) = cT(p)+dT(q)\) entrata per entrata.</p>
+      <p><strong>(2)</strong> Con \(p = ax^2+bx+c\): \(p(0) = c\), \(p'(0) = b\), \(p(1) = a+b+c\), \(p'(1) = 2a+b\). \(T(p) = 0\Rightarrow c = 0, b = 0, a = 0\): \(\mathrm{Ker}(T) = \{0\}\), \(\dim = 0\), \(T\) iniettiva. Per il Teorema della Dimensione \(\dim\mathrm{Im}(T) = 3\), e per il Cor. 4.15 (ii) l'immagine della base è una base dell'immagine:</p>
+      \[ T(1) = \begin{pmatrix}1&amp;1\\0&amp;0\end{pmatrix},\quad T(x) = \begin{pmatrix}0&amp;1\\1&amp;1\end{pmatrix},\quad T(x^2) = \begin{pmatrix}0&amp;1\\0&amp;2\end{pmatrix}. \]
+      <p><strong>(3)</strong> Coordinate rispetto a \(\mathcal{C} = C_1,C_2,C_3,C_4\): una combinazione \(\alpha C_1+\beta C_2+\gamma C_3+\delta C_4 = \begin{pmatrix}\alpha+\beta&amp;\beta\\ \gamma&amp;\gamma+\delta\end{pmatrix}\). Quindi per \(\begin{pmatrix}p&amp;q\\r&amp;s\end{pmatrix}\): \(\beta = q\), \(\alpha = p-q\), \(\gamma = r\), \(\delta = s-r\).</p>
+      <ul>
+        <li>\(T(1)\): \((p,q,r,s) = (1,1,0,0)\Rightarrow(0,1,0,0)\);</li>
+        <li>\(T(x)\): \((0,1,1,1)\Rightarrow(-1,1,1,0)\);</li>
+        <li>\(T(x^2)\): \((0,1,0,2)\Rightarrow(-1,1,0,2)\).</li>
+      </ul>
+      \[ M^{\mathcal{B}}_{\mathcal{C}}(T) = \begin{pmatrix}0&amp;-1&amp;-1\\1&amp;1&amp;1\\0&amp;1&amp;0\\0&amp;0&amp;2\end{pmatrix}. \]
+      <p><strong>(4)</strong> \(T(p) = A\): \(c = 1\), \(b = 3\), \(a+b+c = 2\Rightarrow a = -2\), ma allora \(p'(1) = 2a+b = -4+3 = -1\neq4\). Il sistema è incompatibile: \(T^{-1}(A) = \emptyset\) (\(A\notin\mathrm{Im}(T)\), coerente con \(\dim\mathrm{Im}(T) = 3 &lt; 4\)).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2024-02, es. Esercizio 1" data-livello="esame">
+    <div class="ex-testo">
+      <p>Sia \(k\in\mathbb{R}\) un parametro e \(L_k:\mathbb{R}[x]_{\leqslant1}\to\mathbb{R}^2\), \(L_k(p(x)) = \begin{pmatrix}p(2)\\p(k)-p(0)\end{pmatrix}\).</p>
+      <p>(1) Determinare una base di \(\mathrm{Ker}(L_k)\) e di \(\mathrm{Im}(L_k)\) al variare di \(k\in\mathbb{R}\). Esistono valori di \(k\) per cui \(L_k\) è un isomorfismo? (2) Determinare la matrice rappresentativa di \(L_k\) rispetto alle basi \(\mathcal{B} = \{x+1,\ x\}\) e \(\mathcal{C} = \left\{\begin{pmatrix}1\\1\end{pmatrix},\begin{pmatrix}2\\1\end{pmatrix}\right\}\).</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>(1)</strong> \(\mathrm{Im}(L_k) = \mathrm{Span}\{L_k(1),L_k(x)\} = \mathrm{Span}\left\{\begin{pmatrix}1\\0\end{pmatrix},\begin{pmatrix}2\\k\end{pmatrix}\right\}\) (per \(p = 1\): \(p(k)-p(0) = 0\); per \(p = x\): \(k-0 = k\)).</p>
+      <ul>
+        <li>\(k\neq0\): i due vettori sono indipendenti (\(\det = k\neq0\)), base di \(\mathrm{Im}(L_k) = \mathbb{R}^2\); \(\dim\mathrm{Ker} = 2-2 = 0\), base vuota. \(L_k\) è un <strong>isomorfismo</strong>.</li>
+        <li>\(k = 0\): i due vettori sono dipendenti, base di \(\mathrm{Im}(L_0)\): \(\left\{\begin{pmatrix}1\\0\end{pmatrix}\right\}\). Non suriettiva, quindi non isomorfismo. \(\mathrm{Ker}(L_0) = \{a+bx : a+2b = 0\} = \mathrm{Span}\{2-x\}\).</li>
+      </ul>
+      <p><strong>(2)</strong> \(L_k(x+1) = \begin{pmatrix}3\\ (k+1)-1\end{pmatrix} = \begin{pmatrix}3\\k\end{pmatrix}\), \(L_k(x) = \begin{pmatrix}2\\k\end{pmatrix}\). Coordinate in \(\mathcal{C}\): \(a\begin{pmatrix}1\\1\end{pmatrix}+b\begin{pmatrix}2\\1\end{pmatrix} = \begin{pmatrix}a+2b\\a+b\end{pmatrix}\).</p>
+      <ul>
+        <li>\(\begin{pmatrix}3\\k\end{pmatrix}\): \(b = 3-k\), \(a = 2k-3\).</li>
+        <li>\(\begin{pmatrix}2\\k\end{pmatrix}\): \(b = 2-k\), \(a = 2k-2\).</li>
+      </ul>
+      \[ M^{\mathcal{B}}_{\mathcal{C}}(L_k) = \begin{pmatrix}2k-3&amp;2k-2\\3-k&amp;2-k\end{pmatrix}. \]
+      <p>Controllo: \(\det = (2k-3)(2-k)-(2k-2)(3-k) = -k\), nullo solo per \(k = 0\), coerente con (1).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2024-02, es. Esercizio 2 (1)" data-livello="esame">
+    <div class="ex-testo">
+      <p>Sia \(V = \{A\in\mathrm{Mat}(2,2) \mid A^{\top} = A\}\) e \(M = \begin{pmatrix}0&amp;1\\-1&amp;0\end{pmatrix}\). Considerare l'endomorfismo \(L:V\to V\), \(L(A) = M^{\top}AM\). Determinare la matrice rappresentativa di \(L\) rispetto alla base \(\mathcal{B} = \left\{\begin{pmatrix}1&amp;0\\0&amp;0\end{pmatrix},\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix},\begin{pmatrix}0&amp;0\\0&amp;1\end{pmatrix}\right\}\). (I punti successivi dell'esame, sulla diagonalizzabilità, riguardano un capitolo successivo.)</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      \[ L\begin{pmatrix}a&amp;b\\b&amp;c\end{pmatrix} = \begin{pmatrix}0&amp;-1\\1&amp;0\end{pmatrix}\begin{pmatrix}a&amp;b\\b&amp;c\end{pmatrix}\begin{pmatrix}0&amp;1\\-1&amp;0\end{pmatrix} = \begin{pmatrix}-b&amp;-c\\a&amp;b\end{pmatrix}\begin{pmatrix}0&amp;1\\-1&amp;0\end{pmatrix} = \begin{pmatrix}c&amp;-b\\-b&amp;a\end{pmatrix}. \]
+      <p>Con \(B_1,B_2,B_3\) gli elementi di \(\mathcal{B}\): \(L(B_1) = B_3\), \(L(B_2) = -B_2\), \(L(B_3) = B_1\). Quindi</p>
+      \[ M^{\mathcal{B}}_{\mathcal{B}}(L) = \begin{pmatrix}0&amp;0&amp;1\\0&amp;-1&amp;0\\1&amp;0&amp;0\end{pmatrix}. \]
+      <p>(La matrice è invertibile, quindi \(L\) è un automorfismo di \(V\).)</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2025-01, es. Esercizio 2 (a)" data-livello="esame">
+    <div class="ex-testo">
+      <p>Sia \(V = \mathbb{R}[t]_{\leqslant2}\) e \(L:V\to V\) l'endomorfismo \(L(p(t)) = (t+1)p'(t)+(t^2+1)p''(t)\). Trovare la matrice rappresentativa \(A = M^{\mathcal{B}}_{\mathcal{B}}(L)\) rispetto alla base \(\mathcal{B} = \{1,t,t^2\}\). Determinare inoltre una base di \(\mathrm{Ker}(L)\) e la dimensione di \(\mathrm{Im}(L)\). (Gli altri punti dell'esame riguardano autovalori, trattati più avanti.)</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>\(L(1) = 0\); \(L(t) = (t+1)\cdot1+0 = 1+t\); \(L(t^2) = (t+1)\cdot2t+(t^2+1)\cdot2 = 2+2t+4t^2\). In colonna:</p>
+      \[ A = \begin{pmatrix}0&amp;1&amp;2\\0&amp;1&amp;2\\0&amp;0&amp;4\end{pmatrix}. \]
+      <p>Le colonne 2 e 3 sono indipendenti, quindi \(\mathrm{Rango}\,A = 2\) e \(\dim\mathrm{Im}(L) = 2\); \(\dim\mathrm{Ker}(L) = 1\) e, poiché \(L(1) = 0\), \(\mathrm{Ker}(L) = \mathrm{Span}\{1\}\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2026-01, es. E1" data-livello="esame">
+    <div class="ex-testo">
+      <p>(a) Verificare che \(\mathcal{B} = \left\{\begin{pmatrix}0&amp;0\\0&amp;1\end{pmatrix},\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix},\begin{pmatrix}1&amp;0\\0&amp;0\end{pmatrix},\begin{pmatrix}0&amp;1\\-1&amp;0\end{pmatrix}\right\}\) è una base di \(V = \mathrm{Mat}_2(\mathbb{R})\).</p>
+      <p>(b) Determinare l'insieme delle soluzioni del sistema omogeneo \(A\mathbf{x} = \mathbf{0}\), dove \(A = \begin{pmatrix}1&amp;1&amp;0&amp;1\\0&amp;1&amp;1&amp;1\\1&amp;2&amp;1&amp;2\\0&amp;1&amp;1&amp;1\end{pmatrix}\).</p>
+      <p>(c) Sia \(f:\mathrm{Mat}_2(\mathbb{R})\to\mathrm{Mat}_2(\mathbb{R})\) l'endomorfismo la cui matrice rappresentativa rispetto alla base \(\mathcal{B}\) è \(M_{\mathcal{B}}(f) = A\). Determinare sistemi di generatori del nucleo e dell'immagine di \(f\).</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>(a)</strong> Sono 4 matrici in uno spazio di dimensione 4: basta l'indipendenza. Se \(\alpha B_1+\beta B_2+\gamma B_3+\delta B_4 = \begin{pmatrix}\gamma&amp;\beta+\delta\\ \beta-\delta&amp;\alpha\end{pmatrix} = 0\), allora \(\gamma = \alpha = 0\) e \(\beta+\delta = \beta-\delta = 0\Rightarrow\beta = \delta = 0\). (Equivalentemente, la matrice delle coordinate canoniche ha determinante \(-2\neq0\).)</p>
+      <p><strong>(b)</strong> \(R_3\to R_3-R_1 = (0,1,1,1)\); poi \(R_3\to R_3-R_2\) e \(R_4\to R_4-R_2\) diventano nulle. Forma ridotta: \(x_1-x_3 = 0\), \(x_2+x_3+x_4 = 0\). Con \(x_3 = s\), \(x_4 = t\):</p>
+      \[ \mathrm{Sol}(A\mathbf{x} = \mathbf{0}) = \left\{s\begin{pmatrix}1\\-1\\1\\0\end{pmatrix}+t\begin{pmatrix}0\\-1\\0\\1\end{pmatrix} : s,t\in\mathbb{R}\right\}. \]
+      <p><strong>(c)</strong> Le soluzioni di (b) sono le <em>coordinate</em> in \(\mathcal{B}\) dei vettori del nucleo:</p>
+      \[ 1\cdot B_1-1\cdot B_2+1\cdot B_3 = \begin{pmatrix}1&amp;-1\\-1&amp;1\end{pmatrix},\qquad -B_2+B_4 = \begin{pmatrix}0&amp;0\\-2&amp;0\end{pmatrix},\qquad \mathrm{Ker}(f) = \mathrm{Span}\left\{\begin{pmatrix}1&amp;-1\\-1&amp;1\end{pmatrix},\begin{pmatrix}0&amp;0\\-2&amp;0\end{pmatrix}\right\}. \]
+      <p>\(\mathrm{Rango}\,A = 2\), pivot nelle colonne 1 e 2: le colonne \((1,0,1,0)^{\top}\) e \((1,1,2,1)^{\top}\) sono coordinate di generatori dell'immagine:</p>
+      \[ B_1+B_3 = \begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix},\qquad B_1+B_2+2B_3+B_4 = \begin{pmatrix}2&amp;2\\0&amp;1\end{pmatrix},\qquad \mathrm{Im}(f) = \mathrm{Span}\left\{\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix},\begin{pmatrix}2&amp;2\\0&amp;1\end{pmatrix}\right\}. \]
+      <p>Controllo: \(4 = 2+2\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Esame GAL-2026-02, es. E2" data-livello="esame">
+    <div class="ex-testo">
+      <p>Dato \(V = \mathrm{Mat}_2(\mathbb{R})\) con la base canonica \(\mathcal{B} := \{B_1,B_2,B_3,B_4\}\), \(B_1 = \begin{pmatrix}1&amp;0\\0&amp;0\end{pmatrix}\), \(B_2 = \begin{pmatrix}0&amp;1\\0&amp;0\end{pmatrix}\), \(B_3 = \begin{pmatrix}0&amp;0\\1&amp;0\end{pmatrix}\), \(B_4 = \begin{pmatrix}0&amp;0\\0&amp;1\end{pmatrix}\), sia \(W := \mathrm{Span}_{\mathbb{R}}\{B_1,B_2,B_3\}\subseteq_{\mathbb{R}} V\).</p>
+      <p>(a) Verificare che \(\mathcal{C} := \{B_1+B_2,\ B_2+B_3,\ B_3-B_2\}\) è una base di \(W\).</p>
+      <p>(b) Fissata \(A := \begin{pmatrix}1&amp;2\\-2&amp;3\end{pmatrix}\), verificare che \(f:W\to V\), \(f(X) = AX+X^{\top}A\), è un'applicazione lineare.</p>
+      <p>(c) Calcolare \(M_{\mathcal{C},\mathcal{B}}(f)\), la matrice associata a \(f\) rispetto alla base \(\mathcal{C}\) di \(W\) e alla base \(\mathcal{B}\) di \(V\) (nella notazione degli appunti: \(M^{\mathcal{C}}_{\mathcal{B}}(f)\)).</p>
+      <p>(d) Determinare una base dell'immagine di \(f\) e la dimensione di \(\mathrm{Ker}(f)\).</p>
+    </div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><strong>(a)</strong> \(\dim W = 3\) e i tre vettori stanno in \(W\). Le loro coordinate rispetto a \(B_1,B_2,B_3\) sono \((1,1,0)\), \((0,1,1)\), \((0,-1,1)\): \(\det\begin{pmatrix}1&amp;0&amp;0\\1&amp;1&amp;-1\\0&amp;1&amp;1\end{pmatrix} = 1\cdot(1+1) = 2\neq0\). Quindi sono indipendenti, e 3 vettori indipendenti in uno spazio di dimensione 3 formano una base.</p>
+      <p><strong>(b)</strong> Trasposta e prodotto per una matrice fissa sono lineari: \(f(\lambda X+\mu Y) = A(\lambda X+\mu Y)+(\lambda X+\mu Y)^{\top}A = \lambda(AX+X^{\top}A)+\mu(AY+Y^{\top}A) = \lambda f(X)+\mu f(Y)\).</p>
+      <p><strong>(c)</strong> Calcoliamo \(f\) sui vettori di \(\mathcal{C}\):</p>
+      \[ f\begin{pmatrix}1&amp;1\\0&amp;0\end{pmatrix} = \begin{pmatrix}1&amp;1\\-2&amp;-2\end{pmatrix}+\begin{pmatrix}1&amp;2\\1&amp;2\end{pmatrix} = \begin{pmatrix}2&amp;3\\-1&amp;0\end{pmatrix},\qquad f\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix} = \begin{pmatrix}2&amp;1\\3&amp;-2\end{pmatrix}+\begin{pmatrix}-2&amp;3\\1&amp;2\end{pmatrix} = \begin{pmatrix}0&amp;4\\4&amp;0\end{pmatrix}, \]
+      <p>Con \(X = B_3-B_2 = \begin{pmatrix}0&amp;-1\\1&amp;0\end{pmatrix}\): \(AX = \begin{pmatrix}1&amp;2\\-2&amp;3\end{pmatrix}\begin{pmatrix}0&amp;-1\\1&amp;0\end{pmatrix} = \begin{pmatrix}2&amp;-1\\3&amp;2\end{pmatrix}\), \(X^{\top} = \begin{pmatrix}0&amp;1\\-1&amp;0\end{pmatrix}\), \(X^{\top}A = \begin{pmatrix}-2&amp;3\\-1&amp;-2\end{pmatrix}\), quindi</p>
+      \[ f\begin{pmatrix}0&amp;-1\\1&amp;0\end{pmatrix} = \begin{pmatrix}2&amp;-1\\3&amp;2\end{pmatrix}+\begin{pmatrix}-2&amp;3\\-1&amp;-2\end{pmatrix} = \begin{pmatrix}0&amp;2\\2&amp;0\end{pmatrix}. \]
+      <p>Coordinate rispetto alla base canonica \(\mathcal{B}\) (entrate lette nell'ordine \(a_{11},a_{12},a_{21},a_{22}\)), in colonna:</p>
+      \[ M^{\mathcal{C}}_{\mathcal{B}}(f) = \begin{pmatrix}2&amp;0&amp;0\\3&amp;4&amp;2\\-1&amp;4&amp;2\\0&amp;0&amp;0\end{pmatrix}. \]
+      <p><strong>(d)</strong> La terza colonna è metà della seconda, la prima e la seconda sono indipendenti: \(\mathrm{Rango} = 2\). Una base dell'immagine: \(\left\{\begin{pmatrix}2&amp;3\\-1&amp;0\end{pmatrix},\begin{pmatrix}0&amp;4\\4&amp;0\end{pmatrix}\right\}\) (o \(\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}\) al posto della seconda). Per il Teorema della Dimensione \(\dim\mathrm{Ker}(f) = 3-2 = 1\) (infatti \(\mathrm{Ker}(f) = \mathrm{Span}\{(B_2+B_3)-2(B_3-B_2)\} = \mathrm{Span}\left\{\begin{pmatrix}0&amp;3\\-1&amp;0\end{pmatrix}\right\}\)).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+</section>
+
+<section class="sec quizzes" id="cap5-quiz">
+  <div class="num">06</div>
+  <h2>Quiz</h2>
+  <div class="ex-bar"><span class="quiz-score"></span><button class="chip quiz-reset">Ricomincia</button></div>
+  <div class="box box--note"><div class="tag">Nota sulla fonte</div>
+    <p>Domande Q6-Q11 del "Quiz 3 – Applicazioni lineari e matrici associate" (23/10/2026), intitolato nel PDF "Quiz Capitolo 3" (le altre domande sono nel Capitolo 4).</p>
+  </div>
+
+  <div class="quiz" data-risposta="A">
+    <p><strong>Q6.</strong> Sia \(f:\mathbb{R}^2\to\mathbb{R}^3\), \(f(x,y) = (x-y,\ 2x+y,\ 3y)\). Qual è la matrice associata rispetto alle basi canoniche?</p>
+    <ol class="opzioni"><li>\(\begin{pmatrix}1&amp;-1\\2&amp;1\\0&amp;3\end{pmatrix}\)</li><li>\(\begin{pmatrix}1&amp;2&amp;0\\-1&amp;1&amp;3\end{pmatrix}\)</li><li>\(\begin{pmatrix}1&amp;-1\\2&amp;1\\3&amp;0\end{pmatrix}\)</li><li>\(\begin{pmatrix}1&amp;2\\-1&amp;1\\0&amp;3\end{pmatrix}\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>Colonne \(f(\mathbf{e}_1) = (1,2,0)\) e \(f(\mathbf{e}_2) = (-1,1,3)\); la matrice è \(3\times2\). B è la trasposta (coordinate in riga), C scambia l'ultima riga, D non è nemmeno coerente con le colonne.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="D">
+    <p><strong>Q7.</strong> Sia \(f:\mathbb{R}^3\to\mathbb{R}^2\) rappresentata, rispetto alle basi canoniche, dalla matrice \(\begin{pmatrix}1&amp;0&amp;2\\-1&amp;3&amp;1\end{pmatrix}\). Quanto vale \(f(1,1,1)\)?</p>
+    <ol class="opzioni"><li>\((1,-1)\)</li><li>\((0,3)\)</li><li>\((1,5)\)</li><li>\((3,3)\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>Prodotto matrice per colonna: \((1+0+2,\ -1+3+1) = (3,3)\), cioè la somma delle tre colonne.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p><strong>Q8.</strong> Sia \(f:V\to W\) lineare, con basi ordinate \(\mathcal{B} = (\mathbf{v}_1,\dots,\mathbf{v}_n)\) e \(\mathcal{C} = (\mathbf{w}_1,\dots,\mathbf{w}_m)\). La colonna \(j\) di \(M^{\mathcal{B}}_{\mathcal{C}}(f)\) contiene:</p>
+    <ol class="opzioni"><li>le coordinate di \(\mathbf{v}_j\) rispetto alla base \(\mathcal{B}\).</li><li>le coordinate di \(f(\mathbf{v}_j)\) rispetto alla base \(\mathcal{C}\).</li><li>le coordinate di \(f(\mathbf{w}_j)\) rispetto alla base \(\mathcal{B}\).</li><li>le coordinate di \(\mathbf{w}_j\) rispetto alla base \(\mathcal{C}\).</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>Definizione di matrice associata. (A e D darebbero sempre \(\mathbf{e}_j\); C non ha senso, \(f\) non è definita su \(W\).)</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p><strong>Q9.</strong> Se \(M^{\mathcal{B}}_{\mathcal{C}}(f)\) è una matrice \(21\times37\), allora \(f\) può avere come dominio e codominio:</p>
+    <ol class="opzioni"><li>\(\mathbb{R}^{21}\to\mathbb{R}^{37}\).</li><li>\(\mathbb{R}^{37}\to\mathbb{R}^{21}\).</li><li>\(\mathbb{R}^{21}\to\mathbb{R}^{21}\).</li><li>\(\mathbb{R}^{37}\to\mathbb{R}^{37}\).</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>\(M^{\mathcal{B}}_{\mathcal{C}}(f)\in\mathrm{Mat}_{\dim W\times\dim V}\): 37 colonne = dimensione del dominio, 21 righe = dimensione del codominio.</p></details>
+  </div>
+
+  <div class="quiz" data-risposta="C">
+    <p><strong>Q10.</strong> La matrice associata a \(f:\mathbb{R}^2\to\mathbb{R}^2\) rispetto alla base \(\begin{pmatrix}1\\1\end{pmatrix},\begin{pmatrix}1\\-1\end{pmatrix}\) è \(\begin{pmatrix}1&amp;2\\0&amp;-1\end{pmatrix}\). Quanto vale \(f\begin{pmatrix}0\\2\end{pmatrix}\)?</p>
+    <ol class="opzioni"><li>\(\begin{pmatrix}2\\-1\end{pmatrix}\)</li><li>\(\begin{pmatrix}1\\0\end{pmatrix}\)</li><li>\(\begin{pmatrix}-1\\1\end{pmatrix}\)</li><li>\(\begin{pmatrix}0\\2\end{pmatrix}\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Coordinate: \(\begin{pmatrix}0\\2\end{pmatrix} = 1\cdot\begin{pmatrix}1\\1\end{pmatrix}+(-1)\cdot\begin{pmatrix}1\\-1\end{pmatrix}\), quindi \([\mathbf{v}]_{\mathcal{B}} = (1,-1)\) e \(M\cdot(1,-1)^{\top} = (1-2,\ 0+1) = (-1,1)\): è la risposta C.</p>
+      <p><strong>Attenzione al testo.</strong> \((-1,1)\) è \(f(\mathbf{v})\) se la base \(\mathcal{B}\) è usata solo nel dominio e il codominio ha la base canonica (\(M = M^{\mathcal{B}}_{\mathcal{E}}(f)\)). Se invece si intende \(M^{\mathcal{B}}_{\mathcal{B}}(f)\) (stessa base anche nel codominio, lettura naturale per un endomorfismo), \((-1,1)\) sono le <em>coordinate</em> di \(f(\mathbf{v})\) e il vettore è \(-1\cdot\begin{pmatrix}1\\1\end{pmatrix}+1\cdot\begin{pmatrix}1\\-1\end{pmatrix} = \begin{pmatrix}0\\-2\end{pmatrix}\), che non è tra le opzioni. In ogni caso la risposta prevista è C.</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B">
+    <p><strong>Q11.</strong> Siano \(f:V\to W\) e \(g:W\to Y\) lineari, e siano \(A = M^{\mathcal{B}}_{\mathcal{C}}(f)\) e \(B = M^{\mathcal{C}}_{\mathcal{D}}(g)\). Qual è la matrice associata alla composizione \(g\circ f\)?</p>
+    <ol class="opzioni"><li>\(AB\)</li><li>\(BA\)</li><li>\(A+B\)</li><li>\(B-A\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary><p>Teorema 5.4: \(M^{\mathcal{B}}_{\mathcal{D}}(g\circ f) = M^{\mathcal{C}}_{\mathcal{D}}(g)\cdot M^{\mathcal{B}}_{\mathcal{C}}(f) = BA\) (la \(\mathcal{C}\) "si semplifica"). \(AB\) in generale non è nemmeno definito.</p></details>
+  </div>
+</section>
+
+<section class="sec" id="cap5-riepilogo">
+  <div class="num">07</div>
+  <h2>Riepilogo</h2>
+  <ol>
+    <li>Fissate basi ordinate \(\mathcal{B}\) di \(V\) (\(\dim n\)) e \(\mathcal{C}\) di \(W\) (\(\dim m\)), \(M^{\mathcal{B}}_{\mathcal{C}}(f)\in\mathrm{Mat}_{m\times n}(\mathbb{K})\) ha nella colonna \(j\) le coordinate \([f(\mathbf{v}_j)]_{\mathcal{C}}\).</li>
+    <li>Base del dominio in alto, del codominio in basso; righe = \(\dim W\), colonne = \(\dim V\).</li>
+    <li>La stessa \(f\) ha matrici diverse in basi diverse; l'ordine delle basi conta.</li>
+    <li>\([f(\mathbf{v})]_{\mathcal{C}} = M^{\mathcal{B}}_{\mathcal{C}}(f)\cdot[\mathbf{v}]_{\mathcal{B}}\) (Teorema 5.2): con le coordinate ogni \(f\) diventa una \(f_A\).</li>
+    <li>\(\dim\mathrm{Im}(f) = \mathrm{Rango}\,M^{\mathcal{B}}_{\mathcal{C}}(f)\) e \(\dim\mathrm{Ker}(f) = \dim V-\mathrm{Rango}\,M^{\mathcal{B}}_{\mathcal{C}}(f)\), per <em>qualsiasi</em> scelta di basi.</li>
+    <li>Nucleo e immagine della matrice sono coordinate: vanno ritradotti in vettori di \(V\) e \(W\).</li>
+    <li>\(M^{\mathcal{B}}_{\mathcal{D}}(g\circ f) = M^{\mathcal{C}}_{\mathcal{D}}(g)\cdot M^{\mathcal{B}}_{\mathcal{C}}(f)\): la composizione è il prodotto di matrici, nello stesso ordine.</li>
+    <li>\(M^{\mathcal{B}}_{\mathcal{C}}:\mathrm{Hom}_{\mathbb{K}}(V,W)\to\mathrm{Mat}_{\dim W\times\dim V}(\mathbb{K})\) è un isomorfismo.</li>
+    <li>Matrice del cambiamento di base: \(M^{\mathcal{B}}_{\mathcal{B}'} = M^{\mathcal{B}}_{\mathcal{B}'}(\mathrm{id}_V)\), colonne \([\mathbf{v}_i]_{\mathcal{B}'}\) (vecchia base nella nuova); \(M^{\mathcal{B}}_{\mathcal{B}} = I_n\).</li>
+    <li>\(M^{\mathcal{B}}_{\mathcal{B}'}\) è invertibile e \(\big(M^{\mathcal{B}}_{\mathcal{B}'}\big)^{-1} = M^{\mathcal{B}'}_{\mathcal{B}}\).</li>
+    <li>Nuove coordinate: \([\mathbf{v}]_{\mathcal{B}'} = M^{\mathcal{B}}_{\mathcal{B}'}[\mathbf{v}]_{\mathcal{B}}\). Attenzione: altri testi chiamano "matrice di cambiamento di base" l'inversa.</li>
+    <li>\(M^{\mathcal{B}'}_{\mathcal{C}'}(f) = M^{\mathcal{C}}_{\mathcal{C}'}\,M^{\mathcal{B}}_{\mathcal{C}}(f)\,M^{\mathcal{B}'}_{\mathcal{B}}\); per endomorfismi \(M^{\mathcal{B}'}_{\mathcal{B}'}(f) = T\,M^{\mathcal{B}}_{\mathcal{B}}(f)\,T^{-1}\) con \(T = M^{\mathcal{B}}_{\mathcal{B}'}\).</li>
+    <li>In \(\mathbb{K}^n\): \(M^{\mathcal{B}}_{\mathcal{E}}\) ha per colonne i vettori di \(\mathcal{B}\); \(M^{\mathcal{E}}_{\mathcal{B}}\) è la sua inversa.</li>
+  </ol>
+</section>
       <nav class="pager" aria-label="Capitoli"><a class="prev" href="cap4.html"><small>← Precedente</small><span>Applicazioni lineari</span></a><a class="next" href="esami.html"><small>Successivo →</small><span>Preparazione all&#x27;esame</span></a></nav>
     </main>
   </div>

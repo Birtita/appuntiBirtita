@@ -234,3 +234,5 @@ mjx-container.wide{display:block; max-width:100%; overflow-x:auto; overflow-y:hi
 body.hide-adv .box[data-imp="avanzato"], body.hide-adv .box[data-imp="molto-avanzato"]{display:none;}
 .chap-progress:not(.has){display:none;}
 @media (max-width:640px){ mjx-container{font-size:.97em;} }
+.quiz-reset{margin-left:auto;}
+.ex-bar .count + .quiz-reset{margin-left:8px;}

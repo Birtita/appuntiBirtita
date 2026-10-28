@@ -86,7 +86,7 @@
     <p><em>Idea della dimostrazione.</em> In ogni operazione elementare ogni nuova riga è combinazione lineare delle righe precedenti, quindi \(\mathrm{Row}(A') \subseteq \mathrm{Row}(A)\). Ogni operazione elementare è invertibile e la sua inversa è ancora elementare: applicando le inverse si ottiene l'inclusione opposta. L'invarianza delle soluzioni è il Corollario 1.23 del Capitolo 1.</p>
   </div>
 
-  <p>Ricordiamo (Teorema 1.19) che applicare Gauss ad \(A\) significa moltiplicare a sinistra per una matrice invertibile \(P \in \mathrm{GL}_m(\mathbb{K})\): \(A \xmapsto{\text{Gauss}} P\cdot A =: A'\).</p>
+  <p>Ricordiamo (Teorema 1.18; negli appunti del Cap. 3 compare come 1.19) che applicare Gauss ad \(A\) significa moltiplicare a sinistra per una matrice invertibile \(P \in \mathrm{GL}_m(\mathbb{K})\): \(A \xmapsto{\text{Gauss}} P\cdot A =: A'\).</p>
 
   <div class="box box--warn"><div class="tag">Osservazione 3.5 — Attenzione</div>
     <p>Lo spazio delle colonne, a differenza di quello delle righe e del nucleo, <strong>non</strong> è in generale invariato dalle operazioni sulle righe. Scambiando le due righe di \(A = \begin{pmatrix} 1 & 0 \\ 0 & 0\end{pmatrix}\) si ottiene \(A' = \begin{pmatrix} 0 & 0 \\ 1 & 0\end{pmatrix}\): \(\mathrm{Col}(A)\) è l'asse \(x\) di \(\mathbb{R}^2\), mentre \(\mathrm{Col}(A')\) è l'asse \(y\).</p>
@@ -131,7 +131,7 @@
     <ul>
       <li>Le \(r\) righe non nulle di \(A'\) sono indipendenti: in \(\lambda_1\mathtt{R}_1(A') + \dots + \lambda_r\mathtt{R}_r(A')\) nella posizione \(\mathtt{p}_i\) compare proprio \(\lambda_i\); se la combinazione è nulla, tutti i \(\lambda_i = 0\). Quindi \(r = \dim\mathrm{Row}(A') = \dim\mathrm{Row}(A)\) (Prop. 3.4).</li>
       <li>Ogni colonna di \(A'\) ha le ultime \(m-r\) entrate nulle, quindi \(\dim\mathrm{Col}(A') \le r\); le colonne pivot sono indipendenti, quindi \(r = \dim\mathrm{Col}(A') = \dim\mathrm{Col}(A)\) (Prop. 3.6).</li>
-      <li>La parametrizzazione delle soluzioni (Teorema 1.49) ha \(n - r\) parametri liberi, quindi \(\dim\mathrm{Ker}(A) = n - r\).</li>
+      <li>La parametrizzazione delle soluzioni (Teorema 1.33; negli appunti del Cap. 3 compare come 1.49) ha \(n - r\) parametri liberi, quindi \(\dim\mathrm{Ker}(A) = n - r\).</li>
     </ul>
   </div>
 
@@ -188,7 +188,7 @@
   <div class="box box--method"><div class="tag">Metodo — Problema 2, forma cartesiana</div>
     <p><strong>Metodo 1 (risolvere il sistema).</strong></p>
     <ol>
-      <li>Risolvi \(A\mathbf{x} = \mathbf{0}\) col Teorema 1.49: trova \(\mathrm{SR}(A) = (s_{ij})\) e, assumendo i pivot nelle prime \(r\) colonne (altrimenti si permutano le variabili),
+      <li>Risolvi \(A\mathbf{x} = \mathbf{0}\) col Teorema 1.33 (negli appunti del Cap. 3 compare come 1.49): trova \(\mathrm{SR}(A) = (s_{ij})\) e, assumendo i pivot nelle prime \(r\) colonne (altrimenti si permutano le variabili),
       \[ \mathrm{Ker}(A) = \left\{ \begin{pmatrix} -s_{1,(r+1)}t_{r+1} - \dots - s_{1,n}t_n \\ \vdots \\ -s_{r,(r+1)}t_{r+1} - \dots - s_{r,n}t_n \\ t_{r+1} \\ \vdots \\ t_n \end{pmatrix} : t_{r+1},\dots,t_n \in \mathbb{K} \right\}. \]</li>
       <li>Restituisci i vettori che moltiplicano ciascun parametro (parametro \(t_j = 1\), gli altri \(=0\)):
       \[ \mathcal{B} = \begin{pmatrix} -s_{1,(r+1)} \\ \vdots \\ -s_{r,(r+1)} \\ 1 \\ 0 \\ \vdots \\ 0\end{pmatrix}, \ \dots, \ \begin{pmatrix} -s_{1,n} \\ \vdots \\ -s_{r,n} \\ 0 \\ 0 \\ \vdots \\ 1\end{pmatrix}. \]</li>
@@ -422,11 +422,11 @@
     <li><strong>Problema 2:</strong> per la Proposizione 3.4 (lo spazio delle righe non cambia con Gauss).</li>
     <li><strong>Problema 3:</strong> per la Proposizione 3.6 (le relazioni tra colonne non cambiano).</li>
     <li><strong>Problema 4:</strong> per la Proposizione 3.6, combinata col fatto che \(L\) è linearmente indipendente: le prime \(|L|\) colonne saranno colonne pivot.</li>
-    <li><strong>Problema 5:</strong> il primo metodo è quello del Capitolo 1 sui sistemi lineari (Teorema 1.49); il secondo si basa sul passaggio da parametrica a cartesiana e sulla dualità tra le due presentazioni.</li>
-    <li><strong>Problema 7 e 8:</strong> il caso facile segue dalle definizioni (di intersezione e forma cartesiana; di somma, vedi Teorema 2.49); gli altri casi si risolvono coi passaggi da una forma all'altra, e i metodi diretti per la somma seguono per dualità da quelli dell'intersezione.</li>
+    <li><strong>Problema 5:</strong> il primo metodo è quello del Capitolo 1 sui sistemi lineari (Teorema 1.33); il secondo si basa sul passaggio da parametrica a cartesiana e sulla dualità tra le due presentazioni.</li>
+    <li><strong>Problema 7 e 8:</strong> il caso facile segue dalle definizioni (di intersezione e forma cartesiana; di somma, vedi Definizione 2.49; negli appunti del Cap. 3 compare come "Teorema 2.49"); gli altri casi si risolvono coi passaggi da una forma all'altra, e i metodi diretti per la somma seguono per dualità da quelli dell'intersezione.</li>
   </ul>
   <div class="box box--thm"><div class="tag">Giustificazione del Problema 6</div>
-    <p>È una generalizzazione del metodo per l'inversa (Teorema 1.53: Gauss–Jordan sulla matrice estesa con \(I_n\)).</p>
+    <p>È una generalizzazione del metodo per l'inversa (Teorema 1.37 e Corollario 1.38, citati negli appunti del Cap. 3 come 1.53: Gauss–Jordan sulla matrice estesa con \(I_n\)).</p>
     <ul>
       <li>Portare \(\mathtt{C}\) a scala con mosse di Gauss equivale a moltiplicare a sinistra per una \(B \in \mathrm{GL}_n(\mathbb{K})\); facendo le stesse mosse su \(I_n\) si ottiene proprio \(B\) nel blocco destro.</li>
       <li>Se \(r \lt n\), \(B\cdot\mathtt{C}\) ha \(n - r\) righe nulle, ottenute moltiplicando le ultime \(n-r\) righe di \(B\) per le colonne di \(\mathtt{C}\): ogni colonna di \(\mathtt{C}\), quindi ogni vettore di \(\mathrm{Col}(\mathtt{C})\), soddisfa quelle equazioni.</li>
