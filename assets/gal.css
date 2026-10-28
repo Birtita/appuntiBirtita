@@ -218,3 +218,7 @@ footer.foot{padding-block:26px 50px; color:var(--ink-soft); font-size:.86rem; bo
   body{background:#fff; color:#000;}
   .box, .ex, .quiz{box-shadow:none; break-inside:avoid;}
 }
+
+/* soluzione ricontrollata a mano */
+p.verifica{font-size:.84rem; color:var(--ok); font-family:'JetBrains Mono',monospace; margin-top:10px;}
+p.verifica::before{content:"✓ ";}
