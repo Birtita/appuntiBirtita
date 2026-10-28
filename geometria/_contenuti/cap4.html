@@ -28,13 +28,14 @@
 
   <div class="box box--note"><div class="tag">Dalla lezione 11 (21/10/2026)</div>
     <p>Primo consiglio della lezione (slide p. 1): i <strong>calcoli in \(\mathbb{K}^n\)</strong> (Capitolo 3) è importante farli da soli; domani esercitazioni proprio su questi metodi.</p>
-    <p>Il prof ha aperto la lezione ricordando i due esempi di applicazioni lineari già incontrati:</p>
+    <p>Il prof ha aperto la lezione con l'<strong>"Esempio di [Fischer]"</strong> (Fischer è il libro di testo di riferimento), scritto alla lavagna: tre situazioni che motivano le applicazioni lineari. Le prime due le abbiamo già incontrate:</p>
     <ul>
       <li>la parametrizzazione delle soluzioni di un sistema omogeneo con \(r = \mathrm{Rango}(A)\) e parametri liberi \(t_{r+1},\dots,t_n\):
-        \[ \mathbb{K}^{n-r} \longrightarrow \mathrm{Sol}(A\mathbf{x} = \mathbf{0}),\qquad (t_{r+1},\dots,t_n) \longmapsto t_{r+1}\begin{pmatrix}\vdots\end{pmatrix} + t_{r+2}\begin{pmatrix}\vdots\end{pmatrix} + \dots + t_n\begin{pmatrix}\vdots\end{pmatrix}; \]</li>
-      <li>la somma di sottospazi: \(U_1 \oplus U_2 \longrightarrow U_1 + U_2\), \((\mathbf{u}_1,\mathbf{u}_2) \longmapsto \mathbf{u}_1 + \mathbf{u}_2\) (sulla slide la coppia è scritta con \(\oplus\); negli appunti lo stesso spazio è \(U_1\times U_2\)).</li>
+        \[ \mathbb{K}^{n-r} \longrightarrow \mathrm{Sol}(A\mathbf{x} = \mathbf{0}),\qquad (t_{r+1},\dots,t_n) \longmapsto t_{r+1}\begin{pmatrix}\vdots\end{pmatrix} + t_{r+2}\begin{pmatrix}\vdots\end{pmatrix} + \dots + t_n\begin{pmatrix}\vdots\end{pmatrix}, \]
+        con i coefficienti delle colonne letti dalla forma a scala ridotta. "Abbiamo detto che è biiettiva, però in realtà vedremo che si tratta di un isomorfismo di spazi vettoriali.";</li>
+      <li>la somma di sottospazi: \(U_1 \oplus U_2 \longrightarrow U_1 + U_2\), \((\mathbf{u}_1,\mathbf{u}_2) \longmapsto \mathbf{u}_1 + \mathbf{u}_2\) (alla lavagna la coppia è scritta con \(\oplus\); negli appunti lo stesso spazio è \(U_1\times U_2\)).</li>
     </ul>
-    <p>Poi una versione "dal fruttivendolo" dell'Esempio 4.1: compriamo 30 kg di pomodori a 3 €/kg e 15 banane a 0,50 € al pezzo:</p>
+    <p>La terza è il <strong>mercato</strong> (versione "dal fruttivendolo" dell'Esempio 4.1): compriamo 30 kg di pomodori a 3 €/kg e 15 banane a 0,50 € al pezzo:</p>
     \[ 30\cdot 3 + 15\cdot 0{,}50 = 97{,}50\ \text{€}. \]
     <p>Con i prezzi di tutti i prodotti (pomodori 3, banane 0,50, peperoni 2, cetrioli 1) e le quantità acquistate \(x_1,\dots,x_4\) (qui 30, 15, 0, 0):</p>
     \[ 3\cdot 30 + 0{,}50\cdot 15 + 2\cdot 0 + 1\cdot 0 = a_1x_1 + a_2x_2 + a_3x_3 + a_4x_4, \]

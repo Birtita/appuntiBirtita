@@ -85,6 +85,1201 @@
   </div>
 </section>
 
+<section class="sec" id="esami-quiz-2401">
+  <h2>Quiz d'esame · gennaio 2024</h2>
+  <p class="lead">Tema con soluzioni ufficiali (risposte segnate dal docente), ricontrollate con calcolo simbolico.</p>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame gennaio 2024, Q1">
+    <p>Sia \(\pi\subseteq\mathbb R^3\) il piano passante per i punti \((1,2,3)\), \((2,1,2)\), \((1,0,0)\) e sia \(r\) una retta perpendicolare a \(\pi\). Quale dei seguenti vettori ha la direzione di \(r\)?</p>
+    <ol class="opzioni"><li>\((1,3,-2)\)</li><li>\((1,3,2)\)</li><li>\((1,-3,2)\)</li><li>\((1,-3,-2)\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sulla geometria affine ed euclidea, non ancora trattato a lezione.</p>
+      <p>La giacitura di \(\pi\) è generata da \((0,2,3)\) e \((1,1,2)\); \((1,3,-2)\) è ortogonale a entrambi.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame gennaio 2024, Q2">
+    <p>Siano \(\mathbf v,\mathbf w\) vettori ortogonali in uno spazio euclideo con \(\|\mathbf v\|=2\), \(\|\mathbf w\|=3\).</p>
+    <ol class="opzioni"><li>\(\|\mathbf v+3\mathbf w\|=\sqrt{11}\)</li><li>\(\|\mathbf v+3\mathbf w\|=11\)</li><li>\(\|\mathbf v+3\mathbf w\|=\sqrt{85}\)</li><li>\(\|\mathbf v+3\mathbf w\|=85\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sugli spazi euclidei (prodotto scalare, ortogonalità, isometrie), non ancora trattato a lezione.</p>
+      <p>\(\|\mathbf v+3\mathbf w\|^2=\|\mathbf v\|^2+9\|\mathbf w\|^2=4+81=85\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame gennaio 2024, Q3">
+    <p>Siano \(A\in\mathrm{Mat}(5,4)\) e \(\mathbf b\in\mathbb R^5\). Supponiamo che \(A\) abbia rango massimo, e sia \((A|\mathbf b)\) la matrice completa del sistema \(A\mathbf x=\mathbf b\).</p>
+    <ol class="opzioni"><li>Se \(\det(A|\mathbf b)\ne0\), allora il sistema ha un'unica soluzione.</li><li>Se \(\det(A|\mathbf b)=0\), allora il sistema ha un'unica soluzione.</li><li>Se \(\det(A|\mathbf b)=0\), allora il sistema ha cinque soluzioni.</li><li>Se \(\det(A|\mathbf b)\ne0\), allora il sistema ha infinite soluzioni che dipendono da un unico parametro.</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(\mathrm{rk}A=4\). Se \(\det(A|\mathbf b)=0\) allora \(\mathrm{rk}(A|\mathbf b)=4=\mathrm{rk}A=\) numero di incognite: unica soluzione per Rouché–Capelli (Teorema 1.31). Se invece \(\det(A|\mathbf b)\ne0\), \(\mathrm{rk}(A|\mathbf b)=5\) e non ci sono soluzioni. (Il criterio con il determinante si vedrà più avanti; basta sapere che \(\det\ne0\) equivale a rango massimo.)</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame gennaio 2024, Q4">
+    <p>Sia \(\mathcal E\) la base canonica di \(\mathbb R^3\) e \(\mathcal B=\{x^2,x,1\}\) base di \(\mathbb R_{\le2}[x]\). Trovare la matrice \(M_L^{\mathcal E,\mathcal B}\) di \(L:\mathbb R^3\to\mathbb R_{\le2}[x]\), \(L(a,b,c)=(a+b)x^2+(2b+2c)x+3c\).</p>
+    <ol class="opzioni"><li>\(\begin{pmatrix}2&amp;2&amp;0\\2&amp;0&amp;0\\0&amp;0&amp;3\end{pmatrix}\)</li><li>\(\begin{pmatrix}1&amp;0&amp;0\\1&amp;2&amp;0\\0&amp;2&amp;3\end{pmatrix}\)</li><li>\(\begin{pmatrix}2&amp;0&amp;0\\0&amp;4&amp;0\\0&amp;0&amp;3\end{pmatrix}\)</li><li>\(\begin{pmatrix}1&amp;1&amp;0\\0&amp;2&amp;2\\0&amp;0&amp;3\end{pmatrix}\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(L(\mathbf e_1)=x^2\), \(L(\mathbf e_2)=x^2+2x\), \(L(\mathbf e_3)=2x+3\); le coordinate rispetto a \(\mathcal B\) sono \((1,0,0)\), \((1,2,0)\), \((0,2,3)\) e vanno in colonna.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame gennaio 2024, Q5">
+    <p>Nel piano, l'equazione \(x^2+4xy+4y^2+2x+4y=0\) rappresenta:</p>
+    <ol class="opzioni"><li>Una retta (doppia)</li><li>Due rette parallele distinte</li><li>Due rette reali distinte incidenti</li><li>Un punto (rette immaginarie incidenti)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su coniche e quadriche, non ancora trattato a lezione.</p>
+      <p>\(x^2+4xy+4y^2+2x+4y=(x+2y)(x+2y+2)\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame gennaio 2024, Q6">
+    <p>Nello spazio, l'equazione \(x^2+2xy+z^2+2x+2y+1=0\) rappresenta:</p>
+    <ol class="opzioni"><li>Un cono</li><li>Un punto (cono immaginario)</li><li>Un cilindro ellittico</li><li>Un cilindro parabolico</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su coniche e quadriche, non ancora trattato a lezione.</p>
+      <p>Il centro è \(-\mathbf e_1\); traslando il termine noto si annulla e gli autovalori della parte quadratica hanno segni \(+,+,-\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame gennaio 2024, Q7">
+    <p>Sia \(A\in\mathrm{Mat}(n,n)\).</p>
+    <ol class="opzioni"><li>Se \(A\) è ortogonale, allora \(A\) è simmetrica.</li><li>Se \(A\) è ortogonale, allora \(A\) è diagonalizzabile.</li><li>Se \(\det A=\pm1\), allora \(A\) è ortogonale.</li><li>Nessuna delle precedenti affermazioni è corretta.</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sugli spazi euclidei (prodotto scalare, ortogonalità, isometrie), non ancora trattato a lezione.</p>
+      <p>Controesempi: \(\begin{pmatrix}0&amp;1\\-1&amp;0\end{pmatrix}\) (ortogonale, non simmetrica, non diagonalizzabile su \(\mathbb R\)) e \(\begin{pmatrix}2&amp;0\\0&amp;1/2\end{pmatrix}\) (determinante 1, non ortogonale).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame gennaio 2024, Q8">
+    <p>Sia \(A\in\mathrm{Mat}(2024,2024)\) invertibile.</p>
+    <ol class="opzioni"><li>\(\det[-(A^{-1})]=-\frac1{\det A}\)</li><li>\(\det[-(A^{-1})]=-\det A\)</li><li>\(\det[-(A^{-1})]=+\frac1{\det A}\)</li><li>\(\det[-(A^{-1})]=+\det A\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo dei determinanti, non ancora trattato a lezione.</p>
+      <p>\(\det(-A^{-1})=(-1)^{2024}\det(A^{-1})=1/\det A\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame gennaio 2024, Q9">
+    <p>Siano \(A,B\in\mathrm{Mat}(n,n)\).</p>
+    <ol class="opzioni"><li>Se \(A\) e \(B\) hanno uguale determinante e uguale traccia, allora sono simili</li><li>Se \(A\) e \(B\) hanno lo stesso polinomio caratteristico, ma una sola delle due è diagonalizzabile, allora non sono simili</li><li>Se \(A\) e \(B\) hanno lo stesso polinomio caratteristico ed entrambe non sono diagonalizzabili, allora sono simili</li><li>Se \(A\) e \(B\) sono simili ed entrambe non diagonalizzabili, allora hanno polinomi caratteristici diversi</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su autovalori, autospazi e diagonalizzazione, non ancora trattato a lezione.</p>
+      <p>Una matrice simile a una diagonalizzabile è diagonalizzabile.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame gennaio 2024, Q10">
+    <p>Sia \(L:\mathbb R^3\to\mathbb R^3\) un endomorfismo con \(\chi_L(x)=-x^3+2x^2-x\).</p>
+    <ol class="opzioni"><li>\(L\) è un isomorfismo</li><li>\(L\) è diagonalizzabile</li><li>\(L\) ha un autospazio di dimensione 1</li><li>\(L\) non è diagonalizzabile</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su autovalori, autospazi e diagonalizzazione, non ancora trattato a lezione.</p>
+      <p>\(\chi_L=-x(x-1)^2\): l'autovalore 0 è semplice, quindi \(\dim E_0=1\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame gennaio 2024, Q11">
+    <p>In \(\mathbb R^4\) siano \(U=\mathrm{Span}((1,0,0,0)^\top,(1,1,0,0)^\top)\) e \(W=\mathrm{Span}((0,1,0,0)^\top,(0,1,1,0)^\top,(0,1,1,1)^\top)\).</p>
+    <ol class="opzioni"><li>\(\dim(U\cap W)=0\)</li><li>\(\dim(U\cap W)=1\)</li><li>\(\dim(U\cap W)=2\)</li><li>\(U+W=\mathbb R^4\) e \(U\cap W=\{\mathbf 0\}\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(\dim U=2\), \(\dim W=3\), \(\dim(U+W)=4\) (rango della matrice dei 5 generatori). Grassmann: \(\dim(U\cap W)=2+3-4=1\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame gennaio 2024, Q12">
+    <p>Sia \(T_A:\mathbb R^3\to\mathbb R^3\) associata ad \(A=\begin{pmatrix}1&amp;2&amp;0\\0&amp;1&amp;2\\0&amp;0&amp;1\end{pmatrix}\). Trovare l'immagine tramite \(T_A\) del piano \(\pi=\{\mathbf x\in\mathbb R^3: x_1-x_3=0\}\).</p>
+    <ol class="opzioni"><li>\(\mathrm{Span}((1,2,1)^\top)\)</li><li>\(\mathrm{Span}((1,2,1)^\top,(2,1,0)^\top)\)</li><li>\(\mathrm{Span}((1,0,0)^\top,(0,2,1)^\top)\)</li><li>\(\mathrm{Span}((1,0,0)^\top,(2,1,0)^\top,(0,2,1)^\top)\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(\pi=\mathrm{Span}((1,0,1)^\top,(0,1,0)^\top)\), quindi \(T_A(\pi)=\mathrm{Span}(A(1,0,1)^\top,A(0,1,0)^\top)=\mathrm{Span}((1,2,1)^\top,(2,1,0)^\top)\). (\(A\) è invertibile, quindi l'immagine è ancora un piano.)</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+</section>
+
+<section class="sec" id="esami-quiz-2402">
+  <h2>Quiz d'esame · febbraio 2024</h2>
+  <p class="lead">Tema con soluzioni ufficiali (risposte segnate dal docente), ricontrollate con calcolo simbolico.</p>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame febbraio 2024, Q1">
+    <p>Determinare i valori di \(k\in\mathbb R\) per cui il sistema \(\begin{cases}x_1+x_2+x_3=1\\x_1+x_2+(k+1)x_3=k^2-k+1\\x_2+2kx_3=k^2-2k\end{cases}\) ammette infinite soluzioni.</p>
+    <ol class="opzioni"><li>\(k=0\)</li><li>\(k\ne0\)</li><li>\(k=0,1\)</li><li>\(k\ne0,1\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Riducendo a scala l'ultima riga diventa \((0\ 0\ k\mid k^2-k)\). Per \(k=0\) la riga è nulla: \(\mathrm{rk}A=\mathrm{rk}(A|\mathbf b)=2&lt;3\), infinite soluzioni. Per \(k\ne0\) il rango è 3: unica soluzione.</p>
+      <div class="box box--warn"><div class="tag">Errore nella soluzione ufficiale</div> La spiegazione ufficiale scrive i ranghi scambiati («rango 3 se k = 0, rango 2 se k ≠ 0»): è il contrario. La risposta segnata (A) è comunque giusta.</div>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame febbraio 2024, Q2">
+    <p>Siano \(A\in\mathrm{Mat}(m,n)\) e \(\mathbf b\in\mathbb R^m\). Supponiamo che \(A\mathbf x=\mathbf b\) ammetta soluzioni.</p>
+    <ol class="opzioni"><li>\(\mathrm{col}(A)=\mathbb R^m\)</li><li>\(\ker A=\{\mathbf 0\}\)</li><li>\(\mathbf b\in\mathrm{col}(A)\)</li><li>\(\mathbf b\in\ker A\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Una soluzione è un vettore di coefficienti che combina le colonne di \(A\) dando \(\mathbf b\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame febbraio 2024, Q3">
+    <p>Quale dei seguenti vettori appartiene a \(\mathrm{Span}((2,-1,1,0),(0,1,-1,2))\)?</p>
+    <ol class="opzioni"><li>\((1,0,2,-1)\)</li><li>\((1,-1,-1,1)\)</li><li>\((-1,2,0,1)\)</li><li>\((1,-1,1,-1)\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\((1,-1,1,-1)=\tfrac12(2,-1,1,0)-\tfrac12(0,1,-1,2)\). Per gli altri, la matrice con i due generatori ha rango 3.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame febbraio 2024, Q4">
+    <p>Siano \(H=\mathrm{Span}((1,2,-1,-2)^\top,(3,0,5,0)^\top)\) e \(K=\mathrm{Span}((-2,-1,-2,1)^\top,(1,-1,3,1)^\top)\) in \(\mathbb R^4\). Determinare \(\dim(H\cap K)\).</p>
+    <ol class="opzioni"><li>\(0\)</li><li>\(1\)</li><li>\(2\)</li><li>\(3\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(\dim H=\dim K=2\) e la matrice dei quattro generatori ha rango 2: \(\dim(H+K)=2\), quindi \(H=K\) e \(\dim(H\cap K)=2\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame febbraio 2024, Q5">
+    <p>Quale delle seguenti funzioni è un'applicazione lineare?</p>
+    <ol class="opzioni"><li>\(L:\mathrm{Mat}(2,2)\to\mathbb R^2\), \(L(M)=(\det M,\ \mathrm{tr}\,M)^\top\)</li><li>\(L:\mathrm{Mat}(2,2)\to\mathbb R^2\), \(L(M)=(0,\ \mathrm{tr}\,M)^\top\)</li><li>\(L:\mathbb R^2\to\mathbb R^2\), \(L(x,y)=(x+y,\ xy)\)</li><li>\(L:\mathbb R^2\to\mathbb R^2\), \(L(x,y)=(x^2+y^2,\ x^2-y^2)\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>La traccia è lineare, quindi anche \(M\mapsto(0,\mathrm{tr}M)\). Il determinante e i termini \(xy\), \(x^2\) non sono lineari.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame febbraio 2024, Q6">
+    <p>Sia \(L:\mathbb R^3\to\mathbb R^3\) lineare con \(\ker L=\mathrm{Span}((1,1,-1)^\top)\).</p>
+    <ol class="opzioni"><li>\(L(1,0,0)^\top,\ L(0,-1,1)^\top\) sono linearmente dipendenti</li><li>\(L(1,-1,0)^\top,\ L(0,0,1)^\top\) sono linearmente dipendenti</li><li>\(L\) è suriettiva</li><li>\(L\) è iniettiva</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\((1,0,0)-(0,-1,1)=(1,1,-1)\in\ker L\), quindi \(L(1,0,0)^\top=L(0,-1,1)^\top\). \(L\) non è iniettiva e, per il Teorema della dimensione, \(\dim\mathrm{Im}L=2\): non è suriettiva.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame febbraio 2024, Q7">
+    <p>Sia \(A\in\mathrm{Mat}(n,n)\) e \(\lambda\in\mathbb R\) un autovalore di \(A\).</p>
+    <ol class="opzioni"><li>\(\chi_A(\lambda)\ne0\)</li><li>\(\ker(A-\lambda I_n)=\{\mathbf 0\}\)</li><li>\(\lambda^2\) è un autovalore di \(A^2\)</li><li>\(\det A=\lambda^n\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su autovalori, autospazi e diagonalizzazione, non ancora trattato a lezione.</p>
+      <p>Se \(A\mathbf v=\lambda\mathbf v\) allora \(A^2\mathbf v=\lambda^2\mathbf v\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame febbraio 2024, Q8">
+    <p>Sia \(V\) uno spazio euclideo e \(H\subseteq V\) un sottospazio.</p>
+    <ol class="opzioni"><li>\(\pi_H(H)=H^\perp\)</li><li>La proiezione ortogonale \(\pi_H:V\to V\) è un isomorfismo</li><li>\(\dim H=\dim H^\perp\)</li><li>L'unione di una base ortonormale di \(H\) e una di \(H^\perp\) è una base ortonormale di \(V\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sugli spazi euclidei (prodotto scalare, ortogonalità, isometrie), non ancora trattato a lezione.</p>
+      <p>\(V=H\oplus H^\perp\) con \(H\perp H^\perp\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame febbraio 2024, Q9">
+    <p>Quale delle seguenti \(L:\mathbb R^2\to\mathbb R^2\) è un'isometria lineare?</p>
+    <ol class="opzioni"><li>\(L(x,y)=(x,0)\)</li><li>\(L(x,y)=(-y,-x)\)</li><li>\(L(x,y)=(x-y,x+y)\)</li><li>\(L(x,y)=\frac1{\sqrt2}(x-y,y-x)\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sugli spazi euclidei (prodotto scalare, ortogonalità, isometrie), non ancora trattato a lezione.</p>
+      <p>Manda la base ortonormale \(\{\mathbf e_1,\mathbf e_2\}\) in \(\{-\mathbf e_2,-\mathbf e_1\}\), ancora ortonormale.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame febbraio 2024, Q10">
+    <p>Sia \(V\) uno spazio euclideo e \(\mathbf v,\mathbf w\in V\).</p>
+    <ol class="opzioni"><li>\(\langle2\mathbf v,5\mathbf w\rangle=10\langle\mathbf v,\mathbf w\rangle\)</li><li>\(\langle3\mathbf v,3\mathbf w\rangle=3\langle\mathbf v,\mathbf w\rangle\)</li><li>\(\langle\mathbf v+\mathbf w,\mathbf v+\mathbf w\rangle=\langle\mathbf v,\mathbf w\rangle+\langle\mathbf v,\mathbf w\rangle\)</li><li>\(\langle\mathbf v,\mathbf w\rangle=\|\mathbf v\|\|\mathbf w\|\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sugli spazi euclidei (prodotto scalare, ortogonalità, isometrie), non ancora trattato a lezione.</p>
+      <p>Bilinearità.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame febbraio 2024, Q11">
+    <p>Una matrice simmetrica \(A\in\mathrm{Mat}(4,4)\) ha \(\chi_A(x)=(2+x)^2(3-x)^2\) e un autospazio \(\mathrm{Span}((1,0,1,0)^\top,(1,0,0,1)^\top)\). Qual è l'altro autospazio?</p>
+    <ol class="opzioni"><li>\(\mathrm{Span}((0,1,0,0)^\top,(1,0,-1,-1)^\top)\)</li><li>\(\mathrm{Span}((1,0,-1,0)^\top,(1,0,0,-1)^\top)\)</li><li>\(\mathrm{Span}((0,1,0,1)^\top,(0,1,1,0)^\top)\)</li><li>\(\mathrm{Span}((-1,0,-1,0)^\top,(-1,0,0,-1)^\top)\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sugli spazi euclidei (prodotto scalare, ortogonalità, isometrie), non ancora trattato a lezione.</p>
+      <p>Per il teorema spettrale l'altro autospazio è il complemento ortogonale del primo.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame febbraio 2024, Q12">
+    <p>La forma quadratica \(p(x,y,z)=xy+2xz+3yz\) è</p>
+    <ol class="opzioni"><li>definita positiva</li><li>definita negativa</li><li>semidefinita positiva ma non definita positiva</li><li>indefinita</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sulle forme bilineari e quadratiche, non ancora trattato a lezione.</p>
+      <p>\(p(1,1,0)=1\), \(p(1,-1,0)=-1\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+</section>
+<section class="sec" id="esami-quiz-2406">
+  <h2>Quiz d'esame · giugno 2024</h2>
+  <p class="lead">Tema con soluzioni ufficiali (risposte segnate dal docente), ricontrollate con calcolo simbolico.</p>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame giugno 2024, Q1">
+    <p>Siano \(A,B\in\mathrm{Mat}(n,n)\) con un autovettore comune. Allora \(C=AB-BA\):</p>
+    <ol class="opzioni"><li>ha rango strettamente minore di \(n\)</li><li>è ortogonale</li><li>è nulla</li><li>è invertibile</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su autovalori, autospazi e diagonalizzazione, non ancora trattato a lezione.</p>
+      <p>Se \(A\mathbf v=\alpha\mathbf v\), \(B\mathbf v=\beta\mathbf v\), allora \(C\mathbf v=\alpha\beta\mathbf v-\beta\alpha\mathbf v=\mathbf 0\): \(\ker C\ne\{\mathbf 0\}\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame giugno 2024, Q2">
+    <p>Sia \(V=\mathbb R[t]_{\le3}\) e \(S=\{-1,\ t-t^3,\ t^2-t+1,\ t^3\}\).</p>
+    <ol class="opzioni"><li>\(S\) è contenuto nel sottospazio \(\{p\in V: p(0)=0\}\)</li><li>Esiste un vettore in \(V\) che non è combinazione lineare di elementi di \(S\)</li><li>\(S\) è un insieme di vettori linearmente indipendenti</li><li>\(S'=S\cup\{1-t+2t^2-t^3\}\) è linearmente indipendente</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>In coordinate rispetto a \(\{1,t,t^2,t^3\}\): \((-1,0,0,0)\), \((0,1,0,-1)\), \((1,-1,1,0)\), \((0,0,0,1)\), di rango 4. Quindi \(S\) è una base: B è falsa, e 5 vettori in dimensione 4 sono dipendenti (D falsa). A è falsa perché \(-1\) ha \(p(0)\ne0\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame giugno 2024, Q3">
+    <p>In \(V=\mathrm{Mat}(2,2)\) siano \(U_0=\{X: \mathrm{tr}X=0\}\) e \(U_1=\{X: X^\top+X=0\}\).</p>
+    <ol class="opzioni"><li>\(U_1\) è un sottospazio di \(U_0\)</li><li>\(U_0+U_1=V\)</li><li>\(\dim V-\dim U_0-\dim U_1&gt;0\)</li><li>\(\dim(U_0\cap U_1)=2\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Se \(X^\top=-X\) le entrate diagonali sono nulle, quindi \(\mathrm{tr}X=0\). (\(\dim U_0=3\), \(\dim U_1=1\).)</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame giugno 2024, Q4">
+    <p>L'equazione \(x^2-y^2+2x+6y-8=0\) definisce nel piano</p>
+    <ol class="opzioni"><li>una coppia di rette sghembe</li><li>una coppia di rette ortogonali</li><li>una coppia di rette parallele distinte</li><li>una coppia di rette coincidenti</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su coniche e quadriche, non ancora trattato a lezione.</p>
+      <p>\(x^2-y^2+2x+6y-8=(x-y+4)(x+y-2)\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame giugno 2024, Q5">
+    <p>Sia \(f:V\to W\) lineare iniettiva. Allora:</p>
+    <ol class="opzioni"><li>\(\dim V\le\dim W+\dim\ker f\)</li><li>\(\dim W\le\dim\mathrm{im}f+\dim\ker f\)</li><li>\(\dim W=\dim\mathrm{im}f+\dim\ker f\)</li><li>\(\dim V=\dim W+\dim\mathrm{im}f\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(\dim V=\dim\mathrm{Im}f+\dim\ker f\le\dim W+\dim\ker f\) (Teorema della dimensione, \(\mathrm{Im}f\subseteq W\)).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame giugno 2024, Q6">
+    <p>Sia \(A\in\mathrm{Mat}(n,n)\) con \(A^N=0\) per qualche \(N\ge1\). Se \(A\) è diagonalizzabile allora:</p>
+    <ol class="opzioni"><li>\(A\) ha rango massimo</li><li>\(A\) è ortogonale</li><li>\(A\) è la matrice nulla</li><li>\(\mathrm{tr}A=n\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su autovalori, autospazi e diagonalizzazione, non ancora trattato a lezione.</p>
+      <p>Se \(A=S^{-1}DS\), allora \(D^N=0\), quindi \(D=0\) e \(A=0\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame giugno 2024, Q7">
+    <p>Sia \(L:\mathbb R^3\to\mathbb R^2\), \(L(x,y,z)=(2x-y,\ 3x-2z)^\top\). L'insieme \(\{\mathbf v: L(\mathbf v)=(0,1)^\top\}\) è</p>
+    <ol class="opzioni"><li>una retta di \(\mathbb R^3\)</li><li>una retta di \(\mathbb R^2\)</li><li>un piano di \(\mathbb R^3\)</li><li>vuoto</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Il sistema \(2x-y=0\), \(3x-2z=1\) ha rango 2 e 3 incognite: soluzioni \(y=2x\), \(z=\tfrac32x-\tfrac12\), una retta di \(\mathbb R^3\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame giugno 2024, Q8">
+    <p>Sia \(A=(\mathbf v_1,\mathbf v_2,\mathbf v_3)\) e \(B=(-\mathbf v_1-\mathbf v_3,\ \mathbf v_1+\mathbf v_2,\ \mathbf v_3)\).</p>
+    <ol class="opzioni"><li>\(\det A=\det B\)</li><li>\(\det A=-\det B\)</li><li>\(\det B=0\)</li><li>\(\det A=(\det B)^2\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo dei determinanti, non ancora trattato a lezione.</p>
+      <p>Per multilinearità \(\det B=-\det(\mathbf v_1,\mathbf v_1+\mathbf v_2,\mathbf v_3)=-\det A\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame giugno 2024, Q9">
+    <p>Sia \(A\in\mathrm{Mat}(3,3)\) con \(\chi_A(x)=-x^3+6x^2-9x\).</p>
+    <ol class="opzioni"><li>\(A\) è diagonalizzabile</li><li>\(T_A\) è suriettiva</li><li>\(\det A&gt;0\)</li><li>\(\mathrm{rk}A\le2\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su autovalori, autospazi e diagonalizzazione, non ancora trattato a lezione.</p>
+      <p>0 è radice di \(\chi_A\), quindi \(\ker A\ne\{\mathbf 0\}\) e \(\mathrm{rk}A&lt;3\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame giugno 2024, Q10">
+    <p>Sia \(\mathbf w=(2,3)\). Di quale \(\mathbf v\) il vettore \(\mathbf w\) è la proiezione ortogonale \(\pi_H(\mathbf v)\) per un opportuno \(H\subseteq\mathbb R^2\)?</p>
+    <ol class="opzioni"><li>\((4,6)\)</li><li>\((1,1)\)</li><li>\((8,-1)\)</li><li>\((-3,2)\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sugli spazi euclidei (prodotto scalare, ortogonalità, isometrie), non ancora trattato a lezione.</p>
+      <p>Serve \(\mathbf v-\mathbf w\perp\mathbf w\): \((6,-4)\cdot(2,3)=0\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame giugno 2024, Q11">
+    <p>Siano \(\mathbf v=(1,-1,0)^\top\), \(\mathbf u=(0,1,-1)^\top\), \(V=\mathrm{Span}(\mathbf v)^\perp\), \(U=\mathrm{Span}(\mathbf u)^\perp\).</p>
+    <ol class="opzioni"><li>\(U\cap V=\{\mathbf 0\}\)</li><li>\(\dim(U\cap V)=2\)</li><li>\(U=V\)</li><li>\(U\cap V\) è generato da \((1,1,1)^\top\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sugli spazi euclidei (prodotto scalare, ortogonalità, isometrie), non ancora trattato a lezione.</p>
+      <p>\(U\cap V=\{x_1-x_2=x_2-x_3=0\}=\mathrm{Span}((1,1,1)^\top)\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame giugno 2024, Q12">
+    <p>Siano \(A\in\mathrm{Mat}(n,n)\), \(\mathbf b\in\mathbb R^n\), \(B=(A|\mathbf b)\).</p>
+    <ol class="opzioni"><li>Se \(\dim\mathrm{col}(B)=\dim\mathrm{col}(A)+1\) il sistema è risolubile</li><li>Se \(\dim\mathrm{col}(B)=2\) il sistema è risolubile</li><li>Se \(B\) è ridotta a scala il sistema è risolubile</li><li>Se \(\dim\mathrm{col}(A)=\dim\mathrm{col}(B)\) il sistema è risolubile</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Teorema di Rouché–Capelli.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+</section>
+
+<section class="sec" id="esami-quiz-2407">
+  <h2>Quiz d'esame · luglio 2024</h2>
+  <p class="lead">Tema con soluzioni ufficiali (risposte segnate dal docente), ricontrollate con calcolo simbolico.</p>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame luglio 2024, Q1">
+    <p>Quale tra le seguenti \(L:\mathbb R^2\to\mathbb R^2\) è lineare?</p>
+    <ol class="opzioni"><li>\(L(x,y)=(x+y,\ x-y)\)</li><li>\(L(x,y)=(x+1,\ y)\)</li><li>\(L(x,y)=(x^2,\ y)\)</li><li>\(L(x,y)=(x,\ y+2)\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(L=T_A\) con \(A=\begin{pmatrix}1&amp;1\\1&amp;-1\end{pmatrix}\). Le altre non mandano \(\mathbf 0\) in \(\mathbf 0\) o non sono omogenee.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame luglio 2024, Q2">
+    <p>Siano \(\mathbf v,\mathbf w\) ortogonali di norma 1 in uno spazio euclideo.</p>
+    <ol class="opzioni"><li>\(\|\mathbf v-\mathbf w\|=1\)</li><li>\(\|\mathbf v-\mathbf w\|=\sqrt2\)</li><li>\(\|\mathbf v-\mathbf w\|=\sqrt5\)</li><li>\(\|\mathbf v-\mathbf w\|=4\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sugli spazi euclidei (prodotto scalare, ortogonalità, isometrie), non ancora trattato a lezione.</p>
+      <p>\(\|\mathbf v-\mathbf w\|^2=1-0+1=2\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame luglio 2024, Q3">
+    <p>Data \(A\in\mathrm{Mat}(3,3)\) e \(\lambda\in\mathbb R\):</p>
+    <ol class="opzioni"><li>\(\det(\lambda A)=\det A\)</li><li>\(\det(\lambda A)=\lambda\det A\)</li><li>\(\det(\lambda A)=\sqrt\lambda\det A\)</li><li>\(\det(\lambda A)=\lambda^3\det A\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo dei determinanti, non ancora trattato a lezione.</p>
+      <p>Ognuna delle 3 righe viene moltiplicata per \(\lambda\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame luglio 2024, Q4">
+    <p>Una forma parametrica del sottospazio affine \(V=\{(x,y)\in\mathbb R^2: x+2y-3=0\}\) è</p>
+    <ol class="opzioni"><li>\((0,1)+t(3,0)\)</li><li>\((2,4)+t(1,1)\)</li><li>\((3,0)+t(-2,1)\)</li><li>nessuna delle precedenti</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sulla geometria affine ed euclidea, non ancora trattato a lezione.</p>
+      <p>\((3,0)\in V\) e la giacitura \(\{x+2y=0\}\) è \(\mathrm{Span}(-2,1)\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame luglio 2024, Q5">
+    <p>In \(\mathbb R[t]_{\le3}\) siano \(\mathcal B=\{1,t,t^2,t^3+1\}\) e \(\mathcal C=\{2,\ t+1,\ t^2-1,\ t^3-1\}\). La matrice del cambio di base da \(\mathcal B\) a \(\mathcal C\) è</p>
+    <ol class="opzioni"><li>\(\begin{pmatrix}1&amp;-1&amp;1&amp;1\\0&amp;1/2&amp;0&amp;0\\0&amp;0&amp;1/2&amp;0\\0&amp;0&amp;0&amp;1\end{pmatrix}\)</li><li>\(\begin{pmatrix}1/2&amp;-1/2&amp;1/2&amp;1\\0&amp;1&amp;0&amp;0\\0&amp;0&amp;1&amp;0\\0&amp;0&amp;0&amp;1\end{pmatrix}\)</li><li>\(\begin{pmatrix}1&amp;0&amp;0&amp;1\\0&amp;1/2&amp;0&amp;0\\0&amp;0&amp;1/2&amp;0\\0&amp;0&amp;0&amp;3\end{pmatrix}\)</li><li>\(\begin{pmatrix}2&amp;0&amp;0&amp;1\\0&amp;1/2&amp;0&amp;0\\0&amp;0&amp;1&amp;0\\0&amp;0&amp;0&amp;3\end{pmatrix}\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Le colonne sono le coordinate dei vettori di \(\mathcal B\) rispetto a \(\mathcal C\) (Definizione 5.5): \(1=\tfrac12\cdot2\), \(t=-\tfrac12\cdot2+(t+1)\), \(t^2=\tfrac12\cdot2+(t^2-1)\), \(t^3+1=2+(t^3-1)\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame luglio 2024, Q6">
+    <p>Sia \(A\in\mathrm{Mat}(n,n)\) simmetrica e ortogonale. Allora \(A^4\)</p>
+    <ol class="opzioni"><li>è la matrice nulla</li><li>ha traccia nulla</li><li>ha determinante nullo</li><li>è la matrice identità</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sugli spazi euclidei (prodotto scalare, ortogonalità, isometrie), non ancora trattato a lezione.</p>
+      <p>\(A^{-1}=A^\top=A\), quindi \(A^2=I\) e \(A^4=I\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame luglio 2024, Q7">
+    <p>L'insieme dei \(\mathbf v=(v_1,v_2)\in\mathbb R^2\) con \(v_1v_2=0\)</p>
+    <ol class="opzioni"><li>non è chiuso rispetto alla somma</li><li>non è chiuso rispetto al prodotto per uno scalare</li><li>non contiene il vettore nullo</li><li>è un sottospazio di \(\mathbb R^2\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\((1,0)\) e \((0,1)\) stanno nell'insieme, \((1,1)\) no.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame luglio 2024, Q8">
+    <p>Un'applicazione lineare da \(\mathrm{Mat}(2,15)\) in \(\mathbb R[t]_{\le30}\)</p>
+    <ol class="opzioni"><li>può essere iniettiva</li><li>non può esistere</li><li>può essere invertibile</li><li>può essere suriettiva</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(\dim\mathrm{Mat}(2,15)=30&lt;31=\dim\mathbb R[t]_{\le30}\): può essere iniettiva, mai suriettiva.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame luglio 2024, Q9">
+    <p>Le matrici \(A=\begin{pmatrix}0&amp;1\\0&amp;0\end{pmatrix}\) e \(B=\begin{pmatrix}0&amp;0\\1&amp;0\end{pmatrix}\)</p>
+    <ol class="opzioni"><li>sono simili</li><li>sono entrambe diagonalizzabili</li><li>hanno uguali autospazi</li><li>commutano rispetto al prodotto</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su autovalori, autospazi e diagonalizzazione, non ancora trattato a lezione.</p>
+      <p>\(PAP^{-1}=B\) con \(P=\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}\) (\(P^{-1}=P\)).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame luglio 2024, Q10">
+    <p>Trovare il vettore delle coordinate di \(\begin{pmatrix}5&amp;1\\5&amp;4\end{pmatrix}\) rispetto alla base \(\mathcal B=\left\{\begin{pmatrix}1&amp;0\\2&amp;1\end{pmatrix},\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix},\begin{pmatrix}3&amp;0\\0&amp;-1\end{pmatrix},\begin{pmatrix}0&amp;0\\0&amp;1\end{pmatrix}\right\}\).</p>
+    <ol class="opzioni"><li>\((1,2,-3,1)^\top\)</li><li>\((1,-2,3,0)^\top\)</li><li>\((2,1,1,3)^\top\)</li><li>\((-1,2,-3,0)^\top\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>La combinazione è \(\begin{pmatrix}x_1+3x_3&amp;x_2\\2x_1+x_2&amp;x_1-x_3+x_4\end{pmatrix}\): \(x_2=1\), \(x_1=2\), \(x_3=1\), \(x_4=3\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame luglio 2024, Q11">
+    <p>Siano \(U=\{x+z=0\}\subseteq\mathbb R^3\) e \(V=\mathrm{Span}(\mathbf e_1-\mathbf e_2,\mathbf e_1-\mathbf e_3,\mathbf e_2-\mathbf e_3)\).</p>
+    <ol class="opzioni"><li>\(\dim(U\cap V)=0\)</li><li>\(\dim(U\cap V)=1\)</li><li>\(\dim(U\cap V)=2\)</li><li>\(\dim(U\cap V)=3\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(V=\{x+y+z=0\}\), quindi \(U\cap V=\ker\begin{pmatrix}1&amp;0&amp;1\\1&amp;1&amp;1\end{pmatrix}\), di dimensione \(3-2=1\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame luglio 2024, Q12">
+    <p>La distanza tra le rette \(r_1: x+y-1=z+1=0\) e \(r_2: x-1=y-z=0\) di \(\mathbb R^3\) è</p>
+    <ol class="opzioni"><li>\(0\)</li><li>\(1\)</li><li>\(\frac13\)</li><li>\(\frac1{\sqrt3}\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sulla geometria affine ed euclidea, non ancora trattato a lezione.</p>
+      <p>Le rette sono sghembe; proiettando \(P_1-P_2\) sulla direzione ortogonale a entrambe, \(\mathrm{Span}(1,1,-1)\), si ottiene \(\sqrt3/3=1/\sqrt3\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+</section>
+
+<section class="sec" id="esami-quiz-2409">
+  <h2>Quiz d'esame · settembre 2024</h2>
+  <p class="lead">Tema con soluzioni ufficiali (risposte segnate dal docente), ricontrollate con calcolo simbolico.</p>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame settembre 2024, Q1">
+    <p>Siano \(A,B\in\mathrm{Mat}(n,n)\), \(\lambda\) autovalore di \(A\) con autospazio \(V\). Se \(\mathbf v\in V\) e \(AB=BA\), allora</p>
+    <ol class="opzioni"><li>\(B\mathbf v=\mathbf 0\)</li><li>\(B\mathbf v\in V\)</li><li>\(B\mathbf v\ne\mathbf 0\)</li><li>\(B\mathbf v\notin V\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su autovalori, autospazi e diagonalizzazione, non ancora trattato a lezione.</p>
+      <p>\(A(B\mathbf v)=B(A\mathbf v)=\lambda B\mathbf v\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame settembre 2024, Q2">
+    <p>Data \(B\in\mathrm{Mat}(3,3)\) simmetrica con \(\mathrm{rk}B&lt;3\), la forma quadratica \(\mathbf x^\top B\mathbf x\)</p>
+    <ol class="opzioni"><li>è definita positiva</li><li>è definita negativa</li><li>non è definita positiva</li><li>nessuna delle precedenti</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sulle forme bilineari e quadratiche, non ancora trattato a lezione.</p>
+      <p>0 è autovalore di \(B\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame settembre 2024, Q3">
+    <p>Sia \(\mathbf v=(a,b,c)^\top\) di norma 1. La matrice \(A=\mathbf v\mathbf v^\top\) rappresenta la proiezione ortogonale su \(\mathrm{Span}(\mathbf v)\). Il rango di \(A\) è</p>
+    <ol class="opzioni"><li>0</li><li>1</li><li>2</li><li>3</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Le colonne di \(A\) sono \(a\mathbf v,b\mathbf v,c\mathbf v\), non tutte nulle: \(\mathrm{col}(A)=\mathrm{Span}(\mathbf v)\). Basta il Cap. 1 (rango come dimensione dello spazio delle colonne).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame settembre 2024, Q4">
+    <p>Sia \(A\in\mathrm{Mat}(n,n)\) con \(A-I_n\) invertibile. Allora</p>
+    <ol class="opzioni"><li>\(A\) è ortogonale</li><li>\(A\) è invertibile</li><li>1 non è autovalore di \(A\)</li><li>1 è autovalore di \(A\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su autovalori, autospazi e diagonalizzazione, non ancora trattato a lezione.</p>
+      <p>\(\det(A-I_n)\ne0\), cioè \(\chi_A(1)\ne0\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame settembre 2024, Q5">
+    <p>Sia \(a\in\mathbb R\) e i piani \(P_1: ax_1-x_3+1=0\), \(P_2: ax_2-x_3+1=0\), \(P_3: ax_1+ax_2-2x_3+2=0\).</p>
+    <ol class="opzioni"><li>per infiniti valori di \(a\) i tre piani si incontrano in un solo punto</li><li>per un solo valore di \(a\) i tre piani si intersecano lungo una retta</li><li>per ogni \(a\) l'intersezione è vuota</li><li>esiste un valore di \(a\) per cui i piani coincidono</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(P_3\) è la somma delle equazioni di \(P_1\) e \(P_2\): il sistema è sempre compatibile. Se \(a\ne0\) il rango è 2 (una retta, per infiniti \(a\)); se \(a=0\) il rango è 1 e i tre piani coincidono con \(x_3=1\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame settembre 2024, Q6">
+    <p>Siano \(A,B\in\mathrm{Mat}(3,3)\).</p>
+    <ol class="opzioni"><li>\(\det(A-B)=\det(B-A)\)</li><li>\(\det(A-B)=-\det(B-A)\)</li><li>\(\det(A-B)=\det A-\det B\)</li><li>\(\det(A-B)=\det B-\det A\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo dei determinanti, non ancora trattato a lezione.</p>
+      <p>\(\det(-(B-A))=(-1)^3\det(B-A)\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame settembre 2024, Q7">
+    <p>Sia \(S=\{(x,y,z)^\top\in\mathbb R^3: x^2-y^2=1,\ z=0\}\).</p>
+    <ol class="opzioni"><li>\(S\) contiene una base di \(\mathbb R^3\)</li><li>\(S\) contiene un insieme di generatori di \(\mathbb R^3\)</li><li>\(S\) contiene una base del sottospazio \(\{z=0\}\)</li><li>\(S\) è un sottospazio di \(\mathbb R^3\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Ad esempio \(\{(1,0,0)^\top,(2,\sqrt3,0)^\top\}\subseteq S\). Tutto \(S\) sta nel piano \(z=0\), quindi non genera \(\mathbb R^3\); non contiene \(\mathbf 0\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame settembre 2024, Q8">
+    <p>Sia \(L:\mathbb R[x]_{\le2}\to\mathbb R[x]_{\le2}\), \(L(a_0+a_1x+a_2x^2)=(a_0+a_1)+(a_1+2a_2)x+a_2x^2\).</p>
+    <ol class="opzioni"><li>\(L\) è diagonalizzabile</li><li>la matrice di \(L\) rispetto a \(\{1,x,x^2\}\) è ridotta a scala</li><li>\(\dim\mathrm{Im}L=2\)</li><li>la matrice di \(L\) rispetto a \(\{1,x,x^2\}\) è simmetrica</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>La matrice è \(\begin{pmatrix}1&amp;1&amp;0\\0&amp;1&amp;2\\0&amp;0&amp;1\end{pmatrix}\), a scala, di rango 3 (C falsa), non simmetrica. (A è falsa: autovalore 1 triplo con autospazio di dimensione 1, argomento successivo.)</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame settembre 2024, Q9">
+    <p>Siano \(V=\mathrm{Mat}(2,2)\) e \(W=\mathbb R^3\).</p>
+    <ol class="opzioni"><li>Non esistono applicazioni lineari da \(V\) a \(W\)</li><li>Non esistono applicazioni lineari iniettive da \(V\) a \(W\)</li><li>Non esistono funzioni da \(V\) a \(W\)</li><li>Non esistono applicazioni lineari suriettive da \(V\) a \(W\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(\dim V=4&gt;3=\dim W\): il nucleo ha dimensione almeno 1.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame settembre 2024, Q10">
+    <p>Il luogo del piano \(x^2-y^2-2x+2y=0\) è</p>
+    <ol class="opzioni"><li>una coppia di rette</li><li>una circonferenza</li><li>un'iperbole</li><li>l'insieme vuoto</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su coniche e quadriche, non ancora trattato a lezione.</p>
+      <p>\(x^2-y^2-2x+2y=(x-y)(x+y-2)\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame settembre 2024, Q11">
+    <p>Sia \(f:V\to W\) lineare.</p>
+    <ol class="opzioni"><li>\(\dim\ker f&lt;\dim V\)</li><li>\(\dim\ker f\le\dim W\)</li><li>\(\dim V\ge\dim\mathrm{Im}f\)</li><li>\(\dim W&gt;\dim\mathrm{Im}f\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Teorema della dimensione: \(\dim V=\dim\ker f+\dim\mathrm{Im}f\ge\dim\mathrm{Im}f\). A e B falliscono per \(f=0\), D per \(f\) suriettiva.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame settembre 2024, Q12">
+    <p>Sia \(A\in\mathrm{Mat}(n,n)\) diagonalizzabile.</p>
+    <ol class="opzioni"><li>\(\mathrm{rk}A\) è il numero di autovalori distinti</li><li>\(\mathrm{rk}A\) è la somma delle molteplicità degli autovalori</li><li>\(\mathrm{rk}A\) è la somma delle molteplicità degli autovalori non nulli</li><li>\(\mathrm{rk}A\) è la somma delle molteplicità degli autovalori positivi</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su autovalori, autospazi e diagonalizzazione, non ancora trattato a lezione.</p>
+      <p>Basta guardare il rango della matrice diagonale simile ad \(A\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+</section>
+<section class="sec" id="esami-quiz-2501">
+  <h2>Quiz d'esame · gennaio 2025</h2>
+  <p class="lead">GAL-2425-01. Questo tema ha le soluzioni ufficiali: le risposte coincidono con quelle segnate dal docente e sono state ricontrollate con calcolo simbolico.</p>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame gennaio 2025, Q1">
+    <p>Il sistema lineare con matrice completa \((A,\mathbf b)=\left(\begin{array}{ccc|c}1&amp;k&amp;0&amp;1\\k&amp;0&amp;0&amp;-1\\1&amp;0&amp;-1&amp;0\\0&amp;1&amp;0&amp;2k\end{array}\right)\)</p>
+    <ol class="opzioni"><li>ammette unica soluzione per \(k\ne1\)</li><li>ammette unica soluzione per \(k=1\)</li><li>ammette infinite soluzioni per \(k=1\)</li><li>ammette soluzione per ogni \(k\in\mathbb R\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Riducendo a scala si arriva all'ultima riga \((0\ 0\ 0\mid -1-k+2k^3)\), mentre \(\mathrm{rk}A=3\) per ogni \(k\). Si ha \(2k^3-k-1=(k-1)(2k^2+2k+1)\), che si annulla solo per \(k=1\) (il secondo fattore ha discriminante negativo). Per \(k=1\): \(\mathrm{rk}A=\mathrm{rk}(A|\mathbf b)=3=\) numero di incognite, quindi una sola soluzione; per \(k\ne1\) nessuna.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame gennaio 2025, Q2">
+    <p>Siano \(A\in\mathrm{Mat}(3,3)\) e \(B\in\mathrm{Mat}(3,1)\). Allora</p>
+    <ol class="opzioni"><li>\(AB\in\mathrm{Mat}(1,3)\)</li><li>\(AB\in\mathrm{Mat}(3,1)\)</li><li>\(A+B\in\mathrm{Mat}(3,3)\)</li><li>nessuna delle precedenti</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Il prodotto \((3\times3)\cdot(3\times1)\) è \(3\times1\). La somma di matrici di formati diversi non è definita.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame gennaio 2025, Q3">
+    <p>Siano \(V=\mathbb R[t]_{\le3}\), \(W=\mathrm{Mat}(2,2)\) e \(L(a_0+a_1t+a_2t^2+a_3t^3)=\begin{pmatrix}a_0&amp;a_1\\a_2&amp;a_3\end{pmatrix}\). Allora \(L\)</p>
+    <ol class="opzioni"><li>è un isomorfismo</li><li>è iniettiva, ma non suriettiva</li><li>è suriettiva, ma non iniettiva</li><li>nessuna delle precedenti</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(L(p)=0\) solo se tutti i coefficienti sono nulli: \(\ker L=\{0\}\). Per il Teorema della dimensione \(\dim\mathrm{Im}L=4=\dim W\), quindi \(L\) è anche suriettiva.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame gennaio 2025, Q4">
+    <p>Sia \(A=(C_1,C_2,C_3)\) con colonne \(C_i\). Allora</p>
+    <ol class="opzioni"><li>\(\det(C_1+C_2,C_2,C_3+C_1)=-\det A\)</li><li>\(\det(C_1+C_2,C_2,C_3+C_1)=(\det A)^2\)</li><li>\(\det(C_1+C_2,C_2,C_3+C_1)=2\det A\)</li><li>\(\det(C_1+C_2,C_2,C_3+C_1)=\det A\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(\det(C_1+C_2,C_2,C_3+C_1)=\det(C_1,C_2,C_3+C_1)=\det(C_1,C_2,C_3)\): ogni passo sottrae a una colonna un'altra colonna.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame gennaio 2025, Q5">
+    <p>Sia \(f:\mathbb R^2\to\mathbb R^2\) lineare con \(f(0,1)=(1,0)\) e \(f(1,2)=(3,4)\).</p>
+    <ol class="opzioni"><li>\(f(1,0)=(0,1)\)</li><li>\(f(1,0)=(4,1)\)</li><li>\(f(1,0)=(1,4)\)</li><li>Non abbiamo abbastanza informazioni per calcolare \(f(1,0)\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\((1,0)=(1,2)-2(0,1)\), quindi \(f(1,0)=(3,4)-2(1,0)=(1,4)\). (I due vettori dati formano una base, quindi \(f\) è determinata: Teorema 4.18.)</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame gennaio 2025, Q6">
+    <p>Date \(A=\begin{pmatrix}1&amp;1&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;2\end{pmatrix}\) e \(B=\begin{pmatrix}1&amp;0&amp;0\\0&amp;1&amp;1\\0&amp;0&amp;2\end{pmatrix}\):</p>
+    <ol class="opzioni"><li>hanno lo stesso polinomio caratteristico e sono simili</li><li>hanno lo stesso polinomio caratteristico, ma non sono simili</li><li>sono entrambe diagonalizzabili</li><li>sono una l'inversa dell'altra</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Entrambe triangolari con diagonale \(1,1,2\): stesso \(\chi\). Ma \(\dim E_1^A=1\) e \(\dim E_1^B=2\): \(B\) è diagonalizzabile, \(A\) no, quindi non sono simili.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame gennaio 2025, Q7">
+    <p>Sia \(h\in\mathbb R\) e \(A=\begin{pmatrix}2&amp;0&amp;1\\0&amp;2&amp;0\\h^2&amp;0&amp;0\end{pmatrix}\).</p>
+    <ol class="opzioni"><li>Se \(h=\pm1\), allora gli autospazi sono ortogonali</li><li>Se \(A\) è diagonalizzabile, allora \(h=\pm1\)</li><li>Se \(h=0\), allora autovettori relativi ad autovalori distinti sono ortogonali</li><li>Se \(h=0\), allora autovettori linearmente indipendenti sono relativi ad autovalori distinti</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Per \(h=\pm1\) la matrice è simmetrica e il teorema spettrale garantisce autospazi ortogonali. B è falsa (per esempio \(h=2\) dà tre autovalori distinti \(2, 1\pm\sqrt5\)); per \(h=0\) la matrice non è simmetrica e C, D falliscono.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame gennaio 2025, Q8">
+    <p>In uno spazio euclideo, \(\|\mathbf v\|=1\), \(\|\mathbf w\|=2\) e \(\mathbf v\perp\mathbf w\). Allora</p>
+    <ol class="opzioni"><li>\(\|2\mathbf v-3\mathbf w\|=\sqrt3\)</li><li>\(\|2\mathbf v-3\mathbf w\|=\sqrt2\)</li><li>\(\|2\mathbf v-3\mathbf w\|=\sqrt{20}\)</li><li>\(\|2\mathbf v-3\mathbf w\|=\sqrt{40}\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(\|2\mathbf v-3\mathbf w\|^2=4\|\mathbf v\|^2-12\langle\mathbf v,\mathbf w\rangle+9\|\mathbf w\|^2=4+0+36=40\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame gennaio 2025, Q9">
+    <p>Distanza tra \(S=\{\mathbf x\in\mathbb R^3: x_1+x_2=x_2+x_3=0\}\) e \(\{(1,1,1)^\top+t(1,-1,1)^\top: t\in\mathbb R\}\):</p>
+    <ol class="opzioni"><li>0</li><li>\(\sqrt3\)</li><li>\(\frac{2\sqrt6}{3}\)</li><li>\(\frac83\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(S=\mathrm{Span}\{(1,-1,1)^\top\}\): due rette parallele. La distanza è la norma della componente di \((1,1,1)\) ortogonale a \((1,-1,1)\): \((1,1,1)-\tfrac13(1,-1,1)=\tfrac23(1,2,1)\), di norma \(\tfrac23\sqrt6\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame gennaio 2025, Q10">
+    <p>In \(\mathbb R^3\) sia \(\langle\mathbf v,\mathbf w\rangle=\mathbf v^\top A\mathbf w\) con \(A=\begin{pmatrix}1&amp;0&amp;-1\\0&amp;1&amp;0\\-1&amp;0&amp;2\end{pmatrix}\).</p>
+    <ol class="opzioni"><li>la base canonica è ortogonale</li><li>\(\mathbf e_1\) ha norma 1</li><li>l'angolo tra \(\mathbf e_1\) e \(\mathbf e_3\) è \(\pi/4\)</li><li>non esiste una base ortonormale</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(\|\mathbf e_1\|^2=a_{11}=1\). A è falsa (\(\langle\mathbf e_1,\mathbf e_3\rangle=-1\)); l'angolo tra \(\mathbf e_1\) ed \(\mathbf e_3\) ha coseno \(-1/\sqrt2\), cioè \(3\pi/4\) (C falsa); D è falsa per Gram–Schmidt.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame gennaio 2025, Q11">
+    <p>La segnatura di \(q(x,y,z)=2x^2+4y^2+z^2+2xz-2yz\) è</p>
+    <ol class="opzioni"><li>\((2,1,0)\)</li><li>\((1,1,1)\)</li><li>\((3,0,0)\)</li><li>\((0,2,1)\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Matrice \(\begin{pmatrix}2&amp;0&amp;1\\0&amp;4&amp;-1\\1&amp;-1&amp;1\end{pmatrix}\) con \(\det=2&gt;0\) e traccia 7: le segnature possibili sono \((3,0,0)\) o \((1,2,0)\). I minori principali \(2, 8, 2\) sono tutti positivi: definita positiva, \((3,0,0)\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame gennaio 2025, Q12">
+    <p>Il luogo \(\gamma\) di equazione \(x^2+4y^2+4xy+2x-1=0\) (nel testo è scritto \(\gamma\subseteq\mathbb R^3\), ma va inteso nel piano)</p>
+    <ol class="opzioni"><li>è una coppia di rette incidenti</li><li>non ha un centro</li><li>è un'iperbole</li><li>non è una conica</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(x^2+4xy+4y^2+2x-1=(x+2y)^2+2x-1\): è una parabola, che non ha centro (il vettore \((1,0)^\top\) dei termini lineari non sta nella colonna di \(\begin{pmatrix}1&amp;2\\2&amp;4\end{pmatrix}\)).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+</section>
+
+<section class="sec" id="esami-quiz-2502">
+  <h2>Quiz d'esame · febbraio 2025</h2>
+  <p class="lead">Tema con soluzioni ufficiali (risposte segnate dal docente), ricontrollate con calcolo simbolico.</p>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame febbraio 2025, Q1">
+    <p>Siano \(A\in\mathrm{Mat}(n,n)\) e \(\mathbf b\in\mathbb R^n\).</p>
+    <ol class="opzioni"><li>Se \(A\) è invertibile allora \(\mathbf bA^{-1}\) è una soluzione di \(A\mathbf x=\mathbf b\)</li><li>Se \(A\mathbf x=\mathbf b\) ha infinite soluzioni, allora \(\det A\ne0\)</li><li>Se \(A\) è invertibile allora \(A\mathbf x=\mathbf b\) ha un'unica soluzione</li><li>Se \(A\mathbf x=\mathbf b\) ha soluzioni allora \(A\) è invertibile</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Se \(A\) è invertibile, \(A\mathbf x=\mathbf b\iff\mathbf x=A^{-1}\mathbf b\). (In A il prodotto \(\mathbf bA^{-1}\) non ha nemmeno senso.)</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame febbraio 2025, Q2">
+    <p>Sia \(A\in\mathrm{Mat}(n,n)\) e \(A'\) una sua riduzione a scala.</p>
+    <ol class="opzioni"><li>\(\det A=\det A'\)</li><li>\(\mathrm{rk}A=\mathrm{rk}A'\)</li><li>\(\mathrm{tr}A=\mathrm{tr}A'\)</li><li>\(\chi_A=\chi_{A'}\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Le mosse di Gauss non cambiano il rango (le altre grandezze in generale cambiano).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame febbraio 2025, Q3">
+    <p>Siano \(H,K\subseteq\mathbb R^{10}\) con \(\dim H=\dim K=5\).</p>
+    <ol class="opzioni"><li>\(H=K\)</li><li>\(\dim(H\cap K)&gt;0\)</li><li>\(\dim(H+K)&lt;10\)</li><li>Se \(\dim(H\cap K)=0\) allora \(H+K=\mathbb R^{10}\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Grassmann: \(\dim(H+K)=5+5-0=10\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame febbraio 2025, Q4">
+    <p>La matrice \(\begin{pmatrix}2&amp;1\\3&amp;5\end{pmatrix}\)</p>
+    <ol class="opzioni"><li>è invertibile con inversa \(\frac17\begin{pmatrix}5&amp;-1\\-3&amp;2\end{pmatrix}\)</li><li>è invertibile con inversa \(\begin{pmatrix}5&amp;-1\\-3&amp;2\end{pmatrix}\)</li><li>è invertibile con inversa \(\frac12\begin{pmatrix}-5&amp;1\\3&amp;-2\end{pmatrix}\)</li><li>non è invertibile</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Con Gauss–Jordan su \((A|I)\) si ottiene \(A^{-1}=\frac17\begin{pmatrix}5&amp;-1\\-3&amp;2\end{pmatrix}\); verifica: \(A\cdot\begin{pmatrix}5&amp;-1\\-3&amp;2\end{pmatrix}=7I\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame febbraio 2025, Q5">
+    <p>In \(\mathbb R^2\) con la base \(\{(1,1),(0,1)\}\), il vettore delle coordinate di \((3,1)\) è</p>
+    <ol class="opzioni"><li>\((3,1)^\top\)</li><li>\((3,-2)^\top\)</li><li>\((3,-4)^\top\)</li><li>\((2,1)^\top\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\((3,1)=3(1,1)-2(0,1)\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame febbraio 2025, Q6">
+    <p>Quanti \(p(t)\in\mathbb R[t]_{\le2}\) soddisfano \(p(1)=3\), \(p(2)=5\), \(p(3)=7\)?</p>
+    <ol class="opzioni"><li>nessuno</li><li>uno</li><li>tre</li><li>infiniti</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Con \(p=a+bt+ct^2\) si ottiene un sistema \(3\times3\) con matrice \(\begin{pmatrix}1&amp;1&amp;1\\1&amp;2&amp;4\\1&amp;3&amp;9\end{pmatrix}\) di rango 3: unica soluzione (\(p=1+2t\)).</p>
+      <div class="box box--warn"><div class="tag">Errore nella soluzione ufficiale</div> Nella soluzione ufficiale la seconda equazione è scritta «a + 2b + 4b = 5» invece di a + 2b + 4c = 5 (refuso; la matrice e il risultato sono corretti).</div>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame febbraio 2025, Q7">
+    <p>Siano \(A,B\in\mathrm{Mat}(2,2)\).</p>
+    <ol class="opzioni"><li>Se hanno lo stesso rango sono simili</li><li>Se sono simili sono invertibili</li><li>Se hanno lo stesso polinomio caratteristico sono simili</li><li>Se sono simili hanno lo stesso polinomio caratteristico</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su autovalori, autospazi e diagonalizzazione, non ancora trattato a lezione.</p>
+      <p>\(\chi_{P^{-1}AP}=\chi_A\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame febbraio 2025, Q8">
+    <p>Siano \(A,B\in\mathrm{Mat}(n,n)\).</p>
+    <ol class="opzioni"><li>\(\mathrm{col}(A)\subseteq\mathrm{col}(AB)\)</li><li>\(\mathrm{col}(B)\subseteq\mathrm{col}(AB)\)</li><li>\(\mathrm{col}(AB)\subseteq\mathrm{col}(A)\)</li><li>\(\mathrm{col}(AB)\subseteq\mathrm{col}(B)\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(\mathrm{col}(AB)=T_A(T_B(\mathbb R^n))\subseteq T_A(\mathbb R^n)=\mathrm{col}(A)\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame febbraio 2025, Q9">
+    <p>Sia \(L:V\to W\) lineare e \(\mathbf v_1,\dots,\mathbf v_n\in V\).</p>
+    <ol class="opzioni"><li>Se \(L\) è iniettiva e i \(\mathbf v_i\) sono indipendenti, allora gli \(L(\mathbf v_i)\) sono indipendenti</li><li>Se \(L\) è suriettiva e i \(\mathbf v_i\) sono indipendenti, allora gli \(L(\mathbf v_i)\) sono indipendenti</li><li>Se i \(\mathbf v_i\) generano \(V\), allora gli \(L(\mathbf v_i)\) generano \(W\)</li><li>Se gli \(L(\mathbf v_i)\) generano \(W\), allora i \(\mathbf v_i\) generano \(V\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Se \(\sum c_iL(\mathbf v_i)=\mathbf 0\) allora \(\sum c_i\mathbf v_i\in\ker L=\{\mathbf 0\}\), quindi \(c_i=0\) (Cap. 4, Sezione 4.3).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame febbraio 2025, Q10">
+    <p>Sia \(L:V\to V\) un endomorfismo e \(\mathcal B,\mathcal C\) due basi di \(V\).</p>
+    <ol class="opzioni"><li>\(M_L^{\mathcal B,\mathcal B}\) e \(M_L^{\mathcal C,\mathcal C}\) sono congruenti</li><li>\(M_L^{\mathcal B,\mathcal C}\) e \(M_L^{\mathcal C,\mathcal B}\) sono simili</li><li>\(M_L^{\mathcal B,\mathcal B}\) e \(M_L^{\mathcal C,\mathcal C}\) sono simili</li><li>nessuna delle precedenti</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Teorema 5.9: \(M^{\mathcal C}_{\mathcal C}(L)=T\,M^{\mathcal B}_{\mathcal B}(L)\,T^{-1}\) con \(T\) matrice del cambiamento di base.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame febbraio 2025, Q11">
+    <p>Sia \(A\in\mathrm{Mat}(3,3)\) diagonalizzabile con \(\chi_A(t)=t^2(2-t)\).</p>
+    <ol class="opzioni"><li>\(A\) è invertibile</li><li>\(\dim E_0=2\)</li><li>\(A\) è ortogonalmente diagonalizzabile</li><li>esiste una base ortonormale di autovettori</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su autovalori, autospazi e diagonalizzazione, non ancora trattato a lezione.</p>
+      <p>Diagonalizzabile: molteplicità geometrica = algebrica, quindi \(\dim E_0=2\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame febbraio 2025, Q12">
+    <p>Sia data una struttura di spazio euclideo su \(\mathbb R^n\).</p>
+    <ol class="opzioni"><li>\(L(\mathbf v)=\|\mathbf v\|^2\) è lineare</li><li>\(L(\mathbf v)=\|\mathbf v\|\) è lineare</li><li>\(p(\mathbf v)=\|\mathbf v\|^2\) è una forma quadratica</li><li>\(p(\mathbf v)=\|\mathbf v\|\) è una forma quadratica</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sulle forme bilineari e quadratiche, non ancora trattato a lezione.</p>
+      <p>\(\|\mathbf v\|^2=\sum_{i,j}\langle\mathbf e_i,\mathbf e_j\rangle x_ix_j\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+</section>
+
+<section class="sec" id="esami-quiz-2506">
+  <h2>Quiz d'esame · giugno 2025</h2>
+  <p class="lead">Tema con soluzioni ufficiali (risposte segnate dal docente), ricontrollate con calcolo simbolico.</p>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame giugno 2025, Q1">
+    <p>Dati \(h,k\in\mathbb R\), il sistema \(\begin{cases}x-ky+z=1+h\\x-y=1\\x-y+hz=k\end{cases}\)</p>
+    <ol class="opzioni"><li>ammette sempre soluzioni</li><li>ammette soluzioni se e solo se \((h,k)=(0,1)\)</li><li>ammette soluzioni se \(h\ne0\) e \(k\ne1\)</li><li>non ammette infinite soluzioni per alcun \(h,k\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Se \(h\ne0\) e \(k\ne1\) la matrice dei coefficienti ha rango 3: soluzione unica. A è falsa (\(h=k=0\): incompatibile), B è falsa (es. \(h=2,k=3\)), D è falsa (\((h,k)=(0,1)\) dà infinite soluzioni).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame giugno 2025, Q2">
+    <p>Data \(A\in\mathrm{Mat}(4,3)\)</p>
+    <ol class="opzioni"><li>se le colonne sono indipendenti lo sono anche le righe</li><li>se le righe sono dipendenti lo sono anche le colonne</li><li>se tutti i minori \(3\times3\) sono nulli allora \(\mathrm{rk}A=2\)</li><li>se \(\mathrm{rk}A=3\) almeno un minore \(2\times2\) è non nullo</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo dei determinanti, non ancora trattato a lezione.</p>
+      <p>Con \(\mathrm{rk}A=3\) c'è un minore \(3\times3\) non nullo; sviluppando con Laplace, anche un minore \(2\times2\) è non nullo.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame giugno 2025, Q3">
+    <p>Siano \(V=\mathbb R[t]_{\le3}\) e \(W=\{p\in V: p(-1)=p(0)=p(1)=0,\ p'(0)=1\}\).</p>
+    <ol class="opzioni"><li>\(W\) non è un sottospazio vettoriale di \(V\)</li><li>\(W=\varnothing\)</li><li>\(W\) è un sottospazio e \(\dim W=0\)</li><li>nessuna delle altre risposte è corretta</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Il polinomio nullo non soddisfa \(p'(0)=1\). (\(W\) non è vuoto: contiene \(t-t^3\).)</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame giugno 2025, Q4">
+    <p>Sia \(f:\mathbb R[t]_{\le2}\to\mathbb R[t]_{\le2}\) rappresentato rispetto a \(\{1+t^2,\ t,\ 1-t^2\}\) dalla matrice \(\begin{pmatrix}1&amp;0&amp;1\\0&amp;1&amp;0\\-1&amp;0&amp;-1\end{pmatrix}\).</p>
+    <ol class="opzioni"><li>\(\mathrm{Im}f=\mathbb R[t]_{\le2}\)</li><li>\(\ker f=\mathrm{Span}(t^2)\)</li><li>\(\mathbb R[t]_{\le2}=\ker f+\mathrm{Im}f\)</li><li>\(\ker f\cap\mathrm{Im}f=\{0\}\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>La matrice ha rango 2 e nucleo \(\mathrm{Span}((1,0,-1)^\top)\), che corrisponde a \((1+t^2)-(1-t^2)=2t^2\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame giugno 2025, Q5">
+    <p>Sia \(f:\mathrm{Mat}(2,3)\to\mathrm{Mat}(3,3)\) lineare con \(\ker f=\mathrm{Span}\left(\begin{pmatrix}1&amp;1&amp;1\\1&amp;1&amp;1\end{pmatrix},\begin{pmatrix}-1&amp;0&amp;1\\1&amp;0&amp;-1\end{pmatrix},\begin{pmatrix}2&amp;1&amp;0\\0&amp;1&amp;2\end{pmatrix}\right)\).</p>
+    <ol class="opzioni"><li>\(\dim\mathrm{Im}f=3\)</li><li>\(\dim\mathrm{Im}f=4\)</li><li>\(\dim\mathrm{Im}f=6\)</li><li>\(\dim\mathrm{Im}f=9\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>La terza matrice è la differenza delle prime due, che sono indipendenti: \(\dim\ker f=2\) e \(\dim\mathrm{Im}f=6-2=4\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame giugno 2025, Q6">
+    <p>Sia \(A\in\mathrm{Mat}(4,4)\) con \(\chi_A(x)=x(x-1)(x+1)^2\).</p>
+    <ol class="opzioni"><li>\(A\) non è diagonalizzabile</li><li>\(A\) è invertibile</li><li>\(\dim\mathrm{col}(A)&lt;4\)</li><li>\(\mathrm{tr}A=0\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su autovalori, autospazi e diagonalizzazione, non ancora trattato a lezione.</p>
+      <p>0 è autovalore, quindi \(\ker A\ne\{\mathbf 0\}\) e \(\mathrm{rk}A&lt;4\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame giugno 2025, Q7">
+    <p>Trovare l'equazione del piano per \((1,0,-1)\) parallelo alle rette \((0,1,0)+\mathrm{Span}(1,1,1)\) e \((1,0,1)+\mathrm{Span}(1,-1,1)\).</p>
+    <ol class="opzioni"><li>\(x+z=0\)</li><li>\(x+y+z=0\)</li><li>\(y-1=0\)</li><li>\(x-z-2=0\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sulla geometria affine ed euclidea, non ancora trattato a lezione.</p>
+      <p>Giacitura \(\mathrm{Span}((1,1,1),(1,-1,1))=\{x-z=0\}\); il piano \(x-z=2\) passa per \((1,0,-1)\).</p>
+      <div class="box box--warn"><div class="tag">Errore nella soluzione ufficiale</div> Nel PDF delle soluzioni manca il segno di spunta su questa domanda; la spiegazione ufficiale indica comunque (d).</div>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame giugno 2025, Q8">
+    <p>Sia \(A_h=\begin{pmatrix}1&amp;1+h^2\\2&amp;5h\end{pmatrix}\) e \(\langle\mathbf v,\mathbf w\rangle=\mathbf v^\top A_h\mathbf w\) in \(\mathbb R^2\).</p>
+    <ol class="opzioni"><li>non è un prodotto scalare per alcun \(h\)</li><li>è un prodotto scalare per un unico \(h\)</li><li>è un prodotto scalare per più di un valore di \(h\)</li><li>è un prodotto scalare per ogni \(h\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sugli spazi euclidei (prodotto scalare, ortogonalità, isometrie), non ancora trattato a lezione.</p>
+      <p>Simmetrica solo per \(h=\pm1\); per \(h=1\) è definita positiva, per \(h=-1\) no.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame giugno 2025, Q9">
+    <p>Quante isometrie \(f:\mathbb R^3\to\mathbb R^3\) soddisfano \(f(\mathbf e_1+\mathbf e_2)=\mathbf e_3\) e \(f(\mathbf e_1-\mathbf e_2)=\mathbf e_1-\mathbf e_2\)?</p>
+    <ol class="opzioni"><li>nessuna</li><li>una</li><li>due</li><li>infinite</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sugli spazi euclidei (prodotto scalare, ortogonalità, isometrie), non ancora trattato a lezione.</p>
+      <p>\(\|\mathbf e_1+\mathbf e_2\|=\sqrt2\ne1=\|\mathbf e_3\|\): la norma non è conservata.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame giugno 2025, Q10">
+    <p>Sia \(A\in\mathrm{Mat}(4,4)\) simmetrica con autovalori \(\pm1\) e \(E_1=\{x+y+z+w=0\}\).</p>
+    <ol class="opzioni"><li>\(E_{-1}=\mathrm{Span}((1,1,1,1)^\top)\)</li><li>\(E_{-1}=\mathrm{Span}((1,1,0,0)^\top,(0,0,1,1)^\top,(1,1,1,1)^\top)\)</li><li>\(E_{-1}=\mathrm{Span}((1,-1,0,0)^\top,(0,0,1,-1)^\top)\)</li><li>non è possibile determinare \(E_{-1}\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sugli spazi euclidei (prodotto scalare, ortogonalità, isometrie), non ancora trattato a lezione.</p>
+      <p>Per il teorema spettrale \(E_{-1}=E_1^\perp\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame giugno 2025, Q11">
+    <p>Sia \(A=(C_1,C_2,C_3)\in\mathrm{Mat}(3,3)\).</p>
+    <ol class="opzioni"><li>\(\det(C_1,C_2+C_3,C_2)=\det A\)</li><li>\(\det(C_1,C_2+C_3,C_2)=2\det A\)</li><li>\(\det(C_1,C_2+C_3,C_2)=0\)</li><li>\(\det(C_1,C_2+C_3,C_2)=-\det A\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo dei determinanti, non ancora trattato a lezione.</p>
+      <p>\(\det(C_1,C_2+C_3,C_2)=\det(C_1,C_3,C_2)=-\det A\).</p>
+      <div class="box box--warn"><div class="tag">Errore nella soluzione ufficiale</div> La spiegazione ufficiale scrive «det(C1, C3, C2) = −det(C1, C3, C2)»: il secondo membro va letto −det(C1, C2, C3). La risposta (d) è corretta.</div>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame giugno 2025, Q12">
+    <p>La conica \(x^2+2xy+y^2+2y+1=0\) è</p>
+    <ol class="opzioni"><li>un'iperbole</li><li>una circonferenza</li><li>una parabola</li><li>un'unione di due rette</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su coniche e quadriche, non ancora trattato a lezione.</p>
+      <p>\((x+y)^2+(2y+1)=0\): con un cambio affine diventa \(y'=x'^2\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+</section>
+
+<section class="sec" id="esami-quiz-2507">
+  <h2>Quiz d'esame · luglio 2025</h2>
+  <p class="lead">Tema con soluzioni ufficiali (risposte segnate dal docente), ricontrollate con calcolo simbolico.</p>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame luglio 2025, Q1">
+    <p>L'angolo tra le rette \(r_1: x+y-1=z=0\) e \(r_2: x-1=y-z=0\) di \(\mathbb R^3\) è</p>
+    <ol class="opzioni"><li>\(\pi/2\)</li><li>\(\pi/3\)</li><li>\(\pi/4\)</li><li>\(\pi/6\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sulla geometria affine ed euclidea, non ancora trattato a lezione.</p>
+      <p>Direzioni \((-1,1,0)\) e \((0,1,1)\): \(\cos\theta=\tfrac12\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame luglio 2025, Q2">
+    <p>Quale \(f:\mathrm{Mat}(2,2)\to\mathrm{Mat}(2,2)\) è lineare?</p>
+    <ol class="opzioni"><li>\(f\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}=\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}\)</li><li>\(f\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}=\begin{pmatrix}a+1&amp;b\\c&amp;d-1\end{pmatrix}\)</li><li>\(f\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}=\begin{pmatrix}a&amp;a-b\\c+d&amp;c\end{pmatrix}\)</li><li>\(f\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}=\begin{pmatrix}a^2+bc&amp;ab+bd\\ca+dc&amp;cb+d^2\end{pmatrix}\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Le entrate di C sono combinazioni lineari di \(a,b,c,d\). A e B non mandano 0 in 0, D è \(M\mapsto M^2\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame luglio 2025, Q3">
+    <p>L'insieme dei \(\mathbf v\in\mathbb R^3\) con \(v_1^2-v_2^2=0\)</p>
+    <ol class="opzioni"><li>è un sottospazio di \(\mathbb R^3\)</li><li>è chiuso rispetto al prodotto per uno scalare</li><li>è chiuso rispetto alla somma</li><li>è contenuto in un sottospazio di dimensione 2</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\((cv_1)^2-(cv_2)^2=c^2(v_1^2-v_2^2)\). Non è chiuso per la somma: \((1,1,0)+(1,-1,0)=(2,0,0)\). Contiene \((1,1,0),(1,-1,0),(0,0,1)\), che generano \(\mathbb R^3\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame luglio 2025, Q4">
+    <p>In uno spazio euclideo siano \(\mathbf v,\mathbf w\) di norma 1.</p>
+    <ol class="opzioni"><li>\(\|\mathbf v-\mathbf w\|=0\)</li><li>\(\|\mathbf v+\mathbf w\|\ge1\)</li><li>\(\|\mathbf v-\mathbf w\|\le1\)</li><li>\(\|\mathbf v+\mathbf w\|\le2\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sugli spazi euclidei (prodotto scalare, ortogonalità, isometrie), non ancora trattato a lezione.</p>
+      <p>Disuguaglianza triangolare.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame luglio 2025, Q5">
+    <p>Un'applicazione lineare da \(\mathbb R[x]_{\le10}\) a \(\mathrm{Mat}(2,5)\)</p>
+    <ol class="opzioni"><li>non è iniettiva</li><li>è suriettiva</li><li>può essere invertibile</li><li>nessuna delle altre risposte è corretta</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(\dim\mathbb R[x]_{\le10}=11&gt;10=\dim\mathrm{Mat}(2,5)\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame luglio 2025, Q6">
+    <p>Le matrici \(A=\begin{pmatrix}1&amp;1\\0&amp;0\end{pmatrix}\), \(B=\begin{pmatrix}1&amp;0\\1&amp;0\end{pmatrix}\)</p>
+    <ol class="opzioni"><li>commutano rispetto al prodotto</li><li>soddisfano \(B=A^{-1}\)</li><li>soddisfano \(\mathrm{rk}(AB)=2\)</li><li>sono simili</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su autovalori, autospazi e diagonalizzazione, non ancora trattato a lezione.</p>
+      <p>Entrambe diagonalizzabili con autovalori 0 e 1, quindi simili a \(\mathrm{diag}(1,0)\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame luglio 2025, Q7">
+    <p>Date \(A,B\in\mathrm{Mat}(4,4)\) e \(t\in\mathbb R\), vale</p>
+    <ol class="opzioni"><li>\(\mathrm{tr}(-A)=\mathrm{tr}A\)</li><li>\(\mathrm{tr}(A^{-1})=(\mathrm{tr}A)^{-1}\)</li><li>\(\mathrm{tr}(tA)=t\,\mathrm{tr}A\)</li><li>\(\mathrm{tr}(AB)=\mathrm{tr}A\,\mathrm{tr}B\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>La traccia è lineare.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame luglio 2025, Q8">
+    <p>Una forma parametrica del sottospazio affine \((3,0)+t(-2,1)\) di \(\mathbb R^2\) è:</p>
+    <ol class="opzioni"><li>\(-2x+y+3=0\)</li><li>\(x+2y+3=0\)</li><li>\(-x+2y+3=0\)</li><li>nessuna delle altre risposte è corretta</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sulla geometria affine ed euclidea, non ancora trattato a lezione.</p>
+      <p>La retta è \(x+2y-3=0\); nessuna delle equazioni proposte è soddisfatta da \((3-2t,t)\) per ogni \(t\). (Il testo dice «forma parametrica» ma le opzioni sono equazioni cartesiane.)</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame luglio 2025, Q9">
+    <p>Sia \(A\in\mathrm{Mat}(2,2)\) ortogonale e simmetrica. Allora \(A^3\)</p>
+    <ol class="opzioni"><li>è la matrice identità</li><li>è uguale ad \(A\)</li><li>soddisfa \(A^3=-(A^3)^\top\)</li><li>non è invertibile</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sugli spazi euclidei (prodotto scalare, ortogonalità, isometrie), non ancora trattato a lezione.</p>
+      <p>\(A^\top=A^{-1}=A\), quindi \(A^2=I\) e \(A^3=A\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame luglio 2025, Q10">
+    <p>Coordinate di \(5+x+5x^2+4x^3\) rispetto a \(\mathcal B=\{1+2x^2+x^3,\ x+x^2,\ 3-x^3,\ x^3\}\):</p>
+    <ol class="opzioni"><li>\((1,2,-3,1)^\top\)</li><li>\((1,-2,3,0)^\top\)</li><li>\((2,1,1,3)^\top\)</li><li>\((-1,2,-3,0)^\top\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(2(1+2x^2+x^3)+(x+x^2)+(3-x^3)+3x^3=5+x+5x^2+4x^3\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame luglio 2025, Q11">
+    <p>Dati \(U=\{x+y+z=0\}\) e \(V=\mathrm{Span}(\mathbf e_1-\mathbf e_2,\mathbf e_1-\mathbf e_3,\mathbf e_2-\mathbf e_3)\) in \(\mathbb R^3\):</p>
+    <ol class="opzioni"><li>\(\dim(U\cap V)=0\)</li><li>\(\dim(U\cap V)=1\)</li><li>\(\dim(U\cap V)=2\)</li><li>\(\dim(U\cap V)=3\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>I generatori di \(V\) soddisfano l'equazione di \(U\) e due di essi sono indipendenti: \(V=U\), di dimensione 2.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame luglio 2025, Q12">
+    <p>In \(\mathrm{Mat}(2,2)\), matrice del cambio di base da \(\mathcal B=\left\{\begin{pmatrix}1&amp;0\\0&amp;0\end{pmatrix},\begin{pmatrix}0&amp;1\\0&amp;0\end{pmatrix},\begin{pmatrix}0&amp;0\\1&amp;0\end{pmatrix},\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}\right\}\) a \(\mathcal C=\left\{\begin{pmatrix}2&amp;0\\0&amp;0\end{pmatrix},\begin{pmatrix}1&amp;1\\0&amp;0\end{pmatrix},\begin{pmatrix}-1&amp;0\\1&amp;0\end{pmatrix},\begin{pmatrix}-1&amp;0\\0&amp;1\end{pmatrix}\right\}\):</p>
+    <ol class="opzioni"><li>\(\begin{pmatrix}1/2&amp;-1/2&amp;1/2&amp;1\\0&amp;1&amp;0&amp;0\\0&amp;0&amp;1&amp;0\\0&amp;0&amp;0&amp;1\end{pmatrix}\)</li><li>\(\begin{pmatrix}1&amp;-1&amp;1&amp;1\\0&amp;1/2&amp;0&amp;0\\0&amp;0&amp;1/2&amp;0\\0&amp;0&amp;0&amp;1\end{pmatrix}\)</li><li>\(\begin{pmatrix}1&amp;0&amp;0&amp;1\\0&amp;1/2&amp;0&amp;0\\0&amp;0&amp;1/2&amp;0\\0&amp;0&amp;0&amp;3\end{pmatrix}\)</li><li>\(\begin{pmatrix}2&amp;0&amp;0&amp;1\\0&amp;1/2&amp;0&amp;0\\0&amp;0&amp;1&amp;0\\0&amp;0&amp;0&amp;3\end{pmatrix}\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Le colonne sono le coordinate rispetto a \(\mathcal C\) delle matrici di \(\mathcal B\): ad esempio \(E_{12}=C_2-\tfrac12C_1\), \(E_{11}+E_{22}=C_1+C_4\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+</section>
+
+<section class="sec" id="esami-quiz-2509">
+  <h2>Quiz d'esame · settembre 2025</h2>
+  <p class="lead">Tema con soluzioni ufficiali (risposte segnate dal docente), ricontrollate con calcolo simbolico.</p>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame settembre 2025, Q1">
+    <p>Il sistema \(\begin{cases}x+y=1\\x-3y=5\\x-y=3\end{cases}\)</p>
+    <ol class="opzioni"><li>non ammette soluzioni</li><li>ammette un'unica soluzione</li><li>ammette due soluzioni</li><li>ammette infinite soluzioni</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(\mathrm{rk}A=\mathrm{rk}(A|\mathbf b)=2\) = numero di incognite: unica soluzione \((2,-1)\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame settembre 2025, Q2">
+    <p>Sia \(r: x+y=x-y=1\) in \(\mathbb R^3\). Il piano per \((1,0,0)\) ortogonale a \(r\) ha equazione</p>
+    <ol class="opzioni"><li>\(z=0\)</li><li>\(x=1\)</li><li>\(y=0\)</li><li>\(x-1=y=0\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sulla geometria affine ed euclidea, non ancora trattato a lezione.</p>
+      <p>La giacitura di \(r\) è \(\mathrm{Span}(\mathbf e_3)\), quindi il piano è \(z=0\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame settembre 2025, Q3">
+    <p>Sia \(\mathcal B=(1+x^2,\ x,\ x+x^2)\) base di \(\mathbb R[x]_{\le2}\). Il polinomio con \([p]_{\mathcal B}=(1,2,3)^\top\) è</p>
+    <ol class="opzioni"><li>\(x^2+5x+4\)</li><li>\(x^2+2x+3\)</li><li>\(1+2x+3x^2\)</li><li>\(1+5x+4x^2\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(1(1+x^2)+2x+3(x+x^2)=1+5x+4x^2\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame settembre 2025, Q4">
+    <p>Sia \(L:\mathbb R^3\to\mathrm{Mat}(2,2)\), \(L(x,y,z)=\begin{pmatrix}0&amp;x\\x+y&amp;x+y+z\end{pmatrix}\).</p>
+    <ol class="opzioni"><li>\(L\) è suriettiva e iniettiva</li><li>\(L\) è suriettiva ma non iniettiva</li><li>\(L\) è un isomorfismo</li><li>nessuna delle precedenti</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>L'immagine contiene solo matrici con prima entrata 0 (e comunque \(3&lt;4\)): non è suriettiva. È iniettiva.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame settembre 2025, Q5">
+    <p>Quale è un'applicazione lineare da \(\mathbb R^2\) in \(\mathbb R\)?</p>
+    <ol class="opzioni"><li>\(L(x,y)=x^2-3y\)</li><li>\(L(x,y)=x+y+1\)</li><li>\(L(x,y)=x+7y\)</li><li>\(L(x,y)=|x|-y\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>È \(T_A\) con \(A=(1\ \ 7)\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame settembre 2025, Q6">
+    <p>Sia \(\mathcal B=((1,0,0)^\top,(1,2,0)^\top,(1,2,3)^\top)\) e \(L:\mathbb R^3\to\mathbb R^3\) con \(M_L^{\mathcal B,\mathcal B}=\begin{pmatrix}1&amp;2&amp;3\\0&amp;1&amp;2\\0&amp;0&amp;1\end{pmatrix}\).</p>
+    <ol class="opzioni"><li>\(L(0,0,3)^\top=(3,4,3)^\top\)</li><li>\(L(0,0,3)^\top=(9,6,3)^\top\)</li><li>\(L(0,0,3)^\top=(0,0,3)^\top\)</li><li>nessuna delle altre affermazioni è corretta</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\([(0,0,3)^\top]_{\mathcal B}=(0,-1,1)^\top\); \(M(0,-1,1)^\top=(1,1,1)^\top\), quindi \(L(0,0,3)^\top=(1,0,0)+(1,2,0)+(1,2,3)=(3,4,3)\) (Teorema 5.2).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Esame settembre 2025, Q7">
+    <p>Data \(A\in\mathrm{Mat}(2,2)\)</p>
+    <ol class="opzioni"><li>se \(\mathrm{tr}A=0\) allora \(\det A=0\)</li><li>se \(\det A=0\) allora \(\mathrm{tr}A=0\)</li><li>se \(\det A=0\) e \(\mathrm{tr}A\ne0\), allora \(A\) è diagonalizzabile</li><li>se \(\det A\ne0\) e \(\mathrm{tr}A=0\), allora \(A\) è diagonalizzabile</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su autovalori, autospazi e diagonalizzazione, non ancora trattato a lezione.</p>
+      <p>\(\chi_A=x^2-\mathrm{tr}(A)x\) ha due radici distinte \(0\) e \(\mathrm{tr}A\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame settembre 2025, Q8">
+    <p>Siano \(\mathcal B=\{\mathbf e_1+\mathbf e_2+\mathbf e_3,\ \mathbf e_1+\mathbf e_2,\ \mathbf e_2+\mathbf e_3\}\) e \(\mathcal C=\{\mathbf e_2,\mathbf e_3,\mathbf e_1\}\). La matrice del cambio di base da \(\mathcal B\) a \(\mathcal C\) è</p>
+    <ol class="opzioni"><li>\(\begin{pmatrix}1&amp;0&amp;1\\1&amp;1&amp;1\\1&amp;1&amp;0\end{pmatrix}\)</li><li>\(\begin{pmatrix}1&amp;1&amp;1\\1&amp;0&amp;1\\1&amp;1&amp;0\end{pmatrix}\)</li><li>\(\begin{pmatrix}1&amp;1&amp;0\\1&amp;0&amp;1\\1&amp;1&amp;1\end{pmatrix}\)</li><li>\(\begin{pmatrix}0&amp;1&amp;0\\1&amp;0&amp;1\\1&amp;1&amp;0\end{pmatrix}\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Colonne \([\mathbf e_1+\mathbf e_2+\mathbf e_3]_{\mathcal C}=(1,1,1)\), \([\mathbf e_1+\mathbf e_2]_{\mathcal C}=(1,0,1)\), \([\mathbf e_2+\mathbf e_3]_{\mathcal C}=(1,1,0)\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame settembre 2025, Q9">
+    <p>Quale matrice è simile ad \(A=\begin{pmatrix}1&amp;-2\\1&amp;4\end{pmatrix}\)?</p>
+    <ol class="opzioni"><li>\(\begin{pmatrix}3&amp;1\\1&amp;2\end{pmatrix}\)</li><li>\(\begin{pmatrix}2&amp;0\\0&amp;3\end{pmatrix}\)</li><li>\(\begin{pmatrix}1&amp;-2\\-2&amp;4\end{pmatrix}\)</li><li>nessuna delle precedenti</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su autovalori, autospazi e diagonalizzazione, non ancora trattato a lezione.</p>
+      <p>\(A\) ha autovalori distinti 2 e 3, quindi è diagonalizzabile e simile a \(\mathrm{diag}(2,3)\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Esame settembre 2025, Q10">
+    <p>Sia \(A\in\mathrm{Mat}(3,3)\) simmetrica con \(\mathrm{rk}A=2\) e un autospazio \(\mathrm{Span}((1,2,3)^\top,(0,1,2)^\top)\). Quale vettore sta in \(\ker A\)?</p>
+    <ol class="opzioni"><li>\((1,-2,1)^\top\)</li><li>\((0,0,1)^\top\)</li><li>\((1,1,1)^\top\)</li><li>\((1,3,5)^\top\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sugli spazi euclidei (prodotto scalare, ortogonalità, isometrie), non ancora trattato a lezione.</p>
+      <p>\(\ker A\) è un autospazio di dimensione 1, ortogonale all'altro (teorema spettrale): \((1,-2,1)\) è ortogonale a entrambi i generatori.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Esame settembre 2025, Q11">
+    <p>La segnatura di \(q(x,y)=x^2-2xy-2y^2\) è</p>
+    <ol class="opzioni"><li>\((1,0,1)\)</li><li>\((2,0,0)\)</li><li>\((0,2,0)\)</li><li>\((1,1,0)\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo sulle forme bilineari e quadratiche, non ancora trattato a lezione.</p>
+      <p>\(q(1,0)&gt;0\), \(q(0,1)&lt;0\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Esame settembre 2025, Q12">
+    <p>La conica \(C: x^2+y^2+2x+1=0\)</p>
+    <ol class="opzioni"><li>non ammette centro</li><li>ammette un unico centro</li><li>ha infiniti centri</li><li>nessuna delle precedenti</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Argomento del capitolo su coniche e quadriche, non ancora trattato a lezione.</p>
+      <p>\((x+1)^2+y^2=0\): rette immaginarie incidenti, centro \((-1,0)\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+</section>
 <section class="sec" id="esami-quiz-2601">
   <h2>Quiz d'esame · 20 gennaio 2026</h2>
   <p class="lead">GAL-2526-01, versione A. Q1 = recupero della 1ª prova in itinere (capitoli 1–5), Q2 = 2ª prova in itinere. Nessuna soluzione ufficiale: risposte nostre, verificate con calcolo simbolico.</p>
@@ -571,107 +1766,6 @@
     <ol class="opzioni"><li>lo stesso polinomio caratteristico e lo stesso rango</li><li>le stesse entrate sulla diagonale</li><li>lo stesso polinomio caratteristico ma possono avere rango diverso</li><li>gli stessi autovettori</li></ol>
     <details class="sol"><summary>Spiegazione</summary>
       <p>Se \(B=P^{-1}AP\), allora \(\chi_B=\chi_A\) e \(\mathrm{rk}B=\mathrm{rk}A\) (moltiplicare per matrici invertibili non cambia il rango). Gli autovettori invece cambiano: \(\mathbf v\) autovettore di \(A\) dà \(P^{-1}\mathbf v\) per \(B\).</p>
-    </details>
-  </div>
-</section>
-
-<section class="sec" id="esami-quiz-2501">
-  <h2>Quiz d'esame · gennaio 2025</h2>
-  <p class="lead">GAL-2425-01. Questo tema ha le soluzioni ufficiali: le risposte coincidono con quelle segnate dal docente e sono state ricontrollate con calcolo simbolico.</p>
-
-  <div class="quiz" data-risposta="B" data-fonte="Esame gennaio 2025, Q1">
-    <p>Il sistema lineare con matrice completa \((A,\mathbf b)=\left(\begin{array}{ccc|c}1&amp;k&amp;0&amp;1\\k&amp;0&amp;0&amp;-1\\1&amp;0&amp;-1&amp;0\\0&amp;1&amp;0&amp;2k\end{array}\right)\)</p>
-    <ol class="opzioni"><li>ammette unica soluzione per \(k\ne1\)</li><li>ammette unica soluzione per \(k=1\)</li><li>ammette infinite soluzioni per \(k=1\)</li><li>ammette soluzione per ogni \(k\in\mathbb R\)</li></ol>
-    <details class="sol"><summary>Spiegazione</summary>
-      <p>Riducendo a scala si arriva all'ultima riga \((0\ 0\ 0\mid -1-k+2k^3)\), mentre \(\mathrm{rk}A=3\) per ogni \(k\). Si ha \(2k^3-k-1=(k-1)(2k^2+2k+1)\), che si annulla solo per \(k=1\) (il secondo fattore ha discriminante negativo). Per \(k=1\): \(\mathrm{rk}A=\mathrm{rk}(A|\mathbf b)=3=\) numero di incognite, quindi una sola soluzione; per \(k\ne1\) nessuna.</p>
-    </details>
-  </div>
-
-  <div class="quiz" data-risposta="B" data-fonte="Esame gennaio 2025, Q2">
-    <p>Siano \(A\in\mathrm{Mat}(3,3)\) e \(B\in\mathrm{Mat}(3,1)\). Allora</p>
-    <ol class="opzioni"><li>\(AB\in\mathrm{Mat}(1,3)\)</li><li>\(AB\in\mathrm{Mat}(3,1)\)</li><li>\(A+B\in\mathrm{Mat}(3,3)\)</li><li>nessuna delle precedenti</li></ol>
-    <details class="sol"><summary>Spiegazione</summary>
-      <p>Il prodotto \((3\times3)\cdot(3\times1)\) è \(3\times1\). La somma di matrici di formati diversi non è definita.</p>
-    </details>
-  </div>
-
-  <div class="quiz" data-risposta="A" data-fonte="Esame gennaio 2025, Q3">
-    <p>Siano \(V=\mathbb R[t]_{\le3}\), \(W=\mathrm{Mat}(2,2)\) e \(L(a_0+a_1t+a_2t^2+a_3t^3)=\begin{pmatrix}a_0&amp;a_1\\a_2&amp;a_3\end{pmatrix}\). Allora \(L\)</p>
-    <ol class="opzioni"><li>è un isomorfismo</li><li>è iniettiva, ma non suriettiva</li><li>è suriettiva, ma non iniettiva</li><li>nessuna delle precedenti</li></ol>
-    <details class="sol"><summary>Spiegazione</summary>
-      <p>\(L(p)=0\) solo se tutti i coefficienti sono nulli: \(\ker L=\{0\}\). Per il Teorema della dimensione \(\dim\mathrm{Im}L=4=\dim W\), quindi \(L\) è anche suriettiva.</p>
-    </details>
-  </div>
-
-  <div class="quiz" data-risposta="D" data-fonte="Esame gennaio 2025, Q4">
-    <p>Sia \(A=(C_1,C_2,C_3)\) con colonne \(C_i\). Allora</p>
-    <ol class="opzioni"><li>\(\det(C_1+C_2,C_2,C_3+C_1)=-\det A\)</li><li>\(\det(C_1+C_2,C_2,C_3+C_1)=(\det A)^2\)</li><li>\(\det(C_1+C_2,C_2,C_3+C_1)=2\det A\)</li><li>\(\det(C_1+C_2,C_2,C_3+C_1)=\det A\)</li></ol>
-    <details class="sol"><summary>Spiegazione</summary>
-      <p>\(\det(C_1+C_2,C_2,C_3+C_1)=\det(C_1,C_2,C_3+C_1)=\det(C_1,C_2,C_3)\): ogni passo sottrae a una colonna un'altra colonna.</p>
-    </details>
-  </div>
-
-  <div class="quiz" data-risposta="C" data-fonte="Esame gennaio 2025, Q5">
-    <p>Sia \(f:\mathbb R^2\to\mathbb R^2\) lineare con \(f(0,1)=(1,0)\) e \(f(1,2)=(3,4)\).</p>
-    <ol class="opzioni"><li>\(f(1,0)=(0,1)\)</li><li>\(f(1,0)=(4,1)\)</li><li>\(f(1,0)=(1,4)\)</li><li>Non abbiamo abbastanza informazioni per calcolare \(f(1,0)\)</li></ol>
-    <details class="sol"><summary>Spiegazione</summary>
-      <p>\((1,0)=(1,2)-2(0,1)\), quindi \(f(1,0)=(3,4)-2(1,0)=(1,4)\). (I due vettori dati formano una base, quindi \(f\) è determinata: Teorema 4.18.)</p>
-    </details>
-  </div>
-
-  <div class="quiz" data-risposta="B" data-fonte="Esame gennaio 2025, Q6">
-    <p>Date \(A=\begin{pmatrix}1&amp;1&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;2\end{pmatrix}\) e \(B=\begin{pmatrix}1&amp;0&amp;0\\0&amp;1&amp;1\\0&amp;0&amp;2\end{pmatrix}\):</p>
-    <ol class="opzioni"><li>hanno lo stesso polinomio caratteristico e sono simili</li><li>hanno lo stesso polinomio caratteristico, ma non sono simili</li><li>sono entrambe diagonalizzabili</li><li>sono una l'inversa dell'altra</li></ol>
-    <details class="sol"><summary>Spiegazione</summary>
-      <p>Entrambe triangolari con diagonale \(1,1,2\): stesso \(\chi\). Ma \(\dim E_1^A=1\) e \(\dim E_1^B=2\): \(B\) è diagonalizzabile, \(A\) no, quindi non sono simili.</p>
-    </details>
-  </div>
-
-  <div class="quiz" data-risposta="A" data-fonte="Esame gennaio 2025, Q7">
-    <p>Sia \(h\in\mathbb R\) e \(A=\begin{pmatrix}2&amp;0&amp;1\\0&amp;2&amp;0\\h^2&amp;0&amp;0\end{pmatrix}\).</p>
-    <ol class="opzioni"><li>Se \(h=\pm1\), allora gli autospazi sono ortogonali</li><li>Se \(A\) è diagonalizzabile, allora \(h=\pm1\)</li><li>Se \(h=0\), allora autovettori relativi ad autovalori distinti sono ortogonali</li><li>Se \(h=0\), allora autovettori linearmente indipendenti sono relativi ad autovalori distinti</li></ol>
-    <details class="sol"><summary>Spiegazione</summary>
-      <p>Per \(h=\pm1\) la matrice è simmetrica e il teorema spettrale garantisce autospazi ortogonali. B è falsa (per esempio \(h=2\) dà tre autovalori distinti \(2, 1\pm\sqrt5\)); per \(h=0\) la matrice non è simmetrica e C, D falliscono.</p>
-    </details>
-  </div>
-
-  <div class="quiz" data-risposta="D" data-fonte="Esame gennaio 2025, Q8">
-    <p>In uno spazio euclideo, \(\|\mathbf v\|=1\), \(\|\mathbf w\|=2\) e \(\mathbf v\perp\mathbf w\). Allora</p>
-    <ol class="opzioni"><li>\(\|2\mathbf v-3\mathbf w\|=\sqrt3\)</li><li>\(\|2\mathbf v-3\mathbf w\|=\sqrt2\)</li><li>\(\|2\mathbf v-3\mathbf w\|=\sqrt{20}\)</li><li>\(\|2\mathbf v-3\mathbf w\|=\sqrt{40}\)</li></ol>
-    <details class="sol"><summary>Spiegazione</summary>
-      <p>\(\|2\mathbf v-3\mathbf w\|^2=4\|\mathbf v\|^2-12\langle\mathbf v,\mathbf w\rangle+9\|\mathbf w\|^2=4+0+36=40\).</p>
-    </details>
-  </div>
-
-  <div class="quiz" data-risposta="C" data-fonte="Esame gennaio 2025, Q9">
-    <p>Distanza tra \(S=\{\mathbf x\in\mathbb R^3: x_1+x_2=x_2+x_3=0\}\) e \(\{(1,1,1)^\top+t(1,-1,1)^\top: t\in\mathbb R\}\):</p>
-    <ol class="opzioni"><li>0</li><li>\(\sqrt3\)</li><li>\(\frac{2\sqrt6}{3}\)</li><li>\(\frac83\)</li></ol>
-    <details class="sol"><summary>Spiegazione</summary>
-      <p>\(S=\mathrm{Span}\{(1,-1,1)^\top\}\): due rette parallele. La distanza è la norma della componente di \((1,1,1)\) ortogonale a \((1,-1,1)\): \((1,1,1)-\tfrac13(1,-1,1)=\tfrac23(1,2,1)\), di norma \(\tfrac23\sqrt6\).</p>
-    </details>
-  </div>
-
-  <div class="quiz" data-risposta="B" data-fonte="Esame gennaio 2025, Q10">
-    <p>In \(\mathbb R^3\) sia \(\langle\mathbf v,\mathbf w\rangle=\mathbf v^\top A\mathbf w\) con \(A=\begin{pmatrix}1&amp;0&amp;-1\\0&amp;1&amp;0\\-1&amp;0&amp;2\end{pmatrix}\).</p>
-    <ol class="opzioni"><li>la base canonica è ortogonale</li><li>\(\mathbf e_1\) ha norma 1</li><li>l'angolo tra \(\mathbf e_1\) e \(\mathbf e_3\) è \(\pi/4\)</li><li>non esiste una base ortonormale</li></ol>
-    <details class="sol"><summary>Spiegazione</summary>
-      <p>\(\|\mathbf e_1\|^2=a_{11}=1\). A è falsa (\(\langle\mathbf e_1,\mathbf e_3\rangle=-1\)); l'angolo tra \(\mathbf e_1\) ed \(\mathbf e_3\) ha coseno \(-1/\sqrt2\), cioè \(3\pi/4\) (C falsa); D è falsa per Gram–Schmidt.</p>
-    </details>
-  </div>
-
-  <div class="quiz" data-risposta="C" data-fonte="Esame gennaio 2025, Q11">
-    <p>La segnatura di \(q(x,y,z)=2x^2+4y^2+z^2+2xz-2yz\) è</p>
-    <ol class="opzioni"><li>\((2,1,0)\)</li><li>\((1,1,1)\)</li><li>\((3,0,0)\)</li><li>\((0,2,1)\)</li></ol>
-    <details class="sol"><summary>Spiegazione</summary>
-      <p>Matrice \(\begin{pmatrix}2&amp;0&amp;1\\0&amp;4&amp;-1\\1&amp;-1&amp;1\end{pmatrix}\) con \(\det=2&gt;0\) e traccia 7: le segnature possibili sono \((3,0,0)\) o \((1,2,0)\). I minori principali \(2, 8, 2\) sono tutti positivi: definita positiva, \((3,0,0)\).</p>
-    </details>
-  </div>
-
-  <div class="quiz" data-risposta="B" data-fonte="Esame gennaio 2025, Q12">
-    <p>Il luogo \(\gamma\) di equazione \(x^2+4y^2+4xy+2x-1=0\) (nel testo è scritto \(\gamma\subseteq\mathbb R^3\), ma va inteso nel piano)</p>
-    <ol class="opzioni"><li>è una coppia di rette incidenti</li><li>non ha un centro</li><li>è un'iperbole</li><li>non è una conica</li></ol>
-    <details class="sol"><summary>Spiegazione</summary>
-      <p>\(x^2+4xy+4y^2+2x-1=(x+2y)^2+2x-1\): è una parabola, che non ha centro (il vettore \((1,0)^\top\) dei termini lineari non sta nella colonna di \(\begin{pmatrix}1&amp;2\\2&amp;4\end{pmatrix}\)).</p>
     </details>
   </div>
 </section>

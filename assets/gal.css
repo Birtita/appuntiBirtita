@@ -236,3 +236,5 @@ body.hide-adv .box[data-imp="avanzato"], body.hide-adv .box[data-imp="molto-avan
 @media (max-width:640px){ mjx-container{font-size:.97em;} }
 .quiz-reset{margin-left:auto;}
 .ex-bar .count + .quiz-reset{margin-left:8px;}
+/* le celle della griglia non si allargano per le formule lunghe */
+.grid2 > *{min-width:0;}
