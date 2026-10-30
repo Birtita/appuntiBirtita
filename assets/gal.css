@@ -239,15 +239,15 @@ body.hide-adv .box[data-imp="avanzato"], body.hide-adv .box[data-imp="molto-avan
 /* le celle della griglia non si allargano per le formule lunghe */
 .grid2 > *{min-width:0;}
 
-/* bigino: stampa compatta */
+/* bigino e guida: stampa compatta */
 @media print{
-  body[data-page="bigino"]{font-size:10.5pt;}
-  body[data-page="bigino"] .hero{padding:0 0 8px;}
-  body[data-page="bigino"] section.sec{padding:10px 0; margin:0; break-inside:auto;}
-  body[data-page="bigino"] section.sec>.num{display:none;}
-  body[data-page="bigino"] .box{padding:8px 12px; margin:8px 0;}
-  body[data-page="bigino"] .grid2{gap:8px;}
-  body[data-page="bigino"] footer.foot{display:none;}
-  body[data-page="bigino"] tr{break-inside:avoid;}
-  body[data-page="bigino"] h2, body[data-page="bigino"] .lead{break-after:avoid;}
+  body[data-page="bigino"], body[data-page="guida"]{font-size:10.5pt;}
+  body[data-page="bigino"] .hero, body[data-page="guida"] .hero{padding:0 0 8px;}
+  body[data-page="bigino"] section.sec, body[data-page="guida"] section.sec{padding:10px 0; margin:0; break-inside:auto;}
+  body[data-page="bigino"] section.sec>.num, body[data-page="guida"] section.sec>.num{display:none;}
+  body[data-page="bigino"] .box, body[data-page="guida"] .box{padding:8px 12px; margin:8px 0;}
+  body[data-page="bigino"] .grid2, body[data-page="guida"] .grid2{gap:8px;}
+  body[data-page="bigino"] footer.foot, body[data-page="guida"] footer.foot{display:none;}
+  body[data-page="bigino"] tr, body[data-page="guida"] tr{break-inside:avoid;}
+  body[data-page="bigino"] h2, body[data-page="bigino"] .lead, body[data-page="guida"] h2, body[data-page="guida"] .lead{break-after:avoid;}
 }
