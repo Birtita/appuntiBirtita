@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bigino · Bigino per la 1ª prova (Cap. 0–5) — Geometria e Algebra Lineare</title>
+<meta name="description" content="Tutto il programma dei capitoli 0–5 in poche pagine: definizioni e teoremi chiave, metodi passo per passo, esercizi tipici d&#x27;esame e trappole dei quiz. Stampabile.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../assets/gal.css">
+<script>try{var t=localStorage.getItem('gal:theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body data-page="bigino">
+<header class="topbar">
+  <div class="in">
+    <button class="iconbtn menu-btn" id="menu-btn" aria-label="Apri l'indice" aria-expanded="false" aria-controls="side"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <nav class="crumbs" aria-label="Percorso">
+      <a href="../" class="hide-sm">Appunti</a><span class="sep hide-sm">/</span>
+      <a href="./">Geometria</a><span class="sep">/</span><span class="here">Bigino</span>
+    </nav>
+    <button class="iconbtn" id="theme-btn" aria-label="Cambia tema chiaro/scuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  </div>
+  <div class="readbar"></div>
+</header>
+<div class="page">
+  <header class="hero">
+    <span class="eyebrow">Bigino</span>
+    <h1>Bigino per la 1ª prova (Cap. 0–5)</h1>
+    <p class="sub">Tutto il programma dei capitoli 0–5 in poche pagine: definizioni e teoremi chiave, metodi passo per passo, esercizi tipici d&#x27;esame e trappole dei quiz. Stampabile.</p>
+    <div class="pillrow"><span class="pill">11 sezioni</span></div>
+  </header>
+  <div class="layout">
+    <aside class="side" id="side">
+      <div class="panel"><div class="panel-title">Capitoli</div><ol><li><a href="cap0.html"><span class="k">0</span>Fondamenti</a><div class="chap-progress" data-progress-page="cap0" data-total="21"><i></i></div></li><li><a href="cap1.html"><span class="k">1</span>Matrici e sistemi lineari</a><div class="chap-progress" data-progress-page="cap1" data-total="18"><i></i></div></li><li><a href="cap2.html"><span class="k">2</span>Spazi vettoriali su K</a><div class="chap-progress" data-progress-page="cap2" data-total="15"><i></i></div></li><li><a href="cap3.html"><span class="k">3</span>Calcolare in Kⁿ</a><div class="chap-progress" data-progress-page="cap3" data-total="10"><i></i></div></li><li><a href="cap4.html"><span class="k">4</span>Applicazioni lineari</a><div class="chap-progress" data-progress-page="cap4" data-total="11"><i></i></div></li><li><a href="cap5.html"><span class="k">5</span>Matrice associata</a><div class="chap-progress" data-progress-page="cap5" data-total="11"><i></i></div></li><li><a href="bigino.html" aria-current="page"><span class="k">·</span>Bigino per la 1ª prova (Cap. 0–5)</a></li><li><a href="esami.html"><span class="k">·</span>Preparazione all&#x27;esame</a><div class="chap-progress" data-progress-page="esami" data-total="16"><i></i></div></li><li><a href="anteprima.html"><span class="k">·</span>Argomenti non ancora fatti a lezione</a></li></ol></div>
+      <div class="panel"><div class="panel-title">In questa pagina</div><ol id="toc"><li><a href="#big-come"><span class="k">01</span>Come usare il bigino</a></li><li><a href="#big-cap0"><span class="k">02</span>Cap. 0 · Linguaggio: logica, insiemi, applicazioni, strutture</a></li><li><a href="#big-cap1"><span class="k">03</span>Cap. 1 · Matrici, Gauss, Rouché–Capelli</a></li><li><a href="#big-cap2"><span class="k">04</span>Cap. 2 · Spazi vettoriali, basi, dimensione</a></li><li><a href="#big-cap3"><span class="k">05</span>Cap. 3 · Calcolare in \(\mathbb K^n\): le ricette</a></li><li><a href="#big-coord"><span class="k">06</span>Polinomi e matrici: lavorare in coordinate</a></li><li><a href="#big-cap4"><span class="k">07</span>Cap. 4 · Applicazioni lineari</a></li><li><a href="#big-cap5"><span class="k">08</span>Cap. 5 · Matrice associata e cambio base</a></li><li><a href="#big-esercizi"><span class="k">09</span>Gli esercizi aperti tipici</a></li><li><a href="#big-trappole"><span class="k">10</span>Trappole frequenti nei quiz</a></li><li><a href="#big-formulario"><span class="k">11</span>Formulario dell&#x27;ultimo minuto</a></li></ol></div>
+      
+    </aside>
+    <main id="content">
+<section class="sec" id="big-come">
+  <div class="num">01</div>
+  <h2>Come usare il bigino</h2>
+  <p class="lead">Tutto quello che serve per la prova sui capitoli 0–5, in ordine di priorità. Ogni sezione ha: cosa sapere, il metodo passo per passo, le trappole. I rimandi (Teor. 2.7, Cap. 3…) sono alle pagine dei capitoli, dove trovi dimostrazioni ed esercizi.</p>
+
+  <div class="box box--note"><div class="tag">Com'è fatta la prova</div>
+    <p>Negli esami 2025/26: quiz a risposta multipla (4 opzioni, una giusta, 1 punto, nessuna motivazione) + esercizi aperti a sottopunti, in cui «le risposte devono essere motivate». Il recupero della 1ª prova in itinere (20/01/2026) era <strong>4 quiz + 1 esercizio da 8 punti</strong> su: sistemi lineari, basi e dimensione, Grassmann, forma cartesiana di uno Span, matrice associata, nucleo e immagine. Il testo della prova in itinere di quest'anno non lo conosciamo: aspettati qualcosa di simile.</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Priorità di studio (dalla frequenza negli esami)</div>
+    <ol>
+      <li><strong>Gauss, rango, Rouché–Capelli</strong>, sistemi con parametro (Cap. 1): servono ovunque.</li>
+      <li><strong>Sottospazi in \(\mathbb K^n\)</strong>: parametrica ↔ cartesiana, dimensione, intersezione e somma, Grassmann (Cap. 2–3).</li>
+      <li><strong>Applicazioni lineari</strong>: linearità, \(\mathrm{Ker}\) e \(\mathrm{Im}\), Teorema della dimensione (Cap. 4). In tutti i 15 esami.</li>
+      <li><strong>Matrice associata e cambio base</strong> (Cap. 5): in 12 esami su 15.</li>
+      <li><strong>Spazi «non standard»</strong> (\(\mathbb R[x]_{\le n}\), \(\mathrm{Mat}_2\)): si passa in coordinate e si torna indietro.</li>
+      <li>Cap. 0 (logica, insiemi, \(\mathbb Z/n\), gruppi): negli esami non compare da solo, ma serve come linguaggio. Ripassalo per ultimo.</li>
+    </ol>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Fin dove arriva la prova</div>
+    <p>Alla Lezione 11 (21/10) il prof è arrivato alla Prop. 4.13 (nucleo e immagine) e ha detto che la lezione dopo ripartiva dal Teorema 4.14. Se dopo non avete fatto il Teorema della dimensione o il Cap. 5, quelle parti potrebbero non esserci: studiale comunque, ma dopo il resto.</p>
+  </div>
+</section>
+
+<section class="sec" id="big-cap0">
+  <div class="num">02</div>
+  <h2>Cap. 0 · Linguaggio: logica, insiemi, applicazioni, strutture</h2>
+  <div class="grid2">
+    <div class="box box--def"><div class="tag">Logica</div>
+      <ul>
+        <li>\(A\Rightarrow B\) è falsa <strong>solo</strong> se \(A\) vera e \(B\) falsa.</li>
+        <li>\(A\Rightarrow B\) equivale alla <strong>contrapposta</strong> \(\lnot B\Rightarrow\lnot A\), <em>non</em> all'inversa \(B\Rightarrow A\).</li>
+        <li>\(\lnot(A\Rightarrow B)\equiv A\wedge\lnot B\).</li>
+        <li>\(\lnot(A\wedge B)\equiv\lnot A\vee\lnot B\), \(\ \lnot(A\vee B)\equiv\lnot A\wedge\lnot B\).</li>
+        <li>\(\lnot\forall x\,P(x)\equiv\exists x\,\lnot P(x)\); \(\ \lnot\exists x\,P(x)\equiv\forall x\,\lnot P(x)\).</li>
+        <li>\(\forall x\,\exists y\) e \(\exists y\,\forall x\) <strong>non</strong> si scambiano.</li>
+      </ul>
+    </div>
+    <div class="box box--def"><div class="tag">Applicazioni \(f:A\to B\)</div>
+      <ul>
+        <li><strong>Iniettiva</strong>: \(f(x)=f(y)\Rightarrow x=y\).</li>
+        <li><strong>Suriettiva</strong>: \(f(A)=B\) (ogni \(b\) ha una controimmagine).</li>
+        <li><strong>Biettiva</strong> \(\iff\) invertibile; l'inversa è unica.</li>
+        <li>Cambiando dominio o codominio cambiano iniettività e suriettività.</li>
+        <li>Composizione associativa, non commutativa; composta di iniettive è iniettiva, di suriettive è suriettiva.</li>
+        <li>Insiemi: \(A=B\iff A\subseteq B\) e \(B\subseteq A\) (doppia inclusione).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="box box--def"><div class="tag">Relazioni, \(\mathbb Z/n\mathbb Z\)</div>
+      <ul>
+        <li>Equivalenza = riflessiva + simmetrica + transitiva; le classi formano una partizione.</li>
+        <li>Divisione: \(a=qb+r\), \(0\le r&lt;|b|\). Euclide dà il MCD, a ritroso Bézout: \(\mathrm{MCD}(a,b)=ax+by\).</li>
+        <li>\([a]\) invertibile in \(\mathbb Z/n\mathbb Z\iff\mathrm{MCD}(a,n)=1\); l'inverso è il coefficiente \(x\) di Bézout (\(ax+ny=1\)). Es.: in \(\mathbb Z/7\), \([3]^{-1}=[5]\) perché \(15=2\cdot7+1\).</li>
+        <li>\(\mathbb Z/n\mathbb Z\) è un campo \(\iff n\) è primo. In \(\mathbb Z/6\): \([2][3]=[0]\), non si semplifica.</li>
+      </ul>
+    </div>
+    <div class="box box--def"><div class="tag">Gruppi, anelli, campi, \(S_n\)</div>
+      <ul>
+        <li>Gruppo: associativa, neutro, inversi (unici); \((ab)^{-1}=b^{-1}a^{-1}\).</li>
+        <li>Campo: anello commutativo, \(1\ne0\), ogni elemento \(\ne0\) invertibile. \(\mathbb Q,\mathbb R,\mathbb C,\mathbb F_p\) sì, \(\mathbb Z\) no.</li>
+        <li>\(|S_n|=n!\), non abeliano per \(n\ge3\). Ogni permutazione è prodotto di cicli disgiunti.</li>
+        <li>\(\mathrm{sgn}\,\sigma=(-1)^{\#\text{inversioni}}\), moltiplicativo; un \(k\)-ciclo ha segno \((-1)^{k-1}\).</li>
+        <li>\(\mathbb C\): \(z^{-1}=\bar z/|z|^2\), \(z\bar z=|z|^2\).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="big-cap1">
+  <div class="num">03</div>
+  <h2>Cap. 1 · Matrici, Gauss, Rouché–Capelli</h2>
+
+  <div class="grid2">
+    <div class="box box--def"><div class="tag">Calcolo matriciale</div>
+      <ul>
+        <li>\(A\in\mathrm{Mat}_{m\times n}\), \(B\in\mathrm{Mat}_{n\times p}\Rightarrow AB\in\mathrm{Mat}_{m\times p}\), \((AB)_{ij}=\sum_k a_{ik}b_{kj}\) (riga per colonna).</li>
+        <li>\(AB\ne BA\) in generale: \((A+B)^2=A^2+AB+BA+B^2\).</li>
+        <li>\(AB=0\) non implica \(A=0\) o \(B=0\); esistono \(N\ne0\) con \(N^2=0\), es. \(\begin{pmatrix}0&1\\0&0\end{pmatrix}\).</li>
+        <li>\((AB)^\top=B^\top A^\top\), \(\ (AB)^{-1}=B^{-1}A^{-1}\).</li>
+        <li>Per \(A\) quadrata: \(AB=I\Rightarrow BA=I\).</li>
+      </ul>
+    </div>
+    <div class="box box--def"><div class="tag">Gauss e rango</div>
+      <ul>
+        <li>Mosse lecite: scambio di righe; \(R_k\to\lambda R_k\) con \(\lambda\ne0\); \(R_k\to R_k+\lambda R_l\) con \(l\ne k\). Non cambiano le soluzioni.</li>
+        <li><strong>A scala</strong>: righe nulle in fondo, pivot che scendono verso destra. <strong>Ridotta</strong> \(\mathrm{SR}(A)\): pivot \(=1\) e zeri sopra; è unica.</li>
+        <li>\(\mathrm{rk}A\) = numero di pivot di una qualsiasi forma a scala.</li>
+        <li>\(\mathrm{rk}A\le\min(m,n)\); \(\mathrm{rk}A=\mathrm{rk}A^\top\).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Teorema 1.31 · 1.33</div><h4>Rouché–Capelli</h4>
+    <p>\(A\mathbf x=\mathbf b\) (\(A\) di tipo \(m\times n\)) è risolubile \(\iff\mathrm{rk}A=\mathrm{rk}(A|\mathbf b)\), cioè non compare la riga \((0\ \cdots\ 0\,|\,c)\) con \(c\ne0\). In tal caso le soluzioni dipendono da \(n-\mathrm{rk}A\) parametri liberi (\(\infty^{\,n-r}\) soluzioni): unica \(\iff\mathrm{rk}A=n\).</p>
+    <p>\(\mathrm{Sol}(A\mathbf x=\mathbf b)=\boldsymbol\alpha+\mathrm{Sol}(A\mathbf x=\mathbf 0)\) (una soluzione particolare + le soluzioni dell'omogeneo). Un sistema omogeneo con meno equazioni che incognite ha soluzioni non nulle.</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo · sistema con parametro \(k\)</div>
+    <ol>
+      <li>Scrivi \((A|\mathbf b)\). Metti in alto una riga <strong>senza</strong> \(k\) nella prima colonna (scambia righe), così non dividi per qualcosa che può essere 0.</li>
+      <li>Riduci a scala trattando \(k\) come un numero, ma <strong>non dividere</strong> per espressioni in \(k\).</li>
+      <li>Guarda i pivot che dipendono da \(k\): trova i valori che li annullano.</li>
+      <li>Per i valori «normali»: conta \(\mathrm{rk}A\) e \(\mathrm{rk}(A|\mathbf b)\). Per ogni valore speciale: <strong>sostituiscilo</strong> nella matrice a scala e ricontrolla i ranghi.</li>
+      <li>Conclusione caso per caso: nessuna soluzione / unica / \(\infty^{n-r}\).</li>
+    </ol>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio</div>
+    <p>\(kx+y+z=1,\ x+ky+z=1,\ x+y+kz=1\). Mettendo per prima \(x+y+kz=1\) e riducendo:</p>
+    \[\left(\begin{array}{ccc|c}1&1&k&1\\0&k-1&1-k&0\\0&0&(1-k)(k+2)&1-k\end{array}\right)\]
+    <ul>
+      <li>\(k\ne1,-2\): \(\mathrm{rk}A=\mathrm{rk}(A|\mathbf b)=3\), soluzione unica \(x=y=z=\frac1{k+2}\).</li>
+      <li>\(k=1\): restano le righe \(x+y+z=1\): rango 1, \(\infty^2\) soluzioni.</li>
+      <li>\(k=-2\): ultima riga \((0\ 0\ 0\,|\,3)\): \(\mathrm{rk}A=2\ne3\), nessuna soluzione.</li>
+    </ul>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo · inversa (Teor. 1.36)</div>
+    <ol>
+      <li>\(A\in\mathrm{Mat}_n\) è invertibile \(\iff\mathrm{rk}A=n\iff\mathrm{SR}(A)=I_n\).</li>
+      <li>Riduci \((A\,|\,I_n)\) con Gauss–Jordan fino a \((I_n\,|\,A^{-1})\). Se a sinistra spunta una riga nulla, \(A\) non è invertibile.</li>
+      <li>Prova: \(AA^{-1}=I_n\). Per \(2\times2\): \(\begin{pmatrix}a&b\\c&d\end{pmatrix}^{-1}=\frac1{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}\).</li>
+    </ol>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Trappole</div>
+    <ul>
+      <li>Mosse non lecite: moltiplicare una riga per 0 (o per un'espressione in \(k\) che può annullarsi); sostituire una riga con una combinazione che non la contiene (\(R_4\to R_2+5R_1\)); fare insieme due mosse che si usano a vicenda (\(R_1\to R_1-R_2\) e \(R_2\to R_2-R_1\)); usare mosse sulle colonne per risolvere un sistema.</li>
+      <li>Rango = pivot della forma a scala, non numero di righe non nulle <em>prima</em> di ridurre.</li>
+      <li>Matrici \(m\times n\) con \(m\ne n\): non esiste l'inversa (anche se un inverso da un lato può esistere).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="big-cap2">
+  <div class="num">04</div>
+  <h2>Cap. 2 · Spazi vettoriali, basi, dimensione</h2>
+
+  <div class="box box--def"><div class="tag">Sottospazio (Def. 2.4, Oss. 2.5–2.6)</div>
+    <p>\(U\subseteq V\) è sottospazio se è non vuoto e chiuso per somma e per prodotto per scalare (cioè per combinazioni lineari).</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo · «\(U\) è un sottospazio?»</div>
+    <ol>
+      <li><strong>\(\mathbf 0\in U\)?</strong> Se no, non è un sottospazio (es. \(p'(0)=1\), \(x+y=1\), piani non per l'origine).</li>
+      <li>Condizioni <strong>non lineari</strong> (\(xy=0\), \(x^2=y^2\), \(x^2+y^2\le1\), \(\det A=0\)): di solito no. Trova un controesempio esplicito: due vettori in \(U\) con somma fuori (es. \((1,0)+(0,1)\) per \(xy=0\)), oppure un multiplo che esce.</li>
+      <li>Condizioni <strong>lineari omogenee</strong> (\(p(1)=p(2)\), \(A^\top=A\), \(x_1+x_4=0\)): sì. Verifica: se \(\mathbf u,\mathbf w\in U\) e \(\lambda\in\mathbb K\), allora \(\mathbf u+\lambda\mathbf w\in U\).</li>
+      <li>Se \(U=\mathrm{Span}\{\dots\}\) o \(U=\mathrm{Ker}\) di qualcosa di lineare: è sottospazio senza conti.</li>
+    </ol>
+  </div>
+
+  <div class="grid2">
+    <div class="box box--def"><div class="tag">Span e indipendenza</div>
+      <ul>
+        <li>\(\mathrm{Span}\,S\) = combinazioni lineari finite = il più piccolo sottospazio che contiene \(S\).</li>
+        <li>\(\mathbf v_1,\dots,\mathbf v_r\) <strong>indipendenti</strong>: \(\sum\lambda_i\mathbf v_i=\mathbf 0\Rightarrow\) tutti \(\lambda_i=0\). Equivale: nessuno è combinazione degli altri.</li>
+        <li>Un sistema con \(\mathbf 0\), o con due vettori proporzionali, è dipendente.</li>
+        <li>Intersezione di sottospazi: sottospazio. <strong>Unione</strong>: in generale no.</li>
+      </ul>
+    </div>
+    <div class="box box--def"><div class="tag">Basi e coordinate</div>
+      <ul>
+        <li>Base = indipendenti + generatori = indipendenti massimali = generatori minimali.</li>
+        <li>Coordinate \([\mathbf v]_{\mathcal B}\) uniche rispetto a una base <strong>ordinata</strong>.</li>
+        <li>Ogni insieme di generatori contiene una base; ogni indipendente si completa a base (Steinitz).</li>
+        <li><strong>Steinitz</strong>: \(L\) indipendente, \(S\) generatori \(\Rightarrow|L|\le|S|\).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Dimensione · conseguenze da usare nei quiz</div>
+    <p>Se \(\dim V=n\):</p>
+    <ul>
+      <li>più di \(n\) vettori sono <strong>dipendenti</strong>; meno di \(n\) <strong>non generano</strong>;</li>
+      <li>\(n\) vettori indipendenti sono una base; \(n\) generatori sono una base (basta controllare una delle due cose);</li>
+      <li>\(W\subseteq V\Rightarrow\dim W\le\dim V\), e \(\dim W=\dim V\iff W=V\).</li>
+    </ul>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Spazio</th><th>Dimensione</th><th>Base canonica</th></tr></thead>
+      <tbody>
+        <tr><td>\(\mathbb K^n\)</td><td>\(n\)</td><td>\(\mathbf e_1,\dots,\mathbf e_n\)</td></tr>
+        <tr><td>\(\mathrm{Mat}_{m\times n}(\mathbb K)\)</td><td>\(mn\)</td><td>\(E_{ij}\) (un 1 in posizione \(ij\))</td></tr>
+        <tr><td>\(\mathbb K[x]_{\le d}\)</td><td>\(d+1\)</td><td>\(1,x,\dots,x^d\)</td></tr>
+        <tr><td>Simmetriche \(n\times n\)</td><td>\(\frac{n(n+1)}2\)</td><td>(\(3\) per \(n=2\), \(6\) per \(n=3\))</td></tr>
+        <tr><td>Antisimmetriche \(n\times n\)</td><td>\(\frac{n(n-1)}2\)</td><td>(\(1\) per \(n=2\), \(3\) per \(n=3\))</td></tr>
+        <tr><td>\(\mathbb K[x]\)</td><td>\(\infty\)</td><td>\(1,x,x^2,\dots\)</td></tr>
+        <tr><td>\(\mathbb C\) su \(\mathbb R\) / su \(\mathbb C\)</td><td>\(2\) / \(1\)</td><td>\(\{1,i\}\) / \(\{1\}\)</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Somma, somma diretta, Grassmann</div>
+    <ul>
+      <li>\(U_1+U_2=\{\mathbf u_1+\mathbf u_2\}=\mathrm{Span}(U_1\cup U_2)\): si uniscono i generatori.</li>
+      <li>\(U_1\oplus U_2\) (somma diretta) \(\iff U_1\cap U_2=\{\mathbf 0\}\iff\) ogni vettore della somma si scrive in un solo modo.</li>
+      <li><strong>Grassmann</strong>: \(\dim(U_1+U_2)=\dim U_1+\dim U_2-\dim(U_1\cap U_2)\).</li>
+      <li>Stima per i quiz: \(\max(0,\ \dim U_1+\dim U_2-\dim V)\le\dim(U_1\cap U_2)\le\min(\dim U_1,\dim U_2)\).</li>
+    </ul>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Quiz 20/01/2026</div>
+    <p>\(\dim V=9\), \(\dim H=6\), \(\dim K=7\): \(\dim(H\cap K)\ge6+7-9=4\) e \(\le6\). Valori possibili: 4, 5, 6.</p>
+  </div>
+</section>
+
+<section class="sec" id="big-cap3">
+  <div class="num">05</div>
+  <h2>Cap. 3 · Calcolare in \(\mathbb K^n\): le ricette</h2>
+  <p class="lead">Schema unico: costruisci una matrice, riducila con Gauss, leggi il risultato. Un sottospazio ha due presentazioni: <strong>parametrica</strong> \(U=\mathrm{Span}\{\mathbf v_i\}\) e <strong>cartesiana</strong> \(U=\mathrm{Ker}A=\{A\mathbf x=\mathbf 0\}\).</p>
+
+  <div class="box box--thm"><div class="tag">Teorema 3.8 · Nullità + rango</div>
+    <p>\(\mathrm{rk}A=\dim\mathrm{Row}A=\dim\mathrm{Col}A\) e, per \(A\) con \(n\) colonne, \(\ n=\dim\mathrm{Ker}A+\mathrm{rk}A\).</p>
+    <p>Le mosse di Gauss sulle righe conservano \(\mathrm{Row}A\), \(\mathrm{Ker}A\) e le relazioni tra le colonne, ma <strong>non</strong> \(\mathrm{Col}A\).</p>
+  </div>
+
+  <div class="tablewrap"><table>
+    <thead><tr><th>Problema</th><th>Ricetta</th></tr></thead>
+    <tbody>
+      <tr><td>Dimensione da parametrica</td><td>\(\dim\mathrm{Span}\{\mathbf v_i\}=\mathrm{rk}\) della matrice con i \(\mathbf v_i\) (righe o colonne).</td></tr>
+      <tr><td>Dimensione da cartesiana</td><td>\(\dim\mathrm{Ker}A=n-\mathrm{rk}A\) (non \(n-\) numero di equazioni!).</td></tr>
+      <tr><td>Base dai generatori</td><td>Vettori in <strong>riga</strong> → righe non nulle della forma a scala. Oppure vettori in <strong>colonna</strong> → prendi i vettori <strong>originali</strong> delle colonne pivot (base scelta tra quelli dati).</td></tr>
+      <tr><td>Completare a base</td><td>Colonne: prima i vettori di \(L\), poi \(\mathbf e_1,\dots,\mathbf e_n\). Gauss; tieni le colonne pivot.</td></tr>
+      <tr><td>Cartesiana → parametrica</td><td>Risolvi \(A\mathbf x=\mathbf 0\): ogni variabile libera = un parametro = un vettore di base (poni quella a 1 e le altre libere a 0).</td></tr>
+      <tr><td>Parametrica → cartesiana</td><td>Gauss su \((\mathbf v_1\ \cdots\ \mathbf v_r\,|\,\mathbf x)\) (vettori in colonna). Le righe con parte sinistra nulla danno le equazioni. Devono essere \(n-\dim U\), indipendenti.</td></tr>
+      <tr><td>\(\mathbf b\in\mathrm{Span}\{\mathbf v_i\}\)?</td><td>\(\mathrm{rk}(\mathbf v_1\cdots\mathbf v_r)=\mathrm{rk}(\mathbf v_1\cdots\mathbf v_r|\mathbf b)\)? (Rouché–Capelli). Se \(U\) è cartesiano: sostituisci \(\mathbf b\) nelle equazioni.</td></tr>
+      <tr><td>Intersezione \(U_1\cap U_2\)</td><td>Entrambi in <strong>cartesiana</strong>, <strong>unisci le equazioni</strong>, risolvi.</td></tr>
+      <tr><td>Somma \(U_1+U_2\)</td><td>Entrambi in <strong>parametrica</strong>, <strong>unisci i generatori</strong>, Gauss per una base.</td></tr>
+      <tr><td>Caso misto \(U_1=\mathrm{Span}\), \(U_2=\mathrm{Ker}A_2\)</td><td>Vettore generico \(\mathbf u=\sum t_i\mathbf v_i\) di \(U_1\); imponi le equazioni di \(U_2\) ai \(t_i\); sostituisci.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="box box--ex"><div class="tag">Esempio · quiz 20/01/2026 (parametrica → cartesiana)</div>
+    <p>\(\mathbf v_1=(1,0,1,2)\), \(\mathbf v_2=(0,1,2,3)\), \(\mathbf v_3=(1,1,3,5)=\mathbf v_1+\mathbf v_2\). Quindi \(\dim U=2\) e servono \(4-2=2\) equazioni.</p>
+    \[\left(\begin{array}{cc|c}1&0&x_1\\0&1&x_2\\1&2&x_3\\2&3&x_4\end{array}\right)\ \xrightarrow{R_3-R_1-2R_2,\ R_4-2R_1-3R_2}\ \left(\begin{array}{cc|c}1&0&x_1\\0&1&x_2\\0&0&x_3-x_1-2x_2\\0&0&x_4-2x_1-3x_2\end{array}\right)\]
+    <p>\(U:\ -x_1-2x_2+x_3=0,\ -2x_1-3x_2+x_4=0\). <strong>Prova</strong>: \(\mathbf v_1,\mathbf v_2\) soddisfano entrambe.</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Ricetta da esame · \(U\), \(W\): basi di \(U\cap W\) e \(U+W\)</div>
+    <ol>
+      <li>Base e dimensione di \(U\) e di \(W\) (dalla forma in cui sono dati).</li>
+      <li>Calcola il più facile dei due tra somma e intersezione: somma unendo generatori, oppure intersezione unendo equazioni.</li>
+      <li>Ricava l'altra dimensione con <strong>Grassmann</strong>. Se \(\dim(U+W)=n\), allora \(U+W=\mathbb K^n\) e una base è quella canonica.</li>
+      <li>Prova: i vettori trovati per \(U\cap W\) soddisfano le equazioni di entrambi; le dimensioni tornano con Grassmann.</li>
+    </ol>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Trappole</div>
+    <ul>
+      <li>Contare i generatori invece della dimensione: \(\mathrm{Span}\{\mathbf v_1,\mathbf v_2,\mathbf v_1+\mathbf v_2\}\) ha dimensione 2.</li>
+      <li>Equazioni proporzionali contano una volta sola: \(\{x_1-x_2=0,\ 2x_1-2x_2=0\}\) ha dimensione \(n-1\).</li>
+      <li>Base di \(\mathrm{Col}A\): colonne pivot della matrice <strong>originale</strong>, non della forma a scala.</li>
+      <li>Intersezione ≠ «vettori comuni nelle due basi»: va calcolata.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="big-coord">
+  <div class="num">06</div>
+  <h2>Polinomi e matrici: lavorare in coordinate</h2>
+  <p class="lead">Quasi metà degli esercizi aperti è su \(\mathbb R[x]_{\le n}\) o \(\mathrm{Mat}_2(\mathbb R)\). Si traduce tutto in \(\mathbb R^N\) con le coordinate, si calcola, si ritraduce.</p>
+  <div class="box box--method"><div class="tag">Metodo</div>
+    <ol>
+      <li>Fissa la base canonica: \(p=a_0+a_1x+a_2x^2\mapsto(a_0,a_1,a_2)\); \(\begin{pmatrix}a&b\\c&d\end{pmatrix}\mapsto(a,b,c,d)\).</li>
+      <li>Condizioni su \(p\) (es. \(p(1)=p(2)\)) diventano equazioni lineari nei coefficienti: \(a_0+a_1+a_2+a_3=a_0+2a_1+4a_2+8a_3\iff a_1+3a_2+7a_3=0\).</li>
+      <li>Fai i conti in \(\mathbb R^N\) (Cap. 3).</li>
+      <li>Scrivi la risposta come <strong>polinomi o matrici</strong>, come chiede il testo.</li>
+    </ol>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio · luglio 2024 E1</div>
+    <p>\(H=\{p\in\mathbb R[t]_{\le3}: p(1)=p(2)\}\): una sola equazione \(a_1+3a_2+7a_3=0\), quindi \(\dim H=4-1=3\). Parametri liberi \(a_0,a_2,a_3\) (con \(a_1=-3a_2-7a_3\)): base \(\{1,\ t^2-3t,\ t^3-7t\}\). Prova: \(t^2-3t\) vale \(-2\) sia in 1 sia in 2.</p>
+  </div>
+</section>
+
+<section class="sec" id="big-cap4">
+  <div class="num">07</div>
+  <h2>Cap. 4 · Applicazioni lineari</h2>
+
+  <div class="box box--def"><div class="tag">Definizione 4.3</div>
+    <p>\(f:V\to W\) (stesso campo \(\mathbb K\)) è lineare se \(f(\mathbf u+\mathbf v)=f(\mathbf u)+f(\mathbf v)\) e \(f(\lambda\mathbf v)=\lambda f(\mathbf v)\); equivalentemente \(f(\lambda\mathbf u+\mu\mathbf v)=\lambda f(\mathbf u)+\mu f(\mathbf v)\). Esempio base: \(f_A(\mathbf x)=A\mathbf x\), con \(f_A(\mathbf e_i)=\) colonna \(i\) di \(A\).</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo · \(f\) è lineare?</div>
+    <ol>
+      <li>Test rapido: \(f(\mathbf 0)=\mathbf 0\)? Se no, non è lineare (es. \(f(x,y)=(x+1,y)\), \(f(p)=p+1\)).</li>
+      <li>Cerca termini non lineari: prodotti tra coordinate, quadrati, costanti, \(|x|\), \(\det\). Se ci sono, trova un controesempio numerico (es. \(f(2\mathbf v)\ne2f(\mathbf v)\)).</li>
+      <li>Altrimenti dimostra \(f(\lambda\mathbf u+\mu\mathbf v)=\lambda f(\mathbf u)+\mu f(\mathbf v)\) in generale. Sono lineari: valutare un polinomio (\(p\mapsto p(2)\)), derivare, trasporre, \(A\mapsto CA\), \(A\mapsto CAC^{-1}\), \(X\mapsto AX+X^\top A\).</li>
+    </ol>
+    <p>Attenzione: \(f(\mathbf 0)=\mathbf 0\) è necessario ma non basta (\(f(x,y)=x^2+y^2\)).</p>
+  </div>
+
+  <div class="grid2">
+    <div class="box box--def"><div class="tag">Nucleo e immagine</div>
+      <ul>
+        <li>\(\mathrm{Ker}f=\{\mathbf v: f(\mathbf v)=\mathbf 0\}\subseteq V\), \(\ \mathrm{Im}f=f(V)\subseteq W\): sottospazi.</li>
+        <li>\(\mathrm{Ker}f_A=\mathrm{Sol}(A\mathbf x=\mathbf 0)\), \(\ \mathrm{Im}f_A=\mathrm{Col}A\).</li>
+        <li>\(f\) <strong>iniettiva</strong> \(\iff\mathrm{Ker}f=\{\mathbf 0\}\).</li>
+        <li>\(f\) <strong>suriettiva</strong> \(\iff\mathrm{Im}f=W\iff\dim\mathrm{Im}f=\dim W\).</li>
+        <li>Se \(\mathcal B\) è base di \(V\): \(\mathrm{Im}f=\mathrm{Span}\,f(\mathcal B)\).</li>
+      </ul>
+    </div>
+    <div class="box box--def"><div class="tag">Immagini di vettori</div>
+      <ul>
+        <li>\(f(\mathrm{Span}\,S)=\mathrm{Span}\,f(S)\).</li>
+        <li>La dipendenza si conserva sempre; l'indipendenza solo se \(f\) è iniettiva.</li>
+        <li><strong>Teor. 4.18</strong>: \(f\) è determinata dai valori su una base, e questi si possono scegliere liberamente. Su un insieme che non è base no.</li>
+        <li>Isomorfismo = lineare e biettiva. Spazi isomorfi \(\iff\) stessa dimensione; \(V\cong\mathbb K^{\dim V}\).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Teorema 4.22</div><h4>Teorema della dimensione</h4>
+    <p>\[\dim V=\dim\mathrm{Ker}f+\dim\mathrm{Im}f\qquad(\text{per matrici: } n=\dim\mathrm{Ker}A+\mathrm{rk}A).\]</p>
+    <ul>
+      <li>\(\dim V&gt;\dim W\Rightarrow f\) <strong>mai iniettiva</strong> (\(\dim\mathrm{Ker}f\ge\dim V-\dim W\)).</li>
+      <li>\(\dim V&lt;\dim W\Rightarrow f\) <strong>mai suriettiva</strong>.</li>
+      <li>\(\dim V=\dim W\): iniettiva \(\iff\) suriettiva \(\iff\) isomorfismo. Per \(f_A\) con \(A\) quadrata: \(\iff\mathrm{rk}A=n\).</li>
+    </ul>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo · \(\mathrm{Ker}\) e \(\mathrm{Im}\)</div>
+    <ol>
+      <li>Scrivi la matrice di \(f\) (in coordinate, se \(V,W\) sono polinomi o matrici: colonne = coordinate delle immagini dei vettori della base).</li>
+      <li>Gauss: \(\mathrm{rk}\) = \(\dim\mathrm{Im}f\); \(\dim\mathrm{Ker}f=\dim V-\mathrm{rk}\).</li>
+      <li>\(\mathrm{Ker}\): risolvi il sistema omogeneo ridotto, ritraduci in vettori di \(V\).</li>
+      <li>\(\mathrm{Im}\): colonne della matrice <strong>originale</strong> nelle posizioni pivot, ritradotte in vettori di \(W\).</li>
+      <li>Concludi su iniettiva/suriettiva citando \(\mathrm{Ker}f=\{\mathbf 0\}\) o \(\dim\mathrm{Im}f=\dim W\).</li>
+    </ol>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo · \(f(\mathbf v)\) conoscendo \(f\) su una base</div>
+    <ol>
+      <li>Scrivi \(\mathbf v=\sum\lambda_i\mathbf v_i\) (coordinate di \(\mathbf v\) nella base: un sistema).</li>
+      <li>\(f(\mathbf v)=\sum\lambda_if(\mathbf v_i)\).</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="big-cap5">
+  <div class="num">08</div>
+  <h2>Cap. 5 · Matrice associata e cambio base</h2>
+
+  <div class="box box--def"><div class="tag">Definizione · \(M^{\mathcal B}_{\mathcal C}(f)\)</div>
+    <p>\(\mathcal B=\{\mathbf v_1,\dots,\mathbf v_n\}\) base di \(V\), \(\mathcal C\) base di \(W\) (\(\dim m\)). \(M^{\mathcal B}_{\mathcal C}(f)\in\mathrm{Mat}_{m\times n}\) ha nella <strong>colonna \(j\)</strong> le coordinate \([f(\mathbf v_j)]_{\mathcal C}\). Base di partenza in alto, di arrivo in basso; righe = \(\dim W\), colonne = \(\dim V\).</p>
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo · calcolare \(M^{\mathcal B}_{\mathcal C}(f)\)</div>
+    <ol>
+      <li>Calcola \(f(\mathbf v_1),\dots,f(\mathbf v_n)\).</li>
+      <li>Scrivi ciascuno come combinazione dei vettori di \(\mathcal C\) (se \(\mathcal C\) è canonica è immediato; altrimenti risolvi un sistema: puoi farli tutti insieme riducendo \((\mathcal C\,|\,f(\mathbf v_1)\cdots f(\mathbf v_n))\)).</li>
+      <li>Metti i coefficienti in <strong>colonna</strong>, nell'ordine delle basi.</li>
+    </ol>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Teoremi 5.2–5.4</div>
+    <ul>
+      <li>\([f(\mathbf v)]_{\mathcal C}=M^{\mathcal B}_{\mathcal C}(f)\,[\mathbf v]_{\mathcal B}\).</li>
+      <li>\(\dim\mathrm{Im}f=\mathrm{rk}\,M^{\mathcal B}_{\mathcal C}(f)\) e \(\dim\mathrm{Ker}f=\dim V-\mathrm{rk}\,M\), con <strong>qualsiasi</strong> scelta delle basi.</li>
+      <li>\(\mathrm{Ker}\) e \(\mathrm{Im}\) di \(M\) sono <strong>coordinate</strong>: vanno ritradotti in vettori di \(V\) e \(W\).</li>
+      <li>\(M^{\mathcal B}_{\mathcal D}(g\circ f)=M^{\mathcal C}_{\mathcal D}(g)\cdot M^{\mathcal B}_{\mathcal C}(f)\) (stesso ordine della composizione).</li>
+    </ul>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio</div>
+    <p>\(f:\mathbb R[x]_{\le2}\to\mathbb R^2\), \(f(p)=(p(0),p(1))\), \(\mathcal B=\{1,x,x^2\}\), \(\mathcal C\) canonica. \(f(1)=(1,1)\), \(f(x)=(0,1)\), \(f(x^2)=(0,1)\):</p>
+    \[M^{\mathcal B}_{\mathcal C}(f)=\begin{pmatrix}1&0&0\\1&1&1\end{pmatrix},\quad\mathrm{rk}=2\Rightarrow f\text{ suriettiva},\ \dim\mathrm{Ker}f=3-2=1.\]
+    <p>\(\mathrm{Ker}\): \(a_0=0,\ a_0+a_1+a_2=0\Rightarrow(0,-1,1)\), cioè \(\mathrm{Ker}f=\mathrm{Span}\{x^2-x\}\). Prova: \(x^2-x\) si annulla in 0 e in 1.</p>
+  </div>
+
+  <div class="box box--def"><div class="tag">Cambio base (Def. 5.5, Oss. 5.8, Teor. 5.9)</div>
+    <ul>
+      <li>\(M^{\mathcal B}_{\mathcal B'}=M^{\mathcal B}_{\mathcal B'}(\mathrm{id}_V)\): colonne \([\mathbf v_i]_{\mathcal B'}\) (vecchia base scritta nella nuova).</li>
+      <li>\([\mathbf v]_{\mathcal B'}=M^{\mathcal B}_{\mathcal B'}[\mathbf v]_{\mathcal B}\); \(\ \big(M^{\mathcal B}_{\mathcal B'}\big)^{-1}=M^{\mathcal B'}_{\mathcal B}\).</li>
+      <li>In \(\mathbb K^n\) con \(\mathcal E\) canonica: \(M^{\mathcal B}_{\mathcal E}\) ha per colonne i vettori di \(\mathcal B\); \(M^{\mathcal E}_{\mathcal B}\) è la sua inversa.</li>
+      <li>\(M^{\mathcal B'}_{\mathcal C'}(f)=M^{\mathcal C}_{\mathcal C'}\,M^{\mathcal B}_{\mathcal C}(f)\,M^{\mathcal B'}_{\mathcal B}\). Endomorfismi: \(M^{\mathcal B'}_{\mathcal B'}(f)=T\,M^{\mathcal B}_{\mathcal B}(f)\,T^{-1}\), \(T=M^{\mathcal B}_{\mathcal B'}\).</li>
+    </ul>
+    <p>Es.: \(\mathcal B'=\{(1,1),(1,-1)\}\) in \(\mathbb R^2\), \(\mathbf v=(3,1)\): \(a(1,1)+b(1,-1)=(3,1)\Rightarrow[\mathbf v]_{\mathcal B'}=(2,1)\).</p>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Trappole</div>
+    <ul>
+      <li>Coordinate delle immagini in <strong>riga</strong> invece che in colonna.</li>
+      <li>Scrivere \(f(\mathbf v_j)\) invece delle sue coordinate in \(\mathcal C\) quando \(\mathcal C\) non è canonica.</li>
+      <li>Negli esami la notazione cambia (\(M_{\mathcal B,\mathcal C}(f)\), \(M^{\mathcal B,\mathcal C}_T\), \(M_{\mathcal B}(f)\) se è la stessa base): la prima base è sempre quella di partenza.</li>
+      <li>Altri libri chiamano «matrice del cambio base» l'inversa: controlla sempre su un vettore.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="big-esercizi">
+  <div class="num">09</div>
+  <h2>Gli esercizi aperti tipici</h2>
+  <p class="lead">Negli esami degli ultimi tre anni l'esercizio sui capitoli 1–5 è quasi sempre uno di questi tre. Le soluzioni svolte sono nella pagina <a href="esami.html">Esami</a>.</p>
+
+  <div class="box box--method"><div class="tag">Tipo A · due sottospazi \(U\), \(W\) di \(\mathbb R^3\)/\(\mathbb R^4\) (es. set. 2024, feb. e set. 2026)</div>
+    <ol>
+      <li>Base e dimensione di \(U\) e \(W\).</li>
+      <li>Forma cartesiana di quello dato come Span (\(n-\dim\) equazioni).</li>
+      <li>\(U\cap W\) (unisci equazioni) e \(U+W\) (unisci generatori), Grassmann come controllo.</li>
+      <li>«Il vettore \(\mathbf v\) appartiene a…?»: sostituisci nelle equazioni cartesiane.</li>
+    </ol>
+  </div>
+
+  <div class="box box--method"><div class="tag">Tipo B · sottospazio di polinomi o matrici (lug. 2024, set. 2025, giu. 2026)</div>
+    <ol>
+      <li>Dimostra che è sottospazio (condizione lineare omogenea, oppure \(\mathbf 0\notin\) e non lo è).</li>
+      <li>Passa in coordinate, base e dimensione, ritraduci.</li>
+      <li>Completa a base dello spazio grande (aggiungi vettori canonici e controlla il rango).</li>
+      <li>Coordinate di un vettore nella nuova base: risolvi il sistema.</li>
+    </ol>
+  </div>
+
+  <div class="box box--method"><div class="tag">Tipo C · applicazione lineare (gen. 2025, giu. 2025, gen./feb./set. 2026)</div>
+    <ol>
+      <li>Dimostra la linearità (in generale, con \(\lambda\mathbf u+\mu\mathbf v\)).</li>
+      <li>Matrice associata rispetto alle basi date (colonne = coordinate delle immagini).</li>
+      <li>Rango → \(\dim\mathrm{Im}\), \(\dim\mathrm{Ker}\) con il Teorema della dimensione; basi ritradotte.</li>
+      <li>Iniettiva / suriettiva / isomorfismo, spesso al variare di un parametro \(k\): dove si annulla un pivot?</li>
+      <li>Controimmagine \(f^{-1}(\mathbf w)\): risolvi \(M\mathbf x=[\mathbf w]_{\mathcal C}\); è \(\mathbf v_0+\mathrm{Ker}f\) oppure vuota.</li>
+    </ol>
+  </div>
+
+  <div class="box box--note"><div class="tag">Come scrivere le risposte</div>
+    <p>«Le risposte devono essere motivate»: cita il teorema che usi (Rouché–Capelli, Grassmann, Teorema della dimensione, \(\mathrm{Ker}f=\{\mathbf 0\}\iff\) iniettiva) e chiudi con una verifica (i vettori soddisfano le equazioni, le dimensioni tornano). I sottopunti sono a catena, ma spesso il testo ti dà il risultato del punto prima («verificare che la matrice è…»): usalo anche se non l'hai dimostrato.</p>
+  </div>
+</section>
+
+<section class="sec" id="big-trappole">
+  <div class="num">10</div>
+  <h2>Trappole frequenti nei quiz</h2>
+  <ol>
+    <li><strong>\(n\) vettori in uno spazio di dimensione \(n\) non sono per forza una base</strong> (possono essere uguali). Servono indipendenza <em>o</em> generazione.</li>
+    <li><strong>Generatori di \(V\) sono almeno \(\dim V\)</strong>; indipendenti sono al più \(\dim V\) (non esattamente).</li>
+    <li><strong>\(f:\mathbb R^5\to\mathbb R^3\) non è mai iniettiva</strong>: \(\dim\mathrm{Ker}\ge2\). \(f:\mathbb R^3\to\mathbb R^5\) non è mai suriettiva.</li>
+    <li>\(M\mathbf x=\mathbf b\) ha soluzione \(\iff\mathbf b\in\mathrm{Col}M\). Se \(\mathbf b\) ha la lunghezza sbagliata (\(M\) ha 2 righe, \(\mathbf b\in\mathbb R^3\)) è impossibile.</li>
+    <li><strong>Insiemi che non contengono \(\mathbf 0\)</strong> (affini, \(p'(0)=1\)) non sono sottospazi; condizioni come \(xy=0\) o \(x^2=y^2\) danno unioni di sottospazi, non sottospazi.</li>
+    <li>Unione di due sottospazi: sottospazio solo se uno contiene l'altro.</li>
+    <li>Due equazioni proporzionali = una equazione. Il numero di equazioni cartesiane indipendenti è \(n-\dim U\).</li>
+    <li>Grassmann: \(\dim(U\cap W)\ge\dim U+\dim W-\dim V\). Due piani in \(\mathbb R^3\) per l'origine si intersecano almeno in una retta.</li>
+    <li>Le mosse di Gauss cambiano \(\mathrm{Col}A\): base dell'immagine dalle colonne originali.</li>
+    <li>\(AB=AC\) non implica \(B=C\) (serve \(A\) invertibile); \(AB=0\) non implica \(A=0\) o \(B=0\).</li>
+    <li>Nei quiz «sempre vero»: un controesempio basta. Prova la matrice nulla, l'identità, \(\begin{pmatrix}0&1\\0&0\end{pmatrix}\).</li>
+    <li>Il campo conta: \(\dim_{\mathbb R}\mathbb C=2\), \(\dim_{\mathbb C}\mathbb C=1\); in \(\mathbb Z/2\) vale \(1+1=0\).</li>
+  </ol>
+</section>
+
+<section class="sec" id="big-formulario">
+  <div class="num">11</div>
+  <h2>Formulario dell'ultimo minuto</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Cosa</th><th>Formula / criterio</th></tr></thead>
+    <tbody>
+      <tr><td>Rouché–Capelli</td><td>risolubile \(\iff\mathrm{rk}A=\mathrm{rk}(A|\mathbf b)\); \(\infty^{\,n-\mathrm{rk}A}\) soluzioni</td></tr>
+      <tr><td>Nullità + rango</td><td>\(n=\dim\mathrm{Ker}A+\mathrm{rk}A\)</td></tr>
+      <tr><td>Teorema della dimensione</td><td>\(\dim V=\dim\mathrm{Ker}f+\dim\mathrm{Im}f\)</td></tr>
+      <tr><td>Grassmann</td><td>\(\dim(U+W)=\dim U+\dim W-\dim(U\cap W)\)</td></tr>
+      <tr><td>Equazioni cartesiane di \(U\subseteq\mathbb K^n\)</td><td>\(n-\dim U\) indipendenti</td></tr>
+      <tr><td>Invertibile (\(A\in\mathrm{Mat}_n\))</td><td>\(\mathrm{rk}A=n\iff\mathrm{SR}(A)=I_n\iff\mathrm{Ker}A=\{\mathbf 0\}\)</td></tr>
+      <tr><td>Iniettiva / suriettiva</td><td>\(\mathrm{Ker}f=\{\mathbf 0\}\) / \(\mathrm{rk}M=\dim W\)</td></tr>
+      <tr><td>Matrice associata</td><td>colonna \(j\) = \([f(\mathbf v_j)]_{\mathcal C}\); \([f(\mathbf v)]_{\mathcal C}=M^{\mathcal B}_{\mathcal C}(f)[\mathbf v]_{\mathcal B}\)</td></tr>
+      <tr><td>Cambio base</td><td>\([\mathbf v]_{\mathcal B'}=M^{\mathcal B}_{\mathcal B'}[\mathbf v]_{\mathcal B}\), colonne \([\mathbf v_i]_{\mathcal B'}\)</td></tr>
+      <tr><td>Intersezione / somma</td><td>unisci le equazioni / unisci i generatori</td></tr>
+      <tr><td>Inverso in \(\mathbb Z/n\)</td><td>esiste \(\iff\mathrm{MCD}(a,n)=1\), si trova con Bézout</td></tr>
+    </tbody>
+  </table></div>
+</section>
+      <nav class="pager" aria-label="Capitoli"><a class="prev" href="cap5.html"><small>← Precedente</small><span>Matrice associata</span></a><a class="next" href="esami.html"><small>Successivo →</small><span>Preparazione all&#x27;esame</span></a></nav>
+    </main>
+  </div>
+  <footer class="foot">Appunti personali basati sul materiale del corso di Geometria e Algebra Lineare (Politecnico di Milano, 2026/27). Possono contenere errori: nel dubbio fa fede il materiale del docente.</footer>
+</div>
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], tags: 'none' },
+    svg: { fontCache: 'global' },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js" async></script>
+<script src="../assets/gal.js"></script>
+</body>
+</html>

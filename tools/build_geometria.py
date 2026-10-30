@@ -39,6 +39,8 @@ CHAPTERS = [
      "materiale": []},
 ]
 EXTRAS = [
+    {"slug": "bigino", "k": "Bigino", "title": "Bigino per la 1ª prova (Cap. 0–5)",
+     "desc": "Tutto il programma dei capitoli 0–5 in poche pagine: definizioni e teoremi chiave, metodi passo per passo, esercizi tipici d'esame e trappole dei quiz. Stampabile."},
     {"slug": "esami", "k": "Esami", "title": "Preparazione all'esame",
      "desc": "Com'è fatto lo scritto, esercizi ricorrenti negli esami 2023–2026 e da quali capitoli vengono."},
     {"slug": "anteprima", "k": "Più avanti", "title": "Argomenti non ancora fatti a lezione",
