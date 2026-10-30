@@ -39,6 +39,8 @@ CHAPTERS = [
      "materiale": []},
 ]
 EXTRAS = [
+    {"slug": "guida", "k": "Guida", "title": "Capire tutto in due ore (Cap. 0–5)",
+     "desc": "Una guida da leggere una volta, in ordine: per ogni argomento l'idea, il metodo e un esempio svolto."},
     {"slug": "bigino", "k": "Bigino", "title": "Bigino per la 1ª prova (Cap. 0–5)",
      "desc": "Tutto il programma dei capitoli 0–5 in poche pagine: definizioni e teoremi chiave, metodi passo per passo, esercizi tipici d'esame e trappole dei quiz. Stampabile."},
     {"slug": "esami", "k": "Esami", "title": "Preparazione all'esame",

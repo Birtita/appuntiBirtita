@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guida · Capire tutto in due ore (Cap. 0–5) — Geometria e Algebra Lineare</title>
+<meta name="description" content="Una guida da leggere una volta, in ordine: per ogni argomento l&#x27;idea, il metodo e un esempio svolto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../assets/gal.css">
+<script>try{var t=localStorage.getItem('gal:theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body data-page="guida">
+<header class="topbar">
+  <div class="in">
+    <button class="iconbtn menu-btn" id="menu-btn" aria-label="Apri l'indice" aria-expanded="false" aria-controls="side"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <nav class="crumbs" aria-label="Percorso">
+      <a href="../" class="hide-sm">Appunti</a><span class="sep hide-sm">/</span>
+      <a href="./">Geometria</a><span class="sep">/</span><span class="here">Guida</span>
+    </nav>
+    <button class="iconbtn" id="theme-btn" aria-label="Cambia tema chiaro/scuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  </div>
+  <div class="readbar"></div>
+</header>
+<div class="page">
+  <header class="hero">
+    <span class="eyebrow">Guida</span>
+    <h1>Capire tutto in due ore (Cap. 0–5)</h1>
+    <p class="sub">Una guida da leggere una volta, in ordine: per ogni argomento l&#x27;idea, il metodo e un esempio svolto.</p>
+    <div class="pillrow"><span class="pill">9 sezioni</span></div>
+  </header>
+  <div class="layout">
+    <aside class="side" id="side">
+      <div class="panel"><div class="panel-title">Capitoli</div><ol><li><a href="cap0.html"><span class="k">0</span>Fondamenti</a><div class="chap-progress" data-progress-page="cap0" data-total="21"><i></i></div></li><li><a href="cap1.html"><span class="k">1</span>Matrici e sistemi lineari</a><div class="chap-progress" data-progress-page="cap1" data-total="18"><i></i></div></li><li><a href="cap2.html"><span class="k">2</span>Spazi vettoriali su K</a><div class="chap-progress" data-progress-page="cap2" data-total="15"><i></i></div></li><li><a href="cap3.html"><span class="k">3</span>Calcolare in Kⁿ</a><div class="chap-progress" data-progress-page="cap3" data-total="10"><i></i></div></li><li><a href="cap4.html"><span class="k">4</span>Applicazioni lineari</a><div class="chap-progress" data-progress-page="cap4" data-total="11"><i></i></div></li><li><a href="cap5.html"><span class="k">5</span>Matrice associata</a><div class="chap-progress" data-progress-page="cap5" data-total="11"><i></i></div></li><li><a href="guida.html" aria-current="page"><span class="k">·</span>Capire tutto in due ore (Cap. 0–5)</a></li><li><a href="bigino.html"><span class="k">·</span>Bigino per la 1ª prova (Cap. 0–5)</a></li><li><a href="esami.html"><span class="k">·</span>Preparazione all&#x27;esame</a><div class="chap-progress" data-progress-page="esami" data-total="16"><i></i></div></li><li><a href="anteprima.html"><span class="k">·</span>Argomenti non ancora fatti a lezione</a></li></ol></div>
+      <div class="panel"><div class="panel-title">In questa pagina</div><ol id="toc"><li><a href="#g-piano"><span class="k">01</span>Il piano delle due ore</a></li><li><a href="#g-filo"><span class="k">02</span>1. Il filo rosso (5 minuti)</a></li><li><a href="#g-gauss"><span class="k">03</span>2. Sistemi lineari e Gauss (25 minuti)</a></li><li><a href="#g-spazi"><span class="k">04</span>3. Spazi vettoriali, basi, dimensione (15 minuti)</a></li><li><a href="#g-sottospazi"><span class="k">05</span>4. Sottospazi in pratica (25 minuti)</a></li><li><a href="#g-applicazioni"><span class="k">06</span>5. Applicazioni lineari (25 minuti)</a></li><li><a href="#g-matrice"><span class="k">07</span>6. Matrice associata e cambio base (15 minuti)</a></li><li><a href="#g-esame"><span class="k">08</span>7. All&#x27;esame (10 minuti)</a></li><li><a href="#g-cap0"><span class="k">09</span>Se avanza tempo: il Cap. 0 in un riquadro</a></li></ol></div>
+      
+    </aside>
+    <main id="content">
+<section class="sec" id="g-piano">
+  <div class="num">01</div>
+  <h2>Il piano delle due ore</h2>
+  <p class="lead">Leggi tutto una volta, nell'ordine. Ogni parte ha l'idea, il metodo e un esempio. Gli esempi rifalli con carta e penna senza guardare: è lì che capisci davvero.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Minuti</th><th>Parte</th><th>Perché</th></tr></thead>
+    <tbody>
+      <tr><td>5</td><td>1. Il filo rosso</td><td>Per vedere come si collega tutto</td></tr>
+      <tr><td>25</td><td>2. Sistemi lineari e Gauss</td><td>È lo strumento che usi in ogni esercizio</td></tr>
+      <tr><td>15</td><td>3. Spazi vettoriali, basi, dimensione</td><td>I concetti dietro ai quiz</td></tr>
+      <tr><td>25</td><td>4. Sottospazi in pratica (con polinomi e matrici)</td><td>Esce in quasi ogni esame</td></tr>
+      <tr><td>25</td><td>5. Applicazioni lineari</td><td>Nucleo e immagine: in tutti gli esami</td></tr>
+      <tr><td>15</td><td>6. Matrice associata</td><td>In 12 esami su 15</td></tr>
+      <tr><td>10</td><td>7. All'esame: quiz e come scrivere</td><td>Punti facili da non perdere</td></tr>
+    </tbody>
+  </table></div>
+  <p>Il Cap. 0 (logica, insiemi, \(\mathbb Z/n\)) negli esami non esce mai da solo: c'è un riquadro alla fine, solo se ti avanza tempo.</p>
+</section>
+
+<section class="sec" id="g-filo">
+  <div class="num">02</div>
+  <h2>1. Il filo rosso (5 minuti)</h2>
+  <p>Tutto il programma fin qui gira intorno a <strong>una sola domanda</strong>: «quante soluzioni ha un sistema lineare, e come sono fatte?». Le cambia solo il linguaggio:</p>
+  <ul>
+    <li><strong>Sistemi</strong> (Cap. 1): \(A\mathbf x=\mathbf b\). Si risolvono con Gauss.</li>
+    <li><strong>Sottospazi</strong> (Cap. 2–3): rette e piani per l'origine, in qualsiasi dimensione. Si descrivono con equazioni (= un sistema) oppure con dei vettori che li generano.</li>
+    <li><strong>Applicazioni lineari</strong> (Cap. 4–5): funzioni che rispettano somme e multipli. In coordinate sono \(\mathbf x\mapsto A\mathbf x\): di nuovo una matrice.</li>
+  </ul>
+  <p>Quindi la strategia di ogni esercizio è sempre la stessa: <strong>traduci in una matrice → riduci con Gauss → leggi il risultato → ritraduci</strong>. Il numero che conta più di tutti è il <strong>rango</strong>.</p>
+</section>
+
+<section class="sec" id="g-gauss">
+  <div class="num">03</div>
+  <h2>2. Sistemi lineari e Gauss (25 minuti)</h2>
+
+  <h3>L'idea</h3>
+  <p>Hai \(n\) incognite, quindi \(n\) «gradi di libertà». Ogni equazione <em>davvero nuova</em> ne toglie uno. Un'equazione che è combinazione delle altre non dice niente di nuovo. Il <strong>rango</strong> conta proprio le equazioni davvero nuove. Quindi, se il sistema ha soluzioni, restano \(n-\mathrm{rk}A\) parametri liberi.</p>
+  <p>Può anche succedere che le equazioni si contraddicano (\(x+y=1\) e \(x+y=2\)): allora non ci sono soluzioni. Gauss lo mostra con una riga \(0=c\) con \(c\ne0\).</p>
+
+  <h3>Gauss in pratica</h3>
+  <p>Scrivi la matrice completa \((A|\mathbf b)\) e usa solo tre mosse, che non cambiano le soluzioni:</p>
+  <ol>
+    <li>scambiare due righe;</li>
+    <li>moltiplicare una riga per un numero <strong>diverso da 0</strong>;</li>
+    <li>sommare a una riga un multiplo di un'<strong>altra</strong> riga.</li>
+  </ol>
+  <p>Obiettivo: la <strong>forma a scala</strong>. Il primo numero non nullo di ogni riga (il <em>pivot</em>) sta più a destra di quello della riga sopra, e le righe nulle sono in fondo. Il rango è il numero di pivot.</p>
+
+  <div class="box box--thm"><div class="tag">Il teorema da citare</div><h4>Rouché–Capelli</h4>
+    <p>\(A\mathbf x=\mathbf b\) ha soluzioni \(\iff\mathrm{rk}A=\mathrm{rk}(A|\mathbf b)\) (nessuna riga \(0=c\ne0\)). In quel caso le soluzioni dipendono da \(n-\mathrm{rk}A\) parametri: sono \(\infty^{\,n-\mathrm{rk}A}\), e la soluzione è unica se \(\mathrm{rk}A=n\).</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio · sistema con parametro (il tipo da esame)</div>
+    <p>\(x+y+z=1,\quad x+2y+3z=2,\quad 2x+3y+kz=4.\)</p>
+    \[\left(\begin{array}{ccc|c}1&1&1&1\\1&2&3&2\\2&3&k&4\end{array}\right)
+    \xrightarrow[R_3-2R_1]{R_2-R_1}
+    \left(\begin{array}{ccc|c}1&1&1&1\\0&1&2&1\\0&1&k-2&2\end{array}\right)
+    \xrightarrow{R_3-R_2}
+    \left(\begin{array}{ccc|c}1&1&1&1\\0&1&2&1\\0&0&k-4&1\end{array}\right)\]
+    <p>L'unico pivot che dipende da \(k\) è \(k-4\), quindi si studiano due casi:</p>
+    <ul>
+      <li>\(k\ne4\): tre pivot, \(\mathrm{rk}A=\mathrm{rk}(A|\mathbf b)=3=n\), soluzione <strong>unica</strong>. Risolvendo dal basso: \(z=\frac1{k-4}\), \(y=1-2z=\frac{k-6}{k-4}\), \(x=1-y-z=\frac1{k-4}\).</li>
+      <li>\(k=4\): l'ultima riga diventa \(0=1\), quindi \(\mathrm{rk}A=2\ne\mathrm{rk}(A|\mathbf b)=3\): <strong>nessuna soluzione</strong>.</li>
+    </ul>
+    <p>Se l'ultima riga fosse stata \((0\ 0\ k-4\,|\,0)\), per \(k=4\) avresti avuto \(\mathrm{rk}=2\) su entrambe e \(\infty^{3-2}=\infty^1\) soluzioni.</p>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Errori da evitare</div>
+    <ul>
+      <li>Non dividere mai per un'espressione in \(k\) (come \(k-4\)) senza prima tenere da parte il caso in cui vale 0.</li>
+      <li>Fai le mosse una alla volta: \(R_1\to R_1-R_2\) e \(R_2\to R_2-R_1\) insieme non sono lecite.</li>
+    </ul>
+  </div>
+
+  <h3>Matrice inversa, in breve</h3>
+  <p>Una matrice quadrata \(A\) di tipo \(n\times n\) è invertibile \(\iff\mathrm{rk}A=n\). Per calcolare l'inversa riduci \((A\,|\,I)\) fino ad avere \(I\) a sinistra: a destra trovi \(A^{-1}\). Ricorda poi che \(AB\ne BA\) in generale.</p>
+</section>
+
+<section class="sec" id="g-spazi">
+  <div class="num">04</div>
+  <h2>3. Spazi vettoriali, basi, dimensione (15 minuti)</h2>
+
+  <h3>L'idea</h3>
+  <p>Uno <strong>spazio vettoriale</strong> è un insieme in cui puoi sommare e moltiplicare per numeri, con le regole solite. Esempi: \(\mathbb R^n\), i polinomi di grado \(\le d\), le matrici. Un <strong>sottospazio</strong> è un pezzo «piatto» che passa per l'origine: un punto \(\{\mathbf 0\}\), una retta, un piano… In \(\mathbb R^3\) i sottospazi sono solo \(\{\mathbf 0\}\), le rette e i piani per l'origine, e \(\mathbb R^3\) stesso.</p>
+
+  <div class="box box--method"><div class="tag">«È un sottospazio?» in 10 secondi</div>
+    <ol>
+      <li>Contiene \(\mathbf 0\)? Se no, <strong>non lo è</strong> (es. \(x+y=1\); \(p(0)=1\)).</li>
+      <li>Ci sono quadrati, prodotti tra variabili, costanti? (\(xy=0\), \(x^2=y^2\)). Di solito <strong>non lo è</strong>: trova due elementi con la somma fuori. Per \(xy=0\): \((1,0)\) e \((0,1)\) ci stanno, \((1,1)\) no.</li>
+      <li>Sono equazioni lineari senza termine noto (\(x_1+x_4=0\), \(p(1)=p(2)\), \(A^\top=A\))? Allora <strong>lo è</strong>. Lo dimostri così: se \(\mathbf u,\mathbf w\) soddisfano le condizioni, le soddisfa anche \(\mathbf u+\lambda\mathbf w\).</li>
+    </ol>
+  </div>
+
+  <h3>Span, indipendenza, base</h3>
+  <ul>
+    <li><strong>\(\mathrm{Span}\{\mathbf v_1,\dots,\mathbf v_r\}\)</strong>: tutto quello che ottieni combinando i \(\mathbf v_i\), cioè tutti i vettori \(\lambda_1\mathbf v_1+\dots+\lambda_r\mathbf v_r\). Due vettori non paralleli in \(\mathbb R^3\) generano un piano.</li>
+    <li><strong>Indipendenti</strong>: nessuno è «inutile», cioè nessuno è combinazione degli altri. In formule: \(\lambda_1\mathbf v_1+\dots+\lambda_r\mathbf v_r=\mathbf 0\) solo con tutti i \(\lambda_i=0\).</li>
+    <li><strong>Base</strong>: un insieme di vettori che genera tutto senza vettori inutili. Ogni vettore si scrive <em>in un solo modo</em> come combinazione degli elementi della base: i coefficienti sono le sue <strong>coordinate</strong>.</li>
+    <li><strong>Dimensione</strong>: quanti vettori ha una base (tutte le basi ne hanno lo stesso numero). Intuitivamente: quanti parametri servono per descrivere un elemento.</li>
+  </ul>
+
+  <div class="tablewrap"><table>
+    <thead><tr><th>Spazio</th><th>Dimensione</th><th>Base canonica</th></tr></thead>
+    <tbody>
+      <tr><td>\(\mathbb R^n\)</td><td>\(n\)</td><td>\(\mathbf e_1,\dots,\mathbf e_n\)</td></tr>
+      <tr><td>Polinomi di grado \(\le d\), \(\mathbb R[x]_{\le d}\)</td><td>\(d+1\)</td><td>\(1,x,\dots,x^d\)</td></tr>
+      <tr><td>Matrici \(m\times n\)</td><td>\(mn\)</td><td>matrici con un solo 1</td></tr>
+      <tr><td>Matrici simmetriche \(2\times2\) / \(3\times3\)</td><td>\(3\) / \(6\)</td><td></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="box box--thm"><div class="tag">Le tre regole che risolvono metà dei quiz</div>
+    <p>In uno spazio di dimensione \(n\):</p>
+    <ul>
+      <li>più di \(n\) vettori sono sempre <strong>dipendenti</strong>;</li>
+      <li>meno di \(n\) vettori <strong>non generano</strong> mai tutto;</li>
+      <li>esattamente \(n\) vettori sono una base se sono indipendenti, <em>oppure</em> se generano: basta controllare una delle due cose. Ma \(n\) vettori qualsiasi non sono per forza una base (potrebbero essere tutti uguali).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="g-sottospazi">
+  <div class="num">05</div>
+  <h2>4. Sottospazi in pratica (25 minuti)</h2>
+
+  <h3>L'idea: due modi di descrivere un sottospazio</h3>
+  <div class="grid2">
+    <div class="box box--def"><div class="tag">Parametrica (Span)</div>
+      <p>Dai dei vettori che lo generano: \(U=\mathrm{Span}\{\mathbf u_1,\mathbf u_2\}\). Comoda per elencare elementi e per fare la <strong>somma</strong>.</p>
+    </div>
+    <div class="box box--def"><div class="tag">Cartesiana (equazioni)</div>
+      <p>Dai le equazioni che i vettori devono soddisfare: \(U=\{\mathbf x: A\mathbf x=\mathbf 0\}\). Comoda per dire se un vettore ci sta e per fare l'<strong>intersezione</strong>.</p>
+    </div>
+  </div>
+  <p><strong>Formula chiave</strong>: in \(\mathbb R^n\), ogni equazione indipendente toglie una dimensione. Quindi \(\dim U=n-(\text{numero di equazioni indipendenti})=n-\mathrm{rk}A\), e per descrivere \(U\) servono \(n-\dim U\) equazioni.</p>
+
+  <div class="box box--method"><div class="tag">Le quattro ricette</div>
+    <ol>
+      <li><strong>Da equazioni a Span</strong>: risolvi il sistema. Ogni variabile libera è un parametro e dà un vettore della base.</li>
+      <li><strong>Da Span a equazioni</strong>: metti i generatori in colonna accanto a una colonna \(\mathbf x\) e fai Gauss. Le righe che a sinistra diventano nulle danno le equazioni (\(\ldots=0\)).</li>
+      <li><strong>Intersezione</strong> \(U\cap W\): scrivi entrambi con equazioni e <strong>metti insieme tutte le equazioni</strong>.</li>
+      <li><strong>Somma</strong> \(U+W\): scrivi entrambi con generatori e <strong>metti insieme tutti i generatori</strong>, poi Gauss per toglierne i doppioni.</li>
+    </ol>
+    <p>Per controllare, o per evitare un conto, usa <strong>Grassmann</strong>: \(\dim(U+W)=\dim U+\dim W-\dim(U\cap W)\).</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio completo (come E1 d'esame)</div>
+    <p>In \(\mathbb R^4\): \(U=\mathrm{Span}\{(1,1,0,0),(0,0,1,1)\}\) e \(W=\{x_1-x_3=0,\ x_2-x_4=0\}\).</p>
+    <p><strong>Dimensioni.</strong> I due generatori di \(U\) non sono proporzionali, quindi \(\dim U=2\). \(W\) ha 2 equazioni indipendenti, quindi \(\dim W=4-2=2\).</p>
+    <p><strong>\(U\) in forma cartesiana</strong> (ricetta 2):</p>
+    \[\left(\begin{array}{cc|c}1&0&x_1\\1&0&x_2\\0&1&x_3\\0&1&x_4\end{array}\right)\xrightarrow[R_4-R_3]{R_2-R_1}\left(\begin{array}{cc|c}1&0&x_1\\0&0&x_2-x_1\\0&1&x_3\\0&0&x_4-x_3\end{array}\right)
+    \quad\Rightarrow\quad U:\ x_1-x_2=0,\ x_3-x_4=0.\]
+    <p>Sono \(4-2=2\) equazioni, come previsto.</p>
+    <p><strong>Intersezione</strong> (ricetta 3): tutte e quattro le equazioni insieme danno \(x_1=x_2\), \(x_3=x_4\), \(x_1=x_3\), \(x_2=x_4\), cioè \(x_1=x_2=x_3=x_4\). Quindi \(U\cap W=\mathrm{Span}\{(1,1,1,1)\}\) e ha dimensione 1.</p>
+    <p><strong>Somma</strong> con Grassmann: \(\dim(U+W)=2+2-1=3\). Per trovarne una base, prendi i generatori di \(U\) e una base di \(W\), cioè \((1,0,1,0),(0,1,0,1)\) (da \(x_3,x_4\) liberi), e ne tieni tre indipendenti: ad esempio \((1,1,0,0),(0,0,1,1),(1,0,1,0)\). In forma cartesiana basta \(4-3=1\) equazione: \(x_1-x_2-x_3+x_4=0\). <strong>Prova</strong>: tutti e quattro i generatori la soddisfano.</p>
+  </div>
+
+  <h3>Polinomi e matrici: si passa alle coordinate</h3>
+  <p>Quasi metà degli esercizi d'esame usa polinomi o matrici \(2\times2\). Non cambia niente: scrivi ogni elemento come la lista dei suoi coefficienti, fai i conti in \(\mathbb R^n\) e alla fine riscrivi il risultato come polinomi o matrici.</p>
+  <div class="box box--ex"><div class="tag">Esempio</div>
+    <p>\(H=\{p\in\mathbb R[x]_{\le2}: p(1)=0\}\). Con \(p=a_0+a_1x+a_2x^2\), la condizione è \(a_0+a_1+a_2=0\): un'equazione lineare omogenea, quindi \(H\) è un sottospazio, e \(\dim H=3-1=2\). Variabili libere \(a_1,a_2\):</p>
+    <ul>
+      <li>\(a_1=1,a_2=0\Rightarrow a_0=-1\): il polinomio \(x-1\);</li>
+      <li>\(a_1=0,a_2=1\Rightarrow a_0=-1\): il polinomio \(x^2-1\).</li>
+    </ul>
+    <p>Base di \(H\): \(\{x-1,\ x^2-1\}\). Prova: entrambi si annullano in \(x=1\).</p>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Errori da evitare</div>
+    <ul>
+      <li>La dimensione non è il numero di generatori: \(\mathrm{Span}\{\mathbf v,\mathbf w,\mathbf v+\mathbf w\}\) ha dimensione 2.</li>
+      <li>La dimensione non è \(n\) meno il numero di equazioni scritte: due equazioni proporzionali contano una volta sola.</li>
+      <li>L'intersezione non si trova guardando quali vettori le due basi hanno in comune: va calcolata.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="g-applicazioni">
+  <div class="num">06</div>
+  <h2>5. Applicazioni lineari (25 minuti)</h2>
+
+  <h3>L'idea</h3>
+  <p>Un'applicazione lineare \(f:V\to W\) è una funzione che rispetta le combinazioni: \(f(\lambda\mathbf u+\mu\mathbf v)=\lambda f(\mathbf u)+\mu f(\mathbf v)\). L'esempio tipico è \(f(\mathbf x)=A\mathbf x\). Due conseguenze importanti:</p>
+  <ul>
+    <li>\(f(\mathbf 0)=\mathbf 0\) sempre;</li>
+    <li>basta sapere dove \(f\) manda i vettori di una base per conoscerla tutta, e questi valori si possono scegliere come si vuole.</li>
+  </ul>
+
+  <div class="box box--method"><div class="tag">«\(f\) è lineare?»</div>
+    <ol>
+      <li>\(f(\mathbf 0)=\mathbf 0\)? Se no, non è lineare (es. \(f(x,y)=(x+1,y)\)).</li>
+      <li>Ci sono quadrati, prodotti tra coordinate, costanti, valori assoluti? Allora non è lineare: trova un controesempio, tipo \(f(2\mathbf v)\ne2f(\mathbf v)\).</li>
+      <li>Altrimenti scrivi la verifica \(f(\lambda\mathbf u+\mu\mathbf v)=\lambda f(\mathbf u)+\mu f(\mathbf v)\). Sono lineari, ad esempio: \(p\mapsto p(2)\), \(p\mapsto p'\), \(A\mapsto A^\top\), \(A\mapsto CA\), \(A\mapsto A\mathbf v\).</li>
+    </ol>
+  </div>
+
+  <h3>Nucleo e immagine</h3>
+  <div class="grid2">
+    <div class="box box--def"><div class="tag">Nucleo \(\mathrm{Ker}f\)</div>
+      <p>Ciò che \(f\) schiaccia su \(\mathbf 0\): \(\{\mathbf v: f(\mathbf v)=\mathbf 0\}\). Per \(f(\mathbf x)=A\mathbf x\) sono le soluzioni di \(A\mathbf x=\mathbf 0\).</p>
+      <p>\(f\) <strong>iniettiva</strong> (non manda due vettori diversi nello stesso punto) \(\iff\mathrm{Ker}f=\{\mathbf 0\}\).</p>
+    </div>
+    <div class="box box--def"><div class="tag">Immagine \(\mathrm{Im}f\)</div>
+      <p>Ciò che \(f\) riesce a raggiungere. Per \(f(\mathbf x)=A\mathbf x\) è lo Span delle colonne di \(A\), e \(\dim\mathrm{Im}f=\mathrm{rk}A\).</p>
+      <p>\(f\) <strong>suriettiva</strong> \(\iff\mathrm{Im}f=W\iff\mathrm{rk}A=\dim W\).</p>
+    </div>
+  </div>
+
+  <div class="box box--thm"><div class="tag">Il teorema più usato</div><h4>Teorema della dimensione</h4>
+    <p>\[\dim V=\dim\mathrm{Ker}f+\dim\mathrm{Im}f.\]</p>
+    <p>Lo leggi così: le dimensioni di partenza o vengono schiacciate (nucleo) o arrivano (immagine). Conseguenze immediate, utilissime nei quiz:</p>
+    <ul>
+      <li>se \(\dim V&gt;\dim W\), \(f\) <strong>non è mai iniettiva</strong> (es. \(\mathbb R^5\to\mathbb R^3\): il nucleo ha dimensione almeno 2);</li>
+      <li>se \(\dim V&lt;\dim W\), \(f\) <strong>non è mai suriettiva</strong>;</li>
+      <li>se \(\dim V=\dim W\): iniettiva \(\iff\) suriettiva \(\iff\) biiettiva (isomorfismo).</li>
+    </ul>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio</div>
+    <p>\(f:\mathbb R^3\to\mathbb R^2\), \(f(x,y,z)=(x+y,\ y+z)\). È lineare (nessun termine strano) e \(f(\mathbf x)=A\mathbf x\) con \(A=\begin{pmatrix}1&1&0\\0&1&1\end{pmatrix}\).</p>
+    <ul>
+      <li>\(A\) è già a scala con 2 pivot: \(\mathrm{rk}A=2=\dim\mathbb R^2\), quindi \(f\) è <strong>suriettiva</strong> e \(\mathrm{Im}f=\mathbb R^2\).</li>
+      <li>Teorema della dimensione: \(\dim\mathrm{Ker}f=3-2=1\), quindi \(f\) <strong>non è iniettiva</strong>.</li>
+      <li>Nucleo: \(x+y=0,\ y+z=0\). Con \(y=t\) libera: \(x=-t\), \(z=-t\), quindi \(\mathrm{Ker}f=\mathrm{Span}\{(1,-1,1)\}\). Prova: \(f(1,-1,1)=(0,0)\).</li>
+    </ul>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Errore classico</div>
+    <p>Per una base dell'immagine prendi le colonne della matrice <strong>originale</strong> che corrispondono ai pivot, non le colonne della matrice ridotta: Gauss cambia lo Span delle colonne.</p>
+  </div>
+</section>
+
+<section class="sec" id="g-matrice">
+  <div class="num">07</div>
+  <h2>6. Matrice associata e cambio base (15 minuti)</h2>
+
+  <h3>L'idea</h3>
+  <p>Se \(V\) e \(W\) non sono \(\mathbb R^n\) (polinomi, matrici…), scegli una base in ciascuno e lavora con le coordinate. Così ogni applicazione lineare diventa «moltiplicare per una matrice». Quella matrice si scrive \(M^{\mathcal B}_{\mathcal C}(f)\): la base di partenza \(\mathcal B\) in alto, quella di arrivo \(\mathcal C\) in basso.</p>
+
+  <div class="box box--method"><div class="tag">Ricetta</div>
+    <ol>
+      <li>Prendi i vettori della base di partenza \(\mathcal B=\{\mathbf v_1,\dots,\mathbf v_n\}\) e calcola \(f(\mathbf v_1),\dots,f(\mathbf v_n)\).</li>
+      <li>Scrivi ciascuna immagine nelle coordinate della base di arrivo \(\mathcal C\).</li>
+      <li>Metti queste coordinate <strong>in colonna</strong>, una colonna per vettore. La matrice ha \(\dim W\) righe e \(\dim V\) colonne.</li>
+    </ol>
+    <p>Poi si usa come al solito: rango \(=\dim\mathrm{Im}f\), \(\dim\mathrm{Ker}f=\dim V-\mathrm{rk}\). Il nucleo della matrice dà le <em>coordinate</em> dei vettori del nucleo: vanno ritradotte in polinomi o matrici.</p>
+  </div>
+
+  <div class="box box--ex"><div class="tag">Esempio</div>
+    <p>\(f:\mathbb R[x]_{\le2}\to\mathbb R^2\), \(f(p)=(p(0),p(1))\), con \(\mathcal B=\{1,x,x^2\}\) e \(\mathcal C\) la base canonica. Le immagini sono \(f(1)=(1,1)\), \(f(x)=(0,1)\), \(f(x^2)=(0,1)\), quindi</p>
+    \[M^{\mathcal B}_{\mathcal C}(f)=\begin{pmatrix}1&0&0\\1&1&1\end{pmatrix}.\]
+    <p>Rango 2: \(f\) è suriettiva e \(\dim\mathrm{Ker}f=3-2=1\). Nucleo della matrice: \(a_0=0\), \(a_0+a_1+a_2=0\), cioè \((0,-1,1)\). Ritradotto: \(\mathrm{Ker}f=\mathrm{Span}\{x^2-x\}\). Prova: \(x^2-x\) vale 0 sia in 0 sia in 1.</p>
+  </div>
+
+  <div class="box box--def"><div class="tag">Cambio base, il minimo indispensabile</div>
+    <p>La matrice di cambio base da \(\mathcal B\) a \(\mathcal B'\) ha come colonne i vettori della vecchia base \(\mathcal B\) scritti nelle coordinate della nuova base \(\mathcal B'\). Trasforma le coordinate: \([\mathbf v]_{\mathcal B'}=M^{\mathcal B}_{\mathcal B'}[\mathbf v]_{\mathcal B}\). In \(\mathbb R^n\) la matrice che ha come colonne i vettori di \(\mathcal B'\) fa il passaggio inverso, da \(\mathcal B'\) alla base canonica.</p>
+    <p>In pratica, per le coordinate di un vettore in una base nuova basta risolvere un sistema. Es.: \((3,1)=a(1,1)+b(1,-1)\) dà \(a=2\), \(b=1\).</p>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Errore classico</div>
+    <p>Mettere le coordinate delle immagini in <strong>riga</strong> invece che in colonna, oppure dimenticare di riscriverle nella base di arrivo quando quella non è la base canonica.</p>
+  </div>
+</section>
+
+<section class="sec" id="g-esame">
+  <div class="num">08</div>
+  <h2>7. All'esame (10 minuti)</h2>
+
+  <h3>Quiz: ragiona sulle dimensioni prima di fare conti</h3>
+  <ul>
+    <li>\(\dim V=7\) e \(\mathbf b_1,\dots,\mathbf b_n\) generano \(V\) \(\Rightarrow n\ge7\). Se invece sono indipendenti, \(n\le7\) (non per forza \(=7\)).</li>
+    <li>\(\dim(H\cap K)\ge\dim H+\dim K-\dim V\). Es.: \(\dim V=9\), \(\dim H=6\), \(\dim K=7\) \(\Rightarrow\) \(\dim(H\cap K)\in\{4,5,6\}\).</li>
+    <li>\(f:\mathbb R^5\to\mathbb R^3\) non è mai iniettiva; \(f:\mathbb R^3\to\mathbb R^5\) non è mai suriettiva.</li>
+    <li>\(M\mathbf x=\mathbf b\) ha soluzione \(\iff\mathbf b\) è combinazione delle colonne di \(M\).</li>
+    <li>Un insieme che non contiene \(\mathbf 0\) non è un sottospazio. L'unione di due sottospazi di solito non lo è.</li>
+    <li>Per scegliere le equazioni cartesiane giuste: devono essere \(n-\dim U\), indipendenti, e soddisfatte da tutti i generatori. Scarta le opzioni con il numero sbagliato di equazioni.</li>
+    <li>«Vale sempre?»: per dire di no basta un controesempio. Prova la matrice nulla, l'identità, \(\begin{pmatrix}0&1\\0&0\end{pmatrix}\).</li>
+    <li>Se riesci a scartare qualche opzione, rispondi comunque (controlla sul testo se le risposte sbagliate tolgono punti).</li>
+  </ul>
+
+  <h3>Esercizi: come prendere tutti i punti</h3>
+  <ul>
+    <li>Le risposte vanno <strong>motivate</strong>: scrivi il teorema che usi (Rouché–Capelli, Grassmann, Teorema della dimensione, «\(\mathrm{Ker}f=\{\mathbf 0\}\iff\) iniettiva»).</li>
+    <li>Chiudi ogni punto con una <strong>prova</strong> (sostituisci i vettori nelle equazioni, controlla le dimensioni).</li>
+    <li>Se il testo dice «verificare che la matrice è…», quella matrice usala nei punti dopo anche se non riesci a verificarla.</li>
+    <li>Con polinomi e matrici dai la risposta come polinomi e matrici, non come coordinate.</li>
+  </ul>
+</section>
+
+<section class="sec" id="g-cap0">
+  <div class="num">09</div>
+  <h2>Se avanza tempo: il Cap. 0 in un riquadro</h2>
+  <div class="box box--note"><div class="tag">Cap. 0</div>
+    <ul>
+      <li>\(A\Rightarrow B\) equivale a \(\lnot B\Rightarrow\lnot A\), non a \(B\Rightarrow A\). La negazione di \(A\Rightarrow B\) è «\(A\) e non \(B\)». \(\lnot\forall=\exists\lnot\), \(\lnot\exists=\forall\lnot\).</li>
+      <li>Iniettiva: \(f(x)=f(y)\Rightarrow x=y\). Suriettiva: ogni elemento del codominio è raggiunto. Biiettiva \(\iff\) invertibile.</li>
+      <li>Relazione di equivalenza: riflessiva, simmetrica, transitiva. Le classi dividono l'insieme in parti disgiunte.</li>
+      <li>\([a]\) è invertibile in \(\mathbb Z/n\iff\mathrm{MCD}(a,n)=1\) (inverso con Euclide e Bézout). \(\mathbb Z/n\) è un campo \(\iff n\) è primo.</li>
+      <li>Gruppo: operazione associativa, con elemento neutro e inversi. Campo: si può sommare, moltiplicare e dividere per ogni elemento diverso da 0 (\(\mathbb Q,\mathbb R,\mathbb C,\mathbb Z/p\); \(\mathbb Z\) no).</li>
+      <li>\(S_n\) ha \(n!\) elementi; un \(k\)-ciclo ha segno \((-1)^{k-1}\).</li>
+    </ul>
+  </div>
+  <p>Per ripassare i conti all'ultimo momento c'è il <a href="bigino.html">bigino completo con il formulario</a>.</p>
+</section>
+      <nav class="pager" aria-label="Capitoli"><a class="prev" href="cap5.html"><small>← Precedente</small><span>Matrice associata</span></a><a class="next" href="bigino.html"><small>Successivo →</small><span>Bigino per la 1ª prova (Cap. 0–5)</span></a></nav>
+    </main>
+  </div>
+  <footer class="foot">Appunti personali basati sul materiale del corso di Geometria e Algebra Lineare (Politecnico di Milano, 2026/27). Possono contenere errori: nel dubbio fa fede il materiale del docente.</footer>
+</div>
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], tags: 'none' },
+    svg: { fontCache: 'global' },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js" async></script>
+<script src="../assets/gal.js"></script>
+</body>
+</html>
