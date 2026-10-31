@@ -3,14 +3,14 @@
   <p class="lead">Numerate come nell'elenco del regolamento 2026/27. Impara la traccia in grassetto e sappila sviluppare: allo scritto valgono da 3 a 6 punti.</p>
 <div class="box box--thm"><div class="tag">Dimostrazione 1 · \(\sqrt2\) è irrazionale</div><p>
 Per assurdo \(\sqrt2=\frac mn\) con \(m,n\in\mathbb N\), \(n\neq0\), <b>primi tra loro</b>. Allora \(m^2=2n^2\), quindi \(m^2\) è pari, quindi \(m\) è pari (se \(m\) fosse dispari anche \(m^2\) lo sarebbe). Scrivo \(m=2k\): \(4k^2=2n^2\Rightarrow n^2=2k^2\), quindi anche \(n\) è pari. <b>\(m\) e \(n\) entrambi pari</b>: contraddice che sono primi tra loro. □</p></div>
-<div class="box box--thm"><div class="tag">Dimostrazione 2 · Disuguaglianza di Bernoulli: \((1+x)^n\ge1+nx\) per \(x\ge-1\), \(n\in\mathbb N\)</div><p>
-Per induzione su \(n\). <b>Base</b> \(n=0\): \(1\ge1\). <b>Passo</b>: supponiamo \((1+x)^n\ge1+nx\). Poiché \(1+x\ge0\) posso moltiplicare senza cambiare verso:
+<div class="box box--thm"><div class="tag">Dimostrazione 2 · Disuguaglianza di Bernoulli: \((1+x)^n\ge1+nx\) per \(x&gt;-1\), \(n\in\mathbb N\)</div><p>
+Per induzione su \(n\). <b>Base</b> \(n=0\): \(1\ge1\). <b>Passo</b>: supponiamo \((1+x)^n\ge1+nx\). Poiché \(1+x&gt;0\) posso moltiplicare senza cambiare verso:
 \[(1+x)^{n+1}=(1+x)^n(1+x)\ge(1+nx)(1+x)=1+(n+1)x+nx^2\ge1+(n+1)x,\]
 perché \(nx^2\ge0\). □</p></div>
-<div class="box box--thm"><div class="tag">Dimostrazione 3 · De Moivre (prodotti e potenze)</div><p>
+<div class="box box--thm"><div class="tag">Dimostrazione 3 · De Moivre (prodotti, quozienti e potenze con \(n\in\mathbb Z\))</div><p>
 Siano \(z=\rho(\cos\theta+i\sin\theta)\), \(w=r(\cos\varphi+i\sin\varphi)\). Moltiplico:
 \[zw=\rho r\big[(\cos\theta\cos\varphi-\sin\theta\sin\varphi)+i(\sin\theta\cos\varphi+\cos\theta\sin\varphi)\big]=\rho r\big[\cos(\theta+\varphi)+i\sin(\theta+\varphi)\big]\]
-per le <b>formule di addizione</b>. <b>Potenze per induzione</b>: \(z^1\) ok; se \(z^n=\rho^n(\cos n\theta+i\sin n\theta)\), allora \(z^{n+1}=z^n\cdot z=\rho^{n+1}(\cos(n+1)\theta+i\sin(n+1)\theta)\) per la formula del prodotto. □</p></div>
+per le <b>formule di addizione</b>. <b>Potenze per induzione</b>: \(z^1\) ok; se \(z^n=\rho^n(\cos n\theta+i\sin n\theta)\), allora \(z^{n+1}=z^n\cdot z=\rho^{n+1}(\cos(n+1)\theta+i\sin(n+1)\theta)\) per la formula del prodotto.<br/><b>Quoziente</b>: \(\frac1w=\frac{\bar w}{|w|^2}=\frac1r(\cos\varphi-i\sin\varphi)=\frac1r(\cos(-\varphi)+i\sin(-\varphi))\) (cos pari, sin dispari), quindi \(\arg\frac1w=-\arg w\) e, per la formula del prodotto, \(\frac zw=z\cdot\frac1w=\frac\rho r\big(\cos(\theta-\varphi)+i\sin(\theta-\varphi)\big)\).<br/><b>Esponenti \(n\le0\)</b>: per \(n=0\), \(z^0=1=\rho^0(\cos0+i\sin0)\). Per \(n=-m\) con \(m&gt;0\): \(z^{-m}=\frac1{z^m}=\rho^{-m}(\cos m\theta-i\sin m\theta)=\rho^{-m}\big(\cos(-m\theta)+i\sin(-m\theta)\big)\). Quindi la formula vale per ogni \(n\in\mathbb Z\). □</p></div>
 <div class="box box--thm"><div class="tag">Dimostrazione 4 · Radici n-esime</div><p>
 Sia \(w=\rho e^{i\theta}\neq0\); cerco \(z=re^{i\varphi}\) con \(z^n=w\). Per De Moivre \(z^n=r^ne^{in\varphi}\). Due complessi sono uguali se e solo se <b>moduli uguali</b> e <b>argomenti che differiscono per multipli di \(2\pi\)</b>:
 \[r^n=\rho\Rightarrow r=\sqrt[n]\rho,\qquad n\varphi=\theta+2k\pi\Rightarrow\varphi_k=\frac{\theta+2k\pi}n,\ k\in\mathbb Z.\]
@@ -53,15 +53,18 @@ Sia \(0\le a_n\le b_n\) (il carattere non cambia togliendo i primi termini, quin
 Se \(\sum b_n=B\) converge: \(A_n\le B_n\le B\), quindi \(A_n\) è crescente e limitata, e <b>per il teorema delle successioni monotone converge</b>.<br/>
 Se \(\sum a_n\) diverge: \(A_n\to+\infty\) e \(B_n\ge A_n\), quindi per confronto \(B_n\to+\infty\). □</p></div>
 <div class="box box--thm"><div class="tag">Dimostrazione 12 · Criterio del confronto asintotico</div><p>
-Siano \(a_n,b_n&gt;0\) con \(\frac{a_n}{b_n}\to\ell\in(0,+\infty)\) (se \(a_n\sim b_n\), \(\ell=1\)). Con <b>\(\varepsilon=\frac\ell2\)</b> esiste \(N\) tale che per \(n&gt;N\):
-\[\frac\ell2&lt;\frac{a_n}{b_n}&lt;\frac{3\ell}2\quad\Longrightarrow\quad\frac\ell2\,b_n&lt;a_n&lt;\frac{3\ell}2\,b_n.\]
-Se \(\sum b_n\) converge, converge \(\sum\frac{3\ell}2b_n\) e per <b>confronto</b> converge \(\sum a_n\). Se \(\sum b_n\) diverge, diverge \(\sum\frac\ell2b_n\) e per confronto diverge \(\sum a_n\). □</p></div>
+<b>Enunciato (Lez. 12)</b>: siano \(a_n\ge0\), \(b_n&gt;0\) con \(\frac{a_n}{b_n}\to\ell\in[0,+\infty]\).
+(1) Se \(\sum b_n\) converge e \(\ell\in[0,+\infty)\), allora \(\sum a_n\) converge.
+(2) Se \(\sum b_n\) diverge e \(\ell\in(0,+\infty]\), allora \(\sum a_n\) diverge.
+<b>Corollario</b>: se \(a_n\sim b_n\) (\(\ell=1\)) le due serie hanno lo stesso carattere.<br/>
+<b>(1)</b> Fisso \(\varepsilon&gt;0\) (ad esempio \(\varepsilon=1\)). Poiché \(\ell\) è finito, esiste \(N\) tale che \(\frac{a_n}{b_n}&lt;\ell+\varepsilon\) per \(n&gt;N\), cioè <b>\(a_n&lt;(\ell+\varepsilon)\,b_n\)</b>. La serie \(\sum(\ell+\varepsilon)b_n\) converge, quindi per <b>confronto</b> converge \(\sum a_n\).<br/>
+<b>(2)</b> Se \(\ell\in(0,+\infty)\), con <b>\(\varepsilon=\frac\ell2\)</b> definitivamente \(\frac{a_n}{b_n}&gt;\frac\ell2\), cioè \(a_n&gt;\frac\ell2\,b_n\). Se \(\ell=+\infty\), per la definizione con \(M=1\) definitivamente \(a_n&gt;b_n\). In entrambi i casi \(a_n\) è definitivamente maggiore di un multiplo positivo di \(b_n\), la cui serie diverge: per confronto \(\sum a_n\) diverge. □</p></div>
 <div class="box box--thm"><div class="tag">Dimostrazione 13 · Criterio del rapporto</div><p>
 Sia \(a_n&gt;0\) e \(\frac{a_{n+1}}{a_n}\to\ell\).<br/>
 <b>\(\ell&lt;1\)</b>: scelgo \(x\) con \(\ell&lt;x&lt;1\) (\(\varepsilon=x-\ell\)). Esiste \(N\) con \(\frac{a_{k+1}}{a_k}&lt;x\) per \(k\ge N\). Allora \(a_{N+1}&lt;a_Nx\), \(a_{N+2}&lt;a_Nx^2\), … cioè
 \[a_n\le a_N\,x^{\,n-N}=\frac{a_N}{x^N}\,x^n\qquad(n\ge N).\]
 Il secondo membro è il termine di una <b>serie geometrica di ragione \(0&lt;x&lt;1\), convergente</b>: per confronto \(\sum a_n\) converge.<br/>
-<b>\(\ell&gt;1\)</b>: con \(\varepsilon=\ell-1\), definitivamente \(\frac{a_{n+1}}{a_n}&gt;1\), cioè \(a_{n+1}&gt;a_n&gt;0\): la successione è definitivamente crescente e positiva, quindi <b>non tende a 0</b>. Per la condizione necessaria la serie non converge, e essendo a termini positivi <b>diverge a \(+\infty\)</b>. □</p></div>
+<b>\(\ell&gt;1\)</b> (anche \(\ell=+\infty\)): se \(\ell\) è finito prendo \(\varepsilon=\ell-1\); se \(\ell=+\infty\) uso la definizione con \(M=1\). In entrambi i casi definitivamente \(\frac{a_{n+1}}{a_n}&gt;1\), cioè \(a_{n+1}&gt;a_n&gt;0\): la successione è definitivamente crescente e positiva, quindi <b>non tende a 0</b>. Per la condizione necessaria la serie non converge, e essendo a termini positivi <b>diverge a \(+\infty\)</b>. □</p></div>
 <div class="box box--thm"><div class="tag">Dimostrazione 14 · Convergenza assoluta ⇒ convergenza semplice</div><p>
 Sia \(\sum|a_n|\) convergente. Vale <b>\(0\le a_n+|a_n|\le2|a_n|\)</b>, quindi per confronto \(\sum(a_n+|a_n|)\) converge. Allora
 \[\sum a_n=\sum(a_n+|a_n|)-\sum|a_n|\]

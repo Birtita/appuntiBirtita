@@ -17,7 +17,7 @@ Data \(a_n\), la <b>serie</b> \(\sum_{n=0}^{\infty}a_n\) è il limite delle <b>s
 Le somme parziali sono crescenti, quindi la serie <b>converge oppure diverge a \(+\infty\)</b>, mai irregolare.
 </p><ul>
 <li><b>Confronto</b> <strong>(*11)</strong>: se \(0\le a_n\le b_n\) definitivamente, allora se \(\sum b_n\) converge anche \(\sum a_n\) converge; se \(\sum a_n\) diverge anche \(\sum b_n\) diverge.</li>
-<li><b>Confronto asintotico</b> <strong>(*12)</strong>: se \(a_n,b_n&gt;0\) e \(a_n\sim b_n\) (o più in generale \(\frac{a_n}{b_n}\to\ell\in(0,+\infty)\)), allora \(\sum a_n\) e \(\sum b_n\) hanno lo stesso carattere.</li>
+<li><b>Confronto asintotico</b> <strong>(*12)</strong>: se \(a_n\ge0\), \(b_n&gt;0\) e \(\frac{a_n}{b_n}\to\ell\in[0,+\infty]\): se \(\sum b_n\) converge e \(\ell&lt;+\infty\), allora \(\sum a_n\) converge; se \(\sum b_n\) diverge e \(\ell&gt;0\), allora \(\sum a_n\) diverge. In particolare se \(a_n\sim b_n\) le due serie hanno lo stesso carattere.</li>
 <li><b>Rapporto</b> <strong>(*13)</strong>: se \(a_n&gt;0\) e \(\frac{a_{n+1}}{a_n}\to\ell\): con \(\ell&lt;1\) converge, con \(\ell&gt;1\) (anche \(+\infty\)) diverge, con \(\ell=1\) non si conclude.</li>
 <li><b>Radice</b>: se \(a_n\ge0\) e \(\sqrt[n]{a_n}\to\ell\): con \(\ell&lt;1\) converge, con \(\ell&gt;1\) diverge, con \(\ell=1\) non si conclude.</li>
 </ul></div>
@@ -27,6 +27,8 @@ Le somme parziali sono crescenti, quindi la serie <b>converge oppure diverge a \
 <li><b>Assoluta ⇒ semplice</b> <strong>(*14)</strong>. Non vale il viceversa: \(\sum\frac{(-1)^n}{n}\) converge (Leibniz) ma \(\sum\frac1n\) diverge.</li>
 <li><b>Leibniz</b>: se \(b_n\ge0\), \(b_n\to0\) e \(b_n\) è <b>decrescente</b> (definitivamente), allora \(\sum(-1)^nb_n\) converge.</li>
 </ul></div>
+<div class="box box--warn"><div class="tag">Attenzione: segno variabile (Lez. 13)</div><p>Il confronto asintotico vale solo per termini di segno costante, e Leibniz ha bisogno della decrescenza. Un controesempio per entrambe le cose: \(a_n=\frac{(-1)^n}{\sqrt n}+\frac1n\). Vale \(a_n\sim\frac{(-1)^n}{\sqrt n}\) e \(\sum\frac{(-1)^n}{\sqrt n}\) converge, ma \(\sum a_n\) <b>diverge</b>, perché è la somma di una serie convergente e di \(\sum\frac1n\), che diverge. Scritto come \((-1)^nb_n\) con \(b_n=\frac1{\sqrt n}+\frac{(-1)^n}n\), si ha \(b_n&gt;0\) e \(b_n\to0\), ma \(b_n\) non è decrescente: senza decrescenza Leibniz non si applica.</p></div>
+<div class="box box--note"><div class="tag">Esempio: condizione necessaria (Lez. 11)</div><p>\(\sum\arctan n\) non converge perché \(\arctan n\to\frac\pi2\neq0\). Essendo a termini positivi, diverge a \(+\infty\).</p></div>
 <div class="box box--method"><div class="tag">Quale criterio uso?</div><p>
 Ci sono \(n!\), \(n^n\) o \(q^n\): <b>rapporto</b>. C'è tutto alla potenza \(n\): <b>radice</b>. Ci sono funzioni di \(\frac1n\) (sin, log, e…): <b>asintotici + confronto asintotico</b>. C'è \((-1)^n\): prima l'<b>assoluta</b>, poi <b>Leibniz</b>. Sempre prima di tutto: <b>condizione necessaria</b>.</p></div>
 

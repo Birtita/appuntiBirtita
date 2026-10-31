@@ -42,6 +42,8 @@ EXTRAS = [
      "desc": "Struttura e soglie della prova, cosa esce di solito, risposte di teoria brevi, errori tipici e strategia per l'ora d'esame."},
     {"slug": "prove-svolte", "k": "Prove svolte", "title": "Prove in itinere passate svolte",
      "desc": "Le prime prove in itinere degli anni scorsi, svolte passo per passo."},
+    {"slug": "simulazione", "k": "Simulazione", "title": "Simulazione del prof (Esercitazione 7)",
+     "desc": "La simulazione del primo parziale fatta in esercitazione: 6 domande di test, una serie con parametro ed esercizi di ripasso, con le soluzioni ricalcolate."},
     {"slug": "piano", "k": "Piano", "title": "Piano di studio fino al 2 novembre",
      "desc": "Cosa fare ora per ora sabato 31 ottobre, domenica 1 e la mattina della prova."},
 ]

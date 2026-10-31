@@ -1,0 +1,118 @@
+<section class="sec" id="sim-test">
+  <h2>Test: le 6 domande a risposta multipla</h2>
+  <p class="lead">L'Esercitazione 7 è la simulazione del primo parziale preparata dal prof. Falla a tempo prima di guardare le soluzioni. Le soluzioni sono ricalcolate passo per passo (la scansione degli appunti è scritta a mano e in qualche punto è poco leggibile).</p>
+
+  <div class="quiz" data-risposta="C">
+    <p>Sia \(E=\{x\in\mathbb R:\ \sqrt[4]{|10-x|}&gt;\sqrt[4]{x-3}\}\). Allora</p>
+    <ol class="opzioni"><li>\(E\) non ammette estremo superiore</li><li>esiste \(\max E\)</li><li>3 è un minorante di \(E\)</li><li>\(\sup E=+\infty\)</li><li>nessuna delle precedenti</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Esistenza: \(x\ge3\). Elevo alla quarta (entrambi i membri \(\ge0\)): \(|10-x|&gt;x-3\).</p>
+      <p>Se \(3\le x\le10\): \(10-x&gt;x-3\iff x&lt;\frac{13}2\). Se \(x&gt;10\): \(x-10&gt;x-3\iff-10&gt;-3\), impossibile.</p>
+      <p>Quindi \(E=\left[3,\frac{13}2\right)\): \(\min E=3\), \(\sup E=\frac{13}2\) non è un massimo. <strong>3 è un minorante</strong> (anzi il minimo): risposta C.</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A">
+    <p>La serie \(\displaystyle\sum_{n=1}^{\infty}\cos(n\pi)\,\frac{\log\left(1+\frac1{\sqrt n}\right)}{\sqrt[3]n}\)</p>
+    <ol class="opzioni"><li>converge semplicemente ma non assolutamente</li><li>diverge a \(-\infty\)</li><li>è irregolare</li><li>converge assolutamente</li><li>diverge a \(+\infty\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(\cos(n\pi)=(-1)^n\). <b>Assoluta</b>: \(\frac{\log(1+n^{-1/2})}{n^{1/3}}\sim\frac{1}{n^{1/2}n^{1/3}}=\frac1{n^{5/6}}\), con \(\frac56\le1\): non converge assolutamente.</p>
+      <p><b>Leibniz</b>: \(b_n=\frac{\log(1+n^{-1/2})}{n^{1/3}}\) è positiva, tende a 0 ed è decrescente (il numeratore decresce, il denominatore cresce). Quindi converge semplicemente: risposta A.</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C">
+    <p>L'equazione \((z+1)^3=27\) in \(\mathbb C\)</p>
+    <ol class="opzioni"><li>ha tutte le soluzioni con parte immaginaria \(&gt;0\)</li><li>ammette soluzioni puramente immaginarie</li><li>nessuna delle altre risposte è corretta</li><li>ha tutte le soluzioni di modulo 3</li><li>ha tutte le soluzioni con argomento uguale a 0</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Pongo \(w=z+1\): \(w^3=27\), \(w_k=3e^{i\frac{2k\pi}3}\): \(w=3,\ -\frac32\pm i\frac{3\sqrt3}2\). Quindi \(z=2,\ -\frac52\pm i\frac{3\sqrt3}2\).</p>
+      <p>Una ha parte immaginaria nulla, nessuna è immaginaria pura, \(|2|=2\neq3\), gli argomenti sono diversi: risposta C.</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C">
+    <p>In \(\mathbb C\) l'equazione \(\dfrac{z}{z-1}=i\)</p>
+    <ol class="opzioni"><li>ha esattamente 3 soluzioni distinte</li><li>ha esattamente 2 soluzioni distinte</li><li>ha esattamente 1 soluzione</li><li>ha infinite soluzioni distinte</li><li>non ha soluzioni</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Con \(z\neq1\): \(z=i(z-1)\iff z(1-i)=-i\iff z=\frac{-i}{1-i}=\frac{-i(1+i)}{2}=\frac12-\frac12i\). Una sola soluzione (ed è \(\neq1\)): risposta C.</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C">
+    <p>Dati \(z=3-5i\) e \(w=6+2i\), \(\dfrac zw=\)</p>
+    <ol class="opzioni"><li>\(-\frac15+\frac9{10}i\)</li><li>\(-\frac15-\frac9{10}i\)</li><li>\(\frac15-\frac9{10}i\)</li><li>\(\frac25+\frac{11}{10}i\)</li><li>\(\frac35-\frac9{10}i\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(\dfrac{(3-5i)(6-2i)}{36+4}=\dfrac{18-6i-30i+10i^2}{40}=\dfrac{8-36i}{40}=\frac15-\frac9{10}i\): risposta C.</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C">
+    <p>\(\displaystyle\lim_{n\to\infty}\frac{\sin\frac2n\,\log\left(\cos\frac{2\pi}{n^2}\right)}{1-e^{2\left(\sqrt{n^{10}+1}-n^5\right)}}\tanh(3n)=\)</p>
+    <ol class="opzioni"><li>\(3\pi^2\)</li><li>\(4\pi\)</li><li>\(4\pi^2\)</li><li>\(+\infty\)</li><li>\(3\pi\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(\sin\frac2n\sim\frac2n\). \(\ \log\cos\frac{2\pi}{n^2}=\log\left(1+\left(\cos\frac{2\pi}{n^2}-1\right)\right)\sim\cos\frac{2\pi}{n^2}-1\sim-\frac12\cdot\frac{4\pi^2}{n^4}=-\frac{2\pi^2}{n^4}\). Numeratore \(\sim-\frac{4\pi^2}{n^5}\).</p>
+      <p>\(\sqrt{n^{10}+1}-n^5=n^5\left(\sqrt{1+n^{-10}}-1\right)\sim n^5\cdot\frac1{2n^{10}}=\frac1{2n^5}\), quindi l'esponente è \(\sim\frac1{n^5}\to0\) e \(1-e^{(\dots)}\sim-\frac1{n^5}\).</p>
+      <p>\(\tanh(3n)=\frac{e^{3n}-e^{-3n}}{e^{3n}+e^{-3n}}\to1\). Limite: \(\dfrac{-4\pi^2/n^5}{-1/n^5}\cdot1=4\pi^2\): risposta C.</p>
+    </details>
+  </div>
+</section>
+
+<section class="sec" id="sim-esercizio">
+  <h2>Esercizio: serie con parametro</h2>
+  <div class="ex" data-fonte="Esercitazione 7, simulazione" data-livello="esame">
+    <div class="ex-testo">Studiare il carattere di \(\displaystyle\sum_{n=1}^{\infty}\frac{|\sinh\beta|^n}{\sqrt[6]{n^7+2}}\) al variare di \(\beta\in\mathbb R\).</div>
+    <details class="hint"><summary>Suggerimento</summary>Termini \(\ge0\) e potenza \(n\)-esima: criterio della radice. Ricorda che \(\sinh\) è crescente e dispari.</details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><b>Radice</b>: \(\sqrt[n]{a_n}=\dfrac{|\sinh\beta|}{(n^7+2)^{1/(6n)}}\) e \((n^7+2)^{1/(6n)}=e^{\frac{\log(n^7+2)}{6n}}\to e^0=1\) (gerarchia: \(\log(n^7+2)\sim7\log n\ll n\)). Quindi \(\ell=|\sinh\beta|\).</p>
+      <p>Converge se \(|\sinh\beta|&lt;1\), diverge se \(|\sinh\beta|&gt;1\) (i termini tendono a \(+\infty\)).</p>
+      <p><b>Risolvo \(|\sinh\beta|&lt;1\)</b>. \(\sinh\beta=1\iff e^\beta-e^{-\beta}=2\iff t^2-2t-1=0\) con \(t=e^\beta&gt;0\), cioè \(t=1+\sqrt2\), \(\beta=\log(1+\sqrt2)\). Poiché \(\sinh\) è crescente e dispari: \(|\sinh\beta|&lt;1\iff|\beta|&lt;\log(1+\sqrt2)\). (Nota: \(\log(\sqrt2-1)=-\log(1+\sqrt2)\).)</p>
+      <p><b>Caso \(|\sinh\beta|=1\)</b>: la serie è \(\sum\frac1{\sqrt[6]{n^7+2}}\), con termine \(\sim\frac1{n^{7/6}}\): converge (\(\frac76&gt;1\)).</p>
+      <p><strong>Converge (anche assolutamente, i termini sono positivi) per \(|\beta|\le\log(1+\sqrt2)\); diverge a \(+\infty\) per \(|\beta|&gt;\log(1+\sqrt2)\).</strong></p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+</section>
+
+<section class="sec" id="sim-ripasso">
+  <h2>Ulteriori esercizi di ripasso</h2>
+  <div class="ex" data-fonte="Esercitazione 7, ripasso 1" data-livello="medio">
+    <div class="ex-testo">Studiare \(\displaystyle\sum_{n=1}^{\infty}\alpha^n\sinh\left(\frac{\log n}{n^2}\right)\) al variare di \(\alpha&gt;0\).</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>\(\frac{\log n}{n^2}\to0\) e \(\sinh\varepsilon_n\sim\varepsilon_n\), quindi \(a_n\sim\alpha^n\frac{\log n}{n^2}\) (termini positivi): stesso carattere di \(\sum\alpha^n\frac{\log n}{n^2}\).</p>
+      <p>Radice: \(\alpha\cdot\frac{\sqrt[n]{\log n}}{\sqrt[n]{n^2}}\to\alpha\), perché \(\sqrt[n]{\log n}=e^{\frac{\log\log n}n}\to1\) e \(\sqrt[n]{n^2}\to1\).</p>
+      <p>Per \(0&lt;\alpha&lt;1\) converge, per \(\alpha&gt;1\) diverge. Per \(\alpha=1\): \(\sum\frac{\log n}{n^2}\), armonica generalizzata II con esponente 2: converge.</p>
+      <p><strong>Converge per \(0&lt;\alpha\le1\), diverge per \(\alpha&gt;1\).</strong></p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+  <div class="ex" data-fonte="Esercitazione 7, ripasso 2" data-livello="base">
+    <div class="ex-testo">Calcolare \(\displaystyle\lim_{n\to\infty}\frac{\log\left(1+\frac1{n^2}\right)}{\log\left(\cos\frac1{\sqrt n}\right)\sin\frac1n}\).</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>\(\log(1+\frac1{n^2})\sim\frac1{n^2}\); \(\ \log\cos\frac1{\sqrt n}\sim\cos\frac1{\sqrt n}-1\sim-\frac1{2n}\); \(\ \sin\frac1n\sim\frac1n\). Quindi \(\dfrac{1/n^2}{-1/(2n^2)}\to\) <strong>\(-2\)</strong>.</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+  <div class="ex" data-fonte="Esercitazione 7, ripasso 3–4" data-livello="base">
+    <div class="ex-testo">Rappresentare nel piano complesso (a) \(E=\{z\in\mathbb C:\ z\bar z&lt;4\}\); (b) \(E=\left\{z\in\mathbb C:\ \frac1{|z+i|}=2\right\}\).</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>(a) \(z\bar z=|z|^2=a^2+b^2&lt;4\): <strong>disco aperto di centro 0 e raggio 2</strong> (bordo escluso).</p>
+      <p>(b) \(|z+i|=\frac12\iff a^2+(b+1)^2=\frac14\): <strong>circonferenza di centro \(-i\) e raggio \(\frac12\)</strong>. In generale \(|z-z_0|=r\) è la circonferenza di centro \(z_0\) e raggio \(r\).</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+  <div class="ex" data-fonte="Esercitazione 7, ripasso 5" data-livello="base">
+    <div class="ex-testo">Determinare le soluzioni di \(z^5-z=0\).</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>\(z(z^4-1)=0\): \(z=0\) oppure \(z^4=1=e^{i0}\), cioè \(z_k=e^{i\frac{k\pi}2}\), \(k=0,1,2,3\).</p>
+      <p><strong>Soluzioni: \(0,\ 1,\ i,\ -1,\ -i\).</strong> (Attenzione: l'argomento di 1 è 0, quindi gli angoli sono \(\frac{0+2k\pi}4\), non \(\frac{\pi+2k\pi}4\).)</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+  <div class="ex" data-fonte="Esercitazione 7, ripasso 6" data-livello="base">
+    <div class="ex-testo">Calcolare \(\displaystyle\lim_{n\to\infty}(3+\sin 2n)^{1/n}\).</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>\(2\le3+\sin2n\le4\), quindi \(2^{1/n}\le(3+\sin2n)^{1/n}\le4^{1/n}\). Entrambi gli estremi tendono a 1: per i <b>carabinieri</b> il limite è <strong>1</strong>.</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+</section>
