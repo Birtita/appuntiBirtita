@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prove svolte · Prove in itinere passate svolte — Analisi Matematica 1</title>
+<meta name="description" content="Le prime prove in itinere degli anni scorsi, svolte passo per passo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../assets/gal.css">
+<script>try{var t=localStorage.getItem('gal:theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body data-page="prove-svolte">
+<header class="topbar">
+  <div class="in">
+    <button class="iconbtn menu-btn" id="menu-btn" aria-label="Apri l'indice" aria-expanded="false" aria-controls="side"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <nav class="crumbs" aria-label="Percorso">
+      <a href="../" class="hide-sm">Appunti</a><span class="sep hide-sm">/</span>
+      <a href="./">Analisi 1</a><span class="sep">/</span><span class="here">Prove svolte</span>
+    </nav>
+    <button class="iconbtn" id="theme-btn" aria-label="Cambia tema chiaro/scuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  </div>
+  <div class="readbar"></div>
+</header>
+<div class="page">
+  <header class="hero">
+    <span class="eyebrow">Prove svolte</span>
+    <h1>Prove in itinere passate svolte</h1>
+    <p class="sub">Le prime prove in itinere degli anni scorsi, svolte passo per passo.</p>
+    <div class="pillrow"><span class="pill">8 sezioni</span><span class="pill">28 esercizi con soluzione</span></div>
+  </header>
+  <div class="layout">
+    <aside class="side" id="side">
+      <div class="panel"><div class="panel-title">Pagine</div><ol><li><a href="reali.html"><span class="k">1</span>Numeri reali e disequazioni</a><div class="chap-progress" data-progress-page="reali" data-total="9"><i></i></div></li><li><a href="complessi.html"><span class="k">2</span>Numeri complessi</a><div class="chap-progress" data-progress-page="complessi" data-total="11"><i></i></div></li><li><a href="funzioni.html"><span class="k">3</span>Funzioni: generalità</a><div class="chap-progress" data-progress-page="funzioni" data-total="2"><i></i></div></li><li><a href="successioni.html"><span class="k">4</span>Limiti di successioni</a><div class="chap-progress" data-progress-page="successioni" data-total="8"><i></i></div></li><li><a href="serie.html"><span class="k">5</span>Serie numeriche</a><div class="chap-progress" data-progress-page="serie" data-total="9"><i></i></div></li><li><a href="dimostrazioni.html"><span class="k">·</span>Le 14 dimostrazioni del primo parziale</a></li><li><a href="prova-itinere.html"><span class="k">·</span>Prima prova in itinere: com&#x27;è fatta</a></li><li><a href="prove-svolte.html" aria-current="page"><span class="k">·</span>Prove in itinere passate svolte</a><div class="chap-progress" data-progress-page="prove-svolte" data-total="28"><i></i></div></li><li><a href="simulazione.html"><span class="k">·</span>Simulazione del prof (Esercitazione 7)</a><div class="chap-progress" data-progress-page="simulazione" data-total="6"><i></i></div></li><li><a href="piano.html"><span class="k">·</span>Piano di studio fino al 2 novembre</a></li></ol></div>
+      <div class="panel"><div class="panel-title">In questa pagina</div><ol id="toc"><li><a href="#prove-come-usarle"><span class="k">01</span>Come usare le prove svolte</a></li><li><a href="#prove-2025"><span class="k">02</span>Prova del 10-11-2025 (versione A)</a></li><li><a href="#prove-2024"><span class="k">03</span>Prova del 09-11-2024 (versione B)</a></li><li><a href="#prove-2023"><span class="k">04</span>Prova del 06-11-2023 (versione A)</a></li><li><a href="#prove-2022"><span class="k">05</span>Prova del 07-11-2022 (versione A)</a></li><li><a href="#prove-2019"><span class="k">06</span>Prova del 04-11-2019</a></li><li><a href="#prove-2018"><span class="k">07</span>Prova del 07-11-2018 (versione 1)</a></li><li><a href="#prove-2017"><span class="k">08</span>Prova del 15-11-2017</a></li></ol></div>
+      
+    </aside>
+    <main id="content">
+<section class="sec" id="prove-come-usarle">
+  <div class="num">01</div>
+  <h2>Come usare le prove svolte</h2>
+  <p class="lead">Qui ci sono le prime prove in itinere di Analisi 1 dal 2017 al 2025, svolte e spiegate passo passo. Per ogni prova trovi il test, la teoria (quando c'era) e gli esercizi, con la soluzione nascosta.</p>
+
+  <div class="box box--method"><div class="tag">Metodo</div>
+    <ol>
+      <li>Fai la prova a tempo: un'ora, senza guardare le soluzioni. Ammessi solo i formulari di asintotici e Taylor.</li>
+      <li>Correggi con le soluzioni e segna gli errori: sono quasi sempre gli stessi tipi.</li>
+      <li>Parti dalle prove più recenti (2025, 2024, 2023, 2022): il docente e il formato sono quelli di quest'anno.</li>
+    </ol>
+  </div>
+
+  <h3>Cosa torna ogni anno</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Argomento</th><th>Come esce</th><th>Prove</th></tr></thead>
+    <tbody>
+      <tr><td>Serie con parametro</td><td>Esercizio grande: condizione necessaria, rapporto/radice sul valore assoluto, poi gli estremi a mano (armonica, Leibniz)</td><td>2018, 2019, 2022, 2023, 2024, 2025</td></tr>
+      <tr><td>Numeri complessi</td><td>Radici n-esime, prodotti con \(z\bar z\) o \(z+\bar z\), disegno nel piano, quoziente in forma algebrica</td><td>tutte</td></tr>
+      <tr><td>Limiti con asintotici</td><td>Test o esercizio: si sostituisce ogni fattore con il suo asintotico</td><td>2017, 2018, 2019, 2024, 2025</td></tr>
+      <tr><td>Sup, inf, max, min</td><td>Insieme definito da una disequazione con radici o valori assoluti</td><td>2018, 2022, 2023, 2024, 2025</td></tr>
+      <tr><td>Teoria</td><td>Definizione di limite, carabinieri, condizione necessaria, criterio del rapporto o della radice</td><td>2022, 2023, 2024, 2025</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="box box--note"><div class="tag">Formato</div>
+    Il punteggio è cambiato negli anni. Fino al 2019 c'erano solo test ed esercizi, dal 2022 anche la teoria. Per il 2026/27 il regolamento prevede test 14 punti (minimo 7), teoria 10 punti (minimo 5) ed esercizi 8 punti, con almeno 15 su 32 in totale. Quindi le soglie di test e teoria contano quanto gli esercizi.
+  </div>
+
+  <div class="box box--method"><div class="tag">Metodo</div><h4>Serie con parametro in 5 passi</h4>
+    <ol>
+      <li><b>Condizione necessaria.</b> Dove \(a_n\not\to 0\) la serie non converge: lì è finita (diverge o è irregolare).</li>
+      <li><b>Valore assoluto.</b> Se i termini cambiano segno, si studia \(\sum |a_n|\).</li>
+      <li><b>Rapporto o radice</b> su \(|a_n|\): se il limite è \(\ell&lt;1\) la serie converge assolutamente, quindi anche semplicemente.</li>
+      <li><b>Casi \(\ell=1\)</b> (gli estremi): si sostituisce il valore del parametro e si studia la serie a mano, con confronto asintotico (armonica generalizzata) o Leibniz.</li>
+      <li><b>Riassunto</b> finale: converge assolutamente, semplicemente, diverge, irregolare, per quali valori.</li>
+    </ol>
+  </div>
+
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    Le prove 2017–2019 avevano un programma un po' più ampio (derivate e studio di funzione). Gli esercizi fuori dal programma del primo parziale 2026 sono segnati come tali: puoi saltarli.
+  </div>
+</section>
+
+<section class="sec esercizi" id="prove-2025">
+  <div class="num">02</div>
+  <h2>Prova del 10-11-2025 (versione A)</h2>
+  <div class="ex-bar"><button class="chip" data-filter="tutti" aria-pressed="true">Tutti</button><button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button><button class="chip" data-filter="esame" aria-pressed="false">Esame</button><button class="chip toggle-sol" aria-pressed="false">Mostra soluzioni</button><span class="count ex-count"></span></div>
+  <p class="lead">Prof. A. De Martino. Test da 10 punti, teoria da 10, esercizio da 12. È la prova più vicina a quella che farai.</p>
+
+  <h3>Test</h3>
+  <div class="quiz" data-risposta="C" data-fonte="Prova in itinere 10-11-2025">
+    <p>[2 punti] Sia \(A := \{x\in\mathbb R : \sqrt{x^2-1}+x\ge 0\}\). Allora</p>
+    <ol class="opzioni"><li>\(\inf A=1\), ma \(A\) non ammette minimo</li><li>\(A\) è superiormente limitato</li><li>\(\min A = 1\)</li><li>\(\sup A = 2\)</li><li>nessuna delle altre</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p><b>Dominio:</b> \(x^2-1\ge 0\), cioè \(x\le -1\) oppure \(x\ge 1\).</p>
+      <p>Riscrivo come \(\sqrt{x^2-1}\ge -x\).</p>
+      <ul>
+        <li>Se \(x\ge 1\), il membro destro è negativo e la radice è \(\ge 0\): sempre vero.</li>
+        <li>Se \(x\le -1\), entrambi i membri sono \(\ge 0\) e posso elevare al quadrato: \(x^2-1\ge x^2\), cioè \(-1\ge 0\), falso.</li>
+      </ul>
+      <p>Quindi \(A=[1,+\infty)\): \(\min A = 1\), \(A\) non è limitato superiormente. Risposta <b>C</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Prova in itinere 10-11-2025">
+    <p>[2 punti] Siano \(z=2+i\), \(w=3-i\). Allora \(\dfrac{z}{w}=\)</p>
+    <ol class="opzioni"><li>\(\frac12+\frac12 i\)</li><li>\(\frac12-\frac12 i\)</li><li>\(1+2i\)</li><li>\(1-3i\)</li><li>nessuna delle altre</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Moltiplico sopra e sotto per il coniugato del denominatore:</p>
+      \[\frac{2+i}{3-i}\cdot\frac{3+i}{3+i}=\frac{6+2i+3i+i^2}{9+1}=\frac{5+5i}{10}=\frac12+\frac12 i.\]
+      <p>Risposta <b>A</b>.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="E" data-fonte="Prova in itinere 10-11-2025">
+    <p>[2 punti] Le soluzioni dell'equazione \(z^4=1+i\)</p>
+    <ol class="opzioni"><li>hanno tutte modulo \(\sqrt[4]{2}\)</li><li>sono \(\sqrt[4]{2}\,e^{i(\frac{\pi}{8}+\frac{k}{4}\pi)}\), \(k=0,1,2,3\)</li><li>si trovano tutte nel primo e quarto quadrante</li><li>nessuna delle altre</li><li>sono \(\sqrt[8]{2}\,e^{i(\frac{\pi}{16}+\frac{k}{2}\pi)}\), \(k=0,1,2,3\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Scrivo \(1+i\) in forma esponenziale: modulo \(\sqrt2\), argomento \(\frac\pi4\) (perché \(\cos\theta=\sin\theta=\frac{1}{\sqrt2}\)).</p>
+      <p>Radici quarte: modulo \(\sqrt[4]{\sqrt2}=\sqrt[8]{2}\), argomenti \(\dfrac{\pi/4+2k\pi}{4}=\dfrac{\pi}{16}+\dfrac{k\pi}{2}\), \(k=0,1,2,3\).</p>
+      <p>Risposta <b>E</b>. Errore tipico: dimenticare di fare la radice anche del modulo (risposta A).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Prova in itinere 10-11-2025">
+    <p>[2 punti] \(\displaystyle\lim_{n\to+\infty}\frac{\left(\sqrt[5]{1-\frac1{n^3}}-1\right)\arctan n}{\sin\frac1n\,\log\left(1+\frac1{n^2}\right)}=\)</p>
+    <ol class="opzioni"><li>\(0\)</li><li>\(-\frac\pi4\)</li><li>\(-\frac{\pi}{10}\)</li><li>\(+\infty\)</li><li>nessuna delle altre</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Uso gli asintotici dal formulario, con \(\varepsilon_n\to 0\):</p>
+      <ul>
+        <li>\((1+\varepsilon_n)^{1/5}-1\sim \frac15\varepsilon_n\), con \(\varepsilon_n=-\frac1{n^3}\): numeratore \(\sim -\frac{1}{5n^3}\arctan n\).</li>
+        <li>\(\sin\frac1n\sim\frac1n\), \(\log(1+\frac1{n^2})\sim\frac1{n^2}\): denominatore \(\sim\frac{1}{n^3}\).</li>
+      </ul>
+      \[a_n\sim\frac{-\frac{1}{5n^3}\arctan n}{\frac1{n^3}}=-\frac{\arctan n}{5}\to-\frac{\pi/2}{5}=-\frac{\pi}{10}.\]
+      <p>Risposta <b>C</b>.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Prova in itinere 10-11-2025">
+    <p>[2 punti] La serie \(\displaystyle\sum_{n=1}^{+\infty}\frac{(e^{1/n}-1)\log n}{n}\)</p>
+    <ol class="opzioni"><li>converge</li><li>diverge negativamente</li><li>è una serie telescopica</li><li>è indeterminata</li><li>nessuna delle altre</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>I termini sono positivi. Siccome \(e^{1/n}-1\sim\frac1n\):</p>
+      \[a_n\sim\frac{\log n}{n^2}.\]
+      <p>La serie \(\sum\frac{\log n}{n^2}\) converge (armonica generalizzata: \(\frac{\log n}{n^2}\le\frac{1}{n^{3/2}}\) definitivamente, perché \(\log n\le\sqrt n\)). Per il confronto asintotico converge anche la serie data. Risposta <b>A</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <h3>Teoria</h3>
+  <div class="ex" data-fonte="Prova in itinere 10-11-2025, teoria 1" data-livello="esame">
+    <div class="ex-testo">[2 punti] Dare la definizione di \(\displaystyle\lim_{n\to+\infty}a_n=10\).</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Per ogni \(\varepsilon>0\) esiste \(N(\varepsilon)\in\mathbb N\) tale che \(|a_n-10|&lt;\varepsilon\) per ogni \(n>N(\varepsilon)\).</p>
+      <p>Attenzione a scrivere proprio \(10\) e non \(\ell\): la domanda chiede quel limite preciso.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+  <div class="ex" data-fonte="Prova in itinere 10-11-2025, teoria 2" data-livello="esame">
+    <div class="ex-testo">[2 punti] Enunciare il teorema del confronto (dei due carabinieri).</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Siano \(a_n,b_n,c_n\) successioni con \(a_n\le b_n\le c_n\) definitivamente e \(\lim a_n=\lim c_n=\ell\in\mathbb R\). Allora esiste \(\lim b_n=\ell\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+  <div class="ex" data-fonte="Prova in itinere 10-11-2025, teoria 3" data-livello="esame">
+    <div class="ex-testo">[6 punti] Enunciare e dimostrare il criterio del rapporto per le serie.</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><b>Enunciato.</b> Sia \(a_n>0\) per ogni \(n\) e supponiamo che esista \(\ell=\lim\frac{a_{n+1}}{a_n}\). Se \(0\le\ell&lt;1\) la serie \(\sum a_n\) converge; se \(\ell>1\) (anche \(\ell=+\infty\)) diverge. Se \(\ell=1\) il criterio non dice nulla.</p>
+      <p><b>Caso \(\ell&lt;1\).</b> Scelgo \(x\) con \(\ell&lt;x&lt;1\) e \(\varepsilon=x-\ell>0\). Per la definizione di limite esiste \(N\) tale che \(\frac{a_{n+1}}{a_n}&lt;\ell+\varepsilon=x\) per \(n> N\). Quindi, per \(n>N\):</p>
+      \[a_{N+2}&lt;x\,a_{N+1},\quad a_{N+3}&lt;x^2a_{N+1},\quad\dots,\quad a_{N+1+k}&lt;x^k a_{N+1}.\]
+      <p>La serie \(\sum_k a_{N+1}x^k\) è geometrica di ragione \(0&lt;x&lt;1\), quindi converge. Per il criterio del confronto converge anche \(\sum a_n\) (i primi \(N\) termini non cambiano il carattere).</p>
+      <p><b>Caso \(\ell>1\).</b> Per la definizione di limite (con \(\varepsilon=\ell-1\)) esiste \(N\) tale che \(\frac{a_{n+1}}{a_n}>1\) per \(n>N\), cioè \(a_{n+1}>a_n\): la successione è definitivamente crescente e positiva, quindi non tende a 0. Non vale la condizione necessaria, e una serie a termini positivi che non converge diverge a \(+\infty\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <h3>Esercizio</h3>
+  <div class="ex" data-fonte="Prova in itinere 10-11-2025" data-livello="esame">
+    <div class="ex-testo">[12 punti] Al variare di \(\alpha\ge 0\), studiare il carattere della serie
+      \[\sum_{n=2}^{+\infty}\frac{(e^\alpha-2)^n}{\log^2(n)\,\sqrt[3]{n^4-1}}.\]</div>
+    <details class="hint"><summary>Suggerimento</summary> Chiama \(q=e^\alpha-2\). Con \(\alpha\ge0\) hai \(q\ge -1\). Il criterio del rapporto sul valore assoluto dà \(|q|\).</details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><b>1. Condizione necessaria.</b> Pongo \(q=e^\alpha-2\). Siccome \(\alpha\ge0\), \(e^\alpha\ge1\) e quindi \(q\ge-1\). Per la gerarchia degli infiniti:</p>
+      <ul>
+        <li>se \(q>1\), cioè \(\alpha>\log 3\), \(a_n\to+\infty\): la serie (a termini positivi) <b>diverge</b>;</li>
+        <li>se \(-1\le q\le 1\), cioè \(0\le\alpha\le\log3\), \(a_n\to0\): la serie può convergere.</li>
+      </ul>
+      <p><b>2. Convergenza assoluta con il rapporto.</b></p>
+      \[\frac{|a_{n+1}|}{|a_n|}=|q|\cdot\frac{\log^2 n}{\log^2(n+1)}\cdot\sqrt[3]{\frac{n^4-1}{(n+1)^4-1}}\longrightarrow |q|,\]
+      <p>perché \(\frac{\log(n+1)}{\log n}=1+\frac{\log(1+1/n)}{\log n}\to1\) e la radice cubica tende a 1.</p>
+      <p>Se \(|q|&lt;1\), cioè \(0&lt;\alpha&lt;\log3\), la serie <b>converge assolutamente</b>.</p>
+      <p><b>3. Estremi (\(|q|=1\)).</b></p>
+      <ul>
+        <li>\(\alpha=\log3\) (\(q=1\)): \(\displaystyle\sum\frac{1}{\log^2(n)\sqrt[3]{n^4-1}}\sim\sum\frac{1}{n^{4/3}\log^2 n}\), che converge (armonica generalizzata con esponente \(4/3>1\)).</li>
+        <li>\(\alpha=0\) (\(q=-1\)): \(\displaystyle\sum\frac{(-1)^n}{\log^2(n)\sqrt[3]{n^4-1}}\); i moduli sono gli stessi del caso precedente, quindi converge assolutamente.</li>
+      </ul>
+      <p><b>Riassunto.</b> Converge assolutamente per \(\alpha\in[0,\log3]\), diverge a \(+\infty\) per \(\alpha>\log3\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+</section>
+
+<section class="sec esercizi" id="prove-2024">
+  <div class="num">03</div>
+  <h2>Prova del 09-11-2024 (versione B)</h2>
+  <div class="ex-bar"><button class="chip" data-filter="tutti" aria-pressed="true">Tutti</button><button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button><button class="chip" data-filter="esame" aria-pressed="false">Esame</button><button class="chip toggle-sol" aria-pressed="false">Mostra soluzioni</button><span class="count ex-count"></span></div>
+  <p class="lead">Prof. A. De Martino. Test da 10 punti, teoria da 10, esercizio da 12.</p>
+
+  <h3>Test</h3>
+  <div class="quiz" data-risposta="C" data-fonte="Prova in itinere 09-11-2024">
+    <p>[2 punti] Sia \(E=\{x\in\mathbb R : \sqrt[4]{|x+3|}>\sqrt[4]{1-x}\}\). Allora</p>
+    <ol class="opzioni"><li>\(E\) non ammette estremo inferiore</li><li>\(\min E=-1\)</li><li>\(1\) è un maggiorante di \(E\)</li><li>\(\sup E=+\infty\)</li><li>nessuna delle altre</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p><b>Dominio:</b> \(1-x\ge0\), cioè \(x\le1\) (l'altra radice è sempre definita).</p>
+      <p>Entrambi i membri sono \(\ge0\) e la radice quarta è crescente, quindi la disequazione equivale a \(|x+3|>1-x\).</p>
+      <ul>
+        <li>\(x\ge-3\): \(x+3>1-x\iff x>-1\).</li>
+        <li>\(x&lt;-3\): \(-x-3>1-x\iff -3>1\), mai.</li>
+      </ul>
+      <p>Con \(x\le1\): \(E=(-1,1]\). Quindi \(\inf E=-1\) non è minimo, \(\max E=1\): <b>C</b> (1 è un maggiorante).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Prova in itinere 09-11-2024">
+    <p>[1 punto] \(\displaystyle\sum_{n=1}^{+\infty}\frac{(-1)^n\log n}{n^3}\)</p>
+    <ol class="opzioni"><li>converge semplicemente ma non assolutamente</li><li>diverge a \(-\infty\)</li><li>è irregolare</li><li>converge assolutamente</li><li>diverge a \(+\infty\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Valore assoluto: \(\frac{\log n}{n^3}\le\frac{n}{n^3}=\frac1{n^2}\) (perché \(\log n\le n\)). La serie \(\sum\frac1{n^2}\) converge, quindi per confronto la serie converge assolutamente. Risposta <b>D</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Prova in itinere 09-11-2024">
+    <p>[2 punti] Data l'equazione \((z-3)^3=8\) in \(\mathbb C\)</p>
+    <ol class="opzioni"><li>tutte le soluzioni hanno parte reale maggiore di 4</li><li>tutte le soluzioni hanno parte immaginaria maggiore di 0</li><li>nessuna delle altre risposte è corretta</li><li>tutte le soluzioni hanno modulo uguale a 2</li><li>tutte le soluzioni hanno argomento uguale a 0</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Pongo \(w=z-3\): \(w^3=8=8e^{i0}\). Radici: modulo \(2\), argomenti \(0,\frac{2\pi}3,\frac{4\pi}3\):</p>
+      \[w_0=2,\quad w_1=-1+i\sqrt3,\quad w_2=-1-i\sqrt3.\]
+      <p>Quindi \(z=5,\ 2+i\sqrt3,\ 2-i\sqrt3\). Parti reali 5 e 2 (non tutte >4), parti immaginarie \(0,\pm\sqrt3\), moduli \(5\) e \(\sqrt7\). Nessuna di A, B, D, E: risposta <b>C</b>.</p>
+      <div class="box box--warn"><div class="tag">Attenzione</div>Il modulo 2 è quello di \(w=z-3\), non di \(z\). La traslazione cambia i moduli.</div>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="E" data-fonte="Prova in itinere 09-11-2024">
+    <p>[1 punto] In \(\mathbb C\), l'equazione \(\dfrac{z}{\bar z}=9\)</p>
+    <ol class="opzioni"><li>ha esattamente 6 soluzioni distinte</li><li>ha esattamente 2 soluzioni distinte</li><li>ha esattamente 1 soluzione</li><li>ha infinite soluzioni distinte</li><li>non ha soluzioni</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Per \(z\neq0\), \(|z|=|\bar z|\), quindi \(\left|\frac{z}{\bar z}\right|=1\neq 9\). Nessuna soluzione: <b>E</b>.</p>
+      <p>In alternativa con \(z=x+iy\): \(x+iy=9x-9iy\) dà \(x=9x\), \(y=-9y\), cioè \(x=y=0\), che però è escluso perché \(\bar z\) sta al denominatore.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Prova in itinere 09-11-2024">
+    <p>[2 punti] Dati \(z=1-3i\) e \(w=7+4i\), \(\dfrac zw=\)</p>
+    <ol class="opzioni"><li>\(-\frac1{13}-\frac5{13}i\)</li><li>\(\frac{19}{65}-\frac{17}{65}i\)</li><li>\(-\frac12+\frac52 i\)</li><li>\(\frac{19}{10}+\frac{17}{10}i\)</li><li>\(\frac7{13}+\frac{12}{13}i\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      \[\frac{1-3i}{7+4i}\cdot\frac{7-4i}{7-4i}=\frac{7-4i-21i+12i^2}{49+16}=\frac{-5-25i}{65}=-\frac1{13}-\frac5{13}i.\]
+      <p>Risposta <b>A</b>. Ricorda: \(i^2=-1\), quindi \(12i^2=-12\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Prova in itinere 09-11-2024">
+    <p>[2 punti] \(\displaystyle\lim_{n\to+\infty}\frac{\left(1-\cos\frac2n\right)\log\left(1+\sin\frac3{n^2}\right)}{e^{9/n^4}-1}\arctan n=\)</p>
+    <ol class="opzioni"><li>\(0\)</li><li>\(1\)</li><li>\(\frac\pi3\)</li><li>\(+\infty\)</li><li>non esiste</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <ul>
+        <li>\(1-\cos\frac2n\sim\frac12\cdot\frac4{n^2}=\frac2{n^2}\)</li>
+        <li>\(\log(1+\sin\frac3{n^2})\sim\sin\frac3{n^2}\sim\frac3{n^2}\)</li>
+        <li>\(e^{9/n^4}-1\sim\frac9{n^4}\)</li>
+      </ul>
+      \[\frac{\frac2{n^2}\cdot\frac3{n^2}}{\frac9{n^4}}\arctan n=\frac23\arctan n\to\frac23\cdot\frac\pi2=\frac\pi3.\]
+      <p>Risposta <b>C</b>.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <h3>Teoria</h3>
+  <div class="ex" data-fonte="Prova in itinere 09-11-2024, teoria 1" data-livello="esame">
+    <div class="ex-testo">[2 punti] Data una successione reale \(a_n\), dare la definizione di \(\lim a_n=+\infty\).</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Per ogni \(M>0\) esiste \(N\in\mathbb N\) tale che \(a_n>M\) per ogni \(n>N\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+  <div class="ex" data-fonte="Prova in itinere 09-11-2024, teoria 2" data-livello="esame">
+    <div class="ex-testo">[5 punti] Enunciare e dimostrare il teorema del confronto (dei due carabinieri) per successioni.</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><b>Enunciato.</b> Se \(a_n\le b_n\le c_n\) definitivamente e \(\lim a_n=\lim c_n=\ell\in\mathbb R\), allora \(\lim b_n=\ell\).</p>
+      <p><b>Dimostrazione.</b> Fisso \(\varepsilon>0\).</p>
+      <ol>
+        <li>Da \(a_n\to\ell\): esiste \(N_1\) con \(\ell-\varepsilon&lt;a_n&lt;\ell+\varepsilon\) per \(n>N_1\).</li>
+        <li>Da \(c_n\to\ell\): esiste \(N_2\) con \(\ell-\varepsilon&lt;c_n&lt;\ell+\varepsilon\) per \(n>N_2\).</li>
+        <li>Dall'ipotesi: esiste \(N_3\) con \(a_n\le b_n\le c_n\) per \(n\ge N_3\).</li>
+      </ol>
+      <p>Per \(n>N=\max\{N_1,N_2,N_3\}\) valgono tutte insieme:</p>
+      \[\ell-\varepsilon&lt;a_n\le b_n\le c_n&lt;\ell+\varepsilon,\]
+      <p>cioè \(|b_n-\ell|&lt;\varepsilon\). Per l'arbitrarietà di \(\varepsilon\), \(b_n\to\ell\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+  <div class="ex" data-fonte="Prova in itinere 09-11-2024, teoria 3" data-livello="esame">
+    <div class="ex-testo">[3 punti] Enunciare il criterio della radice.</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Sia \(a_n\ge0\) e supponiamo che esista \(\ell=\lim\sqrt[n]{a_n}\). Se \(0\le\ell&lt;1\) la serie \(\sum a_n\) converge; se \(\ell>1\) (anche \(+\infty\)) diverge. Se \(\ell=1\) non si può concludere.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <h3>Esercizio</h3>
+  <div class="ex" data-fonte="Prova in itinere 09-11-2024" data-livello="esame">
+    <div class="ex-testo">[12 punti] Al variare di \(\beta>0\), studiare il carattere della serie
+      \[\sum_{n=1}^{+\infty}\frac{(\log\beta)^n}{\sqrt[6]{n+2}}.\]</div>
+    <details class="hint"><summary>Suggerimento</summary> Chiama \(q=\log\beta\): è una "quasi geometrica" di ragione \(q\). Usa la radice: \(\sqrt[n]{\sqrt[6]{n+2}}\to1\).</details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><b>1. Condizione necessaria.</b> Con \(q=\log\beta\):</p>
+      <ul>
+        <li>\(q>1\) (\(\beta>e\)): \(a_n\to+\infty\), la serie diverge a \(+\infty\);</li>
+        <li>\(q&lt;-1\) (\(\beta&lt;e^{-1}\)): \(|a_n|\to+\infty\) con segno alterno, il limite non esiste: la serie non converge (è irregolare);</li>
+        <li>\(-1\le q\le1\): \(a_n\to0\), può convergere.</li>
+      </ul>
+      <p><b>2. Radice su \(|a_n|\).</b></p>
+      \[\sqrt[n]{|a_n|}=\frac{|\log\beta|}{(n+2)^{1/(6n)}}\to|\log\beta|,\]
+      <p>perché \((n+2)^{1/(6n)}=e^{\frac{\log(n+2)}{6n}}\to e^0=1\). Se \(|\log\beta|&lt;1\), cioè \(e^{-1}&lt;\beta&lt;e\), la serie <b>converge assolutamente</b>.</p>
+      <p><b>3. Estremi.</b></p>
+      <ul>
+        <li>\(\beta=e\): \(\sum\frac1{\sqrt[6]{n+2}}\sim\sum\frac1{n^{1/6}}\), armonica con esponente \(\frac16&lt;1\): <b>diverge</b>.</li>
+        <li>\(\beta=e^{-1}\): \(\sum\frac{(-1)^n}{\sqrt[6]{n+2}}\). Leibniz: \(b_n=\frac1{\sqrt[6]{n+2}}\) è positiva, tende a 0 ed è decrescente (\(n+2&lt;n+3\)). Quindi <b>converge semplicemente</b>, ma non assolutamente (i moduli sono la serie del caso \(\beta=e\)).</li>
+      </ul>
+      <p><b>Riassunto.</b> Converge assolutamente per \(e^{-1}&lt;\beta&lt;e\); converge solo semplicemente per \(\beta=e^{-1}\); diverge a \(+\infty\) per \(\beta\ge e\); è irregolare per \(0&lt;\beta&lt;e^{-1}\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+</section>
+
+<section class="sec esercizi" id="prove-2023">
+  <div class="num">04</div>
+  <h2>Prova del 06-11-2023 (versione A)</h2>
+  <div class="ex-bar"><button class="chip" data-filter="tutti" aria-pressed="true">Tutti</button><button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button><button class="chip" data-filter="esame" aria-pressed="false">Esame</button><button class="chip toggle-sol" aria-pressed="false">Mostra soluzioni</button><span class="count ex-count"></span></div>
+  <p class="lead">Prof. D. D. Monticelli. Test da 5 punti, teoria da 4, esercizi da 7. La versione B ha gli stessi esercizi con numeri diversi.</p>
+
+  <h3>Test</h3>
+  <div class="quiz" data-risposta="B" data-fonte="Prova in itinere 06-11-2023">
+    <p>[2 punti] Sia \(E:=\{x\in\mathbb R:\sqrt{3-x}&lt;\sqrt{2|x|}\}\). Si ha che</p>
+    <ol class="opzioni"><li>\(\inf E=-\frac32\), \(\sup E=+\infty\)</li><li>\(\inf E=-\infty\), \(\max E=3\)</li><li>\(\inf E=-\frac32\), \(\sup E=1\)</li><li>\(\inf E=-\infty\), \(\sup E=+\infty\)</li><li>nessuna delle altre</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p><b>Dominio:</b> \(x\le3\). Entrambi i membri \(\ge0\), elevo al quadrato: \(3-x&lt;2|x|\).</p>
+      <ul>
+        <li>\(0\le x\le3\): \(3-x&lt;2x\iff x>1\). Quindi \((1,3]\).</li>
+        <li>\(x&lt;0\): \(3-x&lt;-2x\iff x&lt;-3\). Quindi \((-\infty,-3)\).</li>
+      </ul>
+      <p>\(E=(-\infty,-3)\cup(1,3]\): \(\inf E=-\infty\), \(\max E=3\). Risposta <b>B</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Prova in itinere 06-11-2023">
+    <p>[1 punto] In \(\mathbb C\), l'equazione \(z^6+1=0\)</p>
+    <ol class="opzioni"><li>ha 3 radici distinte, ciascuna di molteplicità 2</li><li>ha 6 radici distinte</li><li>non ha radici</li><li>ha esattamente 2 radici distinte</li><li>nessuna delle altre</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(z^6=-1=e^{i\pi}\): un numero complesso non nullo ha sempre \(n\) radici n-esime distinte, qui \(e^{i(\pi+2k\pi)/6}\), \(k=0,\dots,5\), vertici di un esagono regolare sulla circonferenza unitaria. Risposta <b>B</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="D" data-fonte="Prova in itinere 06-11-2023">
+    <p>[1 punto] Sia \(a_n\) una successione reale con \(\lim a_n=0\). Allora, per \(n\to+\infty\),</p>
+    <ol class="opzioni"><li>\(\frac1{a_n}\) necessariamente diverge a \(+\infty\) o a \(-\infty\)</li><li>\(|a_n|\) può non ammettere limite</li><li>\(a_n^2\) può non ammettere limite</li><li>\(\frac1{a_n}\) può non ammettere limite</li><li>nessuna delle altre</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Controesempio: \(a_n=\frac{(-1)^n}n\to0\), ma \(\frac1{a_n}=(-1)^n n\) oscilla tra valori grandi positivi e negativi, quindi non ha limite. Così D è vera e A è falsa. B e C sono false perché \(|a_n|\to0\) e \(a_n^2\to0\). Risposta <b>D</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Prova in itinere 06-11-2023">
+    <p>[1 punto] \(\displaystyle\sum_{n=0}^{+\infty}\frac{(-1)^n}{3^n}\)</p>
+    <ol class="opzioni"><li>è irregolare</li><li>\(=-\frac32\)</li><li>\(=\frac34\)</li><li>converge ma non a \(\frac34\) né a \(-\frac32\)</li><li>diverge</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Geometrica di ragione \(q=-\frac13\), \(|q|&lt;1\), partendo da \(n=0\): somma \(\frac1{1-q}=\frac1{1+\frac13}=\frac34\). Risposta <b>C</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <h3>Teoria</h3>
+  <div class="ex" data-fonte="Prova in itinere 06-11-2023, T1" data-livello="esame">
+    <div class="ex-testo">[1 punto] Data una successione reale \(a_n\) e \(l\in\mathbb R\), dare la definizione di \(\lim a_n=l\).</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Per ogni \(\varepsilon>0\) esiste \(N\in\mathbb N\) tale che \(|a_n-l|&lt;\varepsilon\) per ogni \(n>N\).</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+  <div class="ex" data-fonte="Prova in itinere 06-11-2023, T2" data-livello="esame">
+    <div class="ex-testo">[3 punti] Enunciare e dimostrare una condizione necessaria affinché la serie \(\sum a_n\) sia convergente.</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><b>Enunciato.</b> Se \(\sum a_n\) converge, allora \(\lim a_n=0\).</p>
+      <p><b>Dimostrazione.</b> Sia \(S_n=a_1+\dots+a_n\) la somma parziale e \(S=\lim S_n\in\mathbb R\). Allora \(a_n=S_n-S_{n-1}\) e, siccome anche \(S_{n-1}\to S\),</p>
+      \[\lim a_n=\lim S_n-\lim S_{n-1}=S-S=0.\]
+      <p>La condizione non è sufficiente: \(\frac1n\to0\) ma \(\sum\frac1n\) diverge.</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <h3>Esercizi</h3>
+  <div class="ex" data-fonte="Prova in itinere 06-11-2023, es. 1A" data-livello="esame">
+    <div class="ex-testo">[4 punti] i) Determinare l'insieme \(A\subset\mathbb C\) delle soluzioni di
+      \[\left[z^4-(2+2i)^6\right](z\bar z-9)=0.\]
+      ii) Disegnare nel piano complesso \(A\) e \(B=\{\zeta\in\mathbb C:\zeta=-2iz,\ z\in A\}\).</div>
+    <details class="hint"><summary>Suggerimento</summary> Un prodotto è zero se lo è uno dei fattori. \(z\bar z=|z|^2\).</details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><b>Secondo fattore.</b> \(z\bar z=|z|^2=9\iff|z|=3\): tutta la circonferenza di centro 0 e raggio 3.</p>
+      <p><b>Primo fattore.</b> \(2+2i=2\sqrt2\,e^{i\pi/4}\), quindi</p>
+      \[(2+2i)^6=(2\sqrt2)^6e^{i\frac{6\pi}4}=512\,e^{i\frac{3\pi}2}=-512i.\]
+      <p>Le radici quarte di \(512e^{i3\pi/2}\) hanno modulo \(512^{1/4}=2^{9/4}\) e argomenti \(\frac{3\pi/2+2k\pi}{4}=\frac{3\pi}8+\frac{k\pi}2\):</p>
+      \[z_k=2^{9/4}e^{i(\frac{3\pi}8+\frac{k\pi}2)},\quad k=0,1,2,3\ \ (\text{argomenti }\tfrac{3\pi}8,\tfrac{7\pi}8,\tfrac{11\pi}8,\tfrac{15\pi}8).\]
+      <p>Sono i vertici di un quadrato inscritto nella circonferenza di raggio \(2^{9/4}\approx4{,}76\).</p>
+      <p><b>A</b> = i quattro vertici del quadrato più la circonferenza di raggio 3.</p>
+      <p><b>ii)</b> \(-2i=2e^{-i\pi/2}\): moltiplicare per \(-2i\) raddoppia i moduli e ruota di \(\frac\pi2\) in senso orario. Quindi \(B\) è la circonferenza di raggio 6 più i punti</p>
+      \[w_k=2^{13/4}e^{i(-\frac\pi8+\frac{k\pi}2)},\quad k=0,1,2,3,\]
+      <p>vertici di un quadrato inscritto nella circonferenza di raggio \(2^{13/4}\approx9{,}51\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Prova in itinere 06-11-2023, es. 2A" data-livello="esame">
+    <div class="ex-testo">[3 punti] Al variare di \(\alpha\in[-1,1]\), studiare il carattere della serie
+      \[\sum_{n=2}^{+\infty}\alpha^n(\log n)^\alpha.\]</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><b>\(|\alpha|&lt;1\).</b> Radice su \(|a_n|\):</p>
+      \[\sqrt[n]{|\alpha|^n(\log n)^\alpha}=|\alpha|\,e^{\frac{\alpha\log\log n}{n}}\to|\alpha|&lt;1,\]
+      <p>perché \(\frac{\log\log n}{n}\to0\) (gerarchia degli infiniti). Quindi la serie <b>converge assolutamente</b> per \(\alpha\in(-1,1)\). (Per \(\alpha=0\) i termini sono tutti nulli.)</p>
+      <p><b>\(\alpha=1\).</b> \(\sum\log n\): termini positivi che non tendono a 0, <b>diverge a \(+\infty\)</b>.</p>
+      <p><b>\(\alpha=-1\).</b> \(\sum\frac{(-1)^n}{\log n}\). Leibniz: \(\frac1{\log n}\) è positiva, tende a 0 ed è decrescente (\(\log n\) è crescente), quindi <b>converge semplicemente</b>. Non assolutamente: \(\frac1{\log n}\ge\frac1n\) definitivamente e \(\sum\frac1n\) diverge.</p>
+      <p><b>Riassunto.</b> Converge assolutamente per \(\alpha\in(-1,1)\), semplicemente ma non assolutamente per \(\alpha=-1\), diverge per \(\alpha=1\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+</section>
+
+<section class="sec esercizi" id="prove-2022">
+  <div class="num">05</div>
+  <h2>Prova del 07-11-2022 (versione A)</h2>
+  <div class="ex-bar"><button class="chip" data-filter="tutti" aria-pressed="true">Tutti</button><button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button><button class="chip" data-filter="esame" aria-pressed="false">Esame</button><button class="chip toggle-sol" aria-pressed="false">Mostra soluzioni</button><span class="count ex-count"></span></div>
+  <p class="lead">Test da 5 punti, teoria da 5, esercizi da 6.</p>
+
+  <h3>Test</h3>
+  <div class="quiz" data-risposta="D" data-fonte="Prova in itinere 07-11-2022">
+    <p>[1 punto] La successione \(\left\{\sqrt n\left(1-\cos\frac1{n^\alpha}\right)\right\}\) è infinitesima</p>
+    <ol class="opzioni"><li>\(\forall\alpha\in\mathbb R\)</li><li>\(\iff\alpha>\frac34\)</li><li>\(\iff\alpha>0\)</li><li>\(\iff\alpha>\frac14\)</li><li>nessuna delle altre</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Se \(\alpha>0\), \(\frac1{n^\alpha}\to0\) e \(1-\cos\frac1{n^\alpha}\sim\frac1{2n^{2\alpha}}\), quindi</p>
+      \[a_n\sim\frac{\sqrt n}{2n^{2\alpha}}=\frac12 n^{\frac12-2\alpha}\to0\iff 2\alpha>\tfrac12\iff\alpha>\tfrac14.\]
+      <p>Se \(\alpha=0\), \(a_n=\sqrt n(1-\cos1)\to+\infty\); se \(\alpha&lt;0\), \(1-\cos(n^{|\alpha|})\) oscilla e \(a_n\) non tende a 0. Risposta <b>D</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="C" data-fonte="Prova in itinere 07-11-2022">
+    <p>[2 punti] Sia \(a_n\) tale che \(\lim|a_n|=\lambda\in\mathbb R\). Allora</p>
+    <ol class="opzioni"><li>\(\lim a_n=\lambda\) oppure \(\lim a_n=-\lambda\)</li><li>se \(a_n\) è decrescente, \(\lim a_n=\lambda\)</li><li>\(\lim a_n\) può non esistere, ma \(a_n\) è limitata</li><li>se \(\lambda\neq0\), \(a_n\) è definitivamente di segno costante</li><li>nessuna delle altre</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(a_n=(-1)^n\): \(|a_n|=1\to1\) ma \(a_n\) non ha limite e non ha segno costante (A e D false). Se \(|a_n|\) converge, è limitata, quindi anche \(a_n\) lo è: C vera.</p>
+      <p>B è falsa: \(a_n=-1-\frac1n\) è decrescente, \(|a_n|\to1\), ma \(a_n\to-1\neq\lambda\). Risposta <b>C</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="B" data-fonte="Prova in itinere 07-11-2022">
+    <p>[1 punto] \(\displaystyle\sum_{n=1}^{+\infty}(-1)^n\log\left(1+\frac1{\sqrt[3]n}\right)\)</p>
+    <ol class="opzioni"><li>converge assolutamente</li><li>converge semplicemente ma non assolutamente</li><li>diverge a \(-\infty\)</li><li>è irregolare</li><li>nessuna delle altre</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p><b>Assoluta:</b> \(\log(1+n^{-1/3})\sim\frac1{n^{1/3}}\), armonica con esponente \(\frac13&lt;1\): non converge assolutamente.</p>
+      <p><b>Leibniz:</b> \(b_n=\log(1+n^{-1/3})\) è positiva, tende a 0 ed è decrescente (composizione di crescenti con \(n^{-1/3}\) decrescente). Converge semplicemente. Risposta <b>B</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="quiz" data-risposta="A" data-fonte="Prova in itinere 07-11-2022">
+    <p>[1 punto] Sia \(A=\{x\in\mathbb R : x>\sqrt{2-x}\}\).</p>
+    <ol class="opzioni"><li>\(\inf A=1\); \(\max A=2\)</li><li>\(\nexists\inf A\); \(\sup A=-2\)</li><li>\(\inf A=-1\); \(\max A=2\)</li><li>\(\inf A=-2\); \(\sup A=1\)</li><li>nessuna delle altre</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p><b>Dominio:</b> \(x\le2\). La radice è \(\ge0\), quindi serve \(x>0\) (per \(x\le 0\) la disequazione è falsa).</p>
+      <p>Con \(0&lt;x\le2\) elevo al quadrato: \(x^2>2-x\iff x^2+x-2>0\iff(x+2)(x-1)>0\iff x&lt;-2\ \lor\ x>1\).</p>
+      <p>Intersecando: \(A=(1,2]\). \(\inf A=1\) (non minimo), \(\max A=2\). Risposta <b>A</b>.</p>
+      <div class="box box--warn"><div class="tag">Attenzione</div>Prima di elevare al quadrato controlla il segno del membro senza radice. Se lo dimentichi ottieni anche \(x&lt;-2\), che è sbagliato.</div>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <h3>Teoria</h3>
+  <div class="ex" data-fonte="Prova in itinere 07-11-2022, teoria 1" data-livello="esame">
+    <div class="ex-testo">[1 punto] Data una successione reale \(a_n\) e \(l\in\mathbb R\), dare la definizione di \(\lim a_n=l\).</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Per ogni \(\varepsilon>0\) esiste \(N\in\mathbb N\) tale che \(|a_n-l|&lt;\varepsilon\) per ogni \(n>N\).</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+  <div class="ex" data-fonte="Prova in itinere 07-11-2022, teoria 2" data-livello="esame">
+    <div class="ex-testo">[2 punti] Enunciare una condizione necessaria affinché \(\sum a_n\) sia convergente. È anche sufficiente? Se sì dimostrarlo, se no dare un controesempio.</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><b>Condizione necessaria:</b> se \(\sum a_n\) converge allora \(a_n\to0\) (dimostrazione: \(a_n=S_n-S_{n-1}\to S-S=0\)).</p>
+      <p><b>Non è sufficiente.</b> Controesempio: la serie armonica \(\sum\frac1n\) ha \(\frac1n\to0\) ma diverge a \(+\infty\).</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+  <div class="ex" data-fonte="Prova in itinere 07-11-2022, teoria 3" data-livello="esame">
+    <div class="ex-testo">[2 punti] Dato \(E\subset\mathbb R\), dare la definizione di maggiorante di \(E\) e di estremo superiore di \(E\).</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><b>Maggiorante:</b> \(M\in\mathbb R\) è un maggiorante di \(E\) se \(x\le M\) per ogni \(x\in E\).</p>
+      <p><b>Estremo superiore:</b> se \(E\) è superiormente limitato, \(\sup E\) è il minimo dei maggioranti. Equivalentemente \(\lambda=\sup E\) se (i) \(x\le\lambda\) per ogni \(x\in E\) e (ii) per ogni \(\varepsilon>0\) esiste \(x\in E\) con \(x>\lambda-\varepsilon\). Se \(E\) non è superiormente limitato si pone \(\sup E=+\infty\).</p>
+      <p class="verifica">Verificata a mano</p>
+    </details>
+  </div>
+
+  <h3>Esercizi</h3>
+  <div class="ex" data-fonte="Prova in itinere 07-11-2022, es. 1" data-livello="esame">
+    <div class="ex-testo">[3 punti] Studiare al variare di \(x\in\mathbb R\) la convergenza della serie \(\displaystyle\sum_{n=1}^{+\infty}\frac{n^n}{(n!)^x}\).</div>
+    <details class="hint"><summary>Suggerimento</summary> Fattoriali e \(n^n\): criterio del rapporto. Ricorda \(\left(1+\frac1n\right)^n\to e\).</details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Termini positivi, uso il rapporto:</p>
+      \[\frac{a_{n+1}}{a_n}=\frac{(n+1)^{n+1}}{((n+1)!)^x}\cdot\frac{(n!)^x}{n^n}=\frac{(n+1)^{n+1}}{n^n\,(n+1)^x}=\left(1+\frac1n\right)^n(n+1)^{1-x}.\]
+      <p>Il primo fattore tende a \(e\). Quindi il limite è:</p>
+      <ul>
+        <li>\(+\infty\) se \(x&lt;1\);</li>
+        <li>\(e>1\) se \(x=1\);</li>
+        <li>\(0\) se \(x>1\).</li>
+      </ul>
+      <p>Per il criterio del rapporto la serie <b>converge per \(x>1\)</b> e <b>diverge a \(+\infty\) per \(x\le1\)</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Prova in itinere 07-11-2022, es. 2" data-livello="esame">
+    <div class="ex-testo">[3 punti] Determinare le soluzioni in \(\mathbb C\) di \(\left(z^3-(1+\sqrt3 i)^9\right)(z+\bar z+1)=0\) e rappresentarle. Detto \(A\) l'insieme delle soluzioni, rappresentare \(B=\{w\in\mathbb C: w=iz,\ z\in A\}\).</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><b>Primo fattore.</b> \(1+\sqrt3i=2e^{i\pi/3}\), quindi \((1+\sqrt3i)^9=2^9e^{i3\pi}=-512\). Le radici cubiche di \(-512=512e^{i\pi}\) hanno modulo 8 e argomenti \(\frac\pi3,\pi,\frac{5\pi}3\):</p>
+      \[z_0=4+4\sqrt3 i,\qquad z_1=-8,\qquad z_2=4-4\sqrt3i.\]
+      <p>Sono i vertici di un triangolo equilatero inscritto nella circonferenza di raggio 8.</p>
+      <p><b>Secondo fattore.</b> \(z+\bar z=2\,\mathrm{Re}\,z\), quindi \(2\,\mathrm{Re}\,z=-1\): è la retta verticale \(\mathrm{Re}\,z=-\frac12\), cioè \(z=-\frac12+bi\), \(b\in\mathbb R\).</p>
+      <p><b>A</b> = i tre vertici più la retta \(\mathrm{Re}\,z=-\frac12\).</p>
+      <p><b>B.</b> Moltiplicare per \(i=e^{i\pi/2}\) ruota di \(\frac\pi2\) in senso antiorario. I vertici diventano</p>
+      \[iz_0=-4\sqrt3+4i,\qquad iz_1=-8i,\qquad iz_2=4\sqrt3+4i,\]
+      <p>e la retta diventa \(i(-\frac12+bi)=-b-\frac12 i\): la retta orizzontale \(\mathrm{Im}\,w=-\frac12\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+</section>
+
+<section class="sec esercizi" id="prove-2019">
+  <div class="num">06</div>
+  <h2>Prova del 04-11-2019</h2>
+  <div class="ex-bar"><button class="chip" data-filter="tutti" aria-pressed="true">Tutti</button><button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button><button class="chip" data-filter="esame" aria-pressed="false">Esame</button><button class="chip toggle-sol" aria-pressed="false">Mostra soluzioni</button><span class="count ex-count"></span></div>
+  <p class="lead">Prof. D. D. Monticelli. Test da 4 punti (1 a risposta, −1/4 se sbagliata) ed esercizi da 19. Le altre versioni hanno gli stessi esercizi con numeri diversi.</p>
+
+  <h3>Test</h3>
+  <div class="quiz" data-risposta="A" data-fonte="Prova in itinere 04-11-2019">
+    <p>Se la successione \(a_n\) è illimitata, allora necessariamente</p>
+    <ol class="opzioni"><li>la successione \(|a_n|\) è illimitata</li><li>la successione \(a_n\) diverge</li><li>la successione \(a_n\) è monotona</li><li>nessuna delle precedenti</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(a_n\) limitata \(\iff\) esiste \(M\) con \(|a_n|\le M\) per ogni \(n\) \(\iff\) \(|a_n|\) limitata. Quindi illimitata vale per entrambe: <b>A</b>.</p>
+      <p>B e C false: \(a_n=n\) per \(n\) pari e \(0\) per \(n\) dispari è illimitata, non diverge e non è monotona.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+  <div class="quiz" data-risposta="B" data-fonte="Prova in itinere 04-11-2019">
+    <p>La funzione \(f:\mathbb N\to\mathbb N\), \(f(n)=n^2+2\), è</p>
+    <ol class="opzioni"><li>biunivoca</li><li>iniettiva ma non suriettiva</li><li>suriettiva ma non iniettiva</li><li>né iniettiva né suriettiva</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Su \(\mathbb N\) la funzione \(n^2+2\) è strettamente crescente, quindi iniettiva. Non è suriettiva: per esempio \(0,1,4,5\) non sono valori di \(f\) (i valori sono \(2,3,6,11,\dots\)). Risposta <b>B</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+  <div class="quiz" data-risposta="B" data-fonte="Prova in itinere 04-11-2019">
+    <p>L'insieme degli \(z\in\mathbb C\) tali che \(z\cdot\bar z\ge3\) è</p>
+    <ol class="opzioni"><li>un semipiano</li><li>l'esterno di un cerchio</li><li>un cerchio</li><li>due semirette</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(z\bar z=|z|^2\ge3\iff|z|\ge\sqrt3\): punti a distanza almeno \(\sqrt3\) dall'origine, cioè l'esterno del cerchio di raggio \(\sqrt3\) (bordo compreso). Risposta <b>B</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+  <div class="quiz" data-risposta="C" data-fonte="Prova in itinere 04-11-2019">
+    <p>Il campo di esistenza di \(f(x)=\sin x+\sqrt{\log(x^2-5)}\) è</p>
+    <ol class="opzioni"><li>\((\sqrt5,+\infty)\)</li><li>\([\sqrt6,+\infty)\)</li><li>\((-\infty,-\sqrt6]\cup[\sqrt6,+\infty)\)</li><li>\((-\infty,-\sqrt5)\cup(\sqrt5,+\infty)\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Serve \(x^2-5>0\) (logaritmo) e \(\log(x^2-5)\ge0\) (radice), cioè \(x^2-5\ge1\iff x^2\ge6\iff|x|\ge\sqrt6\). Risposta <b>C</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <h3>Esercizi</h3>
+  <div class="ex" data-fonte="Prova in itinere 04-11-2019, es. 1" data-livello="esame">
+    <div class="ex-testo">[5 punti] Discutere la convergenza di \(\displaystyle\sum_{n=1}^{\infty}\frac{(x-4)^n}{\sqrt n\,6^n}\) al variare di \(x\in\mathbb R\).</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Scrivo \(a_n=\left(\frac{x-4}6\right)^n\frac1{\sqrt n}\) e pongo \(q=\frac{x-4}6\).</p>
+      <p><b>1. Condizione necessaria.</b> \(a_n\to0\iff|q|\le1\iff x\in[-2,10]\). Per \(x>10\) \(a_n\to+\infty\): la serie diverge. Per \(x&lt;-2\) \(a_n\) oscilla con modulo che tende a infinito: la serie è irregolare.</p>
+      <p><b>2. Radice:</b> \(\sqrt[n]{|a_n|}=\frac{|q|}{n^{1/(2n)}}\to|q|\). Se \(|q|&lt;1\), cioè \(x\in(-2,10)\), converge assolutamente.</p>
+      <p><b>3. Estremi.</b></p>
+      <ul>
+        <li>\(x=10\): \(\sum\frac1{\sqrt n}\), armonica con esponente \(\frac12\): diverge.</li>
+        <li>\(x=-2\): \(\sum\frac{(-1)^n}{\sqrt n}\): Leibniz (\(\frac1{\sqrt n}\) positiva, decrescente, infinitesima), converge semplicemente ma non assolutamente.</li>
+      </ul>
+      <p><b>Riassunto.</b> Converge assolutamente per \(x\in(-2,10)\), semplicemente per \(x=-2\); diverge per \(x\ge10\); irregolare per \(x&lt;-2\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Prova in itinere 04-11-2019, es. 2" data-livello="esame">
+    <div class="ex-testo">[5 punti] Scrivere in forma algebrica o trigonometrica le soluzioni in \(\mathbb C\) di \((z^5+4-4i)(z-\bar z-8i)=0\) e rappresentarle.</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><b>Secondo fattore.</b> Con \(z=a+ib\): \(z-\bar z=2ib\), quindi \(2ib=8i\iff b=4\). È la retta orizzontale \(\mathrm{Im}\,z=4\): \(z=a+4i\), \(a\in\mathbb R\).</p>
+      <p><b>Primo fattore.</b> \(z^5=-4+4i=w\), con \(|w|=\sqrt{32}=2^{5/2}\) e \(\arg w=\frac{3\pi}4\). Radici quinte: modulo \(2^{1/2}=\sqrt2\), argomenti \(\frac{3\pi/4+2k\pi}5=\frac{3\pi}{20}+\frac{8k\pi}{20}\):</p>
+      \[z_k=\sqrt2\left(\cos\theta_k+i\sin\theta_k\right),\quad\theta_k\in\left\{\tfrac{3\pi}{20},\tfrac{11\pi}{20},\tfrac{19\pi}{20},\tfrac{27\pi}{20},\tfrac{35\pi}{20}\right\}.\]
+      <p>Sono i vertici di un pentagono regolare inscritto nella circonferenza di raggio \(\sqrt2\). Le soluzioni sono questi 5 punti più la retta \(\mathrm{Im}\,z=4\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Prova in itinere 04-11-2019, es. 3" data-livello="esame">
+    <div class="ex-testo">[4 punti] La funzione \(f:\mathbb R\setminus\{2\}\to\mathbb R\) ha questo grafico qualitativo: per \(x&lt;0\) è positiva e decresce verso 0; in \(x=0\) vale 0 con tangente orizzontale; per \(0&lt;x&lt;2\) è negativa e tende a \(-\infty\) per \(x\to2^-\); per \(x>2\) parte da \(+\infty\), ha un minimo positivo circa in \(x=3\) e poi cresce. Disegnare \(g(x)=|f(-x)|+3\) e \(h(x)=f(-x+2)-3\).</div>
+    <details class="hint"><summary>Suggerimento</summary> Fai le trasformazioni una alla volta: \(f(-x)\) è il simmetrico rispetto all'asse \(y\); \(f(-x+2)=f(-(x-2))\) è il simmetrico traslato di 2 a destra.</details>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><b>g.</b></p>
+      <ol>
+        <li>\(f(-x)\): simmetria rispetto all'asse \(y\). L'asintoto verticale passa da \(x=2\) a \(x=-2\); il minimo da \(x\approx3\) a \(x\approx-3\).</li>
+        <li>\(|f(-x)|\): la parte negativa (ora per \(-2&lt;x&lt;0\)) viene ribaltata sopra l'asse \(x\); vicino a \(x=-2\) va a \(+\infty\) da entrambi i lati.</li>
+        <li>\(+3\): tutto sale di 3. Risultato: grafico sempre \(\ge3\), asintoto verticale \(x=-2\) con \(+\infty\) da entrambi i lati, vale 3 in \(x=0\) (minimo), cresce per \(x>0\).</li>
+      </ol>
+      <p><b>h.</b> \(f(-x+2)=f(-(x-2))\): prima la simmetria rispetto all'asse \(y\), poi la traslazione di 2 a destra. L'asintoto \(x=-2\) va in \(x=0\), il punto \(x=0\) (dove \(f=0\) con tangente orizzontale) va in \(x=2\). Infine \(-3\): il grafico scende di 3. Risultato: asintoto verticale \(x=0\) (con \(+\infty\) a sinistra e \(-\infty\) a destra), punto a tangente orizzontale in \((2,-3)\), poi cresce per \(x>2\).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Prova in itinere 04-11-2019, es. 4" data-livello="esame">
+    <div class="ex-testo">[5 punti] Calcolare
+      \[\lim_{n\to\infty}n^8\left(1-\cos\left(\log\left(1+\frac7{n^2}\right)\right)\right)^2,\qquad\lim_{n\to\infty}\left(\sqrt{n^4-\frac{n^3}5}-n^2\right)\left(\arctan\frac1n-\frac1{n^2}\right).\]</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><b>Primo.</b> Asintotici a catena: \(t_n=\log(1+\frac7{n^2})\sim\frac7{n^2}\to0\), e \(1-\cos t_n\sim\frac{t_n^2}2\). Quindi</p>
+      \[n^8\left(\frac{t_n^2}{2}\right)^2=\frac{n^8t_n^4}4\sim\frac{n^8}4\cdot\frac{7^4}{n^8}\to\frac{7^4}4=\frac{2401}4.\]
+      <p><b>Secondo.</b> Raccolgo \(n^2\) nella radice:</p>
+      \[\sqrt{n^4-\tfrac{n^3}5}-n^2=n^2\left(\sqrt{1-\tfrac1{5n}}-1\right)\sim n^2\cdot\left(-\frac1{10n}\right)=-\frac n{10},\]
+      <p>usando \((1+\varepsilon)^{1/2}-1\sim\frac\varepsilon2\). Poi \(\arctan\frac1n=\frac1n+o(\frac1n)\), quindi \(\arctan\frac1n-\frac1{n^2}=\frac1n+o(\frac1n)\sim\frac1n\) (il termine \(\frac1{n^2}\) è trascurabile). Il prodotto:</p>
+      \[-\frac n{10}\cdot\frac1n\to-\frac1{10}.\]
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+</section>
+
+<section class="sec esercizi" id="prove-2018">
+  <div class="num">07</div>
+  <h2>Prova del 07-11-2018 (versione 1)</h2>
+  <div class="ex-bar"><button class="chip" data-filter="tutti" aria-pressed="true">Tutti</button><button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button><button class="chip" data-filter="esame" aria-pressed="false">Esame</button><button class="chip toggle-sol" aria-pressed="false">Mostra soluzioni</button><span class="count ex-count"></span></div>
+  <p class="lead">Prof. D. D. Monticelli. Test da 6 punti (1 a risposta, −1/4 se sbagliata) ed esercizi da 17. Le versioni 2, 3 e 4 hanno gli stessi esercizi con numeri diversi.</p>
+
+  <h3>Test</h3>
+  <div class="quiz" data-risposta="D" data-fonte="Prova in itinere 07-11-2018">
+    <p>L'insieme delle soluzioni in \(\mathbb C\) di \(\arg(iz)=\frac{7\pi}6\) è</p>
+    <ol class="opzioni"><li>una circonferenza</li><li>una retta privata dell'origine</li><li>una semiretta contenuta nel IV quadrante</li><li>una semiretta contenuta nel II quadrante</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(\arg(iz)=\arg i+\arg z=\frac\pi2+\arg z\). Quindi \(\arg z=\frac{7\pi}6-\frac\pi2=\frac{2\pi}3\): tutti i \(z\neq0\) con argomento \(\frac{2\pi}3\), cioè una semiretta (aperta) nel II quadrante. Risposta <b>D</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+  <div class="quiz" data-risposta="D" data-fonte="Prova in itinere 07-11-2018">
+    <p>Sia \(a_n\) reale. Se \(\lim|a_n|=l\in\mathbb R\) allora</p>
+    <ol class="opzioni"><li>\(\lim a_n=l\) oppure \(\lim a_n=-l\)</li><li>\(a_n\) è definitivamente di segno costante</li><li>se \(a_n\) è strettamente crescente allora \(\lim a_n=l\)</li><li>\(\lim a_n\) può non esistere ma \(a_n\) è limitata</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Come nel 2022: \(a_n=(-1)^n\) smentisce A e B; \(a_n=-1+\frac1n\) è crescente con \(|a_n|\to1\) ma \(a_n\to-1\), smentisce C. Una successione con \(|a_n|\) convergente è limitata: <b>D</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+  <div class="quiz" data-risposta="C" data-fonte="Prova in itinere 07-11-2018">
+    <p>\(\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{6^n}\)</p>
+    <ol class="opzioni"><li>diverge a \(-\infty\)</li><li>\(=\frac65\)</li><li>\(=\frac67\)</li><li>converge a 0</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Geometrica di ragione \(-\frac16\): somma \(\frac1{1+\frac16}=\frac67\). Risposta <b>C</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+  <div class="quiz" data-risposta="C" data-fonte="Prova in itinere 07-11-2018">
+    <p>La funzione \(f:\mathbb N\to\mathbb N\), \(f(n)=3n+5\)</p>
+    <ol class="opzioni"><li>non può essere invertita perché non è iniettiva</li><li>ha inversa definita su tutto \(\mathbb N\)</li><li>ha inversa che non è definita su tutto \(\mathbb N\)</li><li>è iniettiva e suriettiva</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(f\) è iniettiva (strettamente crescente) ma non suriettiva: per esempio 0, 1, 2, 3, 4, 6 non sono valori. L'inversa esiste solo sull'immagine \(\{5,8,11,\dots\}\), non su tutto \(\mathbb N\). Risposta <b>C</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+  <div class="quiz" data-risposta="D" data-fonte="Prova in itinere 07-11-2018">
+    <p>Dato \(A=\{x\in\mathbb Q:\sqrt{x^2-16}&lt;1\}\subset\mathbb R\),</p>
+    <ol class="opzioni"><li>0 è minorante di \(A\)</li><li>\(A\) non è inferiormente limitato</li><li>\(\min A=-\sqrt{17}\)</li><li>\(\inf A\) esiste ed è finito</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Serve \(x^2\ge16\) e \(x^2-16&lt;1\), cioè \(16\le x^2&lt;17\): \(x\in(-\sqrt{17},-4]\cup[4,\sqrt{17})\), con \(x\) razionale.</p>
+      <p>A è falsa (ci sono negativi), B falsa (\(A\ge-\sqrt{17}\)), C falsa (\(-\sqrt{17}\) è irrazionale e comunque escluso). \(\inf A=-\sqrt{17}\), finito: <b>D</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+  <div class="quiz" data-risposta="A" data-fonte="Prova in itinere 07-11-2018">
+    <p>\(\displaystyle\lim_{n\to+\infty}n\log\frac{n-9}n\)</p>
+    <ol class="opzioni"><li>\(=-9\)</li><li>\(=-\infty\)</li><li>non esiste</li><li>\(=0\)</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(\log\frac{n-9}n=\log\left(1-\frac9n\right)\sim-\frac9n\), quindi \(n\cdot\left(-\frac9n\right)=-9\). Risposta <b>A</b>.</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <h3>Esercizi</h3>
+  <div class="ex" data-fonte="Prova in itinere 07-11-2018, es. 1" data-livello="esame">
+    <div class="ex-testo">[5 punti] Discutere al variare di \(x\in\mathbb R\) la convergenza semplice e assoluta di \(\displaystyle\sum_{n=1}^{\infty}\frac{(7x)^n}{n\,8^n}\).</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>\(a_n=\left(\frac{7x}8\right)^n\frac1n\), pongo \(q=\frac{7x}8\).</p>
+      <p><b>1.</b> \(a_n\to0\iff|q|\le1\iff-\frac87\le x\le\frac87\). Fuori da questo intervallo la serie non converge (diverge per \(x>\frac87\), irregolare per \(x&lt;-\frac87\)).</p>
+      <p><b>2. Radice:</b> \(\sqrt[n]{|a_n|}=\frac{|q|}{\sqrt[n]n}\to|q|\). Per \(|q|&lt;1\), cioè \(-\frac87&lt;x&lt;\frac87\), converge assolutamente.</p>
+      <p><b>3. Estremi.</b> \(x=\frac87\): \(\sum\frac1n\), armonica, diverge. \(x=-\frac87\): \(\sum\frac{(-1)^n}n\), converge per Leibniz, ma non assolutamente.</p>
+      <p><b>Riassunto.</b> Converge assolutamente per \(x\in(-\frac87,\frac87)\), semplicemente (non assolutamente) per \(x=-\frac87\), non converge altrimenti.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Prova in itinere 07-11-2018, es. 2" data-livello="esame">
+    <div class="ex-testo">[4 punti] Determinare le soluzioni complesse di \((z+\bar z)(z^6+11i)=0\) in forma algebrica e rappresentarle.</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><b>Primo fattore.</b> \(z+\bar z=2\,\mathrm{Re}\,z=0\): tutto l'asse immaginario, \(z=it\), \(t\in\mathbb R\).</p>
+      <p><b>Secondo fattore.</b> \(z^6=-11i=11e^{i\frac{3\pi}2}\). Radici seste: modulo \(\sqrt[6]{11}\), argomenti \(\frac{3\pi/2+2k\pi}6=\frac\pi4+\frac{k\pi}3\):</p>
+      \[\theta_k\in\left\{\tfrac\pi4,\tfrac{7\pi}{12},\tfrac{11\pi}{12},\tfrac{5\pi}4,\tfrac{19\pi}{12},\tfrac{23\pi}{12}\right\},\qquad z_k=\sqrt[6]{11}(\cos\theta_k+i\sin\theta_k).\]
+      <p>In forma algebrica, per esempio \(z_0=\sqrt[6]{11}\left(\frac{\sqrt2}2+\frac{\sqrt2}2i\right)\) e \(z_3=-\sqrt[6]{11}\left(\frac{\sqrt2}2+\frac{\sqrt2}2i\right)\). Sono i vertici di un esagono regolare inscritto nella circonferenza di raggio \(\sqrt[6]{11}\), più l'asse immaginario.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Prova in itinere 07-11-2018, es. 3" data-livello="esame">
+    <div class="ex-testo">[4 punti] Calcolare \(\displaystyle\lim_{n\to\infty}\left(\sqrt{n^2-n}-\sqrt{n^2+2}\right)\frac{n\log\left(1+\sin\frac2{n^2}\right)}{e^{4/n}-1}\).</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><b>Differenza di radici:</b> razionalizzo.</p>
+      \[\sqrt{n^2-n}-\sqrt{n^2+2}=\frac{(n^2-n)-(n^2+2)}{\sqrt{n^2-n}+\sqrt{n^2+2}}=\frac{-n-2}{n\left(\sqrt{1-\frac1n}+\sqrt{1+\frac2{n^2}}\right)}\to-\frac12.\]
+      <p><b>Resto:</b> \(\log(1+\sin\frac2{n^2})\sim\frac2{n^2}\), \(e^{4/n}-1\sim\frac4n\), quindi</p>
+      \[\frac{n\cdot\frac2{n^2}}{\frac4n}=\frac12.\]
+      <p>Limite: \(-\frac12\cdot\frac12=-\frac14\).</p>
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Prova in itinere 07-11-2018, es. 4" data-livello="esame">
+    <div class="ex-testo">[4 punti] Il grafico di \(f\) ha un asintoto verticale \(x=2\): per \(x&lt;2\) sale fino a un massimo negativo vicino a \(x=0\) e poi scende a \(-\infty\) per \(x\to2^-\); per \(x>2\) scende da \(+\infty\) a un minimo positivo e poi risale. Disegnare \(f(-x-5)\), \(f(x+5)+7\), \(5-f(|x|)\).</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <ul>
+        <li><b>\(f(-x-5)=f(-(x+5))\):</b> simmetria rispetto all'asse \(y\), poi traslazione di 5 a sinistra. L'asintoto \(x=2\) va in \(x=-7\). Il ramo che era a destra dell'asintoto (positivo) ora è a sinistra, quello negativo a destra.</li>
+        <li><b>\(f(x+5)+7\):</b> traslazione di 5 a sinistra e di 7 in alto. Asintoto \(x=-3\).</li>
+        <li><b>\(5-f(|x|)\):</b> \(f(|x|)\) tiene la parte con \(x\ge0\) e la ribalta su \(x&lt;0\) (funzione pari, asintoti \(x=\pm2\)). Poi \(-f\) ribalta rispetto all'asse \(x\) e \(+5\) alza di 5. Per \(|x|&lt;2\) il grafico va a \(+\infty\) vicino agli asintoti; per \(|x|>2\) parte da \(-\infty\), ha un massimo e poi scende.</li>
+      </ul>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+</section>
+
+<section class="sec esercizi" id="prove-2017">
+  <div class="num">08</div>
+  <h2>Prova del 15-11-2017</h2>
+  <div class="ex-bar"><button class="chip" data-filter="tutti" aria-pressed="true">Tutti</button><button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button><button class="chip" data-filter="esame" aria-pressed="false">Esame</button><button class="chip toggle-sol" aria-pressed="false">Mostra soluzioni</button><span class="count ex-count"></span></div>
+  <p class="lead">Prof. D. Monticelli. Test da 6 punti ed esercizi da 17. Questa prova arrivava fino alle derivate: le parti fuori programma 2026 sono segnate.</p>
+
+  <h3>Test</h3>
+  <div class="quiz" data-risposta="D" data-fonte="Prova in itinere 15-11-2017">
+    <p>L'insieme dei punti \(z\in\mathbb C\) tali che \(5(\mathrm{Re}\,z)^2=\mathrm{Im}\,z-1\) è</p>
+    <ol class="opzioni"><li>due rette passanti per \(i\)</li><li>il solo punto \(i\)</li><li>una circonferenza</li><li>una parabola</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Con \(z=x+iy\): \(5x^2=y-1\iff y=5x^2+1\), una parabola con vertice in \(i\). Risposta <b>D</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+  <div class="quiz" data-risposta="B" data-fonte="Prova in itinere 15-11-2017">
+    <p>L'equazione \(\big||\log x|-10\big|=1\) in \(\mathbb R\)</p>
+    <ol class="opzioni"><li>ha esattamente 2 soluzioni distinte</li><li>ha esattamente 4 soluzioni distinte</li><li>ha esattamente 1 soluzione</li><li>non ha soluzioni</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(|\log x|-10=\pm1\iff|\log x|=11\) oppure \(|\log x|=9\). Quindi \(\log x\in\{11,-11,9,-9\}\): quattro valori di \(x=e^{\pm11},e^{\pm9}\). Risposta <b>B</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+  <div class="quiz" data-risposta="B" data-fonte="Prova in itinere 15-11-2017">
+    <p><i>(Limite di funzione: nel primo parziale solo come cenno, Lezione 14. Si fa come per le successioni, con gli stessi asintotici e i carabinieri.)</i> \(\displaystyle\lim_{x\to+\infty}\frac{(\sin x)^2}x\)</p>
+    <ol class="opzioni"><li>vale 1</li><li>vale 0</li><li>vale \(+\infty\)</li><li>non esiste</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(0\le\frac{\sin^2x}x\le\frac1x\to0\): per i carabinieri il limite è 0. Risposta <b>B</b>. (Non confondere con \(\frac{\sin x}x\) per \(x\to0\).)</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+  <div class="quiz" data-risposta="B" data-fonte="Prova in itinere 15-11-2017">
+    <p><i>(Fuori programma 2026: continuità e valori intermedi, secondo parziale.)</i> Sia \(f:\mathbb R\to\mathbb R\) continua e strettamente monotona con \(f(1)=1\), \(f(2)=2\log2\). L'equazione \(e^{f(x)}=3\)</p>
+    <ol class="opzioni"><li>non ha soluzioni</li><li>ha esattamente 1 soluzione</li><li>può avere 2 o più soluzioni</li><li>non si può stabilire</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>\(e^{f(x)}=3\iff f(x)=\log3\approx1{,}10\). Siccome \(1&lt;\log3&lt;2\log2=\log4\approx1{,}39\), per il teorema dei valori intermedi c'è almeno una soluzione in \((1,2)\); essendo \(f\) strettamente monotona (iniettiva), è unica. Risposta <b>B</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+  <div class="quiz" data-risposta="C" data-fonte="Prova in itinere 15-11-2017">
+    <p><i>(Fuori programma 2026: derivate.)</i> La funzione \(f(x)=x^2\sin\frac1x\) per \(x\neq0\), \(f(0)=0\)</p>
+    <ol class="opzioni"><li>non è continua in 0</li><li>è continua ma non derivabile in 0</li><li>è continua e derivabile in 0</li><li>è derivabile ma non continua in 0</li></ol>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Continua: \(|x^2\sin\frac1x|\le x^2\to0\). Derivabile: \(\frac{f(x)-f(0)}{x}=x\sin\frac1x\to0\), quindi \(f'(0)=0\). Risposta <b>C</b>. (D è impossibile: derivabile implica continua.)</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+  <div class="quiz" data-risposta="D" data-fonte="Prova in itinere 15-11-2017">
+    <p><i>(Fuori programma 2026.)</i> Vicino a \(x=0\), \(f(x)=(\sin x)^{2/3}(e^x-1)^{2/5}\) ha l'andamento: (a) decrescente con flesso verticale, (b) crescente con flesso verticale, (c) cuspide verso il basso, (d) a forma di U con tangente orizzontale.</p>
+    <details class="sol"><summary>Spiegazione</summary>
+      <p>Gli esponenti hanno denominatore dispari e numeratore pari, quindi \(f\ge0\). Vicino a 0: \(f(x)\sim|x|^{2/3}|x|^{2/5}=|x|^{16/15}\). L'esponente è \(>1\), quindi \(f\) va a 0 più in fretta di \(|x|\): niente cuspide, tangente orizzontale in 0. Risposta <b>D</b>.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <h3>Esercizi</h3>
+  <div class="ex" data-fonte="Prova in itinere 15-11-2017, es. 1" data-livello="esame">
+    <div class="ex-testo">[4 punti] Risolvere e disegnare nel piano complesso le soluzioni di \((z-1)^3+8i=0\).</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Pongo \(w=z-1\): \(w^3=-8i=8e^{i\frac{3\pi}2}\). Radici cubiche: modulo 2, argomenti \(\frac{3\pi/2+2k\pi}3=\frac\pi2,\frac{7\pi}6,\frac{11\pi}6\):</p>
+      \[w_1=2i,\qquad w_2=-\sqrt3-i,\qquad w_3=\sqrt3-i.\]
+      <p>Quindi \(z=w+1\):</p>
+      \[z_1=1+2i,\qquad z_2=(1-\sqrt3)-i,\qquad z_3=(1+\sqrt3)-i.\]
+      <p>Sono i vertici di un triangolo equilatero inscritto nella circonferenza di centro \(1\) e raggio 2 (la traslazione sposta il centro da 0 a 1).</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Prova in itinere 15-11-2017, es. 2" data-livello="esame">
+    <div class="ex-testo">[5 punti] <i>(Limite di funzione: si fa come per le successioni, con gli stessi asintotici, qui con \(x\to0^+\) al posto di \(\frac1n\to0\).)</i> Calcolare, al variare di \(\alpha>0\), \(\displaystyle\lim_{x\to0^+}\frac{(\log\cos x)^3}{x^\alpha\tan(3x^2)\left(\sqrt{1+x}-1\right)^2}\).</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p>Asintotici per \(x\to0\):</p>
+      <ul>
+        <li>\(\log\cos x=\log(1+(\cos x-1))\sim\cos x-1\sim-\frac{x^2}2\), quindi \((\log\cos x)^3\sim-\frac{x^6}8\);</li>
+        <li>\(\tan(3x^2)\sim3x^2\);</li>
+        <li>\(\sqrt{1+x}-1\sim\frac x2\), quindi al quadrato \(\sim\frac{x^2}4\).</li>
+      </ul>
+      \[\frac{-\frac{x^6}8}{x^\alpha\cdot3x^2\cdot\frac{x^2}4}=-\frac16x^{2-\alpha}\longrightarrow\begin{cases}0 & 0&lt;\alpha&lt;2\\ -\frac16 & \alpha=2\\ -\infty & \alpha>2\end{cases}\]
+      <p class="verifica">Verificata con calcolo simbolico</p>
+    </details>
+  </div>
+
+  <div class="ex" data-fonte="Prova in itinere 15-11-2017, es. 3" data-livello="esame">
+    <div class="ex-testo">[8 punti] <i>(Fuori programma 2026: studio di funzione con derivata.)</i> Studiare \(f(x)=\dfrac{x^2}{4-2x}e^{2/x}\) e tracciarne un grafico qualitativo (senza derivata seconda).</div>
+    <details class="sol"><summary>Soluzione</summary>
+      <p><b>Dominio:</b> \((-\infty,0)\cup(0,2)\cup(2,+\infty)\). <b>Segno:</b> \(f>0\) per \(x&lt;2\), \(f&lt;0\) per \(x>2\).</p>
+      <p><b>Limiti:</b> \(x\to-\infty\): \(+\infty\); \(x\to0^-\): \(0\) (perché \(e^{2/x}\to0\)); \(x\to0^+\): \(+\infty\); \(x\to2^-\): \(+\infty\); \(x\to2^+\): \(-\infty\); \(x\to+\infty\): \(-\infty\). Asintoti verticali \(x=0\) (da destra) e \(x=2\).</p>
+      <p><b>Asintoto obliquo:</b> \(\frac{f(x)}x\to-\frac12\) e, con \(e^{2/x}=1+\frac2x+o(\frac1x)\), \(f(x)+\frac x2\to-2\). Quindi \(y=-\frac12x-2\) per \(x\to\pm\infty\).</p>
+      <p><b>Derivata:</b></p>
+      \[f'(x)=\frac{e^{2/x}}{(4-2x)^2}\left(-2x^2+12x-8\right),\]
+      <p>che si annulla in \(x=3\pm\sqrt5\). \(f'>0\) tra le due radici, \(&lt;0\) fuori. Quindi \(x=3-\sqrt5\approx0{,}76\) è minimo locale, \(x=3+\sqrt5\approx5{,}24\) è massimo locale.</p>
+      <p class="verifica">Soluzione ufficiale</p>
+    </details>
+  </div>
+</section>
+      <nav class="pager" aria-label="Capitoli"><a class="prev" href="prova-itinere.html"><small>← Precedente</small><span>Prima prova in itinere: com&#x27;è fatta</span></a><a class="next" href="simulazione.html"><small>Successivo →</small><span>Simulazione del prof (Esercitazione 7)</span></a></nav>
+    </main>
+  </div>
+  <footer class="foot">Appunti personali basati sul materiale del corso di Analisi Matematica 1 del prof. De Martino (Politecnico di Milano, 2026/27). Possono contenere errori: nel dubbio fa fede il materiale del docente.</footer>
+</div>
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], tags: 'none' },
+    svg: { fontCache: 'global' },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js" async></script>
+<script src="../assets/gal.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parte 5 · Serie numeriche — Analisi Matematica 1</title>
+<meta name="description" content="Serie di riferimento, condizione necessaria, confronto, rapporto, radice, convergenza assoluta, Leibniz, serie con parametro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../assets/gal.css">
+<script>try{var t=localStorage.getItem('gal:theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body data-page="serie">
+<header class="topbar">
+  <div class="in">
+    <button class="iconbtn menu-btn" id="menu-btn" aria-label="Apri l'indice" aria-expanded="false" aria-controls="side"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <nav class="crumbs" aria-label="Percorso">
+      <a href="../" class="hide-sm">Appunti</a><span class="sep hide-sm">/</span>
+      <a href="./">Analisi 1</a><span class="sep">/</span><span class="here">Parte 5</span>
+    </nav>
+    <button class="iconbtn" id="theme-btn" aria-label="Cambia tema chiaro/scuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  </div>
+  <div class="readbar"></div>
+</header>
+<div class="page">
+  <header class="hero">
+    <span class="eyebrow">Parte 5</span>
+    <h1>Serie numeriche</h1>
+    <p class="sub">Serie di riferimento, condizione necessaria, confronto, rapporto, radice, convergenza assoluta, Leibniz, serie con parametro.</p>
+    <div class="pillrow"><span class="pill">3 sezioni</span><span class="pill">9 esercizi con soluzione</span><span class="pill">Lezioni 11–13</span><span class="pill">Esercizi su serie.pdf</span></div>
+  </header>
+  <div class="layout">
+    <aside class="side" id="side">
+      <div class="panel"><div class="panel-title">Pagine</div><ol><li><a href="reali.html"><span class="k">1</span>Numeri reali e disequazioni</a><div class="chap-progress" data-progress-page="reali" data-total="9"><i></i></div></li><li><a href="complessi.html"><span class="k">2</span>Numeri complessi</a><div class="chap-progress" data-progress-page="complessi" data-total="11"><i></i></div></li><li><a href="funzioni.html"><span class="k">3</span>Funzioni: generalità</a><div class="chap-progress" data-progress-page="funzioni" data-total="2"><i></i></div></li><li><a href="successioni.html"><span class="k">4</span>Limiti di successioni</a><div class="chap-progress" data-progress-page="successioni" data-total="8"><i></i></div></li><li><a href="serie.html" aria-current="page"><span class="k">5</span>Serie numeriche</a><div class="chap-progress" data-progress-page="serie" data-total="9"><i></i></div></li><li><a href="dimostrazioni.html"><span class="k">·</span>Le 14 dimostrazioni del primo parziale</a></li><li><a href="prova-itinere.html"><span class="k">·</span>Prima prova in itinere: com&#x27;è fatta</a></li><li><a href="prove-svolte.html"><span class="k">·</span>Prove in itinere passate svolte</a><div class="chap-progress" data-progress-page="prove-svolte" data-total="28"><i></i></div></li><li><a href="simulazione.html"><span class="k">·</span>Simulazione del prof (Esercitazione 7)</a><div class="chap-progress" data-progress-page="simulazione" data-total="6"><i></i></div></li><li><a href="piano.html"><span class="k">·</span>Piano di studio fino al 2 novembre</a></li></ol></div>
+      <div class="panel"><div class="panel-title">In questa pagina</div><ol id="toc"><li><a href="#serie-teoria"><span class="k">01</span>Serie numeriche</a></li><li><a href="#serie-test"><span class="k">02</span>Esercizi: carattere di una serie (test)</a></li><li><a href="#serie-parametro"><span class="k">03</span>Esercizi: serie con parametro</a></li></ol></div>
+      
+    </aside>
+    <main id="content">
+<section class="sec" id="serie-teoria">
+  <div class="num">01</div>
+  <h2>Serie numeriche</h2>
+  <p class="lead">Le serie di riferimento e i criteri. L'esercizio da 8 punti è quasi sempre una serie con parametro.</p>
+
+<div class="box box--def"><div class="tag">Definizione</div><p>
+Data \(a_n\), la <b>serie</b> \(\sum_{n=0}^{\infty}a_n\) è il limite delle <b>somme parziali</b> \(S_N=\sum_{n=0}^{N}a_n\). Se \(S_N\to S\in\mathbb R\) la serie <b>converge</b> e ha somma \(S\); se \(S_N\to\pm\infty\) <b>diverge</b>; se il limite non esiste è <b>irregolare</b>. Il carattere non cambia se si modificano un numero finito di termini.</p></div>
+<div class="tablewrap"><table>
+
+
+
+
+
+
+<thead><tr><th>Serie di riferimento</th><th>Carattere</th></tr></thead><tbody><tr><td><b>Geometrica</b> \(\sum_{n=0}^\infty q^n\)</td><td>converge a \(\frac1{1-q}\) se \(|q|&lt;1\); diverge a \(+\infty\) se \(q\ge1\); irregolare se \(q\le-1\)</td></tr><tr><td><b>Mengoli</b> \(\sum_{n=1}^\infty\frac1{n(n+1)}\)</td><td>converge a 1 (telescopica: \(\frac1{n(n+1)}=\frac1n-\frac1{n+1}\), \(S_N=1-\frac1{N+1}\))</td></tr><tr><td><b>Armonica</b> \(\sum\frac1n\)</td><td>diverge a \(+\infty\) (anche se \(\frac1n\to0\))</td></tr><tr><td><b>Armonica generalizzata</b> \(\sum\frac1{n^\alpha}\)</td><td>converge \(\iff\alpha&gt;1\)</td></tr><tr><td><b>Armonica gen. II</b> \(\sum\frac1{n^\alpha\log^\beta n}\)</td><td>converge \(\iff\alpha&gt;1\), oppure \(\alpha=1\) e \(\beta&gt;1\)</td></tr></tbody></table></div>
+<div class="box box--thm"><div class="tag">Condizione necessaria <strong>(*10)</strong></div><p>Se \(\sum a_n\) converge, allora \(a_n\to0\). <b>Non è sufficiente</b>: \(\frac1n\to0\) ma \(\sum\frac1n\) diverge. Uso pratico: se \(a_n\not\to0\) la serie <b>non converge</b>.</p></div>
+<div class="box box--thm"><div class="tag">Serie a termini non negativi (\(a_n\ge0\))</div><p>
+Le somme parziali sono crescenti, quindi la serie <b>converge oppure diverge a \(+\infty\)</b>, mai irregolare.
+</p><ul>
+<li><b>Confronto</b> <strong>(*11)</strong>: se \(0\le a_n\le b_n\) definitivamente, allora se \(\sum b_n\) converge anche \(\sum a_n\) converge; se \(\sum a_n\) diverge anche \(\sum b_n\) diverge.</li>
+<li><b>Confronto asintotico</b> <strong>(*12)</strong>: se \(a_n\ge0\), \(b_n&gt;0\) e \(\frac{a_n}{b_n}\to\ell\in[0,+\infty]\): se \(\sum b_n\) converge e \(\ell&lt;+\infty\), allora \(\sum a_n\) converge; se \(\sum b_n\) diverge e \(\ell&gt;0\), allora \(\sum a_n\) diverge. In particolare se \(a_n\sim b_n\) le due serie hanno lo stesso carattere.</li>
+<li><b>Rapporto</b> <strong>(*13)</strong>: se \(a_n&gt;0\) e \(\frac{a_{n+1}}{a_n}\to\ell\): con \(\ell&lt;1\) converge, con \(\ell&gt;1\) (anche \(+\infty\)) diverge, con \(\ell=1\) non si conclude.</li>
+<li><b>Radice</b>: se \(a_n\ge0\) e \(\sqrt[n]{a_n}\to\ell\): con \(\ell&lt;1\) converge, con \(\ell&gt;1\) diverge, con \(\ell=1\) non si conclude.</li>
+</ul></div>
+<div class="box box--thm"><div class="tag">Serie a termini di segno qualunque</div>
+<ul>
+<li>\(\sum a_n\) <b>converge assolutamente</b> se converge \(\sum|a_n|\).</li>
+<li><b>Assoluta ⇒ semplice</b> <strong>(*14)</strong>. Non vale il viceversa: \(\sum\frac{(-1)^n}{n}\) converge (Leibniz) ma \(\sum\frac1n\) diverge.</li>
+<li><b>Leibniz</b>: se \(b_n\ge0\), \(b_n\to0\) e \(b_n\) è <b>decrescente</b> (definitivamente), allora \(\sum(-1)^nb_n\) converge.</li>
+</ul></div>
+<div class="box box--warn"><div class="tag">Attenzione: segno variabile (Lez. 13)</div><p>Il confronto asintotico vale solo per termini di segno costante, e Leibniz ha bisogno della decrescenza. Un controesempio per entrambe le cose: \(a_n=\frac{(-1)^n}{\sqrt n}+\frac1n\). Vale \(a_n\sim\frac{(-1)^n}{\sqrt n}\) e \(\sum\frac{(-1)^n}{\sqrt n}\) converge, ma \(\sum a_n\) <b>diverge</b>, perché è la somma di una serie convergente e di \(\sum\frac1n\), che diverge. Scritto come \((-1)^nb_n\) con \(b_n=\frac1{\sqrt n}+\frac{(-1)^n}n\), si ha \(b_n&gt;0\) e \(b_n\to0\), ma \(b_n\) non è decrescente: senza decrescenza Leibniz non si applica.</p></div>
+<div class="box box--note"><div class="tag">Esempio: condizione necessaria (Lez. 11)</div><p>\(\sum\arctan n\) non converge perché \(\arctan n\to\frac\pi2\neq0\). Essendo a termini positivi, diverge a \(+\infty\).</p></div>
+<div class="box box--method"><div class="tag">Quale criterio uso?</div><p>
+Ci sono \(n!\), \(n^n\) o \(q^n\): <b>rapporto</b>. C'è tutto alla potenza \(n\): <b>radice</b>. Ci sono funzioni di \(\frac1n\) (sin, log, e…): <b>asintotici + confronto asintotico</b>. C'è \((-1)^n\): prima l'<b>assoluta</b>, poi <b>Leibniz</b>. Sempre prima di tutto: <b>condizione necessaria</b>.</p></div>
+
+</section>
+
+<section class="sec esercizi" id="serie-test">
+  <div class="num">02</div>
+  <h2>Esercizi: carattere di una serie (test)</h2>
+  <div class="ex-bar"><button class="chip" data-filter="tutti" aria-pressed="true">Tutti</button><button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button><button class="chip" data-filter="medio" aria-pressed="false">Medio</button><button class="chip" data-filter="esame" aria-pressed="false">Esame</button><button class="chip toggle-sol" aria-pressed="false">Mostra soluzioni</button><span class="count ex-count"></span></div>
+
+<div class="ex" data-fonte="Prova in itinere 10-11-2025" data-livello="esame"><div class="ex-testo"> \(\sum_{n\ge1}\dfrac{(e^{1/n}-1)\log n}{n}\)
+</div><details class="sol"><summary>Soluzione</summary>Termini \(\ge0\). \(e^{1/n}-1\sim\frac1n\Rightarrow a_n\sim\frac{\log n}{n^2}\); armonica generalizzata II con \(\alpha=2&gt;1\). <strong>Converge.</strong><p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
+<div class="ex" data-fonte="Prova in itinere 09-11-2024 B" data-livello="esame"><div class="ex-testo"> \(\sum_{n\ge1}\dfrac{(-1)^n\log n}{n^3}\)
+</div><details class="sol"><summary>Soluzione</summary>Assoluta: \(\frac{\log n}{n^3}\le\frac{n}{n^3}=\frac1{n^2}\) (perché \(\log n\le n\)), convergente. <strong>Converge assolutamente.</strong><p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
+<div class="ex" data-fonte="Prova in itinere 07-11-2022" data-livello="esame"><div class="ex-testo"> \(\sum_{n\ge1}(-1)^n\log\left(1+\frac1{\sqrt[3]n}\right)\)
+</div><details class="sol"><summary>Soluzione</summary>Assoluta: \(\log(1+n^{-1/3})\sim\frac1{n^{1/3}}\), con \(\alpha=\frac13\le1\): <b>non</b> converge assolutamente. Leibniz: \(b_n=\log(1+n^{-1/3})\) è \(\ge0\), tende a 0 ed è decrescente (log crescente composto con \(n^{-1/3}\) decrescente). <strong>Converge semplicemente ma non assolutamente.</strong><p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
+<div class="ex" data-fonte="Prova in itinere 06-11-2023" data-livello="esame"><div class="ex-testo"> \(\sum_{n\ge0}\dfrac{(-1)^n}{3^n}\)
+</div><details class="sol"><summary>Soluzione</summary>Geometrica di ragione \(q=-\frac13\), con \(|q|&lt;1\): somma \(\dfrac1{1-(-\frac13)}=\) <strong>\(\frac34\)</strong>.<p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
+<div class="ex" data-fonte="Esercizio tipo" data-livello="medio"><div class="ex-testo"> \(\sum_{n\ge1} n\left(1-\cos\frac1n\right)\)
+</div><details class="sol"><summary>Soluzione</summary>\(a_n\sim n\cdot\frac1{2n^2}=\frac1{2n}\): confronto asintotico con l'armonica. <strong>Diverge a \(+\infty\).</strong><p class="verifica">Verificata a mano</p></details></div>
+
+</section>
+
+<section class="sec esercizi" id="serie-parametro">
+  <div class="num">03</div>
+  <h2>Esercizi: serie con parametro</h2>
+  <div class="ex-bar"><button class="chip" data-filter="tutti" aria-pressed="true">Tutti</button><button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button><button class="chip" data-filter="esame" aria-pressed="false">Esame</button><button class="chip toggle-sol" aria-pressed="false">Mostra soluzioni</button><span class="count ex-count"></span></div>
+
+<div class="box box--method"><div class="tag">Schema in 5 passi (scrivili tutti: danno punti anche se non finisci)</div>
+<ol><li><b>Condizione necessaria</b>: per quali valori \(a_n\not\to0\)? Lì la serie non converge.</li>
+<li><b>Segno</b>: se i termini possono essere negativi, studia \(\sum|a_n|\).</li>
+<li><b>Rapporto o radice</b> su \(|a_n|\): trovi \(\ell(\text{parametro})\). Con \(\ell&lt;1\) converge assolutamente, con \(\ell&gt;1\) non converge.</li>
+<li><b>Casi \(\ell=1\)</b>: sostituisci il valore e studia la serie a parte (armonica generalizzata, Leibniz).</li>
+<li><b>Conclusione</b> riassunta per tutti i valori del parametro.</li></ol></div>
+<div class="ex" data-fonte="Prova in itinere 10-11-2025 A (12 punti)" data-livello="esame"><div class="ex-testo"> Al variare di \(\alpha\ge0\): \(\displaystyle\sum_{n\ge2}\frac{(e^\alpha-2)^n}{\log^2n\,\sqrt[3]{n^4-1}}\)
+</div><details class="sol"><summary>Soluzione</summary>Pongo \(q=e^\alpha-2\); con \(\alpha\ge0\) è \(q\ge-1\).<br/>
+<b>1.</b> Se \(q&gt;1\) (\(\alpha&gt;\log3\)): \(q^n\) domina \(\log^2n\cdot n^{4/3}\), quindi \(a_n\to+\infty\): <b>diverge a \(+\infty\)</b> (termini positivi).<br/>
+<b>2–3.</b> Assoluta con la radice: \(\sqrt[n]{|a_n|}=\dfrac{|q|}{\left(\log^2n\sqrt[3]{n^4-1}\right)^{1/n}}\to|q|\), perché \(\sqrt[n]{n^\beta}\to1\) e \(\sqrt[n]{\log^2n}\to1\). Con \(|q|&lt;1\), cioè \(1&lt;e^\alpha&lt;3\), cioè \(0&lt;\alpha&lt;\log3\): <b>converge assolutamente</b>.<br/>
+<b>4.</b> \(\alpha=\log3\) (\(q=1\)): \(\sum\frac1{\log^2n\sqrt[3]{n^4-1}}\), con termine \(\sim\frac1{n^{4/3}\log^2n}\), converge (\(\frac43&gt;1\)). \(\ \alpha=0\) (\(q=-1\)): \(\sum\frac{(-1)^n}{\log^2n\sqrt[3]{n^4-1}}\), il cui valore assoluto è la serie appena vista: converge assolutamente.<br/>
+<b>5.</b> <strong>Converge assolutamente per \(\alpha\in[0,\log3]\); diverge a \(+\infty\) per \(\alpha&gt;\log3\).</strong><p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
+<div class="ex" data-fonte="Prova in itinere 09-11-2024 B (12 punti)" data-livello="esame"><div class="ex-testo"> Al variare di \(\beta&gt;0\): \(\displaystyle\sum_{n\ge1}\frac{(\log\beta)^n}{\sqrt[6]{n+2}}\)
+</div><details class="sol"><summary>Soluzione</summary>Pongo \(q=\log\beta\in\mathbb R\).<br/>
+<b>1.</b> \(\frac{q^n}{\sqrt[6]{n+2}}\to0\) se e solo se \(|q|\le1\), cioè \(e^{-1}\le\beta\le e\). Se \(q&gt;1\) (\(\beta&gt;e\)) i termini tendono a \(+\infty\): <b>diverge</b>. Se \(q&lt;-1\) (\(\beta&lt;e^{-1}\)) i termini oscillano illimitati: <b>irregolare</b>.<br/>
+<b>2–3.</b> Radice sull'assoluta: \(\sqrt[n]{|a_n|}=\dfrac{|q|}{(n+2)^{1/(6n)}}\to|q|\), perché \((n+2)^{1/(6n)}=e^{\frac{\log(n+2)}{6n}}\to e^0=1\). Con \(|q|&lt;1\) (\(e^{-1}&lt;\beta&lt;e\)): <b>converge assolutamente</b>.<br/>
+<b>4.</b> \(\beta=e\): \(\sum\frac1{\sqrt[6]{n+2}}\), con termine \(\sim\frac1{n^{1/6}}\), <b>diverge</b>. \(\ \beta=e^{-1}\): \(\sum\frac{(-1)^n}{\sqrt[6]{n+2}}\). Leibniz: \(b_n=\frac1{\sqrt[6]{n+2}}\) è positiva, infinitesima e decrescente (\(n+2\le n+3\)). Quindi <b>converge</b>, ma non assolutamente.<br/>
+<b>5.</b> <strong>Assolutamente per \(e^{-1}&lt;\beta&lt;e\); solo semplicemente per \(\beta=e^{-1}\); diverge per \(\beta\ge e\); irregolare per \(0&lt;\beta&lt;e^{-1}\).</strong><p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
+<div class="ex" data-fonte="Prova in itinere 07-11-2022 (3 punti)" data-livello="esame"><div class="ex-testo"> Al variare di \(x\in\mathbb R\): \(\displaystyle\sum_{n\ge1}\frac{n^n}{(n!)^x}\)
+</div><details class="sol"><summary>Soluzione</summary>Termini positivi, ci sono \(n^n\) e \(n!\): uso il <b>rapporto</b>.
+\[\frac{a_{n+1}}{a_n}=\frac{(n+1)^{n+1}}{n^n}\cdot\left(\frac{n!}{(n+1)!}\right)^x=(n+1)\left(1+\tfrac1n\right)^n(n+1)^{-x}=\left(1+\tfrac1n\right)^n(n+1)^{1-x}.\]
+Poiché \((1+\frac1n)^n\to e\): con \(x&gt;1\) il rapporto tende a \(0\), con \(x=1\) tende a \(e&gt;1\), con \(x&lt;1\) tende a \(+\infty\).<br/>
+<strong>Converge se e solo se \(x&gt;1\); diverge a \(+\infty\) per \(x\le1\).</strong><p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
+<div class="ex" data-fonte="Prova in itinere 06-11-2023, Esercizio 2A (3 punti)" data-livello="esame"><div class="ex-testo"> Al variare di \(\alpha\in[-1,1]\): \(\displaystyle\sum_{n\ge2}\alpha^n(\log n)^\alpha\)
+</div><details class="sol"><summary>Soluzione</summary><b>\(\alpha=0\)</b>: tutti i termini sono \(0\) (\(n\ge2\)), quindi converge (somma 0).<br/>
+<b>\(0&lt;|\alpha|&lt;1\)</b>: radice sull'assoluta: \(|\alpha|(\log n)^{\alpha/n}=|\alpha|\,e^{\frac\alpha n\log\log n}\to|\alpha|&lt;1\), quindi converge assolutamente.<br/>
+<b>\(\alpha=1\)</b>: \(\sum\log n\), termini \(\to+\infty\): diverge.<br/>
+<b>\(\alpha=-1\)</b>: \(\sum\frac{(-1)^n}{\log n}\). Leibniz: \(\frac1{\log n}\) è positiva, infinitesima e decrescente, quindi converge. Assoluta: \(\frac1{\log n}\ge\frac1n\) e l'armonica diverge, quindi non converge assolutamente.<br/>
+<strong>Assolutamente per \(-1&lt;\alpha&lt;1\); solo semplicemente per \(\alpha=-1\); diverge per \(\alpha=1\).</strong><p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
+
+</section>
+      <nav class="pager" aria-label="Capitoli"><a class="prev" href="successioni.html"><small>← Precedente</small><span>Limiti di successioni</span></a><a class="next" href="dimostrazioni.html"><small>Successivo →</small><span>Le 14 dimostrazioni del primo parziale</span></a></nav>
+    </main>
+  </div>
+  <footer class="foot">Appunti personali basati sul materiale del corso di Analisi Matematica 1 del prof. De Martino (Politecnico di Milano, 2026/27). Possono contenere errori: nel dubbio fa fede il materiale del docente.</footer>
+</div>
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], tags: 'none' },
+    svg: { fontCache: 'global' },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js" async></script>
+<script src="../assets/gal.js"></script>
+</body>
+</html>

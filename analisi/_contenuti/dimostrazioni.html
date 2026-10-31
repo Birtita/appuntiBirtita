@@ -1,0 +1,74 @@
+<section class="sec" id="dim-reali">
+  <h2>Numeri reali e complessi (1–4)</h2>
+  <p class="lead">Numerate come nell'elenco del regolamento 2026/27. Impara la traccia in grassetto e sappila sviluppare: allo scritto valgono da 3 a 6 punti.</p>
+<div class="box box--thm"><div class="tag">Dimostrazione 1 · \(\sqrt2\) è irrazionale</div><p>
+Per assurdo \(\sqrt2=\frac mn\) con \(m,n\in\mathbb N\), \(n\neq0\), <b>primi tra loro</b>. Allora \(m^2=2n^2\), quindi \(m^2\) è pari, quindi \(m\) è pari (se \(m\) fosse dispari anche \(m^2\) lo sarebbe). Scrivo \(m=2k\): \(4k^2=2n^2\Rightarrow n^2=2k^2\), quindi anche \(n\) è pari. <b>\(m\) e \(n\) entrambi pari</b>: contraddice che sono primi tra loro. □</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 2 · Disuguaglianza di Bernoulli: \((1+x)^n\ge1+nx\) per \(x&gt;-1\), \(n\in\mathbb N\)</div><p>
+Per induzione su \(n\). <b>Base</b> \(n=0\): \(1\ge1\). <b>Passo</b>: supponiamo \((1+x)^n\ge1+nx\). Poiché \(1+x&gt;0\) posso moltiplicare senza cambiare verso:
+\[(1+x)^{n+1}=(1+x)^n(1+x)\ge(1+nx)(1+x)=1+(n+1)x+nx^2\ge1+(n+1)x,\]
+perché \(nx^2\ge0\). □</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 3 · De Moivre (prodotti, quozienti e potenze con \(n\in\mathbb Z\))</div><p>
+Siano \(z=\rho(\cos\theta+i\sin\theta)\), \(w=r(\cos\varphi+i\sin\varphi)\). Moltiplico:
+\[zw=\rho r\big[(\cos\theta\cos\varphi-\sin\theta\sin\varphi)+i(\sin\theta\cos\varphi+\cos\theta\sin\varphi)\big]=\rho r\big[\cos(\theta+\varphi)+i\sin(\theta+\varphi)\big]\]
+per le <b>formule di addizione</b>. <b>Potenze per induzione</b>: \(z^1\) ok; se \(z^n=\rho^n(\cos n\theta+i\sin n\theta)\), allora \(z^{n+1}=z^n\cdot z=\rho^{n+1}(\cos(n+1)\theta+i\sin(n+1)\theta)\) per la formula del prodotto.<br/><b>Quoziente</b>: \(\frac1w=\frac{\bar w}{|w|^2}=\frac1r(\cos\varphi-i\sin\varphi)=\frac1r(\cos(-\varphi)+i\sin(-\varphi))\) (cos pari, sin dispari), quindi \(\arg\frac1w=-\arg w\) e, per la formula del prodotto, \(\frac zw=z\cdot\frac1w=\frac\rho r\big(\cos(\theta-\varphi)+i\sin(\theta-\varphi)\big)\).<br/><b>Esponenti \(n\le0\)</b>: per \(n=0\), \(z^0=1=\rho^0(\cos0+i\sin0)\). Per \(n=-m\) con \(m&gt;0\): \(z^{-m}=\frac1{z^m}=\rho^{-m}(\cos m\theta-i\sin m\theta)=\rho^{-m}\big(\cos(-m\theta)+i\sin(-m\theta)\big)\). Quindi la formula vale per ogni \(n\in\mathbb Z\). □</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 4 · Radici n-esime</div><p>
+Sia \(w=\rho e^{i\theta}\neq0\); cerco \(z=re^{i\varphi}\) con \(z^n=w\). Per De Moivre \(z^n=r^ne^{in\varphi}\). Due complessi sono uguali se e solo se <b>moduli uguali</b> e <b>argomenti che differiscono per multipli di \(2\pi\)</b>:
+\[r^n=\rho\Rightarrow r=\sqrt[n]\rho,\qquad n\varphi=\theta+2k\pi\Rightarrow\varphi_k=\frac{\theta+2k\pi}n,\ k\in\mathbb Z.\]
+Per \(k=0,\dots,n-1\) gli angoli \(\varphi_k\) sono distinti in \([\varphi_0,\varphi_0+2\pi)\); poiché \(\varphi_{k+n}=\varphi_k+2\pi\), gli altri \(k\) <b>ridanno le stesse radici</b>. Quindi le radici sono esattamente \(n\). □</p></div>
+
+</section>
+<section class="sec" id="dim-successioni">
+  <h2>Successioni (5–9)</h2>
+  
+<div class="box box--thm"><div class="tag">Dimostrazione 5 · Unicità del limite</div><p>
+Per assurdo \(a_n\to\ell_1\) e \(a_n\to\ell_2\) con \(\ell_1\neq\ell_2\) (caso finito). Prendo <b>\(\varepsilon=\frac{|\ell_1-\ell_2|}2&gt;0\)</b>. Esistono \(N_1,N_2\) con \(|a_n-\ell_1|&lt;\varepsilon\) per \(n&gt;N_1\) e \(|a_n-\ell_2|&lt;\varepsilon\) per \(n&gt;N_2\). Per \(n&gt;\max\{N_1,N_2\}\), per la <b>disuguaglianza triangolare</b>:
+\[|\ell_1-\ell_2|\le|\ell_1-a_n|+|a_n-\ell_2|&lt;2\varepsilon=|\ell_1-\ell_2|,\]
+assurdo. (I casi con \(\pm\infty\) si trattano allo stesso modo con intorni disgiunti.) □</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 6 · Una successione convergente è limitata</div><p>
+Sia \(a_n\to\ell\in\mathbb R\). Con <b>\(\varepsilon=1\)</b> esiste \(N\) tale che \(|a_n-\ell|&lt;1\) per \(n&gt;N\), quindi \(|a_n|\le|a_n-\ell|+|\ell|&lt;1+|\ell|\) per \(n&gt;N\). I termini prima di \(N\) sono un numero finito. Pongo
+\[M=\max\{|a_0|,|a_1|,\dots,|a_N|,\,1+|\ell|\}:\quad |a_n|\le M\ \ \forall n.\ \ □\]</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 7 · Permanenza del segno</div><p>
+Sia \(a_n\to\ell&gt;0\). Con <b>\(\varepsilon=\frac\ell2\)</b> esiste \(N\) tale che per \(n&gt;N\): \(\ell-\frac\ell2&lt;a_n&lt;\ell+\frac\ell2\), quindi <b>\(a_n&gt;\frac\ell2&gt;0\)</b> definitivamente. Se \(\ell=+\infty\) prendo \(M=1\): \(a_n&gt;1&gt;0\) definitivamente.<br/>
+<i>Forma equivalente</i>: se \(a_n\ge0\) definitivamente e \(a_n\to\ell\), allora \(\ell\ge0\). Infatti, se fosse \(\ell&lt;0\), applicando quanto sopra a \(-a_n\) avrei \(a_n&lt;0\) definitivamente, assurdo. □</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 8 · Teorema dei due carabinieri</div><p>
+Ipotesi: \(a_n\le b_n\le c_n\) per \(n\ge N_3\), \(a_n\to\ell\), \(c_n\to\ell\). Fissato \(\varepsilon&gt;0\):
+esiste \(N_1\) con \(\ell-\varepsilon&lt;a_n&lt;\ell+\varepsilon\) per \(n&gt;N_1\); esiste \(N_2\) con \(\ell-\varepsilon&lt;c_n&lt;\ell+\varepsilon\) per \(n&gt;N_2\). Per <b>\(n&gt;N=\max\{N_1,N_2,N_3\}\)</b>:
+\[\ell-\varepsilon&lt;a_n\le b_n\le c_n&lt;\ell+\varepsilon,\]
+cioè \(|b_n-\ell|&lt;\varepsilon\). Per la definizione di limite, \(b_n\to\ell\). □</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 9 · Regolarità delle successioni monotone</div><p>
+Sia \(a_n\) crescente e \(L=\sup_n a_n\).<br/>
+<b>Caso \(L\in\mathbb R\)</b>: fissato \(\varepsilon&gt;0\), \(L-\varepsilon\) <b>non è un maggiorante</b> (perché \(L\) è il minimo dei maggioranti), quindi esiste \(N\) con \(a_N&gt;L-\varepsilon\). Per \(n&gt;N\), per la monotonia: \(L-\varepsilon&lt;a_N\le a_n\le L&lt;L+\varepsilon\). Quindi \(a_n\to L\).<br/>
+<b>Caso \(L=+\infty\)</b>: per ogni \(M&gt;0\), \(M\) non è un maggiorante, quindi esiste \(N\) con \(a_N&gt;M\), e per \(n&gt;N\): \(a_n\ge a_N&gt;M\). Quindi \(a_n\to+\infty\). (Decrescente: analogo con l'\(\inf\).) □</p></div>
+
+</section>
+<section class="sec" id="dim-serie">
+  <h2>Serie (10–14)</h2>
+  
+<div class="box box--thm"><div class="tag">Dimostrazione 10 · Condizione necessaria per la convergenza di una serie</div><p>
+Sia \(S_n=\sum_{k=0}^na_k\to S\in\mathbb R\). Allora <b>\(a_n=S_n-S_{n-1}\)</b> e anche \(S_{n-1}\to S\). Quindi \(a_n\to S-S=0\). □<br/>
+<b>Controesempio al viceversa</b>: \(\frac1n\to0\) ma \(\sum\frac1n\) diverge. Infatti \(\log(1+x)\le x\), quindi
+\(\sum_{k=1}^n\frac1k\ge\sum_{k=1}^n\log\frac{k+1}k=\log(n+1)\to+\infty\) (somma telescopica).</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 11 · Criterio del confronto</div><p>
+Sia \(0\le a_n\le b_n\) (il carattere non cambia togliendo i primi termini, quindi posso supporlo per ogni \(n\)). Le somme parziali \(A_n=\sum_{k\le n}a_k\) e \(B_n=\sum_{k\le n}b_k\) sono <b>crescenti</b> (termini \(\ge0\)) e <b>\(A_n\le B_n\)</b>.<br/>
+Se \(\sum b_n=B\) converge: \(A_n\le B_n\le B\), quindi \(A_n\) è crescente e limitata, e <b>per il teorema delle successioni monotone converge</b>.<br/>
+Se \(\sum a_n\) diverge: \(A_n\to+\infty\) e \(B_n\ge A_n\), quindi per confronto \(B_n\to+\infty\). □</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 12 · Criterio del confronto asintotico</div><p>
+<b>Enunciato (Lez. 12)</b>: siano \(a_n\ge0\), \(b_n&gt;0\) con \(\frac{a_n}{b_n}\to\ell\in[0,+\infty]\).
+(1) Se \(\sum b_n\) converge e \(\ell\in[0,+\infty)\), allora \(\sum a_n\) converge.
+(2) Se \(\sum b_n\) diverge e \(\ell\in(0,+\infty]\), allora \(\sum a_n\) diverge.
+<b>Corollario</b>: se \(a_n\sim b_n\) (\(\ell=1\)) le due serie hanno lo stesso carattere.<br/>
+<b>(1)</b> Fisso \(\varepsilon&gt;0\) (ad esempio \(\varepsilon=1\)). Poiché \(\ell\) è finito, esiste \(N\) tale che \(\frac{a_n}{b_n}&lt;\ell+\varepsilon\) per \(n&gt;N\), cioè <b>\(a_n&lt;(\ell+\varepsilon)\,b_n\)</b>. La serie \(\sum(\ell+\varepsilon)b_n\) converge, quindi per <b>confronto</b> converge \(\sum a_n\).<br/>
+<b>(2)</b> Se \(\ell\in(0,+\infty)\), con <b>\(\varepsilon=\frac\ell2\)</b> definitivamente \(\frac{a_n}{b_n}&gt;\frac\ell2\), cioè \(a_n&gt;\frac\ell2\,b_n\). Se \(\ell=+\infty\), per la definizione con \(M=1\) definitivamente \(a_n&gt;b_n\). In entrambi i casi \(a_n\) è definitivamente maggiore di un multiplo positivo di \(b_n\), la cui serie diverge: per confronto \(\sum a_n\) diverge. □</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 13 · Criterio del rapporto</div><p>
+Sia \(a_n&gt;0\) e \(\frac{a_{n+1}}{a_n}\to\ell\).<br/>
+<b>\(\ell&lt;1\)</b>: scelgo \(x\) con \(\ell&lt;x&lt;1\) (\(\varepsilon=x-\ell\)). Esiste \(N\) con \(\frac{a_{k+1}}{a_k}&lt;x\) per \(k\ge N\). Allora \(a_{N+1}&lt;a_Nx\), \(a_{N+2}&lt;a_Nx^2\), … cioè
+\[a_n\le a_N\,x^{\,n-N}=\frac{a_N}{x^N}\,x^n\qquad(n\ge N).\]
+Il secondo membro è il termine di una <b>serie geometrica di ragione \(0&lt;x&lt;1\), convergente</b>: per confronto \(\sum a_n\) converge.<br/>
+<b>\(\ell&gt;1\)</b> (anche \(\ell=+\infty\)): se \(\ell\) è finito prendo \(\varepsilon=\ell-1\); se \(\ell=+\infty\) uso la definizione con \(M=1\). In entrambi i casi definitivamente \(\frac{a_{n+1}}{a_n}&gt;1\), cioè \(a_{n+1}&gt;a_n&gt;0\): la successione è definitivamente crescente e positiva, quindi <b>non tende a 0</b>. Per la condizione necessaria la serie non converge, e essendo a termini positivi <b>diverge a \(+\infty\)</b>. □</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 14 · Convergenza assoluta ⇒ convergenza semplice</div><p>
+Sia \(\sum|a_n|\) convergente. Vale <b>\(0\le a_n+|a_n|\le2|a_n|\)</b>, quindi per confronto \(\sum(a_n+|a_n|)\) converge. Allora
+\[\sum a_n=\sum(a_n+|a_n|)-\sum|a_n|\]
+è differenza di due serie convergenti, quindi converge. □<br/>
+<b>Controesempio al viceversa</b>: \(\sum\frac{(-1)^n}n\) converge per Leibniz, ma \(\sum\frac1n\) diverge.</p></div>
+
+</section>

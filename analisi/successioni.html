@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parte 4 · Limiti di successioni — Analisi Matematica 1</title>
+<meta name="description" content="Definizioni di limite, teoremi (unicità, permanenza del segno, carabinieri, monotone), numero e, gerarchia degli infiniti, asintotici.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../assets/gal.css">
+<script>try{var t=localStorage.getItem('gal:theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body data-page="successioni">
+<header class="topbar">
+  <div class="in">
+    <button class="iconbtn menu-btn" id="menu-btn" aria-label="Apri l'indice" aria-expanded="false" aria-controls="side"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <nav class="crumbs" aria-label="Percorso">
+      <a href="../" class="hide-sm">Appunti</a><span class="sep hide-sm">/</span>
+      <a href="./">Analisi 1</a><span class="sep">/</span><span class="here">Parte 4</span>
+    </nav>
+    <button class="iconbtn" id="theme-btn" aria-label="Cambia tema chiaro/scuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  </div>
+  <div class="readbar"></div>
+</header>
+<div class="page">
+  <header class="hero">
+    <span class="eyebrow">Parte 4</span>
+    <h1>Limiti di successioni</h1>
+    <p class="sub">Definizioni di limite, teoremi (unicità, permanenza del segno, carabinieri, monotone), numero e, gerarchia degli infiniti, asintotici.</p>
+    <div class="pillrow"><span class="pill">3 sezioni</span><span class="pill">8 esercizi con soluzione</span><span class="pill">Lezioni 6–10</span><span class="pill">formulario Asintotici</span></div>
+  </header>
+  <div class="layout">
+    <aside class="side" id="side">
+      <div class="panel"><div class="panel-title">Pagine</div><ol><li><a href="reali.html"><span class="k">1</span>Numeri reali e disequazioni</a><div class="chap-progress" data-progress-page="reali" data-total="9"><i></i></div></li><li><a href="complessi.html"><span class="k">2</span>Numeri complessi</a><div class="chap-progress" data-progress-page="complessi" data-total="11"><i></i></div></li><li><a href="funzioni.html"><span class="k">3</span>Funzioni: generalità</a><div class="chap-progress" data-progress-page="funzioni" data-total="2"><i></i></div></li><li><a href="successioni.html" aria-current="page"><span class="k">4</span>Limiti di successioni</a><div class="chap-progress" data-progress-page="successioni" data-total="8"><i></i></div></li><li><a href="serie.html"><span class="k">5</span>Serie numeriche</a><div class="chap-progress" data-progress-page="serie" data-total="9"><i></i></div></li><li><a href="dimostrazioni.html"><span class="k">·</span>Le 14 dimostrazioni del primo parziale</a></li><li><a href="prova-itinere.html"><span class="k">·</span>Prima prova in itinere: com&#x27;è fatta</a></li><li><a href="prove-svolte.html"><span class="k">·</span>Prove in itinere passate svolte</a><div class="chap-progress" data-progress-page="prove-svolte" data-total="28"><i></i></div></li><li><a href="simulazione.html"><span class="k">·</span>Simulazione del prof (Esercitazione 7)</a><div class="chap-progress" data-progress-page="simulazione" data-total="6"><i></i></div></li><li><a href="piano.html"><span class="k">·</span>Piano di studio fino al 2 novembre</a></li></ol></div>
+      <div class="panel"><div class="panel-title">In questa pagina</div><ol id="toc"><li><a href="#successioni-teoria"><span class="k">01</span>Limiti di successioni</a></li><li><a href="#successioni-esercizi"><span class="k">02</span>Esercizi: limiti di successioni</a></li><li><a href="#successioni-ordini"><span class="k">03</span>Ordini di infinito, o-piccolo e limiti con parametro</a></li></ol></div>
+      
+    </aside>
+    <main id="content">
+<section class="sec" id="successioni-teoria">
+  <div class="num">01</div>
+  <h2>Limiti di successioni</h2>
+  <p class="lead">Definizioni di limite (chieste in ogni prova), teoremi, gerarchia degli infiniti e asintotici.</p>
+
+<div class="box box--def"><div class="tag">Definizioni di limite (chieste sempre!)</div>
+<ul>
+<li>\(\displaystyle\lim_{n\to+\infty}a_n=\ell\in\mathbb R\): per ogni \(\varepsilon&gt;0\) esiste \(N\in\mathbb N\) tale che \(|a_n-\ell|&lt;\varepsilon\) per ogni \(n&gt;N\). (Successione <b>convergente</b>.)</li>
+<li>\(\displaystyle\lim_{n\to+\infty}a_n=+\infty\): per ogni \(M&gt;0\) esiste \(N\in\mathbb N\) tale che \(a_n&gt;M\) per ogni \(n&gt;N\). (<b>Divergente</b>.)</li>
+<li>\(\displaystyle\lim_{n\to+\infty}a_n=-\infty\): per ogni \(M&gt;0\) esiste \(N\) tale che \(a_n&lt;-M\) per ogni \(n&gt;N\).</li>
+<li><b>Irregolare</b>: il limite non esiste (es. \((-1)^n\)). <b>Infinitesima</b>: \(a_n\to0\). <b>Definitivamente</b>: per ogni \(n\) da un certo \(N\) in poi.</li>
+</ul></div>
+<div class="box box--thm"><div class="tag">Teoremi (enunciati)</div>
+<ul>
+<li><b>Unicità del limite</b> <strong>(*5)</strong>: se il limite esiste, è unico.</li>
+<li><b>Limitatezza</b> <strong>(*6)</strong>: ogni successione convergente è limitata. (Non vale il viceversa: \((-1)^n\).)</li>
+<li><b>Permanenza del segno</b> <strong>(*7)</strong>: se \(a_n\to\ell&gt;0\) (o \(+\infty\)) allora \(a_n&gt;0\) definitivamente. Di conseguenza, se \(a_n\ge0\) definitivamente e \(a_n\to\ell\), allora \(\ell\ge0\).</li>
+<li><b>Due carabinieri</b> <strong>(*8)</strong>: se \(a_n\le b_n\le c_n\) definitivamente e \(a_n\to\ell\), \(c_n\to\ell\) (\(\ell\in\mathbb R\)), allora \(b_n\to\ell\). Caso utile: \(b_n\) limitata per \(c_n\to0\) dà \(\to0\).</li>
+<li><b>Successioni monotone</b> <strong>(*9)</strong>: una successione monotona ammette sempre limite. Se è crescente, \(\lim a_n=\sup_n a_n\): finito se è limitata superiormente, \(+\infty\) altrimenti.</li>
+<li><b>Numero di Nepero</b>: \(\left(1+\frac1n\right)^n\) è crescente e limitata, il suo limite si chiama \(e\approx2{,}718\).</li>
+</ul></div>
+<h3>Algebra dei limiti e forme indeterminate</h3>
+<p>Somma, prodotto e quoziente di limiti si fanno "come ci si aspetta", con \(\ell+\infty=\infty\), \(\ell\cdot\infty=\infty\) (\(\ell\neq0\)), \(\ell/\infty=0\), \(\ell/0^{+}=+\infty\) e \(\ell/0^{-}=-\infty\) se \(\ell&gt;0\) (segni opposti se \(\ell&lt;0\)). <b>Forme indeterminate</b>: \(+\infty-\infty\), \(0\cdot\infty\), \(\frac00\), \(\frac\infty\infty\), \(1^\infty\), \(0^0\), \(\infty^0\). Per le ultime tre: \(a_n^{b_n}=e^{b_n\log a_n}\).</p>
+<h3>Limiti notevoli e gerarchia degli infiniti</h3>
+<div class="tablewrap"><table>
+
+<tbody><tr><td>\(\left(1+\frac an\right)^n\to e^a\)</td><td>\(\sqrt[n]{a}\to1\) (\(a&gt;0\)), \(\ \sqrt[n]{n}\to1\), \(\ \sqrt[n]{n^\alpha}\to1\)</td><td>\(q^n\to\begin{cases}+\infty&amp;q&gt;1\\1&amp;q=1\\0&amp;|q|&lt;1\\\nexists&amp;q\le-1\end{cases}\)</td></tr></tbody></table></div>
+<div class="box box--thm"><div class="tag">Gerarchia (per \(n\to+\infty\), con \(\alpha,\beta&gt;0\), \(q&gt;1\))</div><p>
+\[\log^\beta n\ \ll\ n^\alpha\ \ll\ q^n\ \ll\ n!\ \ll\ n^n\]
+(\(a_n\ll b_n\) significa \(a_n/b_n\to0\).) Esempio: \(\dfrac{n^{100}}{2^n}\to0\), \(\dfrac{3^n}{n!}\to0\).</p></div>
+<div class="box box--def"><div class="tag">Asintotico e o-piccolo</div><p>
+\(a_n\sim b_n\) se \(\dfrac{a_n}{b_n}\to1\). \(\ a_n=o(b_n)\) se \(\dfrac{a_n}{b_n}\to0\). Se \(a_n\sim b_n\) allora hanno lo stesso limite (o nessuno dei due ce l'ha).</p></div>
+<div class="tablewrap"><table>
+
+
+
+
+<thead><tr><th colspan="3">Asintotici fondamentali, con \(\varepsilon_n\to0\) (sono nel formulario)</th></tr></thead><tbody><tr><td>\(\sin\varepsilon_n\sim\varepsilon_n\), \(\tan\varepsilon_n\sim\varepsilon_n\)</td><td>\(\arcsin\varepsilon_n\sim\varepsilon_n\), \(\arctan\varepsilon_n\sim\varepsilon_n\)</td><td>\(1-\cos\varepsilon_n\sim\frac{\varepsilon_n^2}2\)</td></tr><tr><td>\(e^{\varepsilon_n}-1\sim\varepsilon_n\)</td><td>\(\log(1+\varepsilon_n)\sim\varepsilon_n\)</td><td>\((1+\varepsilon_n)^\alpha-1\sim\alpha\varepsilon_n\)</td></tr><tr><td colspan="3">Polinomi: \(c_1n^{\alpha_1}+\dots+c_kn^{\alpha_k}\sim c_1n^{\alpha_1}\) (termine di grado massimo) · se \(a_n\to\ell\neq0\) allora \(a_n\sim\ell\) · \(n!\sim n^ne^{-n}\sqrt{2\pi n}\) (Stirling)</td></tr></tbody></table></div>
+<div class="box box--warn"><div class="tag">Attenzione</div><p>Gli asintotici si usano in <b>prodotti, quozienti e potenze, mai nelle somme</b>. Esempio: \(\frac1n-\sin\frac1n\) non è \(\sim0\). Un asintotico sbagliato di questo tipo è l'errore più comune nel test.</p></div>
+<div class="box box--thm"><div class="tag">Criterio del rapporto per successioni</div><p>Se \(a_n&gt;0\) e \(\dfrac{a_{n+1}}{a_n}\to\ell&lt;1\) allora \(a_n\to0\); se \(\ell&gt;1\) allora \(a_n\to+\infty\).</p></div>
+
+</section>
+
+<section class="sec esercizi" id="successioni-esercizi">
+  <div class="num">02</div>
+  <h2>Esercizi: limiti di successioni</h2>
+  <div class="ex-bar"><button class="chip" data-filter="tutti" aria-pressed="true">Tutti</button><button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button><button class="chip" data-filter="medio" aria-pressed="false">Medio</button><button class="chip" data-filter="esame" aria-pressed="false">Esame</button><button class="chip toggle-sol" aria-pressed="false">Mostra soluzioni</button><span class="count ex-count"></span></div>
+
+<div class="box box--method"><div class="tag">Metodo</div><p>Riconosci gli \(\varepsilon_n\to0\) dentro sin, cos, log, e, potenze → sostituisci con gli asintotici (solo nei prodotti/quozienti) → semplifica le potenze di \(n\) → i fattori che tendono a un numero \(\neq0\) (es. \(\arctan n\to\frac\pi2\)) restano come costanti.</p></div>
+<div class="ex" data-fonte="Prova in itinere 10-11-2025" data-livello="esame"><div class="ex-testo"> \(\displaystyle\lim_{n\to\infty}\frac{\left(\sqrt[5]{1-\frac1{n^3}}-1\right)\arctan n}{\sin\frac1n\,\log\left(1+\frac1{n^2}\right)}\)
+</div><details class="sol"><summary>Soluzione</summary>\((1+\varepsilon)^{1/5}-1\sim\frac15\varepsilon\) con \(\varepsilon=-\frac1{n^3}\): numeratore \(\sim-\frac1{5n^3}\arctan n\). Denominatore \(\sim\frac1n\cdot\frac1{n^2}=\frac1{n^3}\). Quindi la successione è \(\sim-\frac{\arctan n}5\to\) <strong>\(-\frac\pi{10}\)</strong>.<p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
+<div class="ex" data-fonte="Prova in itinere 09-11-2024 B" data-livello="esame"><div class="ex-testo"> \(\displaystyle\lim_{n\to\infty}\frac{\left(1-\cos\frac2n\right)\log\left(1+\sin\frac3{n^2}\right)}{e^{9/n^4}-1}\arctan n\)
+</div><details class="sol"><summary>Soluzione</summary>\(1-\cos\frac2n\sim\frac12\cdot\frac4{n^2}=\frac2{n^2}\); \(\ \log(1+\sin\frac3{n^2})\sim\sin\frac3{n^2}\sim\frac3{n^2}\); \(\ e^{9/n^4}-1\sim\frac9{n^4}\).
+Quindi \(\sim\dfrac{\frac2{n^2}\cdot\frac3{n^2}}{\frac9{n^4}}\arctan n=\frac23\arctan n\to\frac23\cdot\frac\pi2=\) <strong>\(\frac\pi3\)</strong>.<p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
+<div class="ex" data-fonte="Esercizio tipo" data-livello="medio"><div class="ex-testo"> \(\displaystyle\lim_{n\to\infty}\left(\frac{n+2}{n-1}\right)^n\) (forma \(1^\infty\))
+</div><details class="sol"><summary>Soluzione</summary>\(\frac{n+2}{n-1}=1+\frac3{n-1}\). Scrivo \(e^{\,n\log(1+\frac3{n-1})}\) e \(n\log\left(1+\frac3{n-1}\right)\sim n\cdot\frac3{n-1}\to3\). <strong>Limite \(=e^3\).</strong><p class="verifica">Verificata a mano</p></details></div>
+<div class="ex" data-fonte="Esercizio tipo" data-livello="medio"><div class="ex-testo"> \(\displaystyle\lim_{n\to\infty}\frac{2^n+n^3}{2^{n+1}-n}\) (gerarchia)
+</div><details class="sol"><summary>Soluzione</summary>\(n^3\ll2^n\) e \(n\ll2^{n+1}\), quindi raccolgo: \(\dfrac{2^n(1+n^3/2^n)}{2^{n+1}(1-n/2^{n+1})}\to\) <strong>\(\frac12\)</strong>.<p class="verifica">Verificata a mano</p></details></div>
+<div class="ex" data-fonte="Esercizio tipo" data-livello="medio"><div class="ex-testo"> \(\displaystyle\lim_{n\to\infty}\sqrt[n]{n^2+3^n}\) (carabinieri)
+</div><details class="sol"><summary>Soluzione</summary>Definitivamente \(3^n\le n^2+3^n\le2\cdot3^n\), quindi \(3\le\sqrt[n]{n^2+3^n}\le3\sqrt[n]2\to3\). <strong>Limite \(=3\).</strong><p class="verifica">Verificata a mano</p></details></div>
+<div class="ex" data-fonte="Prova in itinere 06-11-2023" data-livello="esame"><div class="ex-testo"> Sia \(a_n\to0\). Quale è vera? (a) \(\frac1{a_n}\) diverge necessariamente a \(\pm\infty\); (b) \(|a_n|\) può non avere limite; (c) \(a_n^2\) può non avere limite; (d) \(\frac1{a_n}\) può non avere limite.
+</div><details class="sol"><summary>Soluzione</summary>\(|a_n|\to0\) e \(a_n^2\to0\) sempre, quindi (b) e (c) sono false. Con \(a_n=\frac{(-1)^n}n\): \(\frac1{a_n}=(-1)^nn\) è irregolare, quindi (a) è falsa e <strong>(d) è vera</strong>.<p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
+
+</section>
+
+<section class="sec esercizi" id="successioni-ordini">
+  <div class="num">03</div>
+  <h2>Ordini di infinito, o-piccolo e limiti con parametro</h2>
+  <div class="ex-bar"><button class="chip" data-filter="tutti" aria-pressed="true">Tutti</button><button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button><button class="chip" data-filter="medio" aria-pressed="false">Medio</button><button class="chip" data-filter="esame" aria-pressed="false">Esame</button><button class="chip toggle-sol" aria-pressed="false">Mostra soluzioni</button><span class="count ex-count"></span></div>
+  <div class="box box--def"><div class="tag">Ordini (Lez. 10)</div><p>\(a_n\to\pm\infty\) è un <b>infinito di ordine \(\alpha&gt;0\)</b> (rispetto a \(n\)) se \(\frac{a_n}{n^\alpha}\to\ell\in\mathbb R\setminus\{0\}\); allora \(a_n\sim\ell n^\alpha\). \(a_n\to0\) è un <b>infinitesimo di ordine \(\alpha\)</b> se \(\frac{a_n}{1/n^\alpha}\to\ell\neq0\). Esempio: \(1-\cos\frac1n\) è infinitesimo di ordine 2.</p></div>
+  <div class="box box--thm"><div class="tag">Algebra degli o-piccolo</div><ul>
+    <li>\(o(b_n)\pm o(b_n)=o(b_n)\); \(\ c\cdot o(b_n)=o(b_n)\) per \(c\neq0\); \(\ a_n\cdot o(b_n)=o(a_nb_n)\); \(\ o(o(b_n))=o(b_n)\).</li>
+    <li>\(a_n\sim b_n\iff a_n=b_n+o(b_n)\). Con gli o-piccolo <b>si possono fare le somme</b>: per esempio \(\sin\frac1n-\frac1n=-\frac1{6n^3}+o\left(\frac1{n^3}\right)\).</li>
+  </ul></div>
+  <div class="box box--thm"><div class="tag">Corollario del numero e (Lez. 8)</div><p>Se \(c_n\to\pm\infty\) allora \(\left(1+\frac1{c_n}\right)^{c_n}\to e\). Equivalentemente, se \(\varepsilon_n\to0\) (\(\varepsilon_n\neq0\)), \((1+\varepsilon_n)^{1/\varepsilon_n}\to e\).</p></div>
+  <div class="box box--note"><div class="tag">Limiti di funzione (Lez. 14)</div><p>\(\lim_{x\to c}f(x)=\ell\) se per <b>ogni</b> successione \(x_n\to c\) con \(x_n\neq c\) si ha \(f(x_n)\to\ell\). Per mostrare che un limite non esiste bastano due successioni con limiti diversi (es. \(\sin x\) per \(x\to+\infty\)). Gli asintotici della tabella valgono anche per \(x\to0\).</p></div>
+  <div class="ex" data-fonte="Esercitazioni 4–5" data-livello="esame">
+    <div class="ex-testo">Calcolare \(\displaystyle\lim_{n\to\infty}n^\alpha\left(\sqrt{n^2+1}-n\right)\) al variare di \(\alpha\in\mathbb R\).</div>
+    <details class="sol"><summary>Soluzione</summary><p>\(\sqrt{n^2+1}-n=n\left(\sqrt{1+\frac1{n^2}}-1\right)\sim n\cdot\frac1{2n^2}=\frac1{2n}\). Quindi la successione è \(\sim\frac{n^{\alpha-1}}2\).</p><p><strong>Limite: \(0\) se \(\alpha&lt;1\); \(\frac12\) se \(\alpha=1\); \(+\infty\) se \(\alpha&gt;1\).</strong></p><p class="verifica">Verificata a mano</p></details>
+  </div>
+  <div class="ex" data-fonte="Esercitazioni 4–5" data-livello="medio">
+    <div class="ex-testo">Calcolare \(\displaystyle\lim_{n\to\infty}\left(1+\frac{1}{n^2}\right)^{n^\beta}\) al variare di \(\beta&gt;0\).</div>
+    <details class="sol"><summary>Soluzione</summary><p>\(\left(1+\frac1{n^2}\right)^{n^\beta}=e^{n^\beta\log(1+\frac1{n^2})}\) e \(n^\beta\log(1+\frac1{n^2})\sim n^{\beta-2}\).</p><p><strong>Limite: \(1\) se \(\beta&lt;2\); \(e\) se \(\beta=2\); \(+\infty\) se \(\beta&gt;2\).</strong></p><p class="verifica">Verificata a mano</p></details>
+  </div>
+</section>
+      <nav class="pager" aria-label="Capitoli"><a class="prev" href="funzioni.html"><small>← Precedente</small><span>Funzioni: generalità</span></a><a class="next" href="serie.html"><small>Successivo →</small><span>Serie numeriche</span></a></nav>
+    </main>
+  </div>
+  <footer class="foot">Appunti personali basati sul materiale del corso di Analisi Matematica 1 del prof. De Martino (Politecnico di Milano, 2026/27). Possono contenere errori: nel dubbio fa fede il materiale del docente.</footer>
+</div>
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], tags: 'none' },
+    svg: { fontCache: 'global' },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js" async></script>
+<script src="../assets/gal.js"></script>
+</body>
+</html>

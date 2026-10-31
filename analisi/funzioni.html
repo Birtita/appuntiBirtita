@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parte 3 · Funzioni: generalità — Analisi Matematica 1</title>
+<meta name="description" content="Dominio e immagine, iniettive, suriettive, biiettive, composta e inversa, funzioni limitate, simmetriche, monotone, periodiche.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../assets/gal.css">
+<script>try{var t=localStorage.getItem('gal:theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body data-page="funzioni">
+<header class="topbar">
+  <div class="in">
+    <button class="iconbtn menu-btn" id="menu-btn" aria-label="Apri l'indice" aria-expanded="false" aria-controls="side"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <nav class="crumbs" aria-label="Percorso">
+      <a href="../" class="hide-sm">Appunti</a><span class="sep hide-sm">/</span>
+      <a href="./">Analisi 1</a><span class="sep">/</span><span class="here">Parte 3</span>
+    </nav>
+    <button class="iconbtn" id="theme-btn" aria-label="Cambia tema chiaro/scuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  </div>
+  <div class="readbar"></div>
+</header>
+<div class="page">
+  <header class="hero">
+    <span class="eyebrow">Parte 3</span>
+    <h1>Funzioni: generalità</h1>
+    <p class="sub">Dominio e immagine, iniettive, suriettive, biiettive, composta e inversa, funzioni limitate, simmetriche, monotone, periodiche.</p>
+    <div class="pillrow"><span class="pill">3 sezioni</span><span class="pill">2 esercizi con soluzione</span><span class="pill">Lezioni 5–6</span></div>
+  </header>
+  <div class="layout">
+    <aside class="side" id="side">
+      <div class="panel"><div class="panel-title">Pagine</div><ol><li><a href="reali.html"><span class="k">1</span>Numeri reali e disequazioni</a><div class="chap-progress" data-progress-page="reali" data-total="9"><i></i></div></li><li><a href="complessi.html"><span class="k">2</span>Numeri complessi</a><div class="chap-progress" data-progress-page="complessi" data-total="11"><i></i></div></li><li><a href="funzioni.html" aria-current="page"><span class="k">3</span>Funzioni: generalità</a><div class="chap-progress" data-progress-page="funzioni" data-total="2"><i></i></div></li><li><a href="successioni.html"><span class="k">4</span>Limiti di successioni</a><div class="chap-progress" data-progress-page="successioni" data-total="8"><i></i></div></li><li><a href="serie.html"><span class="k">5</span>Serie numeriche</a><div class="chap-progress" data-progress-page="serie" data-total="9"><i></i></div></li><li><a href="dimostrazioni.html"><span class="k">·</span>Le 14 dimostrazioni del primo parziale</a></li><li><a href="prova-itinere.html"><span class="k">·</span>Prima prova in itinere: com&#x27;è fatta</a></li><li><a href="prove-svolte.html"><span class="k">·</span>Prove in itinere passate svolte</a><div class="chap-progress" data-progress-page="prove-svolte" data-total="28"><i></i></div></li><li><a href="simulazione.html"><span class="k">·</span>Simulazione del prof (Esercitazione 7)</a><div class="chap-progress" data-progress-page="simulazione" data-total="6"><i></i></div></li><li><a href="piano.html"><span class="k">·</span>Piano di studio fino al 2 novembre</a></li></ol></div>
+      <div class="panel"><div class="panel-title">In questa pagina</div><ol id="toc"><li><a href="#funzioni-teoria"><span class="k">01</span>Funzioni: generalità</a></li><li><a href="#funzioni-approfondimenti"><span class="k">02</span>Controimmagine, estremi, monotonia e inversa</a></li><li><a href="#funzioni-esercizi"><span class="k">03</span>Esercizi sulle funzioni</a></li></ol></div>
+      
+    </aside>
+    <main id="content">
+<section class="sec" id="funzioni-teoria">
+  <div class="num">01</div>
+  <h2>Funzioni: generalità</h2>
+  <p class="lead">Definizioni da sapere esattamente: possono essere chieste nella parte di teoria.</p>
+
+<div class="box box--def"><div class="tag">Definizioni</div>
+<ul>
+<li>\(f:A\to B\) associa a ogni \(x\in A\) (dominio) un solo \(f(x)\in B\) (codominio). Immagine \(f(A)=\{f(x):x\in A\}\). Una <b>successione</b> è una funzione \(\mathbb N\to\mathbb R\), \(n\mapsto a_n\).</li>
+<li><b>Iniettiva</b>: \(x_1\neq x_2\Rightarrow f(x_1)\neq f(x_2)\). <b>Suriettiva</b>: \(f(A)=B\). <b>Biiettiva</b>: entrambe; allora esiste l'<b>inversa</b> \(f^{-1}:B\to A\).</li>
+<li><b>Composta</b> \((g\circ f)(x)=g(f(x))\), definita se \(f(A)\subseteq\) dominio di \(g\).</li>
+<li><b>Limitata</b>: esiste \(M\) con \(|f(x)|\le M\) per ogni \(x\). <b>Pari</b>: \(f(-x)=f(x)\); <b>dispari</b>: \(f(-x)=-f(x)\). <b>Crescente</b>: \(x_1&lt;x_2\Rightarrow f(x_1)\le f(x_2)\) (strettamente con \(&lt;\)). <b>Periodica</b> di periodo \(T\): \(f(x+T)=f(x)\).</li>
+</ul></div>
+<p class="lead">Funzioni elementari: potenze, esponenziali, logaritmi, \(\sin,\cos\) (periodo \(2\pi\)), \(\tan\) (periodo \(\pi\)), \(\arcsin,\arccos,\arctan\) (\(\arctan x\to\pm\frac\pi2\) per \(x\to\pm\infty\)), valore assoluto. Una funzione strettamente monotona è iniettiva.</p>
+
+</section>
+
+<section class="sec" id="funzioni-approfondimenti">
+  <div class="num">02</div>
+  <h2>Controimmagine, estremi, monotonia e inversa</h2>
+  <div class="box box--def"><div class="tag">Definizioni</div><ul>
+    <li><b>Grafico</b> di \(f:A\to\mathbb R\): \(G_f=\{(x,f(x)):\ x\in A\}\subseteq\mathbb R^2\).</li>
+    <li><b>Controimmagine</b> di \(C\): \(f^{-1}(C)=\{x\in A:\ f(x)\in C\}\). Esiste sempre, anche se \(f\) non è invertibile.</li>
+    <li><b>Estremi di \(f\)</b>: \(\sup_A f=\sup f(A)\), \(\inf_A f=\inf f(A)\). \(M\) è il <b>massimo</b> se \(M=f(x_0)\) per qualche \(x_0\in A\) e \(f(x)\le M\) per ogni \(x\); \(x_0\) è un <b>punto di massimo</b>.</li>
+    <li><b>Decrescente</b>: \(x_1&lt;x_2\Rightarrow f(x_1)\ge f(x_2)\); <b>strettamente</b> se \(f(x_1)&gt;f(x_2)\).</li>
+  </ul></div>
+  <div class="box box--thm"><div class="tag">Teorema (Lez. 5)</div><h4>Monotonia e invertibilità</h4><p>Se \(f:A\to\mathbb R\) è strettamente monotona, allora è iniettiva, quindi invertibile su \(f(A)\), e l'inversa \(f^{-1}:f(A)\to A\) è monotona dello stesso tipo.</p>
+  <p><i>Idea</i>: se \(x_1\neq x_2\), ad esempio \(x_1&lt;x_2\), allora \(f(x_1)&lt;f(x_2)\), quindi \(f(x_1)\neq f(x_2)\). Per l'inversa: se \(y_1&lt;y_2\) e fosse \(f^{-1}(y_1)\ge f^{-1}(y_2)\), applicando \(f\) crescente avrei \(y_1\ge y_2\), assurdo.</p></div>
+  <div class="box box--note"><div class="tag">Grafico dell'inversa</div><p>Il grafico di \(f^{-1}\) è il simmetrico del grafico di \(f\) rispetto alla bisettrice \(y=x\): \((a,b)\in G_f\iff(b,a)\in G_{f^{-1}}\). Esempio: \(f(x)=x^2\) non è iniettiva su \(\mathbb R\), ma lo è su \([0,+\infty)\), con inversa \(\sqrt x\).</p></div>
+  <h3>Funzioni elementari (Lez. 6)</h3>
+  <div class="tablewrap"><table><thead><tr><th>Funzione</th><th>Dominio</th><th>Immagine</th><th>Proprietà</th></tr></thead><tbody>
+    <tr><td>\(a^x\) (\(a&gt;0,\ a\neq1\))</td><td>\(\mathbb R\)</td><td>\((0,+\infty)\)</td><td>crescente se \(a&gt;1\), decrescente se \(a&lt;1\)</td></tr>
+    <tr><td>\(\log_a x\)</td><td>\((0,+\infty)\)</td><td>\(\mathbb R\)</td><td>inversa di \(a^x\)</td></tr>
+    <tr><td>\(x^\alpha\), \(\alpha&gt;0\)</td><td>\([0,+\infty)\) (\(\mathbb R\) se intero)</td><td></td><td>crescente su \([0,+\infty)\); pari/dispari se \(\alpha\) intero pari/dispari</td></tr>
+    <tr><td>\(\sin x\), \(\cos x\)</td><td>\(\mathbb R\)</td><td>\([-1,1]\)</td><td>periodo \(2\pi\); sin dispari, cos pari</td></tr>
+    <tr><td>\(\tan x\)</td><td>\(x\neq\frac\pi2+k\pi\)</td><td>\(\mathbb R\)</td><td>periodo \(\pi\), dispari</td></tr>
+    <tr><td>\(\arcsin x\), \(\arccos x\)</td><td>\([-1,1]\)</td><td>\([-\frac\pi2,\frac\pi2]\), \([0,\pi]\)</td><td>arcsin crescente, arccos decrescente</td></tr>
+    <tr><td>\(\arctan x\)</td><td>\(\mathbb R\)</td><td>\((-\frac\pi2,\frac\pi2)\)</td><td>crescente, dispari</td></tr>
+    <tr><td>\(\sinh x=\frac{e^x-e^{-x}}2\)</td><td>\(\mathbb R\)</td><td>\(\mathbb R\)</td><td>crescente, dispari</td></tr>
+    <tr><td>\(\cosh x=\frac{e^x+e^{-x}}2\)</td><td>\(\mathbb R\)</td><td>\([1,+\infty)\)</td><td>pari; \(\cosh^2-\sinh^2=1\)</td></tr>
+    <tr><td>\(\tanh x=\frac{\sinh x}{\cosh x}\)</td><td>\(\mathbb R\)</td><td>\((-1,1)\)</td><td>crescente, dispari, \(\to\pm1\) per \(x\to\pm\infty\)</td></tr>
+  </tbody></table></div>
+</section>
+
+<section class="sec esercizi" id="funzioni-esercizi">
+  <div class="num">03</div>
+  <h2>Esercizi sulle funzioni</h2>
+  <div class="ex-bar"><button class="chip" data-filter="tutti" aria-pressed="true">Tutti</button><button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button><button class="chip" data-filter="base" aria-pressed="false">Base</button><button class="chip toggle-sol" aria-pressed="false">Mostra soluzioni</button><span class="count ex-count"></span></div>
+  <div class="ex" data-fonte="Lezione 5" data-livello="base">
+    <div class="ex-testo">Sia \(f(x)=x^2\). Calcolare \(f^{-1}([1,4])\) e dire se \(f\) è iniettiva su \(\mathbb R\) e su \([0,+\infty)\).</div>
+    <details class="sol"><summary>Soluzione</summary><p>\(1\le x^2\le4\iff1\le|x|\le2\): <strong>\(f^{-1}([1,4])=[-2,-1]\cup[1,2]\)</strong>.</p><p>Su \(\mathbb R\) non è iniettiva (\(f(-1)=f(1)\)). Su \([0,+\infty)\) è strettamente crescente, quindi iniettiva, con inversa \(\sqrt y\).</p><p class="verifica">Verificata a mano</p></details>
+  </div>
+  <div class="ex" data-fonte="Lezione 5" data-livello="base">
+    <div class="ex-testo">Trovare sup, inf, max e min di \(f(x)=\arctan x\) su \(\mathbb R\) e di \(g(x)=\frac1{1+x^2}\) su \(\mathbb R\).</div>
+    <details class="sol"><summary>Soluzione</summary><p>\(f(\mathbb R)=(-\frac\pi2,\frac\pi2)\): \(\sup f=\frac\pi2\), \(\inf f=-\frac\pi2\), <strong>né max né min</strong>.</p><p>\(g(\mathbb R)=(0,1]\): <strong>\(\max g=1\)</strong> (in \(x=0\)), \(\inf g=0\) non è minimo.</p><p class="verifica">Verificata a mano</p></details>
+  </div>
+</section>
+      <nav class="pager" aria-label="Capitoli"><a class="prev" href="complessi.html"><small>← Precedente</small><span>Numeri complessi</span></a><a class="next" href="successioni.html"><small>Successivo →</small><span>Limiti di successioni</span></a></nav>
+    </main>
+  </div>
+  <footer class="foot">Appunti personali basati sul materiale del corso di Analisi Matematica 1 del prof. De Martino (Politecnico di Milano, 2026/27). Possono contenere errori: nel dubbio fa fede il materiale del docente.</footer>
+</div>
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], tags: 'none' },
+    svg: { fontCache: 'global' },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js" async></script>
+<script src="../assets/gal.js"></script>
+</body>
+</html>
