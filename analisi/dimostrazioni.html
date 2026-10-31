@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dimostrazioni · Le 14 dimostrazioni del primo parziale — Analisi Matematica 1</title>
+<meta name="description" content="Le dimostrazioni che possono essere chieste nella parte di teoria della prima prova in itinere, con la traccia da ricordare.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../assets/gal.css">
+<script>try{var t=localStorage.getItem('gal:theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body data-page="dimostrazioni">
+<header class="topbar">
+  <div class="in">
+    <button class="iconbtn menu-btn" id="menu-btn" aria-label="Apri l'indice" aria-expanded="false" aria-controls="side"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <nav class="crumbs" aria-label="Percorso">
+      <a href="../" class="hide-sm">Appunti</a><span class="sep hide-sm">/</span>
+      <a href="./">Analisi 1</a><span class="sep">/</span><span class="here">Dimostrazioni</span>
+    </nav>
+    <button class="iconbtn" id="theme-btn" aria-label="Cambia tema chiaro/scuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  </div>
+  <div class="readbar"></div>
+</header>
+<div class="page">
+  <header class="hero">
+    <span class="eyebrow">Dimostrazioni</span>
+    <h1>Le 14 dimostrazioni del primo parziale</h1>
+    <p class="sub">Le dimostrazioni che possono essere chieste nella parte di teoria della prima prova in itinere, con la traccia da ricordare.</p>
+    <div class="pillrow"><span class="pill">3 sezioni</span></div>
+  </header>
+  <div class="layout">
+    <aside class="side" id="side">
+      <div class="panel"><div class="panel-title">Pagine</div><ol><li><a href="reali.html"><span class="k">1</span>Numeri reali e disequazioni</a><div class="chap-progress" data-progress-page="reali" data-total="4"><i></i></div></li><li><a href="complessi.html"><span class="k">2</span>Numeri complessi</a><div class="chap-progress" data-progress-page="complessi" data-total="6"><i></i></div></li><li><a href="funzioni.html"><span class="k">3</span>Funzioni: generalità</a></li><li><a href="successioni.html"><span class="k">4</span>Limiti di successioni</a><div class="chap-progress" data-progress-page="successioni" data-total="6"><i></i></div></li><li><a href="serie.html"><span class="k">5</span>Serie numeriche</a><div class="chap-progress" data-progress-page="serie" data-total="9"><i></i></div></li><li><a href="dimostrazioni.html" aria-current="page"><span class="k">·</span>Le 14 dimostrazioni del primo parziale</a></li><li><a href="prova-itinere.html"><span class="k">·</span>Prima prova in itinere: com&#x27;è fatta</a></li><li><a href="prove-svolte.html"><span class="k">·</span>Prove in itinere passate svolte</a></li><li><a href="piano.html"><span class="k">·</span>Piano di studio fino al 2 novembre</a></li></ol></div>
+      <div class="panel"><div class="panel-title">In questa pagina</div><ol id="toc"><li><a href="#dim-reali"><span class="k">01</span>Numeri reali e complessi (1–4)</a></li><li><a href="#dim-successioni"><span class="k">02</span>Successioni (5–9)</a></li><li><a href="#dim-serie"><span class="k">03</span>Serie (10–14)</a></li></ol></div>
+      
+    </aside>
+    <main id="content">
+<section class="sec" id="dim-reali">
+  <div class="num">01</div>
+  <h2>Numeri reali e complessi (1–4)</h2>
+  <p class="lead">Numerate come nell'elenco del regolamento 2026/27. Impara la traccia in grassetto e sappila sviluppare: allo scritto valgono da 3 a 6 punti.</p>
+<div class="box box--thm"><div class="tag">Dimostrazione 1 · \(\sqrt2\) è irrazionale</div><p>
+Per assurdo \(\sqrt2=\frac mn\) con \(m,n\in\mathbb N\), \(n\neq0\), <b>primi tra loro</b>. Allora \(m^2=2n^2\), quindi \(m^2\) è pari, quindi \(m\) è pari (se \(m\) fosse dispari anche \(m^2\) lo sarebbe). Scrivo \(m=2k\): \(4k^2=2n^2\Rightarrow n^2=2k^2\), quindi anche \(n\) è pari. <b>\(m\) e \(n\) entrambi pari</b>: contraddice che sono primi tra loro. □</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 2 · Disuguaglianza di Bernoulli: \((1+x)^n\ge1+nx\) per \(x\ge-1\), \(n\in\mathbb N\)</div><p>
+Per induzione su \(n\). <b>Base</b> \(n=0\): \(1\ge1\). <b>Passo</b>: supponiamo \((1+x)^n\ge1+nx\). Poiché \(1+x\ge0\) posso moltiplicare senza cambiare verso:
+\[(1+x)^{n+1}=(1+x)^n(1+x)\ge(1+nx)(1+x)=1+(n+1)x+nx^2\ge1+(n+1)x,\]
+perché \(nx^2\ge0\). □</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 3 · De Moivre (prodotti e potenze)</div><p>
+Siano \(z=\rho(\cos\theta+i\sin\theta)\), \(w=r(\cos\varphi+i\sin\varphi)\). Moltiplico:
+\[zw=\rho r\big[(\cos\theta\cos\varphi-\sin\theta\sin\varphi)+i(\sin\theta\cos\varphi+\cos\theta\sin\varphi)\big]=\rho r\big[\cos(\theta+\varphi)+i\sin(\theta+\varphi)\big]\]
+per le <b>formule di addizione</b>. <b>Potenze per induzione</b>: \(z^1\) ok; se \(z^n=\rho^n(\cos n\theta+i\sin n\theta)\), allora \(z^{n+1}=z^n\cdot z=\rho^{n+1}(\cos(n+1)\theta+i\sin(n+1)\theta)\) per la formula del prodotto. □</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 4 · Radici n-esime</div><p>
+Sia \(w=\rho e^{i\theta}\neq0\); cerco \(z=re^{i\varphi}\) con \(z^n=w\). Per De Moivre \(z^n=r^ne^{in\varphi}\). Due complessi sono uguali se e solo se <b>moduli uguali</b> e <b>argomenti che differiscono per multipli di \(2\pi\)</b>:
+\[r^n=\rho\Rightarrow r=\sqrt[n]\rho,\qquad n\varphi=\theta+2k\pi\Rightarrow\varphi_k=\frac{\theta+2k\pi}n,\ k\in\mathbb Z.\]
+Per \(k=0,\dots,n-1\) gli angoli \(\varphi_k\) sono distinti in \([\varphi_0,\varphi_0+2\pi)\); poiché \(\varphi_{k+n}=\varphi_k+2\pi\), gli altri \(k\) <b>ridanno le stesse radici</b>. Quindi le radici sono esattamente \(n\). □</p></div>
+
+</section>
+
+<section class="sec" id="dim-successioni">
+  <div class="num">02</div>
+  <h2>Successioni (5–9)</h2>
+  
+<div class="box box--thm"><div class="tag">Dimostrazione 5 · Unicità del limite</div><p>
+Per assurdo \(a_n\to\ell_1\) e \(a_n\to\ell_2\) con \(\ell_1\neq\ell_2\) (caso finito). Prendo <b>\(\varepsilon=\frac{|\ell_1-\ell_2|}2&gt;0\)</b>. Esistono \(N_1,N_2\) con \(|a_n-\ell_1|&lt;\varepsilon\) per \(n&gt;N_1\) e \(|a_n-\ell_2|&lt;\varepsilon\) per \(n&gt;N_2\). Per \(n&gt;\max\{N_1,N_2\}\), per la <b>disuguaglianza triangolare</b>:
+\[|\ell_1-\ell_2|\le|\ell_1-a_n|+|a_n-\ell_2|&lt;2\varepsilon=|\ell_1-\ell_2|,\]
+assurdo. (I casi con \(\pm\infty\) si trattano allo stesso modo con intorni disgiunti.) □</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 6 · Una successione convergente è limitata</div><p>
+Sia \(a_n\to\ell\in\mathbb R\). Con <b>\(\varepsilon=1\)</b> esiste \(N\) tale che \(|a_n-\ell|&lt;1\) per \(n&gt;N\), quindi \(|a_n|\le|a_n-\ell|+|\ell|&lt;1+|\ell|\) per \(n&gt;N\). I termini prima di \(N\) sono un numero finito. Pongo
+\[M=\max\{|a_0|,|a_1|,\dots,|a_N|,\,1+|\ell|\}:\quad |a_n|\le M\ \ \forall n.\ \ □\]</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 7 · Permanenza del segno</div><p>
+Sia \(a_n\to\ell&gt;0\). Con <b>\(\varepsilon=\frac\ell2\)</b> esiste \(N\) tale che per \(n&gt;N\): \(\ell-\frac\ell2&lt;a_n&lt;\ell+\frac\ell2\), quindi <b>\(a_n&gt;\frac\ell2&gt;0\)</b> definitivamente. Se \(\ell=+\infty\) prendo \(M=1\): \(a_n&gt;1&gt;0\) definitivamente.<br/>
+<i>Forma equivalente</i>: se \(a_n\ge0\) definitivamente e \(a_n\to\ell\), allora \(\ell\ge0\). Infatti, se fosse \(\ell&lt;0\), applicando quanto sopra a \(-a_n\) avrei \(a_n&lt;0\) definitivamente, assurdo. □</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 8 · Teorema dei due carabinieri</div><p>
+Ipotesi: \(a_n\le b_n\le c_n\) per \(n\ge N_3\), \(a_n\to\ell\), \(c_n\to\ell\). Fissato \(\varepsilon&gt;0\):
+esiste \(N_1\) con \(\ell-\varepsilon&lt;a_n&lt;\ell+\varepsilon\) per \(n&gt;N_1\); esiste \(N_2\) con \(\ell-\varepsilon&lt;c_n&lt;\ell+\varepsilon\) per \(n&gt;N_2\). Per <b>\(n&gt;N=\max\{N_1,N_2,N_3\}\)</b>:
+\[\ell-\varepsilon&lt;a_n\le b_n\le c_n&lt;\ell+\varepsilon,\]
+cioè \(|b_n-\ell|&lt;\varepsilon\). Per la definizione di limite, \(b_n\to\ell\). □</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 9 · Regolarità delle successioni monotone</div><p>
+Sia \(a_n\) crescente e \(L=\sup_n a_n\).<br/>
+<b>Caso \(L\in\mathbb R\)</b>: fissato \(\varepsilon&gt;0\), \(L-\varepsilon\) <b>non è un maggiorante</b> (perché \(L\) è il minimo dei maggioranti), quindi esiste \(N\) con \(a_N&gt;L-\varepsilon\). Per \(n&gt;N\), per la monotonia: \(L-\varepsilon&lt;a_N\le a_n\le L&lt;L+\varepsilon\). Quindi \(a_n\to L\).<br/>
+<b>Caso \(L=+\infty\)</b>: per ogni \(M&gt;0\), \(M\) non è un maggiorante, quindi esiste \(N\) con \(a_N&gt;M\), e per \(n&gt;N\): \(a_n\ge a_N&gt;M\). Quindi \(a_n\to+\infty\). (Decrescente: analogo con l'\(\inf\).) □</p></div>
+
+</section>
+
+<section class="sec" id="dim-serie">
+  <div class="num">03</div>
+  <h2>Serie (10–14)</h2>
+  
+<div class="box box--thm"><div class="tag">Dimostrazione 10 · Condizione necessaria per la convergenza di una serie</div><p>
+Sia \(S_n=\sum_{k=0}^na_k\to S\in\mathbb R\). Allora <b>\(a_n=S_n-S_{n-1}\)</b> e anche \(S_{n-1}\to S\). Quindi \(a_n\to S-S=0\). □<br/>
+<b>Controesempio al viceversa</b>: \(\frac1n\to0\) ma \(\sum\frac1n\) diverge. Infatti \(\log(1+x)\le x\), quindi
+\(\sum_{k=1}^n\frac1k\ge\sum_{k=1}^n\log\frac{k+1}k=\log(n+1)\to+\infty\) (somma telescopica).</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 11 · Criterio del confronto</div><p>
+Sia \(0\le a_n\le b_n\) (il carattere non cambia togliendo i primi termini, quindi posso supporlo per ogni \(n\)). Le somme parziali \(A_n=\sum_{k\le n}a_k\) e \(B_n=\sum_{k\le n}b_k\) sono <b>crescenti</b> (termini \(\ge0\)) e <b>\(A_n\le B_n\)</b>.<br/>
+Se \(\sum b_n=B\) converge: \(A_n\le B_n\le B\), quindi \(A_n\) è crescente e limitata, e <b>per il teorema delle successioni monotone converge</b>.<br/>
+Se \(\sum a_n\) diverge: \(A_n\to+\infty\) e \(B_n\ge A_n\), quindi per confronto \(B_n\to+\infty\). □</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 12 · Criterio del confronto asintotico</div><p>
+Siano \(a_n,b_n&gt;0\) con \(\frac{a_n}{b_n}\to\ell\in(0,+\infty)\) (se \(a_n\sim b_n\), \(\ell=1\)). Con <b>\(\varepsilon=\frac\ell2\)</b> esiste \(N\) tale che per \(n&gt;N\):
+\[\frac\ell2&lt;\frac{a_n}{b_n}&lt;\frac{3\ell}2\quad\Longrightarrow\quad\frac\ell2\,b_n&lt;a_n&lt;\frac{3\ell}2\,b_n.\]
+Se \(\sum b_n\) converge, converge \(\sum\frac{3\ell}2b_n\) e per <b>confronto</b> converge \(\sum a_n\). Se \(\sum b_n\) diverge, diverge \(\sum\frac\ell2b_n\) e per confronto diverge \(\sum a_n\). □</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 13 · Criterio del rapporto</div><p>
+Sia \(a_n&gt;0\) e \(\frac{a_{n+1}}{a_n}\to\ell\).<br/>
+<b>\(\ell&lt;1\)</b>: scelgo \(x\) con \(\ell&lt;x&lt;1\) (\(\varepsilon=x-\ell\)). Esiste \(N\) con \(\frac{a_{k+1}}{a_k}&lt;x\) per \(k\ge N\). Allora \(a_{N+1}&lt;a_Nx\), \(a_{N+2}&lt;a_Nx^2\), … cioè
+\[a_n\le a_N\,x^{\,n-N}=\frac{a_N}{x^N}\,x^n\qquad(n\ge N).\]
+Il secondo membro è il termine di una <b>serie geometrica di ragione \(0&lt;x&lt;1\), convergente</b>: per confronto \(\sum a_n\) converge.<br/>
+<b>\(\ell&gt;1\)</b>: con \(\varepsilon=\ell-1\), definitivamente \(\frac{a_{n+1}}{a_n}&gt;1\), cioè \(a_{n+1}&gt;a_n&gt;0\): la successione è definitivamente crescente e positiva, quindi <b>non tende a 0</b>. Per la condizione necessaria la serie non converge, e essendo a termini positivi <b>diverge a \(+\infty\)</b>. □</p></div>
+<div class="box box--thm"><div class="tag">Dimostrazione 14 · Convergenza assoluta ⇒ convergenza semplice</div><p>
+Sia \(\sum|a_n|\) convergente. Vale <b>\(0\le a_n+|a_n|\le2|a_n|\)</b>, quindi per confronto \(\sum(a_n+|a_n|)\) converge. Allora
+\[\sum a_n=\sum(a_n+|a_n|)-\sum|a_n|\]
+è differenza di due serie convergenti, quindi converge. □<br/>
+<b>Controesempio al viceversa</b>: \(\sum\frac{(-1)^n}n\) converge per Leibniz, ma \(\sum\frac1n\) diverge.</p></div>
+
+</section>
+      <nav class="pager" aria-label="Capitoli"><a class="prev" href="serie.html"><small>← Precedente</small><span>Serie numeriche</span></a><a class="next" href="prova-itinere.html"><small>Successivo →</small><span>Prima prova in itinere: com&#x27;è fatta</span></a></nav>
+    </main>
+  </div>
+  <footer class="foot">Appunti personali basati sul materiale del corso di Analisi Matematica 1 del prof. De Martino (Politecnico di Milano, 2026/27). Possono contenere errori: nel dubbio fa fede il materiale del docente.</footer>
+</div>
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], tags: 'none' },
+    svg: { fontCache: 'global' },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js" async></script>
+<script src="../assets/gal.js"></script>
+</body>
+</html>

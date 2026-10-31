@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parte 1 · Numeri reali e disequazioni — Analisi Matematica 1</title>
+<meta name="description" content="Insiemi numerici, irrazionalità di √2, induzione e Bernoulli, sup e inf, potenze e logaritmi, disequazioni.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../assets/gal.css">
+<script>try{var t=localStorage.getItem('gal:theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body data-page="reali">
+<header class="topbar">
+  <div class="in">
+    <button class="iconbtn menu-btn" id="menu-btn" aria-label="Apri l'indice" aria-expanded="false" aria-controls="side"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <nav class="crumbs" aria-label="Percorso">
+      <a href="../" class="hide-sm">Appunti</a><span class="sep hide-sm">/</span>
+      <a href="./">Analisi 1</a><span class="sep">/</span><span class="here">Parte 1</span>
+    </nav>
+    <button class="iconbtn" id="theme-btn" aria-label="Cambia tema chiaro/scuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  </div>
+  <div class="readbar"></div>
+</header>
+<div class="page">
+  <header class="hero">
+    <span class="eyebrow">Parte 1</span>
+    <h1>Numeri reali e disequazioni</h1>
+    <p class="sub">Insiemi numerici, irrazionalità di √2, induzione e Bernoulli, sup e inf, potenze e logaritmi, disequazioni.</p>
+    <div class="pillrow"><span class="pill">2 sezioni</span><span class="pill">4 esercizi con soluzione</span><span class="pill">Lezioni 1–2</span><span class="pill">Disequazioni.pdf</span></div>
+  </header>
+  <div class="layout">
+    <aside class="side" id="side">
+      <div class="panel"><div class="panel-title">Pagine</div><ol><li><a href="reali.html" aria-current="page"><span class="k">1</span>Numeri reali e disequazioni</a><div class="chap-progress" data-progress-page="reali" data-total="4"><i></i></div></li><li><a href="complessi.html"><span class="k">2</span>Numeri complessi</a><div class="chap-progress" data-progress-page="complessi" data-total="6"><i></i></div></li><li><a href="funzioni.html"><span class="k">3</span>Funzioni: generalità</a></li><li><a href="successioni.html"><span class="k">4</span>Limiti di successioni</a><div class="chap-progress" data-progress-page="successioni" data-total="6"><i></i></div></li><li><a href="serie.html"><span class="k">5</span>Serie numeriche</a><div class="chap-progress" data-progress-page="serie" data-total="9"><i></i></div></li><li><a href="dimostrazioni.html"><span class="k">·</span>Le 14 dimostrazioni del primo parziale</a></li><li><a href="prova-itinere.html"><span class="k">·</span>Prima prova in itinere: com&#x27;è fatta</a></li><li><a href="prove-svolte.html"><span class="k">·</span>Prove in itinere passate svolte</a></li><li><a href="piano.html"><span class="k">·</span>Piano di studio fino al 2 novembre</a></li></ol></div>
+      <div class="panel"><div class="panel-title">In questa pagina</div><ol id="toc"><li><a href="#reali-teoria"><span class="k">01</span>Insiemi numerici, sup e inf, disequazioni</a></li><li><a href="#reali-esercizi"><span class="k">02</span>Esercizi: sup, inf, max, min di un insieme</a></li></ol></div>
+      
+    </aside>
+    <main id="content">
+<section class="sec" id="reali-teoria">
+  <div class="num">01</div>
+  <h2>Insiemi numerici, sup e inf, disequazioni</h2>
+  <p class="lead">Le definizioni di maggiorante e sup, il principio di induzione e gli schemi per le disequazioni irrazionali: servono nella prima domanda del test.</p>
+
+<p>\(\mathbb N\subset\mathbb Z\subset\mathbb Q\subset\mathbb R\). In \(\mathbb Q\) "mancano" numeri come \(\sqrt2\) <strong>(*1)</strong>; \(\mathbb R\) è un campo ordinato <b>completo</b>.</p>
+<div class="box box--def"><div class="tag">Definizioni: maggiorante, sup, max</div><p>
+Sia \(E\subseteq\mathbb R\), \(E\neq\emptyset\).
+</p><ul>
+<li>\(M\) è un <b>maggiorante</b> di \(E\) se \(x\le M\) per ogni \(x\in E\). \(E\) è <b>superiormente limitato</b> se ha almeno un maggiorante.</li>
+<li>L'<b>estremo superiore</b> \(\sup E\) è il <b>minimo dei maggioranti</b>. Se \(E\) non è superiormente limitato, \(\sup E=+\infty\).</li>
+<li>Se \(\sup E\in E\) allora si chiama <b>massimo</b>: \(\max E\). Analogamente minorante, \(\inf E\) (massimo dei minoranti), \(\min E\).</li>
+</ul></div>
+<div class="box box--thm"><div class="tag">Caratterizzazione del sup (finito)</div><p>
+\(L=\sup E\) se e solo se: (i) \(x\le L\) per ogni \(x\in E\); (ii) per ogni \(\varepsilon&gt;0\) esiste \(x\in E\) con \(x&gt;L-\varepsilon\).</p></div>
+<div class="box box--thm"><div class="tag">Assioma di completezza</div><p>Ogni sottoinsieme di \(\mathbb R\) non vuoto e superiormente limitato ha estremo superiore in \(\mathbb R\).</p></div>
+<div class="box box--def"><div class="tag">Principio di induzione</div><p>Se \(P(n_0)\) è vera e \(P(n)\Rightarrow P(n+1)\) per ogni \(n\ge n_0\), allora \(P(n)\) è vera per ogni \(n\ge n_0\). Esempio: disuguaglianza di Bernoulli <strong>(*2)</strong>: \((1+x)^n\ge 1+nx\) per \(x\ge-1\), \(n\in\mathbb N\).</p></div>
+<h3>Potenze, logaritmi, valore assoluto</h3>
+<p>\(a^{x+y}=a^xa^y\), \((a^x)^y=a^{xy}\); \(\log(ab)=\log a+\log b\), \(\log a^b=b\log a\), \(\log_a x=\frac{\log x}{\log a}\). \(a^x\) e \(\log_a x\) crescenti se \(a&gt;1\), decrescenti se \(0&lt;a&lt;1\). \(|x|&lt;k\iff -k&lt;x&lt;k\); \(|x|&gt;k\iff x&lt;-k\) oppure \(x&gt;k\); \(\sqrt{x^2}=|x|\); \(|x+y|\le|x|+|y|\).</p>
+<h3>Disequazioni irrazionali: gli schemi da sapere</h3>
+<div class="tablewrap"><table>
+
+
+<thead><tr><th>\(\sqrt{A}&lt;B\)</th><th>\(\sqrt{A}&gt;B\)</th><th>\(\sqrt{A}&lt;\sqrt{B}\) (anche radici pari \(\sqrt[4]{\ }\))</th></tr></thead><tbody><tr><td>\(\begin{cases}A\ge0\\B&gt;0\\A&lt;B^2\end{cases}\)</td>
+<td>\(\begin{cases}A\ge0\\B&lt;0\end{cases}\ \cup\ \begin{cases}B\ge0\\A&gt;B^2\end{cases}\)</td>
+<td>\(\begin{cases}A\ge0\\A&lt;B\end{cases}\) (allora \(B&gt;0\) in automatico)</td></tr></tbody></table></div>
+<div class="box box--warn"><div class="tag">Attenzione</div><p>Si può elevare al quadrato solo se <b>entrambi i membri sono \(\ge0\)</b>. Con \(|x|\) dividi nei casi \(x\ge0\) e \(x&lt;0\). Alla fine <b>controlla gli estremi</b>: inclusi o esclusi decide se c'è max/min o solo sup/inf.</p></div>
+
+</section>
+
+<section class="sec esercizi" id="reali-esercizi">
+  <div class="num">02</div>
+  <h2>Esercizi: sup, inf, max, min di un insieme</h2>
+  <div class="ex-bar"><button class="chip" data-filter="tutti" aria-pressed="true">Tutti</button><button class="chip" data-filter="da-fare" aria-pressed="false">Da fare</button><button class="chip" data-filter="esame" aria-pressed="false">Esame</button><button class="chip toggle-sol" aria-pressed="false">Mostra soluzioni</button><span class="count ex-count"></span></div>
+
+<div class="box box--method"><div class="tag">Metodo</div><p>1) Risolvi la disequazione con lo schema giusto (vedi la teoria sopra). 2) Scrivi l'insieme come unione di intervalli. 3) Leggi gli estremi: <b>max/min solo se l'estremo è incluso</b>; \(\pm\infty\) se l'insieme è illimitato.</p></div>
+<div class="ex" data-fonte="Prova in itinere 10-11-2025" data-livello="esame"><div class="ex-testo"> \(A=\{x\in\mathbb R:\ \sqrt{x^2-1}+x\ge0\}\). Trova inf, sup, min, max.
+</div><details class="sol"><summary>Soluzione</summary>È \(\sqrt{x^2-1}\ge-x\), schema \(\sqrt A\ge B\) con \(B=-x\):
+<ul><li>\(B&lt;0\), \(A\ge0\): \(x&gt;0\) e (\(x\ge1\) o \(x\le-1\)) \(\Rightarrow x\ge1\);</li>
+<li>\(B\ge0\), \(A\ge B^2\): \(x\le0\) e \(x^2-1\ge x^2\), cioè \(-1\ge0\): impossibile.</li></ul>
+<strong>\(A=[1,+\infty)\): \(\min A=\inf A=1\), \(\sup A=+\infty\) (niente max).</strong><p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
+<div class="ex" data-fonte="Prova in itinere 09-11-2024 B" data-livello="esame"><div class="ex-testo"> \(E=\{x:\ \sqrt[4]{|x+3|}&gt;\sqrt[4]{1-x}\}\).
+</div><details class="sol"><summary>Soluzione</summary>Serve \(1-x\ge0\), cioè \(x\le1\); il primo radicando è sempre \(\ge0\). Entrambi i membri sono \(\ge0\), quindi elevo alla quarta: \(|x+3|&gt;1-x\). Il secondo membro è \(\ge0\), quindi elevo al quadrato: \((x+3)^2&gt;(1-x)^2\iff x^2+6x+9&gt;x^2-2x+1\iff 8x&gt;-8\iff x&gt;-1\).<br/>
+<strong>\(E=(-1,1]\): \(\inf E=-1\) (non è minimo), \(\max E=1\); in particolare 1 è un maggiorante.</strong><p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
+<div class="ex" data-fonte="Prova in itinere 06-11-2023" data-livello="esame"><div class="ex-testo"> \(E=\{x:\ \sqrt{3-x}&lt;\sqrt{2|x|}\}\).
+</div><details class="sol"><summary>Soluzione</summary>Esistenza: \(x\le3\). Elevo al quadrato (entrambi \(\ge0\)): \(3-x&lt;2|x|\).
+Se \(x\ge0\): \(3-x&lt;2x\iff x&gt;1\). Se \(x&lt;0\): \(3-x&lt;-2x\iff x&lt;-3\). Con \(x\le3\):<br/>
+<strong>\(E=(-\infty,-3)\cup(1,3]\): \(\inf E=-\infty\), \(\max E=3\).</strong><p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
+<div class="ex" data-fonte="Prova in itinere 07-11-2022" data-livello="esame"><div class="ex-testo"> \(A=\{x:\ x&gt;\sqrt{2-x}\}\).
+</div><details class="sol"><summary>Soluzione</summary>Schema \(\sqrt A&lt;B\): \(2-x\ge0\), \(x&gt;0\), \(2-x&lt;x^2\). L'ultima è \(x^2+x-2&gt;0\iff(x+2)(x-1)&gt;0\iff x&lt;-2\) o \(x&gt;1\). Mettendo insieme: \(1&lt;x\le2\).<br/>
+<strong>\(A=(1,2]\): \(\inf A=1\) (non minimo), \(\max A=2\).</strong><p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
+
+</section>
+      <nav class="pager" aria-label="Capitoli"><a class="next" href="complessi.html"><small>Successivo →</small><span>Numeri complessi</span></a></nav>
+    </main>
+  </div>
+  <footer class="foot">Appunti personali basati sul materiale del corso di Analisi Matematica 1 del prof. De Martino (Politecnico di Milano, 2026/27). Possono contenere errori: nel dubbio fa fede il materiale del docente.</footer>
+</div>
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], tags: 'none' },
+    svg: { fontCache: 'global' },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js" async></script>
+<script src="../assets/gal.js"></script>
+</body>
+</html>

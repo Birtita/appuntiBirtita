@@ -1,0 +1,49 @@
+<section class="sec" id="reali-teoria">
+  <h2>Insiemi numerici, sup e inf, disequazioni</h2>
+  <p class="lead">Le definizioni di maggiorante e sup, il principio di induzione e gli schemi per le disequazioni irrazionali: servono nella prima domanda del test.</p>
+
+<p>\(\mathbb N\subset\mathbb Z\subset\mathbb Q\subset\mathbb R\). In \(\mathbb Q\) "mancano" numeri come \(\sqrt2\) <strong>(*1)</strong>; \(\mathbb R\) è un campo ordinato <b>completo</b>.</p>
+<div class="box box--def"><div class="tag">Definizioni: maggiorante, sup, max</div><p>
+Sia \(E\subseteq\mathbb R\), \(E\neq\emptyset\).
+</p><ul>
+<li>\(M\) è un <b>maggiorante</b> di \(E\) se \(x\le M\) per ogni \(x\in E\). \(E\) è <b>superiormente limitato</b> se ha almeno un maggiorante.</li>
+<li>L'<b>estremo superiore</b> \(\sup E\) è il <b>minimo dei maggioranti</b>. Se \(E\) non è superiormente limitato, \(\sup E=+\infty\).</li>
+<li>Se \(\sup E\in E\) allora si chiama <b>massimo</b>: \(\max E\). Analogamente minorante, \(\inf E\) (massimo dei minoranti), \(\min E\).</li>
+</ul></div>
+<div class="box box--thm"><div class="tag">Caratterizzazione del sup (finito)</div><p>
+\(L=\sup E\) se e solo se: (i) \(x\le L\) per ogni \(x\in E\); (ii) per ogni \(\varepsilon&gt;0\) esiste \(x\in E\) con \(x&gt;L-\varepsilon\).</p></div>
+<div class="box box--thm"><div class="tag">Assioma di completezza</div><p>Ogni sottoinsieme di \(\mathbb R\) non vuoto e superiormente limitato ha estremo superiore in \(\mathbb R\).</p></div>
+<div class="box box--def"><div class="tag">Principio di induzione</div><p>Se \(P(n_0)\) è vera e \(P(n)\Rightarrow P(n+1)\) per ogni \(n\ge n_0\), allora \(P(n)\) è vera per ogni \(n\ge n_0\). Esempio: disuguaglianza di Bernoulli <strong>(*2)</strong>: \((1+x)^n\ge 1+nx\) per \(x\ge-1\), \(n\in\mathbb N\).</p></div>
+<h3>Potenze, logaritmi, valore assoluto</h3>
+<p>\(a^{x+y}=a^xa^y\), \((a^x)^y=a^{xy}\); \(\log(ab)=\log a+\log b\), \(\log a^b=b\log a\), \(\log_a x=\frac{\log x}{\log a}\). \(a^x\) e \(\log_a x\) crescenti se \(a&gt;1\), decrescenti se \(0&lt;a&lt;1\). \(|x|&lt;k\iff -k&lt;x&lt;k\); \(|x|&gt;k\iff x&lt;-k\) oppure \(x&gt;k\); \(\sqrt{x^2}=|x|\); \(|x+y|\le|x|+|y|\).</p>
+<h3>Disequazioni irrazionali: gli schemi da sapere</h3>
+<table>
+
+
+<thead><tr><th>\(\sqrt{A}&lt;B\)</th><th>\(\sqrt{A}&gt;B\)</th><th>\(\sqrt{A}&lt;\sqrt{B}\) (anche radici pari \(\sqrt[4]{\ }\))</th></tr></thead><tbody><tr><td>\(\begin{cases}A\ge0\\B&gt;0\\A&lt;B^2\end{cases}\)</td>
+<td>\(\begin{cases}A\ge0\\B&lt;0\end{cases}\ \cup\ \begin{cases}B\ge0\\A&gt;B^2\end{cases}\)</td>
+<td>\(\begin{cases}A\ge0\\A&lt;B\end{cases}\) (allora \(B&gt;0\) in automatico)</td></tr></tbody></table>
+<div class="box box--warn"><div class="tag">Attenzione</div><p>Si può elevare al quadrato solo se <b>entrambi i membri sono \(\ge0\)</b>. Con \(|x|\) dividi nei casi \(x\ge0\) e \(x&lt;0\). Alla fine <b>controlla gli estremi</b>: inclusi o esclusi decide se c'è max/min o solo sup/inf.</p></div>
+
+</section>
+<section class="sec" id="reali-esercizi">
+  <h2>Esercizi: sup, inf, max, min di un insieme</h2>
+
+<div class="box box--method"><div class="tag">Metodo</div><p>1) Risolvi la disequazione con lo schema giusto (vedi la teoria sopra). 2) Scrivi l'insieme come unione di intervalli. 3) Leggi gli estremi: <b>max/min solo se l'estremo è incluso</b>; \(\pm\infty\) se l'insieme è illimitato.</p></div>
+<div class="ex" data-fonte="Prova in itinere 10-11-2025" data-livello="esame"><div class="ex-testo"> \(A=\{x\in\mathbb R:\ \sqrt{x^2-1}+x\ge0\}\). Trova inf, sup, min, max.
+</div><details class="sol"><summary>Soluzione</summary>È \(\sqrt{x^2-1}\ge-x\), schema \(\sqrt A\ge B\) con \(B=-x\):
+<ul><li>\(B&lt;0\), \(A\ge0\): \(x&gt;0\) e (\(x\ge1\) o \(x\le-1\)) \(\Rightarrow x\ge1\);</li>
+<li>\(B\ge0\), \(A\ge B^2\): \(x\le0\) e \(x^2-1\ge x^2\), cioè \(-1\ge0\): impossibile.</li></ul>
+<strong>\(A=[1,+\infty)\): \(\min A=\inf A=1\), \(\sup A=+\infty\) (niente max).</strong><p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
+<div class="ex" data-fonte="Prova in itinere 09-11-2024 B" data-livello="esame"><div class="ex-testo"> \(E=\{x:\ \sqrt[4]{|x+3|}&gt;\sqrt[4]{1-x}\}\).
+</div><details class="sol"><summary>Soluzione</summary>Serve \(1-x\ge0\), cioè \(x\le1\); il primo radicando è sempre \(\ge0\). Entrambi i membri sono \(\ge0\), quindi elevo alla quarta: \(|x+3|&gt;1-x\). Il secondo membro è \(\ge0\), quindi elevo al quadrato: \((x+3)^2&gt;(1-x)^2\iff x^2+6x+9&gt;x^2-2x+1\iff 8x&gt;-8\iff x&gt;-1\).<br/>
+<strong>\(E=(-1,1]\): \(\inf E=-1\) (non è minimo), \(\max E=1\); in particolare 1 è un maggiorante.</strong><p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
+<div class="ex" data-fonte="Prova in itinere 06-11-2023" data-livello="esame"><div class="ex-testo"> \(E=\{x:\ \sqrt{3-x}&lt;\sqrt{2|x|}\}\).
+</div><details class="sol"><summary>Soluzione</summary>Esistenza: \(x\le3\). Elevo al quadrato (entrambi \(\ge0\)): \(3-x&lt;2|x|\).
+Se \(x\ge0\): \(3-x&lt;2x\iff x&gt;1\). Se \(x&lt;0\): \(3-x&lt;-2x\iff x&lt;-3\). Con \(x\le3\):<br/>
+<strong>\(E=(-\infty,-3)\cup(1,3]\): \(\inf E=-\infty\), \(\max E=3\).</strong><p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
+<div class="ex" data-fonte="Prova in itinere 07-11-2022" data-livello="esame"><div class="ex-testo"> \(A=\{x:\ x&gt;\sqrt{2-x}\}\).
+</div><details class="sol"><summary>Soluzione</summary>Schema \(\sqrt A&lt;B\): \(2-x\ge0\), \(x&gt;0\), \(2-x&lt;x^2\). L'ultima è \(x^2+x-2&gt;0\iff(x+2)(x-1)&gt;0\iff x&lt;-2\) o \(x&gt;1\). Mettendo insieme: \(1&lt;x\le2\).<br/>
+<strong>\(A=(1,2]\): \(\inf A=1\) (non minimo), \(\max A=2\).</strong><p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
+
+</section>
