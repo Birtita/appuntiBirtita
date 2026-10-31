@@ -47,3 +47,41 @@ Se \(x\ge0\): \(3-x&lt;2x\iff x&gt;1\). Se \(x&lt;0\): \(3-x&lt;-2x\iff x&lt;-3\
 <strong>\(A=(1,2]\): \(\inf A=1\) (non minimo), \(\max A=2\).</strong><p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
 
 </section>
+
+<section class="sec" id="reali-logica">
+  <h2>Logica, induzione e altre disequazioni</h2>
+  <div class="box box--def"><div class="tag">Logica (Lez. 1)</div><ul>
+    <li>\(\neg(\forall x\ P(x))\iff\exists x\ \neg P(x)\); \(\ \neg(\exists x\ P(x))\iff\forall x\ \neg P(x)\).</li>
+    <li>In \(P\Rightarrow Q\): \(P\) è condizione <b>sufficiente</b> per \(Q\), \(Q\) è condizione <b>necessaria</b> per \(P\). \(P\iff Q\): necessaria e sufficiente.</li>
+    <li>\(P\Rightarrow Q\) equivale alla <b>contronominale</b> \(\neg Q\Rightarrow\neg P\). <b>Per assurdo</b>: si suppone \(P\) e \(\neg Q\) e si arriva a una contraddizione (come per \(\sqrt2\)).</li>
+  </ul></div>
+  <div class="box box--method"><div class="tag">Disequazioni esponenziali, logaritmiche, trigonometriche</div><ul>
+    <li>\(a^{f(x)}&gt;a^{g(x)}\iff f(x)&gt;g(x)\) se \(a&gt;1\); <b>verso opposto</b> se \(0&lt;a&lt;1\).</li>
+    <li>\(\log_a f(x)&gt;\log_a g(x)\iff f(x)&gt;g(x)&gt;0\) se \(a&gt;1\); \(0&lt;f(x)&lt;g(x)\) se \(0&lt;a&lt;1\). Prima le condizioni di esistenza.</li>
+    <li>Trigonometriche: risolvi su un periodo con la circonferenza goniometrica, poi aggiungi \(+2k\pi\) (o \(+k\pi\) per la tangente).</li>
+    <li>Sostituzioni utili: \(t=a^x\) (con \(t&gt;0\)), \(t=\log x\), \(t=\sin x\) (con \(-1\le t\le1\)).</li>
+  </ul></div>
+</section>
+<section class="sec" id="reali-esercizi2">
+  <h2>Esercizi: induzione e disequazioni</h2>
+  <div class="ex" data-fonte="Esercitazione 1" data-livello="base">
+    <div class="ex-testo">Dimostrare per induzione che \(\displaystyle\sum_{k=1}^n k=\frac{n(n+1)}2\) per ogni \(n\ge1\).</div>
+    <details class="sol"><summary>Soluzione</summary><p><b>Base</b> \(n=1\): \(1=\frac{1\cdot2}2\). <b>Passo</b>: se vale per \(n\), allora \(\sum_{k=1}^{n+1}k=\frac{n(n+1)}2+(n+1)=\frac{(n+1)(n+2)}2\), che è la formula per \(n+1\).</p><p class="verifica">Verificata a mano</p></details>
+  </div>
+  <div class="ex" data-fonte="Esercitazione 1" data-livello="medio">
+    <div class="ex-testo">Dimostrare per induzione che \(n!\ge2^{n-1}\) per ogni \(n\ge1\).</div>
+    <details class="sol"><summary>Soluzione</summary><p><b>Base</b>: \(1!=1=2^0\). <b>Passo</b>: \((n+1)!=(n+1)\,n!\ge(n+1)2^{n-1}\ge2\cdot2^{n-1}=2^n\), perché \(n+1\ge2\).</p><p class="verifica">Verificata a mano</p></details>
+  </div>
+  <div class="ex" data-fonte="Esercitazione 1" data-livello="base">
+    <div class="ex-testo">Risolvere \(4^x-3\cdot2^x+2&lt;0\).</div>
+    <details class="sol"><summary>Soluzione</summary><p>Con \(t=2^x&gt;0\): \(t^2-3t+2&lt;0\iff1&lt;t&lt;2\iff2^0&lt;2^x&lt;2^1\). <strong>\(0&lt;x&lt;1\)</strong>.</p><p class="verifica">Verificata a mano</p></details>
+  </div>
+  <div class="ex" data-fonte="Esercitazione 1" data-livello="base">
+    <div class="ex-testo">Risolvere \(\log_{1/2}(x-1)&gt;-1\).</div>
+    <details class="sol"><summary>Soluzione</summary><p>Esistenza: \(x&gt;1\). \(-1=\log_{1/2}2\) e la base è \(&lt;1\), quindi il verso si inverte: \(x-1&lt;2\). <strong>\(1&lt;x&lt;3\)</strong>.</p><p class="verifica">Verificata a mano</p></details>
+  </div>
+  <div class="ex" data-fonte="Esercitazione 1" data-livello="medio">
+    <div class="ex-testo">Risolvere \(2\sin^2x-\sin x-1&lt;0\) in \([0,2\pi)\).</div>
+    <details class="sol"><summary>Soluzione</summary><p>Con \(t=\sin x\): \(2t^2-t-1&lt;0\iff-\frac12&lt;t&lt;1\). Quindi \(\sin x&gt;-\frac12\) e \(\sin x\neq1\).</p><p>\(\sin x&gt;-\frac12\) in \([0,\frac{7\pi}6)\cup(\frac{11\pi}6,2\pi)\); tolgo \(x=\frac\pi2\). <strong>\(x\in[0,\frac\pi2)\cup(\frac\pi2,\frac{7\pi}6)\cup(\frac{11\pi}6,2\pi)\)</strong>.</p><p class="verifica">Verificata a mano</p></details>
+  </div>
+</section>

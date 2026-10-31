@@ -62,3 +62,39 @@ Variante 2022: \(z+\bar z+1=0\iff2\,\mathrm{Re}\,z=-1\): retta verticale \(\math
 </svg><figcaption>Blu: A (4 punti e circonferenza |z| = 2). Rossi, con la circonferenza tratteggiata: B (4 punti e |ζ| = 4).</figcaption></figure><p class="verifica">Confrontata con la soluzione ufficiale</p></details></div>
 
 </section>
+
+<section class="sec" id="complessi-luoghi">
+  <h2>Luoghi geometrici, equazioni con \(\bar z\) e potenze</h2>
+  <p class="lead">Dalle esercitazioni 2 e 3: insiemi del piano descritti da condizioni su \(|z|\), \(\mathrm{Re}\), \(\mathrm{Im}\), ed equazioni in cui compaiono \(\bar z\) o \(|z|\).</p>
+  <div class="box box--method"><div class="tag">Metodo</div><ol>
+    <li><b>Luoghi</b>: scrivi \(z=x+iy\) e traduci la condizione in un'equazione o disequazione in \(x,y\). Riconosci circonferenze, dischi, rette, semipiani.</li>
+    <li><b>Equazioni con \(\bar z\)</b>: o sostituisci \(z=x+iy\) e uguagli parte reale e immaginaria, o passi alla forma esponenziale e uguagli moduli e argomenti.</li>
+    <li><b>Potenze</b>: porta \(z\) in forma esponenziale e usa De Moivre; riduci l'argomento in \([0,2\pi)\).</li>
+  </ol></div>
+  <table><thead><tr><th>Condizione</th><th>Insieme del piano</th></tr></thead><tbody>
+    <tr><td>\(|z-z_0|=r\)</td><td>circonferenza di centro \(z_0\) e raggio \(r\)</td></tr>
+    <tr><td>\(|z-z_0|\le r\) (\(&lt;r\))</td><td>disco chiuso (aperto)</td></tr>
+    <tr><td>\(|z-a|=|z-b|\)</td><td>asse del segmento di estremi \(a\) e \(b\)</td></tr>
+    <tr><td>\(\mathrm{Re}\,z&gt;a\), \(\mathrm{Im}\,z\le b\)</td><td>semipiani delimitati da rette verticali/orizzontali</td></tr>
+  </tbody></table>
+  <div class="ex" data-fonte="Esercitazione 3" data-livello="medio">
+    <div class="ex-testo">Disegnare \(E=\left\{z\in\mathbb C\setminus\{0\}:\ \mathrm{Re}\frac1z=1\right\}\).</div>
+    <details class="sol"><summary>Soluzione</summary><p>\(\frac1z=\frac{\bar z}{|z|^2}=\frac{x-iy}{x^2+y^2}\), quindi \(\mathrm{Re}\frac1z=\frac{x}{x^2+y^2}=1\iff x^2+y^2-x=0\iff\left(x-\frac12\right)^2+y^2=\frac14\).</p><p><strong>Circonferenza di centro \(\frac12\) e raggio \(\frac12\), privata dell'origine</strong> (che non sta nel dominio).</p><p class="verifica">Verificata a mano</p></details>
+  </div>
+  <div class="ex" data-fonte="Esercitazione 2" data-livello="medio">
+    <div class="ex-testo">Disegnare \(E=\{z:\ |z-1-i|\le1,\ \mathrm{Re}\,z\ge1\}\).</div>
+    <details class="sol"><summary>Soluzione</summary><p>\(|z-(1+i)|\le1\): disco chiuso di centro \(1+i\) e raggio 1. \(\mathrm{Re}\,z\ge1\): semipiano a destra della retta \(x=1\), che passa per il centro.</p><p><strong>\(E\) è il mezzo disco destro</strong>, bordo compreso.</p><p class="verifica">Verificata a mano</p></details>
+  </div>
+  <div class="ex" data-fonte="Esercitazione 3" data-livello="esame">
+    <div class="ex-testo">Risolvere \(z^2-z\bar z-2z+4=0\).</div>
+    <details class="sol"><summary>Soluzione</summary><p>Con \(z=x+iy\): \(z^2=x^2-y^2+2ixy\), \(z\bar z=x^2+y^2\). L'equazione diventa \((-2y^2-2x+4)+i(2xy-2y)=0\).</p><p>Parte immaginaria: \(2y(x-1)=0\). Se \(y=0\): \(-2x+4=0\Rightarrow x=2\). Se \(x=1\): \(-2y^2+2=0\Rightarrow y=\pm1\).</p><p><strong>Soluzioni: \(z=2,\ 1+i,\ 1-i\)</strong>. Verifica per \(1+i\): \(2i-2-2-2i+4=0\).</p><p class="verifica">Verificata a mano</p></details>
+  </div>
+  <div class="ex" data-fonte="Esercitazione 3" data-livello="esame">
+    <div class="ex-testo">Risolvere \(z^3=i\,\bar z\,|z|\).</div>
+    <details class="sol"><summary>Soluzione</summary><p><b>Moduli</b>: \(|z|^3=|z|\cdot|z|\iff|z|^2(|z|-1)=0\): \(z=0\) oppure \(|z|=1\).</p><p><b>Argomenti</b> con \(z=e^{i\theta}\): \(e^{3i\theta}=e^{i\pi/2}e^{-i\theta}\iff e^{4i\theta}=e^{i\pi/2}\iff\theta=\frac\pi8+\frac{k\pi}2\).</p><p><strong>Soluzioni: \(z=0\) e \(z_k=e^{i(\frac\pi8+\frac{k\pi}2)}\), \(k=0,1,2,3\)</strong> (5 in tutto).</p><p class="verifica">Verificata a mano</p></details>
+  </div>
+  <div class="ex" data-fonte="Lezione 4, Esempio 0.3" data-livello="base">
+    <div class="ex-testo">Calcolare \(z^7\) con \(z=-1-i\sqrt3\).</div>
+    <details class="sol"><summary>Soluzione</summary><p>\(|z|=2\), punto nel terzo quadrante con \(\cos\theta=-\frac12\), \(\sin\theta=-\frac{\sqrt3}2\): \(\theta=\frac{4\pi}3\).</p><p>\(z^7=2^7e^{i\frac{28\pi}3}\) e \(\frac{28\pi}3-8\pi=\frac{4\pi}3\), quindi \(z^7=128\left(-\frac12-i\frac{\sqrt3}2\right)=\) <strong>\(-64-64\sqrt3\,i\)</strong>.</p><p class="verifica">Verificata a mano</p></details>
+  </div>
+</section>
