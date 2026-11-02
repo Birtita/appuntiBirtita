@@ -36,6 +36,8 @@ CHAPTERS = [
      "materiale": ["Lezioni 11–13", "Esercizi su serie.pdf"]},
 ]
 EXTRAS = [
+    {"slug": "ultima-ora", "k": "Ultima ora", "title": "Bigino da un'ora prima della prova",
+     "desc": "Ripasso mirato da 60 minuti: serie, le 14 dimostrazioni in una riga, complessi, asintotici, disequazioni e funzioni."},
     {"slug": "dimostrazioni", "k": "Dimostrazioni", "title": "Le 14 dimostrazioni del primo parziale",
      "desc": "Le dimostrazioni che possono essere chieste nella parte di teoria della prima prova in itinere, con la traccia da ricordare."},
     {"slug": "prova-itinere", "k": "Prova", "title": "Prima prova in itinere: com'è fatta",
@@ -290,7 +292,7 @@ def write_hub(ready, totals):
     <section><h2>Programma</h2><div class="chapters">{''.join(cards)}</div></section>
     {tl}
     <section><h2>Da scaricare e stampare</h2><div class="res">
-      <div class="panel"><h3>PDF</h3><ul><li><a href="pdf/bigino-analisi1-itinere1.pdf">Bigino (8 pagine)</a></li><li><a href="pdf/esercizi-svolti-analisi1-itinere1.pdf">Esercizi tipo svolti (6 pagine)</a></li><li><a href="pdf/piano-studio-analisi1.pdf">Piano di studio (3 pagine)</a></li></ul></div>
+      <div class="panel"><h3>PDF</h3><ul><li><a href="pdf/bigino-ultima-ora-analisi1.pdf">Bigino da un&#39;ora (3 pagine)</a></li><li><a href="pdf/bigino-analisi1-itinere1.pdf">Bigino (8 pagine)</a></li><li><a href="pdf/esercizi-svolti-analisi1-itinere1.pdf">Esercizi tipo svolti (6 pagine)</a></li><li><a href="pdf/piano-studio-analisi1.pdf">Piano di studio (3 pagine)</a></li></ul></div>
       <div class="panel"><h3>Tutto il corso</h3><ul><li><a href="../analisi1.html">Riassunto di tutto il programma</a> (anche derivate, integrali, Taylor: non sono nella prima prova)</li></ul></div>
     </div></section>
     <section><h2>Come usare il sito</h2><div class="res">
