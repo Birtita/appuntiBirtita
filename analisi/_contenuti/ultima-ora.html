@@ -1,0 +1,129 @@
+<section class="sec" id="ora-piano">
+  <h2>Il piano dei 60 minuti</h2>
+  <p class="lead">Solo gli argomenti che ti mancano, in ordine di punti in palio. Leggi un blocco, chiudi, ripeti a voce, passa al successivo.</p>
+  <table>
+    <thead><tr><th>Minuti</th><th>Blocco</th><th>Perché</th></tr></thead>
+    <tbody>
+      <tr><td>0–15</td><td>1. Serie: criteri e serie con parametro</td><td>Esercizio da 8 punti più domande di test</td></tr>
+      <tr><td>15–30</td><td>2. Le 14 dimostrazioni, una riga ciascuna</td><td>Teoria da 10 punti (servono almeno 5)</td></tr>
+      <tr><td>30–42</td><td>3. Numeri complessi</td><td>Sempre 1–2 domande nel test</td></tr>
+      <tr><td>42–52</td><td>4. Asintotici, o-piccolo, monotone</td><td>Servono per serie e limiti</td></tr>
+      <tr><td>52–60</td><td>5. Disequazioni, induzione, funzioni</td><td>Domande veloci del test</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="sec" id="ora-serie">
+  <h2>1. Serie (15 min)</h2>
+  <table>
+    <thead><tr><th>Serie</th><th>Carattere</th></tr></thead>
+    <tbody>
+      <tr><td>Geometrica \(\sum_{n\ge0} q^n\)</td><td>\(|q|&lt;1\): converge a \(\frac{1}{1-q}\); \(q\ge1\): diverge; \(q\le-1\): irregolare</td></tr>
+      <tr><td>Mengoli \(\sum \frac{1}{n(n+1)}\)</td><td>converge a 1 (telescopica)</td></tr>
+      <tr><td>Armonica generalizzata \(\sum \frac{1}{n^\alpha}\)</td><td>converge \(\iff \alpha&gt;1\)</td></tr>
+    </tbody>
+  </table>
+  <div class="box box--thm"><div class="tag">Criteri</div>
+    <ul>
+      <li><b>Condizione necessaria</b>: converge \(\Rightarrow a_n\to0\). Se \(a_n\not\to0\) non converge (es. \(\sum\arctan n\)).</li>
+      <li><b>Confronto</b> (\(0\le a_n\le b_n\)): \(\sum b_n\) conv. \(\Rightarrow \sum a_n\) conv.; \(\sum a_n\) div. \(\Rightarrow \sum b_n\) div.</li>
+      <li><b>Confronto asintotico</b> (\(a_n,b_n&gt;0\), \(a_n\sim b_n\)): stesso carattere.</li>
+      <li><b>Rapporto</b> \(\frac{a_{n+1}}{a_n}\to\ell\) / <b>Radice</b> \(\sqrt[n]{a_n}\to\ell\): \(\ell&lt;1\) converge, \(\ell&gt;1\) diverge, \(\ell=1\) non dice nulla.</li>
+      <li><b>Assoluta</b>: \(\sum|a_n|\) conv. \(\Rightarrow \sum a_n\) conv.</li>
+      <li><b>Leibniz</b>: \(\sum(-1)^n b_n\), \(b_n\ge0\) <b>decrescente</b> e \(\to0\) \(\Rightarrow\) converge.</li>
+    </ul>
+  </div>
+  <div class="box box--method"><div class="tag">Metodo: serie con parametro</div>
+    <ol>
+      <li>Segno dei termini.</li>
+      <li>Parametro in una potenza \(n\)-esima (\(\alpha^n\), \(|\sinh\beta|^n\)): radice su \(|a_n|\), trovi \(\ell(\alpha)\).</li>
+      <li>Parametro come esponente di \(n\): confronto asintotico con \(\frac{1}{n^p}\).</li>
+      <li>Casi limite \(\ell=1\): sostituisci il valore e studia a parte.</li>
+      <li>Dove non converge: condizione necessaria; con segno variabile assoluta o Leibniz.</li>
+    </ol>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio (simulazione del prof)</div>
+    \(\sum \frac{|\sinh\beta|^n}{\sqrt[6]{n^7+2}}\). Radice: \(\sqrt[n]{a_n}\to|\sinh\beta|\). Se \(&lt;1\) converge, se \(&gt;1\) diverge. Se \(=1\): \(a_n\sim\frac{1}{n^{7/6}}\), converge. <b>Converge \(\iff |\beta|\le\log(1+\sqrt2)\).</b>
+  </div>
+  <div class="box box--ex"><div class="tag">Esempio (simulazione del prof)</div>
+    \(\sum \cos(n\pi)\frac{\log(1+1/\sqrt n)}{\sqrt[3]n} = \sum(-1)^n b_n\), \(b_n\sim\frac{1}{n^{5/6}}\). Assoluta: diverge (\(\frac56&lt;1\)). Leibniz: \(b_n\) decrescente, \(\to0\). <b>Converge semplicemente, non assolutamente.</b>
+  </div>
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    Il confronto asintotico vale solo a segno costante. Con \(\ell=1\) rapporto e radice non dicono nulla.
+  </div>
+</section>
+
+<section class="sec" id="ora-dimostrazioni">
+  <h2>2. Le 14 dimostrazioni in una riga (15 min)</h2>
+  <p class="lead">Leggi la riga, chiudi, riscrivila su un foglio. Le versioni complete sono nella pagina <a href="dimostrazioni.html">Dimostrazioni</a>.</p>
+  <ol>
+    <li><b>\(\sqrt2\) irrazionale</b>: per assurdo \(\sqrt2=\frac mn\) ridotta; \(m^2=2n^2\Rightarrow m=2k\Rightarrow n^2=2k^2\Rightarrow n\) pari. Assurdo.</li>
+    <li><b>Bernoulli</b> (\(x&gt;-1\)): induzione; \((1+x)^{n+1}\ge(1+nx)(1+x)=1+(n+1)x+nx^2\ge1+(n+1)x\), usando \(1+x&gt;0\).</li>
+    <li><b>De Moivre</b>: formule di addizione danno \(zw\) (moduli per, argomenti più); induzione per \(n\ge0\); \(\frac1z=\frac{\bar z}{|z|^2}\) ha argomento \(-\theta\), quindi vale per \(n&lt;0\).</li>
+    <li><b>Radici n-esime</b>: \(\rho^n e^{in\theta}=re^{i\varphi}\iff\rho=\sqrt[n]r,\ \theta_k=\frac{\varphi+2k\pi}{n}\); \(k=0,\dots,n-1\) distinte, gli altri \(k\) si ripetono.</li>
+    <li><b>Unicità del limite</b>: \(\varepsilon=\frac{|\ell_1-\ell_2|}{2}\); \(|\ell_1-\ell_2|\le|\ell_1-a_n|+|a_n-\ell_2|&lt;2\varepsilon\). Assurdo.</li>
+    <li><b>Convergente \(\Rightarrow\) limitata</b>: \(\varepsilon=1\), per \(n&gt;N\) \(|a_n|&lt;|\ell|+1\); \(M=\max\{|a_0|,\dots,|a_N|,|\ell|+1\}\).</li>
+    <li><b>Permanenza del segno</b>: \(\ell&gt;0\), \(\varepsilon=\frac\ell2\Rightarrow a_n&gt;\frac\ell2&gt;0\) definitivamente.</li>
+    <li><b>Carabinieri</b>: \(\ell-\varepsilon&lt;a_n\le c_n\le b_n&lt;\ell+\varepsilon\) definitivamente.</li>
+    <li><b>Monotone</b>: \(L=\sup a_n\); \(L-\varepsilon\) non è maggiorante, quindi \(a_N&gt;L-\varepsilon\) e per \(n\ge N\) \(L-\varepsilon&lt;a_N\le a_n\le L\). Se illimitata: \(+\infty\).</li>
+    <li><b>Condizione necessaria</b>: \(a_n=s_n-s_{n-1}\to S-S=0\).</li>
+    <li><b>Confronto</b>: somme parziali crescenti, \(A_n\le B_n\le B\): crescente e limitata, converge (teorema 9).</li>
+    <li><b>Confronto asintotico</b>: definitivamente \(\frac L2 b_n&lt;a_n&lt;\frac{3L}2 b_n\), confronto nei due sensi.</li>
+    <li><b>Rapporto</b>: \(\ell&lt;q&lt;1\Rightarrow a_n\le a_N q^{n-N}\), confronto con la geometrica. \(\ell&gt;1\) (anche \(+\infty\)): \(a_n\) crescente, \(a_n\not\to0\), diverge.</li>
+    <li><b>Assoluta \(\Rightarrow\) semplice</b>: \(0\le a_n+|a_n|\le2|a_n|\); \(\sum a_n=\sum(a_n+|a_n|)-\sum|a_n|\).</li>
+  </ol>
+</section>
+
+<section class="sec" id="ora-complessi">
+  <h2>3. Numeri complessi (12 min)</h2>
+  <div class="box box--def"><div class="tag">Le formule</div>
+    \(z=a+ib=\rho e^{i\theta}\), \(\rho=\sqrt{a^2+b^2}\). Se \(a&lt;0\): \(\theta=\arctan\frac ba\pm\pi\) (\(+\) se \(b\ge0\), \(-\) se \(b&lt;0\)).<br>
+    \(\frac1z=\frac{\bar z}{|z|^2}\), \(z\bar z=|z|^2\). Prodotto: moduli per, argomenti più. \(z^n=\rho^n e^{in\theta}\).<br>
+    \(z^n=re^{i\varphi}\): \(z_k=\sqrt[n]r\,e^{i\frac{\varphi+2k\pi}{n}}\), \(k=0,\dots,n-1\) (\(n\)-agono regolare).
+  </div>
+  <div class="box box--ex"><div class="tag">Esempi veloci</div>
+    <ul>
+      <li>\(\frac{3-5i}{6+2i}=\frac{(3-5i)(6-2i)}{40}=\frac15-\frac9{10}i\).</li>
+      <li>\((z+1)^3=27\Rightarrow z=2,\ -\frac52\pm\frac{3\sqrt3}2 i\).</li>
+      <li>\(z^5=z\Rightarrow z\in\{0,\pm1,\pm i\}\).</li>
+      <li>Con \(\bar z\): \(z^3=i\bar z|z|\). Polare: \(\rho=0\) oppure \(\rho=1\), \(4\theta=\frac\pi2+2k\pi\): \(z=0\) più 4 soluzioni.</li>
+      <li>\(|z-z_0|=r\): circonferenza; \(|z-a|=|z-b|\): asse del segmento; \(\mathrm{Re}\,z&gt;0\): semipiano.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="ora-asintotici">
+  <h2>4. Asintotici, o-piccolo, monotone (10 min)</h2>
+  <div class="box box--def"><div class="tag">Definizioni</div>
+    \(a_n\sim b_n\iff\frac{a_n}{b_n}\to1\); \(a_n=o(b_n)\iff\frac{a_n}{b_n}\to0\). Con \(\varepsilon_n\to0\): \(\sin\varepsilon_n\sim\log(1+\varepsilon_n)\sim e^{\varepsilon_n}-1\sim\varepsilon_n\); \(1-\cos\varepsilon_n\sim\frac{\varepsilon_n^2}2\); \((1+\varepsilon_n)^\alpha-1\sim\alpha\varepsilon_n\).<br>
+    Gerarchia: \(\log^\alpha n\ll n^\beta\ll a^n\ll n!\ll n^n\). \(\left(1+\frac1{c_n}\right)^{c_n}\to e\) se \(|c_n|\to\infty\).
+  </div>
+  <div class="box box--warn"><div class="tag">Attenzione</div>
+    \(\sim\) non si usa nelle somme che si cancellano né dentro l'esponenziale (\(e^{n+1}\not\sim e^n\)). \(o(b_n)-o(b_n)=o(b_n)\), non 0.
+  </div>
+  <div class="box box--ex"><div class="tag">Limite con parametro</div>
+    \(n^\alpha(\sqrt{n^2+1}-n)=\frac{n^\alpha}{\sqrt{n^2+1}+n}\sim\frac12n^{\alpha-1}\): \(\alpha&lt;1\to0\), \(\alpha=1\to\frac12\), \(\alpha&gt;1\to+\infty\).
+  </div>
+  <div class="box box--thm"><div class="tag">Successioni monotone</div>
+    Crescente \(\Rightarrow \lim a_n=\sup a_n\) (finito se limitata). Monotona e limitata \(\Rightarrow\) converge.
+  </div>
+</section>
+
+<section class="sec" id="ora-veloci">
+  <h2>5. Disequazioni, induzione, funzioni (8 min)</h2>
+  <table>
+    <thead><tr><th>Tipo</th><th>Equivale a</th></tr></thead>
+    <tbody>
+      <tr><td>\(\sqrt A&lt;B\)</td><td>\(A\ge0,\ B&gt;0,\ A&lt;B^2\)</td></tr>
+      <tr><td>\(\sqrt A&gt;B\)</td><td>\(\{B&lt;0,\ A\ge0\}\cup\{B\ge0,\ A&gt;B^2\}\)</td></tr>
+      <tr><td>\(|A|&lt;B\) / \(|A|&gt;B\)</td><td>\(-B&lt;A&lt;B\) / \(A&lt;-B\) oppure \(A&gt;B\)</td></tr>
+      <tr><td>\(a^f&gt;a^g\), \(\log_a f&gt;\log_a g\)</td><td>\(a&gt;1\): \(f&gt;g\); \(0&lt;a&lt;1\): \(f&lt;g\) (per il log anche \(f,g&gt;0\))</td></tr>
+    </tbody>
+  </table>
+  <div class="box box--thm"><div class="tag">Induzione e logica</div>
+    Base \(P(n_0)\) e passo \(P(n)\Rightarrow P(n+1)\). \(P\Rightarrow Q\): \(P\) sufficiente, \(Q\) necessaria; equivale a \(\neg Q\Rightarrow\neg P\). \(\neg\forall x\,P\equiv\exists x\,\neg P\).
+  </div>
+  <div class="box box--def"><div class="tag">Funzioni</div>
+    Iniettiva: \(f(x_1)=f(x_2)\Rightarrow x_1=x_2\). Suriettiva: immagine = codominio. Strettamente monotona \(\Rightarrow\) iniettiva. Il grafico dell'inversa è simmetrico rispetto a \(y=x\). \(\arctan:\mathbb R\to(-\frac\pi2,\frac\pi2)\), \(\tanh:\mathbb R\to(-1,1)\), \(\cosh\ge1\).
+  </div>
+</section>
